@@ -94,7 +94,9 @@ Della serie è interessante studiare il carattere, cioè se convergono, divergon
 		\item \textit{Condizione necessaria $(\Leftarrow)$}: 
 		$\sum_{k=0}^\infty \alpha_k$ e $\sum_{k=0}^\infty \beta_k$ convergono $\Rightarrow$ $\sum_{k=0}^\infty a_k$ converge. 
 		
-		$\lim_{n\rightarrow+\infty} \sum_{k=0}^n \alpha_k = S_a \in \mathbb{R}$ \qquad $\lim_{n\rightarrow+\infty} \sum_{k=0}^n \beta_k = S_b \in \mathbb{R}$
+		\begin{equation*}
+			\lim_{n\rightarrow+\infty} \sum_{k=0}^n \alpha_k = S_a \in \mathbb{R} \qquad \lim_{n\rightarrow+\infty} \sum_{k=0}^n \beta_k = S_b \in \mathbb{R}
+		\end{equation*}
 		\begin{align*}
 			0 \leq \biggl| \sum_{k=0}^n a_k - (S_a + iS_b) \biggr|
 			&= \biggl| (\sum_{k=0}^n \alpha_k -S_a) + i(\sum_{k=0}^n \beta_k - S_b) \biggr| \\
@@ -116,10 +118,16 @@ Della serie è interessante studiare il carattere, cioè se convergono, divergon
 
 A Achille, T tartaruga, $v_A>v_T$ 
 
-$L_0$ \hspace{54pt} $t_0 = \frac{L_0}{v_A}$ \\
-$L_1=t_0\cdot v_T$ \qquad $t_1=\frac{L_1}{v_A}=t_0\frac{v_T}{v_A}$ \\
-$L_2=t_1\cdot v_T$ \qquad $t_2=\frac{L_2}{v_A} = t_1 \frac{v_T}{v_A} = t_0 \biggl( \frac{v_T}{v_A} \biggr) ^2$ \\
-$L_3=t_2\cdot v_T$ \qquad $t_3=\frac{L_3}{v_A} =  t_0 \biggl( \frac{v_T}{v_A} \biggr) ^3$ \\
+\begin{align*}
+\centering
+L_0 & \qquad t_0 = \frac{L_0}{v_A} 
+\\
+L_1=t_0\cdot v_T & \qquad t_1=\frac{L_1}{v_A} = t_0\frac{v_T}{v_A}
+\\
+L_2=t_1\cdot v_T & \qquad t_2=\frac{L_2}{v_A} = t_1 \frac{v_T}{v_A} = t_0 \biggl( \frac{v_T}{v_A} \biggr) ^2 
+\\
+L_3=t_2\cdot v_T & \qquad t_3=\frac{L_3}{v_A} =  t_0 \biggl( \frac{v_T}{v_A} \biggr) ^3
+\end{align*}
 Quanto tempo impiega Achille a raggiungere la tartaruga?
 
 \newcommand\zenone{\stackrel{\mbox{\tiny{$v_T<v_A$}}}{=}}
@@ -144,17 +152,20 @@ Quanto tempo impiega Achille a raggiungere la tartaruga?
 	\end{align*}
 	
 	\item $r\neq1$ \qquad Procuriamoci un'espressione della ridotta n-esima, cioè 
-	
-	$S_n = \sum_{k=0}^n r^k = 1 + r + r^2 + \ldots + r^n$ 
-	
 	\begin{equation*}
+		S_n = \sum_{k=0}^n r^k = 1 + r + r^2 + \ldots + r^n
+	\end{equation*}
+	
+	\begin{gather*}
 		\begin{cases*}
 			S_{n+1} = \sum_{k=0}^{n+1} r^k = \underbrace{1 + r + r^2 + \ldots + r^n}_\text{$S_n$} + r^{n+1} = S_n + r^{n+1} \\
 			S_{n+1} = 1 + \underbrace{r + r^2 +r^3 + \ldots + r^n + r^{n+1}}_\text{raccolgo r a fattore comune} = 1 + r(1 + r + r^2 + \ldots + r^n) = 1 + rS_n
-		\end{cases*}
-	\end{equation*}
+		\end{cases*}  \Rightarrow
+		\\
+		\Rightarrow S_n + r^{n+1} = 1 + rS_n
+	\end{gather*}
 	
-	$S_n + r^{n+1} = 1 + rS_n$
+
 	
 	\begin{equation}
 		S_n = \frac{1 - r^{n+1}}{1-r}
@@ -185,7 +196,10 @@ Quanto tempo impiega Achille a raggiungere la tartaruga?
 \end{exbar}
 
 \subsection{Serie telescopiche}
-$\sum_{k=0}^\infty [f(k+1) - f(k)] \qquad f:\mathbb{N}\rightarrow\mathbb{C}$
+\begin{equation*}
+	\sum_{k=0}^\infty [f(k+1) - f(k)] \qquad f:\mathbb{N}\rightarrow\mathbb{C}
+\end{equation*}
+
 
 Studiamo il carattere. Procuriamoci, se possibile, l'espressione di una ridotta n-esima
 \begin{align*}
@@ -197,8 +211,10 @@ Studiamo il carattere. Procuriamoci, se possibile, l'espressione di una ridotta 
 	$\lim_{n}S_n = \lim_{n}[f(n+1)-f(0)]$ esiste $\iff$ esiste $\lim_{n} f(n)$.
 	
 	La serie converge $\iff$ $\lim_{n} f(n)$ esiste finito e in tal caso la somma della serie è 
-	
-	$\sum_{k=0}^\infty [f(k+1)-f(k)] = \lim_{n\rightarrow+\infty} f(n)-f(0)$.
+	\begin{equation*}
+			\sum_{k=0}^\infty [f(k+1)-f(k)] = \lim_{n\rightarrow+\infty} f(n)-f(0)
+	\end{equation*}
+
 \end{attbar}
 
 \begin{exbar}
@@ -245,14 +261,14 @@ Se $\theta \neq 0, 2\pi$:
 	& \quad + i[\sin\theta-\cos[(n+1)\theta]\sin\theta - \sin[(n+1)\theta] + \sin[(n+1)\theta] \cos\theta ] \}
 \end{align*}
 
-\noindent{
-	Separiamo parte reale e immaginaria e raccogliamo:
+Separiamo parte reale e immaginaria e raccogliamo:
+\begin{gather*}
+	\sum_{k=0}^n \cos(k\theta) =  \frac{1}{2(1-\cos\theta)} \cdot [(1-\cos\theta)(1-\cos((n+1)\theta)) + \sin\theta\sin((n+1)\theta)]
+	\\
+	\sum_{k=0}^n \sin(k\theta) =  \frac{1}{2(1-\cos\theta)} \cdot [\sin\theta(1-\cos((n+1)\theta)) - \sin((n+1)\theta)(1-\cos\theta)]
+\end{gather*}	
 	
-	$\sum_{k=0}^n \cos(k\theta) =  \frac{1}{2(1-\cos\theta)} \cdot [(1-\cos\theta)(1-\cos((n+1)\theta)) + \sin\theta\sin((n+1)\theta)]$ 
 	
-	$\sum_{k=0}^n \sin(k\theta) =  \frac{1}{2(1-\cos\theta)} \cdot [\sin\theta(1-\cos((n+1)\theta)) - \sin((n+1)\theta)(1-\cos\theta)]$
-	\par}
-
 \subsection{Studio del carattere di una serie}
 \begin{theorem}
 	\label{th:termine generale}
@@ -268,13 +284,17 @@ Se una serie è convergente il suo termine generale è infinitesimo.
 		$\sum_{k=1}^\infty \frac{1}{k}$ serie armonica diverge, ma $\lim_{k\rightarrow+\infty}\frac{1}{k} = 0$.
 		
 		Prendiamo $x$ compresa tra due numeri interi $k$ e $k+1$, con $k\geq 1$.
-		\begin{align*}
-			&k\leq x \leq k+1 \\
-			&\frac{1}{k+1} \leq \colorbox{yellow}{\parbox{1.1cm}{$\frac{1}{x} \leq \frac{1}{k}$}} \\
-			&\int_{k}^{k+1} \frac{1}{x} \mathrm{d}x \leq \int_{k}^{k+1} \frac{1}{k} \mathrm{d}x = \frac{1}{k} \\
-			&\frac{1}{k} \geq \int_{k}^{k+1} \frac{1}{x} \mathrm{d}x = \ln(k+1) -\ln(k) \\
-			&\sum_{k=1}^n \frac{1}{k} \geq \sum_{k=1}^n [\ln(k+1)-\ln(k)] = \ln(n+1)-\ln(1) = \ln(n+1) 
-		\end{align*}
+		\begin{gather*}
+			k\leq x \leq k+1
+			\\
+			\frac{1}{k+1} \leq \colorbox{yellow}{\parbox{1.1cm}{$\frac{1}{x} \leq \frac{1}{k}$}}
+			\\
+			\int_{k}^{k+1} \frac{1}{x} \mathrm{d}x \leq \int_{k}^{k+1} \frac{1}{k} \mathrm{d}x = \frac{1}{k}
+			\\
+			\frac{1}{k} \geq \int_{k}^{k+1} \frac{1}{x} \mathrm{d}x = \ln(k+1) -\ln(k)
+			\\
+			\sum_{k=1}^n \frac{1}{k} \geq \sum_{k=1}^n [\ln(k+1)-\ln(k)] = \ln(n+1)-\ln(1) = \ln(n+1) 
+		\end{gather*}
 		
 		Per il teorema del confronto $\lim_{n}\sum_{k=0}^n \frac{1}{k} \geq \lim_{n} \ln(n+1) = +\infty \Rightarrow \sum_{k=1}^\infty \frac{1}{k} = +\infty$.
 	\end{example}
@@ -291,11 +311,15 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	
 	Sappiamo che $\sum_{k=0}^\infty a_k$ converge.
 	
-	$S_n = \sum_{k=0}^n a_k$ \qquad $S_{n-1} = \sum_{k=0}^{n-1} a_k$
+	\begin{gather*}
+		S_n = \sum_{k=0}^n a_k \qquad S_{n-1} = \sum_{k=0}^{n-1} a_k
+		\\
+		S_n - S_{n-1} = \sum_{k=0}^n a_k - \sum_{k=0}^{n-1} a_k = a_n + \sum_{k=0}^{n-1} a_k - \sum_{k=0}^{n-1} a_k = a_n
+		\\
+		\lim_{n} a_n = \lim_{n} (\vertarrowbox{S_n}{$S$} - \vertarrowbox{S_{n-1}}{$S$}) = 0 
+	\end{gather*}
 	
-	$S_n - S_{n-1} = \sum_{k=0}^n a_k - \sum_{k=0}^{n-1} a_k = a_n + \sum_{k=0}^{n-1} a_k - \sum_{k=0}^{n-1} a_k = a_n$
-	
-	$\lim_{n} a_n = \lim_{n} (\vertarrowbox{S_n}{$S$} - \vertarrowbox{S_{n-1}}{$S$}) = 0 $ \qquad $S\in\mathbb{C}$ somma della serie. $\square$
+	$S\in\mathbb{C}$ somma della serie. $\square$
 \end{dembar}
 
 \begin{proposition}
@@ -306,8 +330,9 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 \begin{dembar}
 	\textbf{Dimostrazione} della \textbf{Proposizione \ref{prop:somma convergenti}}
 	
-	$\sum_{k=0}^n (a_k + b_k) =$
-	$\vertarrowbox{\sum_{k=0}^\infty a_k}{$S_a$} + \vertarrowbox{\sum_{k=0}^\infty b_k}{$S_b$} \xrightarrow{n\rightarrow+\infty} S_a + S_b \quad \square $ 
+	\begin{equation*}
+		\sum_{k=0}^n (a_k + b_k) = \vertarrowbox{\sum_{k=0}^\infty a_k}{$S_a$} + \vertarrowbox{\sum_{k=0}^\infty b_k}{$S_b$} \xrightarrow{n\rightarrow+\infty} S_a + S_b \quad \square 
+	\end{equation*}
 	
 \end{dembar}
 
@@ -318,8 +343,10 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 
 \begin{dembar}
 	\textbf{Dimostrazione} della \textbf{Proposizione \ref{prop:prodotto convergente}}
-	
-	$\sum_{k=0}^n (c\cdot a_k) = c\vertarrowbox{\sum_{k=0}^n a_k}{$S$} \xrightarrow{n\rightarrow+\infty} c\cdot S \quad \square$
+	\begin{equation*}
+		\sum_{k=0}^n (c\cdot a_k) = c\vertarrowbox{\sum_{k=0}^n a_k}{$S$} \xrightarrow{n\rightarrow+\infty} c\cdot S \quad \square
+	\end{equation*}
+
 \end{dembar}
 
 \begin{proposition}
@@ -369,8 +396,9 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\textbf{Dimostrazione} della \textbf{Proposizione \ref{prop:no indeterminata}}
 	
 	Per semplicità assumiamo $a_k \geq 0 \; \forall \; k\in\mathbb{N}$. Devo far vedere che, se $\{S_n \}_{n\in\mathbb{N}}$ è la successione delle ridotte, questa fa limite finito o infinito.
-	
-	$S_{n+1} = \sum_{k=0}^{n+1} a_k = a_{n+1} + \sum_{k=0}^n = \vertarrowbox{a_{n+1}}{$\geq 0$} + S_n \geq S_n$.
+	\begin{equation*}
+		S_{n+1} = \sum_{k=0}^{n+1} a_k = a_{n+1} + \sum_{k=0}^n = \vertarrowbox{a_{n+1}}{$\geq 0$} + S_n \geq S_n
+	\end{equation*}
 	
 	$\{S_n \}_{n\in\mathbb{N}}$ è crescente e quindi fa limite finito o a $+\infty$. \quad $\square$
 \end{dembar}
@@ -561,34 +589,39 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		
 		\begin{enumerate}
 			\item $\alpha\leq 1, \; \beta \leq 0$
-			
-			$\frac{1}{(\ln k)^\beta} = (\ln k)^{\mathcircled{{-\beta}}^{\color{blue}{\myarrow[190] \geq0}}} \geq 1 \qquad \forall \; k \geq 3 $
-			
-			$\frac{1}{k^\alpha (\ln k)^\beta} \geq \frac{1}{k^\alpha} \qquad \forall \; k \geq 3 $
-			
+			\begin{gather*}
+				\frac{1}{(\ln k)^\beta} = (\ln k)^{\mathcircled{{-\beta}}^{\color{blue}{\myarrow[190] \geq0}}} \geq 1 \qquad \forall \; k \geq 3
+				\\				
+				\frac{1}{k^\alpha (\ln k)^\beta} \geq \frac{1}{k^\alpha} \qquad \forall \; k \geq 3
+			\end{gather*}
+
 			$\frac{1}{k^\alpha}$ è il termine generale di una serie divergente $\Rightarrow \sum_{k=2}^\infty \frac{1}{k^\alpha(\ln k)^\beta}$ diverge.
 			
 			\item $\alpha > 1, \; \beta \geq 0$
-			
-			$\frac{1}{(\ln k)^\beta} \leq 1 \qquad \forall \; k \geq 3 \Rightarrow \frac{1}{k^\alpha (\ln k)^\beta} \leq \frac{1}{k^\alpha}$
+			\begin{equation*}
+				\frac{1}{(\ln k)^\beta} \leq 1 \qquad \forall \; k \geq 3 \Rightarrow \frac{1}{k^\alpha (\ln k)^\beta} \leq \frac{1}{k^\alpha}
+			\end{equation*}
 			
 			$\frac{1}{k^\alpha}$ è il termine generale di una serie convergente $\Rightarrow \sum_{k=2}^\infty \frac{1}{k^\alpha(\ln k)^\beta}$ converge per il teorema del confronto.
 			
 			\item $\alpha<1, \; \beta>0$
-			
-			$\frac{1}{k^\alpha (\ln k)^\beta}$ 
-			
+			\begin{equation*}
+				\frac{1}{k^\alpha (\ln k)^\beta}
+			\end{equation*}
+						
 			Sia $\varepsilon > 0 \Rightarrow \ln k \leq k^\varepsilon$ definitivamente $\Rightarrow (\ln k)^\beta \leq k^{\varepsilon\beta}$ definitivamente 
-			
-			$\frac{1}{(\ln k)^\beta} \geq \frac{1}{k^\alpha k^{\varepsilon\beta}} = \frac{1}{k^{\alpha+\varepsilon\beta}}$ definitivamente
+			\begin{equation*}
+				\frac{1}{(\ln k)^\beta} \geq \frac{1}{k^\alpha k^{\varepsilon\beta}} = \frac{1}{k^{\alpha+\varepsilon\beta}} \ \text{definitivamente}
+			\end{equation*}
 			
 			Scelgo $\varepsilon$ in modo che $\alpha+\varepsilon\beta<1$, quindi $\varepsilon<\frac{1-\alpha}{\beta} \Rightarrow \sum_{k=2}^\infty \frac{1}{k^{\alpha+\varepsilon\beta}}$ diverge $\Rightarrow$ per il criterio del confronto $\sum_{k=2}^\infty \frac{1}{k^\alpha (\ln k)^\beta}$ diverge.
 			
-			\item $\alpha>1, \; \beta<0$
+			\item $\alpha>1, \; \beta<0$ 
 			
 			(Se $\beta=0$ la serie diventa $\sum_{k=2}^\infty \frac{1}{k^\alpha}$ che converge)
-			
-			$\frac{1}{k^\alpha(\ln k)^\beta} = \frac{(\ln k)}{k^{\alpha}}^{\mathcircled{-\beta}^{\color{blue}{\myarrow[190] >0}}}$
+			\begin{equation*}
+				\frac{1}{k^\alpha(\ln k)^\beta} = \frac{(\ln k)}{k^{\alpha}}^{\mathcircled{-\beta}^{\color{blue}{\myarrow[190] >0}}}
+			\end{equation*}
 			
 			Fisso $\varepsilon > 0$, $\ln k \leq k^\varepsilon$ definitivamente $\Rightarrow (\ln k)^{-\beta} \leq k^{-\varepsilon\beta}$ definitivamente
 			
@@ -616,20 +649,22 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 
 \begin{exbar}
 	\begin{example}
-		
 		Studiare il carattere della serie 
-		$$\sum_{k=3}^\infty \frac{k}{k^3-k^2+k-e^{-k}}$$
-		
-		$\frac{k}{k^3-k^2+k-e^{-k}} \geq 0$ definitivamente
+		\begin{gather}
+			\sum_{k=3}^\infty \frac{k}{k^3-k^2+k-e^{-k}}
+			\\
+			\frac{k}{k^3-k^2+k-e^{-k}} \geq 0 \ \text{definitivamente}
+		\end{gather}
 		
 		Cerchiamo di ricondurci al termine generale della serie studiata in precedenza:
-		
-		$\frac{k}{k^3-k^2+k-e^{-k}} \sim \frac{1}{k^\alpha (\ln k)^\beta}$
-		
-		$-k^2+k-e^{-k}= o(k^3)$ per $k\rightarrow+\infty$
-		
-		$\frac{k}{k^3-k^2+k-e^{-k}} \vertarrowbox{\sim}{\text{limite del rapporto è finito e $\neq0$ }} \frac{k}{k^3} = \frac{1}{k^2} $
-		
+		\begin{gather*}
+			\frac{k}{k^3-k^2+k-e^{-k}} \sim \frac{1}{k^\alpha (\ln k)^\beta}
+			\\
+			-k^2+k-e^{-k}= o(k^3) \ \text{per} \ k\rightarrow+\infty
+			\\
+			\frac{k}{k^3-k^2+k-e^{-k}} \vertarrowbox{\sim}{\text{limite del rapporto è finito e $\neq0$ }} \frac{k}{k^3} = \frac{1}{k^2}
+		\end{gather*}
+
 		$\lim_{k\rightarrow+\infty} \frac{\frac{k}{k^3-k^2+k-e^{-k}}}{\frac{1}{k^2}} = 1 \Rightarrow$ poiché $\sum_{k=3}^\infty \frac{1}{k^2}$ converge, $\sum_{k=3}^\infty \frac{k}{k^3-k^2+k-e^{-k}}$ converge per il criterio del confronto asintotico.
 	\end{example}
 \end{exbar}
@@ -641,7 +676,9 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		
 		$\sqrt{k^4+1} - k^2 \geq \sqrt{k^4} - k^2 = 0$. Moltiplichiamo numeratore e denominatore per togliere la radice:
 		
-		$\frac{1}{k^\alpha} \frac{(\sqrt{k^4+1}-k^2)(\sqrt{k^4+1}+k^2)}{\sqrt{k^4+1}+k^2} = \frac{1}{k^\alpha (\sqrt{k^4+1}+k^2)} \sim \frac{1}{k^\alpha\cdot k^2} = \frac{1}{k^{\alpha+2}}$
+		\begin{equation*}
+		\frac{1}{k^\alpha} \frac{(\sqrt{k^4+1}-k^2)(\sqrt{k^4+1}+k^2)}{\sqrt{k^4+1}+k^2} = \frac{1}{k^\alpha (\sqrt{k^4+1}+k^2)} \sim \frac{1}{k^\alpha\cdot k^2} = \frac{1}{k^{\alpha+2}}
+		\end{equation*}
 		
 		$\sum_{k=1}^\infty \frac{1}{k^{\alpha+2}}$ converge $\iff \alpha+2>1 \iff a>-1$ per il criterio del confronto asintotico.
 	\end{example}
@@ -651,22 +688,28 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 \begin{exbar}
 	\begin{example}
 		Determinare per quale $\alpha>0$ converge la serie 
-		$$\sum_{k=2}^\infty \bigg[\frac{1}{k(\ln k)} - \sin \frac{1}{k^\alpha(\ln k)} \bigg]$$
+		\begin{equation*}
+			\sum_{k=2}^\infty \bigg[\frac{1}{k(\ln k)} - \sin \frac{1}{k^\alpha(\ln k)} \bigg]
+		\end{equation*}
 		
 		L'espansione in serie di Taylor del seno è: $\sin y = y - \frac{y^3}{3!} + \mathrm{o}(y^3)$ per $y\rightarrow0$
-		
-		$y = \frac{1}{k^\alpha(\ln k)} \rightarrow 0$ per $k\rightarrow+\infty$
-		
 		\begin{align*}
+			y &= \frac{1}{k^\alpha(\ln k)} \rightarrow 0 \ \text{per} \ k\rightarrow+\infty
+			\\
 			\sin \frac{1}{k^\alpha (\ln k)}
-			&= \frac{1}{k^\alpha (\ln k)} - \frac{1}{6} \bigg(\frac{1}{k^\alpha (\ln k)} \bigg)^3 + \mathrm{o}\bigg( \bigg(\frac{1}{k^\alpha (\ln k)} \bigg)^3 \bigg) \\
+			&= \frac{1}{k^\alpha (\ln k)} - \frac{1}{6} \bigg(\frac{1}{k^\alpha (\ln k)} \bigg)^3 + \mathrm{o}\bigg( \bigg(\frac{1}{k^\alpha (\ln k)} \bigg)^3 \bigg) 
+			\\
 			&= \frac{1}{k^\alpha (\ln k)} - \frac{1}{6} \frac{1}{k^{3\alpha}(\ln k)^3} + \mathrm{o}\bigg(\frac{1}{k^{3\alpha}(\ln k)^3} \bigg) & \mathrm{per} \; k \rightarrow + \infty
 		\end{align*}
-		$\frac{1}{k (\ln k)} - \sin\frac{1}{k^\alpha(\ln k)} = \frac{1}{k (\ln k)} -\frac{1}{k^\alpha (\ln k)} + \frac{1}{6} \frac{1}{k^{3\alpha}(\ln k)^3} + \mathrm{o}\bigg(\frac{1}{k^{3\alpha}(\ln k)^3} \bigg) \sim$
+		\begin{equation*}
+		\frac{1}{k (\ln k)} - \sin\frac{1}{k^\alpha(\ln k)} = \frac{1}{k (\ln k)} -\frac{1}{k^\alpha (\ln k)} + \frac{1}{6} \frac{1}{k^{3\alpha}(\ln k)^3} + \mathrm{o}\bigg(\frac{1}{k^{3\alpha}(\ln k)^3} \bigg) \sim
+		\end{equation*}
 		\begin{equation*}
 			\sim \begin{cases}
-				-\frac{1}{k^\alpha (\ln k)} & \mathrm{se} \; 0<\alpha<1 \\
-				\frac{1}{k^3(\ln k)^3} & \mathrm{se} \; \alpha = 1 \\
+				-\frac{1}{k^\alpha (\ln k)} & \mathrm{se} \; 0<\alpha<1 
+				\\[1em]
+				\frac{1}{k^3(\ln k)^3} & \mathrm{se} \; \alpha = 1 
+				\\[1em]
 				\frac{1}{k (\ln k)} & \mathrm{se} \; \alpha > 1
 			\end{cases}
 		\end{equation*}
@@ -699,9 +742,10 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	Per semplicità, assumiamo che $a_k > 0 \qquad \forall \; k \in\mathbb{N}$
 	
 	\begin{enumerate}
-		\item  $\exists \; r < 1 \; \bigg| \; \frac{a_{k+1}}{a_k} \leq r \qquad \underbrace{\forall \; k\in\mathbb{N}}_{\text{per semplicità}} $ quindi $\frac{a_k}{a_{k-1}} \leq r \qquad k \geq 1$
-		
-		$a_k \leq r a_{k-1} \; \vertarrowbox{\leq}{$\frac{a_{k-1}}{a_{k-2}} \leq r$} \; r^2 a_{k-2} \; \vertarrowbox{\leq}{$\frac{a_{k-2}}{a_{k-3}} \leq r$} \; r^3 a_{k-3} \leq \ldots \leq r^k a_0 \qquad \Rightarrow \qquad a_k \leq r^k a_0 \qquad \forall \; k\in\mathbb{N}$
+		\item  $\exists \; r < 1 \; \bigg| \; \frac{a_{k+1}}{a_k} \leq r \qquad \underbrace{\forall \; k\in\mathbb{N}}_{\text{per semplicità}} $ quindi $\frac{a_k}{a_{k-1}} \leq r \qquad k \geq 1$		
+		\begin{equation*}
+			a_k \leq r a_{k-1} \; \vertarrowbox{\leq}{$\frac{a_{k-1}}{a_{k-2}} \leq r$} \; r^2 a_{k-2} \; \vertarrowbox{\leq}{$\frac{a_{k-2}}{a_{k-3}} \leq r$} \; r^3 a_{k-3} \leq \ldots \leq r^k a_0 \qquad \Rightarrow \qquad a_k \leq r^k a_0 \qquad \forall \; k\in\mathbb{N}
+		\end{equation*}
 		
 		e $\sum_{k=0}^\infty r^k$ converge perché è una serie geometrica di ragione $r\in ]0,1[ \Rightarrow$ per il criterio del confronto $\sum_{k=0}^\infty r^k$ converge.
 		
@@ -776,6 +820,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 			&= \inflim 5\frac{(n+1)^2 \ \cancel{(n!)^2}} {(2n+2) \ (2n+1) \ \cancel{(2n)!} } \cdot \frac{\cancel{(2n)!}} {\cancel{(n!)^2}}=\\
 			&= \inflim 5\frac{(n+1)^2} {(2n+2) \ (2n+1)} = \frac{5}{4} > 1
 		\end{align*}
+		
 		$\Rightarrow$ la serie diverge per il criterio asintotico del rapporto.	
 	\end{example}
 \end{exbar}
@@ -786,6 +831,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		\begin{equation*}
 			\sum_{k=0}^\infty \frac{z^k}{k!} \qquad z \in  \mathbb{C} 
 		\end{equation*}
+		
 		Studiamo la convergenza assoluta 
 		\begin{equation*}
 			\sum_{k=0}^\infty \mathcircled{ \frac{|z|^k}{k!} }^{\color{blue}{\myarrow[190] a_k}}
@@ -795,6 +841,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		&= \lim_{k \rightarrow +\infty} \frac{|z|^{k+1}}{(k+1)!} \cdot \frac{k!}{z^k}=\\
 		&= \lim_{k \rightarrow +\infty} \frac{|z|}{k+1} = 0 \qquad \forall z \in \mathbb{C}
 		\end{align*}
+		
 		la serie converge assolutamente, e quindi semplicemente, $\forall \ z \in \mathbb{C}$.
 		
 		Se $x \in \mathbb{R}$ , si dimostra che 
@@ -884,28 +931,37 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\begin{example} \textbf{importante}
 		
 		Studiamo il carattere della serie
+		\begin{equation*}
+			\sum_{k=1}^{\infty} k^\alpha r^k \qquad r \ \in \mathbb{R}, \ \alpha \ \in \mathbb{R}.
+		\end{equation*}
+		
+		Studiamo la convergenza assoluta
+		\begin{gather*}
+			\sum_{k=1}^{\infty} |k^\alpha \ r^k| 
+			= \sum_{k=1}^{\infty} \mathcircled{k^\alpha \ |r|^k}_{\color{blue}{\myarrow[180] a_k}} \\
+			\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} 
+			= \lim_{k \rightarrow +\infty} |r| \ k^{\frac{\alpha}{k}}= |r|
+		\end{gather*}
+		
+		Se $|r|< 1$ la serie converge assolutamente e quindi semplicemente.
+		
+		Se $|r|> 1$, il termine generale della serie non è infinitesimo
+		\begin{equation*}
+			\lim_{k \rightarrow +\infty} k^\alpha \ |r|^k = +\infty
+		\end{equation*}
+		
+		e quindi la serie non converge.
 	\end{example}
 \end{exbar}
 
 
 \begin{comment}
 	
-\paragraph{\textcolor{red}{Esempio Importante}}
 
-\begin{empheq}{equation*}
-	\sum_{k=1}^{\infty} k^\alpha r^k, \,\,\,\,\, r \in \R, \alpha \in \R.
-\end{empheq}
-Studiamo la convergenza assoluta
-\begin{empheq}{align*}
-	\sum_{k=1}^{\infty} |k^\alpha r^k| &= \sum_{k=1}^{\infty} k^\alpha |r|^k\\
-	\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} &= \lim_{k \rightarrow +\infty} |r| k^{\frac{\alpha}{k}}= |r|
-\end{empheq}
-Se $|r|< 1$ la serie converge assolutamente e quindi semplicemente.\\
-Se $|r|> 1$, il termine generale della serie non è infinitesimo
-\begin{empheq}{equation*}
-	\lim_{k \rightarrow +\infty} k^\alpha |r|^k = +\infty
-\end{empheq}
-e quindi la serie non converge.\\
+
+
+
+
 Prendiamo dunque $|r|=1$
 \begin{itemize}
 	\item $r=1 \Rightarrow \sum_{k=1}^{\infty} k^\alpha=\sum_{k=1}^{\infty} \frac{1}{k^{-\alpha}}$ che converge $\Leftrightarrow -\alpha <1 \Leftrightarrow \alpha < -1$
