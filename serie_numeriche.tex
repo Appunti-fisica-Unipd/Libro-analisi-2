@@ -453,7 +453,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 			\end{cases}
 		\end{equation*}
 		
-		$0 \leq a_k \leq \mathcircled{\frac{1}{k(k+1)}}_{^{\myarrow[180]} b_k} \; \forall k \in \mathbb{N}, \; k\geq 1$
+		$0 \leq a_k \leq \mathcircled{\frac{1}{k(k+1)}}^{\color{blue}{\myarrow[180]} b_k} \; \forall k \in \mathbb{N}, \; k\geq 1$
 		
 		$\sum_{k=1}^\infty \frac{1}{k(k+1)}$ converge $\Rightarrow \sum_{k=1}^\infty \frac{1}{2k(2k-1)}$ converge per il criterio del confronto.
 	\end{example}
@@ -543,6 +543,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{example}
 \end{exbar}
 
+
 \begin{attbar}
 	\begin{equation*}
 		\sum_{k=1}^\infty \frac{1}{k^\alpha} \ \text{converge}  \ \iff \alpha > 1
@@ -561,7 +562,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		\begin{enumerate}
 			\item $\alpha\leq 1, \; \beta \leq 0$
 			
-			$\frac{1}{(\ln k)^\beta} = (\ln k)^{\mathcircled{{-\beta}}^{\geq0}} \geq 1 \qquad \forall \; k \geq 3 $
+			$\frac{1}{(\ln k)^\beta} = (\ln k)^{\mathcircled{{-\beta}}^{\color{blue}{\myarrow[190] \geq0}}} \geq 1 \qquad \forall \; k \geq 3 $
 			
 			$\frac{1}{k^\alpha (\ln k)^\beta} \geq \frac{1}{k^\alpha} \qquad \forall \; k \geq 3 $
 			
@@ -587,7 +588,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 			
 			(Se $\beta=0$ la serie diventa $\sum_{k=2}^\infty \frac{1}{k^\alpha}$ che converge)
 			
-			$\frac{1}{k^\alpha(\ln k)^\beta} = \frac{(\ln k)}{k^{\alpha}}^{\mathcircled{-\beta}^{>0}}$
+			$\frac{1}{k^\alpha(\ln k)^\beta} = \frac{(\ln k)}{k^{\alpha}}^{\mathcircled{-\beta}^{\color{blue}{\myarrow[190] >0}}}$
 			
 			Fisso $\varepsilon > 0$, $\ln k \leq k^\varepsilon$ definitivamente $\Rightarrow (\ln k)^{-\beta} \leq k^{-\varepsilon\beta}$ definitivamente
 			
@@ -599,7 +600,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 			
 			$\frac{1}{k^\alpha (\ln k)^\beta} \leq  \frac{1}{k} \qquad \forall \; k \geq 3$, che è il termine generale di una serie divergente, perciò non possiamo usare il teorema del confronto
 			
-			Utilizziamo il criterio di condensazione: $\biggl\{ \mathcircled{{\frac{1}{k(\ln k)^\beta}}}^{a_k} \biggr\}_{k\geq2}$ è positiva, decrescente, infinitesima
+			Utilizziamo il criterio di condensazione: $\biggl\{ \mathcircled{{\frac{1}{k(\ln k)^\beta}}}^{\color{blue}{\myarrow[190] a_k}} \biggr\}_{k\geq2}$ è positiva, decrescente, infinitesima
 			
 			Studiamo la serie $\sum_{k=2}^\infty 2^k a_{2^k} = \sum_{k=2}^\infty \cancel{2^k} \frac{1}{\cancel{2^k}(\ln 2^k)^\beta} = \sum_{k=2}^\infty \frac{1}{(k \ln 2)^\beta} = \frac{1}{(\ln 2)^\beta} \sum_{k=2}^\infty \frac{1}{k^\beta}$ che converge $\iff \beta > 1$		
 		\end{enumerate}
@@ -611,6 +612,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		\sum_{k=2}^\infty \frac{1}{k^\alpha (\ln k)^\beta} \ \text{converge} \ \iff \alpha>1 \ \text{oppure} \ \alpha=1 \ \text{e} \ \beta>1.
 	\end{equation*}
 \end{attbar}
+
 
 \begin{exbar}
 	\begin{example}
@@ -632,9 +634,10 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{example}
 \end{exbar}
 
+
 \begin{exbar}
 	\begin{example}
-		$$\sum_{k=1}^\infty \mathcircled{\frac{1}{k^\alpha} (\sqrt{k^4+1} - k^2)}^{\geq 0 \quad \forall \; k\geq 1} \qquad \alpha\in\mathbb{R}$$
+		$$\sum_{k=1}^\infty \mathcircled{\frac{1}{k^\alpha} (\sqrt{k^4+1} - k^2)}^{\color{blue}{\myarrow[190] \geq 0 \quad \forall \; k\geq 1}} \qquad \alpha\in\mathbb{R}$$
 		
 		$\sqrt{k^4+1} - k^2 \geq \sqrt{k^4} - k^2 = 0$. Moltiplichiamo numeratore e denominatore per togliere la radice:
 		
@@ -643,6 +646,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		$\sum_{k=1}^\infty \frac{1}{k^{\alpha+2}}$ converge $\iff \alpha+2>1 \iff a>-1$ per il criterio del confronto asintotico.
 	\end{example}
 \end{exbar}
+
 
 \begin{exbar}
 	\begin{example}
@@ -678,6 +682,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{example}
 \end{exbar}
 
+
 \begin{theorem} (criterio del rapporto) \label{th:criterio del rapporto}
 	
 	$\{a_k\}_{k\in\mathbb{N}}$ successione a termini (definitivamente) positivi.
@@ -686,6 +691,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		\item Se $\frac{a_{k+1}}{a_k} \geq 1$ definitivamente per $k\rightarrow+\infty$, allora $\sum_{k=0}^\infty a_k$ diverge.
 	\end{enumerate}
 \end{theorem}
+
 
 \begin{dembar}
 	\textbf{Dimostazione} del \textbf{Teorema \ref{th:criterio del rapporto}}
@@ -707,6 +713,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{enumerate}
 \end{dembar}
 
+
 \begin{theorem} (criterio asintotico del rapporto) \label{th:criterio asintotico rapporto}
 	$\{a_k \}_{k\in\mathbb{N}}$ successione a termini definitivamente positivi tale che $\lim_{k\rightarrow+\infty} \frac{a_{k+1}}{a_k} = \ell \in \; [0,+\infty]$
 	\begin{enumerate}
@@ -719,11 +726,13 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	Il \textbf{Teorema \ref{th:criterio asintotico rapporto}} non dice nulla se $\ell = 1$
 \end{attbar}
 
+
 \begin{exbar}
-	$\sum_{k=1}^\infty \mathcircled{\frac{1}{k}}^{a_k} \qquad \lim_{k\rightarrow+\infty} \frac{a_{k+1}}{a_k} = 1$ e la serie diverge.
+	$\sum_{k=1}^\infty \mathcircled{\frac{1}{k}}^{\color{blue}{\myarrow[190] a_k}} \qquad \lim_{k\rightarrow+\infty} \frac{a_{k+1}}{a_k} = 1$ e la serie diverge.
 	
-	$\sum_{k=1}^\infty \mathcircled{\frac{1}{k^2}}^{a_k} \qquad \lim_{k\rightarrow+\infty} \frac{a_{k+1}}{a_k} = 1$ e la serie converge.
+	$\sum_{k=1}^\infty \mathcircled{\frac{1}{k^2}}^{\color{blue}{\myarrow[190] a_k}} \qquad \lim_{k\rightarrow+\infty} \frac{a_{k+1}}{a_k} = 1$ e la serie converge.
 \end{exbar}
+
 
 \begin{dembar}
 	\textbf{Dimostrazione} del \textbf{Teorema \ref{th:criterio asintotico rapporto}}
@@ -731,87 +740,126 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\begin{enumerate}
 		\item $\lim_{k} \frac{a_{k+1}}{a_k} = \ell < 1$. Fissiamo $r\in \; ]\ell, 1[$ allora definitivamente $ \frac{a_{k+1}}{a_k} \leq r \Rightarrow$ la serie converge per il criterio del rapporto.
 		
-		\item $\lim_{k} \frac{a_{k+1}}{a_k} = \ell > 1 \Rightarrow \frac{a_{k+1}}{a_k} \geq 1$ definitivamente $\Rightarrow$ la serie diverge per il criterio del rapporto.
+		\item $\lim_{k} \frac{a_{k+1}}{a_k} = \ell > 1 \Rightarrow \frac{a_{k+1}}{a_k} \geq 1$ definitivamente $\Rightarrow$ la serie diverge per il criterio del rapporto. $\square$ 
 	\end{enumerate}
 \end{dembar}
+
 
 \begin{exbar}
 	\begin{example}
 		Studiamo il carattere della serie 
 		\begin{equation*}
-			\sum_{n=0}^{\infty} \mathcircled{\frac{(2n)!}{n!(2n+1)!}}^{a_n}
+			\sum_{n=0}^{\infty} \mathcircled{\frac{(2n)!}{n! \ (2n+1)!}}^{\color{blue}{\myarrow[190] a_n}}
 		\end{equation*}
-		
 		\begin{align*}
-			\lim_{n \rightarrow +\infty} \frac{a_{n+1}}{a_n} &= \lim_{n \rightarrow +\infty} \frac{(2n+1)!}{(n+1)!(2n+3)^{n+1}} \cdot \frac{n!(2n+1)^n}{(2n)!}=\\
-			&=\lim_{n \rightarrow +\infty} \frac{(2n+2)(2n+1)}{(n+1)(2n+3)} \frac{(2n+1)^n}{(2n+3)^n}=\\
-			&=\lim_{n \rightarrow +\infty} \frac{(2n+2)(2n+1)}{(n+1)(2n+3)} (1- \frac{2}{2n+3})^n=\frac{4}{2} e^{-1}=\frac{2}{e}<1\\
-		\end{align*}
-		
-		
-		$\Rightarrow$ la serie diverge per il criterio asintotico del rapporto.
-		
+			\lim_{n \rightarrow +\infty} \frac{a_{n+1}}{a_n} 
+			&= \lim_{n \rightarrow +\infty} \frac{(2n+1)!}{(n+1)! \ (2n+3)^{n+1}} \cdot \frac{n! \ (2n+1)^n}{(2n)!} \\
+			&= \inflim \frac{(2n+2) \ (2n+1) \ \cancel{(2n)!}} {(n+1) \ \cancel{n!} \ (2n+3)^{n+1} } \cdot \frac{\cancel{n!} \ (2n+1)^{n}}{\cancel{(2n)!}} \\
+			&=\inflim \frac{(2n+2) \ (2n+1)} {(n+1) \ (2n+3)} \cdot \frac{(2n+1)^n} {(2n+3)^n}=\\
+			&=\lim_{n \rightarrow +\infty} \frac{(2n+2) \ (2n+1)}{(n+1) \ (2n+3)} \left(1- \frac{2} {2n+3} \right)^n \\
+			&= \frac{4}{2} \ e^{-1}=\frac{2}{e}<1
+		\end{align*} 
+		$\Rightarrow$ la serie converge per il criterio asintotico del rapporto.	
 	\end{example}
 \end{exbar}
 
 
+\begin{exbar}
+	\begin{example}
+		Studiare il carattere della serie 
+		\begin{equation*}
+			\sum_{n=1}^{\infty} \mathcircled{ 5^n \ \frac{\left( n! \right)^2}{(2n)!} }^{\color{blue}{\myarrow[190] a_n}}
+		\end{equation*}
+		\begin{align*}
+			\inflim \frac{a_{n+1}}{a_n} 
+			&= \inflim 5^{\cancel{n}+1} \frac{((n+1)!)^2}{(2n+2)!} \cdot \frac{(2n)!}{\cancel{5^n} \ (n!)^2}=\\
+			&= \inflim 5\frac{(n+1)^2 \ \cancel{(n!)^2}} {(2n+2) \ (2n+1) \ \cancel{(2n)!} } \cdot \frac{\cancel{(2n)!}} {\cancel{(n!)^2}}=\\
+			&= \inflim 5\frac{(n+1)^2} {(2n+2) \ (2n+1)} = \frac{5}{4} > 1
+		\end{align*}
+		$\Rightarrow$ la serie diverge per il criterio asintotico del rapporto.	
+	\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+	\begin{example} \textbf{importante} \\
+		\begin{equation*}
+			\sum_{k=0}^\infty \frac{z^k}{k!} \qquad z \in  \mathbb{C} 
+		\end{equation*}
+		Studiamo la convergenza assoluta 
+		\begin{equation*}
+			\sum_{k=0}^\infty \mathcircled{ \frac{|z|^k}{k!} }^{\color{blue}{\myarrow[190] a_k}}
+		\end{equation*}
+		\begin{align*}
+		\lim_{k \rightarrow +\infty} \frac{a_{k+1}}{a_k}
+		&= \lim_{k \rightarrow +\infty} \frac{|z|^{k+1}}{(k+1)!} \cdot \frac{k!}{z^k}=\\
+		&= \lim_{k \rightarrow +\infty} \frac{|z|}{k+1} = 0 \qquad \forall z \in \mathbb{C}
+		\end{align*}
+		la serie converge assolutamente, e quindi semplicemente, $\forall \ z \in \mathbb{C}$.
+		
+		Se $x \in \mathbb{R}$ , si dimostra che 
+		\begin{equation*} 
+			\sum_{k=0}^{\infty} \frac{x^k}{k!}=e^x 
+		\end{equation*}.
+		
+		Se $z \in \mathbb{C}$ , si definisce la serie esponenziale
+		\begin{equation*}
+			e^z= \mathcircled{\sum_{k=0}^{\infty} \frac{z^k}{k!}} ^ {\color{blue}{\text{ Serie esponenziale}}}
+		\end{equation*}
+	\end{example}
+\end{exbar}
+
+
+\begin{theorem} (criterio della radice) \\
+	\label{th:criterio della radice}
+	Sia $\{ a_k\}_{k \ \in \mathbb{N}}$ una successione a termini definitivamente non negativi
+	\begin{enumerate}
+		\item Se $\exists \ r< 1$ tale che $\sqrt[k]{a_k} \leq r$ definitivamente, allora $\sum_{k=0}^{\infty} a_k$ converge.
+		\item Se $\sqrt[k]{a_k} \geq 1$ definitivamente, allora $\sum_{k=0}^{\infty} a_k$ diverge.
+	\end{enumerate}
+\end{theorem}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema} \ref{th:criterio della radice} 
+	
+	\begin{enumerate}
+		\item $\sqrt[k]{a_k}\leq r$ definitivamente $\Rightarrow 0 \leq a_k \leq r^k$ definitivamente e dunque $\sum_{k=0}^{\infty} r^k$ converge (perchè $r \in [0,1[$) $\Rightarrow \sum_{k=0}^{\infty} a_k$ converge per il criterio del confronto.
+		
+		\item $\sqrt[k]{a_k} \geq 1$ defintivamente $\Rightarrow a_k \geq 1$ defintivamente $\Rightarrow \lim_{k \rightarrow + \infty} a_k \geq 1$, se esiste $\Rightarrow \sum_{k=0}^{\infty} a_k$ diverge. $\square$ 
+	\end{enumerate}
+\end{dembar}
+
+
+\begin{theorem} (criterio asintotico della radice) 
+	
+	\label{th:criterio asintotico della radice}
+	$\{a_k\}_{k \in \mathbb{N}}$ successione a termini definitivamente non negativi tale che $\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = l \in [0,+\infty[$.
+	\begin{enumerate}
+		\item Se $l<1$ la serie $ \sum_{k=0}^{\infty} a_k$ converge.
+		\item Se $l> 1$ la serie $\sum_{k=0}^{\infty} a_k$ diverge.
+	\end{enumerate}
+\end{theorem}
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema} \ref{th:criterio asintotico della radice} 
+	\begin{enumerate}
+		\item Per $\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = l < 1$ fisso $r\in \,\,]l,1[\,\, \Rightarrow \sqrt[k]{a_k} =r$  definitivamente $\Rightarrow \sum_{k=0}^{\infty} a_k$ converge per il criterio della radice.
+		\item Per $\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = l > 1 \Rightarrow \sqrt[k]{a_k}\geq 1$ definitivamente  $\Rightarrow \sum_{k=0}^{\infty} a_k$ diverge per il criterio della radice. $\square$
+	\end{enumerate}
+\end{dembar}
+
+\begin{attbar}
+	\textbf{N.B.} Se $\{a_k\}_{k \in \mathbb{N}}$ è a termini definitivamente positivi e  $\lim_{k \rightarrow +\infty} \frac{a_{k+1}}{a_k} = \ell$, allora \\ $\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = \ell$.
+\end{attbar}
+
+
+
 \begin{comment}
 	
-\paragraph{\textcolor{red}{Esempio Importante}}
-\begin{equation*}
-%	\sum \frac{z^k}{k!} , \,\,\,\, z \in \C
-\end{equation*}
-Studiamo la convergenza assoluta 
-%\begin{empheq}{equation*}
-%	\sum \frac{|z|^k}{k!} 
-%\end{empheq}
-%\begin{align*}
-	\lim_{k \rightarrow +\infty} \frac{a_{k+1}}{a_k}&=\lim_{k \rightarrow +\infty} \frac{|z|^{k+1}}{(k+1)!} \frac{k!}{z^k}=\\
-	&\lim_{k \rightarrow +\infty} \frac{|z|}{k+1} = 0 \,\,\,\,\, \forall z \in \C
-%\end{align*}
-la serie converge assolutamente, e quindi semplicemente.\\
-%Se $x \in \R$ , si dimosta che $\sum_{k=0}^{\infty} \frac{x^k}{k!}=e^x$.\\
-%Se $z \in \C$ , si definisce la serie esponenziale
-%\begin{empheq}{equation*}
-%	e^z= \sum_{k=0}^{\infty} \frac{z^k}{k!}.
-%\end{empheq}
 
-\subsubsection{\textcolor{red}{Teorema: Criterio della Radice}}
-\paragraph{\textcolor{red}{Teorema}}
-%Sia $\{ a_k\}_{k\in \N}$ una successione a termini defintivamente non negativi
-\begin{enumerate}
-	\item Se $\exists r< 1$ tale che $\sqrt[k]{a_k} \leq r$ definitivamente, allora $\sum_{k=0}^{\infty}$ converge.
-	\item Se $\sqrt[k]{a_k} \geq 1$ definitivamente, allora $\sum_{k=0}^{\infty} diverge.$
-\end{enumerate}
 
-\paragraph{\textcolor{red}{Dimostrazione}}
-\begin{enumerate}
-	\item $\sqrt[k]{a_k}\leq r$ definitivamente $\Rightarrow 0 \leq a_k \leq r^k$ definitivamente e dunque $\sum_{k=0}^{\infty} r^k$ converge (perchè $r \in [0,1[$) $\Rightarrow \sum_{k=0}^{\infty} a_k$ converge per il criterio del confronto.
-	\item $\sqrt[k]{a_k} \geq 1$ defintivamente $\Rightarrow a_k \geq 1$ defintivamente $\Rightarrow \lim_{k \rightarrow + \infty} a_k \geq 1$, se esiste $\Rightarrow \sum_{k=0}^{\infty} a_k$ diverge. 
-\end{enumerate}
-\begin{flushright}
-%	\large\Lightning
-\end{flushright}
 
-\subsubsection{\textcolor{red}{Teorema: Criterio Asintotico della Radice}}
-\paragraph{\textcolor{red}{Teorema}}
-%$\{a_k\}_{k \in \N}$ successione a termini defintivametne non negativi tale che $\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = l \in [0,+\infty[$.
-\begin{enumerate}
-	\item Se $l<1$ la serie $ \sum_{k=0}^{\infty} a_k$ converge.
-	\item Se $l> 1$ la serie $\sum_{k=0}^{\infty} a_k$ diverge.
-\end{enumerate}
-
-\paragraph{\textcolor{red}{Dimostrazione}}
-\begin{enumerate}
-	\item Per $\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = l < 1$ fisso $r\in \,\,]l,1[\,\, \Rightarrow \sqrt[k]{a_k} =r$  definitivamente $\Rightarrow \sum_{k=0}^{\infty} a_k$ converge per il criterio della radice.
-	\item Per $\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = l > 1 \Rightarrow \sqrt[k]{a_k}\geq 1$ definitivamente  $\Rightarrow \sum_{k=0}^{\infty} a_k$ diverge per il criterio della radice.
-\end{enumerate}
-\begin{flushright}
-	%\large\Lightning
-\end{flushright}
-
-\paragraph{\textcolor{red}{Nota Bene}}
-Se $\{a_k\}_{k \in N}$ è a termini definitivamente positivi e  $\lim_{k \rightarrow +\infty} \frac{a_{k+1}}{a_k}=1$, allora $\lim_{k \rightarrow +\infty} \sqrt[k]{a_k}=l$.
 
 
 \end{comment}
