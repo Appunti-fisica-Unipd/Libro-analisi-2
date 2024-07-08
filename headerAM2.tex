@@ -1,0 +1,70 @@
+\newcommand{\mail}[3][blue]{\href{#2}{\color{#1}{#3}}}%
+
+\renewenvironment{leftbar}[2][\hsize]
+{
+	\def\FrameCommand
+	{
+		{\color{#2}\vrule width 2pt}
+		\hspace{0pt}
+	}
+	\MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}
+}
+{\endMakeFramed}
+
+\newcommand\vertarrowbox[3][3ex]{%
+	\begin{array}[t]{@{}c@{}} #2 \\
+		\left\downarrow\vcenter{\hrule height #1}\right.\kern-\nulldelimiterspace\\
+		\makebox[0pt]{\scriptsize#3}
+	\end{array}%
+}
+
+
+\newenvironment{exbar}
+{\begin{leftbar}{gray}}
+{\end{leftbar}}
+
+\newenvironment{dembar}
+{\begin{leftbar}{black}}
+	{\end{leftbar}}
+	
+\newenvironment{attbar}
+{\begin{leftbar}{red}}
+	{\end{leftbar}}
+
+
+\everymath{\displaystyle}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definizione}[section]
+\newtheorem{proposition}{Proposizione}[section]
+\newtheorem{example}{Esempio}[section]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corollario}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\numberwithin{equation}{subsection}
+
+\newcommand\distr
+{\underset{\mbox{\tiny{triangolare}}}{\stackrel{\mbox{\tiny{disugualianza}}}{\leq}}}
+
+\newcommand{\myarrow}[1][-45]{%
+	\mathrel{%
+		\text{$
+			\begin{tikzpicture}[baseline = -0.5ex]
+				\node[inner sep=0pt,outer sep=0pt,rotate = #1] (a) at (0,0)  {$\rightarrow{}$};
+			\end{tikzpicture}
+			$}%
+	}%
+}%
+
+\makeatletter
+\newcommand\mathcircled[1]{%
+	\mathpalette\@mathcircled{#1}%
+}
+\newcommand\@mathcircled[2]{%
+	\tikz[baseline=(math.base)] \node[draw,ellipse,inner sep=1pt] (math) {$\m@th#1#2$};%
+}
+\makeatother
+
