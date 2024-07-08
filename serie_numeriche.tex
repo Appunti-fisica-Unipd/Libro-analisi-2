@@ -841,6 +841,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{enumerate}
 \end{theorem}
 
+
 \begin{dembar}
 	\textbf{Dimostrazione} del \textbf{Teorema} \ref{th:criterio asintotico della radice} 
 	\begin{enumerate}
@@ -849,15 +850,265 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{enumerate}
 \end{dembar}
 
+
 \begin{attbar}
 	\textbf{N.B.} Se $\{a_k\}_{k \in \mathbb{N}}$ è a termini definitivamente positivi e  $\lim_{k \rightarrow +\infty} \frac{a_{k+1}}{a_k} = \ell$, allora \\ $\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = \ell$.
 \end{attbar}
 
 
+\begin{exbar}
+	\begin{example}
+		Studiamo il carattere della serie
+		\begin{equation*}
+			\sum_{n=1}^{\infty} \mathcircled{(n+1)^2 \ e^{-(n+1)}}^ {\color{blue}{\myarrow[190] a_n}}
+		\end{equation*}
+		\begin{align*}
+			\inflim \sqrt[n]{a_n} 
+			&= \inflim \sqrt[n]{(n+1)^2 e^{-(n+1)}} 
+			\\
+			&= \inflim \vertarrowbox{\mathcircled{\sqrt[n]{(n+1)^2}}} {\color{blue}{$(n+1)^{\frac{2}{n}}$}} \ 
+			\vertarrowbox{\mathcircled{e^{-\frac{n+1}{n}} }}{\color{blue}{$\frac{1}{e}$}}
+		\end{align*}
+		
+		Abbiamo che $(n+1)^{\frac{2}{n}} = e^{\frac{2}{n}} \ \ln(n+1) \rightarrow 1$, perciò
+		\begin{equation*}
+			\sum_{n=1}^{\infty} = \frac{1}{e} < 1
+		\end{equation*} 
+		
+		$\Rightarrow$ la serie converge per il criterio asintotico della radice.
+	\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+	\begin{example} \textbf{importante}
+		
+		Studiamo il carattere della serie
+	\end{example}
+\end{exbar}
+
 
 \begin{comment}
 	
+\paragraph{\textcolor{red}{Esempio Importante}}
 
+\begin{empheq}{equation*}
+	\sum_{k=1}^{\infty} k^\alpha r^k, \,\,\,\,\, r \in \R, \alpha \in \R.
+\end{empheq}
+Studiamo la convergenza assoluta
+\begin{empheq}{align*}
+	\sum_{k=1}^{\infty} |k^\alpha r^k| &= \sum_{k=1}^{\infty} k^\alpha |r|^k\\
+	\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} &= \lim_{k \rightarrow +\infty} |r| k^{\frac{\alpha}{k}}= |r|
+\end{empheq}
+Se $|r|< 1$ la serie converge assolutamente e quindi semplicemente.\\
+Se $|r|> 1$, il termine generale della serie non è infinitesimo
+\begin{empheq}{equation*}
+	\lim_{k \rightarrow +\infty} k^\alpha |r|^k = +\infty
+\end{empheq}
+e quindi la serie non converge.\\
+Prendiamo dunque $|r|=1$
+\begin{itemize}
+	\item $r=1 \Rightarrow \sum_{k=1}^{\infty} k^\alpha=\sum_{k=1}^{\infty} \frac{1}{k^{-\alpha}}$ che converge $\Leftrightarrow -\alpha <1 \Leftrightarrow \alpha < -1$
+	\item $r=-1 \Rightarrow \sum_{k=1}^{\infty} |k^\alpha(-1)^k|=\sum_{k=1}^{\infty} k^\alpha$ converge $\Leftrightarrow \alpha<-1$.
+\end{itemize}
+Convergenza semplice:
+\begin{empheq}{equation*}
+	\sum_{k=1}^{\infty} \frac{(-1)^k}{k^{-\alpha}}\,\,\,\,\, \text{converge} \Longleftrightarrow -\alpha > 0  \Leftrightarrow \alpha <0
+\end{empheq}
+Se $\alpha \geq 0$, $ \lim_{k \rightarrow +\infty} |k^\alpha(-1)^k|\neq 0 \Rightarrow $ la serie converge.\\
+$\sum_{k=1}^{\infty} k^\alpha r^k$ converge assolutamente $\Leftrightarrow |r|<1$ o $r=1$ e $\alpha<-1$ o $r=-1$ e $ \alpha <-1$.\\
+Converge semplicemente, ma non assolutamente $ \Leftrightarrow r=-1$ e $ -1<\alpha<0$.
+
+\paragraph{\textcolor{red}{Esempio: Serie Logaritmica}}
+\begin{empheq}{equation*}
+	\sum_{k=1}^{\infty} (-1)^{k+1} \frac{z^k}{k}, \,\,\,\,\,\, z \in \C
+\end{empheq}
+Studiamo la convergenza assoluta
+\begin{equation*}
+	\sum_{k=1}^{\infty} |(-1)^{k+1} \frac{z^k}{k}|= \sum_{k=1}^{\infty} \frac{|z|^k}{k}
+\end{equation*}
+\begin{equation*}
+	\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = \lim_{k \rightarrow +\infty} \frac{|z|}{\sqrt[k]{k}}= |z|
+\end{equation*}
+Se $|z|< 1$, la serie converge assolutamente, e quindi semplicemente.\\
+Se $ |z|> 1$, il termine generale della serie non è infinitesimo, e quindi la serie non converge.
+\begin{empheq}{align*}
+	\textcolor{orange}{
+		\sum_{k=1}^{\infty} (-1)^{k+1} \frac{z^k}{k}} & \textcolor{orange}{= - \sum_{k=1}^{\infty} \frac{(-1)^k z^k }{k}= - \sum_{k=1}^{\infty} \frac{(-z)^k}{k}=}\\
+	& \textcolor{orange}{ = - \sum_{k=1}^{\infty} \frac{r^k}{k} = - \sum_{k=1}^{\infty} k^\alpha r^k \,\,\,\,\, \text{con} \,\,\,\, \alpha =-1
+	}
+\end{empheq}
+Per $z=x \in \R$ se $ |x|<1$ la serie converge assolutamente mentre se $|x|>1$ allora la serie non converge.
+Se $ |x|=1$  allora 
+\begin{itemize}
+	\item $x=-1 \Rightarrow \sum_{k=1}^{\infty} (-1)^{k+1} \frac{(-1)^k}{k} = -\sum_{k=1}^{\infty} \frac{1}{k}$ che diverge;
+	\item $x=1 \Rightarrow \sum_{k=1}^{\infty} (-1)^{k+1} \frac{1}{k} = -\sum_{k=1}^{\infty} \frac{(-1)^k}{k}$ che converge.
+\end{itemize}
+Se $-1<x\leq 1$, allora 
+\begin{empheq}{equation*}
+	\sum_{k=1}^{\infty} (-1 )^{k+1} \frac{x^e}{k}= ln(1+x)
+\end{empheq}
+
+\subsection{\textcolor{red}{Serie a Termini di Segno Qualsiasi}}
+
+\subsubsection{\textcolor{red}{Teorema: Criterio di Dirichlet}}
+\paragraph{\textcolor{red}{Teorema}}
+Sia $\{a_k\}_{k \in \N}$ successione a termini non negativi, decrescente, infinitesima \textcolor{orange}{(basta definitivamente: $\lim_{k \rightarrow +\infty} a_k=0$ e $0\leq a_{k+1} \leq a_k$ definitivamente per $k \rightarrow +\infty$)} e sia $\{b_k\}_{k\in \N}$ un'altra successione tale che $\exists C>0$ per cui vale
+\begin{empheq}{equation*}
+	\lvert \sum_{k=0}^{n} b_k \rvert \leq C \,\,\,\,\, \forall n \in \N
+\end{empheq}
+\textcolor{orange}{la successione delle ridotte della serie $\sum_{k=0}^{\infty} b_k$ è limitata}.\\
+Allora la srie $\sum_{k=0}^{\infty} a_kb_k$ converge.
+
+
+\paragraph{\textcolor{red}{Esempio}}
+\begin{empheq}{equation*}
+	\sum_{k=1}^{\infty} \frac{e^{ik\theta}}{k}, \,\,\,\,\, \theta \in [0, 2\pi[
+\end{empheq}
+Per $\theta =0$ avremo $\sum_{k=1}^{\infty} \frac{1}{k}$ che diverge.\\
+Per $\theta \in ]0,2\pi[$ avremo $a_k=\frac{1}{k}$ (che è successione positiva,decrescente e infinitesima). Per $b_k= e^{ik\theta}$ avremo dunque
+\begin{empheq}{equation*}
+	\sum_{k=1}^{n} b_k = \sum_{k=1}^{n} e^{ek\theta} = \frac{1-e^{i(n+1)\theta}}{1-e^{i\theta}}-1
+\end{empheq}
+\textcolor{orange}{(Ove $\sum_{k=1}^{n} e^{ek\theta}$ è la ridotta n-esima di una serie geometrica di ragione $e^{i\theta}$ a cui manca il termine con $k=0$)}
+\begin{empheq}{align*}
+	|\sum_{k=1}^{\infty} b_k| = |\frac{e^{i\theta}-e^{i(n+1)\theta}}{1-e^{i\theta}}| \leq \frac{2}{|1-e^{i\theta}|}=C \Rightarrow \sum_{k=1}^{\infty} \frac{e^{ik\theta}}{k}
+\end{empheq}
+converge $\forall \theta \in ]0,2\pi[$ per il criterio di Dirichlet
+\begin{empheq}{equation*}
+	\sum_{k=1}^{\infty} \frac{e^{ik\theta}}{k}=\sum_{k=1}^{\infty} [\frac{\cos{k\theta}}{k}+i\frac{\sin{k\theta}}{k}]
+\end{empheq}
+Se $\theta \in ]0,2\pi[$ convergono entrambe le serie $ \sum_{k=1}^{\infty} \frac{cos(k\theta)}{k}$ e $ \sum_{k=1}^{\infty} \frac{sin(k\theta)}{k}$ perchè 
+$\frac{cos(k\theta)}{k}=Re(\frac{e^{ik\theta}}{k})$ e $\frac{sin(k\theta)}{k}=Im(\frac{e^{ik\theta}}{k})$ 
+
+\subsubsection{\textcolor{red}{Teorema: Criterio di Leibniz}}
+\paragraph{\textcolor{red}{Teorema}}
+Sia $\{a_k\}_{k\in \N}$ successione a termini non negativi, decrescente, infinitesima. Allora
+\begin{empheq}{equation*}
+	\sum_{k=0}^{\infty} (-1)^k a_k 
+\end{empheq}
+converge e, detta $S$ la sua somma, si ha
+\begin{empheq}{equation*}
+	|\sum_{k=0}^{\infty} (-1)^k a_k - S| \leq a_{k+1}
+\end{empheq}
+\begin{empheq}{equation*}
+	\textcolor{orange}{S=\lim_{k \rightarrow +\infty} \sum_{k=0}^{\infty} (-1)^k a_k}
+\end{empheq}
+
+\paragraph{\textcolor{red}{Esempio}}
+\begin{empheq}{equation*}
+	\sin{1}=\sum_{k=0}^{\infty} (-1)^k \frac{1^{2k+1}}{(2k+1)!}=\sum_{k=0}^{\infty} (-1)^k \frac{1}{(2k+1)!}
+\end{empheq}
+La successione $\{\frac{1}{(2k+1)!}\}$ è positiva, decrescente, infinitesima. Posso dunque applicare il criterio di Leibniz.
+\begin{empheq}{equation*}
+	|\sum_{k=0}^{\infty} \frac{(-1)^k}{(2k+1)!} - \sin{1}| \leq \frac{1}{(2k+1)!} |_{k=n+1}= \frac{1}{(2n+3)!}
+\end{empheq}
+Se voglio una stima di $\sin{1}$ con $10$ cifre decimali esatte devo scegliere $n$ in modo che 
+\begin{empheq}{equation*}
+	\frac{1}{(2n+3)!}<10^{-10} \Rightarrow (2n+3)! > 10^{10}
+\end{empheq}
+Prendo n=6, allora
+\begin{equation*}
+	\sum_{k=0}^{6} \frac{(-1)^k}{(2k+1)!}= 1-\frac{1}{3!} +\frac{1}{5!}-\frac{1}{7!} +\frac{1}{9!}-\frac{1}{11!} +\frac{1}{13!}
+\end{equation*}
+dà una stima di $\sin{1}$ con $10$ cifre decimali esatte.\\
+\textcolor{orange}{(Dimostrare il criterio di convergenza utilizzando il criterio di Dirichlet con $b_k=(-1)^k$)}
+
+\paragraph{\textcolor{red}{Dimostrazione del Criterio di Leibniz}}
+\begin{enumerate}
+	\item $\{S_{2n}\}_{n\in\N}$, successione delle ridotte di indice pari, è decrescente, ovvero $S_{2n+2}\leq S_{2n} \forall n$ dunque, \textcolor{orange}{visto che la successione $\{a_k\}_{k\in\N}$ è decrescente}
+	\begin{empheq}{align*}
+		S_{2n+2} &= \sum_{k=0}^{2n+2} (-1)^k a_k= \sum_{k=0}^{2n} (-1)^k a_k + (-1)^{2n+2} a_{2n+1} + (-1)^{2n+3}a_{2n+2}=\\
+		&=\sum_{k=0}^{2n} (-1)^k a_k - a_{2n+1}+a_{2n+2}\leq S_{2n}.
+	\end{empheq}
+	\item $\{S_{2n+1}\}_{n \in \N}$, successione delle ridotte di indice dispari, è crescente, ovvero $S_{2n+3} \geq S_{2n+1} \forall n \in \N$ dunque, \textcolor{orange}{visto che la successione $\{a_k\}_{k\in\N}$ è decrescente}
+	\begin{empheq}{align*}
+		S_{2n+3} &= \sum_{k=0}^{2n+3} (-1)^k a_k = \sum_{k=0}^{2n+1} (-1)^k a_k + (-1)^{2n+2} a_{2n+2} +  (-1)^{2n+3} a_{2n+3}=\\
+		&= S_{2n+1} + a_{2n+2} - a_{2n+3} \geq S_{2n+1}.
+	\end{empheq}
+	\item 
+	\begin{empheq}{equation*}
+		S_{2n} = S_{2n-1} + (-1)^{2n} a_{2n}= S_{2n-1}+a_{2n} \geq S_{2n-1} \geq S_1
+	\end{empheq}
+	dunque $\{S_{2n}\}$ è una successione decrescente inferiormente limitata $\Rightarrow $ ha limite finito.
+	\begin{empheq}{equation*}
+		S_{2n+1}=S_{2n}+(-1)^{2n+1} a_{2n+1}=S_{2n} - a_{2n+1} \leq S_{2n} \leq S_0
+	\end{empheq}
+	dunque $\{S_{2n+1}\}_{n \in \N}$ è crescente e superiormente limitata $\Rightarrow $ ha limite finito.
+	\item
+	$\lim_{n \rightarrow +\infty} S_{2n}=S^0 \in \R, \,\,\, \lim_{n \rightarrow +\infty} S_{2n+1}=S^1 \in \R \Rightarrow S^0=S^1=S$, somma dellla serie
+	\begin{empheq}{align*}
+		S_{2n+1}-S_{2n}|&=|a_{2n+1}|\rightarrow 0\\
+		|S^0-S^1|\leq|S^0-S_{2n}|+|&S_{2n}-S_{2n+1}|+|S_{2n+1}-S^1|\\
+		S^0=S^1=S \in \R &\Longrightarrow \,\, \text{la serie converge.}
+	\end{empheq}
+	\item $S_{2n+1}\leq S \leq S_{2n+2} \forall n$ perchè la prima è crescente e la seconda è decrescente.
+	\begin{empheq}{align*}
+		0\leq S-S_{2n+1} \leq S_{2n+2} - S_{2n+1} &= \sum_{k=0}^{2n+2} (-1)^k a_k - \sum_{k=0}^{2n+1}( -1)^k a_k =a_{2n+2}\\
+		0 \leq S_{2n}-S \leq S_{2n}-S_{2n+1}&=a_{2n+1} \Rightarrow |S_n -S| \leq a_{n+1}.
+	\end{empheq}
+\end{enumerate}
+\begin{flushright}
+	\large\Lightning
+\end{flushright}
+
+\paragraph{\textcolor{red}{Esempio}}
+\begin{equation*}
+	\sum_{k=1}^{\infty} \frac{(-1)^k}{k^\alpha},\,\,\,\,\,\, 0 < \alpha \leq 1
+\end{equation*}
+non converge assolutamente, ma $\{\frac{1}{k^\alpha}\}_{k\in \N}$ è positiva, decrescente, infinitesima, e quindi la serie converge semplicemente per il criterio di Leibniz.
+
+\paragraph{\textcolor{red}{Esempio}}
+Studiare il carattere della serie
+\begin{empheq}{equation*}
+	\sum_{n=1}^{\infty} \frac{(-1)^n}{n-lnn}
+\end{empheq}
+Studiamo la convergenza assoluta
+\begin{empheq}{equation*}
+	\sum_{n=1}^{\infty} |\frac{(-1)^n}{n-lnn}|=\sum_{n=1}^{\infty} \frac{1}{n-lnn}
+\end{empheq}
+Siccome $\frac{1}{n-lnn} \geq \frac{1}{n} \Rightarrow$ la serie diverge.\\
+Studiamo la convergenza semplice
+\begin{empheq}{equation*}
+	\sum_{n=1}^{\infty} \frac{(-1)^n}{n-lnn}, \,\,\,\,\,\, a_n = \frac{1}{n-lnn}
+\end{empheq}
+e speriamo che $\{a_n\}_{n\in\N}$ sia positiva \textcolor{orange}{(Vero!)}, decrescente \textcolor{orange}{(?)}, infinitesima \textcolor{orange}{(Vero!)}. Ci chiediamo allora se $a_{n+1}\leq a_{n}$ ovvero se $\frac{1}{n+1-ln(n+1)} \leq \frac{1}{n-lnn} $ (?) Avremo $ ln(\frac{n+1}{n})\leq1$ e $ln(1+\frac{1}{n})\leq 1$, dunque $1-\frac{1}{n} \leq 2 \leq e$ cioè $ln(1+\frac{1}{n})<lne=1$ $\Rightarrow$ la serie converge per il criterio di Leibniz.
+
+\paragraph{\textcolor{red}{Esempio}}
+Studiare il carattere della serie 
+\begin{empheq}{equation*}
+	\sum_{n=1}^{\infty} (-1)^n \frac{n+1}{\sqrt{n^4+2}-lnn}
+\end{empheq}
+Studiamo la convergenza assoluta
+\begin{empheq}{equation*}
+	\sum_{n=1}^{\infty}| (-1)^n \frac{n+1}{\sqrt{n^4+2}-lnn}|= \sum_{n=1}^{\infty} \frac{n+1}{\sqrt{n^4+2}-lnn}
+\end{empheq}
+\begin{empheq}{equation*}
+	\frac{n+1}{\sqrt{n^4+2}-lnn} \sim  \frac{n}{n^2}=\frac{1}{n}
+\end{empheq}
+e dunque la serie diverge assolutamente per il criterio asintotico del confronto.\\
+Studiamo ora la convergenza semplice
+\begin{empheq}{equation*}
+	\sum_{n=1}^{\infty} (-1)^n \frac{n+1}{\sqrt{n^4+2}-lnn}
+\end{empheq}
+La successione $\{\frac{n+1}{\sqrt{n^4+2}-lnn}\}_{n \geq 1}$ è positiva \textcolor{orange}{(Vero!)}, decrescente \textcolor{orange}{(Almeno definitivamente)}, infinitesima \textcolor{orange}{(Vero!)}?\\
+Devo far vedere che, almeno definitivamente, 
+\begin{empheq}{equation*}
+	\frac{n+2}{\sqrt{(n+1)^4+2}-ln(n+1)} \leq \frac{n+1}{\sqrt{n^4+2}-lnn}
+\end{empheq}
+\begin{empheq}{equation*}
+	(n+2)(\sqrt{n^4+2} -\ln n) \leq (n+1)(\sqrt{(n+1)^4+2} -\ln(n+1))
+\end{empheq}
+\begin{empheq}{equation*}
+	f(x)=\frac{x+1}{\sqrt{x^4 +2}-\ln x} ,\,\,\,\,\,\,\, x > 0
+\end{empheq}
+Se dimostro che $f'(x)<0$ definitivamente per $x \rightarrow +\infty f$ è decrescente in un introno di $+\infty \Rightarrow f(n+1) \leq f(n)$ defintivamente. Avremo dunque
+\begin{empheq}{equation*}
+	f(n)=\frac{n+1}{\sqrt{n^4+2}-lnn}
+\end{empheq}
+\begin{empheq}{equation*}
+	f(n+1)=\frac{n+2}{\sqrt{(n+1)^4+2}-ln(n+1)}.
+\end{empheq}
 
 
 
