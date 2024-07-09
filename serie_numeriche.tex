@@ -108,7 +108,7 @@ Della serie è interessante studiare il carattere, cioè se convergono, divergon
 \end{dembar}
 
 
-\subsection{Paradosso di Zenone} 
+\subsubsection{Paradosso di Zenone} 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{zenone}
@@ -137,7 +137,7 @@ Quanto tempo impiega Achille a raggiungere la tartaruga?
 	&\zenone t_0 \frac{1}{1-\frac{v_T}{v_A}} = \frac{\frac{L_0}{v_A}}{1-\frac{v_T}{v_A}}
 \end{align*}
 
-\subsection{Serie geometrica} di ragione r, con $r\in\mathbb{C}$
+\subsubsection{Serie geometrica} di ragione r, con $r\in\mathbb{C}$
 
 \begin{equation*}
 	\sum_{k=0}^\infty r^k = r^0 + r^1 + r^2 + \ldots
@@ -195,7 +195,7 @@ Quanto tempo impiega Achille a raggiungere la tartaruga?
 	\end{example}
 \end{exbar}
 
-\subsection{Serie telescopiche}
+\subsubsection{Serie telescopiche}
 \begin{equation*}
 	\sum_{k=0}^\infty [f(k+1) - f(k)] \qquad f:\mathbb{N}\rightarrow\mathbb{C}
 \end{equation*}
@@ -229,7 +229,7 @@ Studiamo il carattere. Procuriamoci, se possibile, l'espressione di una ridotta 
 	\end{example}
 \end{exbar}
 
-\subsection{Formula di Eulero} 
+\subsubsection{Formula di Eulero} 
 
 \begin{gather*}
 	e^{i\theta} = \cos(\theta) + i \sin(\theta) 
@@ -435,7 +435,8 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	$\sum_{k=1}^\infty \frac{(-1)^k}{k}$ converge, ma $\sum_{k=1}^\infty \bigg| \frac{(-1)^k}{k} \bigg| = \sum_{k=1}^\infty \frac{1}{k}$ è divergente.
 \end{exbar}
 
-\subsection{Criteri di convergenza}
+\subsection{Criteri di convergenza di serie a termini non negativi}
+\subsubsection{Criterio del confronto}
 \begin{theorem} (criterio del confronto) 
 	\label{th:criterio del confronto}
 	
@@ -725,7 +726,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{example}
 \end{exbar}
 
-
+\subsubsection{Criterio del rapporto}
 \begin{theorem} (criterio del rapporto) \label{th:criterio del rapporto}
 	
 	$\{a_k\}_{k\in\mathbb{N}}$ successione a termini (definitivamente) positivi.
@@ -856,7 +857,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{example}
 \end{exbar}
 
-
+\subsubsection{Criterio della radice}
 \begin{theorem} (criterio della radice) \\
 	\label{th:criterio della radice}
 	Sia $\{ a_k\}_{k \ \in \mathbb{N}}$ una successione a termini definitivamente non negativi
@@ -932,7 +933,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		
 		Studiamo il carattere della serie
 		\begin{equation*}
-			\sum_{k=1}^{\infty} k^\alpha r^k \qquad r \ \in \mathbb{R}, \ \alpha \ \in \mathbb{R}.
+			\sum_{k=1}^{\infty} k^\alpha \ r^k \qquad r \ \in \mathbb{R}, \ \alpha \ \in \mathbb{R}.
 		\end{equation*}
 		
 		Studiamo la convergenza assoluta
@@ -948,108 +949,153 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		Se $|r|> 1$, il termine generale della serie non è infinitesimo
 		\begin{equation*}
 			\lim_{k \rightarrow +\infty} k^\alpha \ |r|^k = +\infty
-		\end{equation*}
+		\end{equation*} 
 		
 		e quindi la serie non converge.
+		
+		Prendiamo dunque $|r|=1$
+		\begin{itemize}
+			\item Se $r=1$:
+			\begin{equation*}
+				\sum_{k=1}^{\infty} k^\alpha=\sum_{k=1}^{\infty} \frac{1}{k^{-\alpha}}
+			\end{equation*}
+			che converge $\iff -\alpha <1 \iff \alpha < -1$
+			
+			\item Se $r=-1$:
+			\begin{equation*}
+				\sum_{k=1}^{\infty} \left| k^\alpha(-1)^k \right| =\sum_{k=1}^{\infty} k^\alpha
+			\end{equation*} 
+			che converge assolutamente $\iff \alpha<-1$.
+
+			Studiamo la convergenza semplice:
+			\begin{equation*}
+				\sum_{k=1}^{\infty} \frac{(-1)^k}{k^{-\alpha}} \ \text{converge} \vertarrowbox{\iff}{lo vedremo dopo} -\alpha > 0  \iff \alpha <0
+			\end{equation*}
+			Se $\alpha \geq 0$, $ \lim_{k \rightarrow +\infty} \left| k^\alpha(-1)^k \right| \neq 0 \Rightarrow $ la serie non converge. 
+		\end{itemize}
 	\end{example}
 \end{exbar}
 
 
+\begin{attbar}
+	$\sum_{k=1}^{\infty} k^\alpha \ r^k$ converge assolutamente $\iff |r|<1$ o $r=1$ e $\alpha<-1$ o $r=-1$ e $ \alpha <-1$.
+	
+	Converge semplicemente, ma non assolutamente $\iff r=-1$ e $ -1<\alpha<0$.
+\end{attbar}
+
+
+\begin{exbar}
+	\begin{example} (Serie Logaritmica)
+		\begin{equation*}
+			\sum_{k=1}^{\infty} (-1)^{k+1} \ \frac{z^k}{k} \qquad z \ \in \mathbb{C}
+		\end{equation*}
+		Studiamo la convergenza assoluta
+		\begin{gather*}
+			\sum_{k=1}^{\infty} \left| (-1)^{k+1} \ \frac{z^k}{k} \right| = \sum_{k=1}^{\infty} \mathcircled{\frac{|z|^k}{k}}^{\color{blue}{\myarrow[190] a_k}}
+			\\
+			\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = \lim_{k \rightarrow +\infty} \frac{|z|}{\sqrt[k]{k}}= |z|
+		\end{gather*}
+		
+		Se $|z|< 1$, la serie converge assolutamente e quindi semplicemente.
+		
+		Se $ |z|> 1$, il termine generale della serie non è infinitesimo, e quindi la serie non converge.
+		
+		Possiamo anche ricondurci al caso precedente:
+		\begin{align*}
+			\sum_{k=1}^{\infty} (-1)^{k+1} \ \frac{z^k}{k} 
+			& = - \sum_{k=1}^{\infty} \frac{(-1)^k z^k }{k}= - \sum_{k=1}^{\infty} \frac{(-z)^k}{k}=
+			\\
+			& = - \sum_{k=1}^{\infty} \frac{r^k}{k} = - \sum_{k=1}^{\infty} k^\alpha r^k & \text{con} \ \alpha =-1
+		\end{align*}
+		
+		Per $z=x \in \mathbb{R}$ se $ |x|<1$ la serie converge assolutamente mentre se $|x|>1$ allora la serie non converge.
+		Se $ |x|=1$ allora 
+		\begin{itemize}
+			\item $x=-1$: 
+			\begin{equation*}
+				\sum_{k=1}^{\infty} (-1)^{k+1} \ \frac{(-1)^k}{k} = -\sum_{k=1}^{\infty} \frac{1}{k}
+			\end{equation*}  
+			che diverge;
+			
+			\item $x=1$:
+			\begin{equation*}
+				\Rightarrow \sum_{k=1}^{\infty} (-1)^{k+1} \frac{1}{k} = -\sum_{k=1}^{\infty} \frac{(-1)^k}{k}
+			\end{equation*} che converge.
+		\end{itemize}
+		
+		Se $-1<x\leq 1$, allora 
+		\begin{equation*}
+			\sum_{k=1}^{\infty} (-1 )^{k+1} \ \frac{x^e}{k}= \ln(1+x)
+		\end{equation*}
+	\end{example}
+\end{exbar}
+
+\subsection{Criteri di convergenza di serie a termini di segno qualsiasi}
+\subsubsection{Criterio di Dirichelet}
+\begin{theorem} (criterio di Dirichelet)
+	
+	Sia $\{a_k\}_{k \in \mathbb{N}}$ successione a termini non negativi, decrescente, infinitesima (basta definitivamente: $\lim_{k \rightarrow +\infty} a_k=0$ e $0\leq a_{k+1} \leq a_k$ definitivamente per $k \rightarrow +\infty$) e sia $\{b_k\}_{k \in \mathbb{N}} \subseteq \mathbb{C}$ un'altra successione tale che $\exists \ C>0$ per cui vale
+	\begin{equation*}
+		\left| \sum_{k=0}^{n} b_k \right| \leq C \qquad \forall n \in \mathbb{N}
+	\end{equation*}
+	(la successione delle ridotte della serie $\sum_{k=0}^{\infty} b_k$ è limitata)
+	
+	Allora la serie $\sum_{k=0}^{\infty} a_k \ b_k$ converge.
+\end{theorem}
+
+
+\begin{exbar}
+	\begin{example}
+		\begin{equation*}
+			\sum_{k=1}^{\infty} \frac{e^{ik\theta}}{k}, \qquad \theta \in [0, 2\pi[
+		\end{equation*}
+		
+		Per $\theta = 0$ avremo $\sum_{k=1}^{\infty} \frac{1}{k}$ che diverge.
+		
+		Per $\theta \in \ ]0,2\pi[$ avremo $a_k=\frac{1}{k}$ (che è successione positiva, decrescente e infinitesima) e $b_k= e^{ik\theta}$, dunque:
+		\begin{equation*}
+			\sum_{k=1}^{n} b_k = \sum_{k=1}^{n} e^{ik\theta} = \frac{1-e^{i(n+1)\theta}}{1-e^{i\theta}}-1 
+		\end{equation*} 
+
+		$\sum_{k=1}^{n} e^{ek\theta}$ è la ridotta n-esima di una serie geometrica di ragione $e^{i\theta}$ a cui manca il termine con $k=0$
+		\begin{align*}
+			\left| \sum_{k=1}^{\infty} b_k \right| 
+			&= \left| \frac{e^{i\theta} - e^{i(n+1)\theta}} {1 - e^{i\theta}} \right| 
+			\\
+			&\distr \frac{\mathcircled{|e^{i \theta}|}^{\ \textcolor{blue}{=1}} + \mathcircled{|e^{i (n+1) \theta}|}^{\ \textcolor{blue}{=1}}} {|1 - e^{i \theta}|}  \leq \frac{2} {|1 - e^{i \theta}|} = 0 \Rightarrow 
+		\end{align*}
+		
+		$\sum_{k=1}^{\infty} \frac{e^{ik\theta}}{k}$ converge $\forall \ \theta \in \ ]0,2\pi[$ per il criterio di Dirichlet
+		\begin{equation*}
+			\sum_{k=1}^{\infty} \frac{e^{ik\theta}} {k} = \sum_{k=1}^{\infty} \left[ \frac{\cos{k\theta}} {k} + i \ \frac{\sin{k\theta}} {k} \right]
+		\end{equation*}
+		
+		Se $\theta \in \ ]0,2\pi[$ convergono entrambe le serie  $\sum_{k=1}^{\infty} \frac{cos(k\theta)}{k}$ e $ \sum_{k=1}^{\infty} \frac{sin(k\theta)}{k}$ perché
+		\begin{gather*}
+			\frac{cos(k\theta)}{k}=\Re \left( \frac{e^{ik\theta}} {k} \right) \\ \frac{sin(k\theta)}{k}=\Im \left( \frac{e^{ik\theta}} {k} \right)
+		\end{gather*}	
+	\end{example}
+\end{exbar}
+
+
+\subsubsection{Criterio di Leibinitz}
+\begin{theorem} (criterio di Leibinitz)
+	
+	Sia $\{a_k\}_{k\in \mathbb{N}}$ successione a termini non negativi, decrescente, infinitesima. Allora
+	\begin{equation*}
+		\sum_{k=0}^{\infty} (-1)^k \ a_k 
+	\end{equation*}
+	converge e, detta $S$ la sua somma, si ha
+	\begin{align*}
+		\left| \sum_{k=0}^{\infty} (-1)^k \ a_k - S \right| \leq a_{k+1} & \qquad \text{ con } S = \lim_{n \rightarrow +\infty} \sum_{k=0}^{n} (-1)^k \ a_k
+	\end{align*}
+\end{theorem}
+
+
+
+
 \begin{comment}
 	
-
-
-
-
-
-Prendiamo dunque $|r|=1$
-\begin{itemize}
-	\item $r=1 \Rightarrow \sum_{k=1}^{\infty} k^\alpha=\sum_{k=1}^{\infty} \frac{1}{k^{-\alpha}}$ che converge $\Leftrightarrow -\alpha <1 \Leftrightarrow \alpha < -1$
-	\item $r=-1 \Rightarrow \sum_{k=1}^{\infty} |k^\alpha(-1)^k|=\sum_{k=1}^{\infty} k^\alpha$ converge $\Leftrightarrow \alpha<-1$.
-\end{itemize}
-Convergenza semplice:
-\begin{empheq}{equation*}
-	\sum_{k=1}^{\infty} \frac{(-1)^k}{k^{-\alpha}}\,\,\,\,\, \text{converge} \Longleftrightarrow -\alpha > 0  \Leftrightarrow \alpha <0
-\end{empheq}
-Se $\alpha \geq 0$, $ \lim_{k \rightarrow +\infty} |k^\alpha(-1)^k|\neq 0 \Rightarrow $ la serie converge.\\
-$\sum_{k=1}^{\infty} k^\alpha r^k$ converge assolutamente $\Leftrightarrow |r|<1$ o $r=1$ e $\alpha<-1$ o $r=-1$ e $ \alpha <-1$.\\
-Converge semplicemente, ma non assolutamente $ \Leftrightarrow r=-1$ e $ -1<\alpha<0$.
-
-\paragraph{\textcolor{red}{Esempio: Serie Logaritmica}}
-\begin{empheq}{equation*}
-	\sum_{k=1}^{\infty} (-1)^{k+1} \frac{z^k}{k}, \,\,\,\,\,\, z \in \C
-\end{empheq}
-Studiamo la convergenza assoluta
-\begin{equation*}
-	\sum_{k=1}^{\infty} |(-1)^{k+1} \frac{z^k}{k}|= \sum_{k=1}^{\infty} \frac{|z|^k}{k}
-\end{equation*}
-\begin{equation*}
-	\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} = \lim_{k \rightarrow +\infty} \frac{|z|}{\sqrt[k]{k}}= |z|
-\end{equation*}
-Se $|z|< 1$, la serie converge assolutamente, e quindi semplicemente.\\
-Se $ |z|> 1$, il termine generale della serie non è infinitesimo, e quindi la serie non converge.
-\begin{empheq}{align*}
-	\textcolor{orange}{
-		\sum_{k=1}^{\infty} (-1)^{k+1} \frac{z^k}{k}} & \textcolor{orange}{= - \sum_{k=1}^{\infty} \frac{(-1)^k z^k }{k}= - \sum_{k=1}^{\infty} \frac{(-z)^k}{k}=}\\
-	& \textcolor{orange}{ = - \sum_{k=1}^{\infty} \frac{r^k}{k} = - \sum_{k=1}^{\infty} k^\alpha r^k \,\,\,\,\, \text{con} \,\,\,\, \alpha =-1
-	}
-\end{empheq}
-Per $z=x \in \R$ se $ |x|<1$ la serie converge assolutamente mentre se $|x|>1$ allora la serie non converge.
-Se $ |x|=1$  allora 
-\begin{itemize}
-	\item $x=-1 \Rightarrow \sum_{k=1}^{\infty} (-1)^{k+1} \frac{(-1)^k}{k} = -\sum_{k=1}^{\infty} \frac{1}{k}$ che diverge;
-	\item $x=1 \Rightarrow \sum_{k=1}^{\infty} (-1)^{k+1} \frac{1}{k} = -\sum_{k=1}^{\infty} \frac{(-1)^k}{k}$ che converge.
-\end{itemize}
-Se $-1<x\leq 1$, allora 
-\begin{empheq}{equation*}
-	\sum_{k=1}^{\infty} (-1 )^{k+1} \frac{x^e}{k}= ln(1+x)
-\end{empheq}
-
-\subsection{\textcolor{red}{Serie a Termini di Segno Qualsiasi}}
-
-\subsubsection{\textcolor{red}{Teorema: Criterio di Dirichlet}}
-\paragraph{\textcolor{red}{Teorema}}
-Sia $\{a_k\}_{k \in \N}$ successione a termini non negativi, decrescente, infinitesima \textcolor{orange}{(basta definitivamente: $\lim_{k \rightarrow +\infty} a_k=0$ e $0\leq a_{k+1} \leq a_k$ definitivamente per $k \rightarrow +\infty$)} e sia $\{b_k\}_{k\in \N}$ un'altra successione tale che $\exists C>0$ per cui vale
-\begin{empheq}{equation*}
-	\lvert \sum_{k=0}^{n} b_k \rvert \leq C \,\,\,\,\, \forall n \in \N
-\end{empheq}
-\textcolor{orange}{la successione delle ridotte della serie $\sum_{k=0}^{\infty} b_k$ è limitata}.\\
-Allora la srie $\sum_{k=0}^{\infty} a_kb_k$ converge.
-
-
-\paragraph{\textcolor{red}{Esempio}}
-\begin{empheq}{equation*}
-	\sum_{k=1}^{\infty} \frac{e^{ik\theta}}{k}, \,\,\,\,\, \theta \in [0, 2\pi[
-\end{empheq}
-Per $\theta =0$ avremo $\sum_{k=1}^{\infty} \frac{1}{k}$ che diverge.\\
-Per $\theta \in ]0,2\pi[$ avremo $a_k=\frac{1}{k}$ (che è successione positiva,decrescente e infinitesima). Per $b_k= e^{ik\theta}$ avremo dunque
-\begin{empheq}{equation*}
-	\sum_{k=1}^{n} b_k = \sum_{k=1}^{n} e^{ek\theta} = \frac{1-e^{i(n+1)\theta}}{1-e^{i\theta}}-1
-\end{empheq}
-\textcolor{orange}{(Ove $\sum_{k=1}^{n} e^{ek\theta}$ è la ridotta n-esima di una serie geometrica di ragione $e^{i\theta}$ a cui manca il termine con $k=0$)}
-\begin{empheq}{align*}
-	|\sum_{k=1}^{\infty} b_k| = |\frac{e^{i\theta}-e^{i(n+1)\theta}}{1-e^{i\theta}}| \leq \frac{2}{|1-e^{i\theta}|}=C \Rightarrow \sum_{k=1}^{\infty} \frac{e^{ik\theta}}{k}
-\end{empheq}
-converge $\forall \theta \in ]0,2\pi[$ per il criterio di Dirichlet
-\begin{empheq}{equation*}
-	\sum_{k=1}^{\infty} \frac{e^{ik\theta}}{k}=\sum_{k=1}^{\infty} [\frac{\cos{k\theta}}{k}+i\frac{\sin{k\theta}}{k}]
-\end{empheq}
-Se $\theta \in ]0,2\pi[$ convergono entrambe le serie $ \sum_{k=1}^{\infty} \frac{cos(k\theta)}{k}$ e $ \sum_{k=1}^{\infty} \frac{sin(k\theta)}{k}$ perchè 
-$\frac{cos(k\theta)}{k}=Re(\frac{e^{ik\theta}}{k})$ e $\frac{sin(k\theta)}{k}=Im(\frac{e^{ik\theta}}{k})$ 
-
-\subsubsection{\textcolor{red}{Teorema: Criterio di Leibniz}}
-\paragraph{\textcolor{red}{Teorema}}
-Sia $\{a_k\}_{k\in \N}$ successione a termini non negativi, decrescente, infinitesima. Allora
-\begin{empheq}{equation*}
-	\sum_{k=0}^{\infty} (-1)^k a_k 
-\end{empheq}
-converge e, detta $S$ la sua somma, si ha
-\begin{empheq}{equation*}
-	|\sum_{k=0}^{\infty} (-1)^k a_k - S| \leq a_{k+1}
-\end{empheq}
-\begin{empheq}{equation*}
-	\textcolor{orange}{S=\lim_{k \rightarrow +\infty} \sum_{k=0}^{\infty} (-1)^k a_k}
-\end{empheq}
 
 \paragraph{\textcolor{red}{Esempio}}
 \begin{empheq}{equation*}
