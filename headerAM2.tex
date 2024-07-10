@@ -70,12 +70,17 @@
 \newcommand\inflim{\lim_{n \rightarrow +\infty}}
 
 \newcommand\uppercomment[3]{
-\mathcircled{#1}^{\color{blue}{\genfrac{}{}{0pt}{}{#2} {#3}}}
+\mathcircled{#1}^{\color{blue}{\genfrac{}{}{0pt}{}{#2}{#3}}}
 }
 
 \newcommand\lowercomment[3]{
-	\mathcircled{#1}_{\color{blue}{\genfrac{}{}{0pt}{}{#2} {#3}}}
+	\mathcircled{#1}_{\color{blue}{\genfrac{}{}{0pt}{}{#2}{#3}}}
 }
+
+\newcommand\undercomment[3]{
+	\vertarrowbox{\mathcircled{#1}} {\color{blue}{$\genfrac{}{}{0pt}{}{#2}{#3}$}}
+}
+
 
 \makeatother
 

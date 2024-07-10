@@ -1283,16 +1283,450 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		\\
 		f(n+1) = \frac{n + 2} {\sqrt{(n + 1)^4 + 2} - \ln(n+1)}
 	\end{gather*}
+	
+	Calcoliamo la derivata $f'(x)$:
+	\begin{align*}
+		f'(x)
+		&= \frac{\sqrt{x^4 + 2} - \ln(x) - (x + 1) \left[ \frac{4 x^3 } {2 \sqrt{x^4 + 2}} - \frac{1}{x} \right]} {\left( 
+			\sqrt{x^4 + 2} - \ln(x) \right)^2} = 
+		\\
+		&= \frac{x (x^4 + 2) - x \sqrt{x^4 + 2} \ \ln(x) - (x + 1) \left[2x ^ 4 - \sqrt{x^4 + 2} \right] } {x \sqrt{x^4 + 2} \left( \sqrt{x^4 + 2} - \ln(x) \right)^2}
+	\end{align*}
+	\begin{align*}
+		f'(x)<0 
+		& \iff x (x^4 + 2) - x \sqrt{x^4 + 2} \ \ln(x) - 2x^4 (x + 1) - (x + 1) \sqrt{x^4 + 2}  < 0
+		\\
+		&\iff -x^5 - 2x^4 + 2x - x\sqrt{x^4+2} \ln(x) + (x + 1) \sqrt{x^4 + 2} < 0
+	\end{align*}
+	
+	$f'(x)<0$ definitivamente per $x \rightarrow +\infty \iff -x^5 - 2x^4 + 2x - x \sqrt{x^4 + 2} \ \ln(x) + (x+1) \sqrt{x^4 + 2} < 0$ definitivamente per $x\rightarrow+\infty$ cioè
+	\begin{align*}
+		-x^5 - 2x^4 + 2x \underbrace{- x\sqrt{x^4 + 2} \ln(x)}_{\color{blue}{\sim -x^3 \ln(x)}} \underbrace{+ (x + 1) \sqrt{x^4 + 2}}_{\color{blue}{\sim x^3}} &< 0 
+		\\
+		-x^5 + o(x^5) &< 0 &\text{ definitivamente } 
+		\\
+		& & \text{per } x\rightarrow +\infty.
+	\end{align*}
+	\begin{equation*}
+		\Rightarrow \text{ la serie } \sum_{n=1}^{\infty} (-1)^n \ \frac{n+1} {\sqrt{n^4 + 1} - \ln(n)} \text{ converge per il criterio di Leibniz.}
+	\end{equation*}
 \end{example}
 \end{exbar}
 
 
+\begin{exbar}
+\begin{example}
+	Studiare per quali $\alpha \in \mathbb{R}$ converge la serie
+	\begin{equation*}
+		\sum_{n=1}^{\infty} \ln \left( n^n + n! \right) \left[ n \sin{\frac{1}{n}} - \cos{\frac{\sqrt{2}}{n}} - \frac{\alpha}{n^2} \right]
+	\end{equation*}
+	
+	Ricordiamo le serie di Taylor del seno e del coseno e studiamo il secondo fattore:
+	\begin{align*}
+		\sin{y}
+		&= y - \frac{1}{6} y^3 + o(y^4) \qquad \text{per } y\rightarrow 0
+		\\
+		\cos{y} 
+		&= 1 - \frac{1}{2} y^2 + o(y^3) \qquad \text{per } y\rightarrow 0
+		\\
+		\sin\uppercomment{\frac{1}{n}}{\myarrow[10] =0}{} 
+		&= \frac{1}{n} - \frac{1}{6} \ \frac{1}{n^3} + o \left( \frac{1}{n^3} \right)
+		\\
+		\cos\lowercomment{\frac{\sqrt{2}}{n}}{}{\myarrow[350] =0}
+		& = 1 - \frac{1}{n^2} + o \left( \frac{1}{n^3} \right)
+	\end{align*}
+	
+	\begin{align*}
+		n \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} 
+		&= n \left( \frac{1} {n} - \frac{1} {6} \ \frac{1} {n^3} + o \left( \frac{1} {n^3} \right) \right) - 1 + \frac{1}{n^2} + o \left( \frac{1} {n^3} \right) - \frac{\alpha} {n^2} =
+		\\
+		&= 1 - \frac{1} {6} \ \frac{1} {n^2} + o \left( \frac{1} {n^3} \right) - 1 + \frac{1} {n^2} + o \left( \frac{1} {n^3} \right) - \frac{\alpha} {n^2} =
+		\\
+		&=\left( \frac{5} {6} - \alpha \right) \frac{1} {n^2} + o \left( \frac{1} {n^3} \right)
+		\Rightarrow
+		\begin{cases}
+			<0 \text{ definitivamente se } \alpha > \frac{5}{6}
+			\\
+			>0 \text{ definitivamente se } \alpha < \frac{5}{6}
+		\end{cases}
+	\end{align*}
+	
+	Passiamo ora allo studio del primo fattore:
+	\begin{align*}
+		\ln(n^n+n!) 
+		&= ln \left[ n^n \left( 1 + \frac{n!} {n^n} \right) \right] = \ln(n^n) + \uppercomment{\ln \left( 1 + \frac{n!} {n^n} \right)}{\myarrow[10] =0 \; n\rightarrow+\infty}{} 
+		\\
+		&= n\ln(n) + o(n\ln(n))
+	\end{align*}
+	
+	\begin{itemize}
+	\item Per $\alpha \neq \frac{5}{6}$ avremo
+	\begin{align*}
+		\ln(n^n + n!) \left[ n \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} \right] 
+		&= \left( n\ln(n) + o(n\ln(n)) \right) \cdot \left[ \left(\frac{5} {6} - \alpha \right) \frac{1} {n^2} + o \left( \frac{1} {n^3} \right) \right] =
+		\\
+		&= \left( \frac{5}{6} - \alpha \right)  \frac{\ln(n)}{n} + o \left( \frac{\ln(n)}{n} \right) \sim
+		\\
+		&\sim \left(\frac{5} {6} - \alpha \right) \frac{\ln(n)} {n}
+	\end{align*}
+	
+	e siccome $\sum_{n=1}^{\infty} \frac{\ln(n)}{n}$ diverge, per il criterio del confronto asintotico anche la serie di partenza diverge.
+	
+	\item Per $\alpha= \frac{5}{6}$
+	\begin{gather*}
+		n \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} = o \left( \frac{1} {n^3} \right)
+		\\
+		\ln(n^n + n!) \left[ n \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} \right] = (n\ln(n) + o(n\ln(n))) \cdot o \left( \frac{1} {n^3} \right) = o \left( \frac{\ln(n)} {n^2} \right)
+		\\
+		\inflim \frac{ \left| \ln(n^n + n!) \left[ \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} \right] \right|} {\frac{\ln(n)} {n^2}} = 0
+	\end{gather*}
+	
+	Siccome $\sum_{n=1}^{\infty} \frac{\ln(n)}{n^2}$ converge $\Rightarrow$ per il criterio del confronto asintotico la serie di partenza converge assolutamente e quindi semplicemente.
+	\end{itemize}
+\end{example}
+\end{exbar}
 
+\begin{exbar}
+\begin{example}
+	Al variare di $\alpha \in \mathbb{R}, \, \alpha \neq 0$, studiare il carattere della serie
+	\begin{equation*}
+		\sum_{n=2}^{\infty} \frac{(-1)^n} {n^\alpha + (-1)^n}
+	\end{equation*}
+	
+	\begin{itemize}
+	\item Se $\alpha < 0, \, n^\alpha \rightarrow 0 \text{ per } n \rightarrow +\infty$ 
+	\begin{equation*}
+		\Rightarrow \lim_{n \rightarrow +\infty} \left| \frac{(-1)^n} {n^\alpha + (-1)^n} \right| = 1
+	\end{equation*}
+	
+	cioè il termine generale della serie non è infinitesimo, e quindi la serie non converge.
+	
+	\item Per $\alpha > 0 \Rightarrow n^\alpha + (-1)^n \sim n^\alpha$ 
+	
+	Studiamo la convergenza assoluta:
+	\begin{equation*}
+		\left| \frac{(-1)^n} {n^\alpha + (-1)^n} \right| \sim \frac{1} {n^\alpha}
+	\end{equation*}
+	
+	$\Rightarrow$ se $\alpha>1$ la serie converge assolutamente, e quindi semplicemente, e se $ 0 < \alpha \leq 1 $, la serie diverge assolutamente.
+	
+	Studiamo la convergenza semplice per $0 < \alpha \leq 1$
+	\begin{equation*}
+		\sum_{n=2}^{\infty} \frac{(-1)^n} {n^\alpha + (-1)^n} = \sum_{n=2}^{\infty} (-1)^n \ a_n
+	\end{equation*}
+	
+	con $a_n=\frac{1}{n^\alpha + (-1)^n} > 0$ per $n \geq 2$
+	\begin{equation*}
+		\inflim a_n = 0 \qquad \text{(banale)}
+	\end{equation*}
+	
+	$\{a_n\}_{n \in \mathbb{N}}$ è decrescente almeno definitivamente?
+	
+	Vale $a_{n+1} \leq a_{n}$, cioè $n^\alpha + (-1)^n \leq (n+1)^\alpha + (-1)^{n+1}$ definitivamente?
+	
+	Se prendo $n$ pari:
+	\begin{align*}
+		n^\alpha + 1 \leq (n+1)^\alpha - 1 & \text{ definitivamente}
+		\\
+		(n+1)^\alpha - n^\alpha \geq 2 & \text{ definitivamente}
+	\end{align*}
+	\begin{align*}
+		(n+1)^\alpha - n^\alpha 
+		&= n^\alpha \left[ \left( 1 + \frac{1} {n} \right)^\alpha - 1 \right] =
+		\\
+		&= n^\alpha \left[ \frac{\alpha} {n} + o \left( \frac{1} {n} \right) \right] =
+		\\
+		&= \frac{\alpha} {n^{1 - \alpha}} + o \left( \frac{1} {n^{2 - \alpha}} \right) \xrightarrow{n \rightarrow +\infty} 0 \qquad \text{se } \alpha <1
+	\end{align*}
+	
+	$a_n \sim \frac{1}{n^\alpha}$ ma mentre $\frac{1}{n^\alpha}$ è decrescente $a_n$ non lo è, perciò non possiamo usare il citerio di Leibinitz.
+	
+	\begin{equation*}
+		\frac{(-1)^n} {n^\alpha + (-1)^n} = \mathcircled{\frac{(-1)^n} {n^\alpha}} + b_n
+	\end{equation*}
+	
+	Se $0<\alpha\leq 1$, la serie $\sum_{n=1}^{\infty} \frac{(-1)^n}{n^\alpha}$ converge per il criterio di Leibniz.
+	
+	\begin{equation*}
+		b_n= \frac{(-1)^n}{n^\alpha+(-1)^n} - \frac{(-1)^n}{n^\alpha}
+	\end{equation*}
+	
+	Se $\sum_{n=2}^{\infty} b_n$ converge, allora anche $\sum_{n=2}^{\infty} \frac{(-1)^n}{n^\alpha +(-1)^n}$ converge. 
+	
+	Se $\sum_{n=2}^{\infty} \frac{(-1)^n}{n^\alpha+(-1)^n}$ converge, converge anche $\sum_{n=2}^{\infty} b_n$
+	\begin{gather*}
+		\sum_{n=2}^{\infty} \frac{(-1)^n}{n^\alpha+(-1)^n} \text{ converge } \iff \sum_{n=2}^{\infty} b_n \text{ converge.}
+	\end{gather*}
+	\begin{align*}	
+		b_n 
+		&= (-1)^n \left[ \frac{1} {n^\alpha + (-1)^n} - \frac{1} {n^\alpha} \right] = (-1)^n \ \frac{ \cancel{n^\alpha} - \cancel{n^\alpha} -(-1)^n} {n^\alpha (n^\alpha+(-1)^n)} 
+		\\
+		&= \undercomment{-\frac{1}{n^{2\alpha} + (-1)^n}} {\sim -\frac{1}{n^{2\alpha}}} {} < 0 \qquad \forall \ n \geq 2
+	\end{align*}
+	
+	e $\sum_{n=2}^{\infty} \frac{1}{n^{2\alpha}}$ converge $\iff 2 \alpha > 1 \iff \alpha > \frac{1}{2}$, dunque per il criterio asintotico del confronto $\sum_{n=2}^{\infty} b_n$ converge (e quindi anche la serie di partenza) $\iff \alpha > \frac{1}{2}$.	
+\end{itemize}
+\end{example}
+\end{exbar}
 
 \begin{comment}
 
+\paragraph{\textcolor{red}{Esempio}}
+Stabilire per quali valori del parametro $\alpha>0$ converge la serie
+\begin{empheq}{equation*}
+	\sum_{n=1}^{\infty} (n-\cos{n^\alpha})\left(\frac{1}{n}-\sin{\frac{1}{n^{2\alpha}}}\right)
+\end{empheq}
+\begin{empheq}{equation*}
+	n-\cos{n^\alpha} \sim n \,\,\,\,\, \text{per} \,\,\,\,\, n \rightarrow +\infty
+\end{empheq}
+\begin{empheq}{align*}
+	\sin y &= y- \frac{1}{6}y^3+o(y^4) \,\,\,\,\, \text{ per} \,\,\,\,\, y \rightarrow 0\\
+	\sin \frac{1}{n^{2\alpha}} &=\frac{1}{n^{2\alpha}}-\frac{1}{6}\frac{1}{n^{6\alpha}} +o\left(\frac{1}{n^{8\alpha}}\right)
+\end{empheq}
+\begin{empheq}{align*}
+	(n-\cos{n^\alpha})\left(\frac{1}{n}-\sin{\frac{1}{n^{2\alpha}}}\right) &=(n+o(n))\left[\frac{1}{n}-\frac{1}{n^{2\alpha}}+\frac{1}{6}\frac{1}{n^{6\alpha}}+o\left(\frac{1}{n^{8\alpha}}\right)\right]\\
+	&=1-\frac{1}{n^{2\alpha-1}}+\frac{1}{6}\frac{1}{n^{6\alpha-1}}+o(1)
+\end{empheq}
+Se $2\alpha-1 \neq 0 \Longrightarrow \lim_{n\rightarrow +\infty} 1-\frac{1}{n^{2\alpha-1}}+\frac{1}{6}\frac{1}{n^{6\alpha-1}}+o(1)   \neq 0$ perchè, se $2\alpha-1>0$, $\frac{1}{n^{2\alpha - 1}}+\frac{1}{6}\frac{1}{n^{6\alpha-1}}+o(1) \rightarrow 0$ e quindi il limite fa 1, mentre se $2\alpha-1 < 0$, il limite è $-\infty \Longrightarrow $ se $2\alpha-1\neq 0$, la serie non converge (diverge).\\
+Concentriamoci sul caso $\alpha=\frac{1}{2}$, cioè $2\alpha-1=0$. Il termine generale della mia serie è
+\begin{empheq}{align*}
+	(n-\cos{\sqrt{n}})\left(\frac{1}{n} - \sin{\frac{1}{n}}\right) &= (n-\cos{\sqrt{n}})\left( \frac{1}{n}-\frac{1}{n} +\frac{1}{6} \frac{1}{n^3}+ o\left( \frac{1}{n^4}\right) \right)= \\
+	&=\frac{1}{6}\frac{1}{n^2}-\frac{1}{6}\frac{\cos{\sqrt{n}}}{n^2}+o(\frac{\cos{\sqrt{n}}}{n^n})=\\
+	&=\frac{1}{6} \frac{1}{n^2}-\frac{1}{6}\frac{\cos{\sqrt{n}}}{n^3} + o\left( \frac{\cos{\sqrt{n}}}{n^n} \right)=\\
+	&= \frac{1}{6} \frac{1}{n^2} +o\left( \frac{1}{n^2} \right) \sim \frac{1}{n^2}
+\end{empheq}
+che essendo $>0$ definitivamente per $n\rightarrow + \infty$ ci permette di dire che $\sum_{n=1}^{\infty} \frac{1}{n^2}$ converge, per il criterio asintotico del confronto anche la serie di partenza converge.\\
+\textcolor{orange}{A posteriori, il termine generale è $(n+\cos{\sqrt{n}})(\frac{1}{n}-\sin{\frac{1}{n}})= (n+o(n))(\frac{1}{6}\frac{1}{n^3}+o(\frac{1}{n^4})) =\frac{1}{6}\frac{1}{n^2}+o(\frac{1}{n^2})$}
+
+\subsection{\textcolor{red}{Integrali impropri}}
+\paragraph{\textcolor{red}{Ripasso: Integrali secondo Riemann}}
+
+Data $f:[a,b]\rightarrow\R$ limitata si ha $a=x_0 < x_1 < ... < x_n =b$ si hanno
+\begin{empheq}{align*}
+	S(f)&=\sum_{i=1}^{n} \left(\sup_{[x_{i-1},x_i]} f(x)\right)\cdot (x_i-x_{i-1}) \,\,\,\,\, \text{somma superiore,}\\
+	s(f)&=\sum_{i=1}^{n} \left(\inf_{[x_{i-1},x_i]} f(x)\right)\cdot (x_i-x_{i-1}) \,\,\,\,\, \text{somma inferiore.}
+\end{empheq}
+Se $\inf_{a=x_0 < x_1 < ... < x_n =b} S(f) = \sup_{a=x_0 < x_1 < ... < x_n =b} s(f) =I \in \R$ allora $f$ si dice Riemann integrabile in $[a,b]$ e si pone 
+\begin{empheq}{equation*}
+	\int_{a}^{b} f(x)dx=I.
+\end{empheq}
+
+\paragraph{\textcolor{red}{Esempio}}
+
+\begin{equation*}
+	f(x)=\frac{1}{x^\alpha}, \,\,\,\,\,\, x \geq 1, \,\,\,\, \alpha \in \R
+\end{equation*}
+Vogliamo definire, se possibile, 
+\begin{equation*}
+	\int_{1}^{+\infty} f(x) dx= \int_{1}^{+\infty}\frac{1}{x^\alpha}dx
+\end{equation*}
+Stiamo provando ad integrare una funzione limitata su un intervallo illimitato.\\
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{unosuxallaalpha.png}
+\end{figure}
+
+Fissato $c > 1$, riesco a definire $\int_{1}^{c} f(x)dx$ perchè integro una funzione limitata su un intervallo limitato.\\
+Posso dunque definire
+\begin{empheq}{align*}
+	\int_{1}^{+\infty} f(x)dx &=\lim_{c\rightarrow +\infty} \int_{1}^{c}f(x)dx, \,\,\,\,\, \text{se}\,\,\, \exists\\
+	\int_{1}^{+\infty} \frac{1}{x^\alpha} dx &= \lim_{c \rightarrow + \infty}\int_{1}^{c} \frac{1}{x^\alpha}dx\\
+	&=
+	\begin{cases}
+		& \lim_{c \rightarrow +\infty}\frac{1}{1-\alpha}[c^{1-\alpha}-1]\,\,\,\, \text{se}\,\,\, \alpha \neq 1\\
+		& \lim_{c \rightarrow +\infty} \ln c \,\,\,\, \text{se} \,\,\, \alpha=1
+	\end{cases}\\
+	&=
+	\begin{cases}
+		& \frac{1}{\alpha-1} \,\,\,\, \text{se} \,\,\, \alpha > 1\\
+		&+\infty \,\,\,\, \text{se} \,\,\, \alpha \leq 1
+	\end{cases}
+\end{empheq}
+
+\paragraph{\textcolor{red}{Esempio}}
+\begin{empheq}{equation*}
+	f(x)=-\ln x, \,\,\, x \in ]0,1]
+\end{empheq}
+e provo a definire 
+\begin{empheq}{equation*}
+	\int_{0}^{1} f(x)dx
+\end{empheq}
+cioè l'integrale di una funzione illimitata su un intervallo limitato.\\
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{intda1a0.png}
+\end{figure}
+Riesco a definire bene $\int_{c}^{1} f(x)dx$ perchè integro una funzione limitata
+\textcolor{orange}{$(|f(x)|\leq -\ln c \forall x\in[c,1])$} su un intervallo limitato.\\
+Posso dunque definire
+\begin{empheq}{align*}
+	\int_{0}^{1} f(x)dx &= \lim_{c\rightarrow +0^+} \int_{c}^{1} f(x)dx\,\,\,\,\,\, \text{se}\,\,\, \exists\\
+	\int_{0}^{1}(-\ln x) dx &= \lim_{c \rightarrow 0^+} \int_{c}^{1}(-\ln x)dx\\
+	&= \lim_{c \rightarrow 0^+} [x-x\ln x]_{c}^{1} \\
+	&= \lim_{c \rightarrow 0^+} [1-c+c\ln c]=1
+\end{empheq}
+
+\paragraph{\textcolor{red}{Definizione}}
+Sia $f:[a,b[\rightarrow \R, a,b \in \R \cup\{+\infty\}$ \textcolor{orange}{(voglio definire $\int_{a}^{b}f(x)dx$)} Riemann integrabile in $[a,c]\,\, \forall c \in [a,b[$. Se $\exists$ finito il $\lim_{c \rightarrow b^-} \int_{a}^{c}f(x)dx $, allora $f$ si dice integrale in senso improprio o generalizzato in $[a,b[$ e la quantità 
+\begin{empheq}{equation*}
+	\int_{a}^{b} f(x)dx = \lim_{c\rightarrow b^-} \int_{a}^{c} f(x)dx
+\end{empheq}
+si dice integrale improprio o generalizzato di $f$ in $[a,b[$.\\
+Analogamente, data $f:]a,b]\rightarrow \R, a,b \in \R \cup \{-\infty\}$, Riemann integrabile in $[c,b]\,\, \forall c \in ]a,b]$. Se $\exists$ finito il $\lim_{c \rightarrow a^+} \int_{c}^{b} f(x)dx$, allora $f$ si dice integrabile in senso improprio o generalizzato in $]a,b]$ e la quantità
+\begin{empheq}{equation*}
+	\int_{a}^{b} f(x)dx = \lim_{c \rightarrow a^+} \int_{c}^{b} f(x)dx
+\end{empheq}
+si dice integrale improprio o generealizzato di $f$ in $]a,b]$.\\
+Se $f$ è integrabile in senso improprio in un intervallo $I$, allora si dice anche che l'integrale (improprio) di $f$ in $I$ è convergente o che $f$ ha integrale (improprio) convergente in $I$.\\
+Se il limite che definisce l'integrale improprio di $f$ è infinito, si dice anche che l'integrale (improprio) di $f$ è divergente o che $f$ ha integrale (improprio) divergente in $I$.
+
+\paragraph{\textcolor{red}{Osservazione}}
+Vista la definizione, 
+\begin{empheq}{equation*}
+	\int_{1}^{+\infty}\frac{1}{x^\alpha}dx \,\,\,\,\, \text{converge} \Leftrightarrow \alpha > 1
+\end{empheq}
+
+\paragraph{\textcolor{red}{Esempio Importante}}
+\begin{empheq}{equation*}
+	f(x)=\frac{1}{(x-a)^\alpha}, \,\,\,\, x \in ]a,a+1], \,\,\, a\in \R \,\, \text{fissato},\,\,\, \alpha\in\R\,\,\, \text{parametro},\,\,\, \alpha > 0
+\end{empheq}
+Studiamo la convergenza di 
+\begin{empheq}{align*}
+	\int_{a}^{a+1} \frac{1}{(x-a)^\alpha} dx  &= \lim_{c \rightarrow a^+} \int_{c}^{a+1} \frac{1}{(x-a)^\alpha} dx\\
+	&=
+	\begin{cases}
+		& \lim_{c \rightarrow a^+} \frac{1}{1-\alpha}[1-(c-a)^{1-\alpha}] \,\,\,\, \text{se}\,\, \alpha \neq 1 \\
+		& \lim_{c \rightarrow a^+} -\ln(c-a)\,\,\,\, \text{se} \,\, \alpha =1
+	\end{cases}\\
+	&=
+	\begin{cases}
+		& \frac{1}{1-\alpha} \,\,\,\, \text{se}\,\, \alpha <1 \\
+		&+\infty \,\,\,\, \text{se}\,\, \alpha \geq1.
+	\end{cases}
+\end{empheq}
+Dunque 
+\begin{empheq}{equation*}
+	\int_{a}^{a+1} \frac{1}{(x-a)^\alpha} dx \,\,\,\, \text{converge} \Leftrightarrow \alpha < 1.
+\end{empheq}
+In particolare
+\begin{empheq}{equation*}
+	\int_{0}^{1} \frac{1}{x^\alpha} \,\,\,\, \text{converge} \Leftrightarrow \alpha < 1.
+\end{empheq}
+
+\paragraph{\textcolor{red}{Esempio}}
+Stabilire se converge 
+\begin{empheq}{equation*}
+	\int_{0}^{1} \frac{\sin{\frac{1}{x}}}{x^2} dx
+\end{empheq}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{senobuffo.png}
+\end{figure}
+
+Devo calcolare 
+\begin{empheq}{equation*}
+	\lim_{c\rightarrow0^+} \int_{c}^{1} \frac{\sin{\frac{1}{x}}}{x^2} dx= \lim_{c \rightarrow 0^+} \cos{\frac{1}{x}}|_{c}^{1}=\lim_{c\rightarrow 0^+}\left(1-\cos{\frac{1}{c}}\right)
+\end{empheq}
+che non esiste $\Rightarrow$ la funzione $f(x)=\frac{\sin{\frac{1}{x}}}{x^2}$, non è integrabile in senso improprio in $]0,1]$.
+
+\paragraph{\textcolor{red}{Esempio Importante}}
+\begin{empheq}{align*}
+	\int_{0}^{+\infty} e^{\alpha x} dx &=\lim_{c \rightarrow +\infty} \int_{0}^{c} e^{\alpha x} dx \\&= \lim_{c \rightarrow +\infty} \frac{1}{\alpha}(e^{\alpha c}-1)\\
+	&= \begin{cases}
+		& -\frac{1}{\alpha} \,\,\,\, \text{se} \,\, \alpha <0\\
+		&+\infty \,\,\,\, \text{se} \,\, \alpha >0.
+	\end{cases}
+\end{empheq}
+\begin{empheq}{equation*}
+	\int_{0}^{+\infty} e^{\alpha x} \,\,\,\,\, \text{converge} \Leftrightarrow \,\,\, \alpha <0.
+\end{empheq}
+Analogamente
+\begin{empheq}{equation*}
+	\int_{-\infty}^{0} e^{\alpha x} dx \,\,\,\,\, \text{converge} \Leftrightarrow \,\,\, \alpha > 0.
+\end{empheq}
+Dato $ a>0$, scrivendo $e^{\alpha x} = e^{(\alpha \ln a)x}$ si deduce la convergenza degli integrali
+\begin{empheq}{align*}
+	&\int_{-\infty}^{0} e^{\alpha x} dx \\
+	&\int_{0}^{+\infty}  e^{\alpha x} dx.
+\end{empheq}
+\text{\textcolor{orange}{(Facile esercizio per casa)}}
+
+\paragraph{\textcolor{red}{Nota Bene}}
+$f:[1,+\infty[ \rightarrow \R$ continua. E' vero o falso che $\lim_{x \rightarrow +\infty} f(x)=0 \Rightarrow \int_{1}^{+\infty} f(x)dx$ converge?\\
+E' falso!!! Si veda $f(x)=\frac{1}{x}$\\
+E' vero o falso che
+$\int_{1}^{+\infty}f(x) dx$ converge $\Rightarrow \lim_{x \rightarrow +\infty} f(x)=0$?\\
+E' falso!!!\\
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{cosiappuntiti.png}
+\end{figure}
+
+Ad ogni numero naturale $n$ costruite un triangolo di base $\frac{1}{2^n}$ e altezza $n$
+
+\begin{empheq}{equation*}
+	\int_{1}^{+\infty} f(x)dx = \sum (\text{aree dei triangoli}) = \sum_{n=1}^{\infty} \frac{1}{2} \frac{1}{2^n} \cdot n = \frac{1}{2} \sum_{n=1}^{\infty} \frac{n}{2^n}, 
+\end{empheq}
+che è una serie convergente.
+
+\paragraph{\textcolor{red}{Osservazione}}
+Se $f:[a,b] \rightarrow \R$ è Riemann integrabile, allora è integrabile anche in senso improprio e i due integrali coincidono.
+
+\paragraph{\textcolor{red}{Definizione}}
+$f:[a,b] \rightarrow \R,\,\, a,b \in \R \cup \{\pm \infty\}$, Riemann integrabile in $[c,d]\,\, \forall a<c<d<b$. $f$ si dice integrabile in senso improprio in $ ]a,b[$ se, fissato $\xi \in ]a,b[$, lo è in $]a, \xi]$ e in $[\xi,b[$ \textcolor{orange}{(esistono finiti $\lim_{c \rightarrow a^+} \int_{c}^{\xi} f(x)dx$ e $\lim_{d\rightarrow b^-}\int_{\xi}^{d} f(x)dx$)} e in tal caso si pone 
+\begin{empheq}{equation*}
+	\int_{a}^{b} f(x)dx = \int_{a}^{\xi} f(x)dx + \int_{\xi}^{b} f(x) dx
+\end{empheq}
+Si verifica che la definizione non dipende da punto $\xi$ fissato.
 
 
+\paragraph{\textcolor{red}{Esempio}}
+Come si integra $\int_{-\infty}^{+\infty} \frac{1}{1+x^2}dx$?\\
+$x \mapsto \frac{1}{1+x^2}$ è integrabile secondo Riemann in $[c,d] \,\, \forall c<d$. \\
+Sia $\xi = 2$. Dobbiamo verificare se la funzione è integrabile in senso improprio in $]-\infty,2] $ e in $ [2, +\infty[$
+\begin{empheq}{align*}
+	&\int_{-\infty}^{2}\frac{1}{1-x^2}dx = \lim_{c \rightarrow -\infty} \int_{c}^{2} \frac{1}{1+x^2}dx = \lim_{c \rightarrow -\infty} \left(\arctan{2+\frac{\pi}{2}}\right)= \arctan{2+\frac{\pi}{2}}\\
+	&\int_{2}^{+\infty}\frac{1}{1-x^2} dx =\lim_{c \rightarrow +\infty} \int_{2}^{c} \frac{1}{1-x^2}dx=\lim_{c \rightarrow +\infty} (\arctan{c}-\arctan{2})=\frac{\pi}{2}-\arctan{2}\\
+	&\Rightarrow \int_{-\infty}^{+\infty} \frac{1}{1+x^2}dx \,\,\,\, \text{converge e}\,\,\, \int_{-\infty}^{+\infty}\frac{1}{1+x^2}dx = \int_{-\infty}^{2}\frac{1}{1+x^2} dx+ \int_{2}^{+\infty}\frac{1}{1+x^2}dx
+\end{empheq}
+
+\paragraph{\textcolor{red}{Esempio}}
+\begin{empheq}{align*}
+	&f(x)=\frac{1}{x^\alpha}, \,\,\,\,\,x \in ]0,+\infty[\\
+	&\alpha > 0 \Rightarrow \lim_{x \rightarrow 0^+} f(x)=+\infty.
+\end{empheq}
+Preso $\xi=1$, $f$ è integrabile in senso improprio in $]0,+\infty[ \Leftrightarrow$ entrambi gli integrali $\int_{0}^{1} \frac{1}{x^\alpha} dx$ e $\int_{1}^{+\infty} \frac{1}{x^\alpha} dx$ convergono ma
+\begin{empheq}{align*}
+	&\int_{0}^{1}\frac{1}{x^\alpha}dx \,\,\,\,\, \text{converge} \Leftrightarrow \alpha <1 \\
+	& \int_{1}^{+\infty} \frac{1}{x^\alpha}dx \,\,\,\,\, \text{converge} \Leftrightarrow \alpha > 1\\
+	& \Rightarrow \int_{0}^{+\infty} \frac{1}{x^\alpha}dx \,\,\,\text{non converge per alcun valore di} \,\, \alpha
+\end{empheq}
+
+\paragraph{\textcolor{red}{Esempio}}
+\begin{empheq}{equation*}
+	f(x)= 
+	\begin{cases}
+		& e^x\,\,\,\,\, \text{se} x \leq 1 \\
+		& \frac{1}{x \sqrt{x-1}}\,\,\,\,\, \text{se}\,\,\, x>1
+	\end{cases}
+\end{empheq}
+vogliamo stabilire se $\int_{-\infty}^{+\infty}f(x)dx$ converge.\\
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{espefrac.png}
+\end{figure}
+
+Devo studiare $\int_{-\infty}^{1}f(x) dx = \int_{-\infty}^{1}e^x dx$ e, prendendo $\xi=3$,  $\int_{1}^{3}f(x)dx$ e $\int_{3}^{+\infty}f(x)dx$. Se tutti convergono, anche $\int_{-\infty}^{+\infty} f(x)dx$ converge e 
+\begin{empheq}{equation*}
+	\int_{-\infty}^{+\infty} f(x)dx = \int_{-\infty}^{1} f(x)dx + \int_{1}^{3} f(x)dx + \int_{3}^{+\infty} f(x)dx
+\end{empheq}
+
+\paragraph{\textcolor{red}{Ulteriore Definizione}}
+In generale, data $f:]a,b[\rightarrow \R$ integrabile in senso improprio in $]x_0,x_1[,]x_1,x_2[,...,]x_{n-1},x_n[$ con $a= x_0 <x_1<...<x_n=b$, allora $f$ si dice integrabile in senso improprio in $]a,b[$ e si pone 
+\begin{empheq}{equation*}
+	\int_{a}^{b}f(x)dx= \sum_{i=1}^{n} \int_{x_{i-1}}^{x_i}f(x)dx.
+\end{empheq}
 
 
 
