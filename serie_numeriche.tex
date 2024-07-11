@@ -1,4 +1,5 @@
 \section{Serie numeriche} 
+\subsection{Introduzione}
 
 \begin{gather*}
 	\sin x = \sum_{k=0}^{\infty} (-1)^{k} \frac{x^{2k+1}}{(2k+1)!}
@@ -702,18 +703,17 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 			\\
 			&= \frac{1}{k^\alpha (\ln k)} - \frac{1}{6} \frac{1}{k^{3\alpha}(\ln k)^3} + \mathrm{o}\bigg(\frac{1}{k^{3\alpha}(\ln k)^3} \bigg) & \mathrm{per} \; k \rightarrow + \infty
 		\end{align*}
-		\begin{equation*}
+		\begin{gather*}
 		\frac{1}{k (\ln k)} - \sin\frac{1}{k^\alpha(\ln k)} = \frac{1}{k (\ln k)} -\frac{1}{k^\alpha (\ln k)} + \frac{1}{6} \frac{1}{k^{3\alpha}(\ln k)^3} + \mathrm{o}\bigg(\frac{1}{k^{3\alpha}(\ln k)^3} \bigg) \sim
-		\end{equation*}
-		\begin{equation*}
-			\sim \begin{cases}
+		\\
+		\sim \begin{cases}
 				-\frac{1}{k^\alpha (\ln k)} & \mathrm{se} \; 0<\alpha<1 
 				\\[1em]
 				\frac{1}{k^3(\ln k)^3} & \mathrm{se} \; \alpha = 1 
 				\\[1em]
 				\frac{1}{k (\ln k)} & \mathrm{se} \; \alpha > 1
 			\end{cases}
-		\end{equation*}
+		\end{gather*}
 		
 		\begin{enumerate}
 			\item $\sum_{k=2}^\infty \frac{1}{k^\alpha (\ln k)}$ diverge per $\alpha < 1$;
@@ -828,7 +828,8 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 
 
 \begin{exbar}
-	\begin{example} \textbf{importante} \\
+	\begin{example} \textbf{importante}
+		
 		\begin{equation*}
 			\sum_{k=0}^\infty \frac{z^k}{k!} \qquad z \in  \mathbb{C} 
 		\end{equation*}
@@ -858,8 +859,9 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 \end{exbar}
 
 \subsubsection{Criterio della radice}
-\begin{theorem} (criterio della radice) \\
+\begin{theorem} (criterio della radice) 
 	\label{th:criterio della radice}
+	
 	Sia $\{ a_k\}_{k \ \in \mathbb{N}}$ una successione a termini definitivamente non negativi
 	\begin{enumerate}
 		\item Se $\exists \ r< 1$ tale che $\sqrt[k]{a_k} \leq r$ definitivamente, allora $\sum_{k=0}^{\infty} a_k$ converge.
@@ -872,9 +874,9 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\textbf{Dimostrazione} del \textbf{Teorema} \ref{th:criterio della radice} 
 	
 	\begin{enumerate}
-		\item $\sqrt[k]{a_k}\leq r$ definitivamente $\Rightarrow 0 \leq a_k \leq r^k$ definitivamente e dunque $\sum_{k=0}^{\infty} r^k$ converge (perchè $r \in [0,1[$) $\Rightarrow \sum_{k=0}^{\infty} a_k$ converge per il criterio del confronto.
+		\item $\sqrt[k]{a_k}\leq r$ definitivamente $\Rightarrow 0 \leq a_k \leq r^k$ definitivamente e dunque $\sum_{k=0}^{\infty} r^k$ converge (perché $r \in [0,1[$) $\Rightarrow \sum_{k=0}^{\infty} a_k$ converge per il criterio del confronto.
 		
-		\item $\sqrt[k]{a_k} \geq 1$ defintivamente $\Rightarrow a_k \geq 1$ defintivamente $\Rightarrow \lim_{k \rightarrow + \infty} a_k \geq 1$, se esiste $\Rightarrow \sum_{k=0}^{\infty} a_k$ diverge. $\square$ 
+		\item $\sqrt[k]{a_k} \geq 1$ definitivamente $\Rightarrow a_k \geq 1$ definitivamente $\Rightarrow \lim_{k \rightarrow + \infty} a_k \geq 1$, se esiste $\Rightarrow \sum_{k=0}^{\infty} a_k$ diverge. $\square$ 
 	\end{enumerate}
 \end{dembar}
 
@@ -939,7 +941,8 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		Studiamo la convergenza assoluta
 		\begin{gather*}
 			\sum_{k=1}^{\infty} |k^\alpha \ r^k| 
-			= \sum_{k=1}^{\infty} \mathcircled{k^\alpha \ |r|^k}_{\color{blue}{\myarrow[180] a_k}} \\
+			= \sum_{k=1}^{\infty} \mathcircled{k^\alpha \ |r|^k}_{\color{blue}{\myarrow[180] a_k}} 
+			\\
 			\lim_{k \rightarrow +\infty} \sqrt[k]{a_k} 
 			= \lim_{k \rightarrow +\infty} |r| \ k^{\frac{\alpha}{k}}= |r|
 		\end{gather*}
@@ -1030,6 +1033,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{example}
 \end{exbar}
 
+
 \subsection{Criteri di convergenza di serie a termini di segno qualsiasi}
 \subsubsection{Criterio di Dirichelet}
 \begin{theorem} (criterio di Dirichelet)
@@ -1062,7 +1066,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 			\left| \sum_{k=1}^{\infty} b_k \right| 
 			&= \left| \frac{e^{i\theta} - e^{i(n+1)\theta}} {1 - e^{i\theta}} \right| 
 			\\
-			&\distr \frac{\mathcircled{|e^{i \theta}|}^{\ \textcolor{blue}{=1}} + \mathcircled{|e^{i (n+1) \theta}|}^{\ \textcolor{blue}{=1}}} {|1 - e^{i \theta}|}  \leq \frac{2} {|1 - e^{i \theta}|} = 0 \Rightarrow 
+			\distr & \frac{\mathcircled{|e^{i \theta}|}^{\ \textcolor{blue}{=1}} + \mathcircled{|e^{i (n+1) \theta}|}^{\ \textcolor{blue}{=1}}} {|1 - e^{i \theta}|}  \leq \frac{2} {|1 - e^{i \theta}|} = 0 \Rightarrow 
 		\end{align*}
 		
 		$\sum_{k=1}^{\infty} \frac{e^{ik\theta}}{k}$ converge $\forall \ \theta \in \ ]0,2\pi[$ per il criterio di Dirichlet
@@ -1080,6 +1084,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 
 \subsubsection{Criterio di Leibinitz}
 \begin{theorem} (criterio di Leibinitz)
+	\label{th:criterio di Leibinitz}
 	
 	Sia $\{a_k\}_{k\in \mathbb{N}}$ successione a termini non negativi, decrescente, infinitesima. Allora
 	\begin{equation*}
@@ -1092,127 +1097,455 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 \end{theorem}
 
 
+\begin{exbar}
+	\begin{example}
+		\begin{equation*}
+			\sin{1} = \sum_{k=0}^{\infty} (-1)^k \ \frac{1^{2k+1}} {(2k+1)!} = \sum_{k=0}^{\infty} (-1)^k \ \frac{1}{(2k+1)!}
+		\end{equation*}
+		
+		La successione $\left\{ \frac{1}{(2k+1)!} \right\}$ è positiva, decrescente, infinitesima. Posso dunque applicare il criterio di Leibniz.
+		\begin{equation*}
+			\left| \sum_{k=0}^{\infty} \frac{(-1)^k} {(2k+1)!} - \sin(1) \right| \leq \frac{1}{(2k+1)!} \bigg|_{k=n+1}= \frac{1}{(2n+3)!}
+		\end{equation*}
+		
+		Se voglio una stima di $\sin(1)$ con $10$ cifre decimali esatte devo scegliere $n$ in modo che 
+		\begin{equation*}
+			\frac{1}{(2n+3)!}<10^{-10} \Rightarrow (2n+3)! > 10^{10}
+		\end{equation*}
+		
+		e otteniamo $n=6$.
+		
+		\begin{equation*}
+			\sum_{k=0}^{6} \frac{(-1)^k}{(2k+1)!}= 1-\frac{1}{3!} +\frac{1}{5!}-\frac{1}{7!} +\frac{1}{9!}-\frac{1}{11!} +\frac{1}{13!}
+		\end{equation*}
+		
+		dà una stima di $\sin(1)$ con $10$ cifre decimali esatte.
+		
+		\textbf{Esercizio}: Dimostrare il criterio di convergenza utilizzando il criterio di Dirichlet con $b_k=(-1)^k$
+	\end{example}
+\end{exbar}
 
 
-\begin{comment}
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th:criterio di Leibinitz}}
 	
-
-\paragraph{\textcolor{red}{Esempio}}
-\begin{empheq}{equation*}
-	\sin{1}=\sum_{k=0}^{\infty} (-1)^k \frac{1^{2k+1}}{(2k+1)!}=\sum_{k=0}^{\infty} (-1)^k \frac{1}{(2k+1)!}
-\end{empheq}
-La successione $\{\frac{1}{(2k+1)!}\}$ è positiva, decrescente, infinitesima. Posso dunque applicare il criterio di Leibniz.
-\begin{empheq}{equation*}
-	|\sum_{k=0}^{\infty} \frac{(-1)^k}{(2k+1)!} - \sin{1}| \leq \frac{1}{(2k+1)!} |_{k=n+1}= \frac{1}{(2n+3)!}
-\end{empheq}
-Se voglio una stima di $\sin{1}$ con $10$ cifre decimali esatte devo scegliere $n$ in modo che 
-\begin{empheq}{equation*}
-	\frac{1}{(2n+3)!}<10^{-10} \Rightarrow (2n+3)! > 10^{10}
-\end{empheq}
-Prendo n=6, allora
-\begin{equation*}
-	\sum_{k=0}^{6} \frac{(-1)^k}{(2k+1)!}= 1-\frac{1}{3!} +\frac{1}{5!}-\frac{1}{7!} +\frac{1}{9!}-\frac{1}{11!} +\frac{1}{13!}
-\end{equation*}
-dà una stima di $\sin{1}$ con $10$ cifre decimali esatte.\\
-\textcolor{orange}{(Dimostrare il criterio di convergenza utilizzando il criterio di Dirichlet con $b_k=(-1)^k$)}
-
-\paragraph{\textcolor{red}{Dimostrazione del Criterio di Leibniz}}
-\begin{enumerate}
-	\item $\{S_{2n}\}_{n\in\N}$, successione delle ridotte di indice pari, è decrescente, ovvero $S_{2n+2}\leq S_{2n} \forall n$ dunque, \textcolor{orange}{visto che la successione $\{a_k\}_{k\in\N}$ è decrescente}
-	\begin{empheq}{align*}
-		S_{2n+2} &= \sum_{k=0}^{2n+2} (-1)^k a_k= \sum_{k=0}^{2n} (-1)^k a_k + (-1)^{2n+2} a_{2n+1} + (-1)^{2n+3}a_{2n+2}=\\
-		&=\sum_{k=0}^{2n} (-1)^k a_k - a_{2n+1}+a_{2n+2}\leq S_{2n}.
-	\end{empheq}
-	\item $\{S_{2n+1}\}_{n \in \N}$, successione delle ridotte di indice dispari, è crescente, ovvero $S_{2n+3} \geq S_{2n+1} \forall n \in \N$ dunque, \textcolor{orange}{visto che la successione $\{a_k\}_{k\in\N}$ è decrescente}
-	\begin{empheq}{align*}
-		S_{2n+3} &= \sum_{k=0}^{2n+3} (-1)^k a_k = \sum_{k=0}^{2n+1} (-1)^k a_k + (-1)^{2n+2} a_{2n+2} +  (-1)^{2n+3} a_{2n+3}=\\
-		&= S_{2n+1} + a_{2n+2} - a_{2n+3} \geq S_{2n+1}.
-	\end{empheq}
-	\item 
-	\begin{empheq}{equation*}
-		S_{2n} = S_{2n-1} + (-1)^{2n} a_{2n}= S_{2n-1}+a_{2n} \geq S_{2n-1} \geq S_1
-	\end{empheq}
-	dunque $\{S_{2n}\}$ è una successione decrescente inferiormente limitata $\Rightarrow $ ha limite finito.
-	\begin{empheq}{equation*}
-		S_{2n+1}=S_{2n}+(-1)^{2n+1} a_{2n+1}=S_{2n} - a_{2n+1} \leq S_{2n} \leq S_0
-	\end{empheq}
-	dunque $\{S_{2n+1}\}_{n \in \N}$ è crescente e superiormente limitata $\Rightarrow $ ha limite finito.
-	\item
-	$\lim_{n \rightarrow +\infty} S_{2n}=S^0 \in \R, \,\,\, \lim_{n \rightarrow +\infty} S_{2n+1}=S^1 \in \R \Rightarrow S^0=S^1=S$, somma dellla serie
-	\begin{empheq}{align*}
-		S_{2n+1}-S_{2n}|&=|a_{2n+1}|\rightarrow 0\\
-		|S^0-S^1|\leq|S^0-S_{2n}|+|&S_{2n}-S_{2n+1}|+|S_{2n+1}-S^1|\\
-		S^0=S^1=S \in \R &\Longrightarrow \,\, \text{la serie converge.}
-	\end{empheq}
-	\item $S_{2n+1}\leq S \leq S_{2n+2} \forall n$ perchè la prima è crescente e la seconda è decrescente.
-	\begin{empheq}{align*}
-		0\leq S-S_{2n+1} \leq S_{2n+2} - S_{2n+1} &= \sum_{k=0}^{2n+2} (-1)^k a_k - \sum_{k=0}^{2n+1}( -1)^k a_k =a_{2n+2}\\
-		0 \leq S_{2n}-S \leq S_{2n}-S_{2n+1}&=a_{2n+1} \Rightarrow |S_n -S| \leq a_{n+1}.
-	\end{empheq}
-\end{enumerate}
-\begin{flushright}
-	\large\Lightning
-\end{flushright}
-
-\paragraph{\textcolor{red}{Esempio}}
-\begin{equation*}
-	\sum_{k=1}^{\infty} \frac{(-1)^k}{k^\alpha},\,\,\,\,\,\, 0 < \alpha \leq 1
-\end{equation*}
-non converge assolutamente, ma $\{\frac{1}{k^\alpha}\}_{k\in \N}$ è positiva, decrescente, infinitesima, e quindi la serie converge semplicemente per il criterio di Leibniz.
-
-\paragraph{\textcolor{red}{Esempio}}
-Studiare il carattere della serie
-\begin{empheq}{equation*}
-	\sum_{n=1}^{\infty} \frac{(-1)^n}{n-lnn}
-\end{empheq}
-Studiamo la convergenza assoluta
-\begin{empheq}{equation*}
-	\sum_{n=1}^{\infty} |\frac{(-1)^n}{n-lnn}|=\sum_{n=1}^{\infty} \frac{1}{n-lnn}
-\end{empheq}
-Siccome $\frac{1}{n-lnn} \geq \frac{1}{n} \Rightarrow$ la serie diverge.\\
-Studiamo la convergenza semplice
-\begin{empheq}{equation*}
-	\sum_{n=1}^{\infty} \frac{(-1)^n}{n-lnn}, \,\,\,\,\,\, a_n = \frac{1}{n-lnn}
-\end{empheq}
-e speriamo che $\{a_n\}_{n\in\N}$ sia positiva \textcolor{orange}{(Vero!)}, decrescente \textcolor{orange}{(?)}, infinitesima \textcolor{orange}{(Vero!)}. Ci chiediamo allora se $a_{n+1}\leq a_{n}$ ovvero se $\frac{1}{n+1-ln(n+1)} \leq \frac{1}{n-lnn} $ (?) Avremo $ ln(\frac{n+1}{n})\leq1$ e $ln(1+\frac{1}{n})\leq 1$, dunque $1-\frac{1}{n} \leq 2 \leq e$ cioè $ln(1+\frac{1}{n})<lne=1$ $\Rightarrow$ la serie converge per il criterio di Leibniz.
-
-\paragraph{\textcolor{red}{Esempio}}
-Studiare il carattere della serie 
-\begin{empheq}{equation*}
-	\sum_{n=1}^{\infty} (-1)^n \frac{n+1}{\sqrt{n^4+2}-lnn}
-\end{empheq}
-Studiamo la convergenza assoluta
-\begin{empheq}{equation*}
-	\sum_{n=1}^{\infty}| (-1)^n \frac{n+1}{\sqrt{n^4+2}-lnn}|= \sum_{n=1}^{\infty} \frac{n+1}{\sqrt{n^4+2}-lnn}
-\end{empheq}
-\begin{empheq}{equation*}
-	\frac{n+1}{\sqrt{n^4+2}-lnn} \sim  \frac{n}{n^2}=\frac{1}{n}
-\end{empheq}
-e dunque la serie diverge assolutamente per il criterio asintotico del confronto.\\
-Studiamo ora la convergenza semplice
-\begin{empheq}{equation*}
-	\sum_{n=1}^{\infty} (-1)^n \frac{n+1}{\sqrt{n^4+2}-lnn}
-\end{empheq}
-La successione $\{\frac{n+1}{\sqrt{n^4+2}-lnn}\}_{n \geq 1}$ è positiva \textcolor{orange}{(Vero!)}, decrescente \textcolor{orange}{(Almeno definitivamente)}, infinitesima \textcolor{orange}{(Vero!)}?\\
-Devo far vedere che, almeno definitivamente, 
-\begin{empheq}{equation*}
-	\frac{n+2}{\sqrt{(n+1)^4+2}-ln(n+1)} \leq \frac{n+1}{\sqrt{n^4+2}-lnn}
-\end{empheq}
-\begin{empheq}{equation*}
-	(n+2)(\sqrt{n^4+2} -\ln n) \leq (n+1)(\sqrt{(n+1)^4+2} -\ln(n+1))
-\end{empheq}
-\begin{empheq}{equation*}
-	f(x)=\frac{x+1}{\sqrt{x^4 +2}-\ln x} ,\,\,\,\,\,\,\, x > 0
-\end{empheq}
-Se dimostro che $f'(x)<0$ definitivamente per $x \rightarrow +\infty f$ è decrescente in un introno di $+\infty \Rightarrow f(n+1) \leq f(n)$ defintivamente. Avremo dunque
-\begin{empheq}{equation*}
-	f(n)=\frac{n+1}{\sqrt{n^4+2}-lnn}
-\end{empheq}
-\begin{empheq}{equation*}
-	f(n+1)=\frac{n+2}{\sqrt{(n+1)^4+2}-ln(n+1)}.
-\end{empheq}
+	\begin{enumerate}
+		\item $\{S_{2n}\}_{n \in \mathbb{N}}$, successione delle ridotte di indice pari, è decrescente, ovvero 
+		\begin{equation*}
+			S_{2n+2}\leq S_{2n} \qquad \forall \ n
+		\end{equation*}
+		
+		perché la successione $\{a_k\}_{k \in \mathbb{N} }$ è decrescente.
+		\begin{align*}
+			S_{2n+2} 
+			&= \sum_{k=0}^{2n+2} (-1)^k \ a_k= \sum_{k=0}^{2n} (-1)^k \ a_k + (-1)^{2n+1} \ a_{2n+1} + (-1)^{2n+2} \ a_{2n+2} =
+			\\
+			&= \vertarrowbox {\mathcircled {\sum_{k=0}^{2n} (-1)^k \ a_k} } {\color{blue}{$S_{2n}$}} - \underbrace {a_{2n+1} + a_{2n+2}}_ {\color{blue}{\text{$\leq 0$, perché $\{a_k\}_{k\in\mathrm{N}}$ è decrescente}}} \leq S_{2n}.
+		\end{align*}
+		
+		\item $\{S_{2n+1}\}_{n \in \mathbb{N}}$, successione delle ridotte di indice dispari, è crescente, ovvero 
+		\begin{equation*}
+			S_{2n+3} \geq S_{2n+1} \qquad \forall \ n \in \mathbb{N}
+		\end{equation*} 
+		
+		perché la successione $\{a_k\}_{k \in \mathbb{N}}$ è decrescente
+		\begin{align*}
+			S_{2n+3} 
+			&= \sum_{k=0}^{2n+3} (-1)^k \ a_k = \mathcircled{\sum_{k=0}^{2n+1} (-1)^k \ a_k}^{\color{blue}{\myarrow[190] S_{n+1}}} + (-1)^{2n+2} \ a_{2n+2} +  (-1)^{2n+3} \ a_{2n+3}=
+			\\
+			&= S_{2n+1} + \underbrace{a_{2n+2} - a_{2n+3}}_{\color{blue} {\text{$\geq 0$ perché $\{a_k\}_{k\in\mathbb{N}}$ è decrescente}}} \geq S_{2n+1}.
+		\end{align*}
+		
+		\item $S_{2n} = S_{2n-1} + (-1)^{2n} \ a_{2n} = S_{2n-1} + \mathcircled{a_{2n}}^{\color{blue}{\ \geq 0}} \geq S_{2n-1} \geq S_1$
+		%LASCIA COSÌ, CON EQUATION DÀ UN BRUTTO SPAZIO TRA IL NUMERO DELL'ITEM E L'EQUAZIONE
+		
+		$\{S_{2n}\}$ è una successione decrescente inferiormente limitata $\Rightarrow $ ha limite finito.
+		\begin{equation*}
+			S_{2n+1}=S_{2n} + (-1)^{2n+1} \ a_{2n+1} = S_{2n} - a_{2n+1} \leq S_{2n} \leq S_0
+		\end{equation*}
+		
+		$\{S_{2n+1}\}_{n \in \mathbb{N}}$ è crescente e superiormente limitata $\Rightarrow $ ha limite finito.
+		
+		\item $\inflim S_{2n} = S^0 \in \mathbb{R}, \; \inflim S_{2n+1}=S^1 \in \mathbb{R} \Rightarrow S^0 = S^1 = S$, somma della serie
+		\begin{gather*}
+			\left| S_{2n+1} - S_{2n} \right| = \left| a_{2n+1} \right| \rightarrow 0
+			\\
+			\left| S^0 - S^1 \right| \leq \underbrace{\left| S^0 - S_{2n} \right|}_{\color{blue}{=0 \text{ per } n \rightarrow + \infty}} + \underbrace{\left| S_{2n} - S_{2n+1} \right|}_{\color{blue}{=0 \text{ per } n \rightarrow + \infty}} + \underbrace{\left| S_{2n+1} - S^1 \right|}_{\color{blue}{=0 \text{ per } n \rightarrow + \infty}}
+			\\
+			S^0 = S^1 = S \in \mathbb{R} \; \Rightarrow \text{la serie converge.}
+		\end{gather*}
+		
+		\item $S_{2n+1} \leq S \leq S_{2n+2}  \quad \forall \ n$ perché la prima è crescente e la seconda è decrescente.
+		\begin{align*}
+			0\leq S - S_{2n+1} \leq S_{2n+2} - S_{2n+1} 
+			&= \sum_{k=0}^{2n+2} (-1)^k \ a_k - \sum_{k=0}^{2n+1} (-1)^k \ a_k = \\ 
+			&=\uppercomment{a_{2n+2}}{\text{primo termine}}{\text{escluso da } S_{2n+1}}
+		\end{align*}
+		\begin{gather*}
+			0 \leq S_{2n} - S \leq S_{2n} - S_{2n+1} = \uppercomment{a_{2n+1}}{\text{primo termine}}{\text{escluso da } S_{2n}} 
+			\\
+			\Rightarrow \left| S_n - S \right| \leq \uppercomment{a_{n+1}}{\text{primo termine}}{\text{escluso da } S_{n}}. \qquad \square
+		\end{gather*}
+	\end{enumerate}
+\end{dembar}
 
 
+\begin{exbar}
+	\begin{example}
+		\begin{equation*}
+			\sum_{k=1}^{\infty} \frac{(-1)^k} {k^\alpha}, \qquad 0 < \alpha \leq 1
+		\end{equation*}
+		
+		non converge assolutamente, ma $\left\{ \frac{1} {k^\alpha} \right\}_{k \in \mathbb{N}}$ è positiva, decrescente, infinitesima, e quindi la serie converge semplicemente per il criterio di Leibniz.
+	\end{example}
+\end{exbar}
 
 
-\end{comment}
+\begin{exbar}
+	\begin{example}
+			Studiare il carattere della serie
+		\begin{equation*}
+			\sum_{n=1}^{\infty} \frac{(-1)^n}{n-\ln(n)}
+		\end{equation*}
+		
+		Studiamo la convergenza assoluta
+		\begin{equation*}
+			\sum_{n=1}^{\infty} \left| \frac{(-1)^n} {n - \ln(n)} \right| = \sum_{n=1}^{\infty} \frac{1} {n - \ln(n)}
+		\end{equation*}
+		
+		Siccome $\frac{1} {n - \ln(n)} \geq \frac{1}{n} \Rightarrow$ la serie diverge.
+		
+		Studiamo la convergenza semplice:
+		\begin{equation*}
+			\sum_{n=1}^{\infty} \frac{(-1)^n} {n - \ln(n)}, \quad a_n = \frac{1} {n - \ln(n)}
+		\end{equation*}
+		
+		e speriamo che $\{a_n\}_{n\in\mathbb{N}}$ sia positiva (Vero!), decrescente (Da dimostrare, almeno definitivamente) , infinitesima (Vero!).
+		
+		Ci chiediamo allora se $a_{n+1}\leq a_{n}$:
+		\begin{gather*}
+			\frac{1} {n+1 - \ln(n+1)} \leq \frac{1} {n - \ln(n)} 
+			\\
+			\cancel{n} - \ln(n) \leq \cancel{n} + 1 - \ln(n+1) 
+			\\
+			\ln \left( \frac{n+1} {n} \right) \leq 1
+			\\
+			\ln \left( 1 + \frac{1}{n} \right) \leq 1
+		\end{gather*} 
+		
+		Sappiamo che $1 - \frac{1}{n} \leq 2 < e$ perciò
+		\begin{equation*}
+			\ln \left( 1 + \frac{1} {n} \right) < \ln(e) = 1
+		\end{equation*} 
+		
+		$\Rightarrow$ la serie converge per il criterio di Leibniz.
+	\end{example}
+\end{exbar}
+		
+\begin{exbar}
+\begin{example}
+	
+	Studiare il carattere della serie 
+	\begin{equation*}
+		\sum_{n=1}^{\infty} (-1)^n \ \frac{n+1}{\sqrt{n^4 + 2} - \ln(n)}
+	\end{equation*}
+	Studiamo la convergenza assoluta
+	\begin{gather*}
+		\sum_{n=1}^{\infty} \left| (-1)^n \ \frac{n+1}{\sqrt{n^4 + 2} - \ln(n)} \right| = \sum_{n=1}^{\infty} \frac{n+1}{\sqrt{n^4 + 2} - \ln(n)}
+		\\
+		\frac{n+1}{\sqrt{n^4 + 2} - \ln(n)} \sim  \frac{n}{n^2} = \frac{1}{n}
+	\end{gather*}
+	
+	$\Rightarrow$ la serie diverge assolutamente per il criterio asintotico del confronto.
+	
+	Studiamo ora la convergenza semplice
+	\begin{equation*}
+		\sum_{n=1}^{\infty} (-1)^n \ \frac{n+1}{\sqrt{n^4 + 2} - \ln(n)}
+	\end{equation*}
+	
+	La successione $\left\{ \frac{n+1} {\sqrt{n^4 + 2} - \ln(n)} \right\} _ {n \geq 1}$ è positiva (Vero!), decrescente (Da dimostrare, almeno definitivamente), infinitesima (Vero!)
+	
+	Devo far vedere che, almeno definitivamente, 
+	\begin{gather*}
+		\frac{n + 2} {\sqrt{ (n + 1)^4 + 2} - \ln(n + 1)} \leq \frac{n + 1} {\sqrt{n^4 + 2} - \ln(n)}
+		\\
+		(n + 2) \left( \sqrt{n^4 + 2} -\ln(n) \right) \leq (n + 1) \left( \sqrt{(n + 1)^4 + 2} - \ln(n+1) \right)
+ 		\\
+		f(x) = \frac{x + 1} {\sqrt{x^4 + 2} - \ln(x)} , \qquad x > 0
+	\end{gather*}
+	
+	Se dimostro che $f'(x)<0$ definitivamente per $x \rightarrow +\infty \Rightarrow f$ è decrescente in un intorno di $+\infty \Rightarrow f(n+1) \leq f(n)$ definitivamente. Avremo dunque
+	\begin{gather*}
+		f(n) = \frac{n + 1} {\sqrt{n^4 + 2} - \ln(n)}
+		\\
+		f(n+1) = \frac{n + 2} {\sqrt{(n + 1)^4 + 2} - \ln(n+1)}
+	\end{gather*}
+	
+	Calcoliamo la derivata $f'(x)$:
+	\begin{align*}
+		f'(x)
+		&= \frac{\sqrt{x^4 + 2} - \ln(x) - (x + 1) \left[ \frac{4 x^3 } {2 \sqrt{x^4 + 2}} - \frac{1}{x} \right]} {\left( 
+			\sqrt{x^4 + 2} - \ln(x) \right)^2} = 
+		\\
+		&= \frac{x (x^4 + 2) - x \sqrt{x^4 + 2} \ \ln(x) - (x + 1) \left[2x ^ 4 - \sqrt{x^4 + 2} \right] } {x \sqrt{x^4 + 2} \left( \sqrt{x^4 + 2} - \ln(x) \right)^2}
+	\end{align*}
+	\begin{align*}
+		f'(x)<0 
+		& \iff x (x^4 + 2) - x \sqrt{x^4 + 2} \ \ln(x) - 2x^4 (x + 1) - (x + 1) \sqrt{x^4 + 2}  < 0
+		\\
+		&\iff -x^5 - 2x^4 + 2x - x\sqrt{x^4+2} \ln(x) + (x + 1) \sqrt{x^4 + 2} < 0
+	\end{align*}
+	
+		$f'(x) < 0$ definitivamente per $x \rightarrow +\infty$
+	\begin{equation*}
+		 \iff -x^5 - 2x^4 + 2x - x \sqrt{x^4 + 2} \ \ln(x) + (x+1) \sqrt{x^4 + 2} < 0
+	\end{equation*} 
+	
+	definitivamente per $x\rightarrow +\infty$ cioè
+	\begin{align*}
+		-x^5 - 2x^4 + 2x \underbrace{- x\sqrt{x^4 + 2} \ln(x)}_{\color{blue}{\sim -x^3 \ln(x)}} \underbrace{+ (x + 1) \sqrt{x^4 + 2}}_{\color{blue}{\sim x^3}} &< 0 
+		\\
+		-x^5 + o(x^5) &< 0 &\text{ definitivamente } 
+		\\
+		& & \text{per } x\rightarrow +\infty.
+	\end{align*}
+	\begin{equation*}
+		\Rightarrow \text{ la serie } \sum_{n=1}^{\infty} (-1)^n \ \frac{n+1} {\sqrt{n^4 + 1} - \ln(n)} \text{ converge per il criterio di Leibniz.}
+	\end{equation*}
+\end{example}
+\end{exbar}
+
+\begin{exbar}
+\begin{example} Studiare per quali $\alpha \in \mathbb{R}$ converge la serie
+	\begin{equation*}
+		\sum_{n=1}^{\infty} \ln \left( n^n + n! \right) \left[ n \sin{\frac{1}{n}} - \cos{\frac{\sqrt{2}}{n}} - \frac{\alpha}{n^2} \right]
+	\end{equation*}
+	
+	Ricordiamo le serie di Taylor del seno e del coseno e studiamo il secondo fattore:
+	\begin{align*}
+		\sin{y}
+		&= y - \frac{1}{6} y^3 + o(y^4) \qquad \text{per } y\rightarrow 0
+		\\
+		\cos{y} 
+		&= 1 - \frac{1}{2} y^2 + o(y^3) \qquad \text{per } y\rightarrow 0
+		\\
+		\sin\uppercomment{\frac{1}{n}}{\myarrow[10] =0}{} 
+		&= \frac{1}{n} - \frac{1}{6} \ \frac{1}{n^3} + o \left( \frac{1}{n^3} \right)
+		\\
+		\cos\lowercomment{\frac{\sqrt{2}}{n}}{}{\myarrow[350] =0}
+		& = 1 - \frac{1}{n^2} + o \left( \frac{1}{n^3} \right)
+	\end{align*}
+	
+	\begin{align*}
+		n \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} 
+		&= n \left( \frac{1} {n} - \frac{1} {6} \ \frac{1} {n^3} + o \left( \frac{1} {n^3} \right) \right) - 1 + \frac{1}{n^2} + o \left( \frac{1} {n^3} \right) - \frac{\alpha} {n^2} =
+		\\
+		&= 1 - \frac{1} {6} \ \frac{1} {n^2} + o \left( \frac{1} {n^3} \right) - 1 + \frac{1} {n^2} + o \left( \frac{1} {n^3} \right) - \frac{\alpha} {n^2} =
+		\\
+		&=\left( \frac{5} {6} - \alpha \right) \frac{1} {n^2} + o \left( \frac{1} {n^3} \right)
+		\Rightarrow
+		\begin{cases}
+			<0 \text{ definitivamente se } \alpha > \frac{5}{6}
+			\\
+			>0 \text{ definitivamente se } \alpha < \frac{5}{6}
+		\end{cases}
+	\end{align*}
+	
+	Passiamo ora allo studio del primo fattore:
+	\begin{align*}
+		\ln(n^n+n!) 
+		&= ln \left[ n^n \left( 1 + \frac{n!} {n^n} \right) \right] = \ln(n^n) + \uppercomment{\ln \left( 1 + \frac{n!} {n^n} \right)}{\myarrow[10] =0 \; n\rightarrow+\infty}{} 
+		\\
+		&= n\ln(n) + o(n\ln(n))
+	\end{align*}
+	
+	\begin{itemize}
+	\item Per $\alpha \neq \frac{5}{6}$ avremo
+	\begin{align*}
+		\ln(n^n + n!) \left[ n \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} \right] 
+		&= \left( n\ln(n) + o(n\ln(n)) \right) \cdot \left[ \left(\frac{5} {6} - \alpha \right) \frac{1} {n^2} + o \left( \frac{1} {n^3} \right) \right] =
+		\\
+		&= \left( \frac{5}{6} - \alpha \right)  \frac{\ln(n)}{n} + o \left( \frac{\ln(n)}{n} \right) \sim
+		\\
+		&\sim \left(\frac{5} {6} - \alpha \right) \frac{\ln(n)} {n}
+	\end{align*}
+	
+	e siccome $\sum_{n=1}^{\infty} \frac{\ln(n)}{n}$ diverge, per il criterio del confronto asintotico anche la serie di partenza diverge.
+	
+	\item Per $\alpha= \frac{5}{6}$
+	\begin{gather*}
+		n \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} = o \left( \frac{1} {n^3} \right)
+		\\
+		\ln(n^n + n!) \left[ n \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} \right] = (n\ln(n) + o(n\ln(n))) \cdot o \left( \frac{1} {n^3} \right) = o \left( \frac{\ln(n)} {n^2} \right)
+		\\
+		\inflim \frac{ \left| \ln(n^n + n!) \left[ \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} \right] \right|} {\frac{\ln(n)} {n^2}} = 0
+	\end{gather*}
+	
+	Siccome $\sum_{n=1}^{\infty} \frac{\ln(n)}{n^2}$ converge $\Rightarrow$ per il criterio del confronto asintotico la serie di partenza converge assolutamente e quindi semplicemente.
+	\end{itemize}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Al variare di $\alpha \in \mathbb{R}, \, \alpha \neq 0$, studiare il carattere della serie
+	\begin{equation*}
+		\sum_{n=2}^{\infty} \frac{(-1)^n} {n^\alpha + (-1)^n}
+	\end{equation*}
+	
+	\begin{itemize}
+	\item Se $\alpha < 0, \, n^\alpha \rightarrow 0 \text{ per } n \rightarrow +\infty$ 
+	\begin{equation*}
+		\Rightarrow \lim_{n \rightarrow +\infty} \left| \frac{(-1)^n} {n^\alpha + (-1)^n} \right| = 1
+	\end{equation*}
+	
+	cioè il termine generale della serie non è infinitesimo, e quindi la serie non converge.
+	
+	\item Per $\alpha > 0 \Rightarrow n^\alpha + (-1)^n \sim n^\alpha$ 
+	
+	Studiamo la convergenza assoluta:
+	\begin{equation*}
+		\left| \frac{(-1)^n} {n^\alpha + (-1)^n} \right| \sim \frac{1} {n^\alpha}
+	\end{equation*}
+	
+	$\Rightarrow$ se $\alpha>1$ la serie converge assolutamente, e quindi semplicemente, e se $ 0 < \alpha \leq 1 $, la serie diverge assolutamente.
+	
+	Studiamo la convergenza semplice per $0 < \alpha \leq 1$
+	\begin{equation*}
+		\sum_{n=2}^{\infty} \frac{(-1)^n} {n^\alpha + (-1)^n} = \sum_{n=2}^{\infty} (-1)^n \ a_n
+	\end{equation*}
+	
+	con $a_n=\frac{1}{n^\alpha + (-1)^n} > 0$ per $n \geq 2$
+	\begin{equation*}
+		\inflim a_n = 0 \qquad \text{(banale)}
+	\end{equation*}
+	
+	$\{a_n\}_{n \in \mathbb{N}}$ è decrescente almeno definitivamente?
+	
+	Vale $a_{n+1} \leq a_{n}$, cioè $n^\alpha + (-1)^n \leq (n+1)^\alpha + (-1)^{n+1}$ definitivamente?
+	
+	Se prendo $n$ pari:
+	\begin{align*}
+		n^\alpha + 1 \leq (n+1)^\alpha - 1 & \text{ definitivamente}
+		\\
+		(n+1)^\alpha - n^\alpha \geq 2 & \text{ definitivamente}
+	\end{align*}
+	\begin{align*}
+		(n+1)^\alpha - n^\alpha 
+		&= n^\alpha \left[ \left( 1 + \frac{1} {n} \right)^\alpha - 1 \right] =
+		\\
+		&= n^\alpha \left[ \frac{\alpha} {n} + o \left( \frac{1} {n} \right) \right] =
+		\\
+		&= \frac{\alpha} {n^{1 - \alpha}} + o \left( \frac{1} {n^{2 - \alpha}} \right) \xrightarrow{n \rightarrow +\infty} 0 \qquad \text{se } \alpha <1
+	\end{align*}
+	
+	$a_n \sim \frac{1}{n^\alpha}$ ma mentre $\frac{1}{n^\alpha}$ è decrescente $a_n$ non lo è, perciò non possiamo usare il citerio di Leibinitz.
+	
+	\begin{equation*}
+		\frac{(-1)^n} {n^\alpha + (-1)^n} = \mathcircled{\frac{(-1)^n} {n^\alpha}} + b_n
+	\end{equation*}
+	
+	Se $0<\alpha\leq 1$, la serie $\sum_{n=1}^{\infty} \frac{(-1)^n}{n^\alpha}$ converge per il criterio di Leibniz.
+	
+	\begin{equation*}
+		b_n= \frac{(-1)^n}{n^\alpha+(-1)^n} - \frac{(-1)^n}{n^\alpha}
+	\end{equation*}
+	
+	Se $\sum_{n=2}^{\infty} b_n$ converge, allora anche $\sum_{n=2}^{\infty} \frac{(-1)^n}{n^\alpha +(-1)^n}$ converge. 
+	
+	Se $\sum_{n=2}^{\infty} \frac{(-1)^n}{n^\alpha+(-1)^n}$ converge, converge anche $\sum_{n=2}^{\infty} b_n$
+	\begin{gather*}
+		\sum_{n=2}^{\infty} \frac{(-1)^n}{n^\alpha+(-1)^n} \text{ converge } \iff \sum_{n=2}^{\infty} b_n \text{ converge.}
+	\end{gather*}
+	\begin{align*}	
+		b_n 
+		&= (-1)^n \left[ \frac{1} {n^\alpha + (-1)^n} - \frac{1} {n^\alpha} \right] = (-1)^n \ \frac{ \cancel{n^\alpha} - \cancel{n^\alpha} -(-1)^n} {n^\alpha (n^\alpha+(-1)^n)} 
+		\\
+		&= \undercomment{-\frac{1}{n^{2\alpha} + (-1)^n}} {\sim -\frac{1}{n^{2\alpha}}} {} < 0 \qquad \forall \ n \geq 2
+	\end{align*}
+	
+	e $\sum_{n=2}^{\infty} \frac{1}{n^{2\alpha}}$ converge $\iff 2 \alpha > 1 \iff \alpha > \frac{1}{2}$, dunque per il criterio asintotico del confronto $\sum_{n=2}^{\infty} b_n$ converge (e quindi anche la serie di partenza) $\iff \alpha > \frac{1}{2}$.	
+\end{itemize}
+\end{example}
+\end{exbar}
+
+\begin{exbar}
+\begin{example}
+	Per stabilire per quali valori del parametro $\alpha > 0$ converge la serie
+	\begin{equation*}
+		\sum_{n=1}^{\infty} \underbrace{(n - \uppercomment{\cos{n^\alpha}} {\myarrow[10] 1} {})}_{\geq 0} \left(\frac{1}{n} - \sin{\lowercomment{\frac{1}{n^{2\alpha}}} {\myarrow[350] 0}{} } \right)
+	\end{equation*}
+	
+	consideriamo prima il comportamento dei termini $(n - \cos{n^\alpha})$ e $\left(\frac{1}{n} - \sin{\frac{1} {n^{2\alpha}}} \right)$.
+	
+	Sappiamo che
+	\begin{equation*}
+		n - \cos{n^\alpha} \sim n \qquad \text{per } n \rightarrow +\infty.
+	\end{equation*}
+	
+	Inoltre, usando l'espansione di Taylor per $\sin y$ vicino a zero, abbiamo:
+	\begin{equation*}
+		\sin y = y - \frac{1}{6} y^3 + o(y^4) \qquad \text{per } y \rightarrow 0.
+	\end{equation*}
+	
+	Applicando questo a $y = \frac{1}{n^{2\alpha}}$, otteniamo:
+	\begin{equation*}
+		\sin \frac{1}{n^{2\alpha}} = \frac{1}{n^{2\alpha}} - \frac{1}{6} \ \frac{1}{n^{6\alpha}} + o\left( \frac{1}{n^{8\alpha}} \right)
+	\end{equation*}
+	
+	Allora, consideriamo il prodotto:
+	\begin{align*}
+		(n - \cos{n^\alpha})\left(\frac{1}{n} - \sin{\frac{1}{n^{2\alpha}}}\right) 
+		&= (n + o(n)) \left( \frac{1}{n} - \frac{1}{n^{2\alpha}} + \frac{1}{6} \ \frac{1}{n^{6\alpha}} + o \left( \frac{1}{n^{8\alpha}} \right) \right) 
+		\\
+		&= 1 - \frac{1}{n^{2\alpha - 1}} + \frac{1}{6} \ \frac{1}{n^{6\alpha - 1}} + o(1)
+	\end{align*}
+
+	Esaminiamo ora i casi per $\alpha$:
+	
+	\begin{itemize}
+		\item Se $2\alpha - 1 \neq 0$:
+		\begin{itemize}
+		
+		\item Se $2\alpha - 1 > 0$
+		\begin{equation*}
+			\inflim 1 - \frac{1}{n^{2\alpha - 1}} + \frac{1}{6} \ \frac{1}{n^{6\alpha - 1}} + o(1) \neq 0
+		\end{equation*}
+	
+		perché $\frac{1}{n^{2\alpha - 1}} + \frac{1}{6} \ \frac{1}{n^{6\alpha - 1}} + o(1) \rightarrow 0$ e il termine generale tende a $1$, il che implica che la serie non converge.
+		
+		\item Se $2\alpha - 1 < 0$, il termine generale diverge a $-\infty$, il che implica che la serie diverge.
+	\end{itemize}
+	
+	\item Se $\alpha = \frac{1}{2}$, cioè $2\alpha - 1 = 0$, allora il termine generale diventa:
+	\begin{equation*}
+		(n - \cos{\sqrt{n}}) \left( \frac{1}{n} - \sin{\frac{1}{n}} \right).
+	\end{equation*}
+	
+	Utilizzando l'espansione $\sin \frac{1}{n} = \frac{1}{n} - \frac{1}{6} \frac{1}{n^3} + o\left(\frac{1}{n^4}\right)$ si ha:
+	\begin{align*}
+		&(n - \cos{\sqrt{n}}) \left( \cancel{\frac{1}{n}} - \cancel{\frac{1}{n}} + \frac{1}{6} \frac{1}{n^3} + o \left( \frac{1}{n^4} \right) \right) =
+		\\
+		= &(n - \cos{\sqrt{n}})\left( \frac{1}{6} \ \frac{1}{n^3} + o \left( \frac{1}{n^4} \right) \right) 
+		\\
+		= &\frac{1}{6} \frac{1}{n^2} - \frac{1}{6} \ \lowercomment{\frac{\cos \sqrt{n}}{n^3}} {\leq \frac{1}{n^3} = o\left( \frac{1}{n^2} \right)} {\lim_{n} \frac{\frac{\cos \sqrt{n}}{n^3}} {\frac{1}{n^2}} = 0} + o \left( \frac{\cos \sqrt{n}}{n^4} \right)  
+		\\
+		= & \underbrace{\frac{1}{6} \ \frac{1}{n^2} + o \left( \frac{1}{n^2} \right)}_{\color{blue}{\genfrac{}{}{0pt}{}{> 0 \text{ definitivamente}} {\text{per } n\rightarrow +\infty} }} \sim \frac{1}{n^2}
+	\end{align*}
+	
+	$\sum_{n=1}^{\infty} \frac{1}{n^2}$ converge per il criterio asintotico del confronto ed anche la serie originale converge per $\alpha = \frac{1}{2}$.	Quindi, la serie $\sum_{n=1}^{\infty} (n - \cos{n^\alpha})\left(\frac{1}{n} - \sin{\frac{1}{n^{2\alpha}}}\right)$ converge se e solo se $\alpha = \frac{1}{2}$.
+	
+	{\footnotesize Soluzione alternativa a posteriori:
+		\begin{gather*}
+			(n + \cos \sqrt{n}) \left( \frac{1}{n} - \sin \frac{1}{n} \right) =
+			\\
+			= (n + o(n)) \left( \frac{1}{6} \ \frac{1}{n^3} + o \left( \frac{1}{n^4} \right) \right) =
+			\\
+			\frac{1}{6} \ \frac{1}{n^2} + \left( \frac{1}{n^2} \right)
+		\end{gather*}
+	
+	}
+	\end{itemize}
+\end{example}
+\end{exbar}
