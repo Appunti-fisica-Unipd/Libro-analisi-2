@@ -27,241 +27,306 @@ Se $\inf_{a=x_0 < x_1 < ... < x_n =b} S(f) = \sup_{a=x_0 < x_1 < ... < x_n =b} s
 	Stiamo provando ad integrare una funzione limitata su un intervallo illimitato.
 	\begin{center}
 		\includegraphics[width=\linewidth]{integrali_impropri/pag77}
-		\captionof{figure}{Integrale di $\frac{1}{x^\alpha}$ da $1$ a $+\infty$} 
 		\label{fig:pag77}
 	\end{center}
 
-	
-
+	Fissato $c > 1$, riesco a definire $\int_{1}^{c} f(x)dx$ perché integro una funzione limitata su un intervallo limitato. Posso dunque definire
+	\begin{align*}
+		\int_{1}^{+\infty} f(x) \ \mathrm{d}x 
+		&= \lim_{c\rightarrow +\infty} \int_{1}^{c}f(x) \ \mathrm{d}x \qquad \text{se esiste}
+		\\
+		\int_{1}^{+\infty} \frac{1}{x^\alpha} dx 
+		&= \lim_{c \rightarrow + \infty} \int_{1}^{c} \frac{1}{x^\alpha} \ \mathrm{d} x 
+		\\
+		&=
+		\begin{cases}
+			\lim_{c \rightarrow +\infty}\frac{1}{1-\alpha}[c^{1-\alpha}-1] & \text{se } \alpha \neq 1
+			\\[1em]
+			\lim_{c \rightarrow +\infty} \ln c & \text{se } \alpha=1
+		\end{cases}
+		\\
+		&=
+		\begin{cases}
+			 \frac{1}{\alpha-1} & \text{se } \alpha > 1
+			\\[1em]
+			+\infty & \text{se } \alpha \leq 1
+		\end{cases}
+	\end{align*}
 \end{example}
-
-
 \end{exbar}
 
-
-
-\begin{comment}
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\textwidth]{unosuxallaalpha.png}
-	\end{figure}
 	
-	Fissato $c > 1$, riesco a definire $\int_{1}^{c} f(x)dx$ perchè integro una funzione limitata su un intervallo limitato.\\
-	Posso dunque definire
-	\begin{empheq}{align*}
-		\int_{1}^{+\infty} f(x)dx &=\lim_{c\rightarrow +\infty} \int_{1}^{c}f(x)dx, \,\,\,\,\, \text{se}\,\,\, \exists\\
-		\int_{1}^{+\infty} \frac{1}{x^\alpha} dx &= \lim_{c \rightarrow + \infty}\int_{1}^{c} \frac{1}{x^\alpha}dx\\
-		&=
-		\begin{cases}
-			& \lim_{c \rightarrow +\infty}\frac{1}{1-\alpha}[c^{1-\alpha}-1]\,\,\,\, \text{se}\,\,\, \alpha \neq 1\\
-			& \lim_{c \rightarrow +\infty} \ln c \,\,\,\, \text{se} \,\,\, \alpha=1
-		\end{cases}\\
-		&=
-		\begin{cases}
-			& \frac{1}{\alpha-1} \,\,\,\, \text{se} \,\,\, \alpha > 1\\
-			&+\infty \,\,\,\, \text{se} \,\,\, \alpha \leq 1
-		\end{cases}
-	\end{empheq}
+\begin{exbar}
+\begin{example}
+	\begin{equation*}
+		f(x)=-\ln x, \qquad x \in ]0,1]
+	\end{equation*}
 	
-	\paragraph{\textcolor{red}{Esempio}}
-	\begin{empheq}{equation*}
-		f(x)=-\ln x, \,\,\, x \in ]0,1]
-	\end{empheq}
 	e provo a definire 
-	\begin{empheq}{equation*}
-		\int_{0}^{1} f(x)dx
-	\end{empheq}
-	cioè l'integrale di una funzione illimitata su un intervallo limitato.\\
+	\begin{equation*}
+		\int_{0}^{1} f(x) \ \mathrm{d}x
+	\end{equation*}
+	
+	cioè l'integrale di una funzione illimitata $\left( \lim_{x \rightarrow 0^+} f(x) = + \infty \right)$ su un intervallo limitato.
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{integrali_impropri/pag79}
+		\label{fig:pag79}
+	\end{center}
+	
+	Riesco a definire bene $\int_{c}^{1} f(x) \ \mathrm{d}x$ perché integro una funzione limitata
+	$\left( |f(x)|\leq -\ln c \quad \forall \ x \in [c,1] \right)$ su un intervallo limitato.
+	
+	Posso dunque definire
+	\begin{align*}
+		\int_{0}^{1} f(x)dx 
+		&= \lim_{c\rightarrow +0^+} \int_{c}^{1} f(x) \ \mathrm{d}x \qquad \text{se esiste}
+		\\
+		\int_{0}^{1}(-\ln x) \ \mathrm{d}x 
+		&= \lim_{c \rightarrow 0^+} \int_{c}^{1} (-\ln x) \ \mathrm{d} x
+		\\
+		&= \lim_{c \rightarrow 0^+} [x-x\ln x]_{c}^{1} 
+		\\
+		&= \lim_{c \rightarrow 0^+} [1-c+c\ln c]=1
+	\end{align*}
+\end{example}
+\end{exbar}
+
+\begin{definition}
+	Sia $f:[a,b[ \ \rightarrow \mathbb{R}; b \in \mathbb{R} \cup\{+\infty\}$ (voglio definire $\int_{a}^{b}f(x) \ \mathrm{d}x$) Riemann integrabile in $[a,c] \ \forall c \in [a,b[$. Se $\exists$ finito il $\lim_{c \rightarrow b^-} \int_{a}^{c} f(x) \ \mathrm{d}x $, allora $f$ si dice integrale in senso improprio o generalizzato in $[a,b[$ e la quantità 
+	\begin{equation*}
+		\int_{a}^{b} f(x) \ \mathrm{d} x = \lim_{c\rightarrow b^-} \int_{a}^{c} f(x) \ \mathrm{d} x
+	\end{equation*}
+	si dice integrale improprio o generalizzato di $f$ in $[a,b[$.
+	
+	Analogamente, data $f:]a,b]\rightarrow \mathbb{R}; a \in \mathbb{R} \cup \{-\infty\}$, Riemann integrabile in $[c,b] \ \forall c \in ]a,b]$. Se $\exists$ finito il $\lim_{c \rightarrow a^+} \int_{c}^{b} f(x) \ \mathrm{d}x$, allora $f$ si dice integrabile in senso improprio o generalizzato in $]a,b]$ e la quantità
+	\begin{equation*}
+		\int_{a}^{b} f(x) \ \mathrm{d}x = \lim_{c \rightarrow a^+} \int_{c}^{b} f(x) \ \mathrm{d}x
+	\end{equation*}
+	si dice integrale improprio o generalizzato di $f$ in $]a,b]$.
+	
+	Se $f$ è integrabile in senso improprio in un intervallo $I$, allora si dice anche che l'integrale (improprio) di $f$ in $I$ è convergente o che $f$ ha integrale (improprio) convergente in $I$.
+	
+	Se il limite che definisce l'integrale improprio di $f$ è infinito, si dice anche che l'integrale (improprio) di $f$ è divergente o che $f$ ha integrale (improprio) divergente in $I$.
+\end{definition}
+
+\begin{attbar}
+		Vista la definizione, 
+	\begin{equation*}
+		\int_{1}^{+\infty} \frac{1}{x^\alpha} \ \mathrm{d}x \text{ converge} \iff \alpha > 1
+	\end{equation*}
+\end{attbar}
+
+\begin{exbar}
+\begin{example} \textbf{importante}
+	\begin{align*}
+		f(x)=\frac{1}{(x-a)^\alpha}, \qquad
+		& x \in ]a, a+1], 
+		\\ & a \in \mathbb{R} \text{ fissato}
+		\\ & \alpha \in \mathbb{R} \text{ parametro}
+		\\ & \alpha > 0
+	\end{align*}
+	
+	Studiamo la convergenza di 
+	\begin{align*}
+		\int_{a}^{a+1} \frac{1}{(x-a)^\alpha} \ \mathrm{d}x  
+		&= \lim_{c \rightarrow a^+} \int_{c}^{a+1} \frac{1}{(x-a)^\alpha} \ \mathrm{d}x
+		\\
+		&=
+		\begin{cases}
+			\lim_{c \rightarrow a^+} \frac{1}{1-\alpha} \left[1 - (c-a)^{1-\alpha} \right] & \text{se } \alpha \neq 1 
+			\\[1em]
+			\lim_{c \rightarrow a^+} -\ln(c-a) & \text{se } \alpha =1
+		\end{cases}\\
+		&=
+		\begin{cases}
+			\frac{1}{1-\alpha} & \text{se } \alpha <1 
+			\\[1em]
+			+\infty & \text{se } \alpha \geq1.
+		\end{cases}
+	\end{align*}
+\end{example}
+\end{exbar}
+
+\begin{attbar}
+	\begin{equation*}
+		\int_{a}^{a+1} \frac{1}{(x-a)^\alpha} \ \mathrm{d}x \text{ converge} \iff \alpha < 1
+	\end{equation*}
+	
+	In particolare
+	\begin{equation*}
+		\int_{0}^{1} \frac{1}{x^\alpha} \mathrm{d}x \text{ converge} \iff \alpha < 1
+	\end{equation*}
+\end{attbar}
+
+\begin{exbar}
+\begin{example}
+	Stabilire se converge 
+	\begin{equation*}
+		\label{eq:pag 83}
+		\int_{0}^{1} \frac{\sin{\frac{1}{x}}}{x^2} \ \mathrm{d}x
+	\end{equation*}
+	
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{integrali_impropri/pag83}
+		\label{fig:pag83}
+	\end{center}
+	
+		Devo calcolare 
+	\begin{equation*}
+		\lim_{c\rightarrow0^+} \int_{c}^{1} \frac{\sin{\frac{1}{x}}}{x^2} \ \mathrm{d}x= \lim_{c \rightarrow 0^+} \cos{\frac{1}{x}} \bigg|_{c}^{1}=\lim_{c\rightarrow 0^+}\left(1-\cos{\frac{1}{c}}\right)
+	\end{equation*}
+	
+	che non esiste $\Rightarrow$ la funzione $f(x)=\frac{\sin{\frac{1}{x}}}{x^2}$, non è integrabile in senso improprio in $]0,1]$	
+\end{example}
+\end{exbar}
+
+\begin{exbar}
+\begin{example} \textbf{importante}
+	\begin{align*}
+		\int_{0}^{+\infty} e^{\alpha x} \ \mathrm{d}x 
+		&= \lim_{c \rightarrow +\infty} \int_{0}^{c} e^{\alpha x} \ \mathrm{d}x 
+		\\ & =^{\myarrow[10] \alpha \neq 0} \lim_{c \rightarrow +\infty} \frac{1}{\alpha} \ (e^{\alpha c}-1)
+		\\
+		&= \begin{cases}
+			-\frac{1}{\alpha} & \text{se } \alpha <0
+			\\
+			+\infty & \text{se } \alpha >0.
+		\end{cases}
+	\end{align*}
+\end{example}
+\end{exbar}
+
+\begin{attbar}
+	\begin{equation*}
+		\int_{0}^{+\infty} e^{\alpha x} \ \mathrm{d}x \text{ converge } \iff \alpha < 0
+	\end{equation*}
+	
+	Analogamente
+	\begin{equation*}
+		\int_{-\infty}^{0} e^{\alpha x} \ \mathrm{d}x \text{ converge } \iff  \alpha > 0
+	\end{equation*}
+\end{attbar}
+
+Dato $ a>0$, scrivendo $e^{\alpha x} = e^{(\alpha \ln a)x}$ si studia la convergenza degli integrali
+\begin{equation*}
+	\int_{-\infty}^{0} e^{\alpha x} \ \mathrm{d}x \qquad \int_{0}^{+\infty}  e^{\alpha x} \ \mathrm{d}x.
+\end{equation*}
+
+(Utile esercizio per casa)
+
+
+\textbf{Nota Bene}
+
+$f:[1,+\infty[ \ \rightarrow \mathbb{R}$ continua. E' vero o falso che $\lim_{x \rightarrow +\infty} f(x)=0 \Rightarrow \int_{1}^{+\infty} f(x) \ \mathrm{d}x$ converge?
+
+\begin{center}
+	\textbf{È falso!!!} Si veda $f(x)=\frac{1}{x}$
+\end{center}
+
+E' vero o falso che
+$\int_{1}^{+\infty}f(x) \ \mathrm{d}x$ converge $\Rightarrow \lim_{x \rightarrow +\infty} f(x) = 0$?
+
+\begin{center}
+	\textbf{È falso!!!}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=0.75\linewidth]{integrali_impropri/pag85}
+	\label{fig:pag85}
+\end{center}
+
+Ad ogni numero naturale $n$ costruite un triangolo di base $\frac{1}{2^n}$ e altezza $n$
+\begin{equation*}
+	\int_{1}^{+\infty} f(x) \ \mathrm{d}x = \sum (\text{aree dei triangoli}) = \sum_{n=1}^{\infty} \frac{1}{2} \frac{1}{2^n} \cdot n = \frac{1}{2} \sum_{n=1}^{\infty} \frac{n}{2^n}, 
+\end{equation*}
+
+che è una serie convergente.
+
+
+\begin{attbar}
+	Se $f:[a,b] \rightarrow \mathbb{R}$ è Riemann integrabile, allora è integrabile anche in senso improprio e i due integrali coincidono.
+\end{attbar}
+
+
+\begin{definition}
+	$f:[a,b] \ \rightarrow \mathbb{R}, \; a,b \in \mathbb{R} \cup \{\pm \infty\}$, Riemann integrabile in $[c,d] \ \forall \ a < c < d < b$. $f$ si dice integrabile in senso improprio in $ ]a,b[$ se, fissato $\xi \in \ ]a,b[$, lo è in $]a, \xi]$ e in $[\xi,b[$ $\bigg($esistono finiti $\lim_{c \rightarrow a^+} \int_{c}^{\xi} f(x) \ \mathrm{d}x$ e $\lim_{d \rightarrow b^-} \int_{\xi}^{d} f(x) \ \mathrm{d}x \bigg)$ e in tal caso si pone 
+	\begin{equation*}
+		\int_{a}^{b} f(x)dx = \int_{a}^{\xi} f(x)dx + \int_{\xi}^{b} f(x) dx
+	\end{equation*}
+	
+	Si verifica che la definizione non dipende da punto $\xi$ fissato.
+\end{definition}
+
+
+\begin{exbar}
+\begin{example}
+	Come si integra $\int_{-\infty}^{+\infty} \frac{1}{1+x^2} \ \mathrm{d}x$?
+	
+	$x \mapsto \frac{1}{1+x^2}$ è integrabile secondo Riemann in $[c,d] \ \forall  \ c < d$. 
+	
+	Sia $\xi = 2$. Dobbiamo verificare se la funzione è integrabile in senso improprio in $]-\infty,2] $ e in $ [2, +\infty[$
+	\begin{gather*}
+		\int_{-\infty}^{2} \frac{1}{1+x^2} \ \mathrm{d}x = \lim_{c \rightarrow -\infty} \int_{c}^{2} \frac{1}{1+x^2} \ \mathrm{d}x = \lim_{c \rightarrow -\infty} \left( \arctan{2 + \frac{\pi}{2}} \right)= \arctan{2 + \frac{\pi}{2}}
+		\\
+		\int_{2}^{+\infty} \frac{1}{1 + x^2} \ \mathrm{d}x = \lim_{c \rightarrow +\infty} \int_{2}^{c} \frac{1}{1 + x^2} \mathrm{d}x = \lim_{c \rightarrow +\infty} (\arctan{c} - \arctan{2}) = \frac{\pi}{2} - \arctan{2}
+		\\
+		\Rightarrow \int_{-\infty}^{+\infty} \frac{1}{1+x^2} \ \mathrm{d}x \text{ converge e } \int_{-\infty}^{+\infty} \frac{1}{1+x^2} \ \mathrm{d}x = \int_{-\infty}^{2} \frac{1}{1+x^2} \ \mathrm{d}x + \int_{2}^{+\infty} \frac{1}{1+x^2} \ \mathrm{d}x
+	\end{gather*}
 \end{example}
 \end{exbar}
 
 
+\begin{exbar}
+\begin{example}
+	\begin{gather*}
+		f(x)=\frac{1}{x^\alpha}, \qquad x \in \ ]0,+\infty[
+		\\
+		\alpha > 0 \Rightarrow \lim_{x \rightarrow 0^+} f(x)=+\infty.
+	\end{gather*}
 	
-	
+	Preso $\xi=1$, $f$ è integrabile in senso improprio in $]0,+\infty[ \ \iff$ entrambi gli integrali $\int_{0}^{1} \frac{1}{x^\alpha} \ \mathrm{d}x$ e $\int_{1}^{+\infty} \frac{1}{x^\alpha} \ \mathrm{d}x$ convergono. Ma
+	\begin{gather*}
+		\int_{0}^{1} \frac{1}{x^\alpha} \ \mathrm{d}x \text{ converge} \iff \alpha < 1 
+		\\
+		\int_{1}^{+\infty} \frac{1}{x^\alpha} \ \mathrm{d}x \text{ converge} \iff \alpha > 1
+		\\
+		\Rightarrow \int_{0}^{+\infty} \frac{1}{x^\alpha} \ \mathrm{d}x \text{ non converge per alcun valore di } \alpha
+	\end{gather*}
+\end{example}
+\end{exbar}
 
-	
 
-
-	
-
-	
-
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\textwidth]{intda1a0.png}
-	\end{figure}
-	Riesco a definire bene $\int_{c}^{1} f(x)dx$ perchè integro una funzione limitata
-	\textcolor{orange}{$(|f(x)|\leq -\ln c \forall x\in[c,1])$} su un intervallo limitato.\\
-	Posso dunque definire
-	\begin{empheq}{align*}
-		\int_{0}^{1} f(x)dx &= \lim_{c\rightarrow +0^+} \int_{c}^{1} f(x)dx\,\,\,\,\,\, \text{se}\,\,\, \exists\\
-		\int_{0}^{1}(-\ln x) dx &= \lim_{c \rightarrow 0^+} \int_{c}^{1}(-\ln x)dx\\
-		&= \lim_{c \rightarrow 0^+} [x-x\ln x]_{c}^{1} \\
-		&= \lim_{c \rightarrow 0^+} [1-c+c\ln c]=1
-	\end{empheq}
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	Sia $f:[a,b[\rightarrow \R, a,b \in \R \cup\{+\infty\}$ \textcolor{orange}{(voglio definire $\int_{a}^{b}f(x)dx$)} Riemann integrabile in $[a,c]\,\, \forall c \in [a,b[$. Se $\exists$ finito il $\lim_{c \rightarrow b^-} \int_{a}^{c}f(x)dx $, allora $f$ si dice integrale in senso improprio o generalizzato in $[a,b[$ e la quantità 
-	\begin{empheq}{equation*}
-		\int_{a}^{b} f(x)dx = \lim_{c\rightarrow b^-} \int_{a}^{c} f(x)dx
-	\end{empheq}
-	si dice integrale improprio o generalizzato di $f$ in $[a,b[$.\\
-	Analogamente, data $f:]a,b]\rightarrow \R, a,b \in \R \cup \{-\infty\}$, Riemann integrabile in $[c,b]\,\, \forall c \in ]a,b]$. Se $\exists$ finito il $\lim_{c \rightarrow a^+} \int_{c}^{b} f(x)dx$, allora $f$ si dice integrabile in senso improprio o generalizzato in $]a,b]$ e la quantità
-	\begin{empheq}{equation*}
-		\int_{a}^{b} f(x)dx = \lim_{c \rightarrow a^+} \int_{c}^{b} f(x)dx
-	\end{empheq}
-	si dice integrale improprio o generealizzato di $f$ in $]a,b]$.\\
-	Se $f$ è integrabile in senso improprio in un intervallo $I$, allora si dice anche che l'integrale (improprio) di $f$ in $I$ è convergente o che $f$ ha integrale (improprio) convergente in $I$.\\
-	Se il limite che definisce l'integrale improprio di $f$ è infinito, si dice anche che l'integrale (improprio) di $f$ è divergente o che $f$ ha integrale (improprio) divergente in $I$.
-	
-	\paragraph{\textcolor{red}{Osservazione}}
-	Vista la definizione, 
-	\begin{empheq}{equation*}
-		\int_{1}^{+\infty}\frac{1}{x^\alpha}dx \,\,\,\,\, \text{converge} \Leftrightarrow \alpha > 1
-	\end{empheq}
-	
-	\paragraph{\textcolor{red}{Esempio Importante}}
-	\begin{empheq}{equation*}
-		f(x)=\frac{1}{(x-a)^\alpha}, \,\,\,\, x \in ]a,a+1], \,\,\, a\in \R \,\, \text{fissato},\,\,\, \alpha\in\R\,\,\, \text{parametro},\,\,\, \alpha > 0
-	\end{empheq}
-	Studiamo la convergenza di 
-	\begin{empheq}{align*}
-		\int_{a}^{a+1} \frac{1}{(x-a)^\alpha} dx  &= \lim_{c \rightarrow a^+} \int_{c}^{a+1} \frac{1}{(x-a)^\alpha} dx\\
-		&=
-		\begin{cases}
-			& \lim_{c \rightarrow a^+} \frac{1}{1-\alpha}[1-(c-a)^{1-\alpha}] \,\,\,\, \text{se}\,\, \alpha \neq 1 \\
-			& \lim_{c \rightarrow a^+} -\ln(c-a)\,\,\,\, \text{se} \,\, \alpha =1
-		\end{cases}\\
-		&=
-		\begin{cases}
-			& \frac{1}{1-\alpha} \,\,\,\, \text{se}\,\, \alpha <1 \\
-			&+\infty \,\,\,\, \text{se}\,\, \alpha \geq1.
-		\end{cases}
-	\end{empheq}
-	Dunque 
-	\begin{empheq}{equation*}
-		\int_{a}^{a+1} \frac{1}{(x-a)^\alpha} dx \,\,\,\, \text{converge} \Leftrightarrow \alpha < 1.
-	\end{empheq}
-	In particolare
-	\begin{empheq}{equation*}
-		\int_{0}^{1} \frac{1}{x^\alpha} \,\,\,\, \text{converge} \Leftrightarrow \alpha < 1.
-	\end{empheq}
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	Stabilire se converge 
-	\begin{empheq}{equation*}
-		\int_{0}^{1} \frac{\sin{\frac{1}{x}}}{x^2} dx
-	\end{empheq}
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\textwidth]{senobuffo.png}
-	\end{figure}
-	
-	Devo calcolare 
-	\begin{empheq}{equation*}
-		\lim_{c\rightarrow0^+} \int_{c}^{1} \frac{\sin{\frac{1}{x}}}{x^2} dx= \lim_{c \rightarrow 0^+} \cos{\frac{1}{x}}|_{c}^{1}=\lim_{c\rightarrow 0^+}\left(1-\cos{\frac{1}{c}}\right)
-	\end{empheq}
-	che non esiste $\Rightarrow$ la funzione $f(x)=\frac{\sin{\frac{1}{x}}}{x^2}$, non è integrabile in senso improprio in $]0,1]$.
-	
-	\paragraph{\textcolor{red}{Esempio Importante}}
-	\begin{empheq}{align*}
-		\int_{0}^{+\infty} e^{\alpha x} dx &=\lim_{c \rightarrow +\infty} \int_{0}^{c} e^{\alpha x} dx \\&= \lim_{c \rightarrow +\infty} \frac{1}{\alpha}(e^{\alpha c}-1)\\
-		&= \begin{cases}
-			& -\frac{1}{\alpha} \,\,\,\, \text{se} \,\, \alpha <0\\
-			&+\infty \,\,\,\, \text{se} \,\, \alpha >0.
-		\end{cases}
-	\end{empheq}
-	\begin{empheq}{equation*}
-		\int_{0}^{+\infty} e^{\alpha x} \,\,\,\,\, \text{converge} \Leftrightarrow \,\,\, \alpha <0.
-	\end{empheq}
-	Analogamente
-	\begin{empheq}{equation*}
-		\int_{-\infty}^{0} e^{\alpha x} dx \,\,\,\,\, \text{converge} \Leftrightarrow \,\,\, \alpha > 0.
-	\end{empheq}
-	Dato $ a>0$, scrivendo $e^{\alpha x} = e^{(\alpha \ln a)x}$ si deduce la convergenza degli integrali
-	\begin{empheq}{align*}
-		&\int_{-\infty}^{0} e^{\alpha x} dx \\
-		&\int_{0}^{+\infty}  e^{\alpha x} dx.
-	\end{empheq}
-	\text{\textcolor{orange}{(Facile esercizio per casa)}}
-	
-	\paragraph{\textcolor{red}{Nota Bene}}
-	$f:[1,+\infty[ \rightarrow \R$ continua. E' vero o falso che $\lim_{x \rightarrow +\infty} f(x)=0 \Rightarrow \int_{1}^{+\infty} f(x)dx$ converge?\\
-	E' falso!!! Si veda $f(x)=\frac{1}{x}$\\
-	E' vero o falso che
-	$\int_{1}^{+\infty}f(x) dx$ converge $\Rightarrow \lim_{x \rightarrow +\infty} f(x)=0$?\\
-	E' falso!!!\\
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\textwidth]{cosiappuntiti.png}
-	\end{figure}
-	
-	Ad ogni numero naturale $n$ costruite un triangolo di base $\frac{1}{2^n}$ e altezza $n$
-	
-	\begin{empheq}{equation*}
-		\int_{1}^{+\infty} f(x)dx = \sum (\text{aree dei triangoli}) = \sum_{n=1}^{\infty} \frac{1}{2} \frac{1}{2^n} \cdot n = \frac{1}{2} \sum_{n=1}^{\infty} \frac{n}{2^n}, 
-	\end{empheq}
-	che è una serie convergente.
-	
-	\paragraph{\textcolor{red}{Osservazione}}
-	Se $f:[a,b] \rightarrow \R$ è Riemann integrabile, allora è integrabile anche in senso improprio e i due integrali coincidono.
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	$f:[a,b] \rightarrow \R,\,\, a,b \in \R \cup \{\pm \infty\}$, Riemann integrabile in $[c,d]\,\, \forall a<c<d<b$. $f$ si dice integrabile in senso improprio in $ ]a,b[$ se, fissato $\xi \in ]a,b[$, lo è in $]a, \xi]$ e in $[\xi,b[$ \textcolor{orange}{(esistono finiti $\lim_{c \rightarrow a^+} \int_{c}^{\xi} f(x)dx$ e $\lim_{d\rightarrow b^-}\int_{\xi}^{d} f(x)dx$)} e in tal caso si pone 
-	\begin{empheq}{equation*}
-		\int_{a}^{b} f(x)dx = \int_{a}^{\xi} f(x)dx + \int_{\xi}^{b} f(x) dx
-	\end{empheq}
-	Si verifica che la definizione non dipende da punto $\xi$ fissato.
-	
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	Come si integra $\int_{-\infty}^{+\infty} \frac{1}{1+x^2}dx$?\\
-	$x \mapsto \frac{1}{1+x^2}$ è integrabile secondo Riemann in $[c,d] \,\, \forall c<d$. \\
-	Sia $\xi = 2$. Dobbiamo verificare se la funzione è integrabile in senso improprio in $]-\infty,2] $ e in $ [2, +\infty[$
-	\begin{empheq}{align*}
-		&\int_{-\infty}^{2}\frac{1}{1-x^2}dx = \lim_{c \rightarrow -\infty} \int_{c}^{2} \frac{1}{1+x^2}dx = \lim_{c \rightarrow -\infty} \left(\arctan{2+\frac{\pi}{2}}\right)= \arctan{2+\frac{\pi}{2}}\\
-		&\int_{2}^{+\infty}\frac{1}{1-x^2} dx =\lim_{c \rightarrow +\infty} \int_{2}^{c} \frac{1}{1-x^2}dx=\lim_{c \rightarrow +\infty} (\arctan{c}-\arctan{2})=\frac{\pi}{2}-\arctan{2}\\
-		&\Rightarrow \int_{-\infty}^{+\infty} \frac{1}{1+x^2}dx \,\,\,\, \text{converge e}\,\,\, \int_{-\infty}^{+\infty}\frac{1}{1+x^2}dx = \int_{-\infty}^{2}\frac{1}{1+x^2} dx+ \int_{2}^{+\infty}\frac{1}{1+x^2}dx
-	\end{empheq}
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	\begin{empheq}{align*}
-		&f(x)=\frac{1}{x^\alpha}, \,\,\,\,\,x \in ]0,+\infty[\\
-		&\alpha > 0 \Rightarrow \lim_{x \rightarrow 0^+} f(x)=+\infty.
-	\end{empheq}
-	Preso $\xi=1$, $f$ è integrabile in senso improprio in $]0,+\infty[ \Leftrightarrow$ entrambi gli integrali $\int_{0}^{1} \frac{1}{x^\alpha} dx$ e $\int_{1}^{+\infty} \frac{1}{x^\alpha} dx$ convergono ma
-	\begin{empheq}{align*}
-		&\int_{0}^{1}\frac{1}{x^\alpha}dx \,\,\,\,\, \text{converge} \Leftrightarrow \alpha <1 \\
-		& \int_{1}^{+\infty} \frac{1}{x^\alpha}dx \,\,\,\,\, \text{converge} \Leftrightarrow \alpha > 1\\
-		& \Rightarrow \int_{0}^{+\infty} \frac{1}{x^\alpha}dx \,\,\,\text{non converge per alcun valore di} \,\, \alpha
-	\end{empheq}
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	\begin{empheq}{equation*}
+\begin{exbar}
+\begin{example}
+	\begin{equation*}
 		f(x)= 
 		\begin{cases}
-			& e^x\,\,\,\,\, \text{se} x \leq 1 \\
-			& \frac{1}{x \sqrt{x-1}}\,\,\,\,\, \text{se}\,\,\, x>1
+			e^x & \text{se } x \leq 1 
+			\\
+			\frac{1}{x \sqrt{x-1}} & \text{se } x>1
 		\end{cases}
-	\end{empheq}
-	vogliamo stabilire se $\int_{-\infty}^{+\infty}f(x)dx$ converge.\\
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\textwidth]{espefrac.png}
-	\end{figure}
+	\end{equation*}
 	
-	Devo studiare $\int_{-\infty}^{1}f(x) dx = \int_{-\infty}^{1}e^x dx$ e, prendendo $\xi=3$,  $\int_{1}^{3}f(x)dx$ e $\int_{3}^{+\infty}f(x)dx$. Se tutti convergono, anche $\int_{-\infty}^{+\infty} f(x)dx$ converge e 
-	\begin{empheq}{equation*}
-		\int_{-\infty}^{+\infty} f(x)dx = \int_{-\infty}^{1} f(x)dx + \int_{1}^{3} f(x)dx + \int_{3}^{+\infty} f(x)dx
-	\end{empheq}
+	vogliamo stabilire se $\int_{-\infty}^{+\infty} f(x) \ \mathrm{d}x$ converge.
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{integrali_impropri/pag89}
+		\label{fig:pag89}
+	\end{center}
 	
-	\paragraph{\textcolor{red}{Ulteriore Definizione}}
-	In generale, data $f:]a,b[\rightarrow \R$ integrabile in senso improprio in $]x_0,x_1[,]x_1,x_2[,...,]x_{n-1},x_n[$ con $a= x_0 <x_1<...<x_n=b$, allora $f$ si dice integrabile in senso improprio in $]a,b[$ e si pone 
-	\begin{empheq}{equation*}
-		\int_{a}^{b}f(x)dx= \sum_{i=1}^{n} \int_{x_{i-1}}^{x_i}f(x)dx.
-	\end{empheq}
-	
+	Devo studiare $\int_{-\infty}^{1} f(x) \ \mathrm{d}x = \int_{-\infty}^{1} e^x \ \mathrm{d}x$ e, prendendo $\xi=3$,  $\int_{1}^{3} f(x) \ \mathrm{d}x$ e $\int_{3}^{+\infty} f(x) \ \mathrm{d}x$. Se tutti convergono, anche $\int_{-\infty}^{+\infty} f(x) \ \mathrm{d}x$ converge e 
+	\begin{equation*}
+		\int_{-\infty}^{+\infty} f(x) \ \mathrm{d}x = \int_{-\infty}^{1} f(x) \ \mathrm{d}x + \int_{1}^{3} f(x) \ \mathrm{d}x + \int_{3}^{+\infty} f(x) \ \mathrm{d}x
+	\end{equation*}
+\end{example}
+\end{exbar}
+
+In generale, data $f:]a,b[ \ \rightarrow \mathbb{R}$ integrabile in senso improprio in $]x_0,x_1[, \ ]x_1,x_2[, \ \ldots, \ ]x_{n-1}, \ x_n[$ con $a = x_0 < x_1 < \ldots < x_n = b$, allora $f$ si dice integrabile in senso improprio in $]a,b[$ e si pone 
+\begin{equation*}
+	\int_{a}^{b} f(x) \ \mathrm{d}x= \sum_{i=1}^{n} \int_{x_{i-1}}^{x_i} f(x) \ \mathrm{d}x.
+\end{equation*}
+
+\begin{comment}	
+
 	
 	
 \end{comment}
