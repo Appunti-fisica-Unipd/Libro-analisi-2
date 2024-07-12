@@ -482,116 +482,281 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 
 
 \subsubsection{Criterio asintotico del confronto}
+\begin{theorem}
+	\label{th:criterio asintotico confronto integrale}
+	$f,g: [a,b[\rightarrow \mathbb{R}, \ b \in \mathbb{R} \cup \{+\infty\}$, Riemann integrabili in $[a,c] \ \forall c \in [a,b[$ tali che $f(x),g(x)\geq 0$ definitivamente per $x \rightarrow b^-$ e $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)}= \ell \in [0,+\infty[$
+	\begin{enumerate}
+		\item Se $\ell \in \ ]0,+\infty[$, allora $ \int_{a}^{b} f(x) \ \mathrm{d}x$ converge $\iff \int_{a}^{b} g(x) \ \mathrm{d}x$ converge.
+		
+		\item Se $\ell=0$ e $\int_{a}^{b} g(x) \ \mathrm{d}x $ converge, allora $\int_{a}^{b} f(x) \ \mathrm{d}x$ converge.
+		
+		\item Se $\ell=+\infty$ e $\int_{a}^{b} g(x) \ \mathrm{d}x$ diverge, allora $\int_{a}^{b} f(x) \ \mathrm{d}x$ diverge.
+	\end{enumerate}
+\end{theorem}
+
+
+\begin{dembar}
+\textbf{Dimostrazione} del \textbf{Teorema \ref{th:criterio asintotico confronto integrale}}
+\begin{enumerate}
+	\item $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)} = \ell \in \ ]0,+\infty[$ 
+	allora $\frac{\ell}{2} \leq \frac{f(x)}{g(x)} \leq 2\ell$ definitivamente per $x \rightarrow b^-$ perché $]\frac{\ell}{2},2\ell[$ è un intorno di $\ell$. 
+	\begin{equation*}
+	\begin{array}{c c}
+		f(x) \leq 2 \ell g(x) & \text{definitivamente}
+		\\
+		g(x) \leq \frac{2}{\ell} f(x) & \text{per } x \rightarrow b^-
+	\end{array} 
+	\end{equation*}
+	 
+	Se $\int_{a}^{b} g(x) \ \mathrm{d}x$ converge $\Rightarrow \int_{a}^{b} f(x) \ \mathrm{d}x$ converge;
+	
+	se $\int_{a}^{b} f(x) \ \mathrm{
+	d}x$ converge $\Rightarrow \int_{a}^{b} g(x) \ \mathrm{d}x$ converge per il criterio del confronto.
+	
+	\item $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)} = 0 \Rightarrow \frac{f(x)}{g(x)} \leq 1 $ definitivamente per $x\rightarrow b^-$ 
+	
+	$\Rightarrow f(x) \leq g(x)$ definitivamente per $x\rightarrow b^- \Rightarrow $ 
+	
+	$\Rightarrow$ se $\int_{a}^{b} g(x) \ \mathrm{d}x$ converge, allora $\int_{a}^{b} f(x) \ \mathrm{d}x$ converge per il criterio del confronto.
+	
+	\item $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)} = +\infty \Rightarrow \frac{f(x)}{g(x)} \geq 1$ definitivamente per $x \rightarrow b^-$ 
+	
+	$\Rightarrow f(x) \geq g(x)$ definitivamente per $x \rightarrow b^-$ 
+	
+	$\Rightarrow$ se $\int_{a}^{b} g(x) \ \mathrm{d}x$ diverge, allora $\int_{a}^{b} f(x) \ \mathrm{d}x$ diverge sempre per il criterio del confronto. $\square$
+\end{enumerate}
+\end{dembar}
+
+
+\begin{exbar}
+\begin{example} \textbf{importante}
+	
+	Studiamo la convergenza di 
+	\begin{equation*}
+		\int_{2}^{+\infty} \frac{1}{x^\alpha (\ln x)^\beta} \ \mathrm{d}x, \qquad \alpha,\beta \in \mathbb{R}
+	\end{equation*}
+	\begin{itemize}
+		\item Se $\alpha > 1 $
+		\begin{equation*}
+			\int_{2}^{+\infty}\frac{1}{x^\alpha} \ \mathrm{d}x \text{ converge}
+		\end{equation*}
+
+		
+		\begin{itemize}
+			\item Se $\beta \geq 0 $
+			\begin{gather*}
+				\frac{1}{x^\alpha (\ln x)^\beta} \leq \frac{1}{x^\alpha} \text{ per } x > a
+				\\
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta} \ \mathrm{d}x \text{ converge}
+			\end{gather*}
+			
+			\item Se $\beta < 0 $
+			\begin{equation*}
+				\frac{1}{x^\alpha(\ln x)^\beta} = \frac{(\ln x)^{-\beta}}{x^\alpha}
+			\end{equation*}
+			
+			Preso $\epsilon > 0$ si ha $\ln x \leq x^\epsilon$ definitivamente per $x \rightarrow+\infty$ 
+			\begin{equation*}
+				\frac{(\ln x)^{-\beta}}{x^\alpha} \leq \frac{x^{-\epsilon \beta}}{x^\alpha}=\frac{1}{x^{\alpha+\epsilon\beta}}
+			\end{equation*}
+			
+			definitivamente per $x\rightarrow +\infty$.
+			
+			Scelgo $\epsilon$ in modo che $\alpha + \epsilon\beta > 1$, cioè $\epsilon < \uppercomment{\frac{1-\alpha}{\beta}} {\ >0}{}$
+			\begin{gather*}
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^{\alpha+\epsilon\beta}} \ \mathrm{d}x \text{ converge}
+				\\
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta} \ \mathrm{d}x \text{ converge.}
+			\end{gather*}
+		\end{itemize}
+		
+		\item Se $\alpha < 1 $
+		\begin{equation*}
+			\int_{2}^{+\infty} \frac{1}{x^\alpha} \ \mathrm{d}x \text{ diverge}
+		\end{equation*}
+
+		\begin{itemize}
+			\item Se $\beta \geq 0 $ 
+			\begin{gather*}
+				\frac{1}{x^\alpha(\ln x)^\beta }\geq \uppercomment{??} {\text{integrale}} {\text{divergente}} 
+				\\
+				\frac{1}{x^\alpha(\ln x)^\beta} = \frac{(\ln x)^{-\beta}}{x^\alpha}.
+			\end{gather*}
+
+			Fissato $\epsilon>0, \ \ln x \leq x^\epsilon $ definitivamente per $x \rightarrow +\infty$ 
+			
+			$(\ln x)^{-\beta} \undercomment{\geq} {-\beta < 0} {} x^{-\epsilon\beta}$ definitivamente per $x \rightarrow +\infty$ 
+			
+			$\frac{1}{x^\alpha (\ln x)^\beta} \geq \frac{x^{-\epsilon\beta}}{x^\alpha} = \frac{1}{x^{\alpha+\epsilon\beta}}$ definitivamente per $x \rightarrow +\infty$.
+			
+			Scelgo  $\epsilon$ in modo che $ \alpha + \epsilon\beta < 1, \ \epsilon < \frac{1-\alpha}{\beta} $
+			
+			\begin{gather*}
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^{\alpha + \epsilon\beta}} \ \mathrm{d}x \text{ diverge}
+				\\
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta} \ \mathrm{d}x 
+			\end{gather*}
+		
+			diverge per il criterio del confronto.
+			
+			\item  Se $\beta \leq 0 $
+			\begin{gather*}
+				\frac{1}{x^\alpha(\ln x)^\beta} = \frac{(\ln x)^{-\beta}}{x^\alpha} \undercomment{\geq} {\text{se } x > e} {} \frac{1}{x^\alpha}
+				\\
+				\int_{2}^{+\infty}\frac{1}{x^\alpha} \ \mathrm{d}x \text{ diverge}
+				\\
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha (\ln x)^\beta} \ \mathrm{d}x
+			\end{gather*}
+			
+			  diverge per il criterio del confronto.
+		\end{itemize}
+		
+		\item Se $\alpha=1$
+		\begin{equation*}
+			 \int_{2}^{+\infty} \frac{1}{x(\ln x)^\beta} \ \mathrm{d}x
+		\end{equation*}
+		\begin{itemize}
+			\item Se $\beta=0$
+			\begin{equation*}
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x} \ \mathrm{d}x =+\infty
+			\end{equation*}
+			
+			\item Se $\beta \neq 0,1$
+			\begin{align*}
+				\int_{2}^{+\infty} \frac{1}{x(\ln x)^\beta} \ \mathrm{d}x 
+				&= \lim_{c \rightarrow +\infty} \int_{2}^{c} (\ln x)^{-\beta} \frac{1}{x} \ \mathrm{d}x = \lim_{c \rightarrow +\infty} \frac{1}{1-\beta} (\ln x)^{1-\beta} \bigg|_{2}^{c} = 
+				\\
+				&= 
+				\begin{cases}
+					\frac{(\ln 2)^{1-\beta}}{\beta - 1} & \text{se } \beta > 1
+					\\[1em]
+					+\infty & \text{se } \beta < 1
+				\end{cases}
+			\end{align*}
+			
+			\item Se $\beta = 1$
+			\begin{equation*}
+			 	\int_{2}^{+\infty} \frac{1}{x \ln x} \ \mathrm{d}x = \lim_{c \rightarrow +\infty} \int_{2}^{c} \frac{1}{x \ln x} \ \mathrm{d}x = \lim_{c\rightarrow +\infty} \ln(\ln x)\bigg|_{2}^{c} = +\infty
+			\end{equation*}
+		\end{itemize}
+	\end{itemize}	
+\end{example}
+\end{exbar}
+
+
+\begin{attbar}
+\begin{equation*}
+		\int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta} \ \mathrm{d}x \text{ converge } \iff \alpha > 1 \text{ o } (\alpha=1 \text{ e } \beta >1)
+\end{equation*}
+\end{attbar}
+
+
+\begin{exbar}
+\begin{example} \textbf{importante}
+	
+	Studiamo la convergenza di
+	\begin{equation*}
+		\int_{0}^{\frac{1}{2}} \frac{1}{x^\alpha |\ln x|^\beta} \ \mathrm{d}x, \qquad \alpha,\beta \in \mathbb{R}
+	\end{equation*}
+	\begin{align*}
+		\int_{0}^{\frac{1}{2}} \frac{1}{x^\alpha|\ln x|^\beta} \ \mathrm{d}x 
+		&= \lim_{c \rightarrow 0^+} \int_{c}^{\frac{1}{2}} \frac{1}{x^\alpha |\ln x|^\beta} \ \mathrm{d}x =
+		\\
+		&\undercomment{=} {t = \frac{1}{x}} {} \lim_{c \rightarrow 0^+} \int_{2}^{\frac{1}{c}} \frac{1}{\frac{1}{t^\alpha} \left| \ln{\frac{1}{t}} \right|^\beta} \left( \frac{1}{t^2} \right) \ \mathrm{d}t =
+		\\
+		&= \lim_{c \rightarrow 0^+} \int_{2}^{\frac{1}{c}} \frac{1}{t^{2-\alpha} (\ln t)^\beta} \ \mathrm{d}t =
+		\\
+		&\undercomment{=} {d = \frac{1}{c}} {} \lim_{d \rightarrow +\infty} \int_{2}^{d} \frac{1}{t^{2-\alpha} (\ln t)^\beta} \ \mathrm{d}t =\int_{2}^{+\infty} \frac{1}{t^{2-\alpha}(\ln t)^\beta} \ \mathrm{d}t
+	\end{align*}
+	che converge $\iff 2-\alpha > 1$ oppure ($2-\alpha = 1$ e $\beta>1$) $\iff \alpha <1 $ oppure ($\alpha =1 \text{ e } \beta>1$)
+\end{example}
+\end{exbar}
+
+\begin{attbar}
+\begin{equation*}
+	\int_{0}^{\frac{1}{2}} \frac{1}{x^\alpha |\ln x|^\beta} \ \mathrm{d}x \text{ converge } \iff \alpha < 1 \text{ o } (\alpha=1 \text{ e } \beta >1)
+\end{equation*}
+\end{attbar}
+
+
+\begin{exbar}
+\begin{example}
+	
+	Studiare la convergenza dell'integrale improprio
+	\begin{equation*}
+		\int_{-\infty}^{+\infty} e^{-x^{2}} \ \mathrm{d}x \quad (=\sqrt{\pi})
+	\end{equation*}
+	
+	Devo studiare separatamente 
+	\begin{equation*}
+		\int_{-\infty}^{0} e^{-x^{2}} \ \mathrm{d}x \qquad \text{e} \qquad \int_{0}^{+\infty} e^{-x^{2}} \ \mathrm{d}x 
+	\end{equation*}
+	
+	e vedere se entrambi convergono. 
+	
+	$x\mapsto e^{-x^{2}} $ è pari e dunque
+	\begin{align*}
+		\int_{-\infty}^{0} e^{-x^{2}} \ \mathrm{d}x
+		&= \lim_{c \rightarrow -\infty} \int_{c}^{0} e^{-x^{2}} \ \mathrm{d}x \lowercomment{=}{t=-x}{}
+		\\
+		&= \lim_{c \rightarrow -\infty} \int_{0}^{-c} e^{-t^2} \ \mathrm{d}t \uppercomment{=}{d=-c}{}
+		\\
+		&= \lim_{d\rightarrow +\infty} \int_{0}^{d} e^{-x^{2}} \ \mathrm{d}x = \int_{0}^{+\infty} e^{-x^{2}} \ \mathrm{d}x
+	\end{align*}
+	\begin{gather*}
+		\int_{-\infty}^{0} e^{-x^{2}} \ \mathrm{d}x \text{ converge } \iff \int_{0}^{+\infty} e^{-x^{2}} \ \mathrm{d}x \text{ converge.}
+		\\
+		0 \leq e^{-x^2} \leq e^{-x} \ \forall x \geq 1 \text{ e } \int_{0}^{+\infty}e^{-x} \ \mathrm{d}x = 1 \text{ cioè converge}
+	\end{gather*}
+	
+	 $\Rightarrow$ per il criterio del confronto $\int_{0}^{+\infty} e^{-x^2}dx$ converge.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+		
+	Studiare la convergenza dell'integrale improprio 
+	\begin{equation*}
+		\int_{1}^{+\infty} \frac{x^\alpha e^{x^4}}{1+e^{4x^4}} \ \mathrm{d}x \qquad \text{ al variare di } \alpha \in \mathbb{R}.
+	\end{equation*}
+	
+	Per $x \rightarrow +\infty$
+	\begin{gather*}
+		\frac{x^\alpha e^{x^4}}{1+e^{4x^4}} \sim \frac{x^\alpha e^{x^4}}{x^{4x^4}} = x^\alpha e^{-3x^4}
+		\\
+		\int_{1}^{+\infty}\frac{x^\alpha e^{x^4}}{1+e^{4x^4}} \ \mathrm{d}x \text{ converge } \iff \int_{1}^{+\infty} x^\alpha e^{-3x^4} \ \mathrm{d}x \text{ converge}
+	\end{gather*}
+	
+	(Provare per casa ponendo $x=\ln t$).
+	
+	Sicuramente $x^\alpha \leq e^{x^4}$ definitivamente per $x \rightarrow +\infty$ e dunque $x^\alpha e^{-3x^4} \leq e^{-2x^4}\leq e^{-x} $ per $x \geq 1$
+	
+	$\Rightarrow \int_{1}^{+\infty} x^\alpha e^{-3x^4}dx $ converge per il criterio del confronto $\forall \ \alpha \in \mathbb{R}$.
+
+\end{example}
+\end{exbar}
+
+
+
+
+
+
+
+
+
 
 
 \begin{comment}	
 
 
+
+
+
 	
 	
 
-
-	
-	
-
-	\paragraph{\textcolor{red}{Teorema}}
-	$f,g: [a,b[\rightarrow \R, \,\,\ b\in \R \cup \{+\infty\}$, Riemann integrabili in $[a,c] \,\, \forall c \in [a,b[$ tali che $f(x),g(x)\geq 0$ definitivamente per $x \rightarrow b^-$ e $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)}=l \in [0,+\infty[$
-	\begin{enumerate}
-		\item Se $l \in \,\, ]0,+\infty[$, allora $ \int_{a}^{b} f(x) dx$ converge $\Leftrightarrow \int_{a}^{b} g(x) dx$ converge.
-		\item Se $l=0$ e $\int_{a}^{}b g(x)dx $ converge, allora $\int_{a}^{b} f(x) dx$ converge.
-		\item Se $l=+\infty$ e $\int_{a}^{b} g(x) dx$ diverge, allora $\int_{a}^{b} f(x)dx$ diverge.
-	\end{enumerate}
-	
-	\paragraph{\textcolor{red}{Dimostrazione}}
-	\begin{enumerate}
-		\item $\lim_{x \rightarrow b^-}\frac{f(x)}{g(x)} = l \in \,\, ]0,+\infty[$ allora $\frac{l}{2}\leq \frac{f(x)}{g(x)}\leq 2l$ definitivamente per $x \rightarrow b^-$ perchè $]\frac{l}{2},2l[$ è un intorno di $l$. Dunque $f(x)\leq 2lg(x)$ e $g(x)\leq \frac{2}{l} f(x)$ definitivamente per $x \rightarrow b^-$. Se $\int_{a}^{b} g(x) dx$ converge $\int_{a}^{b} f(x) dx$ converge e se $\int_{a}^{b} f(x) dx$ converge $\int_{a}^{b} (x) dx$ per il criterio del confronto.
-		\item $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)} = 0 \Rightarrow \frac{f(x)}{g(x)} \leq 1 $ definitivamente per $x\rightarrow b^- \Rightarrow f(x) \leq g(x)$ definitivamente per $x\rightarrow b^- \Rightarrow $ se $\int_{a}^{b} g(x)dx$ converge, allora $\int_{a}^{b} f(x)dx$ converge per il criterio del confronto.
-		\item $\lim_{x \rightarrow b^-}\frac{f(x)}{g(x)} = +\infty \Rightarrow \frac{f(x)}{g(x)} \geq 1$ definitivamente per $x \rightarrow b^- \Rightarrow f(x) \geq g(x)$ definitivamente per $x \rightarrow b^- \Rightarrow$ se $\int_{a}^{b} g(x)dx$ diverge, allora $\int_{a}^{b} f(x)dx$ diverge sempre per il criterio del confronto.
-	\end{enumerate}
-	\begin{flushright}
-		\large\Lightning
-	\end{flushright}
-	
-	\paragraph{\textcolor{red}{Esempio importante}}
-	Studiamo la convergenza di 
-	\begin{equation*}
-		\int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta}dx, \,\,\,\,\,\, \alpha,\beta \in \R
-	\end{equation*}
-	\begin{itemize}
-		\item Se $\alpha >1 \Rightarrow \int_{2}^{+\infty}\frac{1}{x^\alpha}dx$ converge
-		\begin{itemize}
-			\item Se $\beta \geq 0 \Rightarrow \frac{1}{x^\alpha(\ln x)^\beta} \leq \frac{1}{x^\alpha}$ per $x>a \Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta}dx$ converge
-			\item Se $\beta <0 \Rightarrow \frac{1}{x^\alpha(\ln x)^\beta} = \frac{(\ln x)^{-\beta}}{x^\alpha}$.\\ Preso $\epsilon > 0$ si ha $\ln x \leq x^\epsilon$ definitivamente per $x \rightarrow+\infty$ $\Rightarrow \frac{(\ln x)^{-x}}{x^\alpha} \leq \frac{x^{-\epsilon \beta}}{x^\alpha}=\frac{1}{x^{\alpha+\epsilon\beta}}$ definitivamente per $x\rightarrow +\infty$.\\
-			Scelgo $\epsilon$ in modo che $\alpha+\epsilon\beta > 1$, cioè $\epsilon < \frac{1-\alpha}{\beta}>0 \Rightarrow \int_{2}^{+\infty} \frac{1}{x^{\alpha+\epsilon\beta}}dx$ converge $\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta}dx$ converge.
-		\end{itemize}
-		\item Se $\alpha < 1 \Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha}dx$ diverge
-		\begin{itemize}
-			\item Se $\beta \geq 0 \Rightarrow \frac{1}{x^\alpha(\ln x)^\beta }\geq$ \textcolor{orange}{?? integrale divergente} $\Rightarrow \frac{1}{x^\alpha(\ln x)^\beta}= \frac{(\ln x)^{-\beta}}{x^\alpha}$.\\
-			Fissato $\epsilon>0, \,\,\ln x \leq x^\epsilon $ definitivamente per $x \rightarrow +\infty$ $\Rightarrow (\ln x)^{-\beta}\geq x^{-\epsilon\beta}$ defintivamente per $x \rightarrow +\infty$ $\Rightarrow \frac{1}{x^\alpha (\ln x)^\beta} \geq \frac{x^{-\epsilon\beta}}{x^\alpha} = \frac{1}{x^{\alpha+\epsilon\beta}}$ definitivamente per $x \rightarrow +\infty$.\\
-			Scelgo  $\epsilon$ in modo che $ \alpha+\epsilon\beta < 1,\,\,\, \epsilon < \frac{1-\alpha}{\beta} $\\
-			$\Rightarrow \int_{2}^{+\infty} \frac{1}{x^{\alpha+\epsilon\beta}}dx$ diverge $\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta}$ diverge per il criterio del confronto.
-			\item  Se $\beta \leq 0 \Rightarrow \frac{1}{x^\alpha(\ln x)^\beta} = \frac{(\ln x)^{-\beta}}{x^\alpha} \geq \frac{1}{x^\alpha}$ e $\int_{2}^{+\infty}\frac{1}{x^\alpha}dx$ diverge $\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha (\ln x)^\beta}dx$ diverge per il criterio del confronto.
-		\end{itemize}
-		\item Se $\alpha=1 \Rightarrow \int_{2}^{+\infty} \frac{1}{x(\ln x)^\beta} dx$
-		\begin{itemize}
-			\item Se $\beta=0 \Rightarrow \int_{2}^{+\infty} \frac{1}{x}dx =+\infty$.
-			\item Se $\beta \neq 0,1 \Rightarrow \int_{2}^{+\infty} \frac{1}{x(\ln x)^\beta}dx=\lim_{c \rightarrow +\infty} \int_{2}^{c}(\ln x)^{-\beta}\frac{1}{x} dx = \lim_{c \rightarrow +\infty} \frac{1}{1-\beta}(\ln x)^{1-\beta}|_{2}^{c}$ che è uguale a $\frac{(\ln 2)^{1-\beta}}{\beta -1}$ se $\beta >1$ e $+\infty$ se $\beta < 1$.
-			\item Se $\beta = 1 \Rightarrow \int_{2}^{+\infty} \frac{1}{x \ln x}dx = \lim_{c \rightarrow +\infty}\int_{2}^{c} \frac{1}{x \ln x}dx = \lim_{c\rightarrow +\infty} \ln(\ln x)|_{2}^{c}=+\infty$.
-		\end{itemize}
-	\end{itemize}
-	\begin{equation*}
-		\textcolor{red}{
-			\int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta}dx
-			\,\,\,\, \text{converge} \,\,\,\,
-			\Leftrightarrow \alpha > 1 \,\,\, \text{o} \,\,\, (\alpha=1 \,\,\, \text{e}\,\,\, \beta >1)}
-	\end{equation*}
-	
-	\paragraph{\textcolor{red}{Esempio importante}}
-	Studiamo la convergenza 
-	\begin{empheq}{equation*}
-		\int_{0}^{\frac{1}{2}}\frac{1}{x^\alpha|\ln x|^\beta}dx,\,\,\,\,\,\, \alpha,\beta \in \R
-	\end{empheq}
-	\begin{empheq}{align*}
-		\int_{0}^{\frac{1}{2}} \frac{1}{x^\alpha|\ln x|^\beta}dx &= \lim_{c \rightarrow o^+} \int_{c}^{\frac{1}{2}} \frac{1}{x^\alpha|\ln x|^\beta}dx \\
-		&= \lim_{c \rightarrow 0^+} \int_{2}^{\frac{1}{c}} \frac{1}{\frac{1}{t^\alpha}|\ln{\frac{1}{t}}|^\beta}\left(\frac{1}{t^2}\right)dt \\
-		&= \lim_{c \rightarrow 0^+} \int_{2}^{\frac{1}{c}} \frac{1}{t^{2-\alpha}(\ln t)^\beta}dt \\
-		&= \lim_{d \rightarrow +\infty} \int_{2}^{d} \frac{1}{t^{2-\alpha}(\ln 
-			t)^\beta} dt =\int_{2}^{+\infty} \frac{1}{t^{2-\alpha}(\ln t)^\beta} dt
-	\end{empheq}
-	che converge $\Leftrightarrow 2-\alpha>1$ oppure ($2-\alpha = 1$ e $\beta>1$) $\Leftrightarrow \alpha <1$ oppure ($\alpha =1$ e $\beta>1$)\\
-	\begin{empheq}{equation*}
-		\textcolor{red}{\int_{0}^{\frac{1}{2}}\frac{1}{x^\alpha|\ln x|^\beta}dx \,\,\,\, \text{converge} \,\,\,\,
-			\Leftrightarrow \alpha < 1 \,\,\, \text{o} \,\,\, (\alpha=1 \,\,\, \text{e}\,\,\, \beta >1)}
-	\end{empheq}
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	Studiare la convergenza dell'integrale improprio
-	\begin{empheq}{equation*}
-		\int_{-\infty}^{+\infty}e^{-x}dx \,\,\,(=\sqrt{\pi})
-	\end{empheq}
-	Devo studiare separatamente 
-	\begin{empheq}{equation*}
-		\int_{-\infty}^{0} e^{-x^2}dx \,\,\,\,\,\, \text{e} \,\,\,\,\,  \int_{0}^{+\infty} e^{-x^2}dx 
-	\end{empheq}
-	e vedere se entrambi convergono. $x\mapsto e^{-x^2} $ è pari e dunque
-	\begin{empheq}{align*}
-		\int_{-\infty}^{0} e^{-x^2} dx& = \lim_{c \rightarrow -\infty} \int_{c}^{0} e^{-x^2}dx\\
-		&= \lim_{c \rightarrow -\infty} \int_{0}^{-c} e^{-t^2} dt \\
-		&= \lim_{d\rightarrow +\infty} \int_{0}^{d} e^{-x^2}dx =\int_{0}^{+\infty} e^{-x^2} dx
-	\end{empheq}
-	\begin{empheq}{equation*}
-		\int_{-\infty}^{0} e^{-x^2}dx \,\,\,\, \text{converge} \,\,\,\, \Leftrightarrow \int_{0}^{+\infty} e^{-x^2}dx \,\,\,\, \text{converge.}
-	\end{empheq}
-	$0 \leq e^{-x^2}\leq e^{-x} \,\,\,\, \forall x \geq 1$ e $\int_{0}^{+\infty}e^{-x}dx=1$, cioè converge $\Rightarrow$ per il criterio del confronto $\int_{0}^{+\infty} e^{-x^2}dx$ converge.
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	Studiare la convergenza dell'integrale improprio 
-	\begin{equation*}
-		\int_{1}^{+\infty}\frac{x^\alpha e^{x^4}}{1+e^{4x^4}}dx
-	\end{equation*}
-	al variare di $\alpha \in \R$.\\
-	Per $x\rightarrow+\infty \Rightarrow \frac{x^\alpha e^{x^4}}{1+e^{4x^4}} \sim \frac{x^\alpha e^{x^4}}{x^{4x^4}}=x^\alpha e^{-3x^4}$ quindi $\int_{1}^{+\infty}\frac{x^\alpha e^{x^4}}{1+e^{4x^4}}dx$ converge $\Leftrightarrow \int_{1}^{+\infty} x^\alpha e^{-3x^4}dx$ converge \textcolor{orange}{(Provare per casa ponendo $x=\ln t$)}.\\
-	Sicuramente $x^\alpha \leq e^{x^4}$ definitivamente per $x \rightarrow+\infty$ e dunque $x^\alpha e^{-3x^4}\leq e^{-2x^4}\leq e^{-x} $ per $x \geq 1 \Rightarrow \int_{1}^{+\infty} x^\alpha e^{-3x^4}dx $ converge per il criterio del confronto $\forall \alpha \in \R$.
 	
 	
 \end{comment}
