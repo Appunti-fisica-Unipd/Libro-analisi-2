@@ -13,7 +13,7 @@ Se $\inf_{a=x_0 < x_1 < ... < x_n =b} S(f) = \sup_{a=x_0 < x_1 < ... < x_n =b} s
 \end{equation*}
 
 
-\subsubsection{Integrali impropri}
+\subsection{Integrali impropri}
 \begin{exbar}
 \begin{example}
 	\begin{equation*}
@@ -325,7 +325,437 @@ In generale, data $f:]a,b[ \ \rightarrow \mathbb{R}$ integrabile in senso improp
 	\int_{a}^{b} f(x) \ \mathrm{d}x= \sum_{i=1}^{n} \int_{x_{i-1}}^{x_i} f(x) \ \mathrm{d}x.
 \end{equation*}
 
+\subsection{Criteri di integrabilità}
+\begin{proposition}
+	\label{pr: integrabilità definita}
+	Sia $f:[a,b[ \ \rightarrow \mathbb{R}, \ b \in \mathbb{R} \cup \{+\infty\}$ tale che $f(x) \geq 0$ definitivamente per $x \rightarrow b^-$ e tale che sia Riemann integrabile in $[a,b] \ \forall c \in [a,b[$. Allora esiste
+	\begin{equation*}
+		\lim_{c \rightarrow b^-} \int_{a}^{c} f(x) \ \mathrm{d}x
+ 	\end{equation*}
+	cioè l'integrale improprio $\int_{a}^{b} f(x) \ \mathrm{d}x$ è ben definito (converge o diverge a $+\infty$).
+\end{proposition}
+
+\begin{dembar}
+	\textbf{Dimostrazione} della \textbf{Proposizione \ref{pr: integrabilità definita}}
+	
+	
+	Per semplicità assumiamo $f(x) \geq 0 \ \forall \ x \in [a,b[$. Sia allora $F(c)=\int_{a}^{c} f(x) \ \mathrm{d}x, \ c \in [a,b[$. 
+	
+	Allora $F$ è monotona crescente, dunque, presi $c_2 > c_1$ si ha
+	\begin{equation*}
+		F(c_2) - F(c_1) = \int_{a}^{c_2} f(x) \ \mathrm{d}x - \int_{a}^{c_1} f(x) \ \mathrm{d}x = \int_{c_1}^{c_2} f(x) \ \mathrm{d}x \geq 0
+	\end{equation*}
+	
+	perché $f(x) \geq 0 \ \forall x \in [c_1,c_2] \Rightarrow F(c_2) \geq F_{c_1}$.
+	
+	$F$ ha limite per $c \rightarrow b^-$, cioè esiste
+	\begin{equation*}
+		\lim_{c \rightarrow b^-} F(c) = \lim_{c \rightarrow b^-} \int_{a}^{b} f(x) \ \mathrm{d}x.
+	\end{equation*}
+	
+	Un risultato analogo si enuncia per funzioni definitivamente $\leq 0$ per $ x \rightarrow b^-$ o per una funzione $f: \ ]a,b] \rightarrow \mathbb{R}, \ a \in \mathbb{R} \cup \{-\infty\}. \ \square$ 
+\end{dembar}
+
+
+Come per le serie ci concentriamo su criteri di integrabilità per funzioni di segno definito.
+
+\subsubsection{Criterio del confronto}
+\begin{theorem} (criterio del confronto)
+	
+\end{theorem}
+	\label{th:criterio del confronto integrale}
+	$f,g : [a,b[ \ \rightarrow \mathbb{R}, \ b \in \mathbb{R} \cup \{+\infty\}$, Riemann integrabili in $[a,c] \ \forall c \in [a,b[$ e tali che $0 \leq f(x) \leq g(x)$ definitivamente per $x \rightarrow b^-$.
+	\begin{enumerate}
+		\item Se $\int_{a}^{b} g(x) \ \mathrm{d}x$ converge, allora converge anche $\int_{a}^{b} f(x) \ \mathrm{d}x$.
+		\item Se $\int_{a}^{b} f(x) \ \mathrm{d}x$ diverge, allora diverge anche $\int_{a}^{b} g(x) \ \mathrm{d}x$.
+	\end{enumerate}
+	Un risultato analogo vale per funzioni $f,g: \ ]a,b] \rightarrow \mathbb{R}, \ a \in \mathbb{R} \cup \{-\infty\}$, con ovvie modifiche.
+
+
+\begin{dembar}
+		\textbf{Dimostrazione} del \textbf{Teorema \ref{th:criterio del confronto integrale}}
+		
+		Per semplicità assumiamo $0 \leq f(x) \leq g(x) \ \forall \ x \in [a,b[$.
+		\begin{enumerate}
+			\item $\exists$ finito $\lim_{c \rightarrow b^-} \int_{a}^{c} g(x) \ \mathrm{d}x \ \forall \ c \in [a,b[, \ \int_{a}^{c} f(x) \ \mathrm{d}x \leq \int_{a}^{c} g(x) \ \mathrm{d}x$ perché $f(x) \leq g(x)$. Allora 
+			\begin{equation*}
+				\undercomment{\lim_{c \rightarrow b^-} \int_{a}^{c} f(x) \ \mathrm{d}x} {\text{esiste perché}} {f(x) \geq 0} \leq \lim_{c \rightarrow b^-} \int_{a}^{c} g(x) \ \mathrm{d}x
+			\end{equation*}
+			
+			e quindi $\lim_{c \rightarrow b^-} \int_{a}^{c} f(x) \ \mathrm{d}x $ esiste finito e $\int_{a}^{b} f(x) \ \mathrm{d}x$ è convergente.
+			
+			\item $\lim_{c \rightarrow b^-} \int_{a}^{c} f(x) \ \mathrm{d}x = +\infty $ ($f(x)\geq 0$)
+			\begin{gather*}
+				\int_{a}^{c} g(x) \ \mathrm{d}x \geq \uppercomment{\int_{a}^{c} f(x) \ \mathrm{d}x} {\rightarrow +\infty} {\text{per } c \rightarrow + \infty} \ \forall \ c \in [a,b[
+				\\
+				\Rightarrow \lim_{c \rightarrow b^-} \int_{a}^{c} g(x) \ \mathrm{d}x = +\infty
+			\end{gather*}
+			 
+			per il teorema del confronto sui limiti. $\square$
+		\end{enumerate}
+\end{dembar}
+
+
+\subsubsection{Criterio di assoluta integrabilità}
+\begin{theorem}
+	\label{th:criterio assoluta integrabilità}
+	$f:[a,b[ \ \rightarrow \mathbb{R}, \ b \in \mathbb{R} \cup \{+\infty\}$ Riemann integrabile in $[a,c] \ \forall \ c \in [a,b[$ e tale che $|f|$ è integrabile in senso improprio in $[a,b[$ (si dice che l'integrale improprio di $f$ è assolutamente convergente o che converge assolutamente). Allora $\int_{a}^{b} f(x) \ \mathrm{d}x$ converge.
+\end{theorem}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th:criterio assoluta integrabilità}}
+	
+	\begin{gather*}
+		f = f^+ - f^-
+		\\
+		f^+ = \max \{f(x), 0\} \geq 0 \quad f^- =\min \{f(x), 0\} \geq 0 \quad \forall \ x
+		\\
+		\left| f(x) \right| = f^+(x) + f^-(x)
+	\end{gather*}
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{integrali_impropri/pag94(2)}
+		\label{fig:pag94}
+	\end{center}
+
+	$f^+$ e $f^-$ sono Riemann integrabili  in  $[a,c] \ \forall \ c \in [a,b[$ e inoltre
+	\begin{equation*}
+		\begin{array}{c}
+			0 \leq f^+(x) \leq |f(x)|
+			\\
+			0 \leq f^-(x) \leq |f(x)|
+		\end{array}
+		\qquad \forall \ x \in [a,b[
+	\end{equation*}
+	$\Rightarrow$ per il criterio del confronto $\int_{a}^{b} f^+(x) \ \mathrm{d}x$ e $\int_{a}^{b} f^-(x) \ \mathrm{d}x$ convergono entrambi 
+	\begin{equation*}
+		\Rightarrow \lim_{c \rightarrow b^-} \int_{a}^{c} f(x) \ \mathrm{d}x = \lim_{c \rightarrow b^-} \left[ \int_{a}^{c}f^+(x) \ \mathrm{d}x - \int_{a}^{c}f^-(x) \ \mathrm{d}x \right]
+	\end{equation*}
+	esiste finito per il teorema sulla somma dei limiti $\Rightarrow \int_{a}^{b} f(x) \ \mathrm{d}x$ converge. $\square$
+\end{dembar}
+
+
+\begin{attbar}
+	Sia $f: [a,b[ \rightarrow \mathbb{R}, \ b \in \mathbb{R} \cup \{+\infty\}$ e se $\int_{a}^{b} f(x) \ \mathrm{d}x$ converge, non è detto che $\int_{a}^{b} |f(x)| \ \mathrm{d}x$ converga.
+\end{attbar}
+
+
+\begin{exbar}
+\begin{example}
+	\begin{equation*}
+		f(x) = \frac{\sin x}{x}, \qquad x \geq 1
+	\end{equation*}
+	
+	e dimostriamo che $ \int_{1}^{+\infty} \frac{\sin x}{x} \ \mathrm{d}x$ converge. Fissiamo $c>1$
+	\begin{gather*}
+		\int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x= -\frac{\cos x}{x} \bigg|_{1}^{c} - \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x = \cos 1 - \frac{\cos c}{c} - \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x
+		\\
+		\lim_{c \rightarrow +\infty} \int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x = \lim_{c \rightarrow +\infty} \left[\cos 1 - \uppercomment{\frac{\cos c}{c}} {\myarrow[10] 0} {} - \lowercomment{\int_{1}^{c} \frac{cosx}{x^2} \ \mathrm{d}x} {\lim_{c \rightarrow + \infty} \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x} {\text{esiste finito}}\right] 
+	\end{gather*}
+
+	
+	$\frac{|\cos x|}{x^2} \leq \frac{1}{x^2} \ \forall \ x \geq 1$ e $ \int_{1}^{+\infty} \frac{1}{x^2} \ \mathrm{d}x$ converge 
+	
+	$\Rightarrow \int_{1}^{+\infty} \frac{|\cos x|}{x^2} \ \mathrm{d}x$ converge per il criterio del confronto 
+	
+	$\Rightarrow \int_{1}^{+\infty} \frac{\cos x}{x^2} \ \mathrm{d}x$ converge per il criterio di assoluta integrabilità
+	
+	$\Rightarrow \lim_{c \rightarrow +\infty} \int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x = \cos 1 - \int_{1}^{+\infty} \frac{\cos x}{x^2} \ \mathrm{d}x$ esiste finito e dunque $\int_{1}^{+\infty} \frac{\sin x}{x} \ \mathrm{d}x$ converge 
+	\\[1em]
+
+	Ma $\int_{1}^{+\infty} |\frac{\sin x}{x}|dx =+\infty$.
+	
+	Presi $k \geq 1, \ k \in \mathbb{N}$
+	\begin{gather*}
+		k\pi \leq x \leq (k+1)\pi
+		\\
+		\frac{1}{(k+1)\pi} \leq \frac{1}{x} \leq \frac{1}{k\pi}
+		\\
+		\int_{k\pi}^{(k+1)\pi} \frac{(\sin x)}{x} \ \mathrm{d}x \geq \int_{k\pi}^{(k+1)\pi} \frac{1}{(k+1)\pi} (\sin x) \ \mathrm{d}x = \frac{2}{(k+1)\pi} 
+		\\
+		\int_{1}^{+\infty} \frac{|\sin{x}|}{x} \ \mathrm{d}x \geq \sum_{k=1}^{\infty} \int_{k\pi}^{(k+1)\pi} \frac{|\sin{x}|}{x} \ \mathrm{d}x \geq \sum_{k=1}^{\infty} \frac{2}{(k+1)\pi}=+\infty
+	\end{gather*}
+	
+	perché $\frac{2}{(k+1)\pi} \sim \frac{1}{k}$.
+\end{example}
+\end{exbar}
+
+
+\subsubsection{Criterio asintotico del confronto}
+\begin{theorem}
+	\label{th:criterio asintotico confronto integrale}
+	$f,g: [a,b[\rightarrow \mathbb{R}, \ b \in \mathbb{R} \cup \{+\infty\}$, Riemann integrabili in $[a,c] \ \forall c \in [a,b[$ tali che $f(x),g(x)\geq 0$ definitivamente per $x \rightarrow b^-$ e $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)}= \ell \in [0,+\infty[$
+	\begin{enumerate}
+		\item Se $\ell \in \ ]0,+\infty[$, allora $ \int_{a}^{b} f(x) \ \mathrm{d}x$ converge $\iff \int_{a}^{b} g(x) \ \mathrm{d}x$ converge.
+		
+		\item Se $\ell=0$ e $\int_{a}^{b} g(x) \ \mathrm{d}x $ converge, allora $\int_{a}^{b} f(x) \ \mathrm{d}x$ converge.
+		
+		\item Se $\ell=+\infty$ e $\int_{a}^{b} g(x) \ \mathrm{d}x$ diverge, allora $\int_{a}^{b} f(x) \ \mathrm{d}x$ diverge.
+	\end{enumerate}
+\end{theorem}
+
+
+\begin{dembar}
+\textbf{Dimostrazione} del \textbf{Teorema \ref{th:criterio asintotico confronto integrale}}
+\begin{enumerate}
+	\item $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)} = \ell \in \ ]0,+\infty[$ 
+	allora $\frac{\ell}{2} \leq \frac{f(x)}{g(x)} \leq 2\ell$ definitivamente per $x \rightarrow b^-$ perché $]\frac{\ell}{2},2\ell[$ è un intorno di $\ell$. 
+	\begin{equation*}
+	\begin{array}{c c}
+		f(x) \leq 2 \ell g(x) & \text{definitivamente}
+		\\
+		g(x) \leq \frac{2}{\ell} f(x) & \text{per } x \rightarrow b^-
+	\end{array} 
+	\end{equation*}
+	 
+	Se $\int_{a}^{b} g(x) \ \mathrm{d}x$ converge $\Rightarrow \int_{a}^{b} f(x) \ \mathrm{d}x$ converge;
+	
+	se $\int_{a}^{b} f(x) \ \mathrm{
+	d}x$ converge $\Rightarrow \int_{a}^{b} g(x) \ \mathrm{d}x$ converge per il criterio del confronto.
+	
+	\item $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)} = 0 \Rightarrow \frac{f(x)}{g(x)} \leq 1 $ definitivamente per $x\rightarrow b^-$ 
+	
+	$\Rightarrow f(x) \leq g(x)$ definitivamente per $x\rightarrow b^- \Rightarrow $ 
+	
+	$\Rightarrow$ se $\int_{a}^{b} g(x) \ \mathrm{d}x$ converge, allora $\int_{a}^{b} f(x) \ \mathrm{d}x$ converge per il criterio del confronto.
+	
+	\item $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)} = +\infty \Rightarrow \frac{f(x)}{g(x)} \geq 1$ definitivamente per $x \rightarrow b^-$ 
+	
+	$\Rightarrow f(x) \geq g(x)$ definitivamente per $x \rightarrow b^-$ 
+	
+	$\Rightarrow$ se $\int_{a}^{b} g(x) \ \mathrm{d}x$ diverge, allora $\int_{a}^{b} f(x) \ \mathrm{d}x$ diverge sempre per il criterio del confronto. $\square$
+\end{enumerate}
+\end{dembar}
+
+
+\begin{exbar}
+\begin{example} \textbf{importante}
+	
+	Studiamo la convergenza di 
+	\begin{equation*}
+		\int_{2}^{+\infty} \frac{1}{x^\alpha (\ln x)^\beta} \ \mathrm{d}x, \qquad \alpha,\beta \in \mathbb{R}
+	\end{equation*}
+	\begin{itemize}
+		\item Se $\alpha > 1 $
+		\begin{equation*}
+			\int_{2}^{+\infty}\frac{1}{x^\alpha} \ \mathrm{d}x \text{ converge}
+		\end{equation*}
+
+		
+		\begin{itemize}
+			\item Se $\beta \geq 0 $
+			\begin{gather*}
+				\frac{1}{x^\alpha (\ln x)^\beta} \leq \frac{1}{x^\alpha} \text{ per } x > a
+				\\
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta} \ \mathrm{d}x \text{ converge}
+			\end{gather*}
+			
+			\item Se $\beta < 0 $
+			\begin{equation*}
+				\frac{1}{x^\alpha(\ln x)^\beta} = \frac{(\ln x)^{-\beta}}{x^\alpha}
+			\end{equation*}
+			
+			Preso $\epsilon > 0$ si ha $\ln x \leq x^\epsilon$ definitivamente per $x \rightarrow+\infty$ 
+			\begin{equation*}
+				\frac{(\ln x)^{-\beta}}{x^\alpha} \leq \frac{x^{-\epsilon \beta}}{x^\alpha}=\frac{1}{x^{\alpha+\epsilon\beta}}
+			\end{equation*}
+			
+			definitivamente per $x\rightarrow +\infty$.
+			
+			Scelgo $\epsilon$ in modo che $\alpha + \epsilon\beta > 1$, cioè $\epsilon < \uppercomment{\frac{1-\alpha}{\beta}} {\ >0}{}$
+			\begin{gather*}
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^{\alpha+\epsilon\beta}} \ \mathrm{d}x \text{ converge}
+				\\
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta} \ \mathrm{d}x \text{ converge.}
+			\end{gather*}
+		\end{itemize}
+		
+		\item Se $\alpha < 1 $
+		\begin{equation*}
+			\int_{2}^{+\infty} \frac{1}{x^\alpha} \ \mathrm{d}x \text{ diverge}
+		\end{equation*}
+
+		\begin{itemize}
+			\item Se $\beta \geq 0 $ 
+			\begin{gather*}
+				\frac{1}{x^\alpha(\ln x)^\beta }\geq \uppercomment{??} {\text{integrale}} {\text{divergente}} 
+				\\
+				\frac{1}{x^\alpha(\ln x)^\beta} = \frac{(\ln x)^{-\beta}}{x^\alpha}.
+			\end{gather*}
+
+			Fissato $\epsilon>0, \ \ln x \leq x^\epsilon $ definitivamente per $x \rightarrow +\infty$ 
+			
+			$(\ln x)^{-\beta} \undercomment{\geq} {-\beta < 0} {} x^{-\epsilon\beta}$ definitivamente per $x \rightarrow +\infty$ 
+			
+			$\frac{1}{x^\alpha (\ln x)^\beta} \geq \frac{x^{-\epsilon\beta}}{x^\alpha} = \frac{1}{x^{\alpha+\epsilon\beta}}$ definitivamente per $x \rightarrow +\infty$.
+			
+			Scelgo  $\epsilon$ in modo che $ \alpha + \epsilon\beta < 1, \ \epsilon < \frac{1-\alpha}{\beta} $
+			
+			\begin{gather*}
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^{\alpha + \epsilon\beta}} \ \mathrm{d}x \text{ diverge}
+				\\
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta} \ \mathrm{d}x 
+			\end{gather*}
+		
+			diverge per il criterio del confronto.
+			
+			\item  Se $\beta \leq 0 $
+			\begin{gather*}
+				\frac{1}{x^\alpha(\ln x)^\beta} = \frac{(\ln x)^{-\beta}}{x^\alpha} \undercomment{\geq} {\text{se } x > e} {} \frac{1}{x^\alpha}
+				\\
+				\int_{2}^{+\infty}\frac{1}{x^\alpha} \ \mathrm{d}x \text{ diverge}
+				\\
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^\alpha (\ln x)^\beta} \ \mathrm{d}x
+			\end{gather*}
+			
+			  diverge per il criterio del confronto.
+		\end{itemize}
+		
+		\item Se $\alpha=1$
+		\begin{equation*}
+			 \int_{2}^{+\infty} \frac{1}{x(\ln x)^\beta} \ \mathrm{d}x
+		\end{equation*}
+		\begin{itemize}
+			\item Se $\beta=0$
+			\begin{equation*}
+				\Rightarrow \int_{2}^{+\infty} \frac{1}{x} \ \mathrm{d}x =+\infty
+			\end{equation*}
+			
+			\item Se $\beta \neq 0,1$
+			\begin{align*}
+				\int_{2}^{+\infty} \frac{1}{x(\ln x)^\beta} \ \mathrm{d}x 
+				&= \lim_{c \rightarrow +\infty} \int_{2}^{c} (\ln x)^{-\beta} \frac{1}{x} \ \mathrm{d}x = \lim_{c \rightarrow +\infty} \frac{1}{1-\beta} (\ln x)^{1-\beta} \bigg|_{2}^{c} = 
+				\\
+				&= 
+				\begin{cases}
+					\frac{(\ln 2)^{1-\beta}}{\beta - 1} & \text{se } \beta > 1
+					\\[1em]
+					+\infty & \text{se } \beta < 1
+				\end{cases}
+			\end{align*}
+			
+			\item Se $\beta = 1$
+			\begin{equation*}
+			 	\int_{2}^{+\infty} \frac{1}{x \ln x} \ \mathrm{d}x = \lim_{c \rightarrow +\infty} \int_{2}^{c} \frac{1}{x \ln x} \ \mathrm{d}x = \lim_{c\rightarrow +\infty} \ln(\ln x)\bigg|_{2}^{c} = +\infty
+			\end{equation*}
+		\end{itemize}
+	\end{itemize}	
+\end{example}
+\end{exbar}
+
+
+\begin{attbar}
+\begin{equation*}
+		\int_{2}^{+\infty} \frac{1}{x^\alpha(\ln x)^\beta} \ \mathrm{d}x \text{ converge } \iff \alpha > 1 \text{ o } (\alpha=1 \text{ e } \beta >1)
+\end{equation*}
+\end{attbar}
+
+
+\begin{exbar}
+\begin{example} \textbf{importante}
+	
+	Studiamo la convergenza di
+	\begin{equation*}
+		\int_{0}^{\frac{1}{2}} \frac{1}{x^\alpha |\ln x|^\beta} \ \mathrm{d}x, \qquad \alpha,\beta \in \mathbb{R}
+	\end{equation*}
+	\begin{align*}
+		\int_{0}^{\frac{1}{2}} \frac{1}{x^\alpha|\ln x|^\beta} \ \mathrm{d}x 
+		&= \lim_{c \rightarrow 0^+} \int_{c}^{\frac{1}{2}} \frac{1}{x^\alpha |\ln x|^\beta} \ \mathrm{d}x =
+		\\
+		&\undercomment{=} {t = \frac{1}{x}} {} \lim_{c \rightarrow 0^+} \int_{2}^{\frac{1}{c}} \frac{1}{\frac{1}{t^\alpha} \left| \ln{\frac{1}{t}} \right|^\beta} \left( \frac{1}{t^2} \right) \ \mathrm{d}t =
+		\\
+		&= \lim_{c \rightarrow 0^+} \int_{2}^{\frac{1}{c}} \frac{1}{t^{2-\alpha} (\ln t)^\beta} \ \mathrm{d}t =
+		\\
+		&\undercomment{=} {d = \frac{1}{c}} {} \lim_{d \rightarrow +\infty} \int_{2}^{d} \frac{1}{t^{2-\alpha} (\ln t)^\beta} \ \mathrm{d}t =\int_{2}^{+\infty} \frac{1}{t^{2-\alpha}(\ln t)^\beta} \ \mathrm{d}t
+	\end{align*}
+	che converge $\iff 2-\alpha > 1$ oppure ($2-\alpha = 1$ e $\beta>1$) $\iff \alpha <1 $ oppure ($\alpha =1 \text{ e } \beta>1$)
+\end{example}
+\end{exbar}
+
+\begin{attbar}
+\begin{equation*}
+	\int_{0}^{\frac{1}{2}} \frac{1}{x^\alpha |\ln x|^\beta} \ \mathrm{d}x \text{ converge } \iff \alpha < 1 \text{ o } (\alpha=1 \text{ e } \beta >1)
+\end{equation*}
+\end{attbar}
+
+
+\begin{exbar}
+\begin{example}
+	
+	Studiare la convergenza dell'integrale improprio
+	\begin{equation*}
+		\int_{-\infty}^{+\infty} e^{-x^{2}} \ \mathrm{d}x \quad (=\sqrt{\pi})
+	\end{equation*}
+	
+	Devo studiare separatamente 
+	\begin{equation*}
+		\int_{-\infty}^{0} e^{-x^{2}} \ \mathrm{d}x \qquad \text{e} \qquad \int_{0}^{+\infty} e^{-x^{2}} \ \mathrm{d}x 
+	\end{equation*}
+	
+	e vedere se entrambi convergono. 
+	
+	$x\mapsto e^{-x^{2}} $ è pari e dunque
+	\begin{align*}
+		\int_{-\infty}^{0} e^{-x^{2}} \ \mathrm{d}x
+		&= \lim_{c \rightarrow -\infty} \int_{c}^{0} e^{-x^{2}} \ \mathrm{d}x \lowercomment{=}{t=-x}{}
+		\\
+		&= \lim_{c \rightarrow -\infty} \int_{0}^{-c} e^{-t^2} \ \mathrm{d}t \uppercomment{=}{d=-c}{}
+		\\
+		&= \lim_{d\rightarrow +\infty} \int_{0}^{d} e^{-x^{2}} \ \mathrm{d}x = \int_{0}^{+\infty} e^{-x^{2}} \ \mathrm{d}x
+	\end{align*}
+	\begin{gather*}
+		\int_{-\infty}^{0} e^{-x^{2}} \ \mathrm{d}x \text{ converge } \iff \int_{0}^{+\infty} e^{-x^{2}} \ \mathrm{d}x \text{ converge.}
+		\\
+		0 \leq e^{-x^2} \leq e^{-x} \ \forall x \geq 1 \text{ e } \int_{0}^{+\infty}e^{-x} \ \mathrm{d}x = 1 \text{ cioè converge}
+	\end{gather*}
+	
+	 $\Rightarrow$ per il criterio del confronto $\int_{0}^{+\infty} e^{-x^2}dx$ converge.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+		
+	Studiare la convergenza dell'integrale improprio 
+	\begin{equation*}
+		\int_{1}^{+\infty} \frac{x^\alpha e^{x^4}}{1+e^{4x^4}} \ \mathrm{d}x \qquad \text{ al variare di } \alpha \in \mathbb{R}.
+	\end{equation*}
+	
+	Per $x \rightarrow +\infty$
+	\begin{gather*}
+		\frac{x^\alpha e^{x^4}}{1+e^{4x^4}} \sim \frac{x^\alpha e^{x^4}}{x^{4x^4}} = x^\alpha e^{-3x^4}
+		\\
+		\int_{1}^{+\infty}\frac{x^\alpha e^{x^4}}{1+e^{4x^4}} \ \mathrm{d}x \text{ converge } \iff \int_{1}^{+\infty} x^\alpha e^{-3x^4} \ \mathrm{d}x \text{ converge}
+	\end{gather*}
+	
+	(Provare per casa ponendo $x=\ln t$).
+	
+	Sicuramente $x^\alpha \leq e^{x^4}$ definitivamente per $x \rightarrow +\infty$ e dunque $x^\alpha e^{-3x^4} \leq e^{-2x^4}\leq e^{-x} $ per $x \geq 1$
+	
+	$\Rightarrow \int_{1}^{+\infty} x^\alpha e^{-3x^4}dx $ converge per il criterio del confronto $\forall \ \alpha \in \mathbb{R}$.
+
+\end{example}
+\end{exbar}
+
+
+
+
+
+
+
+
+
+
+
 \begin{comment}	
+
+
+
+
+
+	
+	
 
 	
 	
