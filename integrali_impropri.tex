@@ -450,7 +450,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 	\begin{gather*}
 		\int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x= -\frac{\cos x}{x} \bigg|_{1}^{c} - \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x = \cos 1 - \frac{\cos c}{c} - \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x
 		\\
-		\lim_{c \rightarrow +\infty} \int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x = \lim_{c \rightarrow +\infty} \left[\cos 1 - \uppercomment{\frac{\cos c}{c}} {\myarrow[10] 0} {} - \lowercomment{\int_{1}^{c} \frac{cosx}{x^2} \ \mathrm{d}x} {\lim_{c \rightarrow + \infty} \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x} {\text{esiste finito}}\right] 
+		\lim_{c \rightarrow +\infty} \int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x = \lim_{c \rightarrow +\infty} \left[\cos 1 - \uppercomment{\frac{\cos c}{c}} {0} {\myarrow[90]} - \lowercomment{\int_{1}^{c} \frac{cosx}{x^2} \ \mathrm{d}x} {\lim_{c \rightarrow + \infty} \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x} {\text{esiste finito}}\right] 
 	\end{gather*}
 
 	
@@ -562,7 +562,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 			
 			definitivamente per $x\rightarrow +\infty$.
 			
-			Scelgo $\epsilon$ in modo che $\alpha + \epsilon\beta > 1$, cioè $\epsilon < \uppercomment{\frac{1-\alpha}{\beta}} {\ >0}{}$
+			Scelgo $\epsilon$ in modo che $\alpha + \epsilon\beta > 1$, cioè $\epsilon < \uppercomment{\frac{1-\alpha}{\beta}} {} { >0}$
 			\begin{gather*}
 				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^{\alpha+\epsilon\beta}} \ \mathrm{d}x \text{ converge}
 				\\
@@ -578,7 +578,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 		\begin{itemize}
 			\item Se $\beta \geq 0 $ 
 			\begin{gather*}
-				\frac{1}{x^\alpha(\ln x)^\beta }\geq \uppercomment{??} {\text{integrale}} {\text{divergente}} 
+				\frac{1}{x^\alpha(\ln x)^\beta }\geq \uppercomment{??} {\text{integrale} {\text{divergente}} 
 				\\
 				\frac{1}{x^\alpha(\ln x)^\beta} = \frac{(\ln x)^{-\beta}}{x^\alpha}.
 			\end{gather*}
@@ -699,7 +699,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 		\int_{-\infty}^{0} e^{-x^{2}} \ \mathrm{d}x
 		&= \lim_{c \rightarrow -\infty} \int_{c}^{0} e^{-x^{2}} \ \mathrm{d}x \lowercomment{=}{t=-x}{}
 		\\
-		&= \lim_{c \rightarrow -\infty} \int_{0}^{-c} e^{-t^2} \ \mathrm{d}t \uppercomment{=}{d=-c}{}
+		&= \lim_{c \rightarrow -\infty} \int_{0}^{-c} e^{-t^2} \ \mathrm{d}t \uppercomment{=}{}{d=-c}
 		\\
 		&= \lim_{d\rightarrow +\infty} \int_{0}^{d} e^{-x^{2}} \ \mathrm{d}x = \int_{0}^{+\infty} e^{-x^{2}} \ \mathrm{d}x
 	\end{align*}
@@ -790,7 +790,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 	
 	La funzione integranda è Riemann integrabile in $[0,c] \ \forall \ c \in [0,1[$
 	\begin{gather*}
-		\lim_{t \rightarrow 1^-}  \frac {\uppercomment{{3 + \sin{(e^{\frac{1}{t}})}}} {\myarrow[10] 2\leq 3 + \sin e^{1/t} \leq 4} {}}
+		\lim_{t \rightarrow 1^-}  \frac {\uppercomment{3 + \sin{(e^{\frac{1}{t}})}} {2\leq 3 + \sin e^{1/t} \leq 4} {\myarrow[90]}}
 		{[1+\cos{(\pi t)}]^\alpha|\ln t |^\beta} =+\infty
 		\\
 		\mathcircled{\frac{2}{[1 + \cos{(\pi t)}]^\alpha |\ln t |^\beta}} 
@@ -1020,7 +1020,7 @@ Allora $\int_{a}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x$ converge.
 		\int_{a}^{\omega} f(x) \ G'(x) \ \mathrm{d}x
 		& \undercomment{=} {\text{integro}} {\text{per parti}} f(x) \ G(x) \bigg|_{a}^{\omega} - \int_{a}^{\omega} f'(x) \ G(x) \ \mathrm{d}x =
 		\\
-		&= \lowercomment{f(\omega) \ G(\omega)} {\myarrow[350] 0 \text{ perché} f(\omega) \rightarrow 0} {\text{e } G \text{ è limitata}} - f(a) \ G(a) - \int_{a}^{\omega} f'(x) \ G(x) \ \mathrm{d}x =
+		&= \lowercomment{f(\omega) \ G(\omega)} {0 \text{ perché} f(\omega) \rightarrow 0} {\text{e } G \text{ è limitata}} - f(a) \ G(a) - \int_{a}^{\omega} f'(x) \ G(x) \ \mathrm{d}x =
 		\\
 		\int_{a}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x
 		&= -f(a) \ G(a) - \lim_{\omega \rightarrow +\infty} \int_{a}^{\omega} f'(x) \ G(x) \ \mathrm{d}x
