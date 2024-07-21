@@ -1078,7 +1078,41 @@ Allora $\int_{a}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x$ converge.
 		\\
 		&= \int_{1}^{+\infty} \frac{\cos(t)}{t} \ \mathrm{d}t \text{ che converge}
 	\end{align*}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
 	
+	Studiare la convergenza di 
+	\begin{equation*}
+		\int_{0}^{+\infty} \cosh x \frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x
+	\end{equation*}
+	al variare di $\alpha >0$.
+	
+	Devo studiare la convergenza di 
+	\begin{equation*}
+		\int_{0}^{2} \cosh x \frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x \text{ e } \int_{2}^{+\infty} \cosh x \frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x
+	\end{equation*}
+	\begin{itemize}
+		\item Vediamo il primo.
+		
+		$\cosh x\frac{\sin(\sinh x)}{x^\alpha}$ è definitivamente positiva per $x \rightarrow 0$
+		
+		$ \lowercomment{\cosh x} {1 \text{ per } x \rightarrow 0} {} \frac{ \uppercomment{\sin(\sinh x)} {= \sinh x +o(\sinh x) \text{ perché}} {\sinh x \rightarrow 0 \text{ per } x \rightarrow 0}}{x^\alpha} \sim \frac{\sinh x}{x^\alpha}\sim \frac{x}{x^\alpha}=\frac{1}{x^{\alpha-1}}\sim  \int_{0}^{2} \frac{1}{x^{\alpha-1}} \ \mathrm{d}x$ converge $\iff \alpha-1 < 1 \iff \alpha < 2$
+		
+		$ \int_{0}^{2} \cosh x \ \frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x$ converge $\iff \alpha < 2$ per il criterio asintotico del confronto.
+		
+		$
+		\overbracket[0pt][0pt]{\mathcircled{hidbcscd} }^{hfedncjcnkkkkjjjjjibjbihnkiukjnuiknuhk} = fuwdnkcnds
+		$
+		
+		\item Vediamo il secondo.\\
+		$\int_{2}^{+\infty} \cosh x\frac{\sin(\sinh x)}{x^\alpha}dx$ con $\alpha >0$,\\ $f(x)=\frac{1}{x^\alpha}$ (decrescente infinitesima),\\
+		$G(x)=-\cos(\sinh x)$, cosicchè $G'(x)=\cosh x \sin(\sinh x)$ (limitata $|G(x)|\leq 1$),\\
+		$\int_{2}^{+\infty} \cosh x\frac{\sin(\sinh x)}{x^\alpha}dx = \int_{2}^{+\infty} f(x)G'(x)dx$ converge per il criterio di Abel $\Rightarrow \int_{2}^{+\infty} \cosh x\frac{\sin(\sinh x)}{x^\alpha}dx$, se $ \alpha > 0$ converge $\Leftrightarrow \alpha <2$. 
+	\end{itemize}
 \end{example}
 \end{exbar}
 	
@@ -1086,25 +1120,6 @@ Allora $\int_{a}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x$ converge.
 	
 \begin{comment}	
 
-\paragraph{\textcolor{red}{Esempio}}
-Studiare la convergenza di 
-\begin{equation*}
-	\int_{0}^{+\infty} \cosh x\frac{\sin(\sinh x)}{x^\alpha}dx
-\end{equation*}
-al variare di $\alpha >0$.\\
-Devo studiare la convergenza di 
-\begin{equation*}
-	\int_{0}^{2} \cosh x\frac{\sin(\sinh x)}{x^\alpha}dx\,\,\,\,\, \text{e}\,\,\,\,\, \int_{2}^{+\infty} \cosh x\frac{\sin(\sinh x)}{x^\alpha}dx
-\end{equation*}
-\begin{itemize}
-	\item Vediamo il primo.\\
-	$\cosh x\frac{\sin(\sinh x)}{x^\alpha}$ è definitivamente poitiva per $x \rightarrow 0$\\
-	$ \cosh x\frac{\sin(\sinh x)}{x^\alpha} \sim \frac{\sinh x}{x^\alpha}\sim \frac{x}{x^\alpha}=\frac{1}{x^{\alpha-1}}\sim  \int_{0}^{2} \frac{1}{x^{\alpha-1}}dx$ converge $\Leftrightarrow \alpha-1 <1 \Leftrightarrow \alpha <2$. Quindi $ \int_{0}^{2} \cosh x\frac{\sin(\sinh x)}{x^\alpha}dx$ converge $\Leftrightarrow \alpha < 2$ per il criterio asintotico del confronto.
-	\item Vediamo il secondo.\\
-	$\int_{2}^{+\infty} \cosh x\frac{\sin(\sinh x)}{x^\alpha}dx$ con $\alpha >0$,\\ $f(x)=\frac{1}{x^\alpha}$ (decrescente infinitesima),\\
-	$G(x)=-\cos(\sinh x)$, cosicchè $G'(x)=\cosh x \sin(\sinh x)$ (limitata $|G(x)|\leq 1$),\\
-	$\int_{2}^{+\infty} \cosh x\frac{\sin(\sinh x)}{x^\alpha}dx = \int_{2}^{+\infty} f(x)G'(x)dx$ converge per il criterio di Abel $\Rightarrow \int_{2}^{+\infty} \cosh x\frac{\sin(\sinh x)}{x^\alpha}dx$, se $ \alpha > 0$ converge $\Leftrightarrow \alpha <2$. 
-\end{itemize}
 
 \paragraph{\textcolor{red}{Osservazione}}
 $f:[0,+\infty[\rightarrow\R$ positiva, decrescente, infinitesima a $+\infty$. Consideriamo
