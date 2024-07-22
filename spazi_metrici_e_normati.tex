@@ -272,77 +272,116 @@ No, esistono metriche dentro lo spazio vettoriale che non derivano da una norma.
 
 \subsection{Topologia}
 
+$(x,d)$ spazio metrico.
+
+\begin{definition}
+	
+\end{definition}
+	Sia $x \in X, r >0$, allora $B_r(x) = \{ y \in X | d(x,y) < r \}$ si dice \textbf{palla (aperta)} di centro $x$ e raggio $r$.
+
+	
+\begin{exbar}
+	\begin{gather*}
+		(\mathbb{R}^2, | \cdot |), \qquad \mathbb{R}^2 \text{ con norma euclidea}
+		\\
+		B_r (0,0), \qquad r > 0
+		\\
+		B_r (0,0) 
+		= \{ (x,y) \in \mathbb{R}^2 \big| d((x,y), (0,0)) < r \} 
+		= \{ (x,y) \in \mathbb{R}^2 \big| |(x,y)-(0,0)| < r \} =
+		\\ 
+		= \{ (x,y) \in \mathbb{R}^2 \big| \sqrt{x^2+y^2} < r\}
+	\end{gather*}
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{spazi_metrici_e_normati/pag137circle}
+		\label{fig:pag137circle}
+	\end{center}
+	
+	\begin{gather*}
+	 	(\mathbb{R}^2, \parallel \cdot \parallel_\infty)
+	 	\\
+		\parallel (x,y) \parallel_\infty = \max \{|x|,|y|\} 
+		\\
+		B_r^\infty (0,0) 
+		= \{ (x,y) \in \mathbb{R}^2 \big| \parallel(x,y) - (0,0) \parallel_\infty < r \} 
+		= \{ (x,y) \in \mathbb{R}^2 \big| \max \{|x|,|y| \} < r \} =
+		\\
+		= \{ (x,y) \in \mathbb{R}^2 \big| |x|,|y| < r\}
+	\end{gather*}
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{spazi_metrici_e_normati/pag137square}
+		\label{fig:pag137square}
+	\end{center}
+	
+	\begin{gather*}
+		(\mathbb{R}^2, \parallel \cdot \parallel_1)
+		\qquad
+		\parallel (x,y) \parallel_1 = |x| + |y| 
+		\\
+		B_r^1 (0,0) = \{(x,y) \in \mathbb{R}^2 \big| \parallel (x,y) - (0,0) \parallel_1 < r \} 
+		= \{(x,y) \in \mathbb{R}^2 \big| |x| + |y| < r \}
+	\end{gather*}
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{spazi_metrici_e_normati/pag138rhombus}
+		\label{fig:pag138rhombus}
+	\end{center}
+
+	\begin{gather*}
+		(C^\circ([0,1]), \parallel \cdot \parallel_\infty) \qquad
+		d(f,g) = \parallel f-g \parallel_\infty
+		\\
+		f \in C^0 (), \qquad r>0
+		\\
+		B_r^\infty(f) = \{ g \in C^0 ([0,1]) \big| \parallel f-g \parallel_\infty < r \} = \{ g \in C^0 ([0,1]) \big| \undercomment{\sup_{x \in [0,1]} |f(x) - g(x)|} {f(x) - r < g(x) < f(x) + r} {} < r \} 
+	\end{gather*}		
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{spazi_metrici_e_normati/pag138curve}
+		\label{fig:pag138curve}
+	\end{center}
+	
+	$$f(x)=0 \qquad \forall \ x \in [0,1]$$
+	\begin{center}
+		\includegraphics[width=0.65\linewidth]{spazi_metrici_e_normati/pag139curve}
+		\label{fig:pag139curve}
+	\end{center}
+	
+	\begin{gather*}
+		C^0 ([0,1]), \parallel \cdot \parallel_1
+		\\
+		\parallel f \parallel_1 = \int_{0}^{1} |f(x)| \ \mathrm{d}x 
+		\\
+		B_r^1 = \{ g \in C^0 ([0,1]) \big| \parallel f-g \parallel_1 < r \} = \{g \in C^0 ([0,1]) \bigg| \int_{0}^{1} |f(x) - g(x)| \ \mathrm{d}x < r \}
+		\\
+		f(x) = 0 \qquad \forall \ x \in [0,1]
+		\\
+		B_r^1(0) = \{ g \in C^0 ([0,1]) \bigg| \int_{0}^{1} |g(x)| \ \mathrm{d}x < r \}
+	\end{gather*}
+	\begin{center}
+		\includegraphics[width=0.85\linewidth]{spazi_metrici_e_normati/pag139triangolo}
+	\end{center}
+
+	$\int_{0}^{1} |g_n(x)| \ \mathrm{d}x =$ area del triangolo $ = \frac{1}{2} \frac{1}{2^n} n = \lowercomment{\frac{n}{2^{n+1}}} {\myarrow[270]} {0 \text{ per } n \rightarrow + \infty}$
+
+	Fissato $r > 0$, trovo $n$ tale che $\int_{0}^{1} |g_n(x)| \ \mathrm{d}x < r$	
+\end{exbar}
+
+
+\begin{definition}
+	$x \in X$. Un \textbf{intorno di $x$} è un qualsiasi sottoinsieme $A \subseteq X$ che contiene una palla aperta centrata in $x$, cioè per cui $\exists \ r > 0 \big| B_r(x) \subseteq A$
+\end{definition}
+
+
+\begin{definition}
+	$A \subseteq X$ si dice \textbf{aperto} se è intorno di ogni suo punto, cioè se $\forall \ x \in A \quad \exists r > 0 \ \big| \ B_r(x) \subseteq A$.
+	
+	$A$ si dice \textbf{chiuso} se $A^c = X \backslash A$ è aperto.
+\end{definition}
 
 
 
 \begin{comment}	
+		
 
-
-	\subsection{\textcolor{red}{Topologia}}
-	$(x,d)$ spazio metrico.
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	Sia $x\in X, r >0$, allora $B_r(x)=\{ y\in x|d(x,y) < r \}$ si dice \textcolor{red}{palla (aperta)} di centro $x$ e raggio $r$.
-	
-	\paragraph{\textcolor{red}{Esempi}}
-	$(\R^2,|\cdot|)$, $\R^2$ con norma euclidea\\
-	$B_r(0,0), r>0$\\
-	$B_r(0,0)=\{ (x,y)\in \R^2 |d((x,y),(0,0))<r \}=\{ (x,y)\in \R^2 | |(x,y)-(0,0)| <r \}=\{ (x,y)\in \R^2 | \sqrt{x^2+y^2} <r\}$
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-44-33.png}
-	\end{figure}
-	
-	Prendiamo $(\R^2,\parallel\cdot\parallel_\infty)$\\
-	$\parallel(x,y)\parallel_\infty= \max\{|x|,|y|\}$\\
-	$B_r^\infty (0,0)=\{ (x,y)\in \R^2| \parallel(x,y)-(0,0) \parallel_\infty <r\}=\{ (x,y)\in \R^2| \max\{|x|,|y|\}<r\}= \{ (x,y)\in \R^2| |x|,|y| <r\}$
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-45-00.png}
-	\end{figure}
-	
-	Prendiamo $(\R^2,\parallel \cdot\parallel_1)$\\
-	$\parallel(x,y)\parallel_1=|x|+|y|$\\
-	$B_r^1 (0,0) =\{(x,y)\in \R^2 | \parallel (x,y)-(0,0) \parallel_1 <r \} =\{(x,y)\in \R^2 | |x|+|y| <r \}$
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-45-31.png}
-	\end{figure}
-	
-	($C^\circ([0,1]),\parallel\cdot\parallel_\infty$)\\
-	$d(f,g)=\parallel f-g\parallel_\infty$\\
-	$f\in C^\circ(),\,\,\, r>0$\\
-	$B_r^\infty(f)=\{ g\in C^\circ([0,1])| \parallel f-g\parallel_\infty < r \}=\{ g\in C^\circ([0,1])| \sup_{x\in[0,1]} |f(x)-g(x)|<\}$\\
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-45-52.png}
-	\end{figure}
-	
-	$f(x)=0 \,\,\, \forall x \in [0,1]$\\
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-46-13.png}
-	\end{figure}
-	
-	$C^\circ([0,1]),\parallel\cdot\parallel_1$\\
-	$\parallel f\parallel_1=\int_{0}^{1}|f(x)|dx$\\
-	$B_r^1=\{ g\in C^\circ([0,1])| \parallel f-g\parallel_1 <r \}=\{g\in C^\circ([0,1])| \int_{0}^{1}|f(x)-g(x)|dx <r\}$\\
-	$f(x)=0\,\,\,\forall x \in [0,1]$\\
-	$B_r^1(0)=\{ g \in C^\circ([0,1])| \int_{0}^{1}|g(x)|dx <r \}$\\
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-46-35.png}
-	\end{figure}
-	$\int_{0}^{1}|g_n(x)|dx=$area del triangolo$= \frac{1}{2}\frac{1}{2^n}n=\frac{n}{2^{n+1}}$\\
-	Fissato $r>0$, trovo $n$ tale che $\int_{0}^{1}|g_n(x)|dx<r$
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	$x\in X$. Un \textcolor{red}{intorno di $x$} è un qualsiasi sottoinsieme $A \subseteq X$ che contiene una palla aperta centrata in $x$, cioè per cui $\exists r >0 | B_r(x)\subseteq A.$
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	$A \subseteq X$ si dice \textcolor{red}{aperto} se è intorno di ogni suo punto, cioè se $\forall x \in A\,\,\, \exists r>0\,\,|\,\, B_r(x)\subseteq A$.\\
-	$A$ si dice \textcolor{red}{chiuso} se $A^c = X \backslash A$ è aperto.
 	
 	\paragraph{\textcolor{red}{Esempio}}
 	$(x,d)$ spazio metrico, $x \in X, r>0$, $B_r(x)$ è un aperto.\\
