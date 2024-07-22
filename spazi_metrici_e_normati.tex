@@ -378,23 +378,39 @@ $(x,d)$ spazio metrico.
 \end{definition}
 
 
+\begin{exbar}
+\begin{example}
+	$(x,d)$ spazio metrico, $x \in X, r>0$, $B_r(x)$ è un aperto.
+	
+	Devo far vedere che $\forall \ y \in B_r(x) \ \exists \ \overline{r} > 0 \ \big| \; B_{\overline{r}}(y) \subseteq B_r(x)$
+	
+	$\overline{r} = r - d(x,y) > 0$ perché $d(x,y) < r$ e dimostriamo che, se $z \in B_{\overline{r}} (y)$, allora $z\in B_r(x)$, cioè, se $d(y,z)< \overline{r}$, allora $d(x,z)<r$
+	
+	$d(x,z) \distr  d(x,y) + d(y,z) < d(x,y) + \overline{r} = d(x,y) + (r-d(x,y)) = r$	
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{spazi_metrici_e_normati/pag141}
+		\label{fig:pag141}
+	\end{center}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+	$(\mathbb{R}^2, \parallel \cdot \parallel_\infty)$
+
+\end{exbar}
+
+
+
+
+
+
+
+
 
 \begin{comment}	
-		
 
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	$(x,d)$ spazio metrico, $x \in X, r>0$, $B_r(x)$ è un aperto.\\
-	Devo far vedere che $\forall y \in B_r(x)\,\, \exists\,\, \overline{r}>0\,\,|\,\,B_{\overline{r}}(y)\subseteq B_r(x)$\\
-	$\overline{r}=r-d(x,y)>0$ perchè $d(x,y)<r$ e dimostriamo che, se $z \in B_{\overline{r}}(y)$, allora $z\in B_r(x)$, cioè, se $d(y,z)< \overline{r}$, allora $d(x,z)<r$\\
-	$d(x,z)\leq d(x,y)+d(y,z)<d(x,y)+\overline{r}=d(x,y)+(r-d(x,y))=r$
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-46-52.png}
-	\end{figure}
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	$(\R^2,\parallel\cdot\parallel_\infty)$
+
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.48\textwidth]{quad1.png} \includegraphics[width=0.48\textwidth]{quad2.png} \\[\smallskipamount]
