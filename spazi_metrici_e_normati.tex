@@ -339,44 +339,49 @@ $(x,d)$ spazio metrico.
 		\label{fig:pag138curve}
 	\end{center}
 	
+	$$f(x)=0 \qquad \forall \ x \in [0,1]$$
+	\begin{center}
+		\includegraphics[width=0.65\linewidth]{spazi_metrici_e_normati/pag139curve}
+		\label{fig:pag139curve}
+	\end{center}
 	
+	\begin{gather*}
+		C^0 ([0,1]), \parallel \cdot \parallel_1
+		\\
+		\parallel f \parallel_1 = \int_{0}^{1} |f(x)| \ \mathrm{d}x 
+		\\
+		B_r^1 = \{ g \in C^0 ([0,1]) \big| \parallel f-g \parallel_1 < r \} = \{g \in C^0 ([0,1]) \bigg| \int_{0}^{1} |f(x) - g(x)| \ \mathrm{d}x < r \}
+		\\
+		f(x) = 0 \qquad \forall \ x \in [0,1]
+		\\
+		B_r^1(0) = \{ g \in C^0 ([0,1]) \bigg| \int_{0}^{1} |g(x)| \ \mathrm{d}x < r \}
+	\end{gather*}
+	\begin{center}
+		\includegraphics[width=0.85\linewidth]{spazi_metrici_e_normati/pag139triangolo}
+	\end{center}
+
+	$\int_{0}^{1} |g_n(x)| \ \mathrm{d}x =$ area del triangolo $ = \frac{1}{2} \frac{1}{2^n} n = \lowercomment{\frac{n}{2^{n+1}}} {\myarrow[270]} {0 \text{ per } n \rightarrow + \infty}$
+
+	Fissato $r > 0$, trovo $n$ tale che $\int_{0}^{1} |g_n(x)| \ \mathrm{d}x < r$	
 \end{exbar}
 
+
+\begin{definition}
+	$x \in X$. Un \textbf{intorno di $x$} è un qualsiasi sottoinsieme $A \subseteq X$ che contiene una palla aperta centrata in $x$, cioè per cui $\exists \ r > 0 \big| B_r(x) \subseteq A$
+\end{definition}
+
+
+\begin{definition}
+	$A \subseteq X$ si dice \textbf{aperto} se è intorno di ogni suo punto, cioè se $\forall \ x \in A \quad \exists r > 0 \ \big| \ B_r(x) \subseteq A$.
+	
+	$A$ si dice \textbf{chiuso} se $A^c = X \backslash A$ è aperto.
+\end{definition}
 
 
 
 \begin{comment}	
 		
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-45-52.png}
-	\end{figure}
-	
-	$f(x)=0 \,\,\, \forall x \in [0,1]$\\
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-46-13.png}
-	\end{figure}
-	
-	$C^\circ([0,1]),\parallel\cdot\parallel_1$\\
-	$\parallel f\parallel_1=\int_{0}^{1}|f(x)|dx$\\
-	$B_r^1=\{ g\in C^\circ([0,1])| \parallel f-g\parallel_1 <r \}=\{g\in C^\circ([0,1])| \int_{0}^{1}|f(x)-g(x)|dx <r\}$\\
-	$f(x)=0\,\,\,\forall x \in [0,1]$\\
-	$B_r^1(0)=\{ g \in C^\circ([0,1])| \int_{0}^{1}|g(x)|dx <r \}$\\
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-46-35.png}
-	\end{figure}
-	$\int_{0}^{1}|g_n(x)|dx=$area del triangolo$= \frac{1}{2}\frac{1}{2^n}n=\frac{n}{2^{n+1}}$\\
-	Fissato $r>0$, trovo $n$ tale che $\int_{0}^{1}|g_n(x)|dx<r$
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	$x\in X$. Un \textcolor{red}{intorno di $x$} è un qualsiasi sottoinsieme $A \subseteq X$ che contiene una palla aperta centrata in $x$, cioè per cui $\exists r >0 | B_r(x)\subseteq A.$
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	$A \subseteq X$ si dice \textcolor{red}{aperto} se è intorno di ogni suo punto, cioè se $\forall x \in A\,\,\, \exists r>0\,\,|\,\, B_r(x)\subseteq A$.\\
-	$A$ si dice \textcolor{red}{chiuso} se $A^c = X \backslash A$ è aperto.
+
 	
 	\paragraph{\textcolor{red}{Esempio}}
 	$(x,d)$ spazio metrico, $x \in X, r>0$, $B_r(x)$ è un aperto.\\
