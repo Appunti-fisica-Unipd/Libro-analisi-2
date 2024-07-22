@@ -1,0 +1,439 @@
+\section{Spazi metrici e normati}
+\subsection{Norme e metriche}
+
+\begin{definition}
+	
+	$X$ spazio vettoriale su $\mathbb{R}$ o $\mathbb{C}$. Una norma su $X$ è una funzione $\parallel \cdot \parallel : X \rightarrow \mathbb{R}$ tale che 
+	\begin{enumerate}
+		\item $\parallel x \parallel \geq 0 \quad \forall \ x \in X$ e $\parallel x \parallel = 0 \iff x = 0$
+		
+		\item $\parallel \lambda x \parallel = |\lambda| \parallel x \parallel \quad \forall$ scalare $\lambda$ e $\forall \ x \in X$
+		
+		\item $\parallel x+y \parallel \leq \parallel x \parallel + \parallel y \parallel \quad \forall x,y \in X$ (disuguaglianza triangolare)
+	\end{enumerate}
+	La coppia ($X,\parallel \cdot \parallel$) si dice spazio normato
+\end{definition}
+
+
+\begin{exbar}
+\begin{itemize}
+	\item $(\mathbb{R}, |\cdot|)$ è spazio normato
+	
+	\item $(\mathbb{R}^n, |\cdot|)$ è spazio normato (norma euclidea)
+	\begin{gather*}
+		\overline{x} = (x_1,...,x_n) \in \mathbb{R}^n
+		\\ \big| \overline{x} \big| = \sqrt{\sum_{i=1}^{n }x_i^2}= \sqrt{ \langle \overline{x}, \overline{x} \rangle}
+	\end{gather*} 
+	
+	dove, se $\overline{x} = (x_1,...,x_n)$ e $\overline{y} = (y_1,...,y_n)$
+	\begin{gather*}
+	\langle  \overline{x}, \overline{y} \rangle = \sum_{i=1}^{n} x_i y_i 
+	\\
+	\text{prodotto scalare tra } \overline{x} \text{ e } \overline{y}
+	\end{gather*}
+
+	\item $(\mathbb{R}^n, \parallel \cdot \parallel_{\infty})$ è spazio normato
+	\begin{gather*}
+		\overline{x} = (x_1,...,x_n) 
+		\\
+		\parallel \overline{x} \parallel_\infty = \max_{i=1,...,n} |x_i|
+	\end{gather*}
+	
+	(Per casa dimostrare che è una norma)
+	
+	\item $(\mathbb{R}^n,\parallel\cdot\parallel_1)$ è spazio normato
+	\begin{gather*}
+		\overline{x} = (x_1,...,x_n)
+		\\
+		\parallel \overline{x} \parallel_1 \sum_{i=1}^{n} |x_i| = |x_1| + |x_2| + \ldots + |x_n|
+	\end{gather*}
+	
+	
+	Se $n=2$ e $(x,y)\in \mathbb{R}^2$
+	\begin{gather*}
+		\parallel (x,y) \parallel_\infty = \max \{ |x|,|y| \}
+		\\
+		\parallel (x,y) \parallel_1 = |x| + |y|
+	\end{gather*}
+	
+	\begin{center}
+		\includegraphics[width=\linewidth]{spazi_metrici_e_normati/pag126}
+		\label{fig:pag126}
+	\end{center}
+	\begin{gather*}
+		\parallel \overline{x} \parallel_p = \left( \sum_{i=1}^{n} |x_i|^p \right)^{\frac{1}{p}} \quad p \geq 1
+		\\
+		\parallel \overline{x} \parallel_\infty = \lim_{p \rightarrow +\infty} \parallel \overline{x} \parallel_p
+	\end{gather*}
+	$(\mathbb{R}^n, \parallel \cdot \parallel_p)$ è spazio normato
+
+	\item $C^0 \left( [0,1] \right)$
+	\begin{align*}
+		&\parallel f \parallel_\infty = \sup_{x \in [0,1]} |f(x)| (=\max_{x \in [0,1]} |f(x)|)
+		\\
+		&\parallel f \parallel_1 = \int_{0}^{1} |f(x)| \ \mathrm{d}x
+		\\
+		&\parallel f \parallel_p = \left( \int_{0}^{1} |f(x)|^p \ \mathrm{d}x \right)^{\frac{1}{p}} \qquad p \geq 1
+	\end{align*}
+
+sono tute norme su $C^0 ([0,1])$
+\end{itemize}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Facciamo vedere che $\parallel \cdot \parallel_\infty$ su $C^0 ([0,1])$ è una norma
+	\begin{enumerate}
+		\item $\parallel f \parallel_\infty \geq 0 \qquad$ (banale)
+		
+		$\parallel f \parallel_\infty =  0 \iff f(x) = 0 \qquad \forall \ x \in [0, 1]$
+		
+		$\parallel f \parallel_\infty =  0 \iff \sup_{x \in [0,1]} |f(x)| = 0$
+		
+		$\iff 0 \leq |f(x)| \leq 0 \quad \forall \ x \in [0,1] \iff f(x) = 0 \qquad \forall \ x \in [0,1]$
+		
+		\item $\parallel \lambda f \parallel_\infty = |\lambda| \parallel f \parallel_\infty \qquad \forall \lambda \in \mathbb{R}$ e $\forall f \in C^0 ([0,1])$
+		
+		$\parallel \lambda f \parallel_\infty = \sup_{x \in[0,1]} |\lambda f(x)| = \sup_{x\in[0,1]} |\lambda| \ |f(x)| = |\lambda| \sup_{x\in[0,1]} |f(x)| = |\lambda| \parallel f \parallel_\infty$
+		
+		\item $\parallel f+g \parallel_\infty \leq \parallel f \parallel_\infty + \parallel g \parallel_\infty \qquad \forall f,g \in C^0 ([0,1])$
+		
+		$\parallel f+g \parallel_\infty = \sup_{x\in[0,1]} |f(x) + g(x)|$
+		
+		$|f(x) + g(x)| \distr |f(x)| + |g(x)| \leq \sup_{y\in[0,1]} |f(y)| + \sup_{y\in[0,1]} |g(y)| =  \parallel f \parallel_\infty + \parallel g \parallel_\infty \qquad \forall \ x \in [0,1]$
+		
+		$\parallel f+g \parallel_\infty = \sup_{x\in[0,1]} |f(x) + g(x)| \leq \parallel f \parallel_\infty + \parallel g \parallel_\infty$\\
+	\end{enumerate}
+\end{example}
+\end{exbar}
+	
+
+\begin{exbar}
+\begin{example}
+		Facciamo vedere che $\parallel f\parallel_1 = \int_{0}^{1} |f(x)| \ \mathrm{d}x$
+		
+		è una norma
+	\begin{enumerate}
+		\item $\parallel f \parallel_1 \geq 0 \qquad \forall f \in C^0 ([0,1]) \text{ banale}$
+		
+		Dimostriamo che $\parallel f \parallel_1 = 0 \iff f(x) = 0 \qquad \forall \ x \in [0,1]$
+		
+		$\Leftarrow) f(x) = 0 \qquad \forall \ x \in[0,1]$
+		
+		$\parallel f \parallel_1 = \int_{0}^{1} 0 \ \mathrm{d}x = 0$
+		
+		$\Rightarrow)$ Sia $\parallel f \parallel_1 = 0$ e dimostriamo che $f(x) = 0 \qquad \forall \ x \in [0,1]$
+		
+		$\int_{0}^{1} |f(x)| \ \mathrm{d}x = 0$
+		
+		Se $\exists \ x_0 \in [0,1]$ tale che $|f(x_0)| \neq 0$ allora $\exists$ un intorno $U$ di $x_0 $ tale che $|f(x)| \geq \frac{|f(x_0)|}{2}$ $\qquad \forall x \in U \cap [0,1]$ 
+		
+		\begin{itemize}
+			\item $U = \ ]x_0 - \delta, x_0 + \delta[ \ \subseteq [0,1]$
+	
+			\item $x_0=0$
+			
+			$U= \ ]0 - \delta, 0 + \delta[$
+			
+			$U \cap [0,1] = [0, \delta[$
+			
+			\item $x_1 = 1$
+			 $U= \ ]1 - \delta, 1 + \delta[$
+			 
+			$U \cap [0, 1] = \ ]1 - \delta, 1]$
+		\end{itemize}
+		
+		cioè in ogni caso $U \cap [0,1]$ è un intervallo di ampiezza almeno $\frac{\delta}{2}>0$
+		
+		\begin{equation*}
+			\parallel f\parallel_1 = \int_{0}^{1} |f(x)| \ \mathrm{d}x \geq \int_{U \cap [0,1]} |f(x)| \ \mathrm{d}x \geq \int_{U \cap [0,1]} \frac{|f(x_0)|}{2} \ \mathrm{d}x \geq \frac{\delta}{4} |f(x_0)| > 0
+		\end{equation*}
+		
+		il che è assurdo, perché $\parallel f\parallel_1 = 0$
+		
+		\item $\parallel \lambda f \parallel_1 = \int_{0}^{1} |\lambda f(x)| \ \mathrm{d}x = |\lambda| \int_{0}^{1} |f(x)| \ \mathrm{d}x = |\lambda| \parallel f \parallel_1 \qquad \lambda \in \mathbb{R}$
+		
+		\item $f,g \in C^0 ([0,1])$
+		
+		$\parallel f+g \parallel_1 = \int_{0}^{1} |f(x) + g(x)| \ \mathrm{d}x \leq \int_{0}^{1} (|f(x)| + |g(x)|) \ \mathrm{d}x = \parallel f \parallel_1 + \parallel g \parallel_1$
+		
+		$\Rightarrow$ vale la disuguaglianza triangolare
+	\end{enumerate}
+\end{example}
+\end{exbar}
+
+
+\begin{attbar}
+	Dato uno spazio normato $(X, \parallel \cdot \parallel)$ posso definire la distanza tra due vettori $x,y \in X$ come $d(x,y)= \parallel x-y \parallel$, lunghezza del vettore $x-y$
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{spazi_metrici_e_normati/pag131}
+		\label{fig:pag131}
+	\end{center}
+\end{attbar}
+
+
+\begin{definition}
+	$X$ insieme non vuoto. Una distanza o metrica su $X$ è una funzione $d:X \times X \rightarrow \mathbb{R}$ tale che
+	\begin{enumerate}
+		\item $d(x,y) \geq 0 \qquad \forall \ x,y \in X $ e $d(x,y) = 0 \iff x = y$
+		\item $d(x,y) = d(y,x)$ (proprietà simmetrica)
+		\item Disuguaglianza triangolare $d(x,y) \leq d(x,z) + d(z,y) \qquad \forall \ x,y,z \in X$
+	\end{enumerate}
+	
+	La coppia $(X,d)$ si dice \textbf{spazio metrico}.
+\end{definition}
+
+
+
+$(X, \parallel \cdot \parallel)$ normato
+
+$d(x,y)=\parallel x-y \parallel$ è metrica, allora
+\begin{enumerate}
+	\item $d(x,y)\geq 0$ banalmente 
+	$d(x,y) = \parallel x-y \parallel = 0 \iff x-y = 0 \iff x = y$
+	\item $d(x,y) = \parallel x-y \parallel = \parallel y-x \parallel = d(y,x)$
+	\item $d(x,y) = \parallel x-y \parallel = \parallel (x-z) + (z-y) \parallel \leq \parallel x-z \parallel + \parallel z-y \parallel = d(x,z) + d(y,z)$
+\end{enumerate}
+
+Dato uno spazio vettoriale $X$ e $d$ metrica su $X$, esiste una norma $\parallel \cdot \parallel$ su $X$ tale che $d(x,y) = \parallel x-y \parallel$?
+
+No, esistono metriche dentro lo spazio vettoriale che non derivano da una norma.
+
+
+\begin{exbar}
+\begin{example}
+	$\mathbb{R}, \quad 0 < p < 1 , \quad d(x,y) = |x-y|^p$. 
+	
+	Allora $d$ è una metrica, che non deriva da una norma.
+	
+	Se esistesse una norma $\parallel \cdot \parallel$ su $\mathbb{R}$ tale che $d(x,y) = \parallel x-y \parallel$, allora, fissato $\lambda \in \mathbb{R}$,
+	\begin{gather*}
+		d(\lambda x, \lambda y) = \parallel \underbrace{\lambda x - \lambda y}_{\lambda (x - y)} \parallel \uppercomment{=} {\text{seconda}} {\text{proprietà di }\parallel \cdot \parallel} |\lambda| \parallel x-y \parallel = |\lambda | \ d(x,y)
+		\\
+		d(\lambda x, \lambda y) = |\lambda x - \lambda y|^p = |\lambda|^p |x-y|^p = |\lambda|^p d(x,y) \neq |\lambda| \ d(x,y) \text{ se } |\lambda \neq 1,0|
+	\end{gather*}
+	
+	Facciamo vedere che $d(x,y) = |x-y|^p$ è una distanza, $0 < p < 1$
+	\begin{enumerate}
+		\item $d(x,y) \geq 0$ banale
+		
+		$d(x,y) = 0 \iff |x-y|^p = 0 \iff |x-y| = 0 \iff x = y$
+		
+		\item $d(x,y) = d(y,x)$ banale
+		
+		\item Disuguaglianza triangolare
+		
+		Dobbiamo dimostrare che $\forall \ x,y,z \in \mathbb{R}$ vale
+		\begin{gather*}
+			d(x,y) \leq d(x,z) + d(z,y)
+			\\
+			|x-y|^p \leq |x-z|^p + |z-y|^p
+			\\
+			|x-y|^p \distr (|x-z| + |y-z|)^p
+		\end{gather*} 
+	
+		Se dimostro che $( \underbrace{|x-z|}_{= a} + \underbrace{|y-z|}_{=b})^p \leq |x-z|^p + |z-y|^p$, sono a posto $\forall \ x,y,z \in \mathbb{R}$ con $0<p<1$.
+		
+		Devo dunque dimostrare che $(a+b)^p \leq a^p + b^p \qquad \forall \ a,b \in \mathbb{R}^{\geq 0}$.
+		
+		Se $a=0$ o $b=0$, banale
+		
+		Siano $a,b \neq 0$
+		\begin{gather*}
+		(a + b)^p \leq a^p + b^p \qquad /.\frac{1}{b^p}
+		\\
+		\iff \frac{(a+b)^p}{b^p} \leq \frac{a^p}{b^p} + 1 \iff \left( \frac{a+b}{b} \right)^p \leq \left( \frac{a}{b} \right)^p + 1 \iff \left( \frac{a}{b} + 1 \right)^p \leq \left( \frac{a}{b} \right)^p + 1 \qquad \forall \ a,b > 0
+		\end{gather*}
+		
+		Posto $\lambda = \frac{a}{b}>0$
+		\begin{gather*}
+		\left( \frac{a}{b} + 1 \right)^p \leq \left( \frac{a}{b} \right)^p + 1 \qquad \forall \ a,b>0 \iff (\lambda + 1)^p \leq \lambda^p + 1 \qquad \forall \ \lambda > 0
+		\\
+		(\lambda + 1)^p - \lambda^p \leq 1
+		\\
+		f(\lambda) = (\lambda + 1)^p -\lambda^p \qquad f:\mathbb{R}^{\geq 0} \rightarrow \mathbb{R}
+		\\
+		f(\lambda) \leq 1 = f(0)
+		\\
+		f'(\lambda) 
+		\lowercomment{=} {\myarrow[270]} {\lambda \neq 0} p \ (\lambda + 1)^{p - 1} - p \ \lambda^{p - 1} 
+		= p \ [(\lambda + 1)^{p - 1} - \lambda^{p - 1}] 
+		= p \ \lambda^{p - 1} \left[ \left( \frac{\lambda + 1}{\lambda} \right)^{p-1} - 1 \right] 
+		\\
+		=  p \ \lambda^{p - 1} \left[ \underbrace{ \left(  1 + \frac{1}{\lambda} \right) ^{\overbrace{p - 1}^{<0}} }_{<1} - 1 \right] < 0 \qquad \forall \ \lambda > 0
+ 		\end{gather*}
+		
+		$f$ è decrescente e quindi $\forall \ \lambda > 0 \Rightarrow f(\lambda) \leq f(0)$, come si voleva.
+	\end{enumerate}
+\end{example}
+\end{exbar}
+
+
+\subsection{Topologia}
+
+
+
+
+\begin{comment}	
+
+
+	\subsection{\textcolor{red}{Topologia}}
+	$(x,d)$ spazio metrico.
+	
+	\paragraph{\textcolor{red}{Definizione}}
+	Sia $x\in X, r >0$, allora $B_r(x)=\{ y\in x|d(x,y) < r \}$ si dice \textcolor{red}{palla (aperta)} di centro $x$ e raggio $r$.
+	
+	\paragraph{\textcolor{red}{Esempi}}
+	$(\R^2,|\cdot|)$, $\R^2$ con norma euclidea\\
+	$B_r(0,0), r>0$\\
+	$B_r(0,0)=\{ (x,y)\in \R^2 |d((x,y),(0,0))<r \}=\{ (x,y)\in \R^2 | |(x,y)-(0,0)| <r \}=\{ (x,y)\in \R^2 | \sqrt{x^2+y^2} <r\}$
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-44-33.png}
+	\end{figure}
+	
+	Prendiamo $(\R^2,\parallel\cdot\parallel_\infty)$\\
+	$\parallel(x,y)\parallel_\infty= \max\{|x|,|y|\}$\\
+	$B_r^\infty (0,0)=\{ (x,y)\in \R^2| \parallel(x,y)-(0,0) \parallel_\infty <r\}=\{ (x,y)\in \R^2| \max\{|x|,|y|\}<r\}= \{ (x,y)\in \R^2| |x|,|y| <r\}$
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-45-00.png}
+	\end{figure}
+	
+	Prendiamo $(\R^2,\parallel \cdot\parallel_1)$\\
+	$\parallel(x,y)\parallel_1=|x|+|y|$\\
+	$B_r^1 (0,0) =\{(x,y)\in \R^2 | \parallel (x,y)-(0,0) \parallel_1 <r \} =\{(x,y)\in \R^2 | |x|+|y| <r \}$
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-45-31.png}
+	\end{figure}
+	
+	($C^\circ([0,1]),\parallel\cdot\parallel_\infty$)\\
+	$d(f,g)=\parallel f-g\parallel_\infty$\\
+	$f\in C^\circ(),\,\,\, r>0$\\
+	$B_r^\infty(f)=\{ g\in C^\circ([0,1])| \parallel f-g\parallel_\infty < r \}=\{ g\in C^\circ([0,1])| \sup_{x\in[0,1]} |f(x)-g(x)|<\}$\\
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-45-52.png}
+	\end{figure}
+	
+	$f(x)=0 \,\,\, \forall x \in [0,1]$\\
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-46-13.png}
+	\end{figure}
+	
+	$C^\circ([0,1]),\parallel\cdot\parallel_1$\\
+	$\parallel f\parallel_1=\int_{0}^{1}|f(x)|dx$\\
+	$B_r^1=\{ g\in C^\circ([0,1])| \parallel f-g\parallel_1 <r \}=\{g\in C^\circ([0,1])| \int_{0}^{1}|f(x)-g(x)|dx <r\}$\\
+	$f(x)=0\,\,\,\forall x \in [0,1]$\\
+	$B_r^1(0)=\{ g \in C^\circ([0,1])| \int_{0}^{1}|g(x)|dx <r \}$\\
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-46-35.png}
+	\end{figure}
+	$\int_{0}^{1}|g_n(x)|dx=$area del triangolo$= \frac{1}{2}\frac{1}{2^n}n=\frac{n}{2^{n+1}}$\\
+	Fissato $r>0$, trovo $n$ tale che $\int_{0}^{1}|g_n(x)|dx<r$
+	
+	\paragraph{\textcolor{red}{Definizione}}
+	$x\in X$. Un \textcolor{red}{intorno di $x$} è un qualsiasi sottoinsieme $A \subseteq X$ che contiene una palla aperta centrata in $x$, cioè per cui $\exists r >0 | B_r(x)\subseteq A.$
+	
+	\paragraph{\textcolor{red}{Definizione}}
+	$A \subseteq X$ si dice \textcolor{red}{aperto} se è intorno di ogni suo punto, cioè se $\forall x \in A\,\,\, \exists r>0\,\,|\,\, B_r(x)\subseteq A$.\\
+	$A$ si dice \textcolor{red}{chiuso} se $A^c = X \backslash A$ è aperto.
+	
+	\paragraph{\textcolor{red}{Esempio}}
+	$(x,d)$ spazio metrico, $x \in X, r>0$, $B_r(x)$ è un aperto.\\
+	Devo far vedere che $\forall y \in B_r(x)\,\, \exists\,\, \overline{r}>0\,\,|\,\,B_{\overline{r}}(y)\subseteq B_r(x)$\\
+	$\overline{r}=r-d(x,y)>0$ perchè $d(x,y)<r$ e dimostriamo che, se $z \in B_{\overline{r}}(y)$, allora $z\in B_r(x)$, cioè, se $d(y,z)< \overline{r}$, allora $d(x,z)<r$\\
+	$d(x,z)\leq d(x,y)+d(y,z)<d(x,y)+\overline{r}=d(x,y)+(r-d(x,y))=r$
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-46-52.png}
+	\end{figure}
+	
+	\paragraph{\textcolor{red}{Esempio}}
+	$(\R^2,\parallel\cdot\parallel_\infty)$
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.48\textwidth]{quad1.png} \includegraphics[width=0.48\textwidth]{quad2.png} \\[\smallskipamount]
+		\includegraphics[width=0.48\textwidth]{quad3.png} \includegraphics[width=0.48\textwidth]{quad4.png} \\[\smallskipamount]
+		\includegraphics[width=0.48\textwidth]{quad5.png}
+	\end{figure}
+	
+	\paragraph{\textcolor{red}{Osservazione}}
+	$(X,d)$ spazio metrico, $X$ è aperto banalmente \textcolor{orange}{(se $x\in X, B_r(x) \subseteq X \forall r>0$)} e quindi $\emptyset = X^c = X \backslash X$ è chiuso. D'altra parte $\emptyset $ è aperto perchè l'implicazione $x \in \emptyset \Rightarrow \exists r >0 | B_r(x) \subseteq \emptyset$ è vera perchè $x \in \emptyset$  è falsa $\Rightarrow \emptyset^c=X \backslash \emptyset = X$ è chiuso. $\emptyset, X$ sono sia aperti che chiusi.
+	
+	\paragraph{\textcolor{red}{Teorema}}
+	$(X,d)$ spazio metrico
+	\begin{enumerate}
+		\item $A_1,A_2 \subseteq X$ aperti $\Rightarrow A_1 \cap A_2$ è un aperto. 
+		\item $\{A_i\}_{i\in I}$ è una famiglia di aperti, allora $\bigcup_{i\in I}A_i$ è un aperto.
+		\item Se $C_1,C_2 \subseteq X$ sono chiusi, allora $C_1 \cup C_2$ è chiuso.
+		\item $\{C_i\}_{i\in I}$ è famiglia di chiusi, allora $\bigcap_{i\in I} C_i$ è un chiuso.
+	\end{enumerate}
+	
+	\paragraph{\textcolor{red}{Osservazione}}
+	In generale se $\{ a_i\}_{i\in I}$ è una famiglia infinita di aperti, allora $\bigcap_{i\in I} A_i$ non è un aperto e, se $\{C_i\}_{i \in I}$ è una famiglia infinita di chiusi, allora $\bigcup_{i\in I} C_i$ non è chiuso. Facciamo un esempio.\\
+	$A_k=]-\frac{1}{k},\frac{1}{k}[,\,\,\, k \geq 1, k \in \N$ sono tutti aperti di $\R$, allora $\bigcap_{k=1}^\infty A_k = \bigcap_{k=1}^\infty ]-\frac{1}{k},\frac{1}{k}[=\{0\}$, che è un chiuso.\\
+	$C_k=[\frac{1}{k},1-\frac{1}{k}], k \geq 2, k \in \N$ sono tutti chiusi \textcolor{orange}{($C_k^c=]-\infty,\frac{1}{k}[\cup]1-\frac{1}{k},+\infty[$, unione di due intervalli aperti)}\\
+	$\bigcup_{k=2}^\infty C_k = \bigcup_{k=2}^\infty \left[\frac{1}{k},1-\frac{1}{k}\right]=]0,1[$\
+	Infatti, se $x \in \bigcup_{k=2}^\infty [\frac{1}{k},1-\frac{1}{k}]$, allora $\exists \overline{k} \geq 2 | \left[\frac{1}{k},1-\frac{1}{k}\right]$, cioè $0<\frac{1}{k}\leq x \leq 1- \frac{1}{k}< 1 \Rightarrow 0<x<1 \Rightarrow x \in ]0,1[.$\\
+	D'altra parte, se $x \in ]0,1[$, esistono $k_1$ e $k_2$ tali che $\frac{1}{k_1}<x<1-\frac{1}{k_2}$ e se $k=\max\{k_1,k_2\}$ allora\\
+	$\frac{1}{k}\leq \frac{1}{k_1} <x<1-\frac{1}{k_2}\leq 1-\frac{1}{k}$\\
+	$\Rightarrow x\in C_k =[\frac{1}{k},1-\frac{1}{k}]$\\
+	$\Rightarrow x\in \bigcup_{k=2}^{\infty} C_k$.
+	
+	\paragraph{\textcolor{red}{Definizione}}
+	$(X,d)$ spazio metrico, $A \subseteq X$, $x \in A$. $x$ si dice \textcolor{red}{punto interno di A} se $\exists r>0 |B_r(x)\subseteq A$. L'interno di $A$ è l'insieme dei punti interni di $A$ ed è indicato con $\AA$
+	
+	\paragraph{\textcolor{red}{Proposizione}}
+	$\AA$ è un insieme aperto ed è il più grande aperto, nel senso dell'inclusione, contenuto in $A$, cioè se $B \subseteq A$ è aperto, allora $B \subseteq \AA$
+	
+	\paragraph{\textcolor{red}{Dimostrazione (Esercizio per casa)}}
+	
+	\paragraph{\textcolor{red}{Esempio}} 
+	$A=]0,1], \,\,\,\,\, \AA =]0,1[$\\
+	$A=]0,1] \cup \{2\}, \,\,\,\,\,\, \AA =]0,1[$\\
+	$A=]0,1]\cup \{2+\frac{1}{n}|n \geq 1, n \in \N\},\,\,\,\,\,\AA = ]0,1[$
+	
+	\paragraph{\textcolor{red}{Definizione}}
+	$A \subseteq X, x \in X$ si dice punto di \textcolor{red}{chiusura} per $A$ se $B_r(x) \cap A \neq \emptyset \forall r>0$, cioè ogni palla di centro $x$ interseca $A$. La chiusura di $A$ è l'insieme di tutti i punti di chiusura di $A$ ed è denotata con $\overline{A}$.
+	
+	\paragraph{\textcolor{red}{Proposizione}}
+	$\overline{A} $ è un insieme chiuso ed è il più piccolo chiuso, nel senso dell'inclusione, contenente $A$, cioè, se $C \geq A$ è chiuso, allora $\overline{A}\subseteq C$
+	
+	\paragraph{\textcolor{red}{Dimostrazione (Esercizio per casa)}}
+	\paragraph{\textcolor{red}{Esempio}}
+	$A=]0,1],\,\,\,\, \overline{A}=[0,1]\\
+	A=]0,1]\cup \{2\}, \,\,\,\, \overline{A}=[0,1]\cup \{2\}\\
+	A=]0,1]\cup \{ 2+\frac{1}{n}|n \geq 1, n \in \N \}, \,\,\,\,\, \overline{A}=[0,1] \cup \{2+\frac{1}{n}|n \geq 1, n \in \N \} \cup \{2\}  $
+	
+	\paragraph{\textcolor{red}{Osservazione}}
+	$\AA \subseteq A \subseteq \overline{A}$\\
+	$A $ è aperto $\Leftrightarrow A= \AA$\\
+	$A$ è chiuso $\Leftrightarrow A=\overline{A}$\\
+	\textcolor{orange}{$\Leftarrow) A=\overline{A}$, $\overline{A}$ è un chiuso$\Rightarrow A$ è chiuso $\Rightarrow)$ Sia $A$ chiuso e dimostriamo che $A=\overline{A}$. Noi sappiamo che $A \subseteq \overline{A}$ quindi, see per assurdo $A \nsubseteq \overline{A}, \exists x \in \overline{A}| x \notin A$, cioè $x \in \overline{A}$ e $x \in A^c$. Ma $ A^c $ è aperto, perchè $ A $ è chiuso, e quindi $ \exists r >0 $ tale che $ B_r (x) \subseteq A^c \Rightarrow B_r (x) \cap A = \emptyset$, assurdo perche $x \in \overline{A}$ .}
+	
+	\paragraph{\textcolor{red}{Definizione}}
+	$A \subseteq X, x \in X$ si dice \textcolor{red}{punto di frontiera} per $A$ se $\forall r>0 \,\,\, B_r(x) \cap A \neq \emptyset$ e $B_r(x) \cap A^c \neq \emptyset$, cioè se ogni palla di centro $x$ interseca sia $A$ che il suo complementare.\\
+	L'insieme dei punti di frontiera di $A$ si dice frontiera di $A$ e si indica con $\partial A$. 
+	
+	\paragraph{\textcolor{red}{Esempi}}
+	$A=]0,1],\,\,\,\, \partial A= \{0,1\}$\\
+	$A=]0,1]\cup\{2\},\,\,\,\,\, \partial A= \{0,1,2\}$\\
+	$A=]0,1]\cup \{ 2+\frac{1}{n}|n \geq 1, n \in \N \}, \,\,\,\,\, \partial A =\{0,1\}\cup \{2+\frac{1}{n}|n \geq 1, n \in \N \} \cup \{2\}$
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-22 17-49-55.png}
+	\end{figure}
+
+	
+	
+	
+	
+	
+\end{comment}

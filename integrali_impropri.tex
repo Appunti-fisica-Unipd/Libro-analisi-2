@@ -450,7 +450,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 	\begin{gather*}
 		\int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x= -\frac{\cos x}{x} \bigg|_{1}^{c} - \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x = \cos 1 - \frac{\cos c}{c} - \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x
 		\\
-		\lim_{c \rightarrow +\infty} \int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x = \lim_{c \rightarrow +\infty} \left[\cos 1 - \uppercomment{\frac{\cos c}{c}} {\myarrow[10] 0} {} - \lowercomment{\int_{1}^{c} \frac{cosx}{x^2} \ \mathrm{d}x} {\lim_{c \rightarrow + \infty} \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x} {\text{esiste finito}}\right] 
+		\lim_{c \rightarrow +\infty} \int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x = \lim_{c \rightarrow +\infty} \left[\cos 1 - \uppercomment{\frac{\cos c}{c}} {0} {\myarrow[90]} - \lowercomment{\int_{1}^{c} \frac{cosx}{x^2} \ \mathrm{d}x} {\lim_{c \rightarrow + \infty} \int_{1}^{c} \frac{\cos x}{x^2} \ \mathrm{d}x} {\text{esiste finito}}\right] 
 	\end{gather*}
 
 	
@@ -562,7 +562,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 			
 			definitivamente per $x\rightarrow +\infty$.
 			
-			Scelgo $\epsilon$ in modo che $\alpha + \epsilon\beta > 1$, cioè $\epsilon < \uppercomment{\frac{1-\alpha}{\beta}} {\ >0}{}$
+			Scelgo $\epsilon$ in modo che $\alpha + \epsilon\beta > 1$, cioè $\epsilon < \uppercomment{\frac{1-\alpha}{\beta}} {} { >0}$
 			\begin{gather*}
 				\Rightarrow \int_{2}^{+\infty} \frac{1}{x^{\alpha+\epsilon\beta}} \ \mathrm{d}x \text{ converge}
 				\\
@@ -699,7 +699,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 		\int_{-\infty}^{0} e^{-x^{2}} \ \mathrm{d}x
 		&= \lim_{c \rightarrow -\infty} \int_{c}^{0} e^{-x^{2}} \ \mathrm{d}x \lowercomment{=}{t=-x}{}
 		\\
-		&= \lim_{c \rightarrow -\infty} \int_{0}^{-c} e^{-t^2} \ \mathrm{d}t \uppercomment{=}{d=-c}{}
+		&= \lim_{c \rightarrow -\infty} \int_{0}^{-c} e^{-t^2} \ \mathrm{d}t \uppercomment{=}{}{d=-c}
 		\\
 		&= \lim_{d\rightarrow +\infty} \int_{0}^{d} e^{-x^{2}} \ \mathrm{d}x = \int_{0}^{+\infty} e^{-x^{2}} \ \mathrm{d}x
 	\end{align*}
@@ -734,29 +734,429 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 	Sicuramente $x^\alpha \leq e^{x^4}$ definitivamente per $x \rightarrow +\infty$ e dunque $x^\alpha e^{-3x^4} \leq e^{-2x^4}\leq e^{-x} $ per $x \geq 1$
 	
 	$\Rightarrow \int_{1}^{+\infty} x^\alpha e^{-3x^4}dx $ converge per il criterio del confronto $\forall \ \alpha \in \mathbb{R}$.
-
 \end{example}
 \end{exbar}
 
 
-
-
-
-
-
-
-
-
-
-\begin{comment}	
-
-
-
-
-
+\begin{exbar}
+\begin{example}
 	
 	
+	Studiare la convergenza di 
+	\begin{gather*}
+		\int_{0}^{\mathcircled{+\infty}} \lowercomment{\frac{\ln(3 + \sin x)}{\sqrt[4]{x^5 - x^3 + 3}}} {\geq 0} {} \ \mathrm{d}x
+		\\
+		\ln 2 \leq \ln(3 + \sin x) \leq \ln 4 \qquad \forall x 
+	\end{gather*}
+	
+	$\exists \ a \in \mathbb{R} \ \bigg| \ \frac{\ln(3 + \sin x)}{\sqrt[4]{x^5 - x^3 + 3}} $ è illimitata in un intorno di $a$?
+	
+	$\exists \ a \in \mathbb{R}  \ \bigg| \ \sqrt[4]{x^5-x^3+3} \big|_{x=a}=0$, cioè $\exists \ a \in \mathbb{R} \bigg| x^5 - x^3 + 3 \bigg|_{x=a} = 0$?
+	\begin{align*}
+		g(x)=x^5 - x^3 + 3 & g(1)=3 > 0
+		\\
+		g'(x) = 5x^4 - 3x^2 = x^2 (5x^2 - 3) > 0 & \forall x >1
+	\end{align*}
+	
+	$\Rightarrow g$ è strettamente crescente in $[1,+\infty[$
+	
+	$\Rightarrow g(x) \geq g(1)=3 \qquad \forall x \geq 1$
+	\begin{equation*}
+		\frac{\ln(3+\sin x)}{\sqrt[4]{x^5 - x^3 + 3}} \leq \frac{\ln 4}{\sqrt[4]{x^5 - x^3 + 3}} \underbracket[0pt][0pt]{\sim}_{\text{ per } x \rightarrow +\infty} \frac{1}{x^{\frac{5}{4}}}
+	\end{equation*}
+	
+	che ha integrale convergente in $[1, +\infty[$ e quindi l'integrale dato converge per il criterio del confronto e per il criterio asintotico del confronto.	
+\end{example}
+\end{exbar}
 
+
+\begin{attbar}
+	\begin{equation*}
+		\frac{1}{x^{\frac{5}{4}}}  \sim \frac{\ln 2}{\sqrt[4]{x^5 - x^3 + 3}} \leq \frac{\ln(3 + \sin x)}{\sqrt[4]{x^5 - x^3 + 3}} \leq  \frac{\ln 4}{\sqrt[4]{x^5 - x^3 + 3}} \sim \frac{1}{x^{\frac{5}{4}}}
+	\end{equation*}
+	
+	Se $\int_{1}^{+\infty} \frac{1}{x^{\frac{5}{4}}} \ \mathrm{d}x$ converge, allora converge $ \int_{1}^{+\infty} \frac{\ln(3 + \sin x)}{\sqrt[4]{x^5 - x^3 + 3}} \ \mathrm{d}x$, ma vale anche che, se converge $\int_{1}^{+\infty} \frac{\ln(3+\sin x)}{\sqrt[4]{x^5 - x^3 + 3}} \ \mathrm{d}x$, allora converge $\int_{1}^{+\infty} \frac{1}{x^{\frac{5}{4}}} \ \mathrm{d}x$.
+\end{attbar}
+
+
+\begin{exbar}
+\begin{example}
+	Al variare di $\alpha, \ \beta > 0$ studiare la convergenza dell'integrale improprio
+	\begin{gather*}
+		\int_{0}^{1} \frac{3 + \sin{(e^{\frac{1}{t}})}} {[1 + \cos{(\pi t)}]^\alpha| \ln t |^\beta} \ \mathrm{d}t
+		\\
+		\lim_{t \rightarrow o^+}  \frac{3 + \sin{(e^{\frac{1}{t}})}} {[1 + \cos{(\pi t)}]^\alpha| \ln t |^\beta} = 0
+	\end{gather*}
+	
+	La funzione integranda è Riemann integrabile in $[0,c] \ \forall \ c \in [0,1[$
+	\begin{gather*}
+		\lim_{t \rightarrow 1^-}  \frac {\uppercomment{3 + \sin{(e^{\frac{1}{t}})}} {2\leq 3 + \sin e^{1/t} \leq 4} {\myarrow[90]}}
+		{[1+\cos{(\pi t)}]^\alpha|\ln t |^\beta} =+\infty
+		\\
+		\mathcircled{\frac{2}{[1 + \cos{(\pi t)}]^\alpha |\ln t |^\beta}} 
+		\leq
+		\frac{3 + \sin{(e^{\frac{1}{t}})}} {[1 + \cos{(\pi t)}]^\alpha |\ln t |^\beta} 
+		\leq 
+		\mathcircled{\frac{4}{[1 + \cos{(\pi t)}]^\alpha |\ln t |^\beta}} 
+		\\
+		\sim  \frac{1}{[1+\cos{(\pi t)}]^\alpha|\ln t |^\beta} \text{ per } x \rightarrow 1
+		\\
+		\int_{0}^{1} \frac{3 + \sin{(e^{\frac{1}{t}})}} {[1 + \cos{(\pi t)}]^\alpha |\ln t |^\beta} \ \mathrm{d}t  \text{ converge } \iff  \int_{0}^{1} \frac{1}{[1 + \cos{(\pi t)}]^\alpha |\ln t |^\beta} \ \mathrm{d}t \text{ converge}.
+		\\
+		\ln (1+y) = y + o(y)  \text{ per } y \rightarrow 0 
+		\\
+		\ln t = \ln(1 + (t - 1)) = t - 1 + o(t - 1)  \text{ per } t \rightarrow 1 
+	\end{gather*}
+	\begin{align*}	
+		\cos( \pi t) &= \cos(\pi) + \cos'(\pi t)\bigg|_{t=1} + \frac{1}{2} \cos''(\pi t)\bigg|_{t=1} (t-1)^2 + o((t-1)^2)
+		\\ 
+		& = -1 +\frac{\pi^2}{2} (t - 1)^2 + o((t - 1)^2)
+	\end{align*}
+	\begin{gather*}
+		\left(
+		\begin{array}{l}
+		\frac{d}{dt} \cos(\pi t) = -\pi \sin(\pi t)
+		\\
+		\frac{d^2}{dt^2} \cos(\pi t) = -\pi^2 \cos(\pi t)
+		\end{array}
+		\right)
+		\\
+		1 + \cos(\pi t)= \frac{\pi^2}{2} (t - 1)^2 + o((t - 1)^2)
+		\\
+		|\ln t|^\beta = |t - 1|^\beta + o(|t - 1|^\beta)
+		\\
+		(1 + \cos(\pi t))^\alpha = \left( \frac{\pi^2}{2} \right) ^\alpha |t-1|^{2\alpha} + o((t-1)^{2\alpha}) \text{ per } t \rightarrow 1
+		\\
+		[1 + \cos(\pi t)]^\alpha |\ln t|^\beta = \left(\frac{\pi^2}{2}\right)^\alpha |t-1|^{2\alpha+\beta} +o(|t-1|^{2\alpha+\beta})
+		\\
+		\frac{1}{[1 + \cos(\pi t)]^\alpha |\ln t|^\beta} \sim \frac{1}{|t-1|^{2\alpha+\beta}}
+		\\ 
+		\text{e } \int_{0}^{1} \frac{1}{|t-1|^{2\alpha+\beta}} \ \mathrm{d}t  \text{ converge }  \iff 2 \alpha + \beta < 1
+	\end{gather*}
+	L'integrale di partenza converge $\iff 2 \alpha +\beta < 1$.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Al variare di $\alpha \in \mathbb{R} $ studiare la convergenza dell'integrale improprio
+	\begin{equation*}
+		\int_{\mathcircled{0}}^{\mathcircled{+\infty}} \frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2+x)}} \ \mathrm{d}x
+	\end{equation*}
+	
+	A priori, la funzione potrebbe essere illimitata in un intorno di $x=0$
+	
+	Dobbiamo studiare la convergenza degli integrali impropri 
+	\begin{equation*}
+		\int_{0}^{1} \frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \ \mathrm{d}x \text{ e } 
+		\int_{1}^{+\infty} \frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \ \mathrm{d}x
+	\end{equation*}
+	
+	Studiamo $\int_{0}^{1} \frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \ \mathrm{d}x$
+	\begin{gather*}
+		\sinh{y} = \frac{e^y - e^{-y}}{2} = y + o(y) \text{ per } y \rightarrow 0
+		\\
+		\frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \sim \frac{x^2}{x^\alpha} = \frac{1}{x^{\alpha-2}}  \text{ per } x \rightarrow 0
+	\end{gather*}
+	
+	Poiché $\int_{0}^{1} \frac{1}{x^{\alpha-2}} \ \mathrm{d}x$ converge $\iff \alpha -2 < 1 \iff \alpha < 3$, anche $\int_{0}^{1} \frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \ \mathrm{d}x$ converge $\iff \alpha < 3$ per il criterio asintotico del confronto.
+	
+	Studiamo 
+	\begin{gather*}
+		\int_{1}^{+\infty} \frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \ \mathrm{d}x
+		\\
+		\frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \ \mathrm{d}x \sim \frac{e^{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} = \frac{e^{(1 - \alpha)x^2 - \alpha x}}{x^\alpha}  \text{ per } x \rightarrow +\infty
+	\end{gather*}
+	
+	Per il criterio asintotico del confronto $\int_{1}^{+\infty} \frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \ \mathrm{d}x$ converge $\iff \int_{1}^{+\infty}  \frac{e^{(1-\alpha) x^2 - \alpha x}}{x^\alpha} \ \mathrm{d}x$ converge.
+	
+	\begin{itemize}
+		\item Se $1-\alpha > 0, \ \alpha < 1$ si avrà
+		\begin{gather*}
+			\lim_{x\rightarrow +\infty}   \frac{e^{(1-\alpha)x^2-\alpha x}}{x^\alpha} =+\infty 
+			\\
+			\Rightarrow \int_{1}^{+\infty}  \frac{e^{(1-\alpha)x^2-\alpha x}}{x^\alpha} \ \mathrm{d}x  \text{ diverge.}
+		\end{gather*}
+		
+		\item Se $ 1 - \alpha \leq 0, \ \alpha \geq 1$
+		\begin{itemize}
+			\item Per $\alpha = 1$ si ha
+			\begin{equation*}
+				\frac{e^{-x}}{x}  \text{ e } \int_{1}^{+\infty} \frac{e^{-x}}{x} \ \mathrm{d}x  \text{ converge}
+			\end{equation*}
+			
+			\begin{gather*}
+				\int_{1}^{+\infty} x^\beta e^{-x} \ \mathrm{d}x, \qquad \beta \in \mathbb{R}
+				\text{ definitivamente per } x\rightarrow +\infty
+				\\
+				x^{\beta} e^{-x} \leq e^{-\frac{x}{2}} \text{ perché} 
+				\\ 
+				\lim_{x \rightarrow +\infty} \frac{x^\beta e^{-x}}{e^{-\frac{x}{2}}} = \lim_{x\rightarrow +\infty} x^{\beta} e^{-\frac{x}{2}} = 0
+				\\				\int_{1}^{+\infty}e^{-\frac{x}{2}} \ \mathrm{d}x  \text{ converge } \Rightarrow \int_{1}^{+\infty} x^\beta e^{-x} \ \mathrm{d}x
+				\end{gather*}
+				
+				converge per il criterio del confronto.
+			\begin{equation*}
+				\Rightarrow \int_{1}^{+\infty} \frac{e^{-x}}{x} \ \mathrm{d}x \text{ converge.}
+			\end{equation*}
+			
+			\item Per $-1 - \alpha <0, \qquad \alpha > 1$
+			\begin{equation*}
+				\frac{e^{(1 - \alpha) x^2 - \alpha x}}{x^\alpha} = \frac{e^{(1 - \alpha) x^2} e^{-\alpha x}}{x^\alpha} \undercomment{\leq} {x\geq1} {} \frac{e^{(1 - \alpha) x^2}}{x^\alpha} \leq e^{-x}
+			\end{equation*}
+			
+			definitivamente per $x \rightarrow +\infty$ perché
+			\begin{gather*}
+				\lim_{x \rightarrow +\infty} \frac{\frac{e^{(1 - \alpha) x^2}} {x^\alpha}} {e^{-x}} = \lim_{x \rightarrow +\infty} \frac{e^{ (1 - \alpha) x^2 + x}}{x^\alpha} = 0
+				\\
+				\int_{1}^{+\infty} e^{-x} \ \mathrm{d}x  \text{ converge } \Rightarrow \int_{1}^{+\infty}\frac{e^{(1 - \alpha) x^2}}{x^\alpha} \ \mathrm{d}x  \text{ converge} 
+			\end{gather*}
+			
+			$\Rightarrow$ converge anche l'integrale di partenza
+			\begin{equation*}
+				\int_{0}^{+\infty} \frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2+x)}}\ \mathrm{d}x  \text{ converge } \iff 1 \leq \alpha < 3.
+			\end{equation*}
+		\end{itemize}
+	\end{itemize}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example} \textbf{importante}
+	
+	Sia 
+	\begin{equation*}
+		\Gamma(x) = \int_{0}^{+\infty} t^{x-1} e^{-t} \ \mathrm{d}t, \qquad x > 0
+	\end{equation*}
+	
+	(funzione gamma di Eulero.)
+	\begin{enumerate}
+		\item Provare che $\Gamma$ è ben definita e che $\Gamma(x) \in \mathbb{R} \qquad \forall \ x > 0$
+		\item Provare che $\Gamma(x+1)=x \ \Gamma(x) \qquad \forall \ x > 0$
+	\end{enumerate}
+	
+	\vspace{2em}
+	\begin{enumerate}
+		\item $t \mapsto t^{x-1} e^{-t}$ è positiva e quindi l'integrale improprio converge o diverge a $+\infty$.
+		
+		Dimostriamo che converge $\forall \ x > 0$.
+		
+		Devono convergere entrambi gli integrali
+		\begin{equation*}
+			\int_{0}^{1} t^{x-1} e^{-t} \ \mathrm{d}t \text{ e } \int_{1}^{+\infty} t^{x-1} e^{-t} \mathrm{d}t.
+		\end{equation*}
+		
+		Vediamo il primo
+		\begin{align*}
+			t^{x-1} e^{-t} \sim t^{x-1} &\text{ per } t \rightarrow 0
+			\\
+			\Rightarrow \int_{0}^{1}t^{x-1} \mathrm{d}t =\int_{0}^{1} \frac{1}{t^{1-x}} \ \mathrm{d}t & \text{ converge} \iff 1 - x < 1 \iff x > 0
+		\end{align*}
+		
+		Per il criterio asintotico del confronto $\int_{0}^{1} t^{x-1} e^{-t} \ \mathrm{d}t$ converge $\iff x > 0$.
+		
+		Vediamo $\int_{1}^{+\infty} t^{x-1} e^{-t} \ \mathrm{d}t$
+		
+		Abbiamo già visto che gli integrali di questo tipo convergono $\forall x$ perché $t^{x-1} e^{-t} \leq e^{-\frac{t}{2}}$ definitivamente per $t \rightarrow +\infty$
+		
+		\begin{equation*}
+			\Rightarrow \Gamma(x) = \int_{0}^{+\infty} t^{x-1} e^{-t} \ \mathrm{d}t \text{ converge} \qquad \forall \ x >0
+		\end{equation*}
+		
+		\item $\Gamma(x+1) = x \ \Gamma(x) \qquad \forall \ x > 0$
+		\begin{align*}
+			\Gamma(x+1)
+			&=\int_{0}^{+\infty} t^{x} e^{-t} \ \mathrm{d}t =
+			\\
+			&=  \lim_{c \rightarrow + \infty} \int_{0}^{c} t^{x} e^{-t} \ \mathrm{d}t =
+			\\
+			&= \lim_{c \rightarrow + \infty} \left[ -t^x e^{-t} \bigg|_{0}^c + x \int_{0}^{c} t^{x-1} e^{-t} \ \mathrm{d}t \right] = 
+			\\
+			&= \lim_{c \rightarrow + \infty} \left[ -c^x e^{-c} + \int_{0}^{c} t^{x-1} e^{-t} \ \mathrm{d}t \right] = 
+			\\
+			&= x \ \Gamma(x)
+		\end{align*}
+		\begin{equation*}
+			\Gamma(1) = \int_{0}^{+\infty} t^{1 - 1} e^{-t} \ \mathrm{d}t = \int_{0}^{+\infty} e^{-t} \ \mathrm{d}t = 1
+		\end{equation*}
+		
+		Per $n \in \mathbb{N}$
+		\begin{align*}
+			\Gamma(n+1)
+			&= n \ \Gamma(n) = n \ \Gamma((n-1)+1) = n (n-1) \ \Gamma(n-1) =
+			\\
+			&= n(n-1) \ \Gamma((n-2)+1) = n(n-1)(n-2) \ \Gamma(n-2) = \ldots =
+			\\
+			&= n(n-1)(n-2) \cdot \ldots \cdot 2 \ \Gamma(1) = n(n-1)(n-2)(n-3) \cdot \ldots 2 \cdot 1 = n!    
+		\end{align*}
+	\end{enumerate}
+\end{example}
+\end{exbar}
+
+
+\subsubsection{Integrali oscillanti}
+\begin{theorem} (criterio di Abel)
+\label{th: criterio di Abel}
+
+Sia  $a \in \mathbb{R}, \quad f,G : [a,+\infty[ \ \rightarrow \mathbb{R}$ di classe $C^1$ tali che
+\begin{enumerate}
+	\item $f'(x) \leq 0 \qquad \forall \ x \geq a$ e $\lim_{x \rightarrow +\infty} f(x) = 0$
+	\item $G$ è limitata, cioè $\exists \ C > 0$ tale che $ |G(x)| \leq C \qquad \forall \ x \geq a$
+\end{enumerate}
+
+Allora $\int_{a}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x$ converge.
+\end{theorem}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: criterio di Abel}}
+	
+	\begin{align*}
+		\int_{a}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x
+		&=\lim_{\omega \rightarrow +\infty} \int_{a}^{\omega} f(x) \ G'(x) \ \mathrm{d}x 
+		\\
+		\int_{a}^{\omega} f(x) \ G'(x) \ \mathrm{d}x
+		& \undercomment{=} {\text{integro}} {\text{per parti}} f(x) \ G(x) \bigg|_{a}^{\omega} - \int_{a}^{\omega} f'(x) \ G(x) \ \mathrm{d}x =
+		\\
+		&= \lowercomment{f(\omega) \ G(\omega)} {0 \text{ perché} f(\omega) \rightarrow 0} {\text{e } G \text{ è limitata}} - f(a) \ G(a) - \int_{a}^{\omega} f'(x) \ G(x) \ \mathrm{d}x =
+		\\
+		\int_{a}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x
+		&= -f(a) \ G(a) - \lim_{\omega \rightarrow +\infty} \int_{a}^{\omega} f'(x) \ G(x) \ \mathrm{d}x
+	\end{align*}
+	
+	Se dimostro che $\lim_{\omega \rightarrow +\infty} \int_{a}^{\omega} f'(x) \ G(x) \ \mathrm{d}x$ esiste finito, cioè che $\int_{a}^{+\infty} f'(x) \ G(x) \ \mathrm{d}x$ è convergente, deduco che converge anche $\int_{a}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x$.
+	
+	Dimostriamo che l'integrale $\int_{a}^{+\infty} f'(x) \ G(x) \ \mathrm{d}x$ converge assolutamente
+	\begin{gather*}
+		\int_{a}^{+\infty} \big|f'(x) \ G(x) \big| \ \mathrm{d}x = \underbracket[0pt][0pt]{\lim_{\omega \rightarrow +\infty} \int_{a}^{\omega} \big|f'(x) \ G(x) \big| \ \mathrm{d}x}
+		_{\genfrac{}{}{0pt}{}
+		{\color{blue}{\text{il limite esiste, devo}}}
+		{\color{blue}{\text{far vedere che è finito}}}} \leq C \ f(a) < +\infty
+		\\
+		\int_{a}^{\omega} \big|f'(x) \ G(x) \big| \ \mathrm{d}x 
+		\undercomment{\leq} {\big| G(x) \big| \leq C} {} C \int_{a}^{\omega} \big| f'(x) \big| \ \mathrm{d}x 
+		\undercomment{=} {f'(x) \leq 0} {} -C \int_{a}^{\omega} f'(x) \ \mathrm{d}x = C \left[ f(a) - f(\omega) \right] 
+		\undercomment{\leq} {f(\omega) \geq 0} {} C f(a) \quad \forall \omega \quad \square
+	\end{gather*}
+\end{dembar}
 	
 	
-\end{comment}
+\begin{exbar}
+\begin{example}
+	\begin{gather*}
+		\int_{1}^{+\infty} \frac{\sin x}{x} \ \mathrm{d}x \text{ converge}
+		\\
+		f(x) = \frac{1}{x} \qquad G(x) = -\cos x
+		\\
+		\int_{1}^{+\infty} \frac{\sin x}{x} \ \mathrm{d}x = \int_{1}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x
+	\end{gather*}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	
+	Studiare la convergenza di 
+	\begin{equation*}
+		\int_{0}^{+\infty} \cos(e^x) dx
+	\end{equation*}
+	
+	(Diverge assolutamente, $ \int_{0}^{+\infty} \big| \cos(e^x) \big| \ \mathrm{d}x = +\infty$)
+	\begin{gather*}
+		\int_{0}^{+\infty} \cos(e^x) \ \mathrm{d}x = \int_{0}^{+\infty} \underbrace{e^{-x}}_{f(x)} \cdot \underbrace{e^{x} \cos(e^x)}_{G'(x)} \ \mathrm{d}x
+		\\
+		G(x) = \sin(e^x) \text{ e } \big| G(x) \big| \leq 1 \qquad \forall x 
+	\end{gather*}
+	
+	$\Rightarrow$ l'integrale converge per il criterio di Abel.
+	
+	\begin{align*}
+		\int_{0}^{+\infty} \cos(e^x) \ \mathrm{d}x &= \lim_{c \rightarrow +\infty} \int_{0}^{c} \cos(e^x) \ \mathrm{d}x \undercomment{=} {t=e^x} {} \lim_{c \rightarrow +\infty} \int_{0}^{e^c} \frac{\cos(t)}{t} \ \mathrm{d}t =
+		\\
+		&= \int_{1}^{+\infty} \frac{\cos(t)}{t} \ \mathrm{d}t \text{ che converge}
+	\end{align*}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	
+	Studiare la convergenza di 
+	\begin{equation*}
+		\int_{0}^{+\infty} \cosh x \frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x
+	\end{equation*}
+	al variare di $\alpha >0$.
+	
+	Devo studiare la convergenza di 
+	\begin{equation*}
+		\int_{0}^{2} \cosh x \frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x \text{ e } \int_{2}^{+\infty} \cosh x \frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x
+	\end{equation*}
+	\begin{itemize}
+		\item Vediamo il primo.
+		
+		$\cosh x\frac{\sin(\sinh x)}{x^\alpha}$ è definitivamente positiva per $x \rightarrow 0$
+		
+	\begin{gather*}
+		\lowercomment{\cosh x} {1 \text{ per } x \rightarrow 0} {} \frac{ \uppercomment{\sin(\sinh x)} {= \sinh x +o(\sinh x) \text{ perché}} {\sinh x \rightarrow 0 \text{ per } x \rightarrow 0}}{x^\alpha} \sim \frac{\sinh x}{x^\alpha}\sim \frac{x}{x^\alpha}=\frac{1}{x^{\alpha-1}}\sim 
+		\\
+		\sim \int_{0}^{2} \frac{1}{x^{\alpha-1}} \ \mathrm{d}x \text{ converge } \iff \alpha-1 < 1 \iff \alpha < 2
+		\\
+		\int_{0}^{2} \cosh x \ \frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x \text{ converge } \iff \alpha < 2
+	\end{gather*}
+			
+	 per il criterio asintotico del confronto.
+		
+	\item Vediamo il secondo.
+	
+	$\int_{2}^{+\infty} \cosh x \frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x$ con $\alpha >0$
+	
+	$f(x)=\frac{1}{x^\alpha}$ (decrescente infinitesima)
+	
+	$G(x)=-\cos(\sinh x)$, cosicché $G'(x)=\cosh x \sin(\sinh x)$ (limitata $|G(x)|\leq 1$)
+	\begin{gather*}
+		\int_{2}^{+\infty} \cosh x\frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x = \int_{2}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x \text{ converge per il criterio di Abel}
+		\\
+		\Rightarrow \int_{2}^{+\infty} \cosh x\frac{\sin(\sinh x)}{x^\alpha} \ \mathrm{d}x, \text{ se }  \alpha > 0 \text{ converge } \iff \alpha < 2
+	\end{gather*} 
+	\end{itemize}
+\end{example}
+\end{exbar}
+	
+
+
+$f:[0,+\infty[ \ \rightarrow \mathbb{R}$ positiva, decrescente, infinitesima a $+\infty$. Consideriamo
+\begin{equation*}
+	\int_{0}^{+\infty} f(x) \sin x \ \mathrm{d}x
+\end{equation*}
+
+Come studiare la convergenza senza utilizzare il criterio di Abel?
+
+$|f(x) \sin x| \leq f(x)$ se $\int_{0}^{+\infty} f(x) \ \mathrm{d}x$ converge $\Rightarrow \int_{0}^{+\infty}f(x)\sin x \ \mathrm{d}x$ converge assolutamente e quindi converge e se $\int_{0}^{+\infty} f(x) \ \mathrm{d}x$ diverge?
+
+\begin{align*}
+	\sin x \geq 0 & \text{ se }  2k\pi \leq x \leq (2k+1)\pi
+	\\
+	\text{e } \sin x \leq 0 & \text{ se } (2k+1)\pi \leq x \leq (2k+1)\pi
+\end{align*}
+
+\begin{align*}
+	\int_{k\pi}^{(k+1)\pi}f(x)\sin x dx 
+	&= (-1)^k \int_{k\pi}^{(k+1)\pi} f(x) |\sin x| \ \mathrm{d}x
+	\\
+	\int_{0}^{+\infty} f(x) \sin x \ \mathrm{d}x 
+	&= \sum_{k=0}^{\infty} (-1)^k \underbrace{\int_{k\pi}^{(k+1)\pi} f(x) |\sin x| \ \mathrm{d}x }_{a_k}
+\end{align*}
+
+$a_k \geq 0$
+\begin{gather*}
+	a_{k+1}= \int_{(k+1)\pi}^{(k+2)\pi}f(x)|\sin x|dx \lowercomment{\leq} {f \text{ è}} {\text{decrescente}} \int_{k\pi}^{(k+1) \pi} f(x) |\sin x| \ \mathrm{d}x = a_k
+	\\
+	0 \leq a_k = \int_{k\pi}^{(k+1)\pi} f(x) |\sin x| \ \mathrm{d}x \leq \int_{k\pi}^{(k+1)\pi} f(x) \ \mathrm{d}x 
+	\lowercomment{\leq} {f(x) \leq f(k\pi)} {\forall \ x \in [k\pi, (k+1)\pi]} \pi f(k\pi) \rightarrow 0
+\end{gather*}
+
+La serie converge per il criterio di Leibniz.	
