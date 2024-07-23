@@ -576,93 +576,212 @@ g
 	\\
 	\Rightarrow \overline{A} \cap \overline{A^c} \subseteq \partial A
 \end{gather*}
-	\item $\overline{A}=A \cup \partial A$\\
-	$A \subseteq \overline{A}$, $\partial A \subseteq \overline{A} \Rightarrow A \cup \partial A \subseteq \overline{A}$\\
-	Facciamo vedere che $\overline{A}\subseteq A \cup \partial A$.\\
-	$x\in \overline{A}$, supponiamo che $x\notin A$ e dimostriamo che $x \in \partial A$\\
-	$x\in \overline{A}  \Rightarrow B_r(x)\cap A \neq \emptyset \,\,\, \forall r>0$\\
-	$x \in B_r (x)\cap A^c \,\,\,\forall r >0$\\
-	$B_r(x)\cap A^c \neq \emptyset \,\,\, \forall r>0$\\
-	$\Rightarrow x\in \partial A$, come si voleva
+
+\item $\overline{A}=A \cup \partial A$
+
+\begin{equation*}
+	A \subseteq \overline{A}, \; \partial A \subseteq \overline{A} \Rightarrow A \cup \partial A \subseteq \overline{A}
+\end{equation*}
+Facciamo vedere che $\overline{A} \subseteq A \cup \partial A$.
+	
+$x \in \overline{A}$, supponiamo che $x \notin A$ e dimostriamo che $x \in \partial A$
+	
+\begin{gather*}
+	x \in \overline{A}  \Rightarrow \lowercomment{B_r(x) \cap A \neq \emptyset} {(x \notin A \Rightarrow x \in A^c)} {} \qquad \forall \ r > 0
+	\\
+	x \in B_r (x) \cap A^c \qquad \forall \ r > 0
+	\\
+	\mathcircled{B_r(x) \cap A^c \neq \emptyset \qquad \forall \ r > 0}
+	\\
+	\Rightarrow x \in \partial A, \text{ come si voleva}
+\end{gather*}
 \end{itemize}
+
+
+\begin{attbar}
+	$A$ è chiuso $\iff \partial A \subseteq A$, cioè se e solo se $A$ contiene la sua frontiera.
+\end{attbar}
+
+
+\begin{exbar}
+\begin{example}
+	$(\mathbb{R}, |\cdot|), \qquad \mathbb{Q} \subseteq \mathbb{R}$
+	
+	\begin{gather*}
+		\overline{\mathbb{Q}} = \mathbb{R}
+		\\
+		\text{Fissati } x\in \mathbb{R} \text{ e }  r > 0 \quad \exists \ q \in \mathrm{Q} \text{ tale che }  q \in \ ]x-r, x+r[ \ = B_r(x)
+		\\
+		\partial \mathbb{Q} = \mathbb{R}
+		\\
+		x \in \mathbb{R}, \ B_r(x) \cap \mathbb{Q} \neq \emptyset \qquad \forall \ r > 0, B_r(x) \cap \ \mathbb{Q}^c \neq \emptyset \qquad \forall \ r > 0
+		\\
+		]x-r,x+r[ \ \cap \mathbb{Q}^c \neq \emptyset \qquad \forall \ r > 0
+	\end{gather*}
+	
+	Se non fosse vero, $\exists \ x \in \mathbb{R}$ e $r > 0$ tale che $]x-r, x+r[$ è fatto tutto di numeri razionali.
+	
+	I razionali sono numerabili, cioè $\exists f: \mathbb{N} \rightarrow \mathbb{Q} $ iniettiva e suriettiva. I reali hanno la potenza del continuo, cioè ogni funzione $\phi: \mathbb{N} \rightarrow \mathbb{R}$ può essere al più iniettiva, ma non suriettiva. Questo è vero anche per ogni intervallo del tipo $]x-r, x+r[, r > 0$. Quindi, se $]x-r, x+r[$ fosse fatto di soli numeri razionali, sarebbe numerabile, assurdo.
+\end{example}
+\end{exbar}
+
+
+\subsection{Successioni in spazi metrici}
+\begin{exbar}
+\begin{itemize}
+	\item $\mathbb{R}^2 \qquad \{(e^{-n}, \frac{\sin n}{n}) \}_{n\geq 1}$ è una successione di elementi di $\mathbb{R}^2$
+	\item $\mathbb{R}^3 \qquad \{ (1+\frac{1}{n}, \frac{\sinh n}{e^n},2^{-n}) \}$ è una successione di elementi di $\mathbb{R}^3$
+\end{itemize}
+\end{exbar}
+
+
+\begin{definition}
+	$\{x_k\}_{k\in \mathbb{N}} \subseteq X$ successione, con $(X,d)$ spazio metrico. 
+	
+	Si dice che $\{ x_k\}_{k \in \mathbb{N}}$ converge ad $x \in X$ e si scrive
+	\begin{equation*}
+		x_k \rightarrow x \qquad \text{o} \qquad \lim_{k\rightarrow +\infty} x_k = x \iff \lim_{k \rightarrow +\infty} d(x_k, x) = 0
+	\end{equation*}
+	
+	(in ambito reale $\lim_{k \rightarrow +\infty} |x_k - x |=0$)
+	
+	cioè $\iff \forall \ \epsilon > 0 \ \exists \ N > 0 \ \big| \ k > N$
+	
+	$\Rightarrow d(x_k,x) < \epsilon$
+	
+	$x$ viene detto \textbf{limite della successione}.
+	
+\end{definition}
+
+
+\begin{theorem}
+	Sia $\{ x_k \}_{k \in \mathbb{N}} \subseteq X, (X,d)$ spazio metrico, tale che 
+	\begin{equation*}
+		x_k \rightarrow l_1 \in X \text{ e } x_k \rightarrow l_2 \in X
+	\end{equation*}
+	
+	Allora $l_1=l_2$.
+\end{theorem}
+
+
+\begin{proposition}
+	\label{pr:pag152}
+	$\{\overline{x_k}\}_{k \in \mathbb{N}} \subseteq R^n$ tale che $\overline{x_k } = (x_{k_1}, x_{k_2}, \ldots, x_{k_n})$. Allora
+	\begin{equation*}
+		\overline{x_k} \rightarrow \overline{x} = (x_1, \ldots, x_n) \iff x_{k_{j}} \rightarrow x_{j} \qquad \forall \ j = 1, \ldots, n
+	\end{equation*}
+	
+	cioè $\iff \forall \ j = 1, \ldots, n$ la successione di numeri reali $\{ x_{kj} \}_{k \in \mathbb{N}}$ converge a $x_{j}$.
+\end{proposition}
+
+
+\begin{exbar}
+
+\begin{itemize}
+	\item $\mathbb{R}^2, \left\{ \underbrace{ \left(e^{-k}, \frac{\sin k}{k} \right)} _ {\overline{x_k}} \right\}_{k \geq 1}$
+	\begin{gather*}
+		\overline{x_k} = (x_{k_1}, x_{k_2})
+		\\
+		\begin{array}{c c}
+			x_{k_1} = e^{-k}, &
+			x_{k_2} = \frac{\sin k}{k}
+			\\
+			\lim_{k \rightarrow +\infty} x_{k_1}=0, & \lim_{k \rightarrow +\infty} x_{k_2} = 0
+		\end{array}
+		\\
+		\Rightarrow \lim_{k \rightarrow + \infty} \overline{x_k} = (0,0)
+	\end{gather*}
+	
+	\item $\mathbb{R}^3, \left\{ \underbrace{ \left(1 + \frac{1}{k}, \frac{\sinh k}{e^k}, 2^{-k} \right)} _ {\overline{x_k}} \right\}_{k \geq 1}$
+	\begin{gather*}
+		\begin{array}{c c c}
+		x_{k_1} = 1 + \frac{1}{k}, 
+		& x_{k_2} = \frac{\sinh k}{e^k}, 
+		& x_{k_3} = 2^{-k}
+		\\
+		\lim_{k \rightarrow +\infty} x_{k_1} = 1, \quad
+		& \lim_{k \rightarrow +\infty} x_{k_2} = 1, \quad 
+		& \lim_{k \rightarrow +\infty} x_{k_3} = 0 
+	\end{array}
+		\\
+		\lim_{k \rightarrow +\infty} \overline{x_k} = (1, 1, 0)
+	\end{gather*}
+
+	\item $\mathbb{R}^2, \left\{ \underbrace{(2+e^{-k}, \sin k)} _ {\overline{x_k}} \right\} $
+	\begin{gather*}
+	\begin{array}{c c}
+		x_{k1} = 2+e^{-k}, \quad 
+		& x_{k2} = \sin k
+		\\
+		\lim_{k \rightarrow +\infty} x_{k_1} = 2, \quad 
+		& \lim_{k \rightarrow +\infty} \nexists
+	\end{array}
+		\\
+		\Rightarrow \lim_{k \rightarrow +\infty} \overline{x_k} \nexists
+	\end{gather*}
+
+\end{itemize}
+\end{exbar}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} della \textbf{Proposizione \ref{pr:pag152}}
+	
+	
+	$(\mathbb{R}^n, |\cdot|)$
+	
+	Se $\overline{y} = (y_1, \ldots, y_n) \in \mathbb{R}^n$, allora 
+	\begin{gather*}
+		|y_j| \leq |\overline{y}| \leq \sum_{i=1}^{n} |y_i| \qquad \forall \ j
+		\\
+		|y_j| = \sqrt{|y_j|^2} \leq \sqrt{\sum_{i=1}^{n} |y_i|^2} = |\overline{y}|
+	\end{gather*}
+	
+	Abbiamo dimostrato che, se $0 < p < 1$, 
+	\begin{equation*}
+		(a+b)^p \leq a^p + b^p \qquad \forall \ a,b \geq 0
+	\end{equation*}
+	
+	Questa disuguaglianza si può generalizzare.
+	\begin{gather*}
+		(a_1 + a_2 + \ldots + a_n)^p \leq a_1^p + a_2^p + \ldots + a_n^p \qquad \forall \ a_i \geq 0
+		\\
+		|\overline{y}| = \sqrt{\sum_{i=1}^{n} |y_i|^2} 
+		\uppercomment{\leq} {p=\frac{1}{2}} {a_i = (y_1)^2} 
+		(|y_1|^2)^{1/2} + (|y_2|^2)^{1/2} + \ldots + (|y_n|^2)^{1/2} =
+		\\
+		= |y_1| + |y_2| + \ldots + |y_n| = \sum_{i=1}^{n} |y_i|
+		\\
+		\uppercomment{|y_j|} {} {y_j = x_{k_{j}} - x_j}
+		\leq |\overline{y}| \leq \sum_{i=1}^{n} |y_i|
+		\\
+		\overline{x_k} \rightarrow \overline{x} \iff x_{k_j} \rightarrow x_j \qquad \forall \, j = 1, \ldots, n
+		\\
+		|x_{k_{j}} - x_j| \leq |\overline{x_k} - \overline{x}| \leq \sum_{i=1}^{n} |x_{k_i} - x_i|
+	\end{gather*}
+
+	Se $|\overline{x_k} - \overline{x}| \rightarrow 0 $, cioè se $\overline{x_k} \rightarrow \overline{x}$, allora
+	\begin{equation*}
+		0 \leq \lowercomment{|x_{kj}-x_j|} {\myarrow[270]} {0 \text{ per confronto}} \leq |\overline{x_k} - \overline{x}| \Rightarrow x_{k_{j}} \rightarrow x_j \qquad \forall \ j
+	\end{equation*}
+	
+	D'altra parte, se $x_{k_{i}} \rightarrow  x_i \quad \forall \ i = 1, \ldots, n$
+	\begin{gather*}
+		\Rightarrow \sum_{i=1}^{n} |x_{k_i} - x_i| \rightarrow 0 \text{ per } k \rightarrow + \infty
+		\\
+		\Rightarrow 0 \leq |x_{k} - x| \leq \sum_{i=1}^{n} |x_{k_{i}} - x_i| \Rightarrow \overline{x_k} \rightarrow \overline{x} \qquad \square
+	\end{gather*}	
+\end{dembar}
+
+
+
+
+
 
 
 \begin{comment}	
 
 
-
-\paragraph{\textcolor{red}{Osservazione}}
-$A$ è chiuso $\Leftrightarrow \partial A \subseteq A$, cioè se e solo se $A$ contiene la sua frontiera.
-
-\paragraph{\textcolor{red}{Esempio}}
-$(\R, |\cdot|), \Q \subseteq \R$\\
-Si ha che $\overline{\Q}=\R$.\\
-Fissati $x\in \R$ e $ r>0 $ $ \exists q \in \Q $ tale che $ q\in ]x-r,x+r[=B_r(x)$.\\
-Si ha anche che $\partial \Q = \R$.\\
-$x \in \R, B_r(x)\cap \Q \neq \emptyset \,\,\, \forall r>0, B_r(x)\cap \Q^c \neq \emptyset \,\,\, \forall r >0 $\\
-$]x-r,x+r[\cap \Q^c \neq \emptyset \,\,\, \forall r>0$\\
-Se non fosse vero, $\exists x \in \R$ e $r>0$ tale che $]x-r,x+r[$ è fatto tutto di numeri razionali.\\
-\textcolor{orange}{I razionali sono numerabili, cioè $\exists f: \N\rightarrow \Q $ iniettiva e suriettiva. I reali hanno la potenza del continuo, cioè ogni funzione $\phi:\N\rightarrow\R$ può essere al più iniettiva, ma non suriettiva. Questo è vero anche per ogni intervallo del tipo $]x-r,x+r[, r>0$. Quindi, se $]x-r,x+r[$ fosse fatto di soli numeri razionali, sarebbe numerabile, assurdo.}
-
-\subsection{\textcolor{red}{Successioni in spazi metrici}}
-\paragraph{}
-\begin{itemize}
-	\item $\R^2\,\,\,\,\,\,\, \{(e^{-n}, \frac{\sin n}{n}) \}_{n\geq 1}$ è una successione di elementi di $\R^2$
-	\item $\R^3\,\,\,\,\,\,\, \{ (1+\frac{1}{n}, \frac{\sinh n}{e^n},2^{-n}) \}$ è una successione di elementi di $\R^3$
-\end{itemize}
-
-
-\paragraph{\textcolor{red}{Definizione}}
-$\{x_k\}_{k\in \N} \subseteq X$ successione, con $(X,d)$ spazio metrico. Si dice che $\{ x_k\}_{k\in\N}$ converge ad $x \in X$ e si scrive
-\begin{empheq}{equation*}
-	x_k \rightarrow x \,\,\,\,\, \text{o} \,\,\,\,\,\lim_{k\rightarrow +\infty} x_k = x \Leftrightarrow \lim_{k \rightarrow +\infty} d(x_k,x)=0
-\end{empheq}
-\textcolor{orange}{(in ambito reale $\lim_{k \rightarrow+\infty} |x_k - x |=0$)}\\
-cioè $\Leftrightarrow \forall \,\, \epsilon >0 \,\, \exists\,\, N >0 $ tale che $k > N \Rightarrow d(x_k,x)<\epsilon$\\
-$x$ viene detto limite della successione.
-
-\paragraph{\textcolor{red}{Teorema}}
-Sia $\{ x_k \}_{k \in \N} \subseteq X, (X,d)$ spazio metrico, tale che $ x_k \rightarrow l_1 \in X$ e $x_k \rightarrow l_2 \in X$. Allora $l_1=l_2$.
-
-\paragraph{\textcolor{red}{Proposizione}}
-$\{\overline{x_k}\}_{k\in\N} \subseteq R^n$ tale che $\overline{x_k } = (x_{k_1},x_{k_2},...,x_{k_n})$. Allora $\overline{x_k}\rightarrow \overline{x}=(x_1,...,x_n) \Leftrightarrow x_{kj} \rightarrow x_j \,\,  \forall \,\, j=1,...,n$ cioè $\Leftrightarrow \forall \,\, j = 1,...,n$ la successione di numeri reali $\{ x_{kj}\}_{k\in\N}$ converge a $x_j$.
-
-\paragraph{\textcolor{red}{Esempi}}
-\begin{itemize}
-	\item $\R^2, \{(e^{-k}, \frac{\sin k}{k})\}_{k \geq 1}$\\
-	$\overline{x_k}=(x_{k_1},x_{k_2}), \,\,\, x_{k_1}=e^{-k}, \,\,\, x_{k_2}=\frac{\sin k}{k}$\\
-	$\lim_{k \rightarrow +\infty} x_{k_1}=0, \,\,\, \lim_{k \rightarrow +\infty} x_{k_2}=0$\\
-	$\Rightarrow \lim_{k \rightarrow + \infty} \overline{x_k} =(0,0)$
-	\item -$\R^3, \{ a+\frac{1}{k}, \frac{\sinh k}{e^k}, \}_{k \geq 1}$\\
-	$x_{k_1}=1+\frac{1}{k}, \,\,\, x_{k_2}=\frac{\sinh k}{e^k},\,\,\, x_{k_3}=2^{-k}$\\
-	$\lim_{k \rightarrow +\infty}x_{k_1}=1, \,\,\, \lim_{k \rightarrow +\infty} x_{k_2}=1, \,\,\, \lim_{k \rightarrow +\infty} x_{k_3}=0 $\\
-	$\lim_{k \rightarrow +\infty} \overline{x_k} =(1,1,0)$
-	\item
-	-$\R^2, \{(2+e^{-k}, \sin k)\} $\\
-	$x_{k1}=2+e^{-k},\,\,\, x_{k2}=\sin k$\\
-	$\lim_{k \rightarrow +\infty}x_{k_1}=2, \,\,\, \lim_{k \rightarrow +\infty}$ non esiste $\Rightarrow \lim_{k \rightarrow +\infty} \overline{x_k}$ non esiste.
-\end{itemize}
-
-\paragraph{\textcolor{red}{Dimostrazione della proposizione}}
-$(\R^n, |\cdot|)$\\
-Se $\overline{y}=(y_1,..,y_n)\in \R^n$, allora $|y_j|\leq |\overline{y}|\leq \sum_{i=1}^{n}|y_i| \forall j$\\
-$|y_j| = \sqrt{|y_j|^2} \leq \sqrt{\sum_{i=1}^{n}|y_i|^2} = |\overline{y}|$.\\
-Abbiamo dimostrato che, se $0 <p<1$, $(a+b)^p\leq a^p+b^p \,\, \forall\,\, a,b \geq 0$.\\
-Questa disuguaglianza si può generalizzare.\\
-$(a_1+a_2+...+a_n)^p\leq a_1^p+a_2^p+...+a_n^p \,\, \forall\,\, a_i \geq 0$\\
-$|\overline{y}|=\sqrt{\sum_{i=1}^{n}|y_i|^2} \leq (|y_1|^2)^{\frac{1}{2}}+(|y_2|^2)^{\frac{1}{2}}+...+(|y_n|^2)^{\frac{1}{2}}= |y_1|+|y_2|+...+|y_n|= \sum_{i=1}^{n}|y_i|$\\
-$|y_j|\leq |\overline{y}| \leq \sum_{i=1}^{n}|y_i|$\\
-$\overline{x} \rightarrow \overline{x} \Leftrightarrow x_{k_j} \rightarrow x_j \,\, \forall\,\, j=1,...,n$\\
-$|x_{k_j}-x_j|\leq |\overline{x_k}-\overline{x}| \leq \sum_{i=1}^{n}|x_{k_i}-x_i|$.\\
-Se $|\overline{x_k} - \overline{x}|\rightarrow 0 $, cioè se $\overline{x_k}\rightarrow \overline{x}$, allora\\
-$0 \leq |x_{kj}-x_j|\leq |\overline{x_k}-\overline{x}| \Rightarrow x_{kj} \rightarrow x_j \,\, \forall \,\, j$\\
-D'altra parte, se $x_{ki} \rightarrow  x_i \,\, \forall \,\, i=1,...,n $\\
-$\Rightarrow \sum_{i=1}^{n}|x_{k_i}- x_i| \rightarrow 0 $ per $k \rightarrow + \infty$\\
-$\Rightarrow 0 \leq |x_{k}- x| \leq \sum_{i=1}^{n}|x_{k_i}- x_i| \Rightarrow \overline{x_k} \rightarrow \overline{x}$.
-\begin{flushright}
-	\large\Lightning
-\end{flushright}
-	
 	
 	
 	
