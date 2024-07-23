@@ -774,6 +774,81 @@ $x \in \overline{A}$, supponiamo che $x \notin A$ e dimostriamo che $x \in \part
 \end{dembar}
 
 
+\begin{theorem} (caratterizzazione dei chiusi mediante le successioni)
+\label{th:pag 156}	
+	
+$(X,d)$ spazio metrico, $A \subseteq X$. Allora $z \in \overline{A} \iff \exists$ una successione $\{x_k\}_{k \geq 1} \subseteq A \ \big| \ x_k \rightarrow z$.
+\end{theorem}
+
+
+\begin{corollary}
+	\label{cor:pag 156}
+	$(X,d)$ spazio metrico. $A \subseteq X$ è chiuso $\iff \forall \ \{x_k\}_{k \geq 1} \subseteq A$ convergente, il suo limite appartiene ad $A$.
+	
+	($A \subseteq X$ è chiuso $\iff A$ contiene i limiti delle successioni convergenti a valori in $A$.)
+\end{corollary}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Corollario \ref{cor:pag 156}}
+	
+	\begin{itemize}
+		\item $(\Rightarrow) \ A$ chiuso, $A = \overline{A}$. Sia $\{x_k\}_{k \geq 1} \subseteq A$ successione convergente a $z \in X$.
+		
+		Allora il teorema implica che $z \in \overline{A}= A$.
+		
+		\item $(\Leftarrow)$ Dobbiamo dimostrare che, se $x \in \overline{A}$, allora $z \in A$
+		
+		($A = \overline{A}$, perché l'inclusione $A \subseteq \overline{A}$ è nota)
+		
+		$z \in \overline{A} \Rightarrow \exists \ \{x_k\}_{k \geq 1} \subseteq A$ convergente a $z$. 
+		
+		Allora $z \in A$ per ipotesi. $\qquad \square$
+	\end{itemize}
+\end{dembar}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th:pag 156}}
+	
+	\begin{itemize}
+		\item $(\Rightarrow ) $ Sia $z \in \overline{A}$. Costruiamo una successione $\{x_k\}_{k \geq 1} \subseteq A \ \big| \ x_k \rightarrow z$
+		\begin{gather*}
+		z\in \overline{A} \iff \forall \ r > 0, B_r(z) \cap A \neq \emptyset
+		\\
+		\begin{array}{c c}
+			r = 1 
+			& \exists \ x_1 \in B_1(z) \cap A 
+			\\ & x_1 \in A \text{ e } d(x_1, z) < 1
+			\\
+			r = \frac{1}{2}
+			& \exists \ x_2 \in B_{1/2}(z) \cap A
+			\\ & x_2 \in A \text{ e } d(x_2, z )< \frac{1}{2}
+			\\
+			\vdots & \\
+			r=\frac{1}{k}
+			& \exists \ x_k \in B_{\frac{1}{k}}(z) \cap A,
+			\\ & x_k \in A \text{ e } d(x_k, z) < \frac{1}{k}
+		\end{array}
+		\\
+		\{x_k\}_{k \geq 1} \subseteq A \ \big| \; 0 \leq d(x_k, z) \leq \frac{1}{k} 
+		\\ \Rightarrow \lim_{k \rightarrow +\infty} d(x_k, z) = 0 \Rightarrow x_k \rightarrow z
+		\end{gather*}
+		
+		\item $()\Leftarrow )$ Ipotesi: $\exists \ \{x_k\}_{k\geq 1} \subseteq A \ \big| \ x_k \rightarrow z$
+		
+		Tesi: $z \in \overline{A}$
+		
+		Sia $r >0$. Poiché $x_k \rightarrow z$
+		\begin{gather*}
+		\exists \ N > 0 \ \big| \; d(x_k,z) < r \qquad \forall \ k > N, \lowercomment{x_k} {\in A} {} \in B_r(z) \cap A
+		\\
+		\Rightarrow B_r(z) \cap A \neq \emptyset \Rightarrow z \in \overline{A}. \qquad \square
+		\end{gather*} 
+	\end{itemize}
+\end{dembar}
+
+
 
 
 
@@ -781,6 +856,145 @@ $x \in \overline{A}$, supponiamo che $x \notin A$ e dimostriamo che $x \in \part
 
 \begin{comment}	
 
+
+
+\paragraph{\textcolor{red}{Esempi}}
+\begin{itemize}
+	\item $\Q$ non è chiuso in  $\R$ perchè $\exists \,\, \{q_n\}_{n\geq 1} \subseteq \Q \,\,|\,\, q_n \rightarrow \sqrt{2} \neq \Q$
+	\item $(\R, |\cdot|)$
+\end{itemize}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-28 18-09-08}
+\end{figure}
+
+\paragraph{\textcolor{red}{Esempio importante}}
+$C\subseteq \R^n$. Sono equivalenti le seguenti affermazioni
+\begin{enumerate}
+	\item $C$ è chiuso per la topologia data dalla norma euclidea $|\cdot|$
+	\item $C$ è chiuso per la topologia data dalla norma $\parallel \cdot \parallel_\infty$
+	\item $C$ è chiuso per la topologia data dalla norma $\parallel \cdot \parallel_1$
+\end{enumerate}
+Per dimostrare che le tre affermazioni sono equivalenti, partiamo da\\
+$|x_j|\leq |\overline{x}| \leq \sum_{i=1}^{n}|x_i| \,\,\forall\,\, \overline{x}=(x_1,...,x_n)\in \R^n$\\
+$\max_{j=1,...,n}|x_j| \leq |\overline{x}| \leq \sum_{i=1}^{n}|x_i| \leq n \max_{j=1,...,n}|x_j|$\\
+\textcolor{red}{$\parallel \overline{x} \parallel_\infty \leq |\overline{x}| \leq \parallel \overline{x} \parallel_1 \leq n \parallel \overline{x} \parallel_\infty \forall\,\, \overline{x} \in \R^n$}
+\begin{itemize}
+	\item $1) \Rightarrow 2)$ Ipotesi: $C$ è chiuso per $|\cdot|$. Tesi: $C$ è chiuso per $ \parallel \cdot \parallel_\infty$\\
+	$\{\overline{x_k}\}_{k\geq 1} \subseteq C \,\, |\,\, \overline{x_k} \rightarrow \overline{z}$ per $\parallel \cdot \parallel_\infty$, cioè $\parallel \overline{x_k}-\overline{z} \parallel_\infty \rightarrow 0 $ per $k \rightarrow +\infty$, e dimostriamo che $\overline{z} \in C$\\
+	$|\overline{x_k}-\overline{z}|\leq n \parallel \overline{x_k}-\overline{z} \parallel_\infty \rightarrow 0$\\
+	$\Rightarrow |\overline{x_k}-\overline{z}| \rightarrow 0$ per $k \rightarrow +\infty$, cioè $\overline{x_k} \rightarrow \overline{z}$ per $|\cdot|$. Ma $C$ è chiuso per $|\cdot| \Rightarrow \overline{z} \in \C$.
+	\item $2) \Rightarrow 3)$ Ipotesi: $C$ è chiuso per $\parallel \cdot \parallel_\infty$.        Tesi: $C$ è chiuso per $\parallel \cdot \parallel_1$\\
+	$\{\overline{x_k}\}_{k \geq 1} \subseteq C \,\,|\,\, \overline{x_k} \rightarrow \overline{z}$ per $\parallel \cdot \parallel_1$, cioè $\parallel \overline{x_k}-\overline{z} \parallel_1 \rightarrow 0$ per $k \rightarrow +\infty$ e dimostriamo che $\overline{z}\in C$.\\
+	$\parallel \overline{x} \parallel_\infty \leq \parallel \overline{x} \parallel_1 \,\, \forall \,\, \overline{x}\in \R^n$\\
+	Prendo $\overline{x} = \overline{x_k} -\overline{z}$\\
+	$\parallel \overline{x_k} -\overline{z} \parallel_\infty \leq  \parallel\overline{x_k} -\overline{z} \parallel_1 \rightarrow 0 \Rightarrow \overline{x_k}  \rightarrow \overline{z}$ per $\parallel \cdot \parallel_\infty \rightarrow \overline{z} \in \C$ perchè $C $ è chiuso  per $\parallel\cdot\parallel_\infty$.
+	\item $3) \Rightarrow 1)$ Ipotesi: $C$ è chiuso per $\parallel \cdot \parallel_1$. Tesi:       $C$ è chiuso per $|\cdot|$\\
+	$\{ \overline{x_k}\}_{k \geq 1} \subseteq C \,\, | \,\, \overline{x_k} \rightarrow \overline{z}$ per $|\cdot|$ e dimostriamo che $\overline{z} \in C$ \\
+	$\parallel \overline{x} \parallel_1 \leq n \parallel \overline{x} \parallel_\infty \,\, \forall \,\, \overline{x} \in \R^n$\\
+	$\frac{1}{n} \parallel \overline{x} \parallel_1 \leq \parallel \overline{x}\parallel_\infty \leq |\overline{x}|\,\, \forall\,\, \overline{x} \in \R^n$\\
+	$\parallel \overline{x}\parallel_1 \leq n |\overline{x}| \,\,\forall\,\, \overline{x} \in \R^n$\\
+	$\overline{x}=\overline{x_k}-\overline{z}$\\
+	$\Rightarrow \parallel \overline{x_k}-\overline{z}\parallel_1 \leq n |\overline{x_k}-\overline{z}| \rightarrow 0$ per $k \rightarrow +\infty$\\
+	$\Rightarrow \parallel \overline{x_k}-\overline{z} \parallel_1 \rightarrow 0$ per $k \rightarrow +\infty$\\
+	$\Rightarrow \overline{x_k}-\overline{z}$ per $\parallel \cdot \parallel_1 \Rightarrow z \in C$ perchè $C$ è chiuso per $\parallel \cdot \parallel_1$.
+\end{itemize}
+\begin{flushright}
+	\large\Lightning
+\end{flushright}
+
+\paragraph{\textcolor{red}{Osservazione}}
+Siccome $C$ è chiuso $\Leftrightarrow C^c$ è aperto, il corollario al teorema che abbiamo appena dimostrato implica che $A \subseteq R^n$ è aperto per $|\cdot|  \Leftrightarrow A $ è aperto per la topologia data da $\parallel \cdot \parallel_\infty \Leftrightarrow A$ è aperto per $\parallel \cdot \parallel_1$, cioè le 3 norme $|\cdot|, \parallel \cdot \parallel_\infty, \parallel \cdot \parallel_1$ descirvono la stessa toplogia.\\
+Si può dimostrare che in $\R^n$ \textcolor{red}{(spazio di dimensione finita)} tutte le norme sono equivalenti, cioè se $A \subseteq \R^n$ è aperto per una norma, lo è per qualsiasi altro.
+
+\paragraph{\textcolor{red}{Definizione}}
+$(X,d)$ spazio metrico. $K \subseteq X$ si dice limitato se $\exists\,\, x \in X$ e $R>0$ tale che $ K \subseteq B_R(x)$, cioè $d(x,z)< R \,\, \forall \,\,z \in K$. 
+
+\paragraph{\textcolor{red}{Esempio}}
+$K\subseteq \R$ è limitato se $\exists R >0$ tale che $K \subseteq ]-R, R[ = B_R(0)$ cioè $|z| < R \forall z \in K$.
+
+\paragraph{\textcolor{red}{Osservazione}}
+Se $(X, \parallel \cdot \parallel)$ è spazio normato, il punto $x \in X$ nella definizione di insieme limite può essere preso coincidente con $0$. Infatti se $k \subseteq B_R(x) \Rightarrow \parallel x-z \parallel < R \,\, \forall \,\, z \in K$\\
+$z \in K$, $\parallel z \parallel =\parallel z-x+x \parallel \leq \parallel x-z \parallel + \parallel x\parallel <R+\parallel x \parallel \Rightarrow z \in B_{R+\parallel x\parallel}(0)$\\
+Quindi, in uno spazio normato, $K \subseteq X$ è limitato se $\exists \,\, R >0 \,\,|\,\, K \subseteq B_R(0)$, cioè $\parallel z \parallel < R \,\,\forall\,\, z \in k$. \textcolor{orange}{(se $x = R$ e $\parallel \cdot \parallel = |\cdot|$, si ritrova quanto scritto sopra.)}
+
+\paragraph{\textcolor{red}{Proposizione}}
+$(X,d)$ spazio metrico. $\{x_k\}_{k\geq 1} \subseteq X$ successione convergente. Allora $\{x_k\}_{k \geq 1}$ è limitata, cioè $\exists x \in X$ e $R >0$ tale che $x_k \in B_R(x)\,\, \forall k \geq 1$\\
+$(d(x_k,x)< R \,\, \forall \,\, k \geq 1)$\\
+
+\paragraph{\textcolor{red}{Esempio}}
+$C^\circ ([0,1])$\\
+$K=\{f \in C^\circ ([0,1])| |f(x)|\leq \frac{1}{\sqrt{x}}\forall x \in  ]0,1]\}$
+\begin{itemize}
+	\item $(C^\circ([0,1]),\parallel\cdot\parallel_1)$, $K$ è limitato $f \in K$, $\parallel f \parallel_1 = \int_{0}^{1}|f(x)|dx \leq \int_{0}^{1}\frac{1}{\sqrt{x}}dx=\lim_{c \rightarrow 0^+} \int_{c}^{1} \frac{1}{\sqrt{x}}dx=2$\\
+	$\parallel f \parallel_1 \leq 2 \,\,\,\, \forall \,\, f \in K$\\
+	$K \leq \overline{B_{2}^{\parallel\cdot \parallel_1}(0)}\leq B_{3}^{\parallel\cdot \parallel_1}(0)$
+	\item ($C^\circ([0,1]), \parallel \cdot \parallel_\infty$), $K$ è illimitato\\
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 20-48-27}
+	\end{figure}
+	
+	$\parallel f_n \parallel_\infty = \sqrt{2n}\rightarrow +\infty$ se $n\rightarrow +\infty$, $f_n \in K$
+	\item $C^\circ ([0,1]), \{f_n\}_{n\geq 1}$ come sopra. Allora $f_n \rightarrow f=0$ per $\parallel \cdot \parallel_1$\\
+	$\parallel f_n -0 \parallel_1 =\int_{0}^{1} |f(x)|dx =\frac{1}{n} \sqrt{2n}\frac{1}{2}= \frac{1}{\sqrt{2n}} \rightarrow 0$ per $n \rightarrow +\infty$\\
+	Ma $\parallel f_n -0 \parallel_\infty = \sqrt{2n} \rightarrow +\infty \Rightarrow f_n \nrightarrow 0$ per $\parallel \cdot \parallel_\infty$
+\end{itemize}
+
+
+\paragraph{\textcolor{red}{Osservazione}}
+$K \subseteq \R^n$ è limitato per $|\cdot| \Leftrightarrow$ lo è per $\parallel \cdot \parallel_\infty \Leftrightarrow$ lo è per $\parallel \cdot \parallel_1$\\
+$\parallel \overline{x} \parallel_\infty \leq |\overline{x}|\leq \parallel \overline{x} \parallel_1 \leq n \parallel\overline{x} \parallel_\infty$\\
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 20-55-22}
+\end{figure}
+
+\paragraph{\textcolor{red}{Osservazione}}
+Introduciamo in $\R^n$ il simbolo $\infty$. Un intorno di $\infty$ è un qualunque insieme $A \subseteq \R^n$ tale che $A$ contiene il complementare di una palla di centro l'origine, cioè $\exists R>0$ tale che $\overline{x} \in A \Rightarrow \parallel \overline{x} \parallel > R$\\
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-28 21-04-48}
+\end{figure}
+
+Una successione $\{\overline{x_k}\}_{k\geq 1} \subseteq \R^n$ si dice divergente a $\infty$ e si scrive $\lim_{k \rightarrow \infty} \overline{x_k}=\infty$ se $\lim_{k \rightarrow \infty} |\overline{x_k}|=+\infty$ cioè se $\forall\,\, R > 0\,\, \exists\, N >0\,\,|\,\,k>N \Rightarrow |\overline{x_k}|>R$
+
+\paragraph{\textcolor{red}{Esempio}}
+$\overline{x_k}=(e^{-k},2+\frac{1}{k},\ln k) \subseteq \R^3,\,\, k \geq 1$\\
+$\lim_{k}x_{k1}=\lim_{k}e^{-k}=0$\\
+$\lim_{k}x_{k2}=\lim_{k}2+\frac{1}{k}=2$\\
+$\lim_{k}x_{k3}=\lim_{k}\ln k=+\infty$\\
+$\lim_{k}|\overline{x_k}|=\lim_{k} \sqrt{e^{-2k}+(2+\frac{1}{k})^2+(\ln k)^2} = +\infty \Rightarrow \lim_{k} \overline{x_k}=\infty$
+
+\subsection{\textcolor{red}{Limiti di Funzione}}
+\paragraph{\textcolor{red}{Definizione}}
+$(X,d)$ spazio metrico, $A \subseteq X$, non vuoto. $x_0 \in X$ si dice \textcolor{red}{punto di accumulazione} per $A$ se  $\forall \epsilon >0 \,\, \exists \,\, x \in A, x \neq x_0,$ tale che $x \in B_\epsilon(x_0)$, cioè se $B_\epsilon (x_0) \cap A$ contiene punti di $A$ diversi da $x_0$. $x_0 \in A$ si dice \textcolor{red}{punto isolato} se non è di accumulazione, cioè se $\exists \epsilon >0$ tale che $B_\epsilon (x_0) \cap A =\{x_0\}$.
+
+\paragraph{\textcolor{red}{Definizione}}
+$(X,d_x),(Y,d_y)$ spazi metrici, $f:dom f \rightarrow Y$, con $domf \subseteq X, x_0 \in X $ punto di accumulazione per $domf$. Si dice che $f$ ha limite $l \in Y$ per $x \rightarrow x_0$ e si scrive
+\begin{empheq}{equation*}
+	\lim_{x \rightarrow x_0} f(x)=l \,\,\,\,\,\, \text{oppure} \,\,\,\,\,\, f(x) \rightarrow l \,\,\,\, \text{per} \,\,\, x \rightarrow dx_0
+\end{empheq}
+se per ogni intorno  $V$ di $l$  esiste un intorno $U$ di $x_0 $ tale che $ f(x) \in V$, $x \in U \cap domf, x \neq x_0$\\
+In altre parole, $\lim_{x \rightarrow x_0} f(x) =l\,\,\forall\,\, \epsilon >0 \,\ \exists \,\, \delta >0 \,\,|$ se $0 < d(x,x_0) < \delta$ e $x \in domf $, allora $d_y(f(x),l)<\epsilon$\\
+\textcolor{orange}{Se prendo la definizione data con $\epsilon$ e $\delta$ per $X=Y=\R$ e le distanze $d_x(x,y)=d_y(x,y)=|x-y|$, ottengo la definizione con $\epsilon$ e $\delta$ data in ambito reale.}
+
+\paragraph{\textcolor{red}{Teorema di unicità del limite}}
+$(X,d_x)$ e $(Y,d_y)$ spazi metrici, $f: domf \rightarrow Y$, $domf \subseteq X, x_0 \in X$ punto di accumulazione per $domf$.\\
+Se $\lim_{x \rightarrow x_0} f(x) = l_1 \in Y$ e $\lim_{x \rightarrow x_0} f(x) = l_2 \in Y$, allora $l_1=l_2$.
+
+\paragraph{\textcolor{red}{Proposizione}}
+$(X,d)$ spazio metrico, $\overline{f}: dom\overline{f} \rightarrow \R^n,\,\, \overline{f}(x)=(f_1(x),...,f_n(x))$, $x_0 \in X$ punto di accumulazione per $dom \overline{f} \subseteq X$, allora $\lim_{x \rightarrow x_0} \overline{f}(x)=\overline{l}=(l_1,...,l_n)\in \R^n \Leftrightarrow \lim_{x \rightarrow x_0} f_j(x)=l_j \forall j=1,2,...,n$.
+
+\paragraph{\textcolor{red}{Teorema della permanenza del segno}}
+$(X,d)$ spazio metrico, $f: domf \rightarrow\R$, $domf \subseteq X, x_0 \in X$ punto di accumulazione per $domf$.\\
+Se $\lim_{x \rightarrow x_0} f(x) = l >0$, allora $f(x)>0$ definitivamente per $ x \rightarrow x_0$, cioè $\exists \,\, \delta >0 \,\, |\,\, f(x)>0 \,\, \forall \,\, x \in B_\delta (x_0)\cap domf$, $x \neq x_0$. 
+
+\paragraph{\textcolor{red}{Teorema}}
+$(X,d)$ spazio metrico, $f,g: A \rightarrow\R$, $A \subseteq X, x_0 \in X$ punto di accumulazione per $A$, tali che $\lim_{} f(x) =l_f$, $\lim_{x \rightarrow x_0} g(x)=l_f$ e $f(x)\leq g(x)$ definitivamente per $x \rightarrow x_0$. \\\textcolor{orange}{$\exists \delta > 0 | f(x) \leq g(x) \forall x \in B_\delta (x_0) \cap A$, $x \neq x_0$.)}\\ Allora $l_f \leq l_g$.
+
+\paragraph{\textcolor{red}{Teorema del Confronto}}
+$(X,d)$ spazio metrico, $f,g,h : A \rightarrow \R, A \subseteq X, x_0$ punto di accumulazione per $A$, tali che $g(x) \leq f(x)\leq h(x)$ definitivamente per $x \rightarrow x_0$. Se $\lim_{x \rightarrow x_0} g(x)=\lim_{x \rightarrow x_0} h(x)=l$, allora $\lim_{x \rightarrow x_0} f(x)=l$.
 
 	
 	
