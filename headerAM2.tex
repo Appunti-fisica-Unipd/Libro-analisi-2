@@ -61,8 +61,16 @@ skipbelow=\baselineskip
 
 \numberwithin{equation}{subsection}
 
+\begin{comment}
 \newcommand\distr
-{\underset{\mbox{\tiny{triangolare}}}{\stackrel{\mbox{\tiny{disugualianza}}}{\leq}}}
+{
+	\underset{\mbox{\tiny{triangolare}}}{\stackrel{\mbox{\tiny{disugualianza}}}{\leq}}
+}
+\end{comment}
+
+\newcommand\distr{ \overbracket[0pt][0pt]{
+		\leq}^{\mathclap{\color{blue}{\genfrac{}{}{0pt}{}{\text{disuguaglianza}}{\text{triangolare}}}}}
+}
 
 \newcommand{\myarrow}[1][-45]{%
 	\mathrel{%
@@ -91,16 +99,19 @@ skipbelow=\baselineskip
 
 
 \newcommand\lowercomment[3]{ \underbracket[0pt][0pt]{
-	\mathcircled{#1}}_{\color{blue}{\genfrac{}{}{0pt}{}{#2}{#3}}}
+	\mathcircled{#1}}_{\mathclap{\color{blue}{\genfrac{}{}{0pt}{}{#2}{#3}}}}
 }
 
 \newcommand\uppercomment[3]{ \overbracket[0pt][0pt]{
-	\mathcircled{#1}}^{\color{blue}{\genfrac{}{}{0pt}{}{#2}{#3}}}
+	\mathcircled{#1}}^{\mathclap{\color{blue}{\genfrac{}{}{0pt}{}{#2}{#3}}}}
 }
 
 \let\oldemptyset\emptyset
 \let\emptyset\varnothing
 
+%prevent mathmode breaking
+\binoppenalty=10000 
+\relpenalty=10000 
 
 \makeatother
 
