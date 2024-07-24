@@ -949,37 +949,83 @@ $(X,d)$ spazio metrico, $A \subseteq X$. Allora $z \in \overline{A} \iff \exists
 \end{exbar}
 
 
+\textbf{Osservazione:}
+
+Siccome $C$ è chiuso $\iff C^c$ è aperto, il corollario al teorema che abbiamo appena dimostrato implica che $A \subseteq R^n$ è aperto per $|\cdot|  \iff A $ è aperto per la topologia data da $\parallel \cdot \parallel_\infty \iff A$ è aperto per $\parallel \cdot \parallel_1$, cioè le 3 norme $|\cdot|$, $\parallel \cdot \parallel_\infty$, $\parallel \cdot \parallel_1$ descrivono la stessa topologia.
+
+\begin{attbar}
+	Si può dimostrare che in $\mathbb{R}^n$ (spazio di dimensione finita) tutte le norme sono equivalenti, cioè se $A \subseteq \mathbb{R}^n$ è aperto per una norma, lo è per qualsiasi altro.
+\end{attbar}
+
+
+\begin{definition}
+	$(X,d)$ spazio metrico. $K \subseteq X$ si dice limitato se $\exists \ x \in X$ e $R>0 \ \big| \ K \subseteq B_R(x)$, cioè $d(x,z) < R \qquad \forall \ z \in K$. 
+\end{definition}
+
+
+\begin{exbar}
+	$K \subseteq \mathbb{R}$ è limitato se $\exists R > 0 \ \big| \ K \subseteq \ ]-R, R \ [ \ = B_R(0)$ cioè $|z| < R \quad \forall \ z \in K$.
+\end{exbar}
+
+
+\textbf{Osservazione:}
+Se $(X, \parallel \cdot \parallel)$ è spazio normato, il punto $x \in X$ nella definizione di insieme limite può essere preso coincidente con $0$. 
+
+Infatti se $k \subseteq B_R(x)$
+\begin{gather*}
+	\Rightarrow \lowercomment{ \parallel x-z \parallel} {= d(x,z)} {} < R \qquad \forall \ z \in K
+	\\
+	z \in K \qquad \parallel z \parallel = \parallel z - x + x \parallel \distr \parallel x-z \parallel + \parallel x\parallel < R + \parallel x \parallel \\
+	\Rightarrow z \in B_{R + \parallel x \parallel}(0)
+\end{gather*}
+
+Quindi, in uno spazio normato, $K \subseteq X$ è limitato se $\exists \ R >0 \ \big| \ K \subseteq B_R(0)$, cioè $\parallel z \parallel < R \quad \forall \ z \in K$. 
+
+(se $x = R$ e $\parallel \cdot \parallel = |\cdot|$, si ritrova quanto scritto sopra.)
+
+
+\begin{proposition}
+
+	$(X,d)$ spazio metrico. $\{ x_k \}_{k\geq 1} \subseteq X$ successione convergente. Allora $\{ x_k \}_{k \geq 1}$ è limitata, cioè $\exists x \in X$ e $R >0 \ \big| \ x_k \in B_R(x) \quad \forall \ k \geq 1$
+	
+	$(d(x_k,x)< R \quad \forall \ k \geq 1)$
+\end{proposition}
+
+
+\begin{exbar}
+\begin{example}
+	$C^0 ([0,1])$
+	
+	$K = \{ f \in C^0 ([0,1]) \ \big| \ |f(x)| \leq \frac{1}{\sqrt{x}} \qquad \forall x \in \ ]0,1] \}$
+	\begin{itemize}
+		\item $(C^0 ([0,1]), \parallel \cdot \parallel_1)$, $K$ è limitato 
+		\begin{gather*}
+			f \in K \qquad \parallel f \parallel_1 = \int_{0}^{1} |f(x)| \ \mathrm{d}x \leq \int_{0}^{1} \frac{1}{\sqrt{x}} \ \mathrm{d}x = \lim_{c \rightarrow 0^+} \int_{c}^{1} \frac{1}{\sqrt{x}} \ \mathrm{d}x = 2
+			\\
+			\parallel f \parallel_1 \leq 2 \qquad \forall \ f \in K
+			\\
+			K \subseteq \overline{B_{2}^{\parallel \cdot \parallel_1}(0)} \subseteq B_{3}^{\parallel \cdot \parallel_1}(0)
+		\end{gather*}
+
+		\item ($C^0 ([0,1]), \parallel \cdot \parallel_\infty$), $K$ è illimitato
+		
+	\end{itemize}
+\end{example}
+\end{exbar}
+
+
+
+
+
 
 
 \begin{comment}	
 
-\paragraph{\textcolor{red}{Osservazione}}
-Siccome $C$ è chiuso $\Leftrightarrow C^c$ è aperto, il corollario al teorema che abbiamo appena dimostrato implica che $A \subseteq R^n$ è aperto per $|\cdot|  \Leftrightarrow A $ è aperto per la topologia data da $\parallel \cdot \parallel_\infty \Leftrightarrow A$ è aperto per $\parallel \cdot \parallel_1$, cioè le 3 norme $|\cdot|, \parallel \cdot \parallel_\infty, \parallel \cdot \parallel_1$ descirvono la stessa toplogia.\\
-Si può dimostrare che in $\R^n$ \textcolor{red}{(spazio di dimensione finita)} tutte le norme sono equivalenti, cioè se $A \subseteq \R^n$ è aperto per una norma, lo è per qualsiasi altro.
 
-\paragraph{\textcolor{red}{Definizione}}
-$(X,d)$ spazio metrico. $K \subseteq X$ si dice limitato se $\exists\,\, x \in X$ e $R>0$ tale che $ K \subseteq B_R(x)$, cioè $d(x,z)< R \,\, \forall \,\,z \in K$. 
 
-\paragraph{\textcolor{red}{Esempio}}
-$K\subseteq \R$ è limitato se $\exists R >0$ tale che $K \subseteq ]-R, R[ = B_R(0)$ cioè $|z| < R \forall z \in K$.
 
-\paragraph{\textcolor{red}{Osservazione}}
-Se $(X, \parallel \cdot \parallel)$ è spazio normato, il punto $x \in X$ nella definizione di insieme limite può essere preso coincidente con $0$. Infatti se $k \subseteq B_R(x) \Rightarrow \parallel x-z \parallel < R \,\, \forall \,\, z \in K$\\
-$z \in K$, $\parallel z \parallel =\parallel z-x+x \parallel \leq \parallel x-z \parallel + \parallel x\parallel <R+\parallel x \parallel \Rightarrow z \in B_{R+\parallel x\parallel}(0)$\\
-Quindi, in uno spazio normato, $K \subseteq X$ è limitato se $\exists \,\, R >0 \,\,|\,\, K \subseteq B_R(0)$, cioè $\parallel z \parallel < R \,\,\forall\,\, z \in k$. \textcolor{orange}{(se $x = R$ e $\parallel \cdot \parallel = |\cdot|$, si ritrova quanto scritto sopra.)}
 
-\paragraph{\textcolor{red}{Proposizione}}
-$(X,d)$ spazio metrico. $\{x_k\}_{k\geq 1} \subseteq X$ successione convergente. Allora $\{x_k\}_{k \geq 1}$ è limitata, cioè $\exists x \in X$ e $R >0$ tale che $x_k \in B_R(x)\,\, \forall k \geq 1$\\
-$(d(x_k,x)< R \,\, \forall \,\, k \geq 1)$\\
 
-\paragraph{\textcolor{red}{Esempio}}
-$C^\circ ([0,1])$\\
-$K=\{f \in C^\circ ([0,1])| |f(x)|\leq \frac{1}{\sqrt{x}}\forall x \in  ]0,1]\}$
-\begin{itemize}
-	\item $(C^\circ([0,1]),\parallel\cdot\parallel_1)$, $K$ è limitato $f \in K$, $\parallel f \parallel_1 = \int_{0}^{1}|f(x)|dx \leq \int_{0}^{1}\frac{1}{\sqrt{x}}dx=\lim_{c \rightarrow 0^+} \int_{c}^{1} \frac{1}{\sqrt{x}}dx=2$\\
-	$\parallel f \parallel_1 \leq 2 \,\,\,\, \forall \,\, f \in K$\\
-	$K \leq \overline{B_{2}^{\parallel\cdot \parallel_1}(0)}\leq B_{3}^{\parallel\cdot \parallel_1}(0)$
-	\item ($C^\circ([0,1]), \parallel \cdot \parallel_\infty$), $K$ è illimitato\\
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 20-48-27}
