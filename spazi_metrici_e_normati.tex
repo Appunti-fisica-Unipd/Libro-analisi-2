@@ -835,7 +835,7 @@ $(X,d)$ spazio metrico, $A \subseteq X$. Allora $z \in \overline{A} \iff \exists
 		\\ \Rightarrow \lim_{k \rightarrow +\infty} d(x_k, z) = 0 \Rightarrow x_k \rightarrow z
 		\end{gather*}
 		
-		\item $()\Leftarrow )$ Ipotesi: $\exists \ \{x_k\}_{k\geq 1} \subseteq A \ \big| \ x_k \rightarrow z$
+		\item $(\Leftarrow )$ Ipotesi: $\exists \ \{x_k\}_{k\geq 1} \subseteq A \ \big| \ x_k \rightarrow z$
 		
 		Tesi: $z \in \overline{A}$
 		
@@ -849,59 +849,109 @@ $(X,d)$ spazio metrico, $A \subseteq X$. Allora $z \in \overline{A} \iff \exists
 \end{dembar}
 
 
+\begin{exbar}
+	\begin{itemize}
+		\item $\mathbb{Q}$ non è chiuso in $\mathbb{R}$ perché $\exists \ \{q_n\}_{n\geq 1} \subseteq \mathbb{Q} \ \big| \ q_n \rightarrow \sqrt{2} \neq \mathbb{Q}$
+		
+		\item $(\mathbb{R}^2, |\cdot|)$
+	\end{itemize}	
+	\begin{center}
+		\includegraphics[width=0.75\linewidth]{spazi_metrici_e_normati/pag159}
+		\label{fig:pag159}
+	\end{center}	
+\end{exbar}
 
+
+\begin{exbar}
+\begin{example} \textbf{importante}
+	
+	$C \subseteq \mathbb{R}^n$. Sono equivalenti le seguenti affermazioni
+	\begin{enumerate}
+		\item $C$ è chiuso per la topologia data dalla norma euclidea $|\cdot|$
+		
+		\item $C$ è chiuso per la topologia data dalla norma $\parallel \cdot \parallel_\infty$
+		
+		\item $C$ è chiuso per la topologia data dalla norma $\parallel \cdot \parallel_1$
+	\end{enumerate}
+	
+	Per dimostrare che le tre affermazioni sono equivalenti, partiamo da
+	\begin{gather*}
+		|x_j| \leq |\overline{x}| \leq \sum_{i=1}^{n} |x_i| \qquad \forall \ \overline{x} = (x_1, \ldots, x_n) \in \mathbb{R}^n
+		\\
+		\lowercomment{\max_{j = 1, \ldots, n} |x_j|} {= \parallel \overline{x} \parallel_\infty} {}
+		\leq |\overline{x}| \leq 
+		\lowercomment{\sum_{i=1}^{n} |x_i|} {= \parallel \overline{x} \parallel_1} {} 
+		\leq n \lowercomment{\max_{j = 1, \ldots, n} |x_j|} {= \parallel \overline{x} \parallel_\infty} {}
+		\\
+		\parallel \overline{x} \parallel_\infty \leq |\overline{x}| \leq \parallel \overline{x} \parallel_1 \leq n \parallel \overline{x} \parallel_\infty \qquad \forall \ \overline{x} \in \mathbb{R}^n
+	\end{gather*}
+	
+	\begin{itemize}
+		\item $1) \Rightarrow 2)$ 
+		
+		Ipotesi: $C$ è chiuso per $|\cdot|$. 
+		
+		Tesi: $C$ è chiuso per $ \parallel \cdot \parallel_\infty$
+		
+		$\{ \overline{x_k} \}_{k\geq 1} \subseteq C \ \big| \ \overline{x_k} \rightarrow \overline{z}$ per $\parallel \cdot \parallel_\infty$, cioè $\parallel \overline{x_k} - \overline{z} \parallel_\infty \rightarrow 0 $ per $k \rightarrow +\infty$, e dimostriamo che $\overline{z} \in C$
+		\begin{equation*}
+			|\overline{x_k} - \overline{z}| \lowercomment{\leq} {\text{disuguaglianza sopra}} {\text{con } \overline{x} = \overline{x_k} - \overline{z}}
+			n \parallel \overline{x_k}-\overline{z} \parallel_\infty \rightarrow 0
+		\end{equation*}
+		
+		$\Rightarrow |\overline{x_k} - \overline{z}| \rightarrow 0$ per $k \rightarrow +\infty$, cioè $\overline{x_k} \rightarrow \overline{z}$ per $|\cdot|$. Ma $C$ è chiuso per $|\cdot| \Rightarrow \overline{z} \in \mathbb{C}$.
+		
+		\item $2) \Rightarrow 3)$
+		
+		Ipotesi: $C$ è chiuso per $\parallel \cdot \parallel_\infty$.
+		
+		Tesi: $C$ è chiuso per $\parallel \cdot \parallel_1$
+		
+		$\{ \overline{x_k} \}_{k \geq 1} \subseteq C \ \big| \ \overline{x_k} \rightarrow \overline{z}$ per $\parallel \cdot \parallel_1$, cioè $\parallel \overline{x_k} - \overline{z} \parallel_1 \rightarrow 0$ per $k \rightarrow +\infty$ e dimostriamo che $\overline{z} \in C$.
+		\begin{equation*}
+			\parallel \overline{x} \parallel_\infty \leq \parallel \overline{x} \parallel_1 \qquad \forall \ \overline{x}\in \mathbb{R}^n
+		\end{equation*}
+
+		Prendo $\overline{x} = \overline{x_k} -\overline{z}$
+		
+		\begin{gather*}
+			\parallel \overline{x_k} - \overline{z} \parallel_\infty \leq  \parallel \overline{x_k} -\overline{z} \parallel_1 \rightarrow 0 \Rightarrow \overline{x_k}  \rightarrow \overline{z} \text{ per } \parallel \cdot \parallel_\infty \rightarrow \overline{z} \in \mathbb{C}
+		\end{gather*}
+	
+		perché $C $ è chiuso  per $\parallel \cdot \parallel_\infty$.
+		
+		\item $3) \Rightarrow 1)$ 
+		
+		Ipotesi: $C$ è chiuso per $\parallel \cdot \parallel_1$. 
+		
+		Tesi: $C$ è chiuso per $|\cdot|$
+		
+		$\{ \overline{x_k}\}_{k \geq 1} \subseteq C \ \big| \ \overline{x_k} \rightarrow \overline{z}$ per $|\cdot|$ e dimostriamo che $\overline{z} \in C$ 
+		\begin{gather*}
+			\parallel \overline{x} \parallel_1 \leq n \parallel \overline{x} \parallel_\infty \qquad \forall \ \overline{x} \in \mathbb{R}^n
+			\\
+			\frac{1}{n} \parallel \overline{x} \parallel_1 \leq \parallel \overline{x}\parallel_\infty \leq |\overline{x}| \qquad \forall \ \overline{x} \in \mathbb{R}^n
+			\\
+			\parallel \overline{x} \parallel_1 \leq n |\overline{x}| \qquad \forall \ \overline{x} \in \mathbb{R}^n
+			\\
+			\overline{x} = \overline{x_k} - \overline{z}
+			\\
+			\Rightarrow \parallel \overline{x_k} - \overline{z} \parallel_1 \leq n |\overline{x_k} - \overline{z}| \rightarrow 0 \text{ per } k \rightarrow +\infty
+			\\
+			\Rightarrow \parallel \overline{x_k} - \overline{z} \parallel_1 \rightarrow 0 \text{ per } k \rightarrow +\infty
+			\\
+			\Rightarrow \overline{x_k} - \overline{z} \text{ per } \parallel \cdot \parallel_1 \Rightarrow z \in C
+		\end{gather*}
+		
+		perché $C$ è chiuso per $\parallel \cdot \parallel_1$.
+	\end{itemize}
+\end{example}
+\end{exbar}
 
 
 
 
 \begin{comment}	
-
-
-
-\paragraph{\textcolor{red}{Esempi}}
-\begin{itemize}
-	\item $\Q$ non è chiuso in  $\R$ perchè $\exists \,\, \{q_n\}_{n\geq 1} \subseteq \Q \,\,|\,\, q_n \rightarrow \sqrt{2} \neq \Q$
-	\item $(\R, |\cdot|)$
-\end{itemize}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-28 18-09-08}
-\end{figure}
-
-\paragraph{\textcolor{red}{Esempio importante}}
-$C\subseteq \R^n$. Sono equivalenti le seguenti affermazioni
-\begin{enumerate}
-	\item $C$ è chiuso per la topologia data dalla norma euclidea $|\cdot|$
-	\item $C$ è chiuso per la topologia data dalla norma $\parallel \cdot \parallel_\infty$
-	\item $C$ è chiuso per la topologia data dalla norma $\parallel \cdot \parallel_1$
-\end{enumerate}
-Per dimostrare che le tre affermazioni sono equivalenti, partiamo da\\
-$|x_j|\leq |\overline{x}| \leq \sum_{i=1}^{n}|x_i| \,\,\forall\,\, \overline{x}=(x_1,...,x_n)\in \R^n$\\
-$\max_{j=1,...,n}|x_j| \leq |\overline{x}| \leq \sum_{i=1}^{n}|x_i| \leq n \max_{j=1,...,n}|x_j|$\\
-\textcolor{red}{$\parallel \overline{x} \parallel_\infty \leq |\overline{x}| \leq \parallel \overline{x} \parallel_1 \leq n \parallel \overline{x} \parallel_\infty \forall\,\, \overline{x} \in \R^n$}
-\begin{itemize}
-	\item $1) \Rightarrow 2)$ Ipotesi: $C$ è chiuso per $|\cdot|$. Tesi: $C$ è chiuso per $ \parallel \cdot \parallel_\infty$\\
-	$\{\overline{x_k}\}_{k\geq 1} \subseteq C \,\, |\,\, \overline{x_k} \rightarrow \overline{z}$ per $\parallel \cdot \parallel_\infty$, cioè $\parallel \overline{x_k}-\overline{z} \parallel_\infty \rightarrow 0 $ per $k \rightarrow +\infty$, e dimostriamo che $\overline{z} \in C$\\
-	$|\overline{x_k}-\overline{z}|\leq n \parallel \overline{x_k}-\overline{z} \parallel_\infty \rightarrow 0$\\
-	$\Rightarrow |\overline{x_k}-\overline{z}| \rightarrow 0$ per $k \rightarrow +\infty$, cioè $\overline{x_k} \rightarrow \overline{z}$ per $|\cdot|$. Ma $C$ è chiuso per $|\cdot| \Rightarrow \overline{z} \in \C$.
-	\item $2) \Rightarrow 3)$ Ipotesi: $C$ è chiuso per $\parallel \cdot \parallel_\infty$.        Tesi: $C$ è chiuso per $\parallel \cdot \parallel_1$\\
-	$\{\overline{x_k}\}_{k \geq 1} \subseteq C \,\,|\,\, \overline{x_k} \rightarrow \overline{z}$ per $\parallel \cdot \parallel_1$, cioè $\parallel \overline{x_k}-\overline{z} \parallel_1 \rightarrow 0$ per $k \rightarrow +\infty$ e dimostriamo che $\overline{z}\in C$.\\
-	$\parallel \overline{x} \parallel_\infty \leq \parallel \overline{x} \parallel_1 \,\, \forall \,\, \overline{x}\in \R^n$\\
-	Prendo $\overline{x} = \overline{x_k} -\overline{z}$\\
-	$\parallel \overline{x_k} -\overline{z} \parallel_\infty \leq  \parallel\overline{x_k} -\overline{z} \parallel_1 \rightarrow 0 \Rightarrow \overline{x_k}  \rightarrow \overline{z}$ per $\parallel \cdot \parallel_\infty \rightarrow \overline{z} \in \C$ perchè $C $ è chiuso  per $\parallel\cdot\parallel_\infty$.
-	\item $3) \Rightarrow 1)$ Ipotesi: $C$ è chiuso per $\parallel \cdot \parallel_1$. Tesi:       $C$ è chiuso per $|\cdot|$\\
-	$\{ \overline{x_k}\}_{k \geq 1} \subseteq C \,\, | \,\, \overline{x_k} \rightarrow \overline{z}$ per $|\cdot|$ e dimostriamo che $\overline{z} \in C$ \\
-	$\parallel \overline{x} \parallel_1 \leq n \parallel \overline{x} \parallel_\infty \,\, \forall \,\, \overline{x} \in \R^n$\\
-	$\frac{1}{n} \parallel \overline{x} \parallel_1 \leq \parallel \overline{x}\parallel_\infty \leq |\overline{x}|\,\, \forall\,\, \overline{x} \in \R^n$\\
-	$\parallel \overline{x}\parallel_1 \leq n |\overline{x}| \,\,\forall\,\, \overline{x} \in \R^n$\\
-	$\overline{x}=\overline{x_k}-\overline{z}$\\
-	$\Rightarrow \parallel \overline{x_k}-\overline{z}\parallel_1 \leq n |\overline{x_k}-\overline{z}| \rightarrow 0$ per $k \rightarrow +\infty$\\
-	$\Rightarrow \parallel \overline{x_k}-\overline{z} \parallel_1 \rightarrow 0$ per $k \rightarrow +\infty$\\
-	$\Rightarrow \overline{x_k}-\overline{z}$ per $\parallel \cdot \parallel_1 \Rightarrow z \in C$ perchè $C$ è chiuso per $\parallel \cdot \parallel_1$.
-\end{itemize}
-\begin{flushright}
-	\large\Lightning
-\end{flushright}
 
 \paragraph{\textcolor{red}{Osservazione}}
 Siccome $C$ è chiuso $\Leftrightarrow C^c$ è aperto, il corollario al teorema che abbiamo appena dimostrato implica che $A \subseteq R^n$ è aperto per $|\cdot|  \Leftrightarrow A $ è aperto per la topologia data da $\parallel \cdot \parallel_\infty \Leftrightarrow A$ è aperto per $\parallel \cdot \parallel_1$, cioè le 3 norme $|\cdot|, \parallel \cdot \parallel_\infty, \parallel \cdot \parallel_1$ descirvono la stessa toplogia.\\
