@@ -1197,15 +1197,188 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag174}
 		\label{fig:pag174}
 	\end{center}
-		
-		
 	\end{itemize}
 \end{dembar}
 
 
+\begin{theorem}
+	$(X,d)$ spazio metrico. $A \subseteq X, \ f,g: A \rightarrow \mathbb{R}, \ x_0 \in A$, $f$ e $g$ continue in $x_0$. Allora $f + g, f \cdot g$ e $f / g$, se $g(x_0) \neq 0$, sono continue in $x_0$.
+\end{theorem}
 
 
+\begin{proposition}
+	$(X,d)$ spazio metrico, $A \subseteq X, \overline{f}: A \rightarrow \mathbb{R}^n, \ \overline{f}(x) = (f_1(x), \ldots, f_n(x))$, è continua in $x_0 \in A \iff$ sono continue in $x_0$ le sue componenti $f_j \qquad \forall j = 1, \ldots, n$.
+\end{proposition}
 
+
+\begin{exbar}
+\begin{example}
+	$(X,d_x),(Y,d_y)$ spazi metrici.
+	\begin{enumerate}
+		\item Provare che \begin{gather*}
+			d((x_1,y_1), (x_2,y_2)) = \sqrt{(d_x(x_1,x_2))^2 + (d_y(y_1,y_2))^2}
+			\\
+			(x_1, y_1), (x_2,y_2) \in X \times Y \text{ è una metrica in } X \times Y
+		\end{gather*}
+		
+		\item Provare che $\forall r > 0$ vale
+		\begin{equation*}
+			B_{\frac{r}{\sqrt{2}}}^{X}(x) \times B_{\frac{r}{\sqrt{2}}}^{Y}(y) \subseteq B_{r}^{X \times Y} ((x_0,y_0)) \subseteq B_{r}^{X} (x_0) \times B_{r}^{Y} (y_0)
+		\end{equation*}
+		
+		\begin{center}
+			\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag175}
+			\label{fig:pag175}
+		\end{center}
+			
+		\item Sia ora $Y = \mathbb{R}$ con la metrica usuale che deriva dal valore assoluto.
+		
+		$f:X \rightarrow \mathbb{R}$
+		
+		$A = \{ (x,y) \in X \times \mathbb{R} \; \big| \; y > f(x) \}$
+		
+		$C = \{ (x,y) \in X \times \mathbb{R} \; \big| \; y \geq f(x) \}$
+		
+		Provare che, se $f $ è continua, allora $A$ è aperto e $C$ è chiuso in $X \times \mathbb{R}$ con la metrica $d$.
+		
+		\item Provare che, in generale, il viceversa non è vero, cioè $A$ può essere aperto con $f$ discontinua e $C$ chiuso con $f$ discontinua.	
+	\end{enumerate}
+	
+	\hline
+	
+	\begin{enumerate}
+		\item Per casa
+		
+		\item Facciamo vedere che se $(x,y) \in B_{\frac{r}{\sqrt{2}}}^{X}(x_0) \times B_{\frac{r}{\sqrt{2}}}^{Y}(y_0)$, allora $(x, y) \in B_{r}^{X \times Y} ((x_0, y_0))$
+		
+		\begin{equation*}
+			d_x(x, x_0) < \frac{r}{\sqrt{2}} \text{  e  } d_y(y, y_0) < \frac{r}{\sqrt{2}}
+			\Rightarrow d((x,y), (x_0,y_0)) < r
+		\end{equation*}
+		\begin{align*}
+			d((x,y),(x_0,y_0)) 
+			&= \sqrt{(d_x(x, x_0))^2 + (d_y(y,y_0))^2} <
+			\\
+			&< \sqrt{\left( \frac{r}{\sqrt{2}} \right)^2+\left( \frac{r}{\sqrt{2}} \right)^2} = \sqrt{r^2} = r
+		\end{align*}
+
+		Facciamo vedere che, se $(x,y) \in B_{r}^{X \times Y}((x_0, y_0))$, allora $(x,y) \in B_{r}^{X} (x_0) \times B_{r}^{Y} (y_0)$, cioè che, se $d((x,y), (x_0,y_0)) < r$, allora $d_x(x, x_0) < r$ e $d_y(y, y_0) < r$
+		
+		\begin{equation*}
+			d_x (x, x_0)= \sqrt{(d_x (x, x_0))^2} \leq \sqrt{(d_x (x, x_0))^2 + (d_y (y, y_0))^2} = d((x,y), (x_0,y_0)) < r
+		\end{equation*}
+	
+		\item Introduciamo la funzione 
+		\begin{align*}
+			\phi: 
+			&X \times \uppercomment{\mathbb{R}} {} {\text{c'è la metrica } d} \rightarrow \mathbb{R},
+			\\
+			&(x,y) \mapsto y-f(x)
+		\end{align*}
+		\begin{gather*}
+			A= \{ (x,y) \in X \times \mathbb{R} \; \big| \; \phi(x, y) > 0 \} = \phi^{-1} \big( ]0,+\infty[ \big)
+			\\
+			C = \{ (x,y) \in X \times \mathbb{R} \; \big| \; \phi(x, y) \geq 0 \} = \phi^{-1} \big( ]0,+\infty[ \big)
+			\\
+			\phi^{-1} \big( B^c \big) = \big( \phi^{-1}(B) \big)^c
+			\\
+			x \in \phi^{-1} \big( B^c \big) \iff \phi(x) \in B^c \iff \phi(x) \notin B \iff x \notin \phi^{-1} \big( B \big) \iff x \in \big( \phi^{-1}(B) \big)^c
+		\end{gather*}
+
+		Se $B$ è chiuso e $\phi$ è continua, 
+		\begin{gather*}
+			\phi^{-1} \big( B \big) = \phi^{-1}\big( (B^c)^c\big) =
+			\\
+			= \big( \lowercomment{\phi^{-1} (\lowercomment{B^c} {\text{aperto}} {}) } {\text{aperto}} {} \big)^c \text{ è chiuso}
+		\end{gather*} 
+		
+		cioè l'antimmagine di un chiuso tramite una funzione continua è un insieme chiuso.
+		
+		Poiché $B = [0,+\infty[$ è chiuso e $C = \phi^{-1} \big( B \big)$, se $\phi$ è continua, $C$ è chiuso.
+		
+		Tutto l'esercizio si riduce a dimostrare che $\phi$ è continua.
+		
+		\begin{align*}
+			\phi_1: 
+			& X \times \mathbb{R} \rightarrow \mathbb{R},
+			& \phi_2: 
+			& X \times \mathbb{R} \rightarrow \mathbb{R}
+			\\
+			& (x,y) \mapsto y
+			&
+			& (x,y) \mapsto f(x)
+		\end{align*}
+		\begin{equation*}
+			\phi(x,y) = \phi_1(x,y) - \phi_2(x,y)
+		\end{equation*}
+		
+		Se dimostro che $\phi_1$ e $\phi_2$ sono continue, allora $\phi$ è continua perché differenza di funzioni continue.
+		
+		Dimostriamo la continuità di $\phi_1$.
+		
+		$(x_0, y_0) \in X \times \mathbb{R}$ e fissiamo $\epsilon > 0$
+		
+		Dobbiamo dimostrare che $\exists \ \delta > 0 \; \big| \; \text{ se } d((x,y), (x_0,y_0)) < \delta$, allora $\lowercomment{|y-y_0|}{| \phi_1(x, y) - \phi_2 (x_0, y_0) |}{} < \epsilon$
+		
+		Sia $U = X \times  ]y_0 - \epsilon, y_0 + \epsilon[$
+		
+		Se $(x,y) \in U \Rightarrow |\phi_1(x,y) - \phi_1(x_0,y_0)| = |y - y_0| < \epsilon$
+		
+		$U$ è un intorno di $(x_0, y_0)$, cioè
+		\begin{gather*}
+			\exists \ \delta > 0 \; \big| \; B_{\delta}^{X \times \mathbb{R}} ((x_0, y_0)) \subseteq U
+			\\
+			B_{\delta}^{X \times \mathbb{R}} ((x_0, y_0))\subseteq B_{\delta}^{X} (x_0) \times B_{\delta}^{\mathbb{R}} (y_0) \subseteq X \times ]y_0 - \epsilon, y_0 + \epsilon[
+		\end{gather*}
+
+		Continuità di $\phi_2$ in $(x_0,y_0)$
+		
+		$\forall \ \epsilon > 0$ devo trovare $\delta >0 \; | \; \text{ se } d((x,y), (x_0,y_0)) < \delta$ 
+		\begin{equation*}
+			\Rightarrow | \phi_2(x,y) - \phi_2(x_0,y_0)| = |f(x) - f(x_0)| < \epsilon
+		\end{equation*}
+
+		Poiché $f$ è continua, $\exists \ \delta > 0 \; \big| \; x \in B_{\delta}^{X} (x_0) \Rightarrow |f(x) - f(x_0)| < \epsilon$
+		
+		L'insieme $B_{\delta}^{X} (x_0) \times \mathbb{R}$ è un intorno di $(x_0,y_0)$ e $\forall \ (x,y) \in B_{\delta}^{X} (x_0) \times \mathbb{R}$ si ha
+		\begin{equation*}
+			|\phi_2(x,y) - \phi(x_0,y_0)| = |f(x) - f(x_0)| < \epsilon
+		\end{equation*}
+		
+		\item $X = Y = \mathbb{R}$ con la distanza data dal valore assoluto
+		
+		\begin{equation*}
+			f(x) = \lowercomment{\chi_{[0,+\infty[}(x)} {\text{funzione caratteristica di }[0,+\infty[}{\text{o funzione di Heaviside}} =
+			\begin{cases}
+				1 & \text{se } x \geq 0
+				\\
+				0 &  \text{se } x < 0
+			\end{cases}
+		\end{equation*}
+
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 22-16-16.png}
+		\end{figure}
+		
+		\begin{equation*}
+			f(x) = 		\chi_{]0,+\infty[} = 
+			\begin{cases}
+				1 & \text{se } x > 0
+				\\
+				0 &  \text{se } x \leq 0
+			\end{cases}
+		\end{equation*}
+		
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 22-17-48.png}
+		\end{figure}
+	\end{enumerate}
+	
+	
+\end{example}
+\end{exbar}
 
 
 
@@ -1213,80 +1386,6 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 
 \begin{comment}	
 
-\paragraph{\textcolor{red}{Teorema}}
-$(X,d)$ spazio metrico. $A \subseteq X, f,g: A \rightarrow \R, x_0 \in A$, $f$ e $g$ continue in $x_0$. Allora $f+g, f\cdot g$ e $f/g$, se $g(x_0)\neq 0$, sono continue in $x_0$.
-
-\paragraph{\textcolor{red}{Proposizione}}
-$(X,d)$ spazio metrico, $A \subseteq X, \overline{f}: A \rightarrow \R^n$\\
-$\overline{f}(x)=(f_1(x),...,f_n(x))$, è continua in $x_0 \in A \Leftrightarrow$ sono continue in $x_0$ le sue componenti $f_j \forall j=1,...,n$.
-
-\paragraph{\textcolor{red}{Esempio}}
-$(X,d_x),(Y,d_y)$ spazi metrici.
-\begin{enumerate}
-	\item Provare che $d((x_1,y_1),(x_2,y_2))= \sqrt{(d_x(x_1,x_2))^2+(d_y(y_1,y_2))^2}$ con $(x_1, y_1),(x_2,y_2)\in X \times Y$ è una metrica in $X\times Y$.
-	\item Provare che $\forall r >0$ vale\\
-	$B_{\frac{r}{\sqrt{2}}}^{X}(x) \times B_{\frac{r}{\sqrt{2}}}^{Y}(y) \subseteq B_{r}^{X\times Y}((x_0,y_0))\subseteq B_{r}^{X}(x_0)\times B_{r}^{Y}(y_0)$.
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-28 21-59-39.png}
-	\end{figure}
-	\item Sia ora $Y=\R$ con la metrica usuale che deriva dal valore assoluto.\\
-	$f:X \rightarrow \R$\\
-	$A=\{  (x,y)\in X\times \R |y>f(x) \}$\\
-	$C=\{  (x,y)\in X\times\R |y \geq f(x) \}$\\
-	Provare che se $f $ è continua, allora $A$ è aperto e $C$ è chiuso in $X \times \R$ con la metrica $d$.
-	\item Provare che, in generale, il viceversa non è vero, cioè $A$ può essere aperto con $f$ discontinua e $C$ chiuso con $f$ discontinua.
-\end{enumerate}
-\begin{enumerate}
-	\item Per casa
-	\item Facciamo vedere che se $(x,y)\in B_{\frac{r}{\sqrt{2}}}^{X}(x_0) \times B_{\frac{r}{\sqrt{2}}}^{Y}(y_0)$, allora $(x,y) \in B_{r}^{X\times Y}((x_0,y_0))$\\
-	$d_x(x,x_0)< \frac{r}{\sqrt{2}}$ e $d_y(y,y_0)< \frac{r}{\sqrt{2}}$\\
-	$\Rightarrow d((x,y),(x_0,y_0))<r$, $d((x,y),(x_0,y_0))=\sqrt{(d_x(x_1,x_2))^2+(d_y(y_1,y_2))^2} <$\\
-	$< \sqrt{\left( \frac{r}{\sqrt{2}} \right)^2+\left( \frac{r}{\sqrt{2}} \right)^2} = \sqrt{r^2} =r$\\
-	Facciamo vedere che, se $(x,y)\in B_{r}^{X\times Y}((x_0,y_0))$, allora $(x,y)\in B_{r}^{X}(x_0) \times B_{r}^{Y}(y_0)$, cioè che, se $d((x,y),(x_0,y_0))<r$, allora $d_x(x,x_0)<r$ e $d_y(y,y_0)<r$\\
-	$d_x(x,x_0)= \sqrt{(d_x(x,x_0))^2}\leq \sqrt{(d_x(x,x_0))^2+(d_y(y,y_0))^2}= d((x,y),(x_0,y_0))<r$
-	\item Introduciamo la funzione $\phi: X\times\R \rightarrow \R, (x,y)\mapsto y-f(x)$ \textcolor{orange}{(c'è la metrica $d$)}\\
-	$A= \{ (x,y)\in X\times\R | \phi(x,y)>0\} = \phi^{-1}(]0,+\infty[)$\\
-	$C = \{ (x,y)\in X\times\R | \phi(x,y)\geq 0\} = \phi^{-1}(]0,+\infty[)$\\
-	$\phi^{-1}(B^c)=(\phi^{-1}(B))^c$\\
-	$x \in \phi^{-1}(B^c) \Leftrightarrow \phi(x)\in B^c \Leftrightarrow \phi(x)\notin B \Leftrightarrow x \notin \phi^{-1}(B) \Leftrightarrow x \in (\phi^{-1}(B))^c$\\
-	Se $B$ è chiuso e $\phi$ è continua, $\phi^{-1} (B) = \phi^{-1}((B^c)^c)=(\phi^{-1}(B^c))^c$ è chiuso, cioè l'antimmagine di un chiuso tramite una funzione continua è un insieme chiuso.\\
-	Poichè $B= [0,+\infty[$ è chiuso e $C= \phi^{-1}(B)$, se $\phi$ è continua, $C$ è chiuso.\\
-	Tutto l'esercizio si riduce a dimostrare che $\phi$ è continua.\\
-	$\phi_1: X \times \R \rightarrow \R, (x,y)\mapsto y$ e $\phi_2: X\times\R \rightarrow \R, (x,y)\mapsto f(x)$\\
-	$\phi(x,y)=\phi_1(x,y)-\phi_2(x,y)$\\
-	Se dimostro che $\phi_1$ e $\phi_2$ sono continue, allora $\phi$ è continua perchè differenza di funzioni continue.\\
-	Dimostriamo la continuità di $\phi_1$\\
-	$(x_0,y_0) \in X \times \R$ e fissiamo $\epsilon >0$\\
-	Dobbiamo dimostrare che $\exists \delta >0 $ tale che se $d((x,y),(x_0,y_0))<\delta$, allora $|y-y_0|<\epsilon$\\
-	Sia $U = X \times  ]y_0-\epsilon,y_0+\epsilon[$\\
-	Se $(x,y)\in U \Rightarrow |\phi_1(x,y)-\phi_1(x_0,y_0)|=|y-y_0|<0$\\
-	$U$ è un intorno di $(x_0,y_0)$, cioè $\exists \delta >0 | B_{\delta}^{X \times \R}((x_0,y_0))\subseteq U$\\
-	$B_{\delta}^{X\times \R}((x_0.y_0))\subseteq B_{\delta}^{X}(x_0) \times B_{\delta}^{\R}(y_0)\subseteq X\times ]y_0-\epsilon,y_0+\epsilon[$\\
-	Continuità di $\phi_2$ in $(x_0,y_0)$\\
-	$\forall \epsilon >0$ devo trovare $\delta >0$ tale che se $d((x,y),(x_0,y_0))< \delta \Rightarrow |\phi_2(x,y)-\phi_2(x_0,y_0)|=|f(x)-f(x_0)|<\epsilon$\\
-	Poichè $f$ è continua, $\exists \delta >0$ tale che $ x \in B_{\delta}^{X} (x_0) \Rightarrow |f(x)-f(x_0)|<\epsilon$\\
-	L'insieme $B_{\delta}^{X}(x_0) \times \R$ è un intorno di $(x_0,y_0)$ e $\forall (x,y) \in B_{\delta}^{X}(x_0) \times \R$ si ha $|\phi_2(x,y)-\phi(x_0,y_0)|=|f(x)-f(x_0)|<\epsilon$
-	\item $X=Y=\R$ con la distanza data dal valore assoluto\\
-	$f(x)=\chi_{[0,+\infty[}(x) \begin{cases}
-		&1 \,\,\,\,\,\text{se}\,\,\,\,\, x \geq 0\\
-		&0\,\,\,\,\, \text{se}\,\,\,\,\, x < 0
-	\end{cases}$ \\
-	\textcolor{orange}{(funzione caratteristica di $[0,+\infty[$ o funzione di Heaviside)}\\
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 22-16-16.png}
-	\end{figure}
-	
-	$f(x)=\chi_{]0,+\infty[}=\begin{cases}
-		&1 \,\,\,\,\,\text{se}\,\,\,\,\, x > 0\\
-		&0\,\,\,\,\, \text{se}\,\,\,\,\, x \leq 0
-	\end{cases}$
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 22-17-48.png}
-	\end{figure}
-\end{enumerate}
 
 \subsection{\textcolor{red}{Successioni di funzioni}}
 \paragraph{\textcolor{red}{Definizione}}
