@@ -1009,9 +1009,201 @@ Quindi, in uno spazio normato, $K \subseteq X$ è limitato se $\exists \ R >0 \ 
 
 		\item ($C^0 ([0,1]), \parallel \cdot \parallel_\infty$), $K$ è illimitato
 		
+		\begin{center}
+			\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag165}
+			\label{fig:pag165}
+		\end{center}
+		
+		$\parallel f_n \parallel_\infty = \sqrt{2n} \rightarrow +\infty \text{ se } n \rightarrow +\infty, \quad f_n \in K$
+		
+		\item $C^0 ([0,1]), \{ f_n \}_{n \geq 1}$ come sopra. Allora $f_n \rightarrow f = 0$ per $\parallel \cdot \parallel_1$
+		\begin{gather*}
+			\parallel f_n - 0 \parallel_1 =\int_{0}^{1} |f(x)| \mathrm{d}x = \frac{1}{n} \ \sqrt{2n} \ \frac{1}{2} = \frac{1}{\sqrt{2n}} \rightarrow 0 \textbf{ per } n \rightarrow +\infty
+			\\
+			\text{Ma } \parallel f_n - 0 \parallel_\infty = \sqrt{2n} \rightarrow +\infty \Rightarrow f_n \nrightarrow 0 \text{ per } \parallel \cdot \parallel_\infty
+		\end{gather*}
 	\end{itemize}
 \end{example}
 \end{exbar}
+
+
+\textbf{Osservazione:}
+$K \subseteq \mathbb{R}^n$ è limitato per $|\cdot| \iff$ lo è per $\parallel \cdot \parallel_\infty \iff$ lo è per $\parallel \cdot \parallel_1$
+\begin{equation*}
+	\parallel \overline{x} \parallel_\infty \leq |\overline{x}| \leq \parallel \overline{x} \parallel_1 \leq n \parallel \overline{x} \parallel_\infty
+\end{equation*}
+
+
+\begin{center}
+	\label{fig:pag166_1}
+	\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag166_1}
+\end{center}
+
+
+\textbf{Osservazione:}
+Introduciamo in $\mathbb{R}^n$ il simbolo $\infty$. Un intorno di $\infty$ è un qualunque insieme $A \subseteq \mathbb{R}^n \; \big| \; A$ contiene il complementare di una palla di centro l'origine, cioè $\exists \ R > 0 \; \big| \; \overline{x} \in A \Rightarrow \parallel \overline{x} \parallel > R$
+\begin{center}
+	\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag166_2}
+	\label{fig:pag1662}
+\end{center}
+
+Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice divergente a $\infty$ e si scrive $\lim_{k} \overline{x_k} = \infty$ se $\lim_{k} |\overline{x_k}| = +\infty$ cioè se $\forall \ R > 0 \; \exists \ N > 0 \; \big| \; k > N \Rightarrow |\overline{x_k}| > R$
+
+
+\begin{exbar}
+\begin{example}
+\begin{gather*}
+\overline{x_k} = (\lowercomment{e^{-k}} {x_{k1}} {}, \lowercomment{2+\frac{1}{k}} {x_{k2}} {}, \lowercomment{\ln k} {x_{k3}} {}) \subseteq \mathbb{R}^3, \qquad k \geq 1
+\\
+\lim_{k} x_{k1} = \lim_{k} e^{-k} = 0
+\\
+\lim_{k} x_{k2} = \lim_{k} 2 + \frac{1}{k} = 2
+\\
+\lim_{k} x_{k3} = \lim_{k} \ln k = +\infty
+\\
+\lim_{k} |\overline{x_k}| = \lim_{k} \sqrt{e^{-2k} + \bigg(2+\frac{1}{k} \bigg)^2 + (\ln k)^2} = +\infty \Rightarrow \lim_{k} \overline{x_k} = \infty
+\end{gather*}
+\end{example}
+\end{exbar}
+
+
+\subsection{Limiti di funzione}
+\begin{definition}
+	$(X,d)$ spazio metrico, $A \subseteq X$, non vuoto. $x_0 \in X$ si dice \textbf{punto di accumulazione} per $A$ se  $\forall \epsilon >0 \ \exists \ x \in A, x \neq x_0,$ tale che $x \in B_\epsilon(x_0)$, cioè se $B_\epsilon (x_0) \cap A$ contiene punti di $A$ diversi da $x_0$. 
+	
+	$x_0 \in A$ si dice \textbf{punto isolato} se non è di accumulazione, cioè se $\exists \epsilon > 0$ tale che $B_\epsilon (x_0) \cap A =\{ x_0 \}$.
+\end{definition}
+
+
+\begin{definition}
+	$(X,d_x),(Y,d_y)$ spazi metrici, $f:dom \ f \rightarrow Y$, con $dom \ f \subseteq X, x_0 \in X $ punto di accumulazione per $dom \ f$. Si dice che $f$ ha limite $\ell \in Y$ per $x \rightarrow x_0$ e si scrive
+	\begin{equation*}
+	\begin{array}{r l}
+		\lim_{x \rightarrow x_0} f(x) = \ell & \text{oppure}
+		\\
+		f(x) \rightarrow \ell & \text{per } x \rightarrow x_0
+	\end{array}
+	\end{equation*}
+	se per ogni intorno  $V$ di $\ell$  esiste un intorno $U$ di $x_0 \; \big| \; f(x) \in V, \ x \in U \cap dom \ f, x \neq x_0 $
+	
+	In altre parole, $\lim_{x \rightarrow x_0} f(x) = \ell \quad \forall \ \epsilon > 0 \quad \exists \ \delta > 0 \; \big| $ se $ 0 < \lowercomment{d_x(x, x_0)} {x \in B_\delta^x(x_0)} {} < \delta$ e $x \in dom \ f $, allora $\lowercomment{d_y (f(x), \ell)} {f(x) \in B_\epsilon^y(\ell)} {} < \epsilon$ 
+	
+	(Se prendo la definizione data con $\epsilon$ e $\delta$ per $X = Y = \mathbb{R}$ e le distanze $d_x(x,y) = d_y(x,y) = |x-y|$, ottengo la definizione con $\epsilon$ e $\delta$ data in ambito reale.)
+\end{definition}
+
+
+\begin{theorem} (di unicità del limite)
+	
+	$(X,d_x)$ e $(Y,d_y)$ spazi metrici, $f : dom \ f \rightarrow Y, \ dom \ f \subseteq X, \ x_0 \in X$ punto di accumulazione per $dom \ f$.
+	
+	Se $\lim_{x \rightarrow x_0} f(x) = \ell_1 \in Y$ e $\lim_{x \rightarrow x_0} f(x) = \ell_2 \in Y$, allora $\ell_1 = \ell_2$.
+\end{theorem}
+
+
+\begin{proposition}
+	$(X,d)$ spazio metrico, $\overline{f}: dom \ \overline{f} \rightarrow \mathbb{R}^n, \qquad \overline{f}(x) = \big(f_1(x), \ldots, f_n(x) \big), \ x_0 \in X$ punto di accumulazione per $dom \ \overline{f} \subseteq X$, allora 
+	\begin{equation*}
+		\lim_{x \rightarrow x_0} \overline{f}(x) = \overline{\ell} = (\ell_1, \ldots, \ell_n) \in \mathbb{R}^n \iff \lim_{x \rightarrow x_0} f_j(x) = \ell_j \qquad \forall j = 1, 2, \ldots, n
+	\end{equation*}
+\end{proposition}
+
+
+\begin{theorem} (della permanenza del segno)
+	
+	$(X,d)$ spazio metrico, $f: dom \ f \rightarrow \mathbb{R}, \ dom \ f \subseteq X, \ x_0 \in X$ punto di accumulazione per $dom \ f$.
+	
+	Se $\lim_{x \rightarrow x_0} f(x) = \ell > 0$, allora $f(x) > 0$ definitivamente per $ x \rightarrow x_0$, cioè $\exists \ \delta > 0 \; \big| \; f(x) > 0 \ \forall \ x \in B_\delta (x_0) \cap dom \ f, \ x \neq x_0$. 
+\end{theorem}
+
+
+\begin{theorem}
+	$(X,d)$ spazio metrico, $f,g: A \rightarrow \mathbb{R}, \ A \subseteq X, \ x_0 \in X$ punto di accumulazione per $A$, tali che $\lim_{x \rightarrow x_0} f(x) = \ell_f, \ \lim_{x \rightarrow x_0} g(x) = \ell_f$ e $f(x) \leq g(x)$ definitivamente per $x \rightarrow x_0$. ($\exists \ \delta > 0 \; \big| \; f(x) \leq g(x) \forall x \in B_\delta (x_0) \cap A$, \ $x \neq x_0$.)
+	
+	Allora $\ell_f \leq \ell_g$.
+\end{theorem}
+
+
+\begin{theorem}(del confronto o dei due carabinieri)
+	
+	$(X,d)$ spazio metrico, $f,g,h : A \rightarrow \mathbb{R}, \ A \subseteq X, x_0$ punto di accumulazione per $A$, tali che $g(x) \leq f(x) \leq h(x)$ definitivamente per $x \rightarrow x_0$. 
+	
+	Se $\lim_{x \rightarrow x_0} g(x) = \lim_{x \rightarrow x_0} h(x) = \ell$, allora $\lim_{x \rightarrow x_0} f(x) = \ell$.
+\end{theorem}
+
+
+\subsection{Funzioni continue tra spazi metrici}
+
+\begin{definition}	
+	$(X,d_x), \ (Y,d_y)$ spazi metrici, $f:dom \ f \rightarrow Y, \ dom \ f \subseteq X$, si dice \textbf{continua in } $\mathbf{x_0 \in dom \ f}$ se vale una delle due
+	\begin{enumerate}
+		\item $x_0$ è punto isolato per $dom \ f$
+		\item $\lim_{x \rightarrow x_0} f(x) = f(x_0)$
+	\end{enumerate}
+	
+	In altre parole, $f$ è continua in $x_0$ se $\forall \ \epsilon > 0 \ \exists \ \delta > 0 \; \big| \; \text{ se } d_x(x, x_0) < \delta \text{ e } x \in dom \ f$, allora $d_y(f(x), f(x_0) < \epsilon$. 
+	
+
+	$\bigg( \begin{array}{l}
+	x \in B_{\delta}^{x}(x_0) \cap dom \ f \Rightarrow f(x) \in B_{\epsilon}^{y} (f(x_0)) \Rightarrow x \in f^{-1}(B_{\epsilon}^{y} (f(x_0)))$
+	\\
+	$\forall \ \epsilon > 0 \ \exists \ \delta > 0 \; \big| \; B_{\delta}^{x}(x_0) \cap dom \ f \subseteq f^{-1} (B_{\epsilon}^{y} (f(x_0)))
+	\end{array}
+	\bigg)$
+	
+	Una funzione $f:dom \ f \rightarrow Y $ si dice continua se è continua in ogni punto del suo dominio.
+\end{definition}
+
+
+\begin{theorem}
+	\label{th: pag172}
+	$(X,d_x), \ (Y,d_y)$ spazi metrici, $f:X \rightarrow Y$. $f$ è continua $\iff f^{-1}(A)$ è aperto (in $X$) per ogni aperto $A \subseteq Y$.
+\end{theorem}
+
+
+\begin{dembar}
+\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag172}}
+
+	
+	\begin{itemize}
+		\item $\Rightarrow)$ Ipotesi: $f$ continua.
+		
+		Tesi: Dato $A \subseteq Y$ aperto, $f^{-1}(A)\subseteq X$ è aperto.
+		
+		Sia $x_0 \in f^{-1}(A)$. Dobbiamo trovare una palla centrata in $x_0$ contenuta in $f^{-1}(A)$.
+		
+		$f(x_0) \in A$, che è aperto, 
+		\begin{gather*}
+			\exists \ \epsilon >0 \; \big| \; B_{\epsilon}^{Y} (f(x_0)) \subseteq A
+			\\
+			\exists \ \delta > 0 \; \big| \; B_{\delta}^{X} (x_0) \Rightarrow f(x) \in B_{\epsilon}^{Y} (f(x_0)) \subseteq A
+			\\
+			B_{\delta}^{X}(x_0) \subseteq f^{x_0} (A) \text{, come si voleva.}
+		\end{gather*}
+		\item $\Leftarrow)$ Ipotesi: $f^{-1}(A) \subseteq X$ è aperto $\forall A \subseteq Y$ aperto. Tesi: $f$ è continua
+		
+		Fissiamo $x_0 \in X$ e $\epsilon > 0$.
+		
+		Dobbiamo trovare $\delta > 0 \; \big| \; x \in B_{\delta}^{X} (x_0) \Rightarrow f(x) \in B_{\epsilon}^{Y} (f(x_0))$
+		
+		\begin{gather*}
+			B_{\epsilon}^{y} (f(x_0)) \text{ è un aperto } \Rightarrow f^{-1}(B_{\epsilon}^{Y} (f(x_0))) \text{ è aperto e } x_0 \in f^{-1} (B_{\epsilon}^{Y} (f(x_0))) 
+			\\
+			\Rightarrow \exists \ \delta > 0 \; \big| \; B_{\delta}^{X} (x_0) \subseteq f^{-1} (B_{\epsilon}^{Y}(f(x_0))) 
+			\\
+			\text{ cioè, se } x \in B_{\delta}^{X}(x_0) \Rightarrow f(x) \in B_{\epsilon}^{Y} (f(x_0)) \text{ come si voleva.} \qquad \square
+		\end{gather*}
+		
+	\begin{center}
+		\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag174}
+		\label{fig:pag174}
+	\end{center}
+		
+		
+	\end{itemize}
+\end{dembar}
+
+
+
 
 
 
@@ -1021,78 +1213,216 @@ Quindi, in uno spazio normato, $K \subseteq X$ è limitato se $\exists \ R >0 \ 
 
 \begin{comment}	
 
-
-
-
-
-
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 20-48-27}
-	\end{figure}
-	
-	$\parallel f_n \parallel_\infty = \sqrt{2n}\rightarrow +\infty$ se $n\rightarrow +\infty$, $f_n \in K$
-	\item $C^\circ ([0,1]), \{f_n\}_{n\geq 1}$ come sopra. Allora $f_n \rightarrow f=0$ per $\parallel \cdot \parallel_1$\\
-	$\parallel f_n -0 \parallel_1 =\int_{0}^{1} |f(x)|dx =\frac{1}{n} \sqrt{2n}\frac{1}{2}= \frac{1}{\sqrt{2n}} \rightarrow 0$ per $n \rightarrow +\infty$\\
-	Ma $\parallel f_n -0 \parallel_\infty = \sqrt{2n} \rightarrow +\infty \Rightarrow f_n \nrightarrow 0$ per $\parallel \cdot \parallel_\infty$
-\end{itemize}
-
-
-\paragraph{\textcolor{red}{Osservazione}}
-$K \subseteq \R^n$ è limitato per $|\cdot| \Leftrightarrow$ lo è per $\parallel \cdot \parallel_\infty \Leftrightarrow$ lo è per $\parallel \cdot \parallel_1$\\
-$\parallel \overline{x} \parallel_\infty \leq |\overline{x}|\leq \parallel \overline{x} \parallel_1 \leq n \parallel\overline{x} \parallel_\infty$\\
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 20-55-22}
-\end{figure}
-
-\paragraph{\textcolor{red}{Osservazione}}
-Introduciamo in $\R^n$ il simbolo $\infty$. Un intorno di $\infty$ è un qualunque insieme $A \subseteq \R^n$ tale che $A$ contiene il complementare di una palla di centro l'origine, cioè $\exists R>0$ tale che $\overline{x} \in A \Rightarrow \parallel \overline{x} \parallel > R$\\
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-28 21-04-48}
-\end{figure}
-
-Una successione $\{\overline{x_k}\}_{k\geq 1} \subseteq \R^n$ si dice divergente a $\infty$ e si scrive $\lim_{k \rightarrow \infty} \overline{x_k}=\infty$ se $\lim_{k \rightarrow \infty} |\overline{x_k}|=+\infty$ cioè se $\forall\,\, R > 0\,\, \exists\, N >0\,\,|\,\,k>N \Rightarrow |\overline{x_k}|>R$
-
-\paragraph{\textcolor{red}{Esempio}}
-$\overline{x_k}=(e^{-k},2+\frac{1}{k},\ln k) \subseteq \R^3,\,\, k \geq 1$\\
-$\lim_{k}x_{k1}=\lim_{k}e^{-k}=0$\\
-$\lim_{k}x_{k2}=\lim_{k}2+\frac{1}{k}=2$\\
-$\lim_{k}x_{k3}=\lim_{k}\ln k=+\infty$\\
-$\lim_{k}|\overline{x_k}|=\lim_{k} \sqrt{e^{-2k}+(2+\frac{1}{k})^2+(\ln k)^2} = +\infty \Rightarrow \lim_{k} \overline{x_k}=\infty$
-
-\subsection{\textcolor{red}{Limiti di Funzione}}
-\paragraph{\textcolor{red}{Definizione}}
-$(X,d)$ spazio metrico, $A \subseteq X$, non vuoto. $x_0 \in X$ si dice \textcolor{red}{punto di accumulazione} per $A$ se  $\forall \epsilon >0 \,\, \exists \,\, x \in A, x \neq x_0,$ tale che $x \in B_\epsilon(x_0)$, cioè se $B_\epsilon (x_0) \cap A$ contiene punti di $A$ diversi da $x_0$. $x_0 \in A$ si dice \textcolor{red}{punto isolato} se non è di accumulazione, cioè se $\exists \epsilon >0$ tale che $B_\epsilon (x_0) \cap A =\{x_0\}$.
-
-\paragraph{\textcolor{red}{Definizione}}
-$(X,d_x),(Y,d_y)$ spazi metrici, $f:dom f \rightarrow Y$, con $domf \subseteq X, x_0 \in X $ punto di accumulazione per $domf$. Si dice che $f$ ha limite $l \in Y$ per $x \rightarrow x_0$ e si scrive
-\begin{empheq}{equation*}
-	\lim_{x \rightarrow x_0} f(x)=l \,\,\,\,\,\, \text{oppure} \,\,\,\,\,\, f(x) \rightarrow l \,\,\,\, \text{per} \,\,\, x \rightarrow dx_0
-\end{empheq}
-se per ogni intorno  $V$ di $l$  esiste un intorno $U$ di $x_0 $ tale che $ f(x) \in V$, $x \in U \cap domf, x \neq x_0$\\
-In altre parole, $\lim_{x \rightarrow x_0} f(x) =l\,\,\forall\,\, \epsilon >0 \,\ \exists \,\, \delta >0 \,\,|$ se $0 < d(x,x_0) < \delta$ e $x \in domf $, allora $d_y(f(x),l)<\epsilon$\\
-\textcolor{orange}{Se prendo la definizione data con $\epsilon$ e $\delta$ per $X=Y=\R$ e le distanze $d_x(x,y)=d_y(x,y)=|x-y|$, ottengo la definizione con $\epsilon$ e $\delta$ data in ambito reale.}
-
-\paragraph{\textcolor{red}{Teorema di unicità del limite}}
-$(X,d_x)$ e $(Y,d_y)$ spazi metrici, $f: domf \rightarrow Y$, $domf \subseteq X, x_0 \in X$ punto di accumulazione per $domf$.\\
-Se $\lim_{x \rightarrow x_0} f(x) = l_1 \in Y$ e $\lim_{x \rightarrow x_0} f(x) = l_2 \in Y$, allora $l_1=l_2$.
+\paragraph{\textcolor{red}{Teorema}}
+$(X,d)$ spazio metrico. $A \subseteq X, f,g: A \rightarrow \R, x_0 \in A$, $f$ e $g$ continue in $x_0$. Allora $f+g, f\cdot g$ e $f/g$, se $g(x_0)\neq 0$, sono continue in $x_0$.
 
 \paragraph{\textcolor{red}{Proposizione}}
-$(X,d)$ spazio metrico, $\overline{f}: dom\overline{f} \rightarrow \R^n,\,\, \overline{f}(x)=(f_1(x),...,f_n(x))$, $x_0 \in X$ punto di accumulazione per $dom \overline{f} \subseteq X$, allora $\lim_{x \rightarrow x_0} \overline{f}(x)=\overline{l}=(l_1,...,l_n)\in \R^n \Leftrightarrow \lim_{x \rightarrow x_0} f_j(x)=l_j \forall j=1,2,...,n$.
+$(X,d)$ spazio metrico, $A \subseteq X, \overline{f}: A \rightarrow \R^n$\\
+$\overline{f}(x)=(f_1(x),...,f_n(x))$, è continua in $x_0 \in A \Leftrightarrow$ sono continue in $x_0$ le sue componenti $f_j \forall j=1,...,n$.
 
-\paragraph{\textcolor{red}{Teorema della permanenza del segno}}
-$(X,d)$ spazio metrico, $f: domf \rightarrow\R$, $domf \subseteq X, x_0 \in X$ punto di accumulazione per $domf$.\\
-Se $\lim_{x \rightarrow x_0} f(x) = l >0$, allora $f(x)>0$ definitivamente per $ x \rightarrow x_0$, cioè $\exists \,\, \delta >0 \,\, |\,\, f(x)>0 \,\, \forall \,\, x \in B_\delta (x_0)\cap domf$, $x \neq x_0$. 
+\paragraph{\textcolor{red}{Esempio}}
+$(X,d_x),(Y,d_y)$ spazi metrici.
+\begin{enumerate}
+	\item Provare che $d((x_1,y_1),(x_2,y_2))= \sqrt{(d_x(x_1,x_2))^2+(d_y(y_1,y_2))^2}$ con $(x_1, y_1),(x_2,y_2)\in X \times Y$ è una metrica in $X\times Y$.
+	\item Provare che $\forall r >0$ vale\\
+	$B_{\frac{r}{\sqrt{2}}}^{X}(x) \times B_{\frac{r}{\sqrt{2}}}^{Y}(y) \subseteq B_{r}^{X\times Y}((x_0,y_0))\subseteq B_{r}^{X}(x_0)\times B_{r}^{Y}(y_0)$.
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-28 21-59-39.png}
+	\end{figure}
+	\item Sia ora $Y=\R$ con la metrica usuale che deriva dal valore assoluto.\\
+	$f:X \rightarrow \R$\\
+	$A=\{  (x,y)\in X\times \R |y>f(x) \}$\\
+	$C=\{  (x,y)\in X\times\R |y \geq f(x) \}$\\
+	Provare che se $f $ è continua, allora $A$ è aperto e $C$ è chiuso in $X \times \R$ con la metrica $d$.
+	\item Provare che, in generale, il viceversa non è vero, cioè $A$ può essere aperto con $f$ discontinua e $C$ chiuso con $f$ discontinua.
+\end{enumerate}
+\begin{enumerate}
+	\item Per casa
+	\item Facciamo vedere che se $(x,y)\in B_{\frac{r}{\sqrt{2}}}^{X}(x_0) \times B_{\frac{r}{\sqrt{2}}}^{Y}(y_0)$, allora $(x,y) \in B_{r}^{X\times Y}((x_0,y_0))$\\
+	$d_x(x,x_0)< \frac{r}{\sqrt{2}}$ e $d_y(y,y_0)< \frac{r}{\sqrt{2}}$\\
+	$\Rightarrow d((x,y),(x_0,y_0))<r$, $d((x,y),(x_0,y_0))=\sqrt{(d_x(x_1,x_2))^2+(d_y(y_1,y_2))^2} <$\\
+	$< \sqrt{\left( \frac{r}{\sqrt{2}} \right)^2+\left( \frac{r}{\sqrt{2}} \right)^2} = \sqrt{r^2} =r$\\
+	Facciamo vedere che, se $(x,y)\in B_{r}^{X\times Y}((x_0,y_0))$, allora $(x,y)\in B_{r}^{X}(x_0) \times B_{r}^{Y}(y_0)$, cioè che, se $d((x,y),(x_0,y_0))<r$, allora $d_x(x,x_0)<r$ e $d_y(y,y_0)<r$\\
+	$d_x(x,x_0)= \sqrt{(d_x(x,x_0))^2}\leq \sqrt{(d_x(x,x_0))^2+(d_y(y,y_0))^2}= d((x,y),(x_0,y_0))<r$
+	\item Introduciamo la funzione $\phi: X\times\R \rightarrow \R, (x,y)\mapsto y-f(x)$ \textcolor{orange}{(c'è la metrica $d$)}\\
+	$A= \{ (x,y)\in X\times\R | \phi(x,y)>0\} = \phi^{-1}(]0,+\infty[)$\\
+	$C = \{ (x,y)\in X\times\R | \phi(x,y)\geq 0\} = \phi^{-1}(]0,+\infty[)$\\
+	$\phi^{-1}(B^c)=(\phi^{-1}(B))^c$\\
+	$x \in \phi^{-1}(B^c) \Leftrightarrow \phi(x)\in B^c \Leftrightarrow \phi(x)\notin B \Leftrightarrow x \notin \phi^{-1}(B) \Leftrightarrow x \in (\phi^{-1}(B))^c$\\
+	Se $B$ è chiuso e $\phi$ è continua, $\phi^{-1} (B) = \phi^{-1}((B^c)^c)=(\phi^{-1}(B^c))^c$ è chiuso, cioè l'antimmagine di un chiuso tramite una funzione continua è un insieme chiuso.\\
+	Poichè $B= [0,+\infty[$ è chiuso e $C= \phi^{-1}(B)$, se $\phi$ è continua, $C$ è chiuso.\\
+	Tutto l'esercizio si riduce a dimostrare che $\phi$ è continua.\\
+	$\phi_1: X \times \R \rightarrow \R, (x,y)\mapsto y$ e $\phi_2: X\times\R \rightarrow \R, (x,y)\mapsto f(x)$\\
+	$\phi(x,y)=\phi_1(x,y)-\phi_2(x,y)$\\
+	Se dimostro che $\phi_1$ e $\phi_2$ sono continue, allora $\phi$ è continua perchè differenza di funzioni continue.\\
+	Dimostriamo la continuità di $\phi_1$\\
+	$(x_0,y_0) \in X \times \R$ e fissiamo $\epsilon >0$\\
+	Dobbiamo dimostrare che $\exists \delta >0 $ tale che se $d((x,y),(x_0,y_0))<\delta$, allora $|y-y_0|<\epsilon$\\
+	Sia $U = X \times  ]y_0-\epsilon,y_0+\epsilon[$\\
+	Se $(x,y)\in U \Rightarrow |\phi_1(x,y)-\phi_1(x_0,y_0)|=|y-y_0|<0$\\
+	$U$ è un intorno di $(x_0,y_0)$, cioè $\exists \delta >0 | B_{\delta}^{X \times \R}((x_0,y_0))\subseteq U$\\
+	$B_{\delta}^{X\times \R}((x_0.y_0))\subseteq B_{\delta}^{X}(x_0) \times B_{\delta}^{\R}(y_0)\subseteq X\times ]y_0-\epsilon,y_0+\epsilon[$\\
+	Continuità di $\phi_2$ in $(x_0,y_0)$\\
+	$\forall \epsilon >0$ devo trovare $\delta >0$ tale che se $d((x,y),(x_0,y_0))< \delta \Rightarrow |\phi_2(x,y)-\phi_2(x_0,y_0)|=|f(x)-f(x_0)|<\epsilon$\\
+	Poichè $f$ è continua, $\exists \delta >0$ tale che $ x \in B_{\delta}^{X} (x_0) \Rightarrow |f(x)-f(x_0)|<\epsilon$\\
+	L'insieme $B_{\delta}^{X}(x_0) \times \R$ è un intorno di $(x_0,y_0)$ e $\forall (x,y) \in B_{\delta}^{X}(x_0) \times \R$ si ha $|\phi_2(x,y)-\phi(x_0,y_0)|=|f(x)-f(x_0)|<\epsilon$
+	\item $X=Y=\R$ con la distanza data dal valore assoluto\\
+	$f(x)=\chi_{[0,+\infty[}(x) \begin{cases}
+		&1 \,\,\,\,\,\text{se}\,\,\,\,\, x \geq 0\\
+		&0\,\,\,\,\, \text{se}\,\,\,\,\, x < 0
+	\end{cases}$ \\
+	\textcolor{orange}{(funzione caratteristica di $[0,+\infty[$ o funzione di Heaviside)}\\
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 22-16-16.png}
+	\end{figure}
+	
+	$f(x)=\chi_{]0,+\infty[}=\begin{cases}
+		&1 \,\,\,\,\,\text{se}\,\,\,\,\, x > 0\\
+		&0\,\,\,\,\, \text{se}\,\,\,\,\, x \leq 0
+	\end{cases}$
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 22-17-48.png}
+	\end{figure}
+\end{enumerate}
+
+\subsection{\textcolor{red}{Successioni di funzioni}}
+\paragraph{\textcolor{red}{Definizione}}
+$(X,d)$ spazio metrico.\\
+Una successione di funzioni da $X$ in $\R$ è una funzione che ad ogni numero naturale $k$ associa una ed una sola funzione $f_k:X\rightarrow \R$. 
+
+\paragraph{\textcolor{red}{Definizione}}
+Sia $\{ f_k \}_{k\in\N}, f_k:X \rightarrow \R$, successione di funzioni. Si dice che la successione \textcolor{red}{converge puntualmente} in $D \subseteq X$ se $\{f_k(x)\}_{k\in\N}$ converge $\forall x \in D$, cioè se $\forall x \in D$ esiste finito
+\begin{equation*}
+	\lim_{k\rightarrow +\infty} f_k(x)=f(x),
+\end{equation*}
+limite puntuale della successione $f : D \rightarrow \R$. L'insieme degli $x \in X$ dove $\{f_k \}_{k \in \N}$ converge puntualmente si dice \textcolor{red}{insieme di convergenza puntuale} della successione.
+
+\paragraph{\textcolor{red}{Esempio}}
+$f_k:\R \rightarrow \R, f_k(x)=x^k$\\
+$\lim_{k\rightarrow +\infty} f_k(x)=\lim_{k\rightarrow +\infty} x^k =\begin{cases}
+	& 0\,\,\,\,\, \text{se} \,\,\,\,\, |x|<1 \\
+	& 1 \,\,\,\,\, \text{se}\,\,\,\,\, x=1 \\
+	& \nexists  \,\,\,\,\, \text{se}\,\,\,\,\, x \leq -1\\
+	& +\infty  \,\,\,\,\, \text{se}\,\,\,\,\, x >1
+\end{cases}$\\
+Insieme di convergenza puntuale: $D=]-1,1]$\\
+Limite puntuale $f:D \rightarrow \R, f(x)=\begin{cases}
+	&0 \,\,\,\,\, \text{se}\,\,\,\,\, |x|<1\\
+	&1  \,\,\,\,\, \text{se}\,\,\,\,\, x=1
+\end{cases}$ 
+
+\paragraph{\textcolor{red}{Definizione}}
+$f_k:X \rightarrow \R, k \in \N$, successione di funzione. Si dice che $\{ f_k\}_{k\in\N}$ \textcolor{red}{converge uniformemente} in $D \subseteq X$ ad una funzione $f: D\rightarrow \R$ se 
+\begin{equation*}
+	\lim_{k\rightarrow+\infty}\sup_{x\in D}|f_k(x)-f(x)|=0
+\end{equation*}
+e si scrive $f_k \rightrightarrows f$ in $D$\\
+\textcolor{orange}{$\forall \epsilon >0 \exists N | k >N$\\ 
+	$\sup_{x\in D}|f_k(x)-f(x)| <\epsilon$, e quindi, in particolare $|f_k(x)-f(x)|<\epsilon \forall x \in D$ cioè $f(x)-\epsilon <f-k(x)<f(x)+\epsilon \forall x \in D$}\\
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-28 22-27-28.png}
+\end{figure}
+
+$(X,d)$ spazio metrico\\
+$B(x)=\{f:X \rightarrow \R | f$ è limitata$\}$ \textcolor{orange}{$\exists M >0 | |f(x)| \leq M \forall x \in X$}\\
+$f\in B(x)$, $\parallel f \parallel_\infty =\sup_{x\in X}|f(x)|$, norma infinito di $f$\\
+$f_k \rightrightarrows f$ in $X$ se $\parallel f_k - f \parallel_\infty \rightarrow 0$ per $k \rightarrow +\infty$\\
+cioè la convergenza uniforme è la convergenza per $\parallel \cdot \parallel_\infty$.
+
+\paragraph{\textcolor{red}{Proposizione}}
+Se $f_k \rightrightarrows f$ in $ D $, allora $\{ f_k \}_{k \in \N}$ converge puntualmente ad $f$ in $D$.
+
+\paragraph{\textcolor{red}{Dimostrazione}}
+Se $x \in D$, $0 \leq |f_k(x) -f(x)| \leq \sup_{y\in D}|f_k(y)-f(y)| \Rightarrow |f_k(x)-f(x)|\rightarrow 0$ per $ k \rightarrow +\infty$ cioè $f(x)=\lim_{k \rightarrow +\infty f_k (x)} \forall x \in D$.
+\begin{flushright}
+	\large\Lightning
+\end{flushright}
+
+
+
+\newpage
+\section{\textcolor{red}{Lezione 15 \space\space 30/03/'23}}
+\paragraph{\textcolor{red}{Esempio}}
+$f_k(x)=x^k$, $x \in \R$\\
+Insieme di convergenza puntuale è $D=]-1,1]$\\
+Limite puntuale $f:D \rightarrow \R$\\
+$f (x)= \begin{cases}
+	& 0 \,\,\,\,\, \text{se} \,\,\,\,\, -1 < x<1\\
+	& 1 \,\,\,\,\, \text{se} \,\,\,\,\, x=1
+\end{cases}$\\
+$f_k \rightrightarrows f$ in $D$?\\
+
+\textcolor{orange}{$g_k(x)= \frac{e^{-x^2}}{k}$, $x \geq 1, x \in \R$\\
+	$\lim_{k \rightarrow +\infty} g_k(x)=0\,\, \forall x$\\
+	$\{g(x)\}_{k \geq 1}$ converge puntualmente alla funzione nulla $g(x)=0 \,\, \forall x\in\R$ in $\R$\\
+	$\sup_{x \in \R} |g_k(x)-g(x)|=\sup_{x\in\R} \frac{e^{-x^2}}{K}=\frac{1}{k} \rightarrow 0$\\
+	$g_k \rightrightarrows g$ in $\R$}\\
+
+\textcolor{orange}{$\phi_k(x)= \frac{x^2}{k}$, $k \geq 1, x \in \R$\\
+	$\lim_{k \rightarrow +\infty} \phi_k(x)=0=\phi(x) \,\, \forall x \in \R$\\
+	Insieme di convergenza puntuale è $\R$ e il limite puntuale è la funzione nulla\\
+	$\sup_{x\in\R}|\phi_k(x)-\phi(x)|=\sup_{x\in\R} \frac{x^2}{k}=+\infty$\\
+	$\phi_k \nrightrightarrows \phi$ in $\R$\\
+	Fissato $M>0$, ho convergenza uniforme in $[-M,M]$?\\
+	$\sup_{x \in [-M,M]}|\phi_k(x)-\phi(x)|=\sup_{x\in [-M,M]} \frac{x^2}{k}=\frac{M^2}{k} \rightarrow 0$ per $k \rightarrow + \infty$\\
+	$\phi_k \rightrightarrows \phi$ in $[-M,M] \,\, \forall M >0$} \textcolor{red}{ma non in $\R$.}\\
+
+Torniamo a $f_k =x^k$\\
+$\sup_{x \in ]-1,1]}|f_k(x)-f(x)| \geq \sup_{x \in ]-1,1[}|f_k(x)-f(x)|= \sup_{x \in ]-1,1[}|x^k|=1\,\,\, \forall k$\\
+$f_k \nrightrightarrows f$ in $]-1,1]$\\
+Sia $0<\epsilon < 1$ e studiamo la convergenza uniforme in $[-1+\epsilon,1-\epsilon]$\\
+$\sup_{x \in [-1+\epsilon,1-\epsilon]}|f_k(x)-f(x)|=\sup_{x \in [-1+\epsilon,1-\epsilon]}|f_k(x)|=\sup_{x \in [-1+\epsilon,1-\epsilon]}|x^k|=(1-\epsilon)^k \rightarrow 0$ per $k \rightarrow +\infty$ perchè $0<1-\epsilon <1 \Rightarrow f_k \rightrightarrows f$ in $ [-1+\epsilon, 1-\epsilon] \,\, \forall \epsilon>0$ \textcolor{red}{ma non in ]-1,1]!}
+
+\paragraph{\textcolor{red}{Esempio}}
+$f_k(x)=\frac{kx}{1+k|x|}, \,\, k \geq 0, x \in \R$\\
+
+Convergenza puntuale
+\begin{equation*}
+	\lim_{k\rightarrow +\infty} f_k(x) = \begin{cases}
+		& 1 \,\,\,\,\, \text{se}\,\,\, x >0 \\
+		& 0 \,\,\,\,\, \text{se}\,\,\, x=0 \\
+		& -1  \,\,\,\,\, \text{se}\,\,\, x<0
+	\end{cases}
+\end{equation*}
+L'insieme di convergenza puntuale è $\R$ e il limite puntuale è la funzione segno
+\begin{equation*}
+	sgn(x)= \begin{cases}
+		& 1  \,\,\,\,\, \text{se}\,\,\, x>0 \\
+		& 0  \,\,\,\,\, \text{se}\,\,\, x=0\\
+		& -1  \,\,\,\,\, \text{se}\,\,\, x<0
+	\end{cases}
+\end{equation*}
+$\sup_{x\in\R}|f_k(x)-sgn(x)|\geq \sup_{x>0} |f_k(x)-sgn(x)|=\sup_{x>0}|\frac{kx}{1+kx}-1|=\sup_{x>0}|\frac{1}{1+kx}|=1$\\
+$f_k \nrightrightarrows sgn$ in $\R$\\
+Fissiamo $\epsilon >0$ e studiamo la convergenza uniforme in $]-\infty-\epsilon]\cup[\epsilon,+\infty[$\\
+$\sup_{|x|\geq \epsilon} |f_k(x)-sgn(x)|=\sup_{x \geq \epsilon} |f_k(x)-sgn(x)|= \sup_{x \geq \epsilon} |\frac{1}{1+kx}|= \frac{1}{1+k\epsilon}\rightarrow 0$ per $k \rightarrow +\infty$\\
+$f_k \rightrightarrows sgn$ in $]-\infty,-\epsilon]\cup[\epsilon,+\infty[\,\,\, \forall \epsilon >0$, \textcolor{red}{ma non in $\R\backslash \{0\}$}\\
+$\sup_{x\in\R\backslash \{0\}}|f_k(x)-sgn(x)|=\sup_{x >0}|f_k(x)-sgn(x)|=1\,\, \forall k$.
 
 \paragraph{\textcolor{red}{Teorema}}
-$(X,d)$ spazio metrico, $f,g: A \rightarrow\R$, $A \subseteq X, x_0 \in X$ punto di accumulazione per $A$, tali che $\lim_{} f(x) =l_f$, $\lim_{x \rightarrow x_0} g(x)=l_f$ e $f(x)\leq g(x)$ definitivamente per $x \rightarrow x_0$. \\\textcolor{orange}{$\exists \delta > 0 | f(x) \leq g(x) \forall x \in B_\delta (x_0) \cap A$, $x \neq x_0$.)}\\ Allora $l_f \leq l_g$.
+$(X,d)$ spazio metrico, $f_k:X \rightarrow \R$, $\{f_k\}_{k \in \N}$ successione di funzioni tale che $f_k \rightrightarrows f$ in $D$. Se $f_k$ è continua in $x_0 \in X \,\, \forall\,\, k \in \N$, allora $f$ è continua in $x_0$. In particolare, se $f_k \in C^\circ(X)\,\, \forall \,\, k \in \N$, allora $f \in C^\circ(X)$ \textcolor{orange}{(il limite uniforme di funzioni continue è continuo)}.
 
-\paragraph{\textcolor{red}{Teorema del Confronto}}
-$(X,d)$ spazio metrico, $f,g,h : A \rightarrow \R, A \subseteq X, x_0$ punto di accumulazione per $A$, tali che $g(x) \leq f(x)\leq h(x)$ definitivamente per $x \rightarrow x_0$. Se $\lim_{x \rightarrow x_0} g(x)=\lim_{x \rightarrow x_0} h(x)=l$, allora $\lim_{x \rightarrow x_0} f(x)=l$.
+\paragraph{\textcolor{red}{Osservazione}}
+$f_k(x)=\frac{kx}{1+k|x|}$ non può convergere uniformemente a $sgn$ in $\R$ perchè $f_k \in C^\circ (\R)\,\, \forall \,\, k$, ma $sgn$ ha un punto di salto in $x=0$.
 
-	
+\paragraph{\textcolor{red}{Dimostrazione}}
+$x_0 \in X$. Fissiamo $\epsilon >0$.\\
+Dobbiamo dimostrare che $\exists \delta >0\,\, |\,\, d(x,x_0) <\delta \Rightarrow |f(x)-f(x_0)|<\epsilon$
+\begin{itemize}
+	\item $f_k$ è continua in $x_0 \,\, \forall \,\, k$
+	\item $f_k \rightrightarrows f$ in $X$
+\end{itemize}
+$f_k \rightrightarrows f$ in $X \Rightarrow \exists\,\, N >0 \,\,|\,\, k >N \Rightarrow |f_k (x)-f(x)|< \frac{\epsilon}{3} \,\, \forall \,\, x \in X$ perchè $\sup_{x\in X}|f_k(x)-f(x)|<\frac{\epsilon}{3}$.\\
+Fissiamo $\overline{k}>N$, cosicchè $|f_{\overline{k}}(x) -f(x)|<\frac{\epsilon}{3} \,\,\forall \,\, x \in X$ e sia $\delta >0 \,\,|\,\, d(x,x_0) <\delta$\\$\Rightarrow |f_{\overline{k}}(x) -f_{\overline{k}}(x_0)| <\frac{\epsilon}{3}$ ($\delta$ esiste perchè $f_{\overline{k}}$ è continua in $x_0$).\\
+$|f(x)-f(x_0)| =|(f(x)-f_{\overline{k}}(x))+(f_{\overline{k}}(x)-f_{\overline{k}}(x_0))+(f_{\overline{k}}(x_0)-f(x_0))|\leq |f(x)-f_{\overline{k}}(x)|+|f_{\overline{k}}(x)-f_{\overline{k}}(x_0)|+|f_{\overline{k}}(x_0)-f(x_0)| < \frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{\epsilon}{3}=\epsilon$ a patto che $d(x,x_0)< \delta$
+\begin{flushright}
+	\large\Lightning
+\end{flushright}
+
 	
 	
 \end{comment}
