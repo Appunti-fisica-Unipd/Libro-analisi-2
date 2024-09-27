@@ -1355,11 +1355,11 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 				0 &  \text{se } x < 0
 			\end{cases}
 		\end{equation*}
-
-		\begin{figure}[!h]
-			\centering
-			\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 22-16-16.png}
-		\end{figure}
+		
+		\begin{center}
+			\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag181_1}
+			\label{fig:pag1811}
+		\end{center}
 		
 		\begin{equation*}
 			f(x) = 		\chi_{]0,+\infty[} = 
@@ -1370,48 +1370,60 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 			\end{cases}
 		\end{equation*}
 		
-		\begin{figure}[!h]
-			\centering
-			\includegraphics[width=0.7\textwidth]{Screenshot from 2023-03-28 22-17-48.png}
-		\end{figure}
+		\begin{center}
+			\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag181_2}
+			\label{fig:pag1812}
+		\end{center}
 	\end{enumerate}
-	
-	
 \end{example}
 \end{exbar}
 
 
+\subcaption{Successioni di funzioni}
 
 
+$(X,d)$ spazio metrico.
+	
+Una successione di funzioni da $X$ in $\mathbb{R}$ è una funzione che ad ogni numero naturale $k$ associa una ed una sola funzione $f_k : X \rightarrow \mathbb{R}$. 
+
+
+\begin{definition}
+	Sia $\{ f_k \}_{k \in \mathbb{N}}, f_k : X \rightarrow \mathbb{R}$, successione di funzioni. Si dice che la successione \textbf{converge puntualmente} in $D \subseteq X$ se $\{ f_k(x) \}_{k \in \mathbb{N}}$ converge $\forall \ x \in D$, cioè se $\forall \ x \in D$ esiste finito
+	\begin{equation*}
+		\lim_{k \rightarrow + \infty} f_k(x) = f(x),
+	\end{equation*}
+	limite puntuale della successione $f : D \rightarrow \mathbb{R}$. L'insieme degli $x \in X$ dove $\{f_k \}_{k \in \mathbb{N}}$ converge puntualmente si dice \textbf{insieme di convergenza puntuale} della successione.
+\end{definition}
+
+
+\begin{exbar}
+	\begin{gather*}
+	f_k: \mathbb{R} \rightarrow \mathbb{R}, \qquad f_k(x) = x^k
+	\\
+	\lim_{k \rightarrow + \infty} f_k(x) = \lim_{k \rightarrow + \infty} x^k =
+	\begin{cases}
+		0 & \text{se } |x|<1
+		\\
+		1 & \text{se } x=1 
+		\\
+		\nexists & \text{se } x \leq -1
+		\\
+		+\infty & \text{se } x >1
+	\end{cases}
+	\end{gather*}
+	
+	Insieme di convergenza puntuale: $D = ]-1,1]$
+	
+	Limite puntuale $f:D \rightarrow \mathbb{R}$		
+	\begin{equation*} f(x) = \begin{cases}
+		0 & \text{se } |x|<1
+		\\
+		1 & \text{se } x=1
+	\end{cases}
+	\end{equation*}	
+\end{exbar}
 
 \begin{comment}	
-
-
-\subsection{\textcolor{red}{Successioni di funzioni}}
-\paragraph{\textcolor{red}{Definizione}}
-$(X,d)$ spazio metrico.\\
-Una successione di funzioni da $X$ in $\R$ è una funzione che ad ogni numero naturale $k$ associa una ed una sola funzione $f_k:X\rightarrow \R$. 
-
-\paragraph{\textcolor{red}{Definizione}}
-Sia $\{ f_k \}_{k\in\N}, f_k:X \rightarrow \R$, successione di funzioni. Si dice che la successione \textcolor{red}{converge puntualmente} in $D \subseteq X$ se $\{f_k(x)\}_{k\in\N}$ converge $\forall x \in D$, cioè se $\forall x \in D$ esiste finito
-\begin{equation*}
-	\lim_{k\rightarrow +\infty} f_k(x)=f(x),
-\end{equation*}
-limite puntuale della successione $f : D \rightarrow \R$. L'insieme degli $x \in X$ dove $\{f_k \}_{k \in \N}$ converge puntualmente si dice \textcolor{red}{insieme di convergenza puntuale} della successione.
-
-\paragraph{\textcolor{red}{Esempio}}
-$f_k:\R \rightarrow \R, f_k(x)=x^k$\\
-$\lim_{k\rightarrow +\infty} f_k(x)=\lim_{k\rightarrow +\infty} x^k =\begin{cases}
-	& 0\,\,\,\,\, \text{se} \,\,\,\,\, |x|<1 \\
-	& 1 \,\,\,\,\, \text{se}\,\,\,\,\, x=1 \\
-	& \nexists  \,\,\,\,\, \text{se}\,\,\,\,\, x \leq -1\\
-	& +\infty  \,\,\,\,\, \text{se}\,\,\,\,\, x >1
-\end{cases}$\\
-Insieme di convergenza puntuale: $D=]-1,1]$\\
-Limite puntuale $f:D \rightarrow \R, f(x)=\begin{cases}
-	&0 \,\,\,\,\, \text{se}\,\,\,\,\, |x|<1\\
-	&1  \,\,\,\,\, \text{se}\,\,\,\,\, x=1
-\end{cases}$ 
 
 \paragraph{\textcolor{red}{Definizione}}
 $f_k:X \rightarrow \R, k \in \N$, successione di funzione. Si dice che $\{ f_k\}_{k\in\N}$ \textcolor{red}{converge uniformemente} in $D \subseteq X$ ad una funzione $f: D\rightarrow \R$ se 
