@@ -1379,12 +1379,13 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 \end{exbar}
 
 
-\subcaption{Successioni di funzioni}
+\subsection{Successioni di funzioni}
 
-
-$(X,d)$ spazio metrico.
+\begin{definition}
+	$(X,d)$ spazio metrico.
 	
-Una successione di funzioni da $X$ in $\mathbb{R}$ è una funzione che ad ogni numero naturale $k$ associa una ed una sola funzione $f_k : X \rightarrow \mathbb{R}$. 
+	Una successione di funzioni da $X$ in $\mathbb{R}$ è una funzione che ad ogni numero naturale $k$ associa una ed una sola funzione $f_k : X \rightarrow \mathbb{R}$. 
+\end{definition}
 
 
 \begin{definition}
@@ -1423,116 +1424,244 @@ Una successione di funzioni da $X$ in $\mathbb{R}$ è una funzione che ad ogni n
 	\end{equation*}	
 \end{exbar}
 
+
+\begin{definition}
+	$f_k:X \rightarrow \mathbb{R}, k \in \mathbb{N}$, successione di funzione. Si dice che $\{ f_k \}_{k \in \mathbb{N} }$ \textbf{converge uniformemente} in $D \subseteq X$ ad una funzione $f: D \rightarrow \mathbb{R}$ se 
+	\begin{gather*}
+		\lim_{k \rightarrow +\infty} \sup_{x \in D} |f_k(x) - f(x)| = 0 
+		\\
+		\text{e si scrive } f_k \rightrightarrows f \text{ in } D
+	\end{gather*}
+	
+	($\forall \epsilon >0 \exists N \; \big| \; k >N \qquad \sup_{x \in D} |f_k(x)-f(x)| < \epsilon$, e quindi, in particolare $|f_k(x) - f(x)| < \epsilon  \quad \forall \ x \in D$ cioè $f(x) - \epsilon <f_k(x) < f(x) + \epsilon \qquad \forall x \in D$)
+	
+	\begin{center}
+		\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag184}
+		\label{fig:pag184}
+	\end{center}
+\end{definition}
+
+
+\begin{exbar}
+	$(X,d)$ spazio metrico
+	
+	$B(x) = \{ f:X \rightarrow \mathbb{R} \; \big| \; \lowercomment{f \text{ è limitata }} {\exists \ M > 0 \; | \; |f(x)| \leq M} {\forall x \in X} \} $ 
+	
+	$f\in B(x)$
+	\begin{equation*}
+		\parallel f \parallel_\infty = \sup_{x \in X} |f(x)|\text{, norma infinito di } f
+	\end{equation*}
+	$f_k \rightrightarrows f$ in $X$ se $\parallel f_k - f \parallel_\infty \rightarrow 0$ per $k \rightarrow +\infty$
+	
+	cioè la convergenza uniforme è la convergenza per $\parallel \cdot \parallel_\infty$.
+\end{exbar}
+
+
+\begin{proposition}
+	\label{pr: pag185}
+	Se $f_k \rightrightarrows f$ in $D$, allora $\{ f_k \}_{k \in \mathbb{N}}$ converge puntualmente ad $f$ in $D$.
+\end{proposition}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} della \textbf{Proposizione \ref{pr: pag185}}
+	
+	Se $x \in D$
+	\begin{gather*}
+		0 \leq |f_k(x) - f(x)| \leq \underbrace{\sup_{y\in D}|f_k(y)-f(y)|}_{0 \text{ per } k \to +\infty} 
+		\\
+		\Rightarrow |f_k(x) - f(x)| \rightarrow 0 \text{ per } k \rightarrow +\infty
+		\\
+		\text{cioè } f(x) = \lim_{k \rightarrow +\infty f_k (x)} \qquad \forall \ x \in D.
+	\end{gather*}
+\end{dembar}
+
+
+\begin{exbar}
+\begin{example}
+	\begin{equation*}
+		f_k(x) = x^k, \qquad x \in \mathbb{R}
+	\end{equation*}
+
+	Insieme di convergenza puntuale è $D=]-1,1]$
+	
+	Limite puntuale $f:D \rightarrow \mathbb{R}$
+	\begin{equation*}
+		f (x) = 
+		\begin{cases}
+			0 & \text{se } -1 < x < 1
+			\\
+			1 & \text{se } x = 1
+		\end{cases}
+	\end{equation*}
+	
+	$f_k \rightrightarrows f$ in $D$?
+
+	\begin{gather*}
+		\rho_k(x)= \frac{e^{-x^2}}{k}, \qquad x \geq 1, \quad x \in \mathbb{R}
+		\\
+		\lim_{k \rightarrow +\infty} g_k(x)=0 \qquad \forall x
+	\end{gather*}
+
+		$\{ \rho(x) \}_{k \geq 1}$ converge puntualmente alla funzione nulla $\rho(x) = 0 \qquad  \forall x \in \mathbb{R}$ in $\mathbb{R}$
+		\begin{gather*}
+			\sup_{x \in \mathbb{R}} |\rho_k(x) - \rho(x)| = \sup_{x \in \mathbb{R}} \frac{e^{-x^2}}{k} = \frac{1}{k} \rightarrow 0
+			\\
+			\rho_k \rightrightarrows g \text{ in } \mathbb{R}
+		\end{gather*}
+
+	\begin{gather*}
+		\phi_k(x) = \frac{x^2}{k}, \qquad k \geq 1, \quad x \in \mathbb{R}
+		\\
+		\lim_{k \rightarrow +\infty} \phi_k(x) = 0 = \phi(x) \qquad \forall x \in \mathbb{R}
+	\end{gather*}
+	
+	Insieme di convergenza puntuale è $\mathbb{R}$ e il limite puntuale è la funzione nulla
+	
+	\begin{gather*}
+		\sup_{x \in \mathbb{R}} |\phi_k(x) - \phi(x)| = \sup_{x \in \mathbb{R}} \frac{x^2}{k} = +\infty
+		\\
+		\phi_k \nrightrightarrows \phi \text{ in } \mathbb{R}
+	\end{gather*}
+		
+	Fissato $M > 0$, ho convergenza uniforme in $[-M, M]$?
+	
+	\begin{gather*}
+		\sup_{x \in [-M,M]} |\phi_k(x) - \phi(x)| = \sup_{x \in [-M,M]} \frac{x^2}{k} = \frac{M^2}{k} \rightarrow 0 \text{ per } k \rightarrow + \infty
+		\\
+		\phi_k \rightrightarrows \phi \text{ in } [-M, M] \qquad \forall \ M > 0 \
+		\text{\textcolor{red}{ ma non in $\mathbb{R}$}.}
+	\end{gather*}
+	
+	Torniamo a $f_k =x^k$
+	
+	\begin{gather*}
+		\sup_{x \in ]-1, 1]} |f_k(x) - f(x)| \geq \sup_{x \in ]-1, 1[} |f_k(x) - f(x)| = \sup_{x \in ]-1, 1[} |x^k| = 1 \qquad \forall \ k
+		\\
+		f_k \nrightrightarrows f \text{ in } ]-1, 1]
+	\end{gather*}
+	
+	Sia $0 < \epsilon < 1$ e studiamo la convergenza uniforme in $[-1+\epsilon, 1-\epsilon]$
+	\begin{gather*}
+		\sup_{x \in [-1+\epsilon, 1-\epsilon]} |f_k(x) - f(x)| = \sup_{x \in [-1+\epsilon, 1-\epsilon]} |f_k(x)| = \sup_{x \in [-1+\epsilon, 1-\epsilon]} |x^k| =
+		\\
+		= (1-\epsilon)^k \rightarrow 0 \text{ per } k \rightarrow +\infty \text{ perché } 0 < 1 - \epsilon < 1 
+		\\
+		\Rightarrow f_k \rightrightarrows f \text{ in } [-1+\epsilon, 1-\epsilon] \qquad  \forall \epsilon > 0 \ \text{\textcolor{red}{ ma non in $]-1,1]$!}}
+	\end{gather*}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	\begin{equation*}
+		f_k(x) = \frac{kx}{1+k|x|}, \qquad k \geq 0, \quad x \in \mathbb{R}
+	\end{equation*}
+	
+	Convergenza puntuale
+	\begin{equation*}
+		\lim_{k \rightarrow +\infty} f_k(x) = \begin{cases}
+			1 & \text{se } x > 0 
+			\\
+			0 & \text{se } x = 0 
+			\\
+			-1 & \text{se } x < 0
+		\end{cases}
+	\end{equation*}
+		
+		L'insieme di convergenza puntuale è $\mathbb{R}$ e il limite puntuale è la funzione segno
+		\begin{gather*}
+			sgn(x) = 
+			\begin{cases}
+				1 & \text{se } x > 0
+				\\
+				0 & \text{se }  x = 0
+				\\
+				-1 & \text{se }  x < 0
+			\end{cases}
+			\\
+			\sup_{x \in \mathbb{R}} |f_k(x) - sgn(x)| \geq \sup_{x>0} |f_k(x) - sgn(x)| =
+			\\
+			= \sup_{x>0} |\frac{kx}{1+kx} - 1| = \sup_{x>0} |\frac{1}{1+kx}| = 1
+			\\
+			f_k \nrightrightarrows sgn\text{ in } \mathbb{R}
+	\end{gather*}
+	
+	Fissiamo $\epsilon > 0$ e studiamo la convergenza uniforme in $]-\infty - \epsilon] \cup [\epsilon, +\infty[$
+	
+	\begin{align*}
+		\sup_{|x| \geq \epsilon} |f_k(x) - sgn(x)| 
+		&\uppercomment{=}{f_k \text{ e } sgn}{\text{sono dispari}} 
+		\sup_{x \geq \epsilon} |f_k(x) - sgn(x)| 
+		\\
+		&= \sup_{x \geq \epsilon} |\frac{1}{1+kx}|= \frac{1}{1+k\epsilon} \rightarrow 0 \text{ per } k \rightarrow +\infty
+	\end{align*}
+	\begin{gather*}
+		f_k \rightrightarrows sgn \text{ in } ]-\infty, -\epsilon] \cup [\epsilon, +\infty[ \qquad \forall \epsilon > 0, \text{\textcolor{red}{ma non in $\mathbb{R} \backslash \{ 0 \}$}}
+		\\
+		\sup_{x \in \mathbb{R} \backslash \{ 0 \}} |f_k(x) - sgn(x)| \uppercomment{=} {} {\text{per simmetria}} \sup_{x >0} |f_k(x) - sgn(x)| = 1 \qquad \forall k
+	\end{gather*}
+\end{example}
+\end{exbar}
+	
+	
+\begin{theorem}
+	\label{th: pag190}
+	$(X,d)$ spazio metrico, $f_k:X \rightarrow \mathbb{R}$, $\{f_k\}_{k \in \mathbb{N}}$ successione di funzioni tale che $f_k \rightrightarrows f$ in $D$. 
+	
+	Se $f_k$ è continua in $x_0 \in X \quad \forall \ k \in \mathbb{N}$, allora $f$ è continua in $x_0$. In particolare, se $f_k \in C^0(X) \quad \forall \ k \in \mathbb{N}$, allora $f \in C^0(X)$
+	
+	(il limite uniforme di funzioni continue è continuo.)
+\end{theorem}
+
+
+\begin{attbar}
+	\textbf{Osservazione:}
+	
+	$f_k(x) = \frac{kx}{1+k|x|}$ non può convergere uniformemente a $sgn$ in $\mathbb{R}$ perché $f_k \in C^0 (\mathbb{R}) \quad  \forall \ k$, ma $sgn$ ha un punto di salto in $x=0$.
+\end{attbar}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag190}}
+	
+	
+	$x_0 \in X$. Fissiamo $\epsilon > 0$. Dobbiamo dimostrare che $\exists \ \delta > 0 \; \big| \; d(x,x_0) < \delta \Rightarrow |f(x) - f(x_0)| < \epsilon$
+	\begin{itemize}
+		\item $f_k$ è continua in $x_0 \quad \forall \ k$
+		\item $f_k \rightrightarrows f$ in $X$
+	\end{itemize}
+	\begin{gather*}
+		f_k \rightrightarrows f \text{ in } X \Rightarrow \exists \ N > 0 \; \big| \ k > N \Rightarrow |f_k(x) - f(x)| < \frac{\epsilon}{3} \qquad \forall \ x \in X
+		\\
+		\text{perché } \sup_{x \in X}|f_k(x) - f(x)| < \frac{\epsilon}{3}
+	\end{gather*}
+
+	Fissiamo $\overline{k} > N$, cosicché $|f_{\overline{k}}(x) - f(x)| < \frac{\epsilon}{3} \quad \forall \ x \in X$ e sia $\delta > 0 \; \big| \;  d(x,x_0) < \delta$
+	\begin{equation*}
+		\Rightarrow |f_{\overline{k}}(x) - f_{\overline{k}}(x_0)| < \frac{\epsilon}{3}
+	\end{equation*} 
+	
+	($\delta$ esiste perché $f_{\overline{k}}$ è continua in $x_0$).
+	\begin{align*}
+		|f(x) - f(x_0)| 
+		& =|(f(x) - f_{\overline{k}}(x)) + (f_{\overline{k}}(x) - f_{\overline{k}}(x_0)) + (f_{\overline{k}}(x_0) - f(x_0))| \leq
+		\\
+		& \leq  \uppercomment{|f(x) - f_{\overline{k}}(x)|}
+		{}{<\frac{\epsilon}{3} \text{ per } \overline{k} > n} 
+		+ \uppercomment{|f_{\overline{k}}(x) - f_{\overline{k}}(x_0)|}
+		{}{<\frac{\epsilon}{3} \text{ se } d(x, x_0) < \delta} 
+		+ 
+		\uppercomment{|f_{\overline{k}}(x_0) - f(x_0)|}
+		{}{<\frac{\epsilon}{3} \text{ per } \overline{k} > n} 
+		<
+		\\
+		& < \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon \text{ a patto che } d(x,x_0)< \delta \qquad \square
+	\end{align*}
+\end{dembar}
+
 \begin{comment}	
-
-\paragraph{\textcolor{red}{Definizione}}
-$f_k:X \rightarrow \R, k \in \N$, successione di funzione. Si dice che $\{ f_k\}_{k\in\N}$ \textcolor{red}{converge uniformemente} in $D \subseteq X$ ad una funzione $f: D\rightarrow \R$ se 
-\begin{equation*}
-	\lim_{k\rightarrow+\infty}\sup_{x\in D}|f_k(x)-f(x)|=0
-\end{equation*}
-e si scrive $f_k \rightrightarrows f$ in $D$\\
-\textcolor{orange}{$\forall \epsilon >0 \exists N | k >N$\\ 
-	$\sup_{x\in D}|f_k(x)-f(x)| <\epsilon$, e quindi, in particolare $|f_k(x)-f(x)|<\epsilon \forall x \in D$ cioè $f(x)-\epsilon <f-k(x)<f(x)+\epsilon \forall x \in D$}\\
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{Screenshot from 2023-03-28 22-27-28.png}
-\end{figure}
-
-$(X,d)$ spazio metrico\\
-$B(x)=\{f:X \rightarrow \R | f$ è limitata$\}$ \textcolor{orange}{$\exists M >0 | |f(x)| \leq M \forall x \in X$}\\
-$f\in B(x)$, $\parallel f \parallel_\infty =\sup_{x\in X}|f(x)|$, norma infinito di $f$\\
-$f_k \rightrightarrows f$ in $X$ se $\parallel f_k - f \parallel_\infty \rightarrow 0$ per $k \rightarrow +\infty$\\
-cioè la convergenza uniforme è la convergenza per $\parallel \cdot \parallel_\infty$.
-
-\paragraph{\textcolor{red}{Proposizione}}
-Se $f_k \rightrightarrows f$ in $ D $, allora $\{ f_k \}_{k \in \N}$ converge puntualmente ad $f$ in $D$.
-
-\paragraph{\textcolor{red}{Dimostrazione}}
-Se $x \in D$, $0 \leq |f_k(x) -f(x)| \leq \sup_{y\in D}|f_k(y)-f(y)| \Rightarrow |f_k(x)-f(x)|\rightarrow 0$ per $ k \rightarrow +\infty$ cioè $f(x)=\lim_{k \rightarrow +\infty f_k (x)} \forall x \in D$.
-\begin{flushright}
-	\large\Lightning
-\end{flushright}
-
-
-
-\newpage
-\section{\textcolor{red}{Lezione 15 \space\space 30/03/'23}}
-\paragraph{\textcolor{red}{Esempio}}
-$f_k(x)=x^k$, $x \in \R$\\
-Insieme di convergenza puntuale è $D=]-1,1]$\\
-Limite puntuale $f:D \rightarrow \R$\\
-$f (x)= \begin{cases}
-	& 0 \,\,\,\,\, \text{se} \,\,\,\,\, -1 < x<1\\
-	& 1 \,\,\,\,\, \text{se} \,\,\,\,\, x=1
-\end{cases}$\\
-$f_k \rightrightarrows f$ in $D$?\\
-
-\textcolor{orange}{$g_k(x)= \frac{e^{-x^2}}{k}$, $x \geq 1, x \in \R$\\
-	$\lim_{k \rightarrow +\infty} g_k(x)=0\,\, \forall x$\\
-	$\{g(x)\}_{k \geq 1}$ converge puntualmente alla funzione nulla $g(x)=0 \,\, \forall x\in\R$ in $\R$\\
-	$\sup_{x \in \R} |g_k(x)-g(x)|=\sup_{x\in\R} \frac{e^{-x^2}}{K}=\frac{1}{k} \rightarrow 0$\\
-	$g_k \rightrightarrows g$ in $\R$}\\
-
-\textcolor{orange}{$\phi_k(x)= \frac{x^2}{k}$, $k \geq 1, x \in \R$\\
-	$\lim_{k \rightarrow +\infty} \phi_k(x)=0=\phi(x) \,\, \forall x \in \R$\\
-	Insieme di convergenza puntuale è $\R$ e il limite puntuale è la funzione nulla\\
-	$\sup_{x\in\R}|\phi_k(x)-\phi(x)|=\sup_{x\in\R} \frac{x^2}{k}=+\infty$\\
-	$\phi_k \nrightrightarrows \phi$ in $\R$\\
-	Fissato $M>0$, ho convergenza uniforme in $[-M,M]$?\\
-	$\sup_{x \in [-M,M]}|\phi_k(x)-\phi(x)|=\sup_{x\in [-M,M]} \frac{x^2}{k}=\frac{M^2}{k} \rightarrow 0$ per $k \rightarrow + \infty$\\
-	$\phi_k \rightrightarrows \phi$ in $[-M,M] \,\, \forall M >0$} \textcolor{red}{ma non in $\R$.}\\
-
-Torniamo a $f_k =x^k$\\
-$\sup_{x \in ]-1,1]}|f_k(x)-f(x)| \geq \sup_{x \in ]-1,1[}|f_k(x)-f(x)|= \sup_{x \in ]-1,1[}|x^k|=1\,\,\, \forall k$\\
-$f_k \nrightrightarrows f$ in $]-1,1]$\\
-Sia $0<\epsilon < 1$ e studiamo la convergenza uniforme in $[-1+\epsilon,1-\epsilon]$\\
-$\sup_{x \in [-1+\epsilon,1-\epsilon]}|f_k(x)-f(x)|=\sup_{x \in [-1+\epsilon,1-\epsilon]}|f_k(x)|=\sup_{x \in [-1+\epsilon,1-\epsilon]}|x^k|=(1-\epsilon)^k \rightarrow 0$ per $k \rightarrow +\infty$ perchè $0<1-\epsilon <1 \Rightarrow f_k \rightrightarrows f$ in $ [-1+\epsilon, 1-\epsilon] \,\, \forall \epsilon>0$ \textcolor{red}{ma non in ]-1,1]!}
-
-\paragraph{\textcolor{red}{Esempio}}
-$f_k(x)=\frac{kx}{1+k|x|}, \,\, k \geq 0, x \in \R$\\
-
-Convergenza puntuale
-\begin{equation*}
-	\lim_{k\rightarrow +\infty} f_k(x) = \begin{cases}
-		& 1 \,\,\,\,\, \text{se}\,\,\, x >0 \\
-		& 0 \,\,\,\,\, \text{se}\,\,\, x=0 \\
-		& -1  \,\,\,\,\, \text{se}\,\,\, x<0
-	\end{cases}
-\end{equation*}
-L'insieme di convergenza puntuale è $\R$ e il limite puntuale è la funzione segno
-\begin{equation*}
-	sgn(x)= \begin{cases}
-		& 1  \,\,\,\,\, \text{se}\,\,\, x>0 \\
-		& 0  \,\,\,\,\, \text{se}\,\,\, x=0\\
-		& -1  \,\,\,\,\, \text{se}\,\,\, x<0
-	\end{cases}
-\end{equation*}
-$\sup_{x\in\R}|f_k(x)-sgn(x)|\geq \sup_{x>0} |f_k(x)-sgn(x)|=\sup_{x>0}|\frac{kx}{1+kx}-1|=\sup_{x>0}|\frac{1}{1+kx}|=1$\\
-$f_k \nrightrightarrows sgn$ in $\R$\\
-Fissiamo $\epsilon >0$ e studiamo la convergenza uniforme in $]-\infty-\epsilon]\cup[\epsilon,+\infty[$\\
-$\sup_{|x|\geq \epsilon} |f_k(x)-sgn(x)|=\sup_{x \geq \epsilon} |f_k(x)-sgn(x)|= \sup_{x \geq \epsilon} |\frac{1}{1+kx}|= \frac{1}{1+k\epsilon}\rightarrow 0$ per $k \rightarrow +\infty$\\
-$f_k \rightrightarrows sgn$ in $]-\infty,-\epsilon]\cup[\epsilon,+\infty[\,\,\, \forall \epsilon >0$, \textcolor{red}{ma non in $\R\backslash \{0\}$}\\
-$\sup_{x\in\R\backslash \{0\}}|f_k(x)-sgn(x)|=\sup_{x >0}|f_k(x)-sgn(x)|=1\,\, \forall k$.
-
-\paragraph{\textcolor{red}{Teorema}}
-$(X,d)$ spazio metrico, $f_k:X \rightarrow \R$, $\{f_k\}_{k \in \N}$ successione di funzioni tale che $f_k \rightrightarrows f$ in $D$. Se $f_k$ è continua in $x_0 \in X \,\, \forall\,\, k \in \N$, allora $f$ è continua in $x_0$. In particolare, se $f_k \in C^\circ(X)\,\, \forall \,\, k \in \N$, allora $f \in C^\circ(X)$ \textcolor{orange}{(il limite uniforme di funzioni continue è continuo)}.
-
-\paragraph{\textcolor{red}{Osservazione}}
-$f_k(x)=\frac{kx}{1+k|x|}$ non può convergere uniformemente a $sgn$ in $\R$ perchè $f_k \in C^\circ (\R)\,\, \forall \,\, k$, ma $sgn$ ha un punto di salto in $x=0$.
-
-\paragraph{\textcolor{red}{Dimostrazione}}
-$x_0 \in X$. Fissiamo $\epsilon >0$.\\
-Dobbiamo dimostrare che $\exists \delta >0\,\, |\,\, d(x,x_0) <\delta \Rightarrow |f(x)-f(x_0)|<\epsilon$
-\begin{itemize}
-	\item $f_k$ è continua in $x_0 \,\, \forall \,\, k$
-	\item $f_k \rightrightarrows f$ in $X$
-\end{itemize}
-$f_k \rightrightarrows f$ in $X \Rightarrow \exists\,\, N >0 \,\,|\,\, k >N \Rightarrow |f_k (x)-f(x)|< \frac{\epsilon}{3} \,\, \forall \,\, x \in X$ perchè $\sup_{x\in X}|f_k(x)-f(x)|<\frac{\epsilon}{3}$.\\
-Fissiamo $\overline{k}>N$, cosicchè $|f_{\overline{k}}(x) -f(x)|<\frac{\epsilon}{3} \,\,\forall \,\, x \in X$ e sia $\delta >0 \,\,|\,\, d(x,x_0) <\delta$\\$\Rightarrow |f_{\overline{k}}(x) -f_{\overline{k}}(x_0)| <\frac{\epsilon}{3}$ ($\delta$ esiste perchè $f_{\overline{k}}$ è continua in $x_0$).\\
-$|f(x)-f(x_0)| =|(f(x)-f_{\overline{k}}(x))+(f_{\overline{k}}(x)-f_{\overline{k}}(x_0))+(f_{\overline{k}}(x_0)-f(x_0))|\leq |f(x)-f_{\overline{k}}(x)|+|f_{\overline{k}}(x)-f_{\overline{k}}(x_0)|+|f_{\overline{k}}(x_0)-f(x_0)| < \frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{\epsilon}{3}=\epsilon$ a patto che $d(x,x_0)< \delta$
-\begin{flushright}
-	\large\Lightning
-\end{flushright}
 
 	
 	

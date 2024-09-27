@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Polygon
 
+
 plt.rcParams['text.usetex'] = True #using latex
 matplotlib.rcParams.update({'font.size': 20}) #font size
 
