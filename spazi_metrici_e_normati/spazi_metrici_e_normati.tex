@@ -1661,8 +1661,454 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 	\end{align*}
 \end{dembar}
 
+
+\begin{attbar}
+	Tutto quello che abbiamo detto e che diremo  per successioni di funzioni a valori in $\mathbb{R}$ vale per successioni di funzioni a valori in $\mathbb{C}$.
+\end{attbar}
+
+
+\begin{exbar}
+\begin{example}
+	\begin{gather*}
+		\phi: [0,1] \rightarrow \mathbb{R}^{\geq 0} \text{ continua}
+		\\
+		C = \{ f \in C^\circ ([0,1]) \; \big| \; |f(x)| \leq \phi(x) \forall x \in [0,1] \}
+	\end{gather*}
+
+	Dotato $C^0 ([0,1])$ con la norma $\parallel \cdot \parallel_\infty$, provare che $C$ è chiuso e trovare $\partial C$.
+	\begin{itemize}
+		\item $C$ è chiuso $\iff$ presa $\{f_k\}_{k \in \mathbb{N}} \subseteq C$, convergente per $\parallel \cdot \parallel_\infty$ a $f:[0,1] \rightarrow \mathbb{R}$, si ha che $f \in C$.
+		
+		$\{ f_k \}_{k \in \mathbb{N}} \subseteq C, \quad f_k \rightrightarrows f \Rightarrow f \in C^0([0,1])$ perché limite uniforme di una successione di funzioni continue. Affinché $f \in C$, deve essere $|f(x)| \leq \phi(x) \quad \forall x \in [0,1]$
+		
+		Sappiamo che $\forall x \in [0,1] \quad |f_k(x)| \leq \phi(x) \quad \forall k \in \mathbb{N}$ perché $f_k \in C \quad \forall k \in \mathbb{N}$
+		
+		$f_k \rightrightarrows f$ in $[0,1] \Rightarrow f_k(x) \rightarrow f(x) \quad \forall x \in [0,1] $ perché la convergenza uniforme implica quella puntuale 
+		\begin{gather*}
+			\Rightarrow |f_k(x)| \rightarrow |f(x)| \qquad \forall x \in [0,1]
+			\\
+			|f_k(x)| \leq \phi(x) \qquad \forall x \in [0,1]
+			\\
+			\color{blue}{ \tiny{\downarrow \text{ passando al limite per } k \to +\infty } } 
+			\\
+			\Rightarrow |f(x)| \leq \phi(x) \qquad \forall x \in [0,1]
+			\\
+			\Rightarrow f \in C \Rightarrow C \text{ è chiuso}
+		\end{gather*}
+
+		\item Troviamo $\partial C$
+		\begin{align*}
+			C 
+			&= \{ f \in C^0 ([0,1]) \; \big| \; |f(x)| \leq \phi(x) \qquad \forall x \in [0,1] \} 
+			\\
+			&= \{ f \in C^0 ([0,1]) \; \big| \; -\phi(x) \leq f(x) \leq \phi(x) \qquad \forall x \in [0,1] \}
+		\end{align*}
+
+		\segnaposto %194
+		\begin{equation*}
+			f_0 \in \partial C \Leftrightarrow \forall \epsilon > 0, B_\epsilon(f_0) \cap C \neq \emptyset \text{ e } B_\epsilon (f_0)\cap C^c \neq \emptyset
+		\end{equation*}
+
+		
+		Congettura: 
+		\begin{equation*}
+			\partial C = \{ f \in C^0 ([0,1]) \; \big| \; \exists x_0 \in [0,1] \; \big| \; |f(x_0)| = \phi(x_0) \}
+		\end{equation*}
+		
+		Sia $f\in \partial C$ e proviamo che $\exists x_0 \in [0,1] \; \big| \; |f(x_0)| = \phi(x_0)$
+		
+		$f \in \partial C \Rightarrow f \in C$ perché $C$ è chiuso $\Rightarrow |f(x)| \leq \phi(x) \quad \forall x \in [0,1]$.
+		
+		Per assurdo, assumiamo che 
+		\begin{equation*}
+			|f(x)| < \phi(x)  \qquad \forall x \in [0,1]
+		\end{equation*}
+		
+		E' vero o falso che $\inf_{x \in [0,1]}( \phi(x) -|f(x)| )>0$?	
+		\segnaposto %195
+		
+		$[0,1]$ è compatto quindi $\phi - |f|$ è continua 
+		\begin{align*}
+			\Rightarrow \inf_{x \in [0,1]} [\phi(x) - |f(x)|] 
+			&= \min_{x \in [0,1]} [\phi(x) - |f(x)|] =
+			\\
+			&= \phi(x_0) - |f(x_0) > 0 \qquad \exists x_0 \in [0,1]
+			\\
+			&= r
+		\end{align*}
+		
+		$\Rightarrow B_{\frac{r}{2}}(f) \leq C$ perché, fissata $\rho \in B_{\frac{r}{2}}(f)$ si ha
+		
+		\begin{align*}
+			|\rho(x)| 
+			&\leq |g(x) - f(x) + f(x)| 
+			\\
+			&\leq |g(x) - f(x)| + |f(x)| \lowercomment{<} {\text{perché} \parallel \rho - f \parallel_\infty < \frac{r}{2}} {} \frac{r}{2} + |f(x)| 
+			\\
+			&\lowercomment{\leq} 
+			{\phi(x) - |f(x)| \geq r > 0 \quad \forall x \in [0, 1]} 
+			{|f(x)| \leq \phi(x) -r \qquad \forall x \in [0, 1] }
+			\frac{r}{2} + \phi(x) - r = \phi(x) - \frac{r}{2} \\
+			&\leq \phi(x) \qquad \forall x \in [0,1]
+		\end{align*}
+		\begin{equation*}
+			\Rightarrow \rho \in C \Rightarrow B_{\frac{r}{2}}(f) \cap C^c = \emptyset \Rightarrow f \notin \partial C \text{, assurdo.}
+		\end{equation*}
+
+		Adesso proviamo che, se $\uppercomment{f \in C} {C \text{ chiuso}} {\partial C \subseteq C}$ è tale che $\exists x_0 \in [0,1] \; \big| \; |f(x_0)| = \phi(x_0)$, allora $f \in \partial C$, cioè $\forall \ \epsilon > 0$, $B_\epsilon(f) \cap C \neq \emptyset$ e $B_\epsilon(f) \cap C^c \neq \emptyset$.
+		
+		Sicuramente $f \in B_\epsilon (f) \cap C$, che così è diverso da $\emptyset$.
+		
+		Basta verificare che $\forall \ \epsilon > 0$, $B_\epsilon (f) \cap C^c \neq \emptyset$
+		
+		$|f(x_0|=\phi(x_0)$. Per fissare le idee assumiamo che $f(x_0)\geq 0$
+		\begin{equation*}
+			f(x_0) = |f(x_0)|= \phi(x_0)
+		\end{equation*}
+
+		\segnaposto %196
+		\begin{gather*}
+			\epsilon >0, \qquad f + \frac{\epsilon}{2} = \rho, \qquad  |g(x_0)| = f(x_0) + \frac{\epsilon}{2} > \phi(x_0)
+			\\
+			g \notin C \text{ e } \parallel g - f \parallel_\infty = \frac{\epsilon}{2} < \epsilon
+			\\
+			g \in B_\epsilon (f) \Rightarrow B_\epsilon (f) \cap C^c \neq \emptyset\text{, come si voleva.}
+		\end{gather*}	
+	\end{itemize}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Data la successione di funzioni
+	\begin{equation*}
+		f_k: \mathbb{R} \backslash \{0\} \rightarrow \mathbb{R}, \qquad k \geq 1
+	\end{equation*}
+	
+	definita da
+	\begin{equation*}
+		f_k(x) = \frac{\ln x^{2k}}{(1 + x)^{2k}}
+	\end{equation*}
+	
+	trovare gli insiemi di convergenza puntuale e uniforme.
+	\begin{align*}
+		\lim_{k \rightarrow +\infty} f_k(x) = \lim_{k \rightarrow +\infty} 2k \frac{\ln |x|}{(1+x)^{2k}}
+		&=\begin{cases}
+			+\infty & \text{se } |1 + x| \leq 1 \text{ e } |x| > 1 
+			\\
+			-\infty & \text{se } |1 + x| \leq 1 \text{ e } |x| < 1
+			\\
+			0 & \text{se } |1 + x| \geq 1
+		\end{cases}
+		\\
+		&=\begin{cases}
+			+\infty & \text{se } -2 \leq x <- 1 
+			\\
+			-\infty & \text{se } -1 < x < 0 
+			\\
+			0 & \text{se } x < -2 \text{ o } x > 0
+		\end{cases}
+	\end{align*}
+	
+	L'insieme di convergenza puntuale è $D = ]-\infty,-2[ \cup ]0,+\infty[$ e il limite puntuale è la funzione $f(x) = 0 \quad \forall x \in D$.
+	
+	Studiamo la convergenza uniforme in $D$ e studiamo separatamente gli intervalli $]-\infty,-2[$ e $]0,+\infty[$.
+	
+	Valutiamo 
+	\begin{align*}
+		\sup_{x >0} |f_k(x) - f(x)|
+		&\uppercomment{=}{}{k \text{ fissato!}}
+		\sup_{x >0}|f_k (x)| = \sup_{x>0}2k \frac{|\ln |x||}{(1+x)^{2k}} 
+		\geq \lim_{x \rightarrow 0^+} \frac{2k |\ln|x||}{(1+x)^{2k}} = +\infty
+	\end{align*}
+	\begin{equation*}
+		f_k \nrightrightarrows f \text{ in } ]0,+\infty[
+	\end{equation*}
+	
+	Vediamo cosa succede in $]-\infty,-2[$
+	\begin{align*}
+		\sup_{x < -2}|f_k(x) - f(x)| 
+		&= \sup_{x<-2} |f_k(x)| = \sup_{x <-2}2k \frac{|\ln|x||}{|1+x|^{2k}}
+		&\geq\lim_{x \rightarrow -2^-} \frac{2k|\ln |x|}{|1+x|^{2k}}= 2k \ln 2 \xrightarrow{k \rightarrow +\infty} +\infty 
+	\end{align*}
+	\begin{equation*}
+		f_k \nrightrightarrows f \text{ in } ]-\infty,-2[
+	\end{equation*}
+
+	Proviamo a studiare la convergenza uniforme in sottointervalli di $]0,+\infty[$ e $]-\infty,-2[$.
+	
+	Concentriamoci su $]0,+\infty[$ e studiamo l'andamento di $f_k$ in questo intervallo
+	\begin{gather*}
+		f_k(x) = 2k \frac{\ln |x|}{(1+x)^{2k}} \qquad x >0
+		\\
+		\lim_{x \rightarrow 0^+} f_k(x) = -\infty \qquad \lim_{x \rightarrow +\infty} f_k(x) = 0
+		\\
+		f_k' (x) = 2k \frac{1+x(1-2k \ln |x|)}{x(1+x)^{2k+1}}
+		\\
+		f_k' (x) \geq 0 \iff 1+x(1-2k \ln |x|) \geq 0, \qquad x >0
+	\end{gather*}
+
+	se $x \in ]0,1]$, $-\ln x \geq 0$
+	\begin{gather*}
+		\Rightarrow 1+x(1-2k\ln x)\geq 0
+		\\
+		\lim_{x \rightarrow +\infty} [1+x(1-2k\ln x)]= -\infty
+		\\
+		\Rightarrow 1+x(1-2k\ln x)<0 \text{ definitivamente per } x \rightarrow +\infty
+		\\
+		f_k' (x) > 0 \qquad \forall x \in ]0,1] \text{ e } f_k' (x) < 0 \text{ definitivamente per } x \rightarrow +\infty
+	\end{gather*} 
+	
+	\segnaposto %200
+	Devo provare a vedere più in dettaglio il segno di $f_k' $, cioè di $\underbrace{1+x(1-2k \ln x)}_{\phi(x)}$, per $x \geq 1$
+	\begin{gather*}
+		\phi(1) = 2 > 0
+		\\
+		\phi'(x)=1-2k\ln x -2k = 1-2k(1+\ln x)< 0 \qquad \forall x >1
+		\\
+		\exists! \ \alpha_k > 1 \; \big| \; \phi(\alpha_k) = 0
+	\end{gather*}
+	\segnaposto %201_1
+	$\exists! \ \alpha_k >1 \; \big| \; f_k' (\alpha_k)=0$
+	
+	\segnaposto %201_2
+	\begin{align*}
+		\sup_{x \geq a}|f_k (x)| 
+		&= \max\{|f_k(a)|,|f_k(\alpha_k)|\}\leq
+		\\
+		&\leq |f_k(a)|+|f_k(\alpha_k)| = \lowercomment{2k \frac{|\ln a|}{(1+a)^{2k}}}
+		{0 \text{ per } k \to +\infty} {}
+		+ \lowercomment{|f_k(\alpha_k)|}{\text{da stimare}}{}
+	\end{align*}
+	\begin{gather*}
+		f_k' (\alpha_k)=0
+		\\
+		1+\alpha_k (1-2k \ln \alpha_k)=0
+		\\
+		1+\alpha_k - 2 k \alpha_k \ln \alpha_k=0
+		\\
+		\ln\alpha_k= \frac{1+\alpha_k}{2k\alpha_k}
+	\end{gather*}
+	\begin{gather*}
+		f_k (x)= 2k \frac{\ln x}{ (1+x)^{2k}}, \qquad x >0
+		\\
+		f_k(\alpha_k) = 2k\frac{\ln \alpha_k}{(1+\alpha_k)^{2k}} = 2k \frac{1+\alpha_k}{2k\alpha_k}\cdot \frac{1}{(1+\alpha_k)^{2k}} =
+		\\
+		= \frac{1}{\alpha_k(1+\alpha_k)^{2k-1}} \uppercomment{\leq} {} {k_\alpha > 1} \frac{1}{2^{2k-1}} \xrightarrow{k \rightarrow +\infty} 0 
+		\\
+		\sup_{x \geq a}|f_k(x)|\leq |f_k(a)|+|f_k(\alpha_k)|\xrightarrow{k \rightarrow +\infty} 0 \\
+		\Rightarrow f_k \rightrightarrows f \text{ in } [a,+\infty[ \qquad \forall a >0
+	\end{gather*}
+
+	Studiamo $f_k$ in $]-\infty,-2[$.
+	\begin{gather*}
+		\lim_{x \rightarrow-2^-} f_k(x) = 2k\ln 2
+		\\
+		\lim_{x \rightarrow-\infty}f_k(x) = 0
+		\\
+		f_k' (x) = 2k \frac{1+x(1-2k\ln|x|)}{x(1+x)^{2k+1}}
+	\end{gather*}
+
+	Se $x <-2 $, $x(1+x)>0 \Rightarrow x(1+x)^{2k+1}>0$
+	
+	Se $x <-2$, $f_k'(x) \geq 0 \Leftrightarrow 1+x(1-2k\ln|x|)\geq 0$
+	\begin{gather*}
+		x <0 \text{ e } 1-2k\ln |x| \uppercomment{\leq} {} {x<-2} 1-2k \ln 2 < 0 \qquad \forall k \geq 1
+		\\
+		\Rightarrow x(1-2k\ln|x|)\geq 0 \qquad \forall x <-2
+		\\
+		\Rightarrow f_k'(x) > 0 \qquad \forall x \in ]-\infty,-2[
+		\\
+		\Rightarrow f_k \text{ è crescente in } ]-\infty,-2[ 
+	\end{gather*}
+	\segnaposto %204
+	
+	Fissato $b < -2$
+	\begin{gather*}
+		\sup_{x \leq b} |f_k(x)| = f_k(b)= 2k \frac{\ln |b|}{(1+b)^{2k}}\xrightarrow{k \rightarrow+\infty} 0
+		\\
+		\Rightarrow f_k \rightrightarrows f \text{ in } ]-\infty, b] \qquad \forall b < -2
+		\\
+		\Rightarrow f_k \rightrightarrows f \text{ in } ]-\infty,b] \cup [a, +\infty[ \qquad \forall b < -2 \text{ e } \forall a > 0
+	\end{gather*}
+\end{example}
+\end{exbar}
+
+
+\begin{attbar}
+	$(X,d)$ spazio metrico, $\{f_k\}_{k\in \mathbb{N}}\leq C^\circ(X)$ tale che $f_k \rightrightarrows f \in C^\circ (X)$ in $D \subseteq X$. Allora $f_k \rightrightarrows f$ in $\overline{D}$.
+\end{attbar}
+
+Riprendendo l'esercizio precedente, se $f_k \rightrightarrows f$, funzione nulla, in $]-\infty-2[$, allora dovrebbe esserci convergenza uniforme anche in $]-\infty,-2[=]-\infty,-2]$. Ma $f_k(-2)\rightarrow+\infty$, e quindi non c'è neanche convergenza puntuale.
+
+Sia $x \in \overline{D} \Rightarrow \exists \{ x_j\}_{j\geq 1} \subseteq D |x_j\rightarrow x$ per la metrica $d$
+\begin{gather*}
+	|f_k(x)-f(x)| = \lim_{j}|f_k(x_j)-f(x_j)| \uppercomment{\leq}
+	{}{x_j \in D}
+	\sup_{y\in D}|f_(y)-f(y)| \qquad \forall x \in \overline{D}
+	\\
+	\Rightarrow \lowercomment{\sup_{x \in \overline{D}}|f_k(x)-f(x)|} 
+	{0 \text{ per } k \to \infty}{}
+	\leq \lowercomment{\sup_{y \in D}|f_k(y)-f(y)|}
+	{0 \text{ per } k \to \infty}{\text{perché } f_k \rightrightarrows f \text{ in } D}
+	\\
+	\Rightarrow f_k \rightrightarrows f \text{ in } \overline{D}
+\end{gather*}
+
+
+\begin{theorem}
+	\ref{th: pag206}
+	$\{f_k\}_{k\in\mathbb{N}}, f_k:[a,b]\rightarrow\mathbb{R},\ a,b\in\mathbb{R}$, successione di funzioni Riemann integrabile in $[a,b]$ tale che $f_k \rightrightarrows f$ in $[a,b]$. Allora $f$ è Riemann integrabile in $[a,b]$ e 
+	\begin{equation*}
+		\int_{a}^{b} f(x) \mathrm{d}x = \lim_{k\rightarrow+\infty} \int_{a}^{b} f_k(x) \mathrm{d}x = \int_{a}^{b}\lim_{k \rightarrow +\infty} f_k(x) \mathrm{d}x
+	\end{equation*}
+\end{theorem}
+
+
+\begin{attbar}
+	Per ottenere un risultato analogo non basta la convergenza puntuale.
+\end{attbar}
+\begin{gather*}
+	f_k:[0,1]\rightarrow\mathbb{R}, \qquad k \geq 2
+
+	f_k(x) = 
+	\begin{cases}
+		k^2x &\text{se } 0 \leq x < \frac{1}{k}
+		\\
+		-k^2\left(x-\frac{2}{k}\right) & \text{se } \frac{1}{k} \leq x < \frac{2}{k}
+		\\
+		0 & \text{se } \frac{2}{k} \leq x \leq 1
+	\end{cases}
+\end{gather*}
+\segnaposto %207
+
+$f_k(x) \rightarrow 0 \quad \forall x \in [0,1]$ puntualmente.
+
+$\parallel f_k-0 \parallel_\infty = \parallel f_k\parallel_\infty=k \xrightarrow{k \rightarrow +\infty} +\infty
+
+$f_k \nrightrightarrows 0$,  $\int_{0}^{1} f_k(x) \mathrm{d}x = 1 \quad \forall k \geq 2 \cancel{\rightarrow} \int_{0}^{1} 0 \mathrm{d}x = 0$.
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \label{th: pag206}}
+	
+	Per semplicità, assumiamo che $f_k \in C^0 ([a,b]) \quad \forall k \in \mathbb{N}$. Allora $f\in C^0 ([a,b])$ perché limite uniforme di una successione di funzioni continue, e quindi, in particolare, è Riemann integrabile in $[a,b]$.
+	
+	Resta da dimostrare il passaggio a limite sotto segno di integrale. Dobbiamo stimare 
+	\begin{align*}
+		|\int_{a}^{b}f_k(x) dx -\int_{a}^{b}f(x) \mathrm{d}x|
+		&=|\int_{a}^{b} [f_k(x)-f(x)] \mathrm{d}x| \leq \int_{a}^{b}|f_k(x)-f(x)| \mathrm{d}x
+		\\ 
+		&\leq \int_{a}^{b}\sup_{y \in [a,b]} |f_k(y)-f(y)| \mathrm{d}x = (b-a)\sup_{y \in [a,b]} |f_k(y)-f(y)| \xrightarrow{k \rightarrow+\infty} 0
+	\end{align*}
+	
+	perché $f_k \rightrightarrows f$ in $[a,b]$, e si conclude. $\qquad \square$	
+\end{dembar}
+
+
+\begin{attbar}
+	Non è possibile enunciare lo stesso teorema per gli integrali generalizzati.  In generale, se $f_k \rightrightarrows f$ in $[1,+\infty[$ e le funzioni $f_k$ sono integrabili in senso improprio in $[1,+\infty[$ non è detto che $f$ lo sia.
+\end{attbar}
+
+\begin{equation*}
+	f_k(x) =
+	\begin{cases}
+		\frac{1}{x} & \text{se } 1 \leq x \leq k
+		\\
+		0 & \text{se } x > k
+	\end{cases}
+\end{equation*}
+\segnaposto %209
+
+$\int_{1}^{+\infty}f_k(x)dx=\ln k$ e $f_k \rightrightarrows \frac{1}{x}$ in $[1,+\infty[$ perchè $\sup_{x \geq 1}|f_k(x) -\frac{1}{x}|=\sup_{x \geq k}\frac{1}{x}=\frac{1}{k} \xrightarrow{k \rightarrow +\infty} 0$.\\
+Ma $x \mapsto \frac{1}{x}$ non è integrabile in senso proprio in $[1,+\infty[$.
+
+
+
 \begin{comment}	
 
+
 	
+
+
+	
+
+
+
+	
+	\paragraph{\textcolor{red}{Teorema}}
+	$I \subseteq \R$ intervallo limitato, $\{f_k\}_{k \in \N}, f_k: I \rightarrow \R$, successione di funzioni derivabili in $I$. Se 
+	\begin{enumerate}
+		\item $\exists x_0 \in I\,\, |\,\, \{f_k(x_0)\}_{k \in \N} $ converge;
+		\item $\exists g:I \rightarrow \R \,\, |\,\, f_k' \rightrightarrows g$ in $I$
+	\end{enumerate}
+	allora $\exists f: I \rightarrow \R$ derivabile tale che $f_k\rightrightarrows f$ in $I$ e $f' (x)= g(x) \,\, \forall x \in I$.
+	
+	\paragraph{\textcolor{red}{Dimostrazione}}
+	Per semplicità, assumiamo che $f_k\in C^1(I)\,\, \forall k \in \N$, cosicchè $f_k' \in C^\circ(I) \,\, \forall k \in \N$, ed essendo $f_k' \rightrightarrows g$ in $I$, si deduce che $g \in C^\circ (I)$. Sia $\alpha = \lim_{k \rightarrow +\infty}f_k(x_0) \in \R$, allora $f_k(x) = f_k(x_0)+\int_{x_0}^{x}f_k' (t)dt\,\,\, x \in I $.\\
+	Sia $f(x) = \alpha + \int_{x_0}^{x}g(t) dt$, cosicchè, siccome $g$ è continua, per il teorema fondamentale del calcolo $f$ è derivabile e $f'(x) =g(x)$. Devo dimostrare che $f_k \rightrightarrows f$ in $I$, \\
+	$|f_k(x)-f(x)|= |f_k(x_0)+ \in_{x_0}^{x}f_k' (t) dt+\alpha - \int_{x_0}^{x}g(t) dt|\leq |f_k(x_0)-\alpha|+|\int_{x_0}^{x}[f_k'(t)-g(t)] dt|\leq |f_k(x_0)-\alpha| + |\int_{x_0}^{x}|f_k'(t)-g(t)|dt|\leq |f_k(x_0)-\alpha| + |\int_{x_0}^{x}\sup_{y \in I}|f_k'(y)-g(y)|dt|=|f_k(x_0)-\alpha|+ |x-x_0|\sup_{y \in I}|f_k'(y)-g(y)|\leq |f_k(x_0)-\alpha|+|I|\sup_{y\in I}|f_k'(y)-g(y)|$ che non dipende da $x$, ma solo da $k$.\\
+	Dunque $\forall x \in I$, $|f_k(x)-f(x)| \leq |f_k(x_0)-\alpha|+|I|\sup_{y\in I}|f_k'(y)-g(y)| $\\
+	$\sup_{x\in I}|f_k(x)-f(x)|\leq |f_k(x_0)-\alpha|+|I|\sup_{y \in I}|f_k'(y)-g(y)|\rightarrow0$ per $k \rightarrow +\infty$ $\Rightarrow f_k \rightrightarrows f$ in $I$.
+	\begin{flushright}
+		\large\Lightning
+	\end{flushright}
+	
+	\textcolor{orange}{Errore tipico dei compiti:\\
+		$\{f_k\}_{k \in \N}, f_k: I \rightarrow \R$, $\lim_{k}f_k(x) = f(x)$, $f: I \rightarrow \R$ ho convergenza puntuale in $I$. Studio la convergenza uniforme $f_k(x) -f(x)|\leq ... \leq g_k(x) \rightarrow 0$ per $k \rightarrow +\infty$, $\sup_{x \in I}|f_k(x)-f(x)|\leq g_k(x) \Rightarrow f_k \rightrightarrows f$ in $I$.
+	} \textcolor{red}{NO!!!}\\
+	\textcolor{orange}{La stima giusta è $\sup_{x \in I} |f_k(x)-f(x)|\leq \sup_{x \in I}g_k(x)$.}
+	
+	\paragraph{\textcolor{red}{Osservazione}}
+	$I \subseteq \R$ intervallo, $f_k: I \rightarrow \R$ successione di funzioni derivabili uniformemente convergente ad $f$ in $I$. Possiamo dedurre che $f'(x) = \lim_{k}f_k'(x)$, $x \in I$?\\
+	No!\\
+	$f_k(x)=\frac{\sin(k^2x^2)}{k}$. Allora $f_k \rightrightarrows 0$ in $\R$, $\sup_{x \in \R}|f_k(x)-0|= \sup_{x \in \R}|\frac{\sin(k^2x^2)}{k}|= \frac{1}{k}\rightarrow 0$ per $k \rightarrow+\infty$\\
+	$f(x)=0 \,\, \forall x \in \R$ è il limite uniforme di $\{f_k\}_{k\geq 1}$. Ma $f_k'(x)=2kx\cos(k^2x^2)\nrightarrow 0$ per $k \rightarrow +\infty$.
+	
+	\paragraph{\textcolor{red}{Osservazione}}
+	$I \subseteq \R$ intervallo, $f_k: I \rightarrow \R$ funzioni derivabili tali che $f_k \rightrightarrows f$ in $I$. Possiamo dedurre che $f$ è derivabile?\\
+	No!\\
+	$f_k(x)= \sqrt{x^2+\frac{1}{k}}, \,\, x$ in $\R$.\\
+	IMMAGINI\\
+	$\lim_{k}f_k(x)=|x|$, $f_k \rightrightarrows |x|$ in $\R$ perchè $\sup_{x\in \R}|f_k(x)-(x)|= \frac{1}{\sqrt{k}}\xrightarrow{k \rightarrow +\infty}0$. $f_k \in C^1(\R)$, mentre $f$ non è derivabile in $x =0$, $f_k' (x) = \frac{x}{\sqrt{x^2+\frac{1}{k}}}\rightarrow sgnx$, 
+	$\lim_{k \rightarrow+\infty}f_k'(x)=f'(x)$, $x \neq 0$.\\
+	$f_k' \rightrightarrows f'$ in $]-\infty,-\epsilon]\cup[\epsilon,+\infty[\,\, \forall \epsilon >0$ \textcolor{orange}{(Provare per casa)}
+	
+	\paragraph{\textcolor{red}{Esempio}}
+	Sia $\{f_k\}_{k \geq 1}$ la successione di funzioni definita da 
+	\begin{equation*}
+		f_k(x)=\left(\frac{x}{k} \right)^2 e^{-\left(\frac{x}{k}\right)^2}, \,\,\, x \in \R.
+	\end{equation*}
+	Trovare l'insieme di convergenza puntuale, stabilire se in tale insieme la convergenza è uniforme e calcolare poi 
+	\begin{equation*}
+		\lim_{k \rightarrow +\infty} \int_{0}^{\alpha}f_k(x)dx\,\,\,\,\, \forall \alpha >0,
+	\end{equation*}
+	$\lim_{k \rightarrow +\infty} f_k(x)=0 \,\,\, \forall x \in \R$. Calcoliamo dunque $\sup_{x \in \R}|f_k(x)-0|=\sup_{x \in \R}f_k(x)$ perchè $f_k(x) \geq 0\,\, \forall x \in \R$.\\
+	Sappiamo che $\lim_{x \rightarrow \pm \infty}f_k(x)=0$, $ f_k'(x) = \frac{2x}{k^2}e^{-\left(\frac{x}{k}\right)^2}-\frac{2x}{k^2}\left(\frac{x}{k}\right)^2 e^{-\left(\frac{x}{k}\right)^2}= \frac{2x}{k^4}e^{-\left(\frac{x}{k}\right)^2}(k^2-x^2)$, dunque $\sup_{x \in \R}f_k(x) = f_k(k)= e^{-1}$. Quindi $f_k \nrightrightarrows 0$ in $\R$.\\
+	Fissato $\alpha >0$, studiamo la convergenza uniforme in $[0, \alpha]$.\\
+	IMMAGINE\\
+	Per $k > \alpha$, avremo $\sup_{x \in [0,\alpha]}f_k(x)=f_k(\alpha)$ cioè $\sup_{x \in [0, \alpha]} f_k(x) = \left( \frac{\alpha}{k} \right)^2 e^{-\left(\frac{\alpha}{k}\right)^2}\rightarrow 0$ per $k \rightarrow +\infty \,\, \forall \alpha >0$ fissato $\Rightarrow f_k \rightrightarrows f$ in $[0,\alpha] \Rightarrow$ per il teorema di passaggio al limite sotto segno di integrale\\
+	\begin{equation*}
+		\lim_{k \rightarrow+\infty}\int_{o}^{\alpha} f_k(x) dx = \int_{0}^{\alpha}f(x) dx=0.
+	\end{equation*}
+	
+	\subsection{\textcolor{red}{Proprietà topologiche degli spazi metrici}}
+	\subsubsection{\textcolor{red}{Compattezza negli spazi metrici}}
+	
+	\paragraph{\textcolor{red}{Definizione}}
+	$(X,d)$ spazio metrico. $K \subseteq X$ si dice \textcolor{red}{(sequenzialmente) compatto} se ogni successione a valori in $K$ ammette una sottosuccessione convergente ad un elemento di $K$.
+	
+	\paragraph{\textcolor{red}{Teorema }}
+	$(X,d_x),(Y,d_y)$ spazi metrici, $K \subseteq X$ compatto e $f:K \rightarrow Y$ continua. Allora $f(K)$ è compatto in $Y$ \textcolor{orange}{(l'immagine continua di un compatto è compatta)}.
+	
+	\paragraph{\textcolor{red}{Corollario (Teorema di Weierstrass)}}
+	$(X,d)$ spazio metrico, $K \subseteq X$ compatto, $f:K \rightarrow\R$ continua. Allora $f$ ha massimo e minimo.
+	
+	\paragraph{\textcolor{red}{Dimostrazione del Corollario}}
+	$f(K)\subseteq \R$ è un compatto, quindi è chiuso e limitato $\Rightarrow$ è un insieme con $\max$ e $\min$, che banalmente coincidono con massimo e minimo di $f$ per definizione. 
+	\begin{flushright}
+		\large\Lightning
+	\end{flushright}
 	
 \end{comment}
