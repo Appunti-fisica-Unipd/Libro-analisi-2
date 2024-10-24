@@ -101,9 +101,9 @@ sono tute norme su $C^0 ([0,1])$
 		
 		$\parallel f+g \parallel_\infty = \sup_{x\in[0,1]} |f(x) + g(x)|$
 		
-		$|f(x) + g(x)| \distr |f(x)| + |g(x)| \leq \sup_{y\in[0,1]} |f(y)| + \sup_{y\in[0,1]} |g(y)| =  \parallel f \parallel_\infty + \parallel g \parallel_\infty \qquad \forall \ x \in [0,1]$
+		$|f(x) + g(x)| \distr |f(x)| + |g(x)| \leq \sup_{y\in[0,1]} |f(y)| + \sup_{y\in[0,1]} |g(y)| =  \parallel f \parallel_\infty + \parallel g \parallel_\infty \ \forall \ x \in [0,1]$
 		
-		$\parallel f+g \parallel_\infty = \sup_{x\in[0,1]} |f(x) + g(x)| \leq \parallel f \parallel_\infty + \parallel g \parallel_\infty$\\
+		$\parallel f+g \parallel_\infty = \sup_{x\in[0,1]} |f(x) + g(x)| \leq \parallel f \parallel_\infty + \parallel g \parallel_\infty$
 	\end{enumerate}
 \end{example}
 \end{exbar}
@@ -174,7 +174,8 @@ sono tute norme su $C^0 ([0,1])$
 
 
 \begin{definition}
-	$X$ insieme non vuoto. Una distanza o metrica su $X$ è una funzione $d:X \times X \rightarrow \mathbb{R}$ tale che
+	$X$ insieme non vuoto. Una distanza o metrica su $X$ è una funzione \\ %riq malf
+	$d:X \times X \rightarrow \mathbb{R}$ tale che
 	\begin{enumerate}
 		\item $d(x,y) \geq 0 \qquad \forall \ x,y \in X $ e $d(x,y) = 0 \iff x = y$
 		\item $d(x,y) = d(y,x)$ (proprietà simmetrica)
@@ -243,7 +244,9 @@ No, esistono metriche dentro lo spazio vettoriale che non derivano da una norma.
 		\begin{gather*}
 		(a + b)^p \leq a^p + b^p \qquad /.\frac{1}{b^p}
 		\\
-		\iff \frac{(a+b)^p}{b^p} \leq \frac{a^p}{b^p} + 1 \iff \left( \frac{a+b}{b} \right)^p \leq \left( \frac{a}{b} \right)^p + 1 \iff \left( \frac{a}{b} + 1 \right)^p \leq \left( \frac{a}{b} \right)^p + 1 \qquad \forall \ a,b > 0
+		\iff \frac{(a+b)^p}{b^p} \leq \frac{a^p}{b^p} + 1 \iff \left( \frac{a+b}{b} \right)^p \leq \left( \frac{a}{b} \right)^p + 1 \iff
+		\\
+		\iff \left( \frac{a}{b} + 1 \right)^p \leq \left( \frac{a}{b} \right)^p + 1 \qquad \forall \ a,b > 0
 		\end{gather*}
 		
 		Posto $\lambda = \frac{a}{b}>0$
@@ -372,7 +375,7 @@ $(x,d)$ spazio metrico.
 
 
 \begin{definition}
-	$A \subseteq X$ si dice \textbf{aperto} se è intorno di ogni suo punto, cioè se $\forall \ x \in A \quad \exists r > 0 \ \big| \ B_r(x) \subseteq A$.
+	$A \subseteq X$ si dice \textbf{aperto} se è intorno di ogni suo punto, cioè se $\forall \ x \in A \quad \exists r > 0 \ \big|$ $B_r(x) \subseteq A$.
 	
 	$A$ si dice \textbf{chiuso} se $A^c = X \backslash A$ è aperto.
 \end{definition}
@@ -465,7 +468,7 @@ $k=\max\{k_1, k_2\}$
 
 \begin{proposition}
 	\label{pr: grande aperto}
-	\AA \ è un insieme aperto ed è il più grande aperto, nel senso dell'inclusione, contenuto in $A$, cioè se $B \subseteq A$ è aperto, allora $B \subseteq \AA$
+	\AA \ è un insieme aperto ed è il più grande aperto, nel senso dell'inclusione, contenuto in $A$, cioè se $B \subseteq A$ è aperto, allora $B \subseteq$ \AA
 \end{proposition}
 
 \begin{dembar}
@@ -475,11 +478,11 @@ $k=\max\{k_1, k_2\}$
 
 \begin{exbar}
 	\begin{gather*}
-		A = \ ]0,1], \qquad \AA = \ ]0,1[
+		A = \ ]0,1], \qquad \text{\AA} = \ ]0,1[
 		\\
-		A = \ ]0,1] \cup \{ 2 \}, \qquad \AA = \ ]0,1[
+		A = \ ]0,1] \cup \{ 2 \}, \qquad \text{\AA} = \ ]0,1[
 		\\
-		A = \ ]0,1] \cup \left\{2 + \frac{1}{n} \ \bigg| \ n \geq 1, n \in \mathbb{N} \right\}, \qquad \AA = \ ]0,1[
+		A = \ ]0,1] \cup \left\{2 + \frac{1}{n} \ \bigg| \ n \geq 1, n \in \mathbb{N} \right\}, \qquad \text{\AA} = \ ]0,1[
 	\end{gather*}
 \end{exbar}
 
@@ -504,19 +507,20 @@ $k=\max\{k_1, k_2\}$
 
 \begin{exbar}
 	\begin{gather*}
-		A = \ ]0,1], \qquad \lowercomment{\overline{A} = [0,1]} {0 \notin A, \text{ mentre se } x \in \AA \Rightarrow x \in A} {x \in A \Rightarrow x \in \overline{A} \text{ perché } x \in B_r(x) \cap A \ \forall r > 0}
+		A = \ ]0,1], \qquad \lowercomment{\overline{A} = [0,1]} {0 \notin A, \text{ mentre se } x \in \text{\AA} \Rightarrow x \in A} {x \in A \Rightarrow x \in \overline{A} \text{ perché } x \in B_r(x) \cap A \ \forall r > 0}
 		\\
 		A = \ ]0,1] \cup \{ 2 \}, \qquad \overline{A} = [0,1] \cup \{ 2 \}
 		\\
-		A = \ ]0,1] \cup \left\{ 2 + \frac{1}{n} \ \bigg| \ n \geq 1, n \in \mathbb{N} \right\}, \qquad \overline{A} = [0,1] \cup \left\{2 + \frac{1}{n} \ \bigg| \ n \geq 1, n \in \mathbb{N} \right\} \cup \{ 2 \}	\end{gather*}
+		A = \ ]0,1] \cup \left\{ 2 + \frac{1}{n} \ \bigg| \ n \geq 1, n \in \mathbb{N} \right\}, \qquad \overline{A} = [0,1] \cup \left\{2 + \frac{1}{n} \ \bigg| \ n \geq 1, n \in \mathbb{N} \right\} \cup \{ 2 \}	
+	\end{gather*}
 \end{exbar}
 
 
 \textbf{Osservazione:}
 \begin{gather*}
-	\AA \subseteq A \subseteq \overline{A}
+	\text{\AA} \subseteq A \subseteq \overline{A}
 	\\	
-	A \text{ è aperto } \iff A = \AA
+	A \text{ è aperto } \iff A = \text{\AA}
 	\\
 	A \text{ è chiuso } \iff A = \overline{A}
 \end{gather*}
@@ -959,7 +963,7 @@ Siccome $C$ è chiuso $\iff C^c$ è aperto, il corollario al teorema che abbiamo
 
 
 \begin{definition}
-	$(X,d)$ spazio metrico. $K \subseteq X$ si dice limitato se $\exists \ x \in X$ e $R>0 \ \big| \ K \subseteq B_R(x)$, cioè $d(x,z) < R \qquad \forall \ z \in K$. 
+	$(X,d)$ spazio metrico. $K \subseteq X$ si dice limitato se $\exists \ x \in X$ e $R>0 \ \big|$ $K \subseteq B_R(x)$, cioè $d(x,z) < R \quad \forall \ z \in K$. 
 \end{definition}
 
 
@@ -975,11 +979,12 @@ Infatti se $k \subseteq B_R(x)$
 \begin{gather*}
 	\Rightarrow \lowercomment{ \parallel x-z \parallel} {= d(x,z)} {} < R \qquad \forall \ z \in K
 	\\
-	z \in K \qquad \parallel z \parallel = \parallel z - x + x \parallel \distr \parallel x-z \parallel + \parallel x\parallel < R + \parallel x \parallel \\
+	z \in K \qquad \parallel z \parallel = \parallel z - x + x \parallel \distr \parallel x-z \parallel + \parallel x\parallel < R + \parallel x \parallel 
+	\\
 	\Rightarrow z \in B_{R + \parallel x \parallel}(0)
 \end{gather*}
 
-Quindi, in uno spazio normato, $K \subseteq X$ è limitato se $\exists \ R >0 \ \big| \ K \subseteq B_R(0)$, cioè $\parallel z \parallel < R \quad \forall \ z \in K$. 
+Quindi, in uno spazio normato, $K \subseteq X$ è limitato se $\exists \ R >0 \ \big| \ K \subseteq B_R(0)$, cioè $\parallel z \parallel < R$ $\forall \ z \in K$. 
 
 (se $x = R$ e $\parallel \cdot \parallel = |\cdot|$, si ritrova quanto scritto sopra.)
 
@@ -1041,7 +1046,7 @@ $K \subseteq \mathbb{R}^n$ è limitato per $|\cdot| \iff$ lo è per $\parallel \
 
 
 \textbf{Osservazione:}
-Introduciamo in $\mathbb{R}^n$ il simbolo $\infty$. Un intorno di $\infty$ è un qualunque insieme $A \subseteq \mathbb{R}^n \; \big| \; A$ contiene il complementare di una palla di centro l'origine, cioè $\exists \ R > 0 \; \big| \; \overline{x} \in A \Rightarrow \parallel \overline{x} \parallel > R$
+Introduciamo in $\mathbb{R}^n$ il simbolo $\infty$. Un intorno di $\infty$ è un qualunque insieme $A \subseteq \mathbb{R}^n \; \big| \; A$ contiene il complementare di una palla di centro l'origine, cioè $\exists \ R > 0 \; \big| \; \overline{x} \in A$ $\Rightarrow \parallel \overline{x} \parallel > R$
 \begin{center}
 	\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag166_2}
 	\label{fig:pag1662}
@@ -1071,7 +1076,8 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 \begin{definition}
 	$(X,d)$ spazio metrico, $A \subseteq X$, non vuoto. $x_0 \in X$ si dice \textbf{punto di accumulazione} per $A$ se  $\forall \epsilon >0 \ \exists \ x \in A, x \neq x_0,$ tale che $x \in B_\epsilon(x_0)$, cioè se $B_\epsilon (x_0) \cap A$ contiene punti di $A$ diversi da $x_0$. 
 	
-	$x_0 \in A$ si dice \textbf{punto isolato} se non è di accumulazione, cioè se $\exists \epsilon > 0$ tale che $B_\epsilon (x_0) \cap A =\{ x_0 \}$.
+	$x_0 \in A$ si dice \textbf{punto isolato} se non è di accumulazione, cioè se $\exists \epsilon > 0$ tale che \\ %riq malf
+	$B_\epsilon (x_0) \ \cap \ A =\{ x_0 \}$.
 \end{definition}
 
 
@@ -1086,9 +1092,10 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 	\end{equation*}
 	se per ogni intorno  $V$ di $\ell$  esiste un intorno $U$ di $x_0 \; \big| \; f(x) \in V, \ x \in U \cap dom \ f, x \neq x_0 $
 	
-	In altre parole, $\lim_{x \rightarrow x_0} f(x) = \ell \quad \forall \ \epsilon > 0 \quad \exists \ \delta > 0 \; \big| $ se $ 0 < \lowercomment{d_x(x, x_0)} {x \in B_\delta^x(x_0)} {} < \delta$ e $x \in dom \ f $, allora $\lowercomment{d_y (f(x), \ell)} {f(x) \in B_\epsilon^y(\ell)} {} < \epsilon$ 
+	In altre parole, $\lim_{x \rightarrow x_0} f(x) = \ell \quad \forall \epsilon > 0 \quad \exists \ \delta > 0 \; \big| $ se $ 0 < \lowercomment{d_x(x, x_0)} {x \in B_\delta^x(x_0)} {} < \delta$ e $x \in dom \ f $, allora $\lowercomment{d_y (f(x), \ell)} {f(x) \in B_\epsilon^y(\ell)} {} < \epsilon$ 
 	
-	(Se prendo la definizione data con $\epsilon$ e $\delta$ per $X = Y = \mathbb{R}$ e le distanze $d_x(x,y) = d_y(x,y) = |x-y|$, ottengo la definizione con $\epsilon$ e $\delta$ data in ambito reale.)
+	(Se prendo la definizione data con $\epsilon$ e $\delta$ per $X = Y = \mathbb{R}$ e le distanze \\ %riq malf
+	$d_x(x,y) = d_y(x,y) = |x-y|$, ottengo la definizione con $\epsilon$ e $\delta$ data in ambito reale.)
 \end{definition}
 
 
@@ -1101,7 +1108,7 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 
 
 \begin{proposition}
-	$(X,d)$ spazio metrico, $\overline{f}: dom \ \overline{f} \rightarrow \mathbb{R}^n, \qquad \overline{f}(x) = \big(f_1(x), \ldots, f_n(x) \big), \ x_0 \in X$ punto di accumulazione per $dom \ \overline{f} \subseteq X$, allora 
+	$(X,d)$ spazio metrico, $\overline{f}: dom \ \overline{f} \rightarrow \mathbb{R}^n,\; \overline{f}(x) = \big(f_1(x), \ldots, f_n(x) \big), \ x_0 \in X$ punto di accumulazione per $dom \ \overline{f} \subseteq X$, allora 
 	\begin{equation*}
 		\lim_{x \rightarrow x_0} \overline{f}(x) = \overline{\ell} = (\ell_1, \ldots, \ell_n) \in \mathbb{R}^n \iff \lim_{x \rightarrow x_0} f_j(x) = \ell_j \qquad \forall j = 1, 2, \ldots, n
 	\end{equation*}
@@ -1112,7 +1119,7 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 	
 	$(X,d)$ spazio metrico, $f: dom \ f \rightarrow \mathbb{R}, \ dom \ f \subseteq X, \ x_0 \in X$ punto di accumulazione per $dom \ f$.
 	
-	Se $\lim_{x \rightarrow x_0} f(x) = \ell > 0$, allora $f(x) > 0$ definitivamente per $ x \rightarrow x_0$, cioè $\exists \ \delta > 0 \; \big| \; f(x) > 0 \ \forall \ x \in B_\delta (x_0) \cap dom \ f, \ x \neq x_0$. 
+	Se $\lim_{x \rightarrow x_0} f(x) = \ell > 0$, allora $f(x) > 0$ definitivamente per $ x \rightarrow x_0$, cioè $\exists \ \delta > 0 \; \big| \; f(x) > 0$ $\forall \ x \in B_\delta (x_0) \cap dom \ f, \ x \neq x_0$. 
 \end{theorem}
 
 
@@ -1144,9 +1151,9 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 	
 
 	$\bigg( \begin{array}{l}
-	x \in B_{\delta}^{x}(x_0) \cap dom \ f \Rightarrow f(x) \in B_{\epsilon}^{y} (f(x_0)) \Rightarrow x \in f^{-1}(B_{\epsilon}^{y} (f(x_0)))$
+	x \in B_{\delta}^{x}(x_0) \cap dom \ f \Rightarrow f(x) \in B_{\epsilon}^{y} (f(x_0)) \Rightarrow x \in f^{-1}(B_{\epsilon}^{y} (f(x_0))
 	\\
-	$\forall \ \epsilon > 0 \ \exists \ \delta > 0 \; \big| \; B_{\delta}^{x}(x_0) \cap dom \ f \subseteq f^{-1} (B_{\epsilon}^{y} (f(x_0)))
+	\forall \ \epsilon > 0 \ \exists \ \delta > 0 \; \big| \; B_{\delta}^{x}(x_0) \cap dom \ f \subseteq f^{-1} (B_{\epsilon}^{y} (f(x_0)))
 	\end{array}
 	\bigg)$
 	
@@ -1433,7 +1440,7 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		\text{e si scrive } f_k \rightrightarrows f \text{ in } D
 	\end{gather*}
 	
-	($\forall \epsilon >0 \exists N \; \big| \; k >N \qquad \sup_{x \in D} |f_k(x)-f(x)| < \epsilon$, e quindi, in particolare $|f_k(x) - f(x)| < \epsilon  \quad \forall \ x \in D$ cioè $f(x) - \epsilon <f_k(x) < f(x) + \epsilon \qquad \forall x \in D$)
+	($\forall \epsilon >0 \exists N \; \big| \; k >N \quad \sup_{x \in D} |f_k(x)-f(x)| < \epsilon$, e quindi, in particolare $|f_k(x) - f(x)| < \epsilon$ $\forall \ x \in D$ cioè $f(x) - \epsilon <f_k(x) < f(x) + \epsilon \qquad \forall x \in D$)
 	
 	\begin{center}
 		\includegraphics[width=0.7\linewidth]{spazi_metrici_e_normati/pag184}
@@ -1627,7 +1634,8 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag190}}
 	
 	
-	$x_0 \in X$. Fissiamo $\epsilon > 0$. Dobbiamo dimostrare che $\exists \ \delta > 0 \; \big| \; d(x,x_0) < \delta \Rightarrow |f(x) - f(x_0)| < \epsilon$
+	$x_0 \in X$. Fissiamo $\epsilon > 0$. Dobbiamo dimostrare che $\exists \ \delta > 0 \; \big| \; d(x,x_0) < \delta$ \\ %riq malf 
+	$\Rightarrow |f(x) - f(x_0)| < \epsilon$
 	\begin{itemize}
 		\item $f_k$ è continua in $x_0 \quad \forall \ k$
 		\item $f_k \rightrightarrows f$ in $X$
@@ -1969,25 +1977,29 @@ Sia $x \in \overline{D} \Rightarrow \exists \{ x_j\}_{j\geq 1} \subseteq D |x_j\
 \begin{attbar}
 	Per ottenere un risultato analogo non basta la convergenza puntuale.
 \end{attbar}
+
 \begin{gather*}
 	f_k:[0,1]\rightarrow\mathbb{R}, \qquad k \geq 2
-
+	\\
 	f_k(x) = 
 	\begin{cases}
 		k^2x &\text{se } 0 \leq x < \frac{1}{k}
 		\\
-		-k^2\left(x-\frac{2}{k}\right) & \text{se } \frac{1}{k} \leq x < \frac{2}{k}
+		-k^2 \left(x-\frac{2}{k}\right) & \text{se } \frac{1}{k} \leq x < \frac{2}{k}
 		\\
 		0 & \text{se } \frac{2}{k} \leq x \leq 1
 	\end{cases}
 \end{gather*}
+
 \segnaposto %207
 
-$f_k(x) \rightarrow 0 \quad \forall x \in [0,1]$ puntualmente.
-
-$\parallel f_k-0 \parallel_\infty = \parallel f_k\parallel_\infty=k \xrightarrow{k \rightarrow +\infty} +\infty
-
-$f_k \nrightrightarrows 0$,  $\int_{0}^{1} f_k(x) \mathrm{d}x = 1 \quad \forall k \geq 2 \cancel{\rightarrow} \int_{0}^{1} 0 \mathrm{d}x = 0$.
+\begin{gather*} 
+	f_k(x) \rightarrow 0 \quad \forall x \in [0,1] \text{ puntualmente.}
+	\\
+	\parallel f_k-0 \parallel_\infty = \parallel f_k\parallel_\infty=k \xrightarrow{k \rightarrow +\infty} +\infty
+	\\
+	f_k \nrightrightarrows 0, \ \int_{0}^{1} f_k(x) \mathrm{d}x = 1 \quad \forall k \geq 2 \cancel{\rightarrow} \int_{0}^{1} 0 \ \mathrm{d}x = 0
+\end{gather*}
 
 
 \begin{dembar}
@@ -2068,29 +2080,32 @@ Ma $x \mapsto \frac{1}{x}$ non è integrabile in senso proprio in $[1,+\infty[$.
 	\\
 	&=|f_k(x_0)-\alpha|+ |x-x_0|\sup_{y \in I}|f_k'(y)-g(y)|
 	\\
-	&\leq \underbrace{|f_k(x_0)-\alpha|+\lowercomment{|I|} {\text{ampiezza di }I} {} \sup_{y\in I}|f_k'(y)-g(y)|}_{\color{blue}{\text{non dipende da $x$, ma solo da $k$}}}
+	&\leq \underbrace{|f_k(x_0)-\alpha|+\uppercomment{|I|} {} {\text{ampiezza di }I} \sup_{y\in I}|f_k'(y)-g(y)|}_{\color{blue}{\text{non dipende da $x$, ma solo da $k$}}}
 	\end{align*}
 	
 	Dunque $\forall x \in I$, 
 	
-	\begin{gather*} |f_k(x)-f(x)| \leq |f_k(x_0)-\alpha|+|I|\sup_{y\in I}|f_k'(y)-g(y)|
-	\\
-	\sup_{x\in I}|f_k(x)-f(x)|\leq \underbrace{|f_k(x_0)-\alpha|}_{= 0 \text{ per } k \to +\infty} + |I| \underbrace{\sup_{y \in I}|f_k'(y)-g(y)|}_{= 0} \xrightarrow^{\text{per } k \rightarrow +\infty} 0
-	\\
-	\Rightarrow f_k \rightrightarrows f \text{ in } I. \qquad\square
+	\begin{gather*} 
+		|f_k(x)-f(x)| \leq |f_k(x_0)-\alpha|+|I|\sup_{y\in I}|f_k'(y)-g(y)|
+		\\
+		\sup_{x\in I} |f_k(x)-f(x)|\leq \underbrace{|f_k(x_0)-\alpha|}_{= 0 \text{ per } k \to +\infty} + |I| \underbrace{\sup_{y \in I}|f_k'(y)-g(y)|}_{= 0} \xrightarrow{\text{per } k \rightarrow +\infty} 0
+		\\
+		\Rightarrow f_k \rightrightarrows f \text{ in } I. \qquad\square
 	\end{gather*}
 	
-	\textcolor{blue}{Errore tipico dei compiti:
+	\color{blue}{Errore tipico dei compiti:
 		
 		$\{f_k\}_{k \in \mathbb{N}}, f_k: I \rightarrow \mathbb{R}$, $\lim_{k}f_k(x) = f(x)$, $f: I \rightarrow \mathbb{R}$ ho convergenza puntuale in $I$.
 		
 		Studio la convergenza uniforme 
 		\begin{gather*} 
-			f_k(x) -f(x)|\leq ... \leq g_k(x) \xrightarrow^{\text{per } x \to +\infty} 0
+			f_k(x) -f(x)|\leq ... \leq g_k(x) \xrightarrow{\text{per } x \to +\infty} 0
 			\\
-			\sup_{x \in I}|f_k(x)-f(x)|\leq g_k(x) \Rightarrow f_k \rightrightarrows f \text{ in } I.
-		\end{gather*}
-	\textcolor{red}{La stima giusta è 
+			\sup_{x \in I} |f_k(x)-f(x)|\leq g_k(x) \Rightarrow f_k \rightrightarrows f \text{ in } I
+		\end{gather*} 
+	}
+	
+	\color{red}{La stima giusta è 
 		$$\sup_{x \in I} |f_k(x)-f(x)|\leq \sup_{x \in I}g_k(x)$$}
 \end{dembar}
 
@@ -2106,9 +2121,7 @@ $$f_k(x)=\frac{\sin(k^2x^2)}{k}$$
 
 Allora $f_k \rightrightarrows 0$ in $\mathbb{R}$ 
 
-$$\sup_{x \in 
-}|f_k(x)-0|= \sup_{x \in 
-}|\frac{\sin(k^2x^2)}{k}|= \frac{1}{k}\xrightarrow^{\text{per } k \to +\infty} 0$$
+$$\sup_{x \in \mathbb{R}}|f_k(x)-0|= \sup_{x \in \mathbb{R}}|\frac{\sin(k^2x^2)}{k}|= \frac{1}{k}\xrightarrow{\text{per } k \to +\infty} 0$$
 
 $f(x)=0 \,\, \forall x \in \mathbb{R}$ è il limite uniforme di $\{f_k\}_{k\geq 1}$. Ma $f_k'(x)=2kx\cos(k^2x^2)\cancel{\rightarrow} 0$ per $k \rightarrow +\infty$.
 
@@ -2318,33 +2331,33 @@ Poiché la convergenza uniforme implica quella puntuale, si avrebbe che $f$ sare
 	\begin{itemize}
 		\item $K$ è chiuso.
 		
-		$\{x_j\}_{j\in\mathbb{N}}\subseteq K$ una successione convergente ad un elemento $x \in X$ e dimostriamo che $x \in K$.
-		
-		$K$ è compatto $\Rightarrow \exists$ una sottosuccessione $\{x_{j_i}\}_{i\in\mathbb{N}}$ convergente ad un elemento $y \in K$. Però, $x_{j_i} \rightarrow x$, perché sottosuccessione di $\{x_j\}_{j  \in \mathbb{N}} \Rightarrow x = y \in K$ per l'unicità del limite.
+			$\{x_j\}_{j\in\mathbb{N}}\subseteq K$ una successione convergente ad un elemento $x \in X$ e dimostriamo che $x \in K$.
+			
+			$K$ è compatto $\Rightarrow \exists$ una sottosuccessione $\{x_{j_i}\}_{i\in\mathbb{N}}$ convergente ad un elemento $y \in K$. Però, $x_{j_i} \rightarrow x$, perché sottosuccessione di $\{x_j\}_{j  \in \mathbb{N}} \Rightarrow x = y \in K$ per l'unicità del limite.
 		
 		\item $K $ è limitato.
 		
-		Ragioniamo per assurdo e supponiamo $K$ illimitato, cioè 
-		
-		\textcolor{blue}{($K$ limitato $\Leftrightarrow \exists x \in X$ e $R>0 \,\, \big|\,\, K \subseteq B_k(x)$)} 
-		
-		preso $x \in X \,\,\exists\,\, x_j \in K\,\, \big|\,\, d(x_j,x)\geq j\geq 1$, ($x_j\notin B_j(x)$)
-		
-		$\{x_j\}_{j\geq 1}\subseteq K$ è una successione
-		
-		$K$ è compatto $ \Rightarrow$ ha una sottosuccessione $\{x_{j_i}\}_{i\geq 1}$ convergente ad un elemento $x_0 \in K$
-		
-		$d(x_{j_i},x_0)\rightarrow 0$ per $i \rightarrow+\infty$
-		
-		
-		Per la disuguaglianza triangolare
-		\begin{gather*} 
-			j_i \leq d(x_{j_i},x)\leq d(x_{j_i},x_0)+d(x_0,x)
-			\\
-			d(x_{j_i,x_0})\geq \lowercomment{j_i} {\myarrow[270]} {+\infty} - d(x_0,x)\xrightarrow^{\text{per }i \rightarrow +\infty} +\infty
-		\end{gather*}
+			Ragioniamo per assurdo e supponiamo $K$ illimitato, cioè 
 			
-		assurdo perché $d(x_{j_i},x_0)\rightarrow 0 \qquad \square$
+			\textcolor{blue}{($K$ limitato $\Leftrightarrow \exists x \in X$ e $R>0 \,\, \big|\,\, K \subseteq B_k(x)$)} 
+			
+			preso $x \in X \,\,\exists\,\, x_j \in K\,\, \big|\,\, d(x_j,x)\geq j\geq 1$, ($x_j\notin B_j(x)$)
+			
+			$\{x_j\}_{j\geq 1}\subseteq K$ è una successione
+			
+			$K$ è compatto $ \Rightarrow$ ha una sottosuccessione $\{x_{j_i}\}_{i\geq 1}$ convergente ad un elemento $x_0 \in K$
+			
+			$d(x_{j_i},x_0)\rightarrow 0$ per $i \rightarrow+\infty$
+			
+			
+			Per la disuguaglianza triangolare
+			\begin{gather*} 
+				j_i \leq d(x_{j_i},x) \leq d(x_{j_i},x_0)+d(x_0,x)
+				\\
+				d(x_{j_i,x_0}) \geq \lowercomment{j_i} {\myarrow[270]} {+\infty} - d(x_0,x) \xrightarrow{\text{per } i \rightarrow +\infty} +\infty
+			\end{gather*}
+				
+			assurdo perché $d(x_{j_i},x_0)\rightarrow 0 \qquad \square$
 	\end{itemize}
 \end{dembar}
 	
@@ -2364,11 +2377,174 @@ Poiché la convergenza uniforme implica quella puntuale, si avrebbe che $f$ sare
 \end{definition}
 
 
+\begin{definition}
+	Se $(X, \|\cdot  \|)$ è spazio normato completo (per la metrica $d(x,y)=\|x-y\|$ definita dalla norma) allora $X$ si dice \textbf{spazio di Banach}.
+\end{definition}
+	
+
+\begin{exbar}
+\begin{example}
+	$(\mathbb{R},|\cdot|)$ è spazio di Banach. Sia $\{x_k\}_{k\geq 1}\subseteq \mathbb{R}$ successione di Cauchy.
+	
+	$$\forall \epsilon >0 \quad \exists N > 0 \,\, \big| \,\, k >N \text{ e } p \geq 1 \Rightarrow |x_k-x_{k+p}|< \epsilon$$
+	
+	Facciamo vedere che è limitata, cioè che $\exists C >0 \,\,\big|\,\, |x_k| \leq C\,\, \forall \,\, k \geq 1$.
+	
+	In corrispondenza di $\epsilon = 1 \,\, \exists \,\, N \in \mathbb{N}, N \geq 1 \,\,\big| \,\, |x_k-x_{k+p}|< 1 \,\,\forall \,\, k >N$ e $p \geq 1$.
+	
+	In particolare, se $\lowercomment{j >N}{j\geq N+1}{}$ $|x_j-x_{N+1}|<1$ perché fissato $k = N+1$ se $p \geq 1$ si ha 
+	\begin{gather*} 
+		|x_{N+1}-\lowercomment{x_{N+1+p}} {j > N + 1} {}|< 1
+		\\
+		|x_j-x_{N+1}|<1 \forall j > N
+	\end{gather*}
+	
+	Se $j >N$
+	
+	$$|x_j|=|x_j-x_{N+1}+x_{N+1}|\leq |x_j-x_{N+1}|+|x_{N+1}|< 1 +|x_{N+1}|$$
+	
+	Preso $C= \max\{|x_1|,|x_2|,..., |x_N|,1+|x_{N+1}|\}$ si ha
+	\begin{itemize}
+		\item Se $j \leq N \Rightarrow$ 
+		
+		$$|x_j|\leq \max\{|x_1|,|x_2|,...,|x_N|\}\leq C$$
+		
+		\item Se $j > N \Rightarrow$ 
+		
+		$$|x_j| \leq 1+|x_{N+1}|\leq C$$
+	\end{itemize}
+	
+	$$\Rightarrow |x_j|\leq C \,\,\forall \,\, j \geq 1 \Rightarrow \{x_k\}_{k \geq 1} \text{è limitata.}$$
+	
+	Per il teorema di Bolzano-Weierstrass $\{x_k\}_{k \geq1}$ ha una sottosuccessione convergente, $\{x_{k_j}\}_{j \geq 1}$ ed un elemento $x \in \mathbb{R}$. Allora $\{x_k\}_{k \geq1}$ converge ad $x$ e quindi $\mathbb{R}$ è completo. Infatti vale la seguente.
+\end{example}
+\end{exbar}
+
+
+\begin{proposition}
+	\label{pr: pag 228}
+	$(X,d)$ spazio metrico, $\{x_k\}_{k \geq 1} \subseteq X$ successione di Cauchy tale che ammette una sottosuccessione $\{x_{k_j}\}_{j\geq 1}$ convergente ad un elemento $x \in X$. Allora l'intera successione $\{x_k\}_{k\geq 1}$ converge ad $x$.
+\end{proposition}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} della \textbf{Proposizione \ref{pr: pag 228}}
+	
+	Dobbiamo dimostrare che $\forall \epsilon >0 \,\,\exists \,\, N >0 \,\,\big|\,\, k > N \Rightarrow d(x_k,x)< \epsilon$. 
+	
+	Fissiamo $\epsilon >0$. Siccome $\{x_k\}_{k\geq 1}$ è di Cauchy, $\exists N >0 \,\, |$ se  $k,l >L \Rightarrow d(x_k,x_l)< \frac{\epsilon}{2}$
+	
+	$\exists \,\, k_j > N \,\,\big|\,\, d(x_{k_j},x)< \frac{\epsilon}{2}$ perché $x_{k_j} \rightarrow x$
+	
+	Preso $k > N$ si ha 
+	$$d(x_k, x)\leq d(x_k,x_{k_j})+d(\underbrace{x_{k_j},x}_{\color{blue}{k, k_j > N}}) <\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon$$
+\end{dembar}
+
+
+\begin{proposition}
+	\label{pr: pag229}
+	$(X,d)$ spazio metrico, $\{x_k\}_{k \geq 1} \subseteq X$ successione di Cauchy. Allora $\{x_k\}_{k \geq 1}$ è limitata, cioè $\exists x \in X$ e $C >0 \,\, \big|\,\, d(x_k,x)\leq C \forall k \geq 1$.
+\end{proposition}
+
+
+\begin{dembar}
+	Dimostrazione della Proposizione \ref{pr: pag229}
+	
+	Utile esercizio per casa. Bisogna ripercorrere quanto fatto nel caso $x = \mathbb{R}$.
+\end{dembar}
+
+
+\begin{exbar}
+	$(\mathbb{R}^n,|\cdot|)$ è completo. 
+	
+	$$\{\overline{x_k}\}_{k\geq 1}, \ \overline{x_k} =(x_{k1, ..., x_{k_n}})$$
+	
+	è successione di Cauchy in $\mathbb{R}^n$ allora $\{x_{k_j}\}_{j \geq 1}$ è successione di Cauhcy in $\mathbb{R} \forall j = 1,...,n$, e quindi le successioni delle componenti di $\{\overline{x_k}\}_{k \geq 1}$ convergono in $\mathbb{R}$, $\Rightarrow$ la successione $\{\overline{x_k}\}_{k \geq 1}$ converge in $\mathbb{R}^n$.
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	$(C^0([0,1]), \|\cdot \|)$, $\| f \|_1 = \int_{0}^{1} |f(x)|dx$, non è completo.
+	
+	$$f_k(x)= 
+	\begin{cases}
+		1 & \text{ se } 0 \leq x < \frac{1}{2} 
+		\\
+		2k \left(\frac{1}{2}+\frac{1}{2k}-x\right) & \text{ se } \frac{1}{2} \leq x <  \frac{1}{2} + \frac{1}{2k}
+		\\
+		0 & \text{ se } \frac{1}{2}+ \frac{1}{2k} \leq x \leq 1
+	\end{cases}$$
+	
+	\segnaposto
+	
+	\begin{gather*} 
+		f(x) = \chi_{[0, \frac{1}{2}]} = 
+		\begin{cases}
+			1 & \text{ se } 0 \leq x \leq \frac{1}{2}
+			\\
+			0 & \text{ altrimenti}
+		\end{cases}
+		\\
+		f_k \rightarrow f \text{ per } \|\cdot\|_1
+		\\
+		\|f_k-f\|_1= \underbrace{\int_{0}^{1}|f_k(x)-f(x)|dx}_{\color{blue}{\text{area del triangolo in blu}}} = \frac{1}{\epsilon k} \xrightarrow{k \rightarrow +\infty} 0
+		\\
+		\Rightarrow \{f_k\}_{k \geq 1} \text{ converge ad $f$ per } \|\cdot \|_1,
+	\end{gather*} 
+	
+	quindi, in particolare, è di Cauchy, ma $ f \notin C^0([0,1]) \Rightarrow (C^0([0,1]),\|\cdot\|_1)$ non è completo.
+\end{example}
+\end{exbar}
+
+
+\begin{theorem}
+	\label{th: pag 231}
+	$(X,d)$ spazio metrico, $K \subseteq X$ compatto. Allora $\mathbf{(C^\circ(K), \|\cdot\|_\infty)}$ \textbf{è completo}.
+	
+	In particolare, se $a < b, a, b \in \mathbb{R}$, $(C^\circ([a,b]),\|\cdot\|_\infty)$ è completo.
+\end{theorem}
+
+
+\begin{dembar}
+	Dimostrazione della Teorema \ref{th: pag231}
+	
+	$f \in C^0(K) \Rightarrow \| f\|_\infty = \sup_{x \in K}|f(x)| \lowercomment{=} {\myarrow[270]} {\text{per Weierstrass}} \max_{x \in K}|f(x)|< +\infty$
+	
+	Sia $\{f_n\}_{n \geq 1}\subseteq C^\circ(K)$ di Cauchy per $\| \cdot\|_\infty \Rightarrow \forall \epsilon >0\,\,  \exists \,\, N >0 \,\, \big|\,\, n , \ell > N \Rightarrow \| f_n-f_\ell \|_\infty <\epsilon$
+	
+	In particolare, fissati $x \in K$ e $n,\ell >N$
+	
+	$$|f_n(x)-f_\ell(x)|\leq \| f_n-f_\ell \|< \epsilon$$
+	
+	$\Rightarrow$ la successione $\{f_n(x)\}_{n \geq 1}$ è di Cauchy in $\mathbb{R}$ e quindi converge $\Rightarrow \{f_n\}_{n \geq 1}$ converge puntualmente. Sia $ f: K \rightarrow \mathbb{R}$ il suo limite puntuale. Dimostriamo che $ f_n \rightrightarrows f$, e che quindi $f \in C^0 (K)$ essendo limite uniforme di funzioni continue.
+	
+	Devo dimostrare che, fissato $\epsilon >0  \exists N >0  \,\, \big| \,\, n >N \Rightarrow \| f_n-f\|_\infty \leq \epsilon$. 
+	
+	So che $\exists N >0 \,\, \big| \,\, n,\ell>0$
+	
+	$$\Rightarrow |f_n(x) - \uppercomment{f_\ell(x)}{\myarrow[90]}{f(x)}|< \epsilon \qquad \forall x \in K \color{blue}{\xrightarrow{\ell \to + \infty}} |f_n(x)-f(x)| \leq \epsilon \qquad \forall n > N \text{ e } \forall x \in K$$
+	
+	$$\| f_n-f\|_\infty = \sup_{x \in K}|f_n(x)-f(x)| \leq \epsilon \qquad \forall n > N,  \text{ come si voleva.} \qquad \square$$
+\end{dembar}
+
+
+\textbf{Osservazione:}
+
+Lo stesso risultato vale in $C^0(X)_b =\{f:X \rightarrow \mathbb{R} \,\, \big| \,\, f$ è continua e limitata$\}$ con $\|f\|_\infty = \sup_{x \in X}|f(x)|$.\\
+$(C^\circ_b(X),\|\cdot\|_\infty)$ è spazio di Banach.
+
+%poi finisco
+
+
+
 
 
 
 	
 \begin{comment}	
+
+
 
 
 

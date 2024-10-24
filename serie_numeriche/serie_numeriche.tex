@@ -390,7 +390,8 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 
 \begin{proposition}
 	\label{prop:no indeterminata}
-	Sia $\sum_{k=0}^\infty a_k$ serie a termini definitivamente non negativi $\mathrm{(} \exists \; N>0 \; | \; a_k\geq 0 \; \forall \; k>N \mathrm{)}$. Allora la serie converge o diverge, non può essere indeterminata. 
+	Sia $\sum_{k=0}^\infty a_k$ serie a termini definitivamente non negativi $\mathrm{(} \exists \; N>0 \; | \;$ \\ %riq malf
+	$a_k\geq 0 \quad \forall \; k>N \mathrm{)}$. Allora la serie converge o diverge, non può essere indeterminata. 
 \end{proposition}
 
 \begin{dembar}
@@ -550,7 +551,8 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 
 \begin{theorem} (criterio di condensazione)
 	
-	Sia $\{a_k \}_{k\in\mathbb{N}}$ successione a termini positivi e decrescente (basta definitivamente: $0\geq a_{k+1} \geq a_k$ definitivamente). 
+	Sia $\{a_k \}_{k\in\mathbb{N}}$ successione a termini positivi e decrescente (basta definitivamente: \\ %riquadro malformato
+	 $0\geq a_{k+1} \geq a_k$ definitivamente). 
 	
 	Allora $\sum_{k=0}^\infty a_k$ converge $\iff$ converge $\sum_{k=0}^\infty 2^k a_{2^k}$.
 \end{theorem}
@@ -1151,7 +1153,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 		perché la successione $\{a_k\}_{k \in \mathbb{N}}$ è decrescente
 		\begin{align*}
 			S_{2n+3} 
-			&= \sum_{k=0}^{2n+3} (-1)^k \ a_k = \mathcircled{\sum_{k=0}^{2n+1} (-1)^k \ a_k}^{\color{blue}{\myarrow[190] S_{n+1}}} + (-1)^{2n+2} \ a_{2n+2} +  (-1)^{2n+3} \ a_{2n+3}=
+			&= \sum_{k=0}^{2n+3} (-1)^k \ a_k = \uppercomment{\sum_{k=0}^{2n+1} (-1)^k \ a_k} {S_{n+1}} {\myarrow[270]} + (-1)^{2n+2} \ a_{2n+2} +  (-1)^{2n+3} \ a_{2n+3}=
 			\\
 			&= S_{2n+1} + \underbrace{a_{2n+2} - a_{2n+3}}_{\color{blue} {\text{$\geq 0$ perché $\{a_k\}_{k\in\mathbb{N}}$ è decrescente}}} \geq S_{2n+1}.
 		\end{align*}
@@ -1354,7 +1356,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	Passiamo ora allo studio del primo fattore:
 	\begin{align*}
 		\ln(n^n+n!) 
-		&= ln \left[ n^n \left( 1 + \frac{n!} {n^n} \right) \right] = \ln(n^n) + \uppercomment{\ln \left( 1 + \frac{n!} {n^n} \right)}{\myarrow[10] =0 \; n\rightarrow+\infty}{} 
+		&= ln \left[ n^n \left( 1 + \frac{n!} {n^n} \right) \right] = \ln(n^n) + \uppercomment{\ln \left( 1 + \frac{n!} {n^n} \right)} {=0 \; n\rightarrow+\infty}{\myarrow[90]} 
 		\\
 		&= n\ln(n) + o(n\ln(n))
 	\end{align*}
@@ -1363,7 +1365,8 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\item Per $\alpha \neq \frac{5}{6}$ avremo
 	\begin{align*}
 		\ln(n^n + n!) \left[ n \sin{\frac{1} {n}} - \cos{\frac{\sqrt{2}} {n}} - \frac{\alpha} {n^2} \right] 
-		&= \left( n\ln(n) + o(n\ln(n)) \right) \cdot \left[ \left(\frac{5} {6} - \alpha \right) \frac{1} {n^2} + o \left( \frac{1} {n^3} \right) \right] =
+		&= \left( n\ln(n) + o(n\ln(n)) \right) \cdot 
+		\\ & \qquad\qquad \cdot \left[ \left(\frac{5} {6} - \alpha \right) \frac{1} {n^2} + o \left( \frac{1} {n^3} \right) \right] =
 		\\
 		&= \left( \frac{5}{6} - \alpha \right)  \frac{\ln(n)}{n} + o \left( \frac{\ln(n)}{n} \right) \sim
 		\\
