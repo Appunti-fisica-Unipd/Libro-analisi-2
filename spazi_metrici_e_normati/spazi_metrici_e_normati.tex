@@ -2182,6 +2182,7 @@ $f_k' \rightrightarrows f'$ in $]-\infty,-\epsilon]\cup[\epsilon,+\infty[\,\, \f
 
 
 \begin{theorem}
+	\label{th: pag 217}
 	$(X,d_x),(Y,d_y)$ spazi metrici, $K \subseteq X$ compatto e $f:K \rightarrow Y$ continua. Allora $f(K)$ è compatto in $Y$.
 	
 	\textcolor{blue}{(l'immagine continua di un compatto è compatta)}
@@ -2200,10 +2201,180 @@ $f_k' \rightrightarrows f'$ in $]-\infty,-\epsilon]\cup[\epsilon,+\infty[\,\, \f
 	$f(K)\subseteq \mathbb{R}$ è un compatto, quindi è chiuso e limitato $\Rightarrow$ è un insieme con $\max$ e $\min$, che banalmente coincidono con massimo e minimo di $f$ per definizione. 
 \end{dembar}
 
-\begin{comment}	
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 217}}
+	
+	Sia $\{y_j\}_{j\in\mathbb{N}}\subseteq f(K)$ una successione. Dobbiamo trovare una sottosuccessione convergente ad un elemento di $K$.
+	
+	$$\forall j \in \mathbb{N} \,\,\exists\,\, x_j\in K \,\, \big| \,\, f(x_j)=y_j$$
+	
+	$\{x_j\}_{j \in \mathbb{N}} \subseteq K$ è una successione, $K$ è compatto $\Rightarrow \,\, \exists\,\, x \in K$ e una sottosuccessione $\{x_{j_i}\}_{i\in \mathbb{N}}$ tali che $x_{j_i}\rightarrow x$ in $(X,d_x)$.
+	
+	Sia $y_{j_i}=f(x_{j_i})$, cosicché $\{y_{j_i}\}_{i\in\mathbb{N}}$ è sottosuccessione di $\{y_j\}_{j\in\mathbb{N}}$.
+	
+	$f:K\rightarrow Y$ è continua
+	
+	\begin{align*} 
+		x_{j_i}\rightarrow x &\in K \text{ in } (X,d_x)
+		\\
+		y_{j_i}=f(x_{j_i})\rightarrow f(x) &\in f(K) \text{ in } (Y,d_y) \qquad\square
+	\end{align*}
+\end{dembar}
+	
+	
+\begin{theorem} di \textbf{Heine-Borel}
+	\label{th: pag 219}
+	$K \subseteq \mathbb{R}^n$ è compatto $\Leftrightarrow K$ è chiuso e limitato. 
+	
+	\textcolor{blue}{(In $\mathbb{R}^n$ c'è la topologia data dalla norma euclidea o da qualsiasi altra norma.)}
+\end{theorem}
+	
+	
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 219}}
+	
+	Per ora dimostriamo la sufficienza \textcolor{blue}{(chiuso e limitato $\Rightarrow$ compatto)} perché la necessità seguirà da un risultato più generale.
+	
+	$K \subseteq \mathbb{R}^n$ chiuso e limitato. Per semplicità assumiamo $n=2$. 	$K \subseteq \mathbb{R}^2$. 
+	
+	Sia $\{(x_j,y_j)\}_{j \in \mathbb{N}} \subseteq K$ una successione.
+	
+	\begin{gather*} 
+		|x_j|\leq |(x_j,y_j)|\leq C \,\, \forall j \text{ e } \exists\,\, C >0
+		\\
+		|y_j|\leq |(x_j,y_j)|\leq C \,\, \forall j \text{ e } \exists\,\, C >0
+	\end{gather*}
+	
+	$\Rightarrow \{x_j\}_{j\in\mathbb{N}} \subseteq \mathbb{R}$ è successione limitata $\Rightarrow$ per Bolzano-Weierstrass ha una sottosuccesione  $\{x_{j_i}\}_{i\in\mathbb{N}}$ convergente ad un elemento $x \in \mathbb{R}$. 
+	
+	Anche la sottosuccessione $\{y_{j_i}\}_{i\in\mathbb{N}}$ è limitata $\Rightarrow$ a sua volta ha una sottosuccessione $\{y_{j_{i_\ell}}\}_{\ell\in\mathbb{N}}$ convergente ed un elemento $y \in \mathbb{R}$.
+	
+	Consideriamo la sottosuccessione $\{(x_{j_{i_\ell}},y_{j_{i_\ell}})\}_{\ell \in \mathbb{N}}$ di $\{(x_j,y_j\}_{j\in\mathbb{N}}$ allora $\{x_{j_{i_\ell}}\}_{\ell \in \mathbb{N}}$ essendo sottosuccessione di $\{x_{j_i}\}_{i\in\mathbb{N}}$ converge a $x$
+	
+	\begin{gather*} 
+		y_{j_{i_\ell}}\rightarrow y \text{ per } \ell\rightarrow+\infty
+		\\
+		(x_{j_{i_\ell}},y_{j_{i_\ell}}) \text{ per } \ell\rightarrow+\infty
+	\end{gather*}
+	
+		$\{(x_{j_{i_\ell}},y_{j_{i_\ell}})\}_{\ell\in \mathbb{N}} \subseteq K$, che è chiuso $\Rightarrow (x,y)\in K$, perché $K$ contiene i limiti delle successioni convergenti a valori in esso $\Rightarrow K$ è compatto. $\qquad \square$
+\end{dembar}
+
+
+\begin{theorem}
+	\label{th: pag 221}
+	$(X,d)$ spazio metrico, $K \subseteq X$ compatto. Allora $K$ è chiuso e limitato.
+\end{theorem}
+	
+	
+\textbf{Osservazione}
+
+In uno spazio normato di dimensione infinita un insieme può essere chiuso e limitato senza essere compatto.
+
+\begin{gather*} 
+	(C^0([0,1]),\|\cdot\|_\infty)
+	\\
+	\overline{B_1(0)}=\{f\in C^\circ ([0,1])\,\, \big|\,\, \|f\|_\infty\leq 1\}
+	\\
+	\overline{B_1(0)} \text{ non è compatta}
+\end{gather*}
+
+\segnaposto %pag 221
+
+\begin{gather*} 
+	f_k(x)=
+	\begin{cases}
+		1 & \text{ se } 0\leq x <\frac{1}{2}
+		\\
+		2k(\frac{1}{2}+\frac{1}{2k}-x) &\text{ se } \frac{1}{2}\leq x <\frac{1}{2}+\frac{1}{2k}
+		\\
+		0 &\text{ se } \frac{1}{2}+\frac{1}{2k} \leq x \leq 1
+	\end{cases}
+	\\
+	\|f_k\|_\infty=f(0)=1\,\, \forall k
+	\\
+	\lim_{k \rightarrow +\infty} f_k(x) = 
+	\begin{cases}
+		1 &\text{ se } 0\leq x \leq \frac{1}{2} 
+		\\
+		0 &\text{ se } 0 < x \leq 1
+	\end{cases} 
+	= f(x), \qquad f \notin C^0([0,1])
+\end{gather*}
+
+\textcolor{blue}{(provare a dimostrarlo per casa)}
+
+Se esistesse una sottosuccessione $\{f_{k_j}\}_{j\in N}$ uniformemente convergente, allora $f_{k_j}(x)\rightarrow f(x)$ per $j \rightarrow +\infty$ perché $\{f_{k_j}(x)\}_{j\in \mathbb{N}}$ è una sottosuccessione di $\{f_k(x)\}_k\in \mathbb{N}$.
+
+Poiché la convergenza uniforme implica quella puntuale, si avrebbe che $f$ sarebbe il limite uniforme di $\{f_{k_j}\}_{j\in\mathbb{N}}$, assurdo perché $f$ è discontinua. 
+	
+	
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 221}}
+	
+	$(X,d)$ spazio metrico. $K \subseteq X$ compatto
+	
+	\begin{itemize}
+		\item $K$ è chiuso.
+		
+		$\{x_j\}_{j\in\mathbb{N}}\subseteq K$ una successione convergente ad un elemento $x \in X$ e dimostriamo che $x \in K$.
+		
+		$K$ è compatto $\Rightarrow \exists$ una sottosuccessione $\{x_{j_i}\}_{i\in\mathbb{N}}$ convergente ad un elemento $y \in K$. Però, $x_{j_i} \rightarrow x$, perché sottosuccessione di $\{x_j\}_{j  \in \mathbb{N}} \Rightarrow x = y \in K$ per l'unicità del limite.
+		
+		\item $K $ è limitato.
+		
+		Ragioniamo per assurdo e supponiamo $K$ illimitato, cioè 
+		
+		\textcolor{blue}{($K$ limitato $\Leftrightarrow \exists x \in X$ e $R>0 \,\, \big|\,\, K \subseteq B_k(x)$)} 
+		
+		preso $x \in X \,\,\exists\,\, x_j \in K\,\, \big|\,\, d(x_j,x)\geq j\geq 1$, ($x_j\notin B_j(x)$)
+		
+		$\{x_j\}_{j\geq 1}\subseteq K$ è una successione
+		
+		$K$ è compatto $ \Rightarrow$ ha una sottosuccessione $\{x_{j_i}\}_{i\geq 1}$ convergente ad un elemento $x_0 \in K$
+		
+		$d(x_{j_i},x_0)\rightarrow 0$ per $i \rightarrow+\infty$
+		
+		
+		Per la disuguaglianza triangolare
+		\begin{gather*} 
+			j_i \leq d(x_{j_i},x)\leq d(x_{j_i},x_0)+d(x_0,x)
+			\\
+			d(x_{j_i,x_0})\geq \lowercomment{j_i} {\myarrow[270]} {+\infty} - d(x_0,x)\xrightarrow^{\text{per }i \rightarrow +\infty} +\infty
+		\end{gather*}
+			
+		assurdo perché $d(x_{j_i},x_0)\rightarrow 0 \qquad \square$
+	\end{itemize}
+\end{dembar}
+	
+	
+\subsection{Spazi metrici completi}
+\begin{definition}
+	$(X,d)$ spazio metrico, $\{x_k\}_{k \in \mathbb{N}}\subseteq X$ successione si dice di Cauchy se $\forall \epsilon >0 \,\, \exists N >0 \,\, \big| \,\, k >N$ e $\forall p\geq 1$
+	
+	$$d(x_k,x_{k+p})<\epsilon$$
+	
+	\textcolor{blue}{(se $X = \mathbb{R}, \{x_k\}_{k \in \mathbb{N}}\subseteq \mathbb{R}$ è di Cauchy se $\forall \epsilon >0 \exists N >0 \,\, \big| \,\, \forall k>N$ e $\forall p \geq 1\,\, |x_k - x_{k+p}|<\epsilon$)}
+\end{definition}
+
+
+\begin{definition}
+	Uno spazio metrico $(X,d)$ si dice completo se ogni successione di Cauchy a valori in esso è convergente.
+\end{definition}
+
+
+
 
 
 	
+\begin{comment}	
+
+
+
+
+
+
 
 
 	
