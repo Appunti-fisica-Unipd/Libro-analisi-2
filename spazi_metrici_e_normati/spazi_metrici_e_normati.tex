@@ -1958,7 +1958,7 @@ Sia $x \in \overline{D} \Rightarrow \exists \{ x_j\}_{j\geq 1} \subseteq D |x_j\
 
 
 \begin{theorem}
-	\ref{th: pag206}
+	\label{th: pag206}
 	$\{f_k\}_{k\in\mathbb{N}}, f_k:[a,b]\rightarrow\mathbb{R},\ a,b\in\mathbb{R}$, successione di funzioni Riemann integrabile in $[a,b]$ tale che $f_k \rightrightarrows f$ in $[a,b]$. Allora $f$ è Riemann integrabile in $[a,b]$ e 
 	\begin{equation*}
 		\int_{a}^{b} f(x) \mathrm{d}x = \lim_{k\rightarrow+\infty} \int_{a}^{b} f_k(x) \mathrm{d}x = \int_{a}^{b}\lim_{k \rightarrow +\infty} f_k(x) \mathrm{d}x
@@ -2025,6 +2025,180 @@ $\int_{1}^{+\infty}f_k(x)dx=\ln k$ e $f_k \rightrightarrows \frac{1}{x}$ in $[1,
 Ma $x \mapsto \frac{1}{x}$ non è integrabile in senso proprio in $[1,+\infty[$.
 
 
+\begin{theorem}
+	\label{th: pag 209}
+	$I \subseteq \mathbb{R}$ intervallo limitato, $\{f_k\}_{k \in \mathbb{N}}, f_k: I \rightarrow \mathbb{R}$, successione di funzioni derivabili in $I$. Se 
+	\begin{enumerate}
+		\item $\exists x_0 \in I\,\, |\,\, \{f_k(x_0)\}_{k \in \mathbb{N}} $ converge;
+		
+		\item $\exists g:I \rightarrow \mathbb{R} \,\, |\,\, f_k' \rightrightarrows g$ in $I$
+	\end{enumerate}
+	
+	allora $\exists f: I \rightarrow \mathbb{R}$ derivabile tale che $f_k\rightrightarrows f$ in $I$ e $f' (x)= g(x) \,\, \forall x \in I$.
+\end{theorem}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 209}}
+	
+	
+	Per semplicità, assumiamo che $f_k\in C^1(I)\,\, \forall k \in \mathbb{N}$, cosicché $f_k^\prime \in C^0(I) \,\, \forall k \in \mathbb{N}$, ed essendo $f_k' \rightrightarrows g$ in $I$, si deduce che $g \in C^0 (I)$. Sia 
+	
+	\begin{gather*} 
+	\alpha = \lim_{k \Rightarrow +\infty}f_k(x_0) \in \mathbb{R}
+	\\
+	f_k(x)= f_k(x_0)+\int_{x_0}^{x}f_k' (t)\mathrm{d}t  \,\,\, x \in I
+	\\
+	\color{blue}{k \to +\infty \qquad \alpha + \int_{x_0}^{x} g(t) dt \text{ per il teorema visto prima}}
+	\end{gather*}
+	
+	Sia $f(x) = \alpha + \int_{x_0}^{x}g(t) \mathrm{d}t$, cosicché, siccome $g$ è continua, per il teorema fondamentale del calcolo $f$ è derivabile e $f'(x) =g(x)$.
+	
+	Devo dimostrare che $f_k \rightrightarrows f$ in $I$
+	
+	\begin{align*} 
+	|f_k(x)-f(x)|
+	&= |f_k(x_0)+ \int_{x_0}^{x}f_k' (t) \mathrm{d}t + \alpha - \int_{x_0}^{x} g(t) \mathrm{d}t| 
+	\\
+	& \leq |f_k(x_0)-\alpha|+|\int_{x_0}^{x}[f_k'(t)-g(t)] dt|
+	\\
+	&\leq |f_k(x_0)-\alpha| + |\int_{x_0}^{x}|f_k'(t)-g(t)|dt|
+	\\
+	&\leq |f_k(x_0)-\alpha| + |\int_{x_0}^{x}\sup_{y \in I}|f_k'(y)-g(y)|dt|
+	\\
+	&=|f_k(x_0)-\alpha|+ |x-x_0|\sup_{y \in I}|f_k'(y)-g(y)|
+	\\
+	&\leq \underbrace{|f_k(x_0)-\alpha|+\lowercomment{|I|} {\text{ampiezza di }I} {} \sup_{y\in I}|f_k'(y)-g(y)|}_{\color{blue}{\text{non dipende da $x$, ma solo da $k$}}}
+	\end{align*}
+	
+	Dunque $\forall x \in I$, 
+	
+	\begin{gather*} |f_k(x)-f(x)| \leq |f_k(x_0)-\alpha|+|I|\sup_{y\in I}|f_k'(y)-g(y)|
+	\\
+	\sup_{x\in I}|f_k(x)-f(x)|\leq \underbrace{|f_k(x_0)-\alpha|}_{= 0 \text{ per } k \to +\infty} + |I| \underbrace{\sup_{y \in I}|f_k'(y)-g(y)|}_{= 0} \xrightarrow^{\text{per } k \rightarrow +\infty} 0
+	\\
+	\Rightarrow f_k \rightrightarrows f \text{ in } I. \qquad\square
+	\end{gather*}
+	
+	\textcolor{blue}{Errore tipico dei compiti:
+		
+		$\{f_k\}_{k \in \mathbb{N}}, f_k: I \rightarrow \mathbb{R}$, $\lim_{k}f_k(x) = f(x)$, $f: I \rightarrow \mathbb{R}$ ho convergenza puntuale in $I$.
+		
+		Studio la convergenza uniforme 
+		\begin{gather*} 
+			f_k(x) -f(x)|\leq ... \leq g_k(x) \xrightarrow^{\text{per } x \to +\infty} 0
+			\\
+			\sup_{x \in I}|f_k(x)-f(x)|\leq g_k(x) \Rightarrow f_k \rightrightarrows f \text{ in } I.
+		\end{gather*}
+	\textcolor{red}{La stima giusta è 
+		$$\sup_{x \in I} |f_k(x)-f(x)|\leq \sup_{x \in I}g_k(x)$$}
+\end{dembar}
+
+
+\textbf{Osservazione:}
+
+
+$I \subseteq \mathbb{R}$ intervallo, $f_k: I \rightarrow \mathbb{R}$ successione di funzioni derivabili uniformemente convergente ad $f$ in $I$. Possiamo dedurre che $f'(x) = \lim_{k}f_k'(x)$, $x \in I$?
+
+No!
+
+$$f_k(x)=\frac{\sin(k^2x^2)}{k}$$ 
+
+Allora $f_k \rightrightarrows 0$ in $\mathbb{R}$ 
+
+$$\sup_{x \in 
+}|f_k(x)-0|= \sup_{x \in 
+}|\frac{\sin(k^2x^2)}{k}|= \frac{1}{k}\xrightarrow^{\text{per } k \to +\infty} 0$$
+
+$f(x)=0 \,\, \forall x \in \mathbb{R}$ è il limite uniforme di $\{f_k\}_{k\geq 1}$. Ma $f_k'(x)=2kx\cos(k^2x^2)\cancel{\rightarrow} 0$ per $k \rightarrow +\infty$.
+
+
+\textbf{Osservazione}
+
+$I \subseteq \mathbb{R}$ intervallo, $f_k: I \rightarrow \mathbb{R}$ funzioni derivabili tali che $f_k \rightrightarrows f$ in $I$. Possiamo dedurre che $f$ è derivabile?
+
+No!
+
+$$f_k(x)= \sqrt{x^2+\frac{1}{k}}, \qquad x \in \mathbb{R}$$
+
+\segnaposto %pag 213
+
+$\lim_{k} f_k(x)=|x|$, $f_k \rightrightarrows |x|$ in $\mathbb{R}$ perché $\sup_{x\in \mathbb{R}}|f_k(x)-(x)|= \frac{1}{\sqrt{k}}\xrightarrow{k \rightarrow +\infty}0$. $f_k \in C^1(\mathbb{R})$, mentre $f$ non è derivabile in $x =0$, 
+
+$$f_k' (x) = \frac{x}{\sqrt{x^2+\frac{1}{k}}} \rightarrow \mathrm{sgn} \ x$$
+ 
+$$\lim_{k \rightarrow+\infty}f_k'(x)=f'(x), \qquad x \neq 0$$
+
+$f_k' \rightrightarrows f'$ in $]-\infty,-\epsilon]\cup[\epsilon,+\infty[\,\, \forall \epsilon >0$ \textcolor{blue}{(Provare per casa)}
+
+
+\begin{exbar}
+\begin{example}
+	Sia $\{f_k\}_{k \geq 1}$ la successione di funzioni definita da 
+	\begin{equation*}
+		f_k(x)=\left(\frac{x}{k} \right)^2 e^{-\left(\frac{x}{k}\right)^2}, \,\,\, x \in \mathbb{R}.
+	\end{equation*}
+	
+	Trovare l'insieme di convergenza puntuale, stabilire se in tale insieme la convergenza è uniforme e calcolare poi 
+	\begin{gather*}
+		\lim_{k \rightarrow +\infty} \int_{0}^{\alpha}f_k(x)dx \qquad \forall \alpha >0
+		\\
+		\lim_{k \rightarrow +\infty} f_k(x)=0 \qquad \forall x \in \mathbb{R}
+	\end{gather*}
+	
+	Calcoliamo dunque $\sup_{x \in \mathbb{R}}|f_k(x)-0|=\sup_{x \in \mathbb{R}}f_k(x)$ perché $f_k(x) \geq 0\,\, \forall x \in \mathbb{R}$.
+	
+	Sappiamo che $\lim_{x \rightarrow \pm \infty}f_k(x)=0$
+	
+	\begin{gather*}
+	f_k'(x) = \frac{2x}{k^2} e^{-\left(\frac{x}{k}\right)^2} -\frac{2x}{k^2}\left(\frac{x}{k}\right)^2 e^{-\left(\frac{x}{k}\right)^2}= \frac{2x}{k^4}e^{-\left(\frac{x}{k}\right)^2}(k^2-x^2)
+	\\
+	\sup_{x \in \mathbb{R}}f_k(x) = f_k(k)= e^{-1}
+	\\
+	f_k \nrightrightarrows 0 \text{ in } \mathbb{R}
+	\end{gather*} 
+	
+	Fissato $\alpha >0$, studiamo la convergenza uniforme in $[0, \alpha]$.
+	
+	\segnaposto
+	
+	$\sup_{x \in [0,\alpha]}f_k(x)=f_k(\alpha)$ cioè $\sup_{x \in [0, \alpha]} f_k(x) = \left( \frac{\alpha}{k} \right)^2 e^{-\left(\frac{\alpha}{k}\right)^2}\rightarrow 0$ per $k \rightarrow +\infty \,\, \forall \alpha >0$ fissato 
+	
+	$\Rightarrow f_k \rightrightarrows f$ in $[0,\alpha] \Rightarrow$ per il teorema di passaggio al limite sotto segno di integrale
+	
+	\begin{equation*}
+		\lim_{k \rightarrow+\infty}\int_{o}^{\alpha} f_k(x) dx = \int_{0}^{\alpha}f(x) dx=0.
+	\end{equation*}
+\end{example}
+\end{exbar}
+
+
+\subsection{Proprietà topologiche degli spazi metrici}
+\subsubsection{Compattezza negli spazi metrici}
+
+\begin{definition}
+	$(X,d)$ spazio metrico. $K \subseteq X$ si dice \textbf{(sequenzialmente) compatto} se ogni successione a valori in $K$ ammette una sottosuccessione convergente ad un elemento di $K$.
+\end{definition}
+
+
+\begin{theorem}
+	$(X,d_x),(Y,d_y)$ spazi metrici, $K \subseteq X$ compatto e $f:K \rightarrow Y$ continua. Allora $f(K)$ è compatto in $Y$.
+	
+	\textcolor{blue}{(l'immagine continua di un compatto è compatta)}
+\end{theorem}
+
+
+\begin{corollary} \textbf{(Teorema di Weierstrass)}
+	\label{cor: pag 217}
+	$(X,d)$ spazio metrico, $K \subseteq X$ compatto, $f:K \rightarrow\mathbb{R}$ continua. Allora $f$ ha massimo e minimo.
+\end{corollary}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Corollario \ref{cor: pag 217}}
+	
+	$f(K)\subseteq \mathbb{R}$ è un compatto, quindi è chiuso e limitato $\Rightarrow$ è un insieme con $\max$ e $\min$, che banalmente coincidono con massimo e minimo di $f$ per definizione. 
+\end{dembar}
 
 \begin{comment}	
 
@@ -2036,79 +2210,5 @@ Ma $x \mapsto \frac{1}{x}$ non è integrabile in senso proprio in $[1,+\infty[$.
 
 
 
-	
-	\paragraph{\textcolor{red}{Teorema}}
-	$I \subseteq \R$ intervallo limitato, $\{f_k\}_{k \in \N}, f_k: I \rightarrow \R$, successione di funzioni derivabili in $I$. Se 
-	\begin{enumerate}
-		\item $\exists x_0 \in I\,\, |\,\, \{f_k(x_0)\}_{k \in \N} $ converge;
-		\item $\exists g:I \rightarrow \R \,\, |\,\, f_k' \rightrightarrows g$ in $I$
-	\end{enumerate}
-	allora $\exists f: I \rightarrow \R$ derivabile tale che $f_k\rightrightarrows f$ in $I$ e $f' (x)= g(x) \,\, \forall x \in I$.
-	
-	\paragraph{\textcolor{red}{Dimostrazione}}
-	Per semplicità, assumiamo che $f_k\in C^1(I)\,\, \forall k \in \N$, cosicchè $f_k' \in C^\circ(I) \,\, \forall k \in \N$, ed essendo $f_k' \rightrightarrows g$ in $I$, si deduce che $g \in C^\circ (I)$. Sia $\alpha = \lim_{k \rightarrow +\infty}f_k(x_0) \in \R$, allora $f_k(x) = f_k(x_0)+\int_{x_0}^{x}f_k' (t)dt\,\,\, x \in I $.\\
-	Sia $f(x) = \alpha + \int_{x_0}^{x}g(t) dt$, cosicchè, siccome $g$ è continua, per il teorema fondamentale del calcolo $f$ è derivabile e $f'(x) =g(x)$. Devo dimostrare che $f_k \rightrightarrows f$ in $I$, \\
-	$|f_k(x)-f(x)|= |f_k(x_0)+ \in_{x_0}^{x}f_k' (t) dt+\alpha - \int_{x_0}^{x}g(t) dt|\leq |f_k(x_0)-\alpha|+|\int_{x_0}^{x}[f_k'(t)-g(t)] dt|\leq |f_k(x_0)-\alpha| + |\int_{x_0}^{x}|f_k'(t)-g(t)|dt|\leq |f_k(x_0)-\alpha| + |\int_{x_0}^{x}\sup_{y \in I}|f_k'(y)-g(y)|dt|=|f_k(x_0)-\alpha|+ |x-x_0|\sup_{y \in I}|f_k'(y)-g(y)|\leq |f_k(x_0)-\alpha|+|I|\sup_{y\in I}|f_k'(y)-g(y)|$ che non dipende da $x$, ma solo da $k$.\\
-	Dunque $\forall x \in I$, $|f_k(x)-f(x)| \leq |f_k(x_0)-\alpha|+|I|\sup_{y\in I}|f_k'(y)-g(y)| $\\
-	$\sup_{x\in I}|f_k(x)-f(x)|\leq |f_k(x_0)-\alpha|+|I|\sup_{y \in I}|f_k'(y)-g(y)|\rightarrow0$ per $k \rightarrow +\infty$ $\Rightarrow f_k \rightrightarrows f$ in $I$.
-	\begin{flushright}
-		\large\Lightning
-	\end{flushright}
-	
-	\textcolor{orange}{Errore tipico dei compiti:\\
-		$\{f_k\}_{k \in \N}, f_k: I \rightarrow \R$, $\lim_{k}f_k(x) = f(x)$, $f: I \rightarrow \R$ ho convergenza puntuale in $I$. Studio la convergenza uniforme $f_k(x) -f(x)|\leq ... \leq g_k(x) \rightarrow 0$ per $k \rightarrow +\infty$, $\sup_{x \in I}|f_k(x)-f(x)|\leq g_k(x) \Rightarrow f_k \rightrightarrows f$ in $I$.
-	} \textcolor{red}{NO!!!}\\
-	\textcolor{orange}{La stima giusta è $\sup_{x \in I} |f_k(x)-f(x)|\leq \sup_{x \in I}g_k(x)$.}
-	
-	\paragraph{\textcolor{red}{Osservazione}}
-	$I \subseteq \R$ intervallo, $f_k: I \rightarrow \R$ successione di funzioni derivabili uniformemente convergente ad $f$ in $I$. Possiamo dedurre che $f'(x) = \lim_{k}f_k'(x)$, $x \in I$?\\
-	No!\\
-	$f_k(x)=\frac{\sin(k^2x^2)}{k}$. Allora $f_k \rightrightarrows 0$ in $\R$, $\sup_{x \in \R}|f_k(x)-0|= \sup_{x \in \R}|\frac{\sin(k^2x^2)}{k}|= \frac{1}{k}\rightarrow 0$ per $k \rightarrow+\infty$\\
-	$f(x)=0 \,\, \forall x \in \R$ è il limite uniforme di $\{f_k\}_{k\geq 1}$. Ma $f_k'(x)=2kx\cos(k^2x^2)\nrightarrow 0$ per $k \rightarrow +\infty$.
-	
-	\paragraph{\textcolor{red}{Osservazione}}
-	$I \subseteq \R$ intervallo, $f_k: I \rightarrow \R$ funzioni derivabili tali che $f_k \rightrightarrows f$ in $I$. Possiamo dedurre che $f$ è derivabile?\\
-	No!\\
-	$f_k(x)= \sqrt{x^2+\frac{1}{k}}, \,\, x$ in $\R$.\\
-	IMMAGINI\\
-	$\lim_{k}f_k(x)=|x|$, $f_k \rightrightarrows |x|$ in $\R$ perchè $\sup_{x\in \R}|f_k(x)-(x)|= \frac{1}{\sqrt{k}}\xrightarrow{k \rightarrow +\infty}0$. $f_k \in C^1(\R)$, mentre $f$ non è derivabile in $x =0$, $f_k' (x) = \frac{x}{\sqrt{x^2+\frac{1}{k}}}\rightarrow sgnx$, 
-	$\lim_{k \rightarrow+\infty}f_k'(x)=f'(x)$, $x \neq 0$.\\
-	$f_k' \rightrightarrows f'$ in $]-\infty,-\epsilon]\cup[\epsilon,+\infty[\,\, \forall \epsilon >0$ \textcolor{orange}{(Provare per casa)}
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	Sia $\{f_k\}_{k \geq 1}$ la successione di funzioni definita da 
-	\begin{equation*}
-		f_k(x)=\left(\frac{x}{k} \right)^2 e^{-\left(\frac{x}{k}\right)^2}, \,\,\, x \in \R.
-	\end{equation*}
-	Trovare l'insieme di convergenza puntuale, stabilire se in tale insieme la convergenza è uniforme e calcolare poi 
-	\begin{equation*}
-		\lim_{k \rightarrow +\infty} \int_{0}^{\alpha}f_k(x)dx\,\,\,\,\, \forall \alpha >0,
-	\end{equation*}
-	$\lim_{k \rightarrow +\infty} f_k(x)=0 \,\,\, \forall x \in \R$. Calcoliamo dunque $\sup_{x \in \R}|f_k(x)-0|=\sup_{x \in \R}f_k(x)$ perchè $f_k(x) \geq 0\,\, \forall x \in \R$.\\
-	Sappiamo che $\lim_{x \rightarrow \pm \infty}f_k(x)=0$, $ f_k'(x) = \frac{2x}{k^2}e^{-\left(\frac{x}{k}\right)^2}-\frac{2x}{k^2}\left(\frac{x}{k}\right)^2 e^{-\left(\frac{x}{k}\right)^2}= \frac{2x}{k^4}e^{-\left(\frac{x}{k}\right)^2}(k^2-x^2)$, dunque $\sup_{x \in \R}f_k(x) = f_k(k)= e^{-1}$. Quindi $f_k \nrightrightarrows 0$ in $\R$.\\
-	Fissato $\alpha >0$, studiamo la convergenza uniforme in $[0, \alpha]$.\\
-	IMMAGINE\\
-	Per $k > \alpha$, avremo $\sup_{x \in [0,\alpha]}f_k(x)=f_k(\alpha)$ cioè $\sup_{x \in [0, \alpha]} f_k(x) = \left( \frac{\alpha}{k} \right)^2 e^{-\left(\frac{\alpha}{k}\right)^2}\rightarrow 0$ per $k \rightarrow +\infty \,\, \forall \alpha >0$ fissato $\Rightarrow f_k \rightrightarrows f$ in $[0,\alpha] \Rightarrow$ per il teorema di passaggio al limite sotto segno di integrale\\
-	\begin{equation*}
-		\lim_{k \rightarrow+\infty}\int_{o}^{\alpha} f_k(x) dx = \int_{0}^{\alpha}f(x) dx=0.
-	\end{equation*}
-	
-	\subsection{\textcolor{red}{Proprietà topologiche degli spazi metrici}}
-	\subsubsection{\textcolor{red}{Compattezza negli spazi metrici}}
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	$(X,d)$ spazio metrico. $K \subseteq X$ si dice \textcolor{red}{(sequenzialmente) compatto} se ogni successione a valori in $K$ ammette una sottosuccessione convergente ad un elemento di $K$.
-	
-	\paragraph{\textcolor{red}{Teorema }}
-	$(X,d_x),(Y,d_y)$ spazi metrici, $K \subseteq X$ compatto e $f:K \rightarrow Y$ continua. Allora $f(K)$ è compatto in $Y$ \textcolor{orange}{(l'immagine continua di un compatto è compatta)}.
-	
-	\paragraph{\textcolor{red}{Corollario (Teorema di Weierstrass)}}
-	$(X,d)$ spazio metrico, $K \subseteq X$ compatto, $f:K \rightarrow\R$ continua. Allora $f$ ha massimo e minimo.
-	
-	\paragraph{\textcolor{red}{Dimostrazione del Corollario}}
-	$f(K)\subseteq \R$ è un compatto, quindi è chiuso e limitato $\Rightarrow$ è un insieme con $\max$ e $\min$, che banalmente coincidono con massimo e minimo di $f$ per definizione. 
-	\begin{flushright}
-		\large\Lightning
-	\end{flushright}
 	
 \end{comment}
