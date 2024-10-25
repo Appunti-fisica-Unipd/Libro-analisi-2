@@ -1250,9 +1250,11 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		
 		\item Provare che, in generale, il viceversa non è vero, cioè $A$ può essere aperto con $f$ discontinua e $C$ chiuso con $f$ discontinua.	
 	\end{enumerate}
-	
-	\hline
-	
+
+	\begin{center}
+		$\sim \circ \sim$
+	\end{center}
+
 	\begin{enumerate}
 		\item Per casa
 		
@@ -1697,7 +1699,7 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 			\\
 			|f_k(x)| \leq \phi(x) \qquad \forall x \in [0,1]
 			\\
-			\color{blue}{ \tiny{\downarrow \text{ passando al limite per } k \to +\infty } } 
+			\color{blue}{\text{ passando al limite per } k \to +\infty } 
 			\\
 			\Rightarrow |f(x)| \leq \phi(x) \qquad \forall x \in [0,1]
 			\\
@@ -1838,6 +1840,7 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 	\begin{align*}
 		\sup_{x < -2}|f_k(x) - f(x)| 
 		&= \sup_{x<-2} |f_k(x)| = \sup_{x <-2}2k \frac{|\ln|x||}{|1+x|^{2k}}
+		\\
 		&\geq\lim_{x \rightarrow -2^-} \frac{2k|\ln |x|}{|1+x|^{2k}}= 2k \ln 2 \xrightarrow{k \rightarrow +\infty} +\infty 
 	\end{align*}
 	\begin{equation*}
@@ -2003,16 +2006,18 @@ Sia $x \in \overline{D} \Rightarrow \exists \{ x_j\}_{j\geq 1} \subseteq D |x_j\
 
 
 \begin{dembar}
-	\textbf{Dimostrazione} del \textbf{Teorema \label{th: pag206}}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag206}}
 	
 	Per semplicità, assumiamo che $f_k \in C^0 ([a,b]) \quad \forall k \in \mathbb{N}$. Allora $f\in C^0 ([a,b])$ perché limite uniforme di una successione di funzioni continue, e quindi, in particolare, è Riemann integrabile in $[a,b]$.
 	
 	Resta da dimostrare il passaggio a limite sotto segno di integrale. Dobbiamo stimare 
 	\begin{align*}
-		|\int_{a}^{b}f_k(x) dx -\int_{a}^{b}f(x) \mathrm{d}x|
-		&=|\int_{a}^{b} [f_k(x)-f(x)] \mathrm{d}x| \leq \int_{a}^{b}|f_k(x)-f(x)| \mathrm{d}x
+		\left| \int_{a}^{b}f_k(x) dx -\int_{a}^{b}f(x) \mathrm{d}x \right|
+		&= \left| \int_{a}^{b} [f_k(x)-f(x)] \mathrm{d}x \right| \leq \int_{a}^{b}|f_k(x)-f(x)| \mathrm{d}x
 		\\ 
-		&\leq \int_{a}^{b}\sup_{y \in [a,b]} |f_k(y)-f(y)| \mathrm{d}x = (b-a)\sup_{y \in [a,b]} |f_k(y)-f(y)| \xrightarrow{k \rightarrow+\infty} 0
+		&\leq \int_{a}^{b}\sup_{y \in [a,b]} |f_k(y)-f(y)| \mathrm{d}x 
+		\\
+		&= (b-a)\sup_{y \in [a,b]} |f_k(y)-f(y)| \xrightarrow{k \rightarrow+\infty} 0
 	\end{align*}
 	
 	perché $f_k \rightrightarrows f$ in $[a,b]$, e si conclude. $\qquad \square$	
@@ -2364,7 +2369,7 @@ Poiché la convergenza uniforme implica quella puntuale, si avrebbe che $f$ sare
 	
 \subsection{Spazi metrici completi}
 \begin{definition}
-	$(X,d)$ spazio metrico, $\{x_k\}_{k \in \mathbb{N}}\subseteq X$ successione si dice di Cauchy se $\forall \epsilon >0 \,\, \exists N >0 \,\, \big| \,\, k >N$ e $\forall p\geq 1$
+	$(X,d)$ spazio metrico, $\{x_k\}_{k \in \mathbb{N}}\subseteq X$ successione si dice di Cauchy se $\forall \epsilon >0$ $\exists N >0 \,\, \big|$ $k >N$ e $\forall p\geq 1$
 	
 	$$d(x_k,x_{k+p})<\epsilon$$
 	
@@ -2414,9 +2419,10 @@ Poiché la convergenza uniforme implica quella puntuale, si avrebbe che $f$ sare
 		$$|x_j| \leq 1+|x_{N+1}|\leq C$$
 	\end{itemize}
 	
-	$$\Rightarrow |x_j|\leq C \,\,\forall \,\, j \geq 1 \Rightarrow \{x_k\}_{k \geq 1} \text{è limitata.}$$
+	$$\Rightarrow |x_j|\leq C \,\,\forall \,\, j \geq 1 \Rightarrow \{x_k\}_{k \geq 1} \text{ è limitata.}$$
 	
-	Per il teorema di Bolzano-Weierstrass $\{x_k\}_{k \geq1}$ ha una sottosuccessione convergente, $\{x_{k_j}\}_{j \geq 1}$ ed un elemento $x \in \mathbb{R}$. Allora $\{x_k\}_{k \geq1}$ converge ad $x$ e quindi $\mathbb{R}$ è completo. Infatti vale la seguente.
+	Per il teorema di Bolzano-Weierstrass $\{x_k\}_{k \geq1}$ ha una sottosuccessione convergente, \\ %riq malf
+	$\{x_{k_j}\}_{j \geq 1}$ ed un elemento $x \in \mathbb{R}$. Allora $\{x_k\}_{k \geq1}$ converge ad $x$ e quindi $\mathbb{R}$ è completo. Infatti vale la seguente.
 \end{example}
 \end{exbar}
 
@@ -2507,7 +2513,7 @@ Poiché la convergenza uniforme implica quella puntuale, si avrebbe che $f$ sare
 
 
 \begin{dembar}
-	Dimostrazione della Teorema \ref{th: pag231}
+	Dimostrazione della Teorema \ref{th: pag 231}
 	
 	$f \in C^0(K) \Rightarrow \| f\|_\infty = \sup_{x \in K}|f(x)| \lowercomment{=} {\myarrow[270]} {\text{per Weierstrass}} \max_{x \in K}|f(x)|< +\infty$
 	
@@ -2523,7 +2529,7 @@ Poiché la convergenza uniforme implica quella puntuale, si avrebbe che $f$ sare
 	
 	So che $\exists N >0 \,\, \big| \,\, n,\ell>0$
 	
-	$$\Rightarrow |f_n(x) - \uppercomment{f_\ell(x)}{\myarrow[90]}{f(x)}|< \epsilon \qquad \forall x \in K \color{blue}{\xrightarrow{\ell \to + \infty}} |f_n(x)-f(x)| \leq \epsilon \qquad \forall n > N \text{ e } \forall x \in K$$
+	$$\Rightarrow |f_n(x) - \uppercomment{f_\ell(x)} {f(x)} {\myarrow[90]} |< \epsilon \qquad \forall x \in K {\color{blue}{\xrightarrow{\ell \to + \infty}}} |f_n(x)-f(x)| \leq \epsilon \qquad \forall n > N \text{ e } \forall x \in K$$
 	
 	$$\| f_n-f\|_\infty = \sup_{x \in K}|f_n(x)-f(x)| \leq \epsilon \qquad \forall n > N,  \text{ come si voleva.} \qquad \square$$
 \end{dembar}
@@ -2531,21 +2537,219 @@ Poiché la convergenza uniforme implica quella puntuale, si avrebbe che $f$ sare
 
 \textbf{Osservazione:}
 
-Lo stesso risultato vale in $C^0(X)_b =\{f:X \rightarrow \mathbb{R} \,\, \big| \,\, f$ è continua e limitata$\}$ con $\|f\|_\infty = \sup_{x \in X}|f(x)|$.\\
-$(C^\circ_b(X),\|\cdot\|_\infty)$ è spazio di Banach.
-
-%poi finisco
+Lo stesso risultato vale in $C^0(X)_b =\{f:X \rightarrow \mathbb{R} \,\, \big|$ $f \text{ è continua e } \lowercomment{\text{limitata}}{\exists C > 0 \ \big| \ |f(x)| \leq C}{\forall x \in X} \}$ con \\ %riq malf
+$\|f\|_\infty = \sup_{x \in X}|f(x)|$. $(C^0_b(X),\|\cdot\|_\infty)$ è spazio di Banach.
 
 
+\subsubsection{Contrazioni}
+\begin{definition}
+	$(X,d)$ spazio metrico. Una funzione $T:X\rightarrow X $ si dice \textbf{contrazione} se $\exists\,\, \lambda \in ]0,1[$ tale che $\mathbf{d(t(x),t(y))\leq \lambda d(x,y) \,\, \forall\,\, x,y \in X}$. 
+\end{definition}
+
+\begin{attbar}
+\textbf{Osservazione:}
+
+Se $T:X \rightarrow X$ è una contrazione, allora è una funzione continua, perché lipschitziana di costante di Lipschitz $\lambda \in ]0,1[$.
+\end{attbar}
 
 
+\begin{exbar}
+\begin{center}
+	$x=\mathbb{R},\,\, d(x,y)=|x-y|$, $T:\mathbb{R} \rightarrow \mathbb{R}, \,\, x \mapsto e^{-\frac{|x|}{2}}$
+	
+	$|T(x)-T(y)|\leq \sup_{x \neq 0}|T'(x)||x-y|=\lowercomment{\frac{1}{2}}{\lambda}{}|x-y|$
+	
+	$\Rightarrow T$ è contrazione.  
+\end{center}
+\end{exbar}
 
 
+\begin{theorem} \textbf{Lemma alle contrazioni di Banach-Caccioppoli}
+	\label{th: pag 234}
+	$(X,d)$ spazio metrico completo. $T:X \rightarrow X$ contrazione. Allora $\exists! \,\, x \in X \,\, | \,\, T(x) = x$, cioè $T$ ha un unico punto fisso.
+\end{theorem}
+
+
+\begin{exbar}
+	Stabilire se esistono soluzioni $(x,y)\in[0,1]\times[0,1]$ del sistema di equazioni
+	\begin{gather*}
+		\begin{cases}
+			e^{-\frac{x+y}{3}} &=x
+			\\
+			e^{-\frac{xy}{3}} &=y
+		\end{cases}
+		\\
+		T(x,y)=(e^{-\frac{x+y}{3}},e^{-\frac{xy}{3}})
+		\\
+		T: \mathbb{R}^2 \rightarrow \mathbb{R}^2
+	\end{gather*}
+.
+	Le soluzioni $(x,y)\in [0,1]\times[0,1]$ del sistema sono tutte e sole le soluzioni $(x,y)\in [0,1]\times[0,1]$ di 
+	
+	$$T(x,y)=(x,y),$$ 
+	
+	cioè sono tutti e soli i punti fissi di $T$ appartenenti al quadrato $[0,1]\times[0,1]$.
+\end{exbar}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 234}}
+	
+	Dimostriamo l'unicità. Per assurdo, assumiamo che $\exists \,\, x,y\in X, x \neq y \,\, | \,\, T(x)=x$ e $T(y)=y$. 
+	
+	\begin{center}
+	$$0 < d(x,y)=d(T(x),T(y)) \lowercomment{\leq}{\myarrow[270]}{\text{\text{T è contrazione}}} \uppercomment{\lambda}{\in ]0,1[}{} d(x,y) < d(x,y)$$
+	
+	$$\Rightarrow d(x,y) < d(x,y)$$, assurdo.
+	\end{center} 
+	
+	Prendiamo $x_0 \in X$ e definiamo 
+	\begin{align*} 
+		&x_1 = T(x_0)
+		\\
+		&x_2 = T(x_1) = T(T(x_0))
+		\\
+		&x_3 = T(x_2)
+		\\
+		\vdots \text{In generale}
+		\\
+		x_{k+1}=T(x_k), \qquad k \in \mathbb{N}
+	\end{align*}
+	
+	cioè $\{x_k\}_{k \in \mathbb{N}}$ è una successione definita per induzione con $x_{k+1}=T(x_k)$ e $x_0$ fissato.
+	
+	Se dimostriamo che $\{x_k\}_{k \in \mathbb{N}}$ è di Cauchy, questa converge ad un elemento $x \in X$, essendo $(X,d)$ completo, e $x$ è il punto fisso cercato
+	
+	$$x_{k+1}=T(x_k) {\color{blue} \xrightarrow[T \text{ è continua}]{k \to +\infty}} x = T(x)$$
+	
+	\begin{align*} 
+		d(x_{k+1},x_k) &= d(T(x_k),T(x_{k-1})) \leq \lambda d(x_k,x_{k-1}) 
+		\\
+		&= \lambda d(T(x_{k-1}),T(x_{k-2})) \leq \lambda \cdot \lambda d(x_{k-1},x_{k-2}) = \lambda^2d(x_{k-1},x_{k-2}) 
+		&\leq \lambda^3 d() \leq ... \leq \lambda^k d(x_1,x_0)
+	\end{align*}
+	
+	Dobbiamo far vedere che $\forall \epsilon >0 \,\, \exists \,\, N \,\, | \,\, n >N$ e $p \geq 1$ tali che $d(x_{n+p},x_n)< \epsilon$.
+	
+	\begin{align*} 
+		d(x_{n+p},x_n) &\leq d(x_{n+p},x_{n+p-1})+d(x_{n+p-1},x_n)
+		\\
+		&\leq d(x_{n+p},x_{n+p-1})+d(x_{n+p-1},x_{n+p-2})+d(x_{n+p-2},x_n) 
+		\\
+		&\leq \sum_{k=n}^{n+p-1} d(x_{k+1},x_k) \leq \sum_{k=n}^{n+p-1} \lambda d(x_{1},x_0)
+		\\
+		&\leq d(x_1,x_0) \uppercomment{\sum_{k=n}^{\infty} \lambda^k}{\text{resto di una serie geometrica}}{\text{convergente, perché } \lambda\in]0,1[}
+	\end{align*}
+	
+ 	In particolare, $\lim_{n\rightarrow +\infty} \sum_{k=n}^{\infty}\lambda^k=0$
+ 	
+ 	\begin{gather*} 
+ 		{\color{blue} \sum_{k=n}^{\infty} \lambda^k = \sum_{k=0}^{\infty} \lambda^k - \sum_{k=0}^{n-1} \lambda^k = \frac{1}{1-\lambda} - \frac{\-\lambda^n}{1-\lambda} = \frac{\lambda^n}{1-\lambda} \xrightarrow{\text{per } n \to +\infty} 0}
+ 		\\
+ 	 	\Rightarrow \exists\,\, N \,\, | \text{ se } n> N\left(\sum_{k=n}^{\infty}\lambda^k\right)d(x_1,x_0)<\epsilon
+ 	 	\\
+ 	 	\Rightarrow d(x_{n+p},x_n)<\epsilon \forall n > N \text{ e } p \geq 1.
+ 	 \end{gather*}
+\end{dembar}
+
+
+\begin{corollary}
+	\label{cor: pag 238}
+	$(X,d)$ spazio metrico completo, $C\subseteq X$ chiuso, $T: C \rightarrow C$ contrazione. Allora $\exists!\,\, x \in C \,\, | \,\, T(x)=x$
+\end{corollary}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Corollario \ref{cor: pag 238}}
+	
+	È sufficiente dimostrare che $(C,d)$ è completo. Sia $\{x_k\}_{k \in \mathbb{N}}\subseteq C$ successione di Cauchy. In particolare $\{x_k\}_{k \in \mathbb{N}} \subseteq X $ e quindi converge ad un elemento $x \in X$, essendo $(X,d)$ completo. Poiché $C$ è chiuso, $x \in C$.
+\end{dembar}
+
+
+\begin{exbar} Torniamo all'esempio
+	
+	$$T(x,y)= (e^{-\frac{x+1}{3}},e^{-\frac{xy}{3}})$$ 
+	
+	$$(x,y)\in \uppercomment{[0,1]\times[0,1]}{\text{sottoinsieme}}{\text{chiuso di } \mathbb{R}^2}$$ 
+	
+	Se faccio vedere che 
+	\begin{enumerate}
+		\item $T(x,y)\in [0,1]\times[0,1] \,\, \forall\,\, (x,y)\in [0,1]\times[0,1]$
+		\item T è contrazione
+	\end{enumerate}
+	posso applicare il corollario al lemma alle contrazioni e concludere che $T$ ha un unico punto fisso in $[0,1]\times[0,1]$.
+	
+	\begin{center}
+		$\sim \circ \sim$
+	\end{center}
+	
+	\begin{enumerate}
+		\item $(x,y)\in [0,1]\times[0,1]$
+		
+		\begin{gather*} 
+			T(x,y)=(e^{-\frac{x+y}{3}},e^{-\frac{xy}{3}})
+			\\
+			0 < T(x)=e^{-\frac{x+y}{3}}\leq e^0=1
+			\\
+			0< T(y)=e^{-\frac{xy}{3}}\leq e^0=1
+			\\
+			T(x,y)\in [0,1]\times[0,1]
+		\end{gather*}
+	
+		\item Dimostriamo che $T$ è contrazione. Consideriamo $(\mathbb{R}^2,\|\cdot\|_1)$
+		
+		$$\parallel (x, y) \parallel_1 = |x| + |y|$$
+		
+		e dimostriamo che $T$ è contrazione, cioè che $\exists \,\, \lambda \in ]0,1[$ tale che 
+		
+		$d(T(x_2,y_2),T(x_1,y_1))\leq \lambda d((x_2,y_2),(x_1,y_1))$\\
+		$\|T(x_2,y_2)-T(x_1,y_1)\|_1\leq \lambda \| (x_2,y_2)-(x_1,y_1)\|_1$\\
+		$\|(e^{-\frac{x_2+y_2}{3}},e^{-\frac{x_2y_2}{3}}) - (e^{-\frac{x_1+y_1}{3}},e^{-\frac{x_1y_1}{3}}) \|_1 \leq \lambda \| (x_2-x_1,y_2-y_1)\|_1$\\
+		$|e^{-\frac{x_2+y_2}{3}}-e^{-\frac{x_1+y_1}{3}}| +|e^{-\frac{x_2y_2}{3}}-e^{-\frac{x_1y_1}{3}}|\leq \lambda (|x_2-x_1|+|y_2-y_1|)$\\
+		$\forall (x_1,t_1),(x_2,y_2)\in [0,1]\times[0,1]$.
+	
+		Consideriamo $t \mapsto e^{-\frac{t}{3}},t \in [0,2]$\\
+		$|e^{-\frac{t_2}{3}}-e^{-\frac{t_1}{3}}|\leq \left( \sup_{t \in [0,1]}|De^{-\frac{t}{3}}| \right)|t_1-t_2|\,\,\forall \,\, t_1,t_2 \in [0,2]$\\
+		$|e^{-\frac{t_2}{3}}-e^{-\frac{t_1}{3}}| \leq \frac{1}{3}|t_2-t_1| \,\, \forall \,\, t_1,t_2 \in [0,2]$\\
+		$|e^{-\frac{x_2+y_2}{3}}-e^{-\frac{x_1+y_1}{3}}|\leq \frac{1}{3}|(x_2+y_2)-(x_1+y_1)| \leq \frac{1}{3} \left( |x_2-x_1|+|y_2-y_1| \right)$\\
+		$|e^{-\frac{x_2y_2}{3}}-e^{-\frac{x_1y_1}{3}}|\leq \frac{1}{3}|x_2y_2-x_1y_1|=\frac{1}{3}|x_2y_2-x_1y_2+x_1y_2-x_1y_1|= \frac{1}{3}\left( y_2(x_2-x_1)+x_1(y_2-y_1) \right) \leq \left[ |y_2||x_2-x_1|+|x_1||y_2-y_1| \right] \leq \frac{1}{3} (|x_2-x_1|+|y_2-y_1|)$\\
+		$|e^{-\frac{x_2+y_2}{3}}-e^{-\frac{x_1+y_1}{3}}|+|e^{-\frac{x_2y_2}{3}}-e^{-\frac{x_1y_1}{3}}| \leq \frac{1}{3}(|x_2-x_1|+|y_2-y_1|)+\frac{1}{3}(|x_2-x_1|+|y_2-y_1|)=\frac{2}{3}(|x_2-x_1|+|y_2-y_1|)$\\
+		Per costruire una successione convergente alla soluzione del sistema, scegliamo\\ $(x_0,y_0)=(0,0)$, $(x_1,y_1)=(1,1)$, $(x_2,y_2)=T(x_1,y_1)=T(1,1)=T(e^{-\frac{2}{3}},e^{-\frac{1}{3}})$, ... \\
+		La dimostrazione del lemma alle contrazioni mi assicura che la successione $\{(x_k,y_k)\}_{k\in\N}$ così costruita converge alla soluzione cercata.
+	\end{enumerate}
+\end{exbar}
 	
 \begin{comment}	
 
 
 
+
+\paragraph{\textcolor{red}{Esempio}}
+Sia data l'equazione integrale $f(x)=1\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt$ con $f:\R \rightarrow \R$ funzione.
+\begin{enumerate}
+	\item Provare che l'equazione ha un'unica soluzione $f \in C^\circ_b (\R)$ \textcolor{orange}{funzioni continue e limitate su $\R$}
+	\item Provare che definita $f_0(x)=0 \forall x \in \R$ e $f_{k+1}(x)=1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f_k(t))^2}dt$, $k \geq 0$, la successione di funzioni $\{f_{k}\}_{k \in \N}$ converge uniformemente alla soluzione $f \in C^\circ_b(\R)$ dell'equazione integrale.
+\end{enumerate}
+Riscriviamo l'equazione integrale come punto fisso di una funzione.\\
+$f\in C^\circ_b(\R)$ posso definire $ T(f):\R \rightarrow \R$\\
+$T(f)(x)= 1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt $\\
+$T(f)\in C^\circ(\R)$\\
+E' limitata? \\
+$|T(f)(x)|=|1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt| \leq 1+ \frac{e^{-{|x|}}}{2}|\int_{0}^{2\cos x}e^{-(f(t))^2}dt|\leq 1+\frac{1}{2}|2\cos x|\leq 2\,\, \forall x \in \R $\\
+$T(f)\in C^\circ_b (\R)$\\
+$T: C^\circ_b(\R) \rightarrow C^\circ_b(\R)$, $f \mapsto T(f)$\\
+$f \in C^\circ_b(\R)$ risolve l'equazione integrale $\Leftrightarrow f(x)= T(f)(x)\forall\,\, x \in \R$, cioè $\Leftrightarrow f=T(f)$, punto fisso di $T$.\\
+$(C^\circ_b(\R),\|\cdot \|_\infty)$ è completo. Se dimostriamo che $T$ è una contrazione, abbiamo risolto il problema.\\
+Per risolvere anche il punto 2 è sufficiente osservare che $f_{k+1}=T(f_k)$ e quindi la dimostrazione del lemma alle contrazioni assicura la convergenza per la norma $\|\cdot\|_\infty$, e quindi uniforme, di $\{f_k\}_{k \in \N}$ alla soluzione cercata.\\
+Dimostriamo che $T$ è contrazione cioè che $\exists \lambda \in ]0,1[$ $|$ $\| T(f)-T(g) \|_\infty \leq \lambda \|f-g\|_\infty \,\, \forall \,\, f,g\in C^\circ_b (\R)$\\
+$|T(f)(x)-T(g)(x)|= |1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt-1-\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(g(t))^2}dt| = \frac{e^{-|x|}}{2} |\int_{0}^{2\cos x} e^{-(f(t))^2}-e^{-(g(t))^2}dt| \leq \frac{e^{-|x|}}{2} |\int_{0}^{2\cos x} |e^{-(f(t))^2}-e^{-(g(t))^2}| dt| \leq \frac{1}{2} |\int_{0}^{2\cos x}|e^{-(f(t))^2}-e^{-(g(t))^2}|dt| $\\
+Consideriamo $ t \mapsto e^{-t^2}$\\
+$|e^{-t_2^2}-e^{-t_1^2}| \leq \sup_{t \in \R}|De^{-t^2}||t_2-t_1|= \sup_{t \in \R}|2te^{-t^2}||t_2-t_1|$\\
+$|e^{t_2^2}-e^{-t_1^2}|\leq \sqrt{2}e^{-\frac{1}{2}}|t_2-t_1|$\\
+$|e^{-(f(t))^2}-e^{-(g(t))^2}|\leq \sqrt{2} e^{-\frac{1}{2}}|g(t)-f(t)| $\\
+$ |T(f)(x)-T(g)(x)| \leq \frac{1}{2}|\int_{0}^{2\cos x}|e^{-(f(t))^2}-e^{-(g(t))^2}|dt|\leq \frac{1}{2}\sqrt{2} e^{-\frac{1}{2}}|\int_{0}^{2\cos x}|f(t)-g(t)|dt|\leq \frac{1}{2}\sqrt{2} e^{-\frac{1}{2}} |2 \cos x| \|f-g\|_\infty \leq \sqrt{2} e^{-\frac{1}{2}} \|f-g\|_\infty$\\
+$\Rightarrow |T(f)(x)-t(g)(x)|\leq \sqrt{2} e^{-\frac{1}{2}}\| f-g \|_\infty \,\, \forall \,\, x \in \R$.\\
+Prendendo a sinistra l'estremo superipre si ottiene $\| T(f)-T(g) \|_\infty \leq \sqrt{2}e^{-\frac{1}{2}}\|f-g\|_\infty \Rightarrow T$ è contrazione.
 
 
 
