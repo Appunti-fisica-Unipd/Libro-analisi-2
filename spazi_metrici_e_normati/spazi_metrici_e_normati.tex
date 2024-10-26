@@ -2598,9 +2598,9 @@ Se $T:X \rightarrow X$ è una contrazione, allora è una funzione continua, perc
 	Dimostriamo l'unicità. Per assurdo, assumiamo che $\exists \,\, x,y\in X, x \neq y \,\, | \,\, T(x)=x$ e $T(y)=y$. 
 	
 	\begin{center}
-	$$0 < d(x,y)=d(T(x),T(y)) \lowercomment{\leq}{\myarrow[270]}{\text{\text{T è contrazione}}} \uppercomment{\lambda}{\in ]0,1[}{} d(x,y) < d(x,y)$$
+	$0 < d(x,y)=d(T(x),T(y)) \lowercomment{\leq}{\myarrow[270]}{\text{\text{T è contrazione}}} \uppercomment{\lambda}{\in ]0,1[}{} d(x,y) < d(x,y)$
 	
-	$$\Rightarrow d(x,y) < d(x,y)$$, assurdo.
+	$\Rightarrow d(x,y) < d(x,y)$, assurdo.
 	\end{center} 
 	
 	Prendiamo $x_0 \in X$ e definiamo 
@@ -2611,9 +2611,9 @@ Se $T:X \rightarrow X$ è una contrazione, allora è una funzione continua, perc
 		\\
 		&x_3 = T(x_2)
 		\\
-		\vdots \text{In generale}
+		&\vdots \qquad\qquad \text{In generale}
 		\\
-		x_{k+1}=T(x_k), \qquad k \in \mathbb{N}
+		&x_{k+1}=T(x_k), \qquad k \in \mathbb{N}
 	\end{align*}
 	
 	cioè $\{x_k\}_{k \in \mathbb{N}}$ è una successione definita per induzione con $x_{k+1}=T(x_k)$ e $x_0$ fissato.
@@ -2623,9 +2623,11 @@ Se $T:X \rightarrow X$ è una contrazione, allora è una funzione continua, perc
 	$$x_{k+1}=T(x_k) {\color{blue} \xrightarrow[T \text{ è continua}]{k \to +\infty}} x = T(x)$$
 	
 	\begin{align*} 
-		d(x_{k+1},x_k) &= d(T(x_k),T(x_{k-1})) \leq \lambda d(x_k,x_{k-1}) 
+		d(x_{k+1},x_k) 
+		&= d(T(x_k),T(x_{k-1})) \leq \lambda d(x_k,x_{k-1}) 
 		\\
 		&= \lambda d(T(x_{k-1}),T(x_{k-2})) \leq \lambda \cdot \lambda d(x_{k-1},x_{k-2}) = \lambda^2d(x_{k-1},x_{k-2}) 
+		\\
 		&\leq \lambda^3 d() \leq ... \leq \lambda^k d(x_1,x_0)
 	\end{align*}
 	
@@ -2702,22 +2704,304 @@ Se $T:X \rightarrow X$ è una contrazione, allora è una funzione continua, perc
 		
 		e dimostriamo che $T$ è contrazione, cioè che $\exists \,\, \lambda \in ]0,1[$ tale che 
 		
-		$d(T(x_2,y_2),T(x_1,y_1))\leq \lambda d((x_2,y_2),(x_1,y_1))$\\
-		$\|T(x_2,y_2)-T(x_1,y_1)\|_1\leq \lambda \| (x_2,y_2)-(x_1,y_1)\|_1$\\
-		$\|(e^{-\frac{x_2+y_2}{3}},e^{-\frac{x_2y_2}{3}}) - (e^{-\frac{x_1+y_1}{3}},e^{-\frac{x_1y_1}{3}}) \|_1 \leq \lambda \| (x_2-x_1,y_2-y_1)\|_1$\\
-		$|e^{-\frac{x_2+y_2}{3}}-e^{-\frac{x_1+y_1}{3}}| +|e^{-\frac{x_2y_2}{3}}-e^{-\frac{x_1y_1}{3}}|\leq \lambda (|x_2-x_1|+|y_2-y_1|)$\\
-		$\forall (x_1,t_1),(x_2,y_2)\in [0,1]\times[0,1]$.
-	
-		Consideriamo $t \mapsto e^{-\frac{t}{3}},t \in [0,2]$\\
-		$|e^{-\frac{t_2}{3}}-e^{-\frac{t_1}{3}}|\leq \left( \sup_{t \in [0,1]}|De^{-\frac{t}{3}}| \right)|t_1-t_2|\,\,\forall \,\, t_1,t_2 \in [0,2]$\\
-		$|e^{-\frac{t_2}{3}}-e^{-\frac{t_1}{3}}| \leq \frac{1}{3}|t_2-t_1| \,\, \forall \,\, t_1,t_2 \in [0,2]$\\
-		$|e^{-\frac{x_2+y_2}{3}}-e^{-\frac{x_1+y_1}{3}}|\leq \frac{1}{3}|(x_2+y_2)-(x_1+y_1)| \leq \frac{1}{3} \left( |x_2-x_1|+|y_2-y_1| \right)$\\
-		$|e^{-\frac{x_2y_2}{3}}-e^{-\frac{x_1y_1}{3}}|\leq \frac{1}{3}|x_2y_2-x_1y_1|=\frac{1}{3}|x_2y_2-x_1y_2+x_1y_2-x_1y_1|= \frac{1}{3}\left( y_2(x_2-x_1)+x_1(y_2-y_1) \right) \leq \left[ |y_2||x_2-x_1|+|x_1||y_2-y_1| \right] \leq \frac{1}{3} (|x_2-x_1|+|y_2-y_1|)$\\
-		$|e^{-\frac{x_2+y_2}{3}}-e^{-\frac{x_1+y_1}{3}}|+|e^{-\frac{x_2y_2}{3}}-e^{-\frac{x_1y_1}{3}}| \leq \frac{1}{3}(|x_2-x_1|+|y_2-y_1|)+\frac{1}{3}(|x_2-x_1|+|y_2-y_1|)=\frac{2}{3}(|x_2-x_1|+|y_2-y_1|)$\\
-		Per costruire una successione convergente alla soluzione del sistema, scegliamo\\ $(x_0,y_0)=(0,0)$, $(x_1,y_1)=(1,1)$, $(x_2,y_2)=T(x_1,y_1)=T(1,1)=T(e^{-\frac{2}{3}},e^{-\frac{1}{3}})$, ... \\
-		La dimostrazione del lemma alle contrazioni mi assicura che la successione $\{(x_k,y_k)\}_{k\in\N}$ così costruita converge alla soluzione cercata.
+		\begin{gather*} 
+			d(T(x_2,y_2),T(x_1,y_1))\leq \lambda d((x_2,y_2),(x_1,y_1))
+			\\
+			\|T(x_2,y_2)-T(x_1,y_1)\|_1\leq \lambda \| (x_2,y_2)-(x_1,y_1)\|_1
+			\\
+			\|(e^{-\frac{x_2+y_2}{3}},e^{-\frac{x_2y_2}{3}}) - (e^{-\frac{x_1+y_1}{3}},e^{-\frac{x_1y_1}{3}}) \|_1 \leq \lambda \| (x_2-x_1,y_2-y_1)\|_1
+			\\
+			{\color{blue}\bigg[} |e^{-\frac{x_2+y_2}{3}}-e^{-\frac{x_1+y_1}{3}}| +|e^{-\frac{x_2y_2}{3}}-e^{-\frac{x_1y_1}{3}}|\leq \lambda (|x_2-x_1|+|y_2-y_1|) {\color{blue} \bigg] }
+			\\
+			{\color{blue}\text{questo è quello che devo dimostrare}}
+			\\
+			\forall (x_1,t_1),(x_2,y_2)\in [0,1]\times[0,1].
+		\end{gather*}
+			
+		Consideriamo $t \mapsto e^{-\frac{t}{3}},t \in [0,2]$
+		\begin{gather*} 
+			e^{-\frac{t_2}{3}}-e^{-\frac{t_1}{3}}|\leq \left( \sup_{t \in [0,1]}|De^{-\frac{t}{3}}| \right)|t_1-t_2| \qquad \forall \,\, t_1,t_2 \in [0,2]
+			\\
+			|e^{-\frac{t_2}{3}}-e^{-\frac{t_1}{3}}| \leq \frac{1}{3}|t_2-t_1| \qquad \forall \,\, t_1,t_2 \in [0,2]
+			\\
+			|e^{-\frac{x_2+y_2}{3}}-e^{-\frac{x_1+y_1}{3}}|\leq \frac{1}{3}|(x_2+y_2)-(x_1+y_1)| \leq \frac{1}{3} \left( |x_2-x_1|+|y_2-y_1| \right)
+			\\
+		\end{gather*}
+		\begin{align*} 
+			|e^{-\frac{x_2y_2}{3}}-e^{-\frac{x_1y_1}{3}}|
+			& \leq \frac{1}{3}|x_2y_2-x_1y_1|
+			=\frac{1}{3}|x_2y_2-x_1y_2+x_1y_2-x_1y_1|
+			\\
+			&= \frac{1}{3}\left( y_2(x_2-x_1)+x_1(y_2-y_1) \right) 
+			\\
+			&\leq \left[ |y_2||x_2-x_1|+|x_1||y_2-y_1| \right] 
+			\\
+			&\uppercomment{\leq}{y_2,x_1\in[0,1]}{\myarrow[90]} \frac{1}{3} (|x_2-x_1|+|y_2-y_1|)
+		\end{align*}
+		\begin{align*}
+			|e^{-\frac{x_2+y_2}{3}}-e^{-\frac{x_1+y_1}{3}}|+|e^{-\frac{x_2y_2}{3}}-e^{-\frac{x_1y_1}{3}}| 
+			&\leq \frac{1}{3}(|x_2-x_1|+|y_2-y_1|)
+			\\ %riq malf
+			& \qquad\qquad +\frac{1}{3}(|x_2-x_1|+|y_2-y_1|)
+			\\
+			&=\lowercomment{\frac{2}{3}}{\lambda\in]0,1[}{} (|x_2-x_1|+|y_2-y_1|)
+		\end{align*}
+		
+		Per costruire una successione convergente alla soluzione del sistema, scegliamo
+		\begin{align*} 
+			(x_0,y_0) &=(0,0)
+			\\
+			(x_1,y_1) &=(1,1)
+			\\
+			(x_2,y_2) &= T(x_1,y_1)=T(1,1)=T(e^{-\frac{2}{3}},e^{-\frac{1}{3}})
+			\\
+			(x_3, y_3) &= T(x_2, y_2), ... 
+		\end{align*}
+		
+		La dimostrazione del lemma alle contrazioni mi assicura che la successione $\{(x_k,y_k)\}_{k\in\mathbb{N}}$ così costruita converge alla soluzione cercata.
 	\end{enumerate}
 \end{exbar}
+	
+
+\begin{exbar}
+\begin{example}
+	Sia data l'equazione integrale 
+	
+	$$f(x)=1\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt$$ 
+	
+	con $f:\mathbb{R} \rightarrow \mathbb{R}$ funzione.
+	
+	\begin{enumerate}
+		\item Provare che l'equazione ha un'unica soluzione $f \in C^0_b (\mathbb{R})$ \textcolor{blue}{(funzioni continue e limitate su $\mathbb{R}$)}
+		
+		\item Provare che definita 
+		
+		$$f_0(x)=0 \forall x \in \mathbb{R} \text{ e } f_{k+1}(x)=1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f_k(t))^2}dt,$$
+		
+		$k \geq 0$, la successione di funzioni $\{f_{k}\}_{k \in \mathbb{N}}$ converge uniformemente alla soluzione \\%riq mal
+		$f \in C^0_b(\mathbb{R})$ dell'equazione integrale.
+	\end{enumerate}
+	
+	Riscriviamo l'equazione integrale come punto fisso di una funzione.
+	
+	$f\in C^0_b(\mathbb{R})$ posso definire $ T(f):\mathbb{R} \rightarrow \mathbb{R}$
+	
+	$$T(f)(x)= 1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt \qquad\qquad T(f)\in C^0(\mathbb{R})$$
+	
+	E' limitata? 
+	
+	\begin{align*} 
+		|T(f)(x)|
+		&=|1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt| \leq
+		\\
+		&\leq 1+ \frac{e^{-{|x|}}}{2}|\int_{0}^{2\cos x}e^{-(f(t))^2}dt|\leq
+		\\
+		&\leq 1+\frac{1}{2}|2\cos x|\leq 2 \qquad \forall x \in \mathbb{R}
+	\end{align*}
+
+	$$T(f)\in C^0_b (\mathbb{R})$$
+	
+	$$T: C^0_b(\mathbb{R}) \rightarrow C^0_b(\mathbb{R}), \ f \mapsto T(f)$$
+	
+	$f \in C^0_b(\mathbb{R})$ risolve l'equazione integrale $\Leftrightarrow f(x)= T(f)(x)\forall\,\, x \in \mathbb{R}$, cioè $\Leftrightarrow f=T(f)$, punto fisso di $T$.
+	
+	$(C^0_b(\mathbb{R}),\|\cdot \|_\infty)$ è completo.
+	
+	Se dimostriamo che $T$ è una contrazione, abbiamo risolto il problema. 
+	
+	Per risolvere anche il punto 2 è sufficiente osservare che 
+	
+	$$f_{k+1}=T(f_k)$$
+	
+	e quindi la dimostrazione del lemma alle contrazioni assicura la convergenza per la norma $\|\cdot\|_\infty$, e quindi uniforme, di $\{f_k\}_{k \in \mathbb{N}}$ alla soluzione cercata.
+	
+	Dimostriamo che $T$ è contrazione cioè che 
+	
+	$$\exists \lambda \in ]0,1[ \; \big| \; \| T(f)-T(g) \|_\infty \leq \lambda \|f-g\|_\infty \,\, \forall \,\, f,g\in C^0_b (\mathbb{R})$$
+	
+	\begin{align*} 
+		|T(f)(x)-T(g)(x)| 
+		&= \left| 1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt-1-\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(g(t))^2}dt \right| = 
+		\\
+		&= \frac{e^{-|x|}}{2} \left| \int_{0}^{2\cos x} e^{-(f(t))^2}-e^{-(g(t))^2}dt \right| \leq
+		\\
+		&\leq \frac{e^{-|x|}}{2} \left| \int_{0}^{2\cos x} |e^{-(f(t))^2}-e^{-(g(t))^2}| dt \right| \leq 
+		\\
+		&\leq \frac{1}{2} |\int_{0}^{2\cos x}|e^{-(f(t))^2}-e^{-(g(t))^2}|dt| 
+	\end{align*}
+	
+	Consideriamo $ t \mapsto e^{-t^2}$
+	\begin{gather*} 
+		|e^{-t_2^2}-e^{-t_1^2}| \leq \sup_{t \in \mathbb{R}}|De^{-t^2}||t_2-t_1|= \mathcircled{\sup_{t \in \mathbb{R}}|2te^{-t^2}|} |t_2-t_1|
+		\\
+		{\color{blue} \phi(t)=2te^{-t^2} \qquad\qquad \phi^\prime(t)=2\left( e^{-t^2} -2t e^{-t^2} \right) = 2e^{-t^2} \left( 1 - 2t^2 \right)}
+		\\
+		{\color{blue} \phi^\prime(t)= 0 \iff t =\pm \frac{1}{\sqrt{2}} \qquad\qquad \sup_{t \in \mathbb{R}} |\phi(t)| = \frac{2}{\sqrt{2}} e^{-\frac{1}{2}} = \sqrt{2} e^{-\frac{1}{2}} }
+		\\
+		|e^{t_2^2}-e^{-t_1^2}|\leq \sqrt{2}e^{-\frac{1}{2}}|t_2-t_1|
+		\\
+		|e^{-(f(t))^2}-e^{-(g(t))^2}|\leq \sqrt{2} e^{-\frac{1}{2}}|g(t)-f(t)| 
+		\\
+	\end{gather*}
+	\begin{align*} 
+		|T(f)(x)-T(g)(x)| 
+		&\leq \frac{1}{2} \left|\int_{0}^{2\cos x} |e^{-(f(t))^2}-e^{-(g(t))^2}|dt \right|\leq
+		\\
+		&\leq \frac{1}{2}\sqrt{2} e^{-\frac{1}{2}} \bigg|\int_{0}^{2\cos x} \lowercomment{|f(t)-g(t)|}{\leq \parallel f-g\parallel_\infty}{} dt \bigg| \leq
+		\\
+		&\leq \frac{1}{2}\sqrt{2} e^{-\frac{1}{2}} |2 \cos x| \|f-g\|_\infty \leq \sqrt{2} e^{-\frac{1}{2}} \|f-g\|_\infty
+	\end{align*}
+		
+	$$\Rightarrow |T(f)(x)-t(g)(x)|\leq \uppercomment{\sqrt{2} e^{-\frac{1}{2}}}{}{\lambda\in]0,1[} \| f-g \|_\infty \qquad \forall \,\, x \in \mathbb{R}$$
+
+	Prendendo a sinistra l'estremo superiore si ottiene $\| T(f)-T(g) \|_\infty \leq \sqrt{2}e^{-\frac{1}{2}}\|f-g\|_\infty \Rightarrow T$ è contrazione. {\color{blue}$\left(\lambda = \sqrt{\frac{2}{e}} < 1\right)$}
+\end{example}
+\end{exbar}
+
+
+\subsection{Insiemi connessi}
+
+\segnaposto %pag 248
+	
+\begin{definition}
+	Dato uno spazio metrico $(X,d)$ una \textbf{curva} in $X$ è una funzione continua $\gamma:I\rightarrow X$, con $I \subseteq \mathbb{R}$ intervallo. L'immagine di $\gamma$, 
+	
+	$$\gamma(I)=\{\gamma(t)\,\,|\,\, t \in I\}$$ 
+	
+	si dice \textbf{sostegno} della curva.
+\end{definition}
+
+
+\begin{definition}
+	$(X,d)$ spazio metrico. $C \subseteq X$ si dice \textbf{connesso (per archi)} se $\forall x_0,x_1 \in C$ $\exists \ \gamma:[a,b]\rightarrow X$ curva tale che $\gamma (a)=x_0,$ $\gamma (b) =x_1$ e $\gamma (t)\in C\,\, \forall\,\, t \in [a,b].$
+	
+	\segnaposto
+	
+	\textcolor{blue}{(Il sostegno della curva è intervamente contenuto in $C$.)}
+\end{definition}
+
+
+\begin{attbar}
+\textbf{Osservazione:}
+
+Non è restrittivo assumere che $[a,b]=[0,1]$. Infatti, data $\gamma:[a,b]\rightarrow C$ continua, la funzione $\Tilde{\gamma}=[0,1]\rightarrow C$ definita da 
+
+$$\Tilde{\gamma}(t)=\gamma(a+t(b-a))$$ 
+
+è continua, $\Tilde{\gamma} (0)=\gamma(a)$, $\Tilde{\gamma}(1)=\gamma(b)$, $\Tilde{\gamma}([0,1])=\gamma([a,b])$, cioè $\gamma$ e $\Tilde{\gamma}$ hanno lo stesso sostegno.
+\end{attbar}
+
+
+\textbf{Osservazione:}
+
+Se $(X, \|\cdot\|)$ è spazio normato \textcolor{blue}{($X$ è spazio vettoriale)} e $C \subseteq X$ è convesso, allora $C$ è connesso per archi. 
+
+$C$ convesso $\Leftrightarrow \forall x_0,x_1\in C$, 
+
+$$[x_0,x_1]=\{x_0+t(x_1+x_0)\,\, \big|\,\,t \in [0,1]\},$$
+
+segmento congiungente $x_0$ e $x_1$, è interamente contenuto in $C$. 
+
+$C$ convesso $\Rightarrow C$ connesso perché $x_0, x_1 \in C$, $\gamma:[0,1]\rightarrow X$ continua, $t \mapsto x_0+t(x_1-x_0)$, $\gamma(0)=x_0$, $\gamma(1)=x_1$ e $\gamma(t)\in C$ $\forall t \in [0,1]$ 
+
+{\color{blue}$\|\gamma(t_2)-\gamma(t_1)\|=\|(t_2-t_1)(x_1-x_0)\|=|t_2-t_1|\|x_1-x_0\|$
+	
+$\Rightarrow \gamma$ è lipschitziana di costante di Lipschitz $\|x_1-x_0\|$}
+
+
+\begin{proposition}
+	\label{pr: pag 251}
+	$C \subseteq \mathbb{R}$. $C$ è connesso per archi $\Leftrightarrow C$ è un intervallo.
+	
+	\segnaposto %pag 251
+\end{proposition}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} della \textbf{Proposizione \ref{pr: pag 251}}
+	
+	$\Leftarrow$) $C$ intervallo $\Rightarrow C$ convesso $\Rightarrow C$ connesso per archi.
+	
+	$\Rightarrow$) Sia $C$ connesso per archi. Per assurdo, assumiamo che $C$ non sia un intervallo, cioè non sia convesso. Allora $\exists\,\, x_0,x_1 \in C$ e $\xi \notin C$ tali che $\xi \in ]x_0,x_1[$. Sia $\gamma:[a,b]\rightarrow \mathbb{R}$ continua tale che $\gamma(a)=x_0$ e $\gamma(b)=x_1$. Per il teorema dei valori intermedi $\exists\,\, t \in [a,b]\,\, \big|\,\, \gamma(t)=\xi \in C$ e quindi $C$ non è connesso per archi. $\qquad\square$
+\end{dembar}
+
+
+\begin{exbar}
+	\begin{itemize}
+		\item $\mathbb{R}$, $\alpha \in \mathbb{R}$, $\mathbb{R} \backslash \{\alpha\}$
+		
+		$\mathbb{R}$ è connesso perché intervallo mentre $\mathbb{R} \backslash \{\alpha\}$ non è connesso, perché non è un intervallo.
+		
+		\item $\mathbb{R}^2$ è convesso e quindi connesso.
+		
+		$\mathbb{R}^2\backslash \{(x_0,y_0)\}$ è ancora connesso.
+		
+		\segnaposto
+		
+		Se prendo $r$ retta in $\mathbb{R}^2$, $\mathbb{R}^2\backslash r$ non è connesso.
+		
+		\segnaposto
+		
+		\item Per sconnettere in $\mathbb{R}^3$ devo togliere un piano e, in generale, per sconnettere $\mathbb{R}^n$ devo togliere un sottospazio affine di dimensione $n-1$.
+	\end{itemize}
+\end{exbar}
+
+
+\begin{theorem}
+	\label{th: pag 252}
+	$(X,d_x),(Y,d_y)$ spazi metrici, $C \subseteq X$ connesso per archi, $f: C \rightarrow Y$ continua. Allora $f(C)$ è un insieme connesso per archi.
+\end{theorem}
+
+
+\begin{corollary} \textbf{(teorema dei valori intermedi)}
+	\label{cor: pag 253}
+	$(X,d)$ spazio metrico, $C \subseteq X$ connesso per archi, $f:C \rightarrow \mathbb{R}$ continua. Allora $f$ assume tutti i valori dell'intervallo $]\inf f, \sup f[$.
+\end{corollary}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Corollario \ref{cor: pag 253}}
+	
+	$f(C)$ è connesso per archi in $\mathbb{R} \Rightarrow f(C)$ è un intervallo di estremi $\inf f$ e $\sup f$ \\%riq mal
+	${\color{blue} ] \big( \inf f, \sup f[ \subseteq f(C) \big)}$ $\Rightarrow f$ assume tutti i valori di $]\inf f, \sup f[ \qquad\square$.
+\end{dembar}
+	
+	
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 252}}
+	
+	Siano $y_0,y_1 \in f(C)$. Devo trovare una curva che congiunge $y_0$ e $y_1$ il cui sostegno è contenuto in $f(C)$. 
+	
+	$\exists \,\, x_0,x_1 \in C\,\, \big|\,\, y_0= f(x_0)$ e $y_1=f(x_1)$, $C$ è connesso per archi
+	
+	$\exists\,\, \gamma:[a,b]\rightarrow X$ continua tale che $\gamma(a)=x_0, \gamma(b)=x_1, \gamma(t)\in C \forall\,\, t \in [a,b]$
+	
+	Definiamo $\Tilde{\gamma}:[a,b] \rightarrow Y$, $t \mapsto f(\gamma(t))$
+	
+	$$[a,b]\xrightarrow{\gamma} C \xrightarrow{f}Y$$
+	
+	$\Tilde{\gamma}$ è continua perché composizione di funzioni continue
+	\begin{gather*} 
+		\Tilde{\gamma}(a)=f(\gamma(a))=f(x_0)=y_0
+		\\
+		\Tilde{\gamma}(b)=f(\gamma(b))=f(x_1)=y_1
+		\\
+		\gamma(t)\in C\,\, \forall\,\, f \in [a,b]
+		\\
+		f(\gamma(t))=\Tilde{\gamma}(t)\in f(C)\,\,\forall\,\,t \in [a,b]
+		\\
+		\Rightarrow \Tilde{\gamma} \text{ è la curva cercata}
+		\\
+		\Rightarrow f(C) \text{ è connesso per archi.} \qquad \square
+	\end{gather*}
+	
+	\segnaposto
+\end{dembar}
+	
+	
+	
+	
+	
 	
 \begin{comment}	
 
@@ -2725,31 +3009,94 @@ Se $T:X \rightarrow X$ è una contrazione, allora è una funzione continua, perc
 
 
 \paragraph{\textcolor{red}{Esempio}}
-Sia data l'equazione integrale $f(x)=1\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt$ con $f:\R \rightarrow \R$ funzione.
+$f:\R^2\rightarrow \R$ continua tale che $f(-1,0)=-3$, $f(1,0)=4$. Quanti zeri ha $f$, cioè quante sono le soluzioni di $f(x,y)=0$?\\
+IMMAGINE\\
+\textcolor{orange}{$\phi : f \mapsto f(\gamma(t))$ è continua, $\phi(0)=-3 <0$, $\phi(1)=4 >0 \Rightarrow \exists\,\, I\,\, |\,\, \phi(I)=0 \Rightarrow f(\gamma(I))=0$. Trovo un altro zero di $f$ appartenente al sostegno di $\Tilde{\gamma}$} $\Rightarrow f$ ha infiniti zeri.
+
+\subsection{\textcolor{red}{Serie di funzioni}}
+\paragraph{\textcolor{red}{Definizione}}
+$(X,d)$ spazio metrico, $\{f_k\}_{k \in \N}, f_k : X \rightarrow \R $ (o $\C$) una successione di funzioni $\sum_{k=0}^{\infty} f_k$, $\sum_{k=0}^{\infty}f_k(x)$. Una \underline{serie di funzioni} è una coppia $(\{f_k\}_{k \in \N},\{S_n\}_{n \in \N})$ dove $\{f_k\}_{k \in \N}, f_k: X \rightarrow \R$, è successione di funzioni e $\{S_n\}_{n \in \N}, S_n = \sum_{k=0}^{n}f_k$ è la successione delle ridotte. La serie è indicata con $\sum_{k=0}^{\infty}f_k$ o $\sum_{k=0}^{\infty}f_k (x)$.
+
+\paragraph{\textcolor{red}{Esempio}}
+\begin{itemize}
+	\item Serie esponenziale $e^x= \sum_{k=0}^{\infty}\frac{x^k}{k!}, x \in \R$, $X=\R, f_k (x)= \frac{ x^k}{k!}$
+	\item Serie logaritmica $\ln (1+x)= \sum_{k=0}^{\infty}(-1)^{k+1}\frac{x^k}{k}, x \in ]-1,1]=X$, $ f_k(x)=(-1)^{k+1}\frac{x^k}{k}$
+\end{itemize}
+
+\paragraph{\textcolor{red}{Definizione}}
+Una serie di funzioni $\sum_{k=0}^{\infty} f_k$ si dice \underline{puntualmente convergente} in $D \subseteq X$ se la sua successione delle ridotte converge puntualmente. In tal caso il limite puntuale si dice (funzione) somma della serie ed è indicato con $\sum_{k=0}^{\infty}f_k(x), x \in D$.\\ Una serie di funzioni $\sum_{k=0}^{\infty}f_k$ si dice \underline{uniformemente convergente} in $D \subseteq X$ se la sua successione delle ridotte converge uniformemente in $D$.\\
+\textcolor{orange}{$\sum_{k=0}^{\infty}f_k$ converge puntualmente in $D$ se le serie numeriche $\sum_{k=0}^{\infty}f_k(x)$ connvergono $\forall x \in D$.}\\
+\textcolor{orange}{$\sum_{k=0}^{\infty}f_k$ converge uniformemente in $D$, $\sup_{x \in D}|\sum_{k=0}^{\infty}f_k(x)-f(x)|\xrightarrow{n \rightarrow+\infty}0$}\\
+
+\subsubsection{\textcolor{red}{Teorema di passaggio al limite sotto segno di integrale}}
+\paragraph{\textcolor{red}{Teorema}}
+Sia $\sum_{k=0}^{\infty}f_k$ una serie di funzioni $f_k: [a,b]\rightarrow \R$, Riemann integrabili in $[a,b]$, uniformemente convergente in $[a,b]$ ad una funzione $f$, somma della serie. Allora $f$ è Riemann integrabile in $[a,b]$ e 
+\begin{equation*}
+	\int_{a}^{b}f(x)dx=\sum_{k=0}^{\infty}\int_{a}^{b}f_k(x)dx
+\end{equation*}
+\textcolor{orange}{$\int_{a}^{b}\lim_{n\rightarrow +\infty}S_n(x)dx=\lim_{n\rightarrow +\infty}\int_{a}^{b}S_n (x)dx$}\\
+\textcolor{orange}{$\lim_{n\rightarrow +\infty}\int_{a}^{b}\sum_{k=0}^{\infty}f_k(x)dx= \sum_{k=0}^{\infty}\int_{a}^{b}f_k(x)dx$}
+
+\subsubsection{\textcolor{red}{Teorema di passaggio al limite sotto segno di derivata}}
+\paragraph{\textcolor{red}{Teorema}}
+$I \subseteq \R$ intervallo. $\{f_k\}_{k \in \N}, f_k: I \rightarrow \R$, successione di funzioni derivabili. Se 
 \begin{enumerate}
-	\item Provare che l'equazione ha un'unica soluzione $f \in C^\circ_b (\R)$ \textcolor{orange}{funzioni continue e limitate su $\R$}
-	\item Provare che definita $f_0(x)=0 \forall x \in \R$ e $f_{k+1}(x)=1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f_k(t))^2}dt$, $k \geq 0$, la successione di funzioni $\{f_{k}\}_{k \in \N}$ converge uniformemente alla soluzione $f \in C^\circ_b(\R)$ dell'equazione integrale.
+	\item $\exists\,\, x_0\in I \,\, |\,\, \sum_{k=0}^{\infty}f_k(x_0)$ converge;
+	\item la serie di funzioni $\sum_{k=0}^{\infty}f_k'$ converge uniformemente in $I$;
 \end{enumerate}
-Riscriviamo l'equazione integrale come punto fisso di una funzione.\\
-$f\in C^\circ_b(\R)$ posso definire $ T(f):\R \rightarrow \R$\\
-$T(f)(x)= 1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt $\\
-$T(f)\in C^\circ(\R)$\\
-E' limitata? \\
-$|T(f)(x)|=|1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt| \leq 1+ \frac{e^{-{|x|}}}{2}|\int_{0}^{2\cos x}e^{-(f(t))^2}dt|\leq 1+\frac{1}{2}|2\cos x|\leq 2\,\, \forall x \in \R $\\
-$T(f)\in C^\circ_b (\R)$\\
-$T: C^\circ_b(\R) \rightarrow C^\circ_b(\R)$, $f \mapsto T(f)$\\
-$f \in C^\circ_b(\R)$ risolve l'equazione integrale $\Leftrightarrow f(x)= T(f)(x)\forall\,\, x \in \R$, cioè $\Leftrightarrow f=T(f)$, punto fisso di $T$.\\
-$(C^\circ_b(\R),\|\cdot \|_\infty)$ è completo. Se dimostriamo che $T$ è una contrazione, abbiamo risolto il problema.\\
-Per risolvere anche il punto 2 è sufficiente osservare che $f_{k+1}=T(f_k)$ e quindi la dimostrazione del lemma alle contrazioni assicura la convergenza per la norma $\|\cdot\|_\infty$, e quindi uniforme, di $\{f_k\}_{k \in \N}$ alla soluzione cercata.\\
-Dimostriamo che $T$ è contrazione cioè che $\exists \lambda \in ]0,1[$ $|$ $\| T(f)-T(g) \|_\infty \leq \lambda \|f-g\|_\infty \,\, \forall \,\, f,g\in C^\circ_b (\R)$\\
-$|T(f)(x)-T(g)(x)|= |1+\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(f(t))^2}dt-1-\frac{e^{-{|x|}}}{2}\int_{0}^{2\cos x}e^{-(g(t))^2}dt| = \frac{e^{-|x|}}{2} |\int_{0}^{2\cos x} e^{-(f(t))^2}-e^{-(g(t))^2}dt| \leq \frac{e^{-|x|}}{2} |\int_{0}^{2\cos x} |e^{-(f(t))^2}-e^{-(g(t))^2}| dt| \leq \frac{1}{2} |\int_{0}^{2\cos x}|e^{-(f(t))^2}-e^{-(g(t))^2}|dt| $\\
-Consideriamo $ t \mapsto e^{-t^2}$\\
-$|e^{-t_2^2}-e^{-t_1^2}| \leq \sup_{t \in \R}|De^{-t^2}||t_2-t_1|= \sup_{t \in \R}|2te^{-t^2}||t_2-t_1|$\\
-$|e^{t_2^2}-e^{-t_1^2}|\leq \sqrt{2}e^{-\frac{1}{2}}|t_2-t_1|$\\
-$|e^{-(f(t))^2}-e^{-(g(t))^2}|\leq \sqrt{2} e^{-\frac{1}{2}}|g(t)-f(t)| $\\
-$ |T(f)(x)-T(g)(x)| \leq \frac{1}{2}|\int_{0}^{2\cos x}|e^{-(f(t))^2}-e^{-(g(t))^2}|dt|\leq \frac{1}{2}\sqrt{2} e^{-\frac{1}{2}}|\int_{0}^{2\cos x}|f(t)-g(t)|dt|\leq \frac{1}{2}\sqrt{2} e^{-\frac{1}{2}} |2 \cos x| \|f-g\|_\infty \leq \sqrt{2} e^{-\frac{1}{2}} \|f-g\|_\infty$\\
-$\Rightarrow |T(f)(x)-t(g)(x)|\leq \sqrt{2} e^{-\frac{1}{2}}\| f-g \|_\infty \,\, \forall \,\, x \in \R$.\\
-Prendendo a sinistra l'estremo superipre si ottiene $\| T(f)-T(g) \|_\infty \leq \sqrt{2}e^{-\frac{1}{2}}\|f-g\|_\infty \Rightarrow T$ è contrazione.
+allora la serie di funzioni $\sum_{k=0}^{\infty}f_k$ converge uniformemente in $I$ ad una funzione somma $f$ derivabile e tale che $f'(x)= \sum_{k=0}^{\infty}f_k'(x)$, $x \in I$, cioè $f'$ è la somma della serie delle derivate.
+\textcolor{orange}{
+	\begin{enumerate}
+		\item $\exists x_0 \in I \,\, |\,\, \{S_n(x_0)\}_{n \in \N}, S_n= \sum_{k=0}^{\infty}f_k$, converge
+		\item $\{S_n'\}_{n \in \N}$ converge uniformemente in $I$ ad una funzione $g$.
+	\end{enumerate}
+	Allora $\{S_n\}_{n \in \N}$ converge uniformemente in $I$ ad una funzione derivabile $f$ tale che $f'=g=\lim_{n\rightarrow +\infty} S_n' =\lim_{n\rightarrow +\infty} \sum_{k=0}^{n} f_k'=\sum_{k=0}^{\infty}f_k'$.
+}
+
+\paragraph{\textcolor{red}{Proposizione}}
+Sia $\sum_{k=0}^{\infty} f_k$ serie uniformemente convergente in $D \subseteq X$, $(X,d)$ spazio metrico. Allora 
+\begin{equation*}
+	\lim_{k\rightarrow+\infty}\sup_{x \in D} |f_k(x)|=0,
+\end{equation*}
+cioè $f_k \rightrightarrows 0$ in $D$.\\
+\textcolor{orange}{Se $f_k \nrightrightarrows 0$ in $D$, la serie $\sum_{k=0}^{\infty}f_k$ non può convergere uniformemente.}
+\paragraph{\textcolor{red}{Esempio}}
+Serie esponenziale, $e^x= \sum_{k=0}^{\infty}\frac{x^k}{k!}, x \in \R$ che converge puntualmente in $\R$. Converge uniformemente in $\R$?\\
+$\sup_{x \in \R}|f_k(x)|=\sup_{x \in \R}\frac{|x|^k}{k!}=+\infty \,\,\forall\,\,  k \rightarrow f_k \nrightrightarrows 0$ in $\R \Rightarrow$ la serie non converge uniformemente in $\R$.
+
+\paragraph{\textcolor{red}{Dimostrazione della proposizione}}
+$f:D \rightarrow \R$ somma della serie. Se $\{S_n\}_{n \in \N}$ è la successione delle ridotte, si ha 
+\begin{equation*}
+	\lim_{n \rightarrow + \infty} \sup_{x \in D} |S_n(x)-f(x)|=0
+\end{equation*}
+perchè $S_n \rightrightarrows f(x)$ in $D$.\\
+Fissato $\epsilon >0 \,\, \exists\,\, N >0\,\, |\,\, n > N,\,\,\sup_{x \in D} |S_n(x)-f(x)|< \epsilon \Rightarrow$ se $n > N, |S_n(x)-f(x)|< \epsilon \,\, \forall \,\, x \in D$\\
+$n > N +1$\\
+$|f_n(x)|=|S_n(x)-S_{n-1}(x)|\leq |S_n (x)-f(x)|+|S_{n-1}(x)-f(x)| < 2 \epsilon \,\, \forall \,\, x \in D$\\
+$n > N+1 \Rightarrow \sup_{x \in D}|f_n(x)| < 2 \epsilon \Rightarrow f_n \rightrightarrows 0$ in $D$.
+\begin{flushright}
+	\large\Lightning
+\end{flushright}
+
+\paragraph{\textcolor{red}{Definizione}}
+Una serie di funzioni $\sum_{k=0}^{\infty}f_k$ si dice \underline{totalmente convergente} in $D \subseteq X$ se converge la serie numerica 
+\begin{equation*}
+	\sum_{k=0}^{\infty}\sup_{x\in D}|f_k(x)|.
+\end{equation*}
+
+\paragraph{\textcolor{red}{Osservazione}}
+Se $\exists\,\, \{a_k\}_{k \in \N}\subseteq \R$ tale che 
+\begin{enumerate}
+	\item $|f_k(x)|\leq a_k \,\, \forall \,\, x \in D$ e $\forall\,\, k \in \N $
+	\item $\sum_{k=0}^{\infty}a_k$ converge 
+\end{enumerate}
+allora $\sum_{k=0}^{\infty}f_k$ converge totalmente in $D$.\\
+Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D \Rightarrow \sup_{x \in D} |f_k (x)|\leq a_k \,\,\forall\,\, k \in \N \Rightarrow$ la serie $\sum_{k=0}^{\infty} \sup_{x \in D}|f_k(x)|$ converge per il criterio del confronto.
+
+\subsubsection{\textcolor{red}{Criterio di Weierstrass}}
+\paragraph{\textcolor{red}{Teorema}}
+Sia $\sum_{k=0}^{\infty}f_k$ serie di funzioni totalmetne convergente in $ D \subseteq X$, $ (X,d)$ spazio metrico. Allora $\sum_{k=0}^{\infty}f_k$ converge uniformemente in $D$.
+
 
 
 
