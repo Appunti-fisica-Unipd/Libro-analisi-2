@@ -74,7 +74,7 @@ Se $\inf_{a=x_0 < x_1 < ... < x_n =b} S(f) = \sup_{a=x_0 < x_1 < ... < x_n =b} s
 	\end{center}
 	
 	Riesco a definire bene $\int_{c}^{1} f(x) \ \mathrm{d}x$ perché integro una funzione limitata
-	$\left( |f(x)|\leq -\ln c \quad \forall \ x \in [c,1] \right)$ su un intervallo limitato.
+	$( |f(x)|\leq -\ln c$ $\forall x \in [c,1] )$ su un intervallo limitato.
 	
 	Posso dunque definire
 	\begin{align*}
@@ -320,7 +320,7 @@ che è una serie convergente.
 \end{example}
 \end{exbar}
 
-In generale, data $f:]a,b[ \ \rightarrow \mathbb{R}$ integrabile in senso improprio in $]x_0,x_1[, \ ]x_1,x_2[, \ \ldots, \ ]x_{n-1}, \ x_n[$ con $a = x_0 < x_1 < \ldots < x_n = b$, allora $f$ si dice integrabile in senso improprio in $]a,b[$ e si pone 
+In generale, data $f:]a,b[ \ \rightarrow \mathbb{R}$ integrabile in senso improprio in $]x_0,x_1[$, $]x_1,x_2[$, $\ldots$, $]x_{n-1}, \ x_n[$ con $a = x_0 < x_1 < \ldots < x_n = b$, allora $f$ si dice integrabile in senso improprio in $]a,b[$ e si pone 
 \begin{equation*}
 	\int_{a}^{b} f(x) \ \mathrm{d}x= \sum_{i=1}^{n} \int_{x_{i-1}}^{x_i} f(x) \ \mathrm{d}x.
 \end{equation*}
@@ -364,7 +364,8 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 	
 \end{theorem}
 	\label{th:criterio del confronto integrale}
-	$f,g : [a,b[ \ \rightarrow \mathbb{R}, \ b \in \mathbb{R} \cup \{+\infty\}$, Riemann integrabili in $[a,c] \ \forall c \in [a,b[$ e tali che $0 \leq f(x) \leq g(x)$ definitivamente per $x \rightarrow b^-$.
+	$f,g : [a,b[ \ \rightarrow \mathbb{R}, \ b \in \mathbb{R} \ \cup \ \{+\infty\}$, Riemann integrabili in $[a,c] \ \forall c \in [a,b[$ e tali che \\ %riq malf
+	$0 \leq f(x) \leq g(x)$ definitivamente per $x \rightarrow b^-$.
 	\begin{enumerate}
 		\item Se $\int_{a}^{b} g(x) \ \mathrm{d}x$ converge, allora converge anche $\int_{a}^{b} f(x) \ \mathrm{d}x$.
 		\item Se $\int_{a}^{b} f(x) \ \mathrm{d}x$ diverge, allora diverge anche $\int_{a}^{b} g(x) \ \mathrm{d}x$.
@@ -460,10 +461,13 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 	
 	$\Rightarrow \int_{1}^{+\infty} \frac{\cos x}{x^2} \ \mathrm{d}x$ converge per il criterio di assoluta integrabilità
 	
-	$\Rightarrow \lim_{c \rightarrow +\infty} \int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x = \cos 1 - \int_{1}^{+\infty} \frac{\cos x}{x^2} \ \mathrm{d}x$ esiste finito e dunque $\int_{1}^{+\infty} \frac{\sin x}{x} \ \mathrm{d}x$ converge 
-	\\[1em]
+	$\Rightarrow \lim_{c \rightarrow +\infty} \int_{1}^{c} \frac{\sin x}{x} \ \mathrm{d}x = \cos 1 - \int_{1}^{+\infty} \frac{\cos x}{x^2} \ \mathrm{d}x$ esiste finito
+	
+	\begin{center} 
+		dunque $\int_{1}^{+\infty} \frac{\sin x}{x} \ \mathrm{d}x$ converge.
 
-	Ma $\int_{1}^{+\infty} |\frac{\sin x}{x}|dx =+\infty$.
+		Ma $\int_{1}^{+\infty} \left|\frac{\sin x}{x} \right|dx =+\infty$.
+	\end{center} 
 	
 	Presi $k \geq 1, \ k \in \mathbb{N}$
 	\begin{gather*}
@@ -672,7 +676,8 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 \end{example}
 \end{exbar}
 
-\begin{attbar}
+\newpage %riq malf
+\begin{attbar}	
 \begin{equation*}
 	\int_{0}^{\frac{1}{2}} \frac{1}{x^\alpha |\ln x|^\beta} \ \mathrm{d}x \text{ converge } \iff \alpha < 1 \text{ o } (\alpha=1 \text{ e } \beta >1)
 \end{equation*}
@@ -869,7 +874,9 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 		\frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \ \mathrm{d}x \sim \frac{e^{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} = \frac{e^{(1 - \alpha)x^2 - \alpha x}}{x^\alpha}  \text{ per } x \rightarrow +\infty
 	\end{gather*}
 	
-	Per il criterio asintotico del confronto $\int_{1}^{+\infty} \frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \ \mathrm{d}x$ converge $\iff \int_{1}^{+\infty}  \frac{e^{(1-\alpha) x^2 - \alpha x}}{x^\alpha} \ \mathrm{d}x$ converge.
+	Per il criterio asintotico del confronto 
+	
+	$$\int_{1}^{+\infty} \frac{\sinh{x^2}}{x^\alpha e^{\alpha(x^2 + x)}} \ \mathrm{d}x \text{ converge } \iff \int_{1}^{+\infty}  \frac{e^{(1-\alpha) x^2 - \alpha x}}{x^\alpha} \ \mathrm{d}x \text{ converge.}$$
 	
 	\begin{itemize}
 		\item Se $1-\alpha > 0, \ \alpha < 1$ si avrà
@@ -1029,17 +1036,21 @@ Allora $\int_{a}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x$ converge.
 	Se dimostro che $\lim_{\omega \rightarrow +\infty} \int_{a}^{\omega} f'(x) \ G(x) \ \mathrm{d}x$ esiste finito, cioè che $\int_{a}^{+\infty} f'(x) \ G(x) \ \mathrm{d}x$ è convergente, deduco che converge anche $\int_{a}^{+\infty} f(x) \ G'(x) \ \mathrm{d}x$.
 	
 	Dimostriamo che l'integrale $\int_{a}^{+\infty} f'(x) \ G(x) \ \mathrm{d}x$ converge assolutamente
-	\begin{gather*}
+	\begin{equation*}
 		\int_{a}^{+\infty} \big|f'(x) \ G(x) \big| \ \mathrm{d}x = \underbracket[0pt][0pt]{\lim_{\omega \rightarrow +\infty} \int_{a}^{\omega} \big|f'(x) \ G(x) \big| \ \mathrm{d}x}
 		_{\genfrac{}{}{0pt}{}
 		{\color{blue}{\text{il limite esiste, devo}}}
 		{\color{blue}{\text{far vedere che è finito}}}} \leq C \ f(a) < +\infty
-		\\
+	\end{equation*} 
+	
+	\begin{align*} 
 		\int_{a}^{\omega} \big|f'(x) \ G(x) \big| \ \mathrm{d}x 
 		\undercomment{\leq} {\big| G(x) \big| \leq C} {} C \int_{a}^{\omega} \big| f'(x) \big| \ \mathrm{d}x 
-		\undercomment{=} {f'(x) \leq 0} {} -C \int_{a}^{\omega} f'(x) \ \mathrm{d}x = C \left[ f(a) - f(\omega) \right] 
+		&\undercomment{=} {f'(x) \leq 0} {} -C \int_{a}^{\omega} f'(x) \ \mathrm{d}x = 
+		\\
+		&= C \left[ f(a) - f(\omega) \right] 
 		\undercomment{\leq} {f(\omega) \geq 0} {} C f(a) \quad \forall \omega \quad \square
-	\end{gather*}
+	\end{align*}
 \end{dembar}
 	
 	
