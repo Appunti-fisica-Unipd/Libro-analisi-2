@@ -1,0 +1,561 @@
+\section{Serie di funzioni}
+
+
+\begin{definition}
+	$(X,d)$ spazio metrico, $\{f_k\}_{k \in \mathbb{N}}, f_k : X \rightarrow \mathbb{R} $ (o $\mathbb{C}$) una successione di funzioni 
+	
+	$$\sum_{k=0}^{\infty} f_k, \qquad \lowercomment{\sum_{k=0}^{\infty}f_k(x)}
+	{\text{è una serie numerica}} {\forall x \in X \text{ fissato}}$$. 
+	
+	Una serie di funzioni è una coppia 
+	
+	$$(\{f_k\}_{k \in \mathbb{N}},\{S_n\}_{n \in \mathbb{N}})$$ 
+	
+	dove $\{f_k\}_{k \in \mathbb{N}}, f_k: X \rightarrow \mathbb{R}$, è successione di funzioni e 
+	
+	$$\{S_n\}_{n \in \mathbb{N}}, \qquad S_n = \sum_{k=0}^{n}f_k \qquad {\color{blue} S_n(x) = \sum_{k=0}^{n} f_k(x) = f_0(x) +f_1(x) + \ldots + f_n(x)}$$
+	
+	è la successione delle ridotte. La serie è indicata con $\sum_{k=0}^{\infty}f_k$ o $\sum_{k=0}^{\infty}f_k (x)$.
+\end{definition}
+
+
+\begin{exbar}
+	\begin{itemize}
+		\item Serie esponenziale 
+		\begin{gather*} 
+			e^x= \sum_{k=0}^{\infty}\frac{x^k}{k!}, x \in \mathbb{R}
+			\\
+			X=\mathbb{R}, f_k (x)= \frac{ x^k}{k!}
+		\end{gather*}
+		
+		\item Serie logaritmica 
+		\begin{gather*} 
+			\ln (1+x)= \sum_{k=0}^{\infty}(-1)^{k+1}\frac{x^k}{k}, x \in ]-1,1]=X
+			\\
+			f_k(x)=(-1)^{k+1}\frac{x^k}{k}
+		\end{gather*}
+	\end{itemize}
+\end{exbar}
+
+
+\begin{definition}
+	Una serie di funzioni $\sum_{k=0}^{\infty} f_k$ si dice \textbf{puntualmente convergente} in $D \subseteq X$ se la sua successione delle ridotte converge puntualmente. In tal caso il limite puntuale si dice (funzione) somma della serie ed è indicato con $\sum_{k=0}^{\infty}f_k(x), x \in D$.
+		
+	Una serie di funzioni $\sum_{k=0}^{\infty}f_k$ si dice \textbf{uniformemente convergente} in $D \subseteq X$ se la sua successione delle ridotte converge uniformemente in $D$.
+		
+	\color{blue}{$\sum_{k=0}^{\infty}f_k$ \textbf{converge puntualmente} in $D$ se le serie numeriche $\sum_{k=0}^{\infty}f_k(x)$ convergono $\forall x \in D$.
+	
+	$\sum_{k=0}^{\infty}f_k$ \textbf{converge uniformemente} in $D$, 
+	
+	$$\sup_{x \in D}\bigg| \lowercomment{\sum_{k=0}^{\infty}f_k(x)}{S_n(x)}{} - \lowercomment{f(x)}{\text{somma delle}}{\text{serie}}|\xrightarrow{n \rightarrow+\infty}0$$}
+\end{definition}
+
+
+\begin{theorem} \textbf{di passaggio al limite sotto il segno di integrale}
+	
+	Sia $\sum_{k=0}^{\infty}f_k$ una serie di funzioni $f_k: [a,b]\rightarrow \mathbb{R}$, Riemann integrabili in $[a,b]$, uniformemente convergente in $[a,b]$ ad una funzione $f$, somma della serie. Allora $f$ è Riemann integrabile in $[a,b]$ e 
+	\begin{equation*}
+		\lowercomment{\int_{a}^{b}f(x)dx} {= \sum_{k=0}^{\infty} f_k(x)} {} =\sum_{k=0}^{\infty} \int_{a}^{b}f_k(x)dx
+	\end{equation*}
+	
+
+	\begin{align*}
+		\color{blue} \int_{a}^{b} \underbrace{\lim_{n\rightarrow +\infty}S_n(x)}_{f(x)} dx=
+		&\color{blue} \underbrace{\lim_{n\rightarrow +\infty}\int_{a}^{b}S_n (x)dx}_{=}
+		\\
+		&\color{teal}\lim_{n\rightarrow +\infty}\int_{a}^{b}\sum_{k=0}^{n}f_k(x)dx=
+		\\
+		&\color{teal} =\lim_{n\rightarrow+\infty} \sum_{k=0}^{n} \int_{a}^{b} f_k(x)dx=
+		\\
+		&\color{teal} =\sum_{k=0}^{\infty}\int_{a}^{b}f_k(x)dx
+	\end{align*}	
+\end{theorem}
+
+
+\begin{theorem} \textbf{di passaggio al limite sotto segno di derivata}
+	
+	$I \subseteq \mathbb{R}$ intervallo. $\{f_k\}_{k \in \mathbb{N}}, f_k: I \rightarrow \mathbb{R}$, successione di funzioni derivabili. Se 
+	\begin{enumerate}
+		\item $\exists\,\, x_0\in I \,\, \big|$ $\sum_{k=0}^{\infty}f_k(x_0)$ converge;
+		
+		\item la serie di funzioni $\sum_{k=0}^{\infty}f_k'$ converge uniformemente in $I$;
+	\end{enumerate}
+	
+	allora la serie di funzioni $\sum_{k=0}^{\infty}f_k$ converge uniformemente in $I$ ad una funzione somma $f$ derivabile e tale che $f'(x)= \sum_{k=0}^{\infty}f_k'(x)$, $x \in I$, cioè $f'$ è la somma della serie delle derivate.
+	
+	\color{blue}{
+		\begin{enumerate}
+			\item $\exists x_0 \in I \,\, \big|$ $\{S_n(x_0)\}_{n \in \mathbb{N}},$ $S_n= \sum_{k=0}^{\infty}f_k$, converge
+			
+			\item $\{S_n'\}_{n \in \mathbb{N}}$ converge uniformemente in $I$ ad una funzione $g$.
+		\end{enumerate}
+		
+		Allora $\{S_n\}_{n \in \mathbb{N}}$ converge uniformemente in $I$ ad una funzione derivabile $f$ tale che 
+		
+		$$f'=g=\lim_{n\rightarrow +\infty} S_n' =\lim_{n\rightarrow +\infty} \sum_{k=0}^{n} f_k'=\sum_{k=0}^{\infty}f_k'$$.
+	}
+\end{theorem}
+
+
+\begin{proposition}
+	\label{pr: pag 260}
+	Sia $\sum_{k=0}^{\infty} f_k$ serie uniformemente convergente in $D \subseteq X$, $(X,d)$ spazio metrico. Allora 
+	\begin{equation*}
+		\lim_{k\rightarrow+\infty}\sup_{x \in D} |f_k(x)|=0,
+	\end{equation*}
+	
+	cioè $f_k \rightrightarrows 0$ in $D$.
+	
+	\textcolor{blue}{Se $f_k \nrightrightarrows 0$ in $D$, la serie $\sum_{k=0}^{\infty}f_k$ non può convergere uniformemente.}
+\end{proposition}
+
+
+\begin{exbar}
+	Serie esponenziale, $e^x= \sum_{k=0}^{\infty} \uppercomment{\frac{x^k}{k!}}{}{f_k(x)},$ $x \in \mathbb{R}$ che converge puntualmente in $\mathbb{R}$. Converge uniformemente in $\mathbb{R}$?
+	\begin{center} 
+		$\sup_{x \in \mathbb{R}}|f_k(x)|=\sup_{x \in \mathbb{R}}\frac{|x|^k}{k!}=+\infty \,\,\forall\,\, k$
+		
+		$\rightarrow f_k \nrightrightarrows 0$ in $\mathbb{R}$ 
+		
+		$\Rightarrow$ la serie non converge uniformemente in $\mathbb{R}$.
+	\end{center} 
+\end{exbar}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} della \textbf{Proposizione \ref{pr: pag 260}}
+	
+	$f:D \rightarrow \mathbb{R}$ somma della serie. Se $\{S_n\}_{n \in \mathbb{N}}$ è la successione delle ridotte, si ha 
+	\begin{equation*}
+		\lim_{n \rightarrow + \infty} \sup_{x \in D} |S_n(x)-f(x)|=0
+	\end{equation*}
+	
+	perché $S_n \rightrightarrows f(x)$ in $D$.
+	
+	Fissato $\epsilon >0 \,\, \exists\,\, N >0\,\, \big|$ 
+	\begin{itemize} 
+		\item $n > N$
+		
+		$$\sup_{x \in D} |S_n(x)-f(x)|< \epsilon$$
+		
+		$\Rightarrow$ Se $n > N,$ $|S_n(x)-f(x)|< \epsilon \,\, \forall \,\, x \in D$
+		
+		\item $n > N +1$
+		
+		$$|f_n(x)|=|\lowercomment{S_n(x)}{=}{\sum_{k=0}^{n} f_k(x)}-\lowercomment{S_{n-1}(x)}{=}{\sum_{k=0}^{n-1} f_k(x)}| \leq \underbrace{|S_n (x)-f(x)|}_{\color{blue} <\epsilon, \; n>N+1}+ \underbrace{|S_{n-1}(x)-f(x)|}_{\color{blue} <\epsilon \text{ perché } n-1>N} < 2 \epsilon \,\, \forall \,\, x \in D$$
+		
+		Se $n > N+1 \Rightarrow \sup_{x \in D}|f_n(x)| < 2 \epsilon \Rightarrow f_n \rightrightarrows 0$ in $D$. $\qquad\square$
+	\end{itemize}
+\end{dembar}
+
+
+\begin{definition}
+	Una serie di funzioni $\sum_{k=0}^{\infty}f_k$ si dice \textbf{totalmente convergente} in $D \subseteq X$ se converge la serie numerica 
+	\begin{equation*}
+		\sum_{k=0}^{\infty}\sup_{x\in D}|f_k(x)|
+	\end{equation*}
+\end{definition}
+
+
+\textbf{Osservazione:}
+
+Se $\exists\,\, \{a_k\}_{k \in \mathbb{N}}\subseteq \mathbb{R}$ tale che 
+\begin{enumerate}
+	\item $|f_k(x)|\leq a_k \,\, \forall \,\, x \in D$ e $\forall\,\, k \in \mathbb{N} $
+	\item $\sum_{k=0}^{\infty}a_k$ converge 
+\end{enumerate}
+
+allora $\sum_{k=0}^{\infty}f_k$ converge totalmente in $D$.
+
+Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D$ $\Rightarrow \sup_{x \in D} |f_k (x)|\leq a_k$ $\forall\,\, k \in \mathbb{N} \Rightarrow$ la serie $\sum_{k=0}^{\infty} \sup_{x \in D}|f_k(x)|$ converge per il criterio del confronto.
+
+
+\begin{theorem} \textbf{Criterio di Weierstrass}
+	\label{th: pag 263}
+	Sia $\sum_{k=0}^{\infty}f_k$ serie di funzioni totalmente convergente in $ D \subseteq X$, $ (X,d)$ spazio metrico. Allora $\sum_{k=0}^{\infty}f_k$ converge uniformemente in $D$.	
+\end{theorem}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 263}}
+	
+	$\sum_{k=0}^{\infty}\sup_{y \in D} |f_k(y)|$ converge.
+	
+	Siccome $|f_k(x)|\leq \sup_{y \in D}|f_k(y)|$ $\forall\,\, x \in D$ per il criterio del confronto $\sum_{k=0}^{\infty}|f_k(x)|$ converge $\forall \,\, x \in D$ e quindi, per il criterio di convergenza assoluta, converge $\forall\,\, x \in D$ la serie $\sum_{k=0}^{\infty} f_k(x)$.
+	
+	Sia $f(x)=\sum_{k=0}^{\infty}f_k(x)$ la sua somma, $x \in D$.
+	
+	Stimiamo $|S_n(x)-f(x)|$ dove $S_n(x)=\sum_{k=0}^{n}f_k(x)$.
+	
+	$\sum_{k=n+1}^{\infty}f_k(x)=f(x)-S_n(x)$ è ben definita $\forall \,\, n$, perché è il resto di una serie convergente
+	
+	\color{blue}{($\exists$ finito $\lim_{p \rightarrow+\infty}\sum_{k=n+1}^{p}f_k(x)$)}.
+	
+	\begin{align*} 
+		|S_n(x)-f(x)|=|\sum_{k=n+1}^{\infty}f_k(x)|\leq \sum_{k=n+1}^{\infty}|f_k(x)| \leq
+		\\
+		\leq \lowercomment{\sum_{k=n+1}^{\infty} \sup_{y \in D}|f_k(y)|} {\color{blue} 0 \; n \to + \infty} {\color{red} \text{non dipende da } x\in D}
+	\end{align*}
+	
+	perché è il resto di una serie convergente 
+	
+	\begin{center}
+	$\Rightarrow \underbrace{\sup_{x \in D}|S_n(x)-f(x)|}_{\color{red}0 \; n \to + \infty} \leq \lowercomment{\sum_{k=n+1}^{\infty}\sup_{y \in D} |f_k(y)|}{0 \; n \to + \infty}{}$
+	
+	$\Rightarrow S_n \rightrightarrows f$ in $D$. $\qquad\square$
+	\end{center}
+\end{dembar}
+
+
+\begin{exbar}
+\begin{example}
+	La convergenza totale non è equivalente a quella uniforme, cioè una serie può convergere uniformemente senza convergere totalmente.
+	
+	Consideriamo 
+	\begin{equation*}
+		\sum_{k=1}^{\infty}(-1)^k \frac{|x|^k}{k},\,\, x \in [-1,1]    
+	\end{equation*}
+	
+	la cui somma è $-\ln (1+|x|)$. \'E una serie di Leibniz. Detta $S_n(x)$ la sua ridotta $n$-esima
+	\begin{center} 
+		$|S_n(x)-(-\ln (1+|x|))|\leq \frac{|x|^{n+1}}{n+1}\leq \frac{1}{n+1}\,\, \forall x \in [-1,1]$
+		
+		$\sup_{x \in [-1,1]}|S_n(x)-(-\ln (1+|x|))| \leq \frac{1}{n+1}\xrightarrow{n \rightarrow +\infty} 0$
+		
+		$\Rightarrow$ la serie converge uniformemente in $[-1,1]$
+	\end{center} 
+	
+	Studiamo la convergenza totale. 
+	
+	$$\sum_{k=1}^{\infty}\sup_{x \in [-1,1]}|(-1)^k\frac{|x|^k}{k}|= \sum_{k=1}^{\infty} \frac{1}{k}=+\infty$$
+	
+	cioè la serie di funzioni non converge totalmente in $[-1,1]$. 
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Studiamo la convergenza puntuale, uniforme e totale di 
+	\begin{equation*}
+		\sum_{k=0}^{\infty}z^k,\,\, z\in \mathbb{C}.    
+	\end{equation*}
+	
+	E' una serie geometrica di ragione $z \Rightarrow$ converge $\Leftrightarrow |z|<1$ e in tal caso la sua funzione somma è $f(z)=\frac{1}{1-z}$.
+	
+	Insieme di convergenza puntuale è 
+	
+	$$B_1(0)=\{z \in \mathbb{C}\,\,|\,\, |z|< 1\}$$
+	
+	La ridotta $n$-esima è 
+	
+	$$S_n(z)=\frac{1-z^{n+1}}{1-z}$$
+	
+	$$|S_n(z)-f(z)|=\left|\frac{1-z^{n+1}}{1-z}-\frac{1}{1-z} \right|=\frac{|z|^{n+1}}{|1-z|}$$
+	
+	$$\sup_{z \in B_1(0)}|S_n(z)-f(z)|=+\infty \,\,\, \forall n$$ 
+	
+	$\Rightarrow$ la serie di funzioni non converge uniformemente in $B_1(0)$.
+	
+	Studiamo la convergenza uniforme in $B_\delta(0)=\{z \in \mathbb{C}\,\, \big|$ $|z|< \delta\}$, con $0 < \delta< 1$ fissato.\\
+	
+	\begin{gather*} 
+		|f_k(z)|=|z|^k< \delta^k \,\, \forall z \in B_\delta(0)
+		\\
+		\sup_{z \in B_\delta(0)}|f_k(z)|\leq \uppercomment{\delta^k}{\color{red}\text{termine generale di una}}{\color{red}\text{serie geometrica convergente}} 
+		\\
+		\Rightarrow \sum_{k=0}^{\infty}\sup_{z\in B_\delta(0)}|f_k(z)| \text{ converge}
+	\end{gather*}
+	
+	$\Rightarrow$ la serie $\sum_{k=0}^{\infty} z^k$ converge totalmente, e quindi uniformemente, in $B_\delta(0)$, per ogni $0 < \delta < 1$ fissato.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Consideriamo la serie esponenziale
+	\begin{equation*}
+		e^z= \sum_{k=0}^{\infty} \frac{z^k}{k!}, \,\,z \in \mathbb{C}.    
+	\end{equation*}
+	
+	Questa serie non converge uniformemente in $\mathbb{C}$.
+	
+	$$\sup_{z\in\mathbb{C}} \left|\frac{z^k}{k!}\right|=\sup_{z\in\mathbb{C}}\frac{|z|^k}{k!}=+\infty\,\, \forall k \geq 1$$
+	
+	$\Rightarrow$ detta $f_k(z)=\frac{z^k}{k!}$, si ha $f_k \nrightrightarrows 0$ in $\mathbb{C}$.
+	
+	Sia $M >0 $ e consideriamo 
+	
+	$$B_M(0)=\{z \in \mathbb{C}\,\, | \,\, |z|< M\}$$
+	
+	$$\sup_{z \in B_M(0)}|f_k(z)|=\sup_{z \in M}\frac{|z|^k}{k!}=\frac{M^k}{k!}$$ 
+	
+	e $\sum_{k=0}^{\infty} \frac{M^k}{k!}=e^M$, cioè $\sum_{k=0}^{\infty}\frac{M^k}{k!}$ converge
+	
+	$\Rightarrow \sum_{k=0}^{\infty}\sup_{z \in B_M(0)}|f_k(z)|$ converge $\Rightarrow \sum_{k=0}^{\infty}\frac{z^k}{k!}$ converge totalmente, e quindi uniformemente, in $B_M(0) \,\, \forall M >0$ fissato.
+	
+	\color{blue}{Detta $S_n(x)=\sum_{k=0}^{n}\frac{x^k}{k!},\,\, x\in \mathbb{R}$, si può stimare $\sup_{x \in \mathbb{R}}|S_n(x)-e^x|$, con $e^x=\sum_{k=0}^{\infty}\frac{x^k}{k!}$.
+		
+	\begin{center} 
+		$\sup_{ x \in \mathbb{R}}| \underbrace{\sum_{k=0}^{n} \frac{x^k}{k!}}_{\genfrac{}{}{0pt}{}{\color{teal}\text{polinomio di}}{\color{teal}\text{grado } n}}
+		-e^x|=+\infty$ 
+		
+		perché $\lim_{x \rightarrow +\infty}|\sum_{k=0}^{n}\frac{x^k}{k!}-e^x|=+\infty$
+	\end{center}
+	}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Esprimere $\int_{0}^{1}e^{-x^2}dx$ come somma di una serie e darne una stima del valore con $8$ cifre decimali esatte.
+	\begin{gather*}
+		e^{-x^2}=\sum_{k=0}^{\infty}\frac{(-x^2)^k}{k!}=\sum_{k=0}^{\infty}(-1)^k \frac{x^{2k}}{k!}
+		\\
+		\sum_{k=0}^{\infty}\sup_{x \in [0,1]}|(-1)^k \frac{x^{2k}}{k!}|=\sum_{k=0}^{\infty} \frac{1}{k!},
+	\end{gather*}
+		 
+	che è serie convergente
+	
+	$\Rightarrow \sum_{k=0}^{\infty}(-1)^k \frac{x^{2k}}{k!}$ converge totalmente, e quindi uniformemente in $[0,1]$.
+	
+	Allora
+	
+	$$\int_{0}^{1}e^{-x^2}dx=\int_{0}^{1}\sum_{k=0}^{\infty}(-1)^k\frac{x^{2k}}{k!}dx=\sum_{k=0}^{\infty} (-1)^k \int_{0}^{1}\frac{x^{2k}}{k!}dx=\sum_{k=0}^{\infty}(-1)^k \frac{1}{(2k+1)k!}$$
+	
+	$$S_n=\sum_{k=0}^{n}(-1)^k \frac{1}{(2k+1)k!}$$
+	
+	$$\left|S_n-\int_{0}^{1}e^{-x^2}dx \right| \leq \frac{1}{(2n+3)(n+1)!}$$ 
+	
+	scelgo $n$ in modo che $\frac{1}{(2m+3)(n+1)!}<10^{-8}$
+	
+	Preso $n=10$, si ha che
+	
+	$$\sum_{k=0}^{10}(-1)^k\frac{1}{(2k+1)k!}=1-\frac{1}{3}+\frac{1}{10}+...+\frac{1}{21\cdot10!}$$ 
+	
+	è una stima di $\int_{0}^{1}e^{-x^2}dx$ con $8$ cifre decimali esatte.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Sia data la serie di funzioni
+	\begin{equation*}
+		\sum_{k=1}^{\infty}\frac{\sin(kx)}{k^x},\,\,\, x \geq 0
+	\end{equation*}
+	
+	\begin{enumerate}
+		\item Trovare l'insieme di convergenza puntuale
+		\item Dimostrare che la serie converge totalmente in tutti gli intervali del tipo $[a,+\infty[$ con $a > 1$, ma non in $]1,+\infty[$
+		\item Dimostrare che la funzione somma è derivabile in $]2,+\infty[$
+	\end{enumerate}
+	
+	\begin{center} $\sim \circ \sim $ \end{center}
+	 
+	\begin{equation*}
+		f_k(x)=\frac{\sin(kx)}{k^x},\,\,\, k \geq 1, \,\, x \geq 0
+	\end{equation*}
+	
+	%====================================================================================
+	
+	\begin{enumerate}
+		\item $f_k(0)=0\,\, \forall\,\, k \geq 1 $ e quindi $\sum_{k=1}^{\infty} f_k(0)=0$, $x >0$, $\sum_{k=1}^{\infty} \frac{\sin(kx)}{k^x}$.\\
+		Osserviamo che $\{\frac{1}{k^x}\}_{k \geq 1}$ è monotona decrescente e infinitesima.\\
+		Prendiamo la successione delle ridotte di $\sum_{k=1}^{\infty}\sin(kx)$\\
+		$S_n(x)=\sum_{k=1}^{n}\sin(kx)= \Im \left(\sum_{k=1}^{n}e^{ikx}\right)=\Im \left( \frac{1-e^{e^{i(k+1)x}}}{1-e^{ix}}-1\right) $ con $x \neq 2j\pi,\,\,\, j \geq 1, \,\,\, , j \in \Z$\\
+		$|S_n(x)|\leq |\frac{1-e^{i(n+1)x}}{1-e^{ix}}-1|\leq \frac{2}{|1-e^{ix}|}+1$, $x \neq 2j\pi$, $j \geq 1$\\
+		$\{S_n(x)\}_{n \geq 1}$ è limitata $\forall\,\, x >0,\,\, x \neq 2j\pi \Rightarrow \sum_{k=1}^{\infty}\frac{\sin(kx)}{k^x}$ converge puntualmente per $x \geq 0, x \neq 2j\pi$, $j \geq 1$ per il criterio di Dirichlet.\\
+		Se $x = 2j \pi$ allora $f_k(x)=f_k(2j\pi)=0 = \frac{\sin(2jk\pi)}{k^{2j\pi}} \,\, \forall k \Rightarrow \sum_{k=1}^{\infty} f_k(2j\pi)=0\Rightarrow$ la serie converge puntualmente $\forall x \geq 0$.
+		\item $a > 1$, $x \in [a,+\infty[$, $x\geq a $.\\
+		Dobbiamo studiare la convergenza della serie numerica $\sum_{k=1}^{\infty}\sup_{x \geq a}|\frac{\sin(kx)}{k^x}|$ se $x \geq a$ si ha $|\frac{\sin(kx)}{k^x}|\leq \frac{1}{k^x}\leq \frac{1}{k^a}$ e $\sum_{k=1}^{\infty}\frac{1}{k^a}$ converge perchè $a > 1 \Rightarrow \sup_{x \geq a}|\frac{\sin(kx)}{k^x}| \leq \frac{1}{k^a}$ e quindi la serie converge totalmente, e quindi uniformemente in $[a,+\infty[$.\\
+		Dimostriamo che non converge totalmente in $]1,+\infty[$, cioè che la serie numerica \\$\sum_{k=1}^{\infty}\sup_{x >1}|\frac{\sin(kx)}{k^x}| $
+		diverge siccome $\sup_{x >1}|\frac{\sin(kx)}{k^x}|\geq \lim_{x \rightarrow 1^+}|\frac{\sin(kx)}{k^x}|=\frac{|\sin (k)|}{k}$\\
+		Se dimostro che $\sum_{k=1}^{\infty}\frac{|\sin(k)|}{k}$ diverge, posso concludere per il criterio del confronto.\\
+		$\frac{\sin(k+1)}{k+1}=\frac{\sin (k)}{k+1}\cos (1) +\frac{\cos(k)}{k+1}\sin(1)$, $\frac{\cos(k)}{k+1}=\frac{1}{\sin(1)}\left[\frac{\sin(k+1)}{k+1} -\frac{\sin(k)}{k+1} \cos(1) \right]$, $|\frac{\sin(x)}{k+1}| \sim \frac{|\sin(k)|}{k}$\\
+		Se $\sum_{k=1}^{\infty} \frac{|\sin(k)|}{k}$ converge,  allora converge $\sum_{k=1}^{\infty} \frac{|\sin(k)|}{k+1}$ e, banalmente, anche $\sum_{k=1}^{\infty}|\frac{\sin(k+1)}{k+1}| \Rightarrow \sum_{k=1}^{\infty} \frac{|\cos(k)|}{k+1}$ converge, perchè $\sum_{k=1}^{\infty} \frac{\cos(k)}{k+1}$ è somma di serie assolutamente convergenti. Ma $\frac{|\cos(k)|}{k+1} \sim \frac{|\cos(k)|}{k}\Rightarrow \sum_{k=1}^{\infty}\frac{|\cos(k)|}{k}$ converge, cioè, se $\sum_{k=1}^{\infty} \frac{\sin{k}}{k}$ converge assolutamente, anche $\sum_{k=1}^{\infty} \frac{\cos(k)}{k}$ converge assolutamente, e questo è assurdo perchè $\frac{e^{ik}}{k}=\frac{\cos(k)}{k} +i \frac{\sin(k)}{k}$ e quindi $\sum_{k=1}^{\infty}\frac{e^{ik}}{k}$ convergerebbe assolutamente. Ma $\sum_{k=1}^{\infty} |\frac{e^{ik}}{k}|=\sum_{k=1}^{\infty}\frac{1}{k}$ diverge.
+		\item $f(x)=\sum_{k=1}^{\infty} \frac{\sin(kx)}{k^x},\,\,\, x \geq 0$.
+		Devo studiare la derivabilità di $f$ in $]2,+\infty[$. Se la serie derivata $f(x)=\sum_{k=1}^{\infty} f_k'(x)$ converge uniformemente in $]2,+\infty[$, il teorema di derivabilità per serie permette di concludere che $f$ è derivabile.\\
+		Avremo dunque $ f_k'(x)=\frac{k \cos(kx)-(\ln k) \sin(kx)}{k^x}$,      $|f_k'(x)|\leq \frac{k+\ln k}{k^x} \leq \frac{k+\ln k}{k^2} \sim \frac{1}{k}$ che però diverge.\\
+		Consideriamo dunque un intervallo del tipo $[b,+\infty[$ con $b >2$. Avremo $|f_k'(x)|\leq \frac{k+\ln k}{k^x} \leq \frac{k+\ln k}{k^b}$, $\sup_{ x \geq b}|f_k'(x)|\leq \frac{k +\ln k}{k^b}\sim \frac{1}{k^{b-1}}$, che è il termine generale di una serie convergente perche $b-1  > 1 \Rightarrow$ la serie $\sum_{k=1}^{\infty}f_k'(x)$ converge totalmente, e quindi uniformemente, in $[b,+\infty[ \Rightarrow f$ è derivabile in $[b,+\infty[ \forall b > 2$.\\
+		Fissato $x_0 > 2$, posso conlcudere che $f$ è derivabile in $x_0$ \textcolor{orange}{e quindi $f$ è derivabile in $]2,+\infty[$}?\\
+		Certo, perchè fissato $2 < b < x_0$, $f$ è derivabile in $[b,+\infty[$ e quindi anche in $x_0$.
+	\end{enumerate}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Studiamo la convergenza puntuale, uniforme e totale della serie di funzioni \begin{equation*}
+		\sum_{k=2}^{\infty}\left[\frac{k^y+1}{k^{x+2}(\ln k)^2} +\left( \frac{x}{y} \right)^k\right], \,\,\, x,y >0
+	\end{equation*} 
+	La serie è somma di due serie a termini positivi e quijndi converge puntualmente $\Leftrightarrow$ le due serie $\sum_{k=2}^{\infty} \frac{k^y+1}{k^{x+2}(\ln k)^2}$ e $\sum_{k=2}^{\infty}  \left( \frac{x}{y} \right)^k$ convergono puntualmente.\\
+	Studiamo $\sum_{k=2}^{\infty} \frac{k^y+1}{k^{x+2}(\ln k)^2}$, $x,y >0$.\\
+	$\frac{k^y+2}{k^{x+2}(\ln k)^2} \sim \frac{k^y}{k^{x+2}(\ln k)^2}=\frac{1}{k^{x-y+2}(\ln k)^2}$, che è il termine generale di una serie convergente $\Leftrightarrow x-y+2 \geq 1 \Leftrightarrow x-y \geq -1$.\\
+	Studiamo $\sum_{k=2}^{\infty} \left(\frac{x}{y}\right)^k$, $x,y>0$, che è una serie geometrica di ragione $\frac{x}{y}$, che converge $\Leftrightarrow |\frac{x}{y}|< 1 \Leftrightarrow x <y$.\\
+	La serie di partenza converge puntualmente $\Leftrightarrow 0<x<y\leq x+1$\\
+	IMMAGINE\\
+	Studiamo la convergenza uniforme nell'insieme di convergenza puntuale.\\
+	Osserviamo che $\sup_{0<x< y\leq x+1}|\frac{k^y+1}{k^{x+2}(\ln k)^2}+\left( \frac{x}{y}\right)^k|\geq  \sup_{0<x< y\leq x+1} \left( \frac{x}{y}\right)^k=1\,\, \forall k$ perchè il rapporto $\frac{x}{y}$ può essere preso vicino a $1$ quanto vogliamo.\\
+	In particolare, $\sup_{0<x< y\leq x+1}|\frac{k^y+1}{k^{x+2}(\ln k)^2}+\left( \frac{x}{y}\right)^k|\nrightarrow 0$ per $k \rightarrow +\infty$ e quindi la serie non converge uniformemente nell'insieme di convergenza puntuale.
+\end{example}
+\end{exbar}
+
+
+
+
+
+
+
+
+\begin{comment}	
+	
+
+\paragraph{\textcolor{red}{Continuazione esercizio della scorsa lezione}}
+$\sum_{k=2}^{\infty}\left[ \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k\right]$, $x,y >0$.\\
+Fissiamo $0 < a  < 1$  e studiamo la convergenza totale nell'insieme $0 <x \leq a y \leq a(x+1)$.\\
+IMMAGINE.\\
+Dobbiamo stimare $\sup_{0 < \leq ay \leq a(y+1)}| \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k|$.\\
+$| \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k|= \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k \leq  \frac{k^{x+1}+1}{k^{x+2}(\ln k)^2}+a^k\leq 2\frac{k^{x+1}}{k^{x+2}(\ln k)^2}+a^k =\frac{2}{k(\ln k)^2}+a^k$, $\forall \,\, x,y >0, 0 < x \leq ay\leq a(x+1)$.\\
+La serie $\sum_{k=2}^{\infty}\left[\frac{2}{k(\ln k)^2}+a^k\right]$ converge perchè entrambe le serie $\sum_{k=1}^{\infty}\frac{2}{k(\ln k)^2}$ e $\sum_{k=2}^{\infty}a^k$ convergono $\Rightarrow$ la serie di partenza converge totalmente, e quindi uniformemente negli insiemi del tipo $\{(a,y)\in \R^2|0<x\leq ay, y \leq x+1\}$ con $0 < a<1$ fissato.
+
+\subsection{\textcolor{red}{Serie di potenze}}
+\paragraph{\textcolor{red}{Definizione}}
+Una serie di potenze centrata nel punto $z_0 \in \C$ è una serie di funzioni del tipo 
+\begin{equation*}
+	\sum_{k=0}^{\infty} a_k(z-z_0)^k,
+\end{equation*}
+dove $\{a_k\}_{k\in\N}$ è una successione di numeri complessi.
+
+\paragraph{\textcolor{red}{Esempio}}
+Serie esponenziale
+\begin{equation*}
+	e^z=\sum_{k=0}^{\infty}\frac{z^k}{k!},\,\,\,\, z_0=0,\,\,\, a_k=\frac{1}{k!}
+\end{equation*}
+
+\paragraph{\textcolor{red}{Osservazione}}
+Non è restrittivo assumere $z_0=0$. Infatti, posto $w=z-z_0$, la serie $\sum_{k=0}^{\infty} a_k(z-z_0)^k$ si riscrive come $\sum_{k=0}^{\infty} a_k w^k$, cioè come una serie di potenze di centro $w_0=0$.
+
+\subsection{\textcolor{red}{Criterio di Cauchy-Hadamard}}
+\paragraph{\textcolor{red}{Teorema}}
+Sia data la serie di potenze
+\begin{equation*}
+	\sum_{k=0}^{\infty} a_kz^k,\,\,\, z \in \C
+\end{equation*}
+e sia $R\in [0,+\infty]$ la quantità definita da 
+\begin{equation*}
+	\frac{1}{R}=\limsup_{k \rightarrow+\infty} \sqrt[k]{|a_k|},
+\end{equation*}
+dove, se
+\begin{equation*}
+	\limsup_{k \rightarrow+\infty} \sqrt[k]{|a_k|} =0 \Rightarrow R=+\infty
+\end{equation*}
+e se
+\begin{equation*}
+	\limsup_{k \rightarrow+\infty} \sqrt[k]{|a_k|} =+\infty \Rightarrow R=0.
+\end{equation*}
+Allora
+\begin{enumerate}
+	\item la serie converge assolutamente in $B_k(0)=\{z\in\C|\,\,\,|z|<R\}$, detto disco o cerchio di convergenza;
+	\item la serie converge totalmente, e quindi uniformemente, in $B_\delta (0)=\{z \in \C|\,\,\,|z|< \delta\}$ per ogni $0< \delta < R$;
+	\item la serie non converge per $|z|>R$.
+\end{enumerate}
+$R$ è detto raggio di convergenza della serie.
+
+\paragraph{\textcolor{red}{Osservazione}}
+Il teorema non fornisce informazioni sulla convergenza della serie per $|z|=R$.
+
+\paragraph{\textcolor{red}{Definizione}}
+Data una successione $\{\alpha_k\}_{k\in\N}\subseteq \R$, 
+\begin{equation*}
+	\limsup_{k\rightarrow+\infty} \alpha_k=\inf_{k\in\N}\left(\sup_{l>k} \alpha_l\right)=\lim_{k \rightarrow+\infty}\left(\sup_{l>k}\alpha_l\right)
+\end{equation*}
+ed esiste sempre.\\
+\textcolor{red}{Se $\exists \lim_{k\rightarrow+\infty}\alpha_k$, allora $\limsup_{k\rightarrow+\infty}\alpha_k=\lim_{k\rightarrow+\infty}\alpha_k$.\\ Nel criterio di Hadamard, se $\exists \lim_{k\rightarrow+\infty}\sqrt[k]{|\alpha_k|}$, allora $\frac{1}{R}=\lim_{k\rightarrow+\infty}\sqrt[k]{|a_k|}$}
+
+\paragraph{\textcolor{red}{Osservazione}}
+Si ricorda che, se $\lim_{k\rightarrow+\infty}|\frac{a_k+1}{a_k}|=l$, allora $\lim_{k\rightarrow+\infty}\sqrt[k]{|a_k|}=l$.
+
+\paragraph{\textcolor{red}{Dimostrazione del teorema}}
+Lo dimostriamo assumendo che esista $\lim_{k\rightarrow+\infty}\sqrt[k]{|a_k|}=\frac{1}{R}$.
+\begin{enumerate}
+	\item Dobbiamo dimostrare che la serie $\sum_{k=0}^{\infty}|a_kz^k|=\sum_{k=0}^{\infty}|a_k||z|^k$ converge se $|z|<R$.\\ Applichiamo il criterio della radice e calcoliamo $\lim_{k \rightarrow+\infty}\sqrt[k]{|a_k||z|^k}=\frac{|z|}{R}$. Se $\frac{|z|}{R}<1$, la serie converge.
+	\item Dobbiamo dimostrare che, fissato $0<\delta<k$, la serie $\sum_{k=0}^{\infty}\sup_{|z|<\delta} |a_kz^k|$ converge.\\ Se $|z|<\delta \Rightarrow |a_kz^k|=|a_k||z|^k<|a_k|\delta^k$ e la serie $\sum_{k=0}^{\infty}|a_k|\delta^k$ converge perchè $\lim_{k \rightarrow+\infty} \sqrt[k]{|a_k|\delta^k}=\frac{\delta}{R}<1$. Allora $\sup_{|z|<\delta}|a_kz^k|<|a_k|\delta^k\,\, \forall k$ e quindi deduco la convergenza totale della serie in $B_{\delta}(0)$.
+	\item Se $\frac{|z|}{R}>1$, il termine generale della serie non è infinitesimo, e quindi la serie non converge.
+\end{enumerate}
+
+\paragraph{\textcolor{red}{Esempio}}
+$e^z=\sum_{k=0}^{\infty}\frac{z^k}{k!}$, esponenziale complesso. Calcoliamo il raggio di convergenza\\ $\lim_{k\rightarrow+\infty}\sqrt[k]{\frac{1}{k!}}=\lim_{k\rightarrow+\infty}\frac{1}{\sqrt[k]{k!}}$. $\lim_{k\rightarrow+\infty}\frac{\frac{1}{(k+1)!}}{\frac{1}{k!}}=\lim_{k\rightarrow+\infty}\frac{1}{k+1}=0\Rightarrow R=+\infty \Rightarrow$ la serie converge assolutamente in $\C$ e totalmente in $B_c(0) \,\, \forall \delta>0$.
+
+\paragraph{\textcolor{red}{Esempio}}
+$\sin x =\sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)!}$ e
+$\cos x =\sum_{k=0}^{\infty}(-1)^k\frac{x^{2k}}{(2k)!}$.\\
+Studio la serie $\sum_{k=0}^{\infty}(-1)^k\frac{(x^2)^{k}}{(2k+1)!}=\sum_{k=0}^{\infty}(-1)^k\frac{y^k}{(2k+1)!}$ che è serie di potenze con $a_k=\frac{(-1)^k}{(2k+1)!}$.\\ Calcoliamo il raggio di convergenza $\lim_{k\rightarrow +\infty}|\frac{a_{k+1}}{a_k}|=\lim_{k\rightarrow+\infty}\frac{\frac{1}{(2k+3)!}}{\frac{1}{(2k+1)!}}=0\Rightarrow R=+\infty$.\\
+Definiamo $\sin(z)=\sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!},\,\,\,\, z \in \C$.\\
+Il raggio di convergenze è sempre $R=+\infty$, e quindi la serie converge assolutamente in $\C$ e totalmente in $B_\delta(0)\forall \delta >0$. La stessa cosa si può fare con la funzione coseno e definire $\cos z=\sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k)!},\,\,\,\, z \in \C$.\\
+$\sin(ix)=\sum_{k=0}^{\infty}(-1)^k\frac{(ix)^{2k+1}}{(2k+1)!}=\sum_{k=0}^{\infty}(-1)^k\frac{(i)^{2k+1}(x)^{2k+1}}{(2k+1)!}=\sum_{k=0}^{\infty}(-1)^k(-1)^ki\frac{x^{2k+1}}{(2k+1)!}=i\sum_{k=0}^{\infty}\frac{x^{2k+1}}{(2k+1)!}=i\sinh x$.\\
+$\cos(ix)=\sum_{k=0}^{\infty}(-1)^k \frac{(ix)^{2k}}{(2k)!}=\sum_{k=0}^{\infty}(-1)^k i^{2k} \frac{x^{2k}}{(2k)!}=\sum_{k=0}^{\infty}\frac{x^{2k}}{(2k)!}=\cosh x$.\\
+Sfruttando le serie scritte sopra si dimostra che $e^{x+iy}=e^x(\cos y + i \sin y) \,\,\,\, \forall x,y\in \R$ ed inoltre che $e^{z_1+z_2}=e^{z_1}e^{z_2},\,\,\, z_1,z_2 \in \C$.
+
+\paragraph{\textcolor{red}{Osservazione}}
+$z \in \C, z=x+iy$, $e^{z+2\pi i}=e^{x+(y+2\pi)i}=e^x(\cos(y+2\pi)+i\sin(y+2\pi))=e^x(\cos y + i \sin y) =e^{x+iy}=e^z$, $z \mapsto e^z$ è funzione periodica di periodo $2\pi i$.\\
+$e^z=e^x(\cos y+i \sin y)\neq 0\,\,\, \forall \,\, z \in \C$. Fissiamo $w \in \C$ e proviamo a risolvere in $z =x+iy$ l'equazione $e^z=w$, $w=\rho (\cos \omega + i \sin \omega)$, $\rho =|\omega|$, $e^x(\cos y+i \sin y)=|\omega|(\cos \omega+i\sin \omega)$.\\
+\begin{equation*}
+	\begin{cases}
+		& e^x=|w| \\
+		& y=\theta+2k\pi,\,\,\,\, \exists k\in\Z
+	\end{cases} \Rightarrow \begin{cases}
+		& e=\ln |w|\\
+		& y=\theta+2k\pi,\,\,\,\, \exists k\in\Z
+	\end{cases}
+\end{equation*}\\
+$z =\ln |w|+i(\arg w + 2k\pi) \exists k \in \Z$, dove $\arg w \in ]-\pi,\pi]$ è l'argomento principale di $w$. In particolare, l'immagine di $z \mapsto e^z$ è $\C \backslash \{0\}$.\\
+E' possibile definire la funzione logaritmo principale di un numero complesso 
+\begin{equation*}
+	\ln: \C \backslash\{0\}\rightarrow\C
+\end{equation*}
+\begin{equation*}
+	\ln w=\ln|w|=i \arg w
+\end{equation*}
+\begin{equation*}
+	\ln (-1)=\ln|-1|+i\arg(-1)=i\pi
+\end{equation*}
+\begin{equation*}
+	\ln (i)=\ln |i|+i\arg(i)=i \frac{\pi}{2}
+\end{equation*}
+\begin{equation*}
+	\ln(\sqrt{2}+i\sqrt{2})=\ln|\sqrt{2}+i\sqrt{2}|+i \arg(\sqrt{2}+i\sqrt{2})=\ln2+i\frac{\pi}{4}
+\end{equation*}
+
+\paragraph{\textcolor{red}{Esempio}}
+Studiare la convergenza delle seria serie di funzioni
+\begin{equation*}
+	\sum_{k=0}^{\infty}\frac{k!+2^k}{(2k)!-(\arctan k)^{k+1}}(\arctan x)^k,\,\,\,\,\, x \in \R.
+\end{equation*}
+Studiamo la serie di potenze $\sum_{k=0}^{\infty}\frac{k!+2^k}{(2k)!-(\arctan k)^{k+1}}(y)^k$, $y \in \R$. Calcoliamo il raggio di convergenza $\lim_{k\rightarrow +\infty}|\frac{a_k+1}{a_k}|=\lim_{k\rightarrow+\infty}\frac{(k+1)!+2^{k+1}}{(2k+2)!+(\arctan(k+1))^{k+1}}\frac{(2k)!-(\arctan k)^{k+1}}{k!+2k}=\lim_{k \rightarrow+\infty} \frac{(k+1)!}{(2k+2)!}\frac{(2k)!}{k!}=\lim_{k\rightarrow +\infty}\frac{k+1}{(2k+2)(2k+1)}=0 \Rightarrow R =+\infty$.\\
+La serie di potenze converge assolutamente $\forall y \in \R$ e totalmente in $]-\delta,\delta[\forall \delta >0$. Poichè $\arctan x \in ]-\frac{\pi}{2},\frac{\pi}{2}[ \forall x \in \R$, la serie di partenza converge totalmente, e quindi uniformemente, in $\R$. 
+
+\paragraph{\textcolor{red}{Esempio}}
+Studiare la serie di potenze
+\begin{equation*}
+	\sum_{k=1}^{\infty}\frac{i^k}{k}z^k.    
+\end{equation*}
+Calcoliamo il raggio di convergenza $\lim_{k \rightarrow +\infty}\sqrt[k]{|a_k|}=\lim_{k\rightarrow+\infty} \sqrt[k]{|\frac{i^k}{k}|}=\lim_{k \rightarrow +\infty}\frac{1}{\sqrt[k]{k}}=1\Rightarrow R=1$.\\
+La serie converge assolutamente per $z \in B_1(0)$ e totalmente in $B_\delta (0)\forall 0 < \delta<1$, e non converge se $|z|>1$.\\ Dobbiamo studiare la convergenza per $|z|= 1$, cioè se $z =e^{i\theta}$ $\exists \theta \in [0,2\pi]$. Bisogna studiare $\sum_{k=1}^{\infty}\frac{i^k}{k}e^{ik\theta}=\sum_{k=1}^{\infty}\frac{i^k}{k}(e^{i\theta})^k=\sum_{k=1}^{\infty}\frac{1}{k}(ie^{i\theta})^k$,\\
+$\{\alpha_k\}_{k \geq 1}$ è monotona decrescente, infinitesima. Studiamo la successione delle ridotte di $\sum_{k=1}^{\infty}\beta_k $ che è la serie di partenza di ragione $ie^{i\theta}$. Se $i e^{i\theta}=1$, cioè $\theta =\frac{3}{2}\pi$, la serie si scrive $\sum_{k=1}^{\infty}\frac{1}{k}$, che diverge. Sia $i e^{i\theta}\neq 1$, $\theta \neq \frac{3}{2}\pi$. $S_n=\sum_{k=1}^{n}(ie^{i\theta})^k=\frac{1-i^{n+1}e^{i(n+1)\theta}}{1-ie^{i\theta}}-1$\\
+$|S_n|\leq \frac{|1-i^{n+1}e^{i(n+1)\theta}|}{|1-ie^{i\theta}|}+1 \leq \frac{2}{|i -ie^{i\theta}|}+1 \Rightarrow$ la successione delle ridotte della serie $\sum_{k=1}^{\infty}(i e^{i\theta})^k$ è limitata per $\theta \neq \frac{3}{2}\pi \Rightarrow$ la serie $\sum_{k=1}^{\infty}\frac{1}{k}(ie^{i\theta})^k$ converge per $\theta \neq \frac{3}{2}\pi$ grazie al criterio di Dirichlet. La serie di partenza $\sum_{k=1}^{\infty}\frac{i^k}{k}z^k$ converge semplicemente in $\{z \in \C||z|\leq 1, z \neq -i\}$
+
+\subsection{\textcolor{red}{Cenno alla funzioni olomorfe}}
+Deriviamo $\sum_{k=0}^{\infty}a_kz^k$ ottenendo $\sum_{k=1}^{\infty}ka_kz^{k-1}$.\\
+$Dz^k|_{z=z_0}=\lim_{z \rightarrow z_0} \frac{z^k-z_0^k}{z-z_0}=kz_0^{k-1}$.\\
+Qual è il raggio di convergenza di $\sum_{k=1}^{\infty}ka_k z^{k-1}$?\\
+$\limsup_{k \rightarrow +\infty} \sqrt[k]{k|a_k|}=\limsup_{k \rightarrow +\infty}\sqrt[k]{|a_k|}=\frac{1}{R}$ dove $R$ è il raggio di convergenza di $\sum_{k=0}^{\infty}a_kz^k$.
+
+
+
+
+	
+\end{comment}

@@ -2999,114 +2999,16 @@ $\Rightarrow \gamma$ è lipschitziana di costante di Lipschitz $\|x_1-x_0\|$}
 \end{dembar}
 	
 	
+\begin{exbar}
+	$f:\mathbb{R}^2\rightarrow \mathbb{R}$ continua tale che $f(-1,0)=-3$, $f(1,0)=4$. Quanti zeri ha $f$, cioè quante sono le soluzioni di $f(x,y)=0$?
 	
+	\segnaposto
 	
+	{\color{blue}$\phi : f \mapsto f(\gamma(t))$ è continua, $\phi(0)=-3 <0$, $\phi(1)=4 >0$
 	
+	$$\Rightarrow \exists\,\, I\,\, \big| \,\, \phi(I)=0 \Rightarrow f(\gamma(I))=0$$
 	
-\begin{comment}	
-
-
-
-
-\paragraph{\textcolor{red}{Esempio}}
-$f:\R^2\rightarrow \R$ continua tale che $f(-1,0)=-3$, $f(1,0)=4$. Quanti zeri ha $f$, cioè quante sono le soluzioni di $f(x,y)=0$?\\
-IMMAGINE\\
-\textcolor{orange}{$\phi : f \mapsto f(\gamma(t))$ è continua, $\phi(0)=-3 <0$, $\phi(1)=4 >0 \Rightarrow \exists\,\, I\,\, |\,\, \phi(I)=0 \Rightarrow f(\gamma(I))=0$. Trovo un altro zero di $f$ appartenente al sostegno di $\Tilde{\gamma}$} $\Rightarrow f$ ha infiniti zeri.
-
-\subsection{\textcolor{red}{Serie di funzioni}}
-\paragraph{\textcolor{red}{Definizione}}
-$(X,d)$ spazio metrico, $\{f_k\}_{k \in \N}, f_k : X \rightarrow \R $ (o $\C$) una successione di funzioni $\sum_{k=0}^{\infty} f_k$, $\sum_{k=0}^{\infty}f_k(x)$. Una \underline{serie di funzioni} è una coppia $(\{f_k\}_{k \in \N},\{S_n\}_{n \in \N})$ dove $\{f_k\}_{k \in \N}, f_k: X \rightarrow \R$, è successione di funzioni e $\{S_n\}_{n \in \N}, S_n = \sum_{k=0}^{n}f_k$ è la successione delle ridotte. La serie è indicata con $\sum_{k=0}^{\infty}f_k$ o $\sum_{k=0}^{\infty}f_k (x)$.
-
-\paragraph{\textcolor{red}{Esempio}}
-\begin{itemize}
-	\item Serie esponenziale $e^x= \sum_{k=0}^{\infty}\frac{x^k}{k!}, x \in \R$, $X=\R, f_k (x)= \frac{ x^k}{k!}$
-	\item Serie logaritmica $\ln (1+x)= \sum_{k=0}^{\infty}(-1)^{k+1}\frac{x^k}{k}, x \in ]-1,1]=X$, $ f_k(x)=(-1)^{k+1}\frac{x^k}{k}$
-\end{itemize}
-
-\paragraph{\textcolor{red}{Definizione}}
-Una serie di funzioni $\sum_{k=0}^{\infty} f_k$ si dice \underline{puntualmente convergente} in $D \subseteq X$ se la sua successione delle ridotte converge puntualmente. In tal caso il limite puntuale si dice (funzione) somma della serie ed è indicato con $\sum_{k=0}^{\infty}f_k(x), x \in D$.\\ Una serie di funzioni $\sum_{k=0}^{\infty}f_k$ si dice \underline{uniformemente convergente} in $D \subseteq X$ se la sua successione delle ridotte converge uniformemente in $D$.\\
-\textcolor{orange}{$\sum_{k=0}^{\infty}f_k$ converge puntualmente in $D$ se le serie numeriche $\sum_{k=0}^{\infty}f_k(x)$ connvergono $\forall x \in D$.}\\
-\textcolor{orange}{$\sum_{k=0}^{\infty}f_k$ converge uniformemente in $D$, $\sup_{x \in D}|\sum_{k=0}^{\infty}f_k(x)-f(x)|\xrightarrow{n \rightarrow+\infty}0$}\\
-
-\subsubsection{\textcolor{red}{Teorema di passaggio al limite sotto segno di integrale}}
-\paragraph{\textcolor{red}{Teorema}}
-Sia $\sum_{k=0}^{\infty}f_k$ una serie di funzioni $f_k: [a,b]\rightarrow \R$, Riemann integrabili in $[a,b]$, uniformemente convergente in $[a,b]$ ad una funzione $f$, somma della serie. Allora $f$ è Riemann integrabile in $[a,b]$ e 
-\begin{equation*}
-	\int_{a}^{b}f(x)dx=\sum_{k=0}^{\infty}\int_{a}^{b}f_k(x)dx
-\end{equation*}
-\textcolor{orange}{$\int_{a}^{b}\lim_{n\rightarrow +\infty}S_n(x)dx=\lim_{n\rightarrow +\infty}\int_{a}^{b}S_n (x)dx$}\\
-\textcolor{orange}{$\lim_{n\rightarrow +\infty}\int_{a}^{b}\sum_{k=0}^{\infty}f_k(x)dx= \sum_{k=0}^{\infty}\int_{a}^{b}f_k(x)dx$}
-
-\subsubsection{\textcolor{red}{Teorema di passaggio al limite sotto segno di derivata}}
-\paragraph{\textcolor{red}{Teorema}}
-$I \subseteq \R$ intervallo. $\{f_k\}_{k \in \N}, f_k: I \rightarrow \R$, successione di funzioni derivabili. Se 
-\begin{enumerate}
-	\item $\exists\,\, x_0\in I \,\, |\,\, \sum_{k=0}^{\infty}f_k(x_0)$ converge;
-	\item la serie di funzioni $\sum_{k=0}^{\infty}f_k'$ converge uniformemente in $I$;
-\end{enumerate}
-allora la serie di funzioni $\sum_{k=0}^{\infty}f_k$ converge uniformemente in $I$ ad una funzione somma $f$ derivabile e tale che $f'(x)= \sum_{k=0}^{\infty}f_k'(x)$, $x \in I$, cioè $f'$ è la somma della serie delle derivate.
-\textcolor{orange}{
-	\begin{enumerate}
-		\item $\exists x_0 \in I \,\, |\,\, \{S_n(x_0)\}_{n \in \N}, S_n= \sum_{k=0}^{\infty}f_k$, converge
-		\item $\{S_n'\}_{n \in \N}$ converge uniformemente in $I$ ad una funzione $g$.
-	\end{enumerate}
-	Allora $\{S_n\}_{n \in \N}$ converge uniformemente in $I$ ad una funzione derivabile $f$ tale che $f'=g=\lim_{n\rightarrow +\infty} S_n' =\lim_{n\rightarrow +\infty} \sum_{k=0}^{n} f_k'=\sum_{k=0}^{\infty}f_k'$.
-}
-
-\paragraph{\textcolor{red}{Proposizione}}
-Sia $\sum_{k=0}^{\infty} f_k$ serie uniformemente convergente in $D \subseteq X$, $(X,d)$ spazio metrico. Allora 
-\begin{equation*}
-	\lim_{k\rightarrow+\infty}\sup_{x \in D} |f_k(x)|=0,
-\end{equation*}
-cioè $f_k \rightrightarrows 0$ in $D$.\\
-\textcolor{orange}{Se $f_k \nrightrightarrows 0$ in $D$, la serie $\sum_{k=0}^{\infty}f_k$ non può convergere uniformemente.}
-\paragraph{\textcolor{red}{Esempio}}
-Serie esponenziale, $e^x= \sum_{k=0}^{\infty}\frac{x^k}{k!}, x \in \R$ che converge puntualmente in $\R$. Converge uniformemente in $\R$?\\
-$\sup_{x \in \R}|f_k(x)|=\sup_{x \in \R}\frac{|x|^k}{k!}=+\infty \,\,\forall\,\,  k \rightarrow f_k \nrightrightarrows 0$ in $\R \Rightarrow$ la serie non converge uniformemente in $\R$.
-
-\paragraph{\textcolor{red}{Dimostrazione della proposizione}}
-$f:D \rightarrow \R$ somma della serie. Se $\{S_n\}_{n \in \N}$ è la successione delle ridotte, si ha 
-\begin{equation*}
-	\lim_{n \rightarrow + \infty} \sup_{x \in D} |S_n(x)-f(x)|=0
-\end{equation*}
-perchè $S_n \rightrightarrows f(x)$ in $D$.\\
-Fissato $\epsilon >0 \,\, \exists\,\, N >0\,\, |\,\, n > N,\,\,\sup_{x \in D} |S_n(x)-f(x)|< \epsilon \Rightarrow$ se $n > N, |S_n(x)-f(x)|< \epsilon \,\, \forall \,\, x \in D$\\
-$n > N +1$\\
-$|f_n(x)|=|S_n(x)-S_{n-1}(x)|\leq |S_n (x)-f(x)|+|S_{n-1}(x)-f(x)| < 2 \epsilon \,\, \forall \,\, x \in D$\\
-$n > N+1 \Rightarrow \sup_{x \in D}|f_n(x)| < 2 \epsilon \Rightarrow f_n \rightrightarrows 0$ in $D$.
-\begin{flushright}
-	\large\Lightning
-\end{flushright}
-
-\paragraph{\textcolor{red}{Definizione}}
-Una serie di funzioni $\sum_{k=0}^{\infty}f_k$ si dice \underline{totalmente convergente} in $D \subseteq X$ se converge la serie numerica 
-\begin{equation*}
-	\sum_{k=0}^{\infty}\sup_{x\in D}|f_k(x)|.
-\end{equation*}
-
-\paragraph{\textcolor{red}{Osservazione}}
-Se $\exists\,\, \{a_k\}_{k \in \N}\subseteq \R$ tale che 
-\begin{enumerate}
-	\item $|f_k(x)|\leq a_k \,\, \forall \,\, x \in D$ e $\forall\,\, k \in \N $
-	\item $\sum_{k=0}^{\infty}a_k$ converge 
-\end{enumerate}
-allora $\sum_{k=0}^{\infty}f_k$ converge totalmente in $D$.\\
-Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D \Rightarrow \sup_{x \in D} |f_k (x)|\leq a_k \,\,\forall\,\, k \in \N \Rightarrow$ la serie $\sum_{k=0}^{\infty} \sup_{x \in D}|f_k(x)|$ converge per il criterio del confronto.
-
-\subsubsection{\textcolor{red}{Criterio di Weierstrass}}
-\paragraph{\textcolor{red}{Teorema}}
-Sia $\sum_{k=0}^{\infty}f_k$ serie di funzioni totalmetne convergente in $ D \subseteq X$, $ (X,d)$ spazio metrico. Allora $\sum_{k=0}^{\infty}f_k$ converge uniformemente in $D$.
-
-
-
-
-
-
-
-
+	Trovo un altro zero di $f$ appartenente al sostegno di $\Tilde{\gamma}$} 
 	
-
-
-
-	
-\end{comment}
+	\begin{center} $\Rightarrow f$ ha infiniti zeri. \end{center} 
+\end{exbar}	
