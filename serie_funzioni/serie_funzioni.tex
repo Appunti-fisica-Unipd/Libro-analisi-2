@@ -489,12 +489,27 @@ Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D$ $\Rightarrow \sup_{x \in 
 	$$\underbrace{0 <x \leq a y \leq a(x+1)}_{\color{blue} \left| \frac{x}{y} \right| \leq a < 1}$$
 	
 	\segnaposto
-	
-	% PAG 283 ===========================================================================
 
-	Dobbiamo stimare $\sup_{0 < \leq ay \leq a(y+1)}| \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k|$.\\
-	$| \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k|= \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k \leq  \frac{k^{x+1}+1}{k^{x+2}(\ln k)^2}+a^k\leq 2\frac{k^{x+1}}{k^{x+2}(\ln k)^2}+a^k =\frac{2}{k(\ln k)^2}+a^k$, $\forall \,\, x,y >0, 0 < x \leq ay\leq a(x+1)$.\\
-	La serie $\sum_{k=2}^{\infty}\left[\frac{2}{k(\ln k)^2}+a^k\right]$ converge perchè entrambe le serie $\sum_{k=1}^{\infty}\frac{2}{k(\ln k)^2}$ e $\sum_{k=2}^{\infty}a^k$ convergono $\Rightarrow$ la serie di partenza converge totalmente, e quindi uniformemente negli insiemi del tipo $\{(a,y)\in \R^2|0<x\leq ay, y \leq x+1\}$ con $0 < a<1$ fissato.
+	Dobbiamo stimare 
+	
+	$$\sup_{0 < \leq ay \leq a(y+1)} \left| \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k \right|$$
+	
+	\begin{align*} 
+		\left| \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k \right|
+		&= \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k \lowercomment{\leq}{y\leq x+1}{0<\frac{x}{y}\leq a}  \frac{k^{x+1}+\uppercomment{1}{}{\leq k^{x+1}}}{k^{x+2}(\ln k)^2}+a^k \leq
+		\\
+		&\leq 2\frac{k^{x+1}}{k^{x+2}(\ln k)^2}+a^k =\frac{2}{k(\ln k)^2}+a^k, \qquad \forall \,\, x,y >0, 0 < x \leq ay\leq a(x+1)
+	\end{align*}
+
+	La serie $\sum_{k=2}^{\infty}\left[\frac{2}{k(\ln k)^2}+a^k\right]$ converge perchè entrambe le serie 
+	
+	$$\sum_{k=1}^{\infty}\frac{2}{k(\ln k)^2} \text{ e } \sum_{k=2}^{\infty}a^k$$
+	
+	convergono $\Rightarrow$ la serie di partenza converge totalmente, e quindi uniformemente negli insiemi del tipo 
+	
+	$$\{(a,y)\in \mathbb{R}^2|0<x\leq ay, y \leq x+1\}$$
+	
+	con $0 < a<1$ fissato.
 \end{example}
 \end{exbar}
 
@@ -502,11 +517,12 @@ Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D$ $\Rightarrow \sup_{x \in 
 \subsection{Serie di potenze}
 
 \begin{definition}
-	Una serie di potenze centrata nel punto $z_0 \in \C$ è una serie di funzioni del tipo 
+	Una serie di potenze centrata nel punto $z_0 \in \mathbb{C}$ è una serie di funzioni del tipo 
 	\begin{equation*}
 		\sum_{k=0}^{\infty} a_k(z-z_0)^k,
 	\end{equation*}
-	dove $\{a_k\}_{k\in\N}$ è una successione di numeri complessi.
+	
+	dove $\{a_k\}_{k\in\mathbb{N}}$ è una successione di numeri complessi.
 \end{definition}
 
 
@@ -521,33 +537,48 @@ Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D$ $\Rightarrow \sup_{x \in 
 \begin{attbar}
 	\textbf{Osservazione:}
 	
-	Non è restrittivo assumere $z_0=0$. Infatti, posto $w=z-z_0$, la serie $\sum_{k=0}^{\infty} a_k(z-z_0)^k$ si riscrive come $\sum_{k=0}^{\infty} a_k w^k$, cioè come una serie di potenze di centro $w_0=0$.
+	Non è restrittivo assumere $z_0=0$. Infatti, posto $w=z-z_0$, la serie 
+	$$\sum_{k=0}^{\infty} a_k(z-z_0)^k$$ 
+	
+	si riscrive come 
+	
+	$$\sum_{k=0}^{\infty} a_k w^k,$$
+	
+	cioè come una serie di potenze di centro $w_0=0$.
 \end{attbar}
 
 
 \begin{theorem} \textbf{Criterio di Cauchy-Hadamard}
+	\label{th: pag 285}
 	Sia data la serie di potenze
 	\begin{equation*}
-		\sum_{k=0}^{\infty} a_kz^k,\,\,\, z \in \C
+		\sum_{k=0}^{\infty} a_kz^k,\,\,\, z \in \mathbb{C}
 	\end{equation*}
+	
 	e sia $R\in [0,+\infty]$ la quantità definita da 
 	\begin{equation*}
 		\frac{1}{R}=\limsup_{k \rightarrow+\infty} \sqrt[k]{|a_k|},
 	\end{equation*}
+	
 	dove, se
 	\begin{equation*}
 		\limsup_{k \rightarrow+\infty} \sqrt[k]{|a_k|} =0 \Rightarrow R=+\infty
 	\end{equation*}
+	
 	e se
 	\begin{equation*}
 		\limsup_{k \rightarrow+\infty} \sqrt[k]{|a_k|} =+\infty \Rightarrow R=0.
 	\end{equation*}
+
 	Allora
 	\begin{enumerate}
-		\item la serie converge assolutamente in $B_k(0)=\{z\in\C|\,\,\,|z|<R\}$, detto disco o cerchio di convergenza;
-		\item la serie converge totalmente, e quindi uniformemente, in $B_\delta (0)=\{z \in \C|\,\,\,|z|< \delta\}$ per ogni $0< \delta < R$;
+		\item la serie converge assolutamente in $B_k(0)=\{z\in\mathbb{C} \big|$ $|z|<R\}$, detto disco o cerchio di convergenza;
+		
+		\item la serie converge totalmente, e quindi uniformemente, in $B_\delta (0)=\{z \in \mathbb{C} \big|$ $|z|< \delta\}$ per ogni $0< \delta < R$;
+		
 		\item la serie non converge per $|z|>R$.
 	\end{enumerate}
+	
 	$R$ è detto raggio di convergenza della serie.
 \end{theorem}
 
@@ -560,101 +591,385 @@ Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D$ $\Rightarrow \sup_{x \in 
 
 
 \begin{definition}
-	Data una successione $\{\alpha_k\}_{k\in\N}\subseteq \R$, 
+	Data una successione $\{\alpha_k\}_{k\in\mathbb{N}}\subseteq \mathbb{R}$, 
 	\begin{equation*}
-		\limsup_{k\rightarrow+\infty} \alpha_k=\inf_{k\in\N}\left(\sup_{l>k} \alpha_l\right)=\lim_{k \rightarrow+\infty}\left(\sup_{l>k}\alpha_l\right)
+		\limsup_{k\rightarrow+\infty} \alpha_k=\inf_{k\in\mathbb{N}}\left(\sup_{\ell>k} \alpha_\ell\right)=\lim_{k \rightarrow+\infty}\left(\sup_{\ell>k}\alpha_\ell\right)
 	\end{equation*}
-	ed esiste sempre.\\
-	\textcolor{red}{Se $\exists \lim_{k\rightarrow+\infty}\alpha_k$, allora $\limsup_{k\rightarrow+\infty}\alpha_k=\lim_{k\rightarrow+\infty}\alpha_k$.\\ Nel criterio di Hadamard, se $\exists \lim_{k\rightarrow+\infty}\sqrt[k]{|\alpha_k|}$, allora $\frac{1}{R}=\lim_{k\rightarrow+\infty}\sqrt[k]{|a_k|}$}
+	
+	ed esiste sempre.
+	
+	\color{red}{Se $\exists \lim_{k\rightarrow+\infty}\alpha_k$, allora $\limsup_{k\rightarrow+\infty}\alpha_k=\lim_{k\rightarrow+\infty}\alpha_k$.
+		
+	Nel criterio di Hadamard, se $\exists \lim_{k\rightarrow+\infty}\sqrt[k]{|\alpha_k|}$, allora $\frac{1}{R}=\lim_{k\rightarrow+\infty}\sqrt[k]{|a_k|}$}
 \end{definition}
 
 
-\textbf{Ossevazione:}
+\textbf{Osservazione:}
 
-Si ricorda che, se $\lim_{k\rightarrow+\infty}|\frac{a_k+1}{a_k}|=l$, allora $\lim_{k\rightarrow+\infty}\sqrt[k]{|a_k|}=l$.
+Si ricorda che, se $\lim_{k\rightarrow+\infty}|\frac{a_k+1}{a_k}|=\ell$, allora $\lim_{k\rightarrow+\infty}\sqrt[k]{|a_k|}=\ell$.
 
 
-\begin{comment}	
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 285}}
 	
+	Lo dimostriamo assumendo che esista $\lim_{k\rightarrow+\infty}\sqrt[k]{|a_k|}=\frac{1}{R}$.
+	\begin{enumerate}
+		\item Dobbiamo dimostrare che la serie $\sum_{k=0}^{\infty}|a_kz^k|=\sum_{k=0}^{\infty}|a_k||z|^k$ converge se $|z|<R$.
+		
+		Applichiamo il criterio della radice e calcoliamo 
+		
+		$$\lim_{k \rightarrow+\infty}\sqrt[k]{|a_k||z|^k}=\frac{|z|}{R}$$
+		
+		Se $\frac{|z|}{R}<1$, la serie converge.
+		
+		\item Dobbiamo dimostrare che, fissato $0<\delta<k$, la serie 
+		
+		$$\sum_{k=0}^{\infty}\sup_{|z|<\delta} |a_kz^k|$$ 
+		
+		converge.
+		
+		Se $|z|<\delta$ $\Rightarrow |a_kz^k|=|a_k||z|^k<|a_k|\delta^k$ e la serie $\sum_{k=0}^{\infty}|a_k|\delta^k$ converge perché $\lim_{k \rightarrow+\infty} \sqrt[k]{|a_k|\delta^k}=\frac{\delta}{R}<1$. 
+		
+		Allora $\sup_{|z|<\delta}|a_kz^k|<|a_k|\delta^k\,\, \forall k$ e quindi deduco la convergenza totale della serie in $B_{\delta}(0)$.
+		
+		\item Se $\frac{|z|}{R}>1$, il termine generale della serie non è infinitesimo, e quindi la serie non converge.
+	\end{enumerate}
+\end{dembar}
 
 
-\paragraph{\textcolor{red}{Dimostrazione del teorema}}
-Lo dimostriamo assumendo che esista $\lim_{k\rightarrow+\infty}\sqrt[k]{|a_k|}=\frac{1}{R}$.
-\begin{enumerate}
-	\item Dobbiamo dimostrare che la serie $\sum_{k=0}^{\infty}|a_kz^k|=\sum_{k=0}^{\infty}|a_k||z|^k$ converge se $|z|<R$.\\ Applichiamo il criterio della radice e calcoliamo $\lim_{k \rightarrow+\infty}\sqrt[k]{|a_k||z|^k}=\frac{|z|}{R}$. Se $\frac{|z|}{R}<1$, la serie converge.
-	\item Dobbiamo dimostrare che, fissato $0<\delta<k$, la serie $\sum_{k=0}^{\infty}\sup_{|z|<\delta} |a_kz^k|$ converge.\\ Se $|z|<\delta \Rightarrow |a_kz^k|=|a_k||z|^k<|a_k|\delta^k$ e la serie $\sum_{k=0}^{\infty}|a_k|\delta^k$ converge perchè $\lim_{k \rightarrow+\infty} \sqrt[k]{|a_k|\delta^k}=\frac{\delta}{R}<1$. Allora $\sup_{|z|<\delta}|a_kz^k|<|a_k|\delta^k\,\, \forall k$ e quindi deduco la convergenza totale della serie in $B_{\delta}(0)$.
-	\item Se $\frac{|z|}{R}>1$, il termine generale della serie non è infinitesimo, e quindi la serie non converge.
-\end{enumerate}
+\begin{exbar}
+\begin{example}
+	\begin{center} 
+		$e^z=\sum_{k=0}^{\infty}\frac{z^k}{k!}$, esponenziale complesso
+	\end{center}
+	
+	Calcoliamo il raggio di convergenza
+	
+	$$\lim_{k\rightarrow+\infty}\sqrt[k]{\frac{1}{k!}}=\lim_{k\rightarrow+\infty}\frac{1}{\sqrt[k]{k!}}$$
+	 
+	$$\lim_{k\rightarrow+\infty}\frac{\frac{1}{(k+1)!}}{\frac{1}{k!}}=\lim_{k\rightarrow+\infty}\frac{1}{k+1}=0$$
+	
+	$$\Rightarrow R=+\infty$$
+	
+	$\Rightarrow$ la serie converge assolutamente in $\mathbb{C}$ e totalmente in $B_c(0) \,\, \forall \delta>0$.
+\end{example}
+\end{exbar}
 
-\paragraph{\textcolor{red}{Esempio}}
-$e^z=\sum_{k=0}^{\infty}\frac{z^k}{k!}$, esponenziale complesso. Calcoliamo il raggio di convergenza\\ $\lim_{k\rightarrow+\infty}\sqrt[k]{\frac{1}{k!}}=\lim_{k\rightarrow+\infty}\frac{1}{\sqrt[k]{k!}}$. $\lim_{k\rightarrow+\infty}\frac{\frac{1}{(k+1)!}}{\frac{1}{k!}}=\lim_{k\rightarrow+\infty}\frac{1}{k+1}=0\Rightarrow R=+\infty \Rightarrow$ la serie converge assolutamente in $\C$ e totalmente in $B_c(0) \,\, \forall \delta>0$.
 
-\paragraph{\textcolor{red}{Esempio}}
-$\sin x =\sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)!}$ e
-$\cos x =\sum_{k=0}^{\infty}(-1)^k\frac{x^{2k}}{(2k)!}$.\\
-Studio la serie $\sum_{k=0}^{\infty}(-1)^k\frac{(x^2)^{k}}{(2k+1)!}=\sum_{k=0}^{\infty}(-1)^k\frac{y^k}{(2k+1)!}$ che è serie di potenze con $a_k=\frac{(-1)^k}{(2k+1)!}$.\\ Calcoliamo il raggio di convergenza $\lim_{k\rightarrow +\infty}|\frac{a_{k+1}}{a_k}|=\lim_{k\rightarrow+\infty}\frac{\frac{1}{(2k+3)!}}{\frac{1}{(2k+1)!}}=0\Rightarrow R=+\infty$.\\
-Definiamo $\sin(z)=\sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!},\,\,\,\, z \in \C$.\\
-Il raggio di convergenze è sempre $R=+\infty$, e quindi la serie converge assolutamente in $\C$ e totalmente in $B_\delta(0)\forall \delta >0$. La stessa cosa si può fare con la funzione coseno e definire $\cos z=\sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k)!},\,\,\,\, z \in \C$.\\
-$\sin(ix)=\sum_{k=0}^{\infty}(-1)^k\frac{(ix)^{2k+1}}{(2k+1)!}=\sum_{k=0}^{\infty}(-1)^k\frac{(i)^{2k+1}(x)^{2k+1}}{(2k+1)!}=\sum_{k=0}^{\infty}(-1)^k(-1)^ki\frac{x^{2k+1}}{(2k+1)!}=i\sum_{k=0}^{\infty}\frac{x^{2k+1}}{(2k+1)!}=i\sinh x$.\\
-$\cos(ix)=\sum_{k=0}^{\infty}(-1)^k \frac{(ix)^{2k}}{(2k)!}=\sum_{k=0}^{\infty}(-1)^k i^{2k} \frac{x^{2k}}{(2k)!}=\sum_{k=0}^{\infty}\frac{x^{2k}}{(2k)!}=\cosh x$.\\
-Sfruttando le serie scritte sopra si dimostra che $e^{x+iy}=e^x(\cos y + i \sin y) \,\,\,\, \forall x,y\in \R$ ed inoltre che $e^{z_1+z_2}=e^{z_1}e^{z_2},\,\,\, z_1,z_2 \in \C$.
+\begin{exbar}
+\begin{example}
+	\begin{align*} 
+		&\sin x =\sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)!}
+		\\
+		&\cos x =\sum_{k=0}^{\infty}(-1)^k\frac{x^{2k}}{(2k)!}
+	\end{align*}
+	
+	Studio la serie
+	
+	$$\sum_{k=0}^{\infty}(-1)^k\frac{(x^2)^{k}}{(2k+1)!}
+	\uppercomment{=}{\myarrow[90]}{y=x^2}
+	\lowercomment{\sum_{k=0}^{\infty}(-1)^k\frac{y^k}{(2k+1)!}}{\text{serie di potenze}}{\text{con } a_k=\frac{(-1)^k}{(2k+1)!}}$$ 
+	
+	Calcoliamo il raggio di convergenza 
+	
+	$$\lim_{k\rightarrow +\infty} \left|\frac{a_{k+1}}{a_k}\right| =\lim_{k\rightarrow+\infty}\frac{\frac{1}{(2k+3)!}}{\frac{1}{(2k+1)!}}=0$$
+	
+	$$\Rightarrow R=+\infty$$.
+	
+	Definiamo 
+	
+	$$\sin(z)=\sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!},\,\,\,\, z \in \mathbb{C}$$
+	
+	Il raggio di convergenze è sempre $R=+\infty$, e quindi la serie converge assolutamente in $\mathbb{C}$ e totalmente in $B_\delta(0)\forall \delta >0$. 
+	
+	La stessa cosa si può fare con la funzione coseno e definire 
+	
+	$$\cos z=\sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k)!},\,\,\,\, z \in \mathbb{C}$$
+	
+	Sia $x \in \mathbb{R}$
+	
+	\begin{align*} 
+		\sin(ix)
+		&=\sum_{k=0}^{\infty}(-1)^k\frac{(ix)^{2k+1}}{(2k+1)!}=\sum_{k=0}^{\infty}(-1)^k\frac{(i)^{2k+1}(x)^{2k+1}}{(2k+1)!} \lowercomment{=}{i^{2k+1=i^{2k}\cdot i}=}{=(-1)^k\cdot i}
+		\\
+		&=\sum_{k=0}^{\infty}(-1)^k(-1)^ki\frac{x^{2k+1}}{(2k+1)!}=i\sum_{k=0}^{\infty}\frac{x^{2k+1}}{(2k+1)!}=
+		\\
+		&=i\sinh x
+	\end{align*}
+	\begin{align*}
+		\cos(ix)
+		&=\sum_{k=0}^{\infty}(-1)^k \frac{(ix)^{2k}}{(2k)!}=\sum_{k=0}^{\infty}(-1)^k i^{2k} \frac{x^{2k}}{(2k)!}=\sum_{k=0}^{\infty}\frac{x^{2k}}{(2k)!}=
+		\\
+		&=\cosh x
+	\end{align*}
+	
+	Sfruttando le serie scritte sopra si dimostra che 
+	
+	$$e^{x+iy}=e^x(\cos y + i \sin y) \,\,\,\, \forall x,y\in \mathbb{R}$$ 
+	
+	ed inoltre che 
+	
+	$$e^{z_1+z_2}=e^{z_1}e^{z_2},\,\,\, z_1,z_2 \in \mathbb{C}$$
+\end{example}
+\end{exbar}
 
-\paragraph{\textcolor{red}{Osservazione}}
-$z \in \C, z=x+iy$, $e^{z+2\pi i}=e^{x+(y+2\pi)i}=e^x(\cos(y+2\pi)+i\sin(y+2\pi))=e^x(\cos y + i \sin y) =e^{x+iy}=e^z$, $z \mapsto e^z$ è funzione periodica di periodo $2\pi i$.\\
-$e^z=e^x(\cos y+i \sin y)\neq 0\,\,\, \forall \,\, z \in \C$. Fissiamo $w \in \C$ e proviamo a risolvere in $z =x+iy$ l'equazione $e^z=w$, $w=\rho (\cos \omega + i \sin \omega)$, $\rho =|\omega|$, $e^x(\cos y+i \sin y)=|\omega|(\cos \omega+i\sin \omega)$.\\
+
+\textbf{Osservazione:}
+
+
+$z \in \mathbb{C}, z=x+iy$
+
+$$e^{z+2\pi i}=e^{x+(y+2\pi)i}=e^x(\cos(y+2\pi)+i\sin(y+2\pi))=e^x(\cos y + i \sin y) =e^{x+iy}=e^z$$
+
+$z \mapsto e^z$ è funzione periodica di periodo $2\pi i$.
+
+$$e^z=e^x(\cos y+i \sin y)\neq 0\,\,\, \forall \,\, z \in \mathbb{C}$$
+
+Fissiamo $w \in \mathbb{C}$ e proviamo a risolvere in $z =x+iy$ l'equazione $e^z=w$, $w=\rho (\cos \omega + i \sin \omega)$, $\rho =|\omega|$, $e^x(\cos y+i \sin y)=|\omega|(\cos \omega+i\sin \omega)$
+
 \begin{equation*}
 	\begin{cases}
-		& e^x=|w| \\
-		& y=\theta+2k\pi,\,\,\,\, \exists k\in\Z
-	\end{cases} \Rightarrow \begin{cases}
-		& e=\ln |w|\\
-		& y=\theta+2k\pi,\,\,\,\, \exists k\in\Z
+		e^x=|w| 
+		\\
+		y=\theta+2k\pi, & \exists k\in\mathbb{Z}
+	\end{cases} 
+	\Rightarrow 
+	\begin{cases}
+		e=\ln |w|
+		\\
+		y=\theta+2k\pi, & \exists k\in\mathbb{Z}
 	\end{cases}
-\end{equation*}\\
-$z =\ln |w|+i(\arg w + 2k\pi) \exists k \in \Z$, dove $\arg w \in ]-\pi,\pi]$ è l'argomento principale di $w$. In particolare, l'immagine di $z \mapsto e^z$ è $\C \backslash \{0\}$.\\
-E' possibile definire la funzione logaritmo principale di un numero complesso 
-\begin{equation*}
-	\ln: \C \backslash\{0\}\rightarrow\C
-\end{equation*}
-\begin{equation*}
-	\ln w=\ln|w|=i \arg w
-\end{equation*}
-\begin{equation*}
-	\ln (-1)=\ln|-1|+i\arg(-1)=i\pi
-\end{equation*}
-\begin{equation*}
-	\ln (i)=\ln |i|+i\arg(i)=i \frac{\pi}{2}
-\end{equation*}
-\begin{equation*}
-	\ln(\sqrt{2}+i\sqrt{2})=\ln|\sqrt{2}+i\sqrt{2}|+i \arg(\sqrt{2}+i\sqrt{2})=\ln2+i\frac{\pi}{4}
 \end{equation*}
 
-\paragraph{\textcolor{red}{Esempio}}
-Studiare la convergenza delle seria serie di funzioni
-\begin{equation*}
-	\sum_{k=0}^{\infty}\frac{k!+2^k}{(2k)!-(\arctan k)^{k+1}}(\arctan x)^k,\,\,\,\,\, x \in \R.
-\end{equation*}
-Studiamo la serie di potenze $\sum_{k=0}^{\infty}\frac{k!+2^k}{(2k)!-(\arctan k)^{k+1}}(y)^k$, $y \in \R$. Calcoliamo il raggio di convergenza $\lim_{k\rightarrow +\infty}|\frac{a_k+1}{a_k}|=\lim_{k\rightarrow+\infty}\frac{(k+1)!+2^{k+1}}{(2k+2)!+(\arctan(k+1))^{k+1}}\frac{(2k)!-(\arctan k)^{k+1}}{k!+2k}=\lim_{k \rightarrow+\infty} \frac{(k+1)!}{(2k+2)!}\frac{(2k)!}{k!}=\lim_{k\rightarrow +\infty}\frac{k+1}{(2k+2)(2k+1)}=0 \Rightarrow R =+\infty$.\\
-La serie di potenze converge assolutamente $\forall y \in \R$ e totalmente in $]-\delta,\delta[\forall \delta >0$. Poichè $\arctan x \in ]-\frac{\pi}{2},\frac{\pi}{2}[ \forall x \in \R$, la serie di partenza converge totalmente, e quindi uniformemente, in $\R$. 
+$z =\ln |w|+i(\arg w + 2k\pi) \exists k \in \mathbb{Z}$, dove $\arg w \in ]-\pi,\pi]$ è l'argomento principale di $w$. 
 
-\paragraph{\textcolor{red}{Esempio}}
-Studiare la serie di potenze
-\begin{equation*}
-	\sum_{k=1}^{\infty}\frac{i^k}{k}z^k.    
-\end{equation*}
-Calcoliamo il raggio di convergenza $\lim_{k \rightarrow +\infty}\sqrt[k]{|a_k|}=\lim_{k\rightarrow+\infty} \sqrt[k]{|\frac{i^k}{k}|}=\lim_{k \rightarrow +\infty}\frac{1}{\sqrt[k]{k}}=1\Rightarrow R=1$.\\
-La serie converge assolutamente per $z \in B_1(0)$ e totalmente in $B_\delta (0)\forall 0 < \delta<1$, e non converge se $|z|>1$.\\ Dobbiamo studiare la convergenza per $|z|= 1$, cioè se $z =e^{i\theta}$ $\exists \theta \in [0,2\pi]$. Bisogna studiare $\sum_{k=1}^{\infty}\frac{i^k}{k}e^{ik\theta}=\sum_{k=1}^{\infty}\frac{i^k}{k}(e^{i\theta})^k=\sum_{k=1}^{\infty}\frac{1}{k}(ie^{i\theta})^k$,\\
-$\{\alpha_k\}_{k \geq 1}$ è monotona decrescente, infinitesima. Studiamo la successione delle ridotte di $\sum_{k=1}^{\infty}\beta_k $ che è la serie di partenza di ragione $ie^{i\theta}$. Se $i e^{i\theta}=1$, cioè $\theta =\frac{3}{2}\pi$, la serie si scrive $\sum_{k=1}^{\infty}\frac{1}{k}$, che diverge. Sia $i e^{i\theta}\neq 1$, $\theta \neq \frac{3}{2}\pi$. $S_n=\sum_{k=1}^{n}(ie^{i\theta})^k=\frac{1-i^{n+1}e^{i(n+1)\theta}}{1-ie^{i\theta}}-1$\\
-$|S_n|\leq \frac{|1-i^{n+1}e^{i(n+1)\theta}|}{|1-ie^{i\theta}|}+1 \leq \frac{2}{|i -ie^{i\theta}|}+1 \Rightarrow$ la successione delle ridotte della serie $\sum_{k=1}^{\infty}(i e^{i\theta})^k$ è limitata per $\theta \neq \frac{3}{2}\pi \Rightarrow$ la serie $\sum_{k=1}^{\infty}\frac{1}{k}(ie^{i\theta})^k$ converge per $\theta \neq \frac{3}{2}\pi$ grazie al criterio di Dirichlet. La serie di partenza $\sum_{k=1}^{\infty}\frac{i^k}{k}z^k$ converge semplicemente in $\{z \in \C||z|\leq 1, z \neq -i\}$
+In particolare, l'immagine di $z \mapsto e^z$ è $\mathbb{C} \backslash \{0\}$.
 
-\subsection{\textcolor{red}{Cenno alla funzioni olomorfe}}
-Deriviamo $\sum_{k=0}^{\infty}a_kz^k$ ottenendo $\sum_{k=1}^{\infty}ka_kz^{k-1}$.\\
-$Dz^k|_{z=z_0}=\lim_{z \rightarrow z_0} \frac{z^k-z_0^k}{z-z_0}=kz_0^{k-1}$.\\
-Qual è il raggio di convergenza di $\sum_{k=1}^{\infty}ka_k z^{k-1}$?\\
-$\limsup_{k \rightarrow +\infty} \sqrt[k]{k|a_k|}=\limsup_{k \rightarrow +\infty}\sqrt[k]{|a_k|}=\frac{1}{R}$ dove $R$ è il raggio di convergenza di $\sum_{k=0}^{\infty}a_kz^k$.
+E' possibile definire la funzione \textbf{logaritmo principale} di un numero complesso 
+\begin{gather*}
+	\Ln: \mathbb{C} \backslash\{0\}\rightarrow \mathbb{C}
+	\\
+	\Ln w=\ln|w|=i \arg w
+	\\
+	\Ln (-1)=\ln|-1|+i\arg(-1)=i\pi
+	\\
+	\Ln (i)=\ln |i|+i\arg(i)=i \frac{\pi}{2}
+	\\
+	\Ln(\sqrt{2}+i\sqrt{2})=\ln|\sqrt{2}+i\sqrt{2}|+i \arg(\sqrt{2}+i\sqrt{2})=\ln2+i\frac{\pi}{4}
+\end{gather*}
 
 
-
-
+\begin{exbar}
+\begin{example}
+	Studiare la convergenza delle seria serie di funzioni
+	\begin{equation*}
+		\sum_{k=0}^{\infty}\frac{k!+2^k}{(2k)!-(\arctan k)^{k+1}}(\overbrace{\arctan x}^{\color{blue}y})^k,\,\,\,\,\, x \in \mathbb{R}
+	\end{equation*}
 	
-\end{comment}
+	Studiamo la serie di potenze 
+	
+	$$\sum_{k=0}^{\infty} \underbrace{\frac{k!+2^k}{(2k)!-(\arctan k)^{k+1}}}_{\color{blue}a_k} y^k, \qquad y \in \mathbb{R}$$
+	
+	Calcoliamo il raggio di convergenza 
+	\begin{align*} 
+		\lim_{k\rightarrow +\infty}|\frac{a_k+1}{a_k}|
+		&=\lim_{k\rightarrow+\infty} 
+		\frac{\uppercomment{(k+1)!+2^{k+1}}{}{\sim (k+1)!}}
+		{\lowercomment{(2k+2)!-(\arctan(k+1))^{k+2}}{\sim (2k+1)!}{}}
+		\frac{\uppercomment{(2k)!-(\arctan k)^{k+1}}{}{\sim (2k)!}}
+		{\lowercomment{k!+2k}{\sim k!}{}}=
+		\\
+		&\PdS \lim_{k \rightarrow+\infty} \frac{(k+1)!}{(2k+2)!}\cdot\frac{(2k)!}{k!} =\lim_{k\rightarrow +\infty}\frac{k+1}{(2k+2)(2k+1)}=0
+	\end{align*}
+	
+	$$ \Rightarrow R =+\infty$$
+	
+	La serie di potenze converge assolutamente $\forall y \in \mathbb{R}$ e totalmente in $]-\delta,\delta[$ $\forall \delta >0$. Poiché $\arctan x \in ]-\frac{\pi}{2},\frac{\pi}{2}[$ $\forall x \in \mathbb{R}$, la serie di partenza converge totalmente, e quindi uniformemente, in $\mathbb{R}$. 
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Studiare la serie di potenze
+	\begin{equation*}
+		\sum_{k=1}^{\infty} \lowercomment{\frac{i^k}{k}}{a_k}{} z^k.    
+	\end{equation*}
+	Calcoliamo il raggio di convergenza 
+	
+	$$\lim_{k \rightarrow +\infty}\sqrt[k]{|a_k|}=\lim_{k\rightarrow+\infty} \sqrt[k]{|\frac{i^k}{k}|}=\lim_{k \rightarrow +\infty}\frac{1}{\sqrt[k]{k}}=1$$
+	
+	$$\Rightarrow R=1$$
+	
+	La serie converge assolutamente per $z \in B_1(0)$ e totalmente in $B_\delta (0)\forall 0 < \delta<1$, e non converge se $|z|>1$.
+	
+	Dobbiamo studiare la convergenza per $|z|= 1$, cioè se $z =e^{i\theta}$ $\exists \theta \in [0,2\pi]$. Bisogna studiare
+	
+	$$\sum_{k=1}^{\infty}\frac{i^k}{k}e^{ik\theta}=\sum_{k=1}^{\infty}\frac{i^k}{k}(e^{i\theta})^k=\sum_{k=1}^{\infty} \lowercomment{\frac{1}{k}}{\alpha_k}{} \lowercomment{(ie^{i\theta})^k}{\beta_k}{}$$
+	
+	$\{\alpha_k\}_{k \geq 1}$ è monotona decrescente, infinitesima. 
+	
+	Studiamo la successione delle ridotte di $\sum_{k=1}^{\infty}\beta_k $ che è la serie di partenza di ragione $ie^{i\theta}$. 
+	
+	Se $i e^{i\theta}=1$, cioè $\theta =\frac{3}{2}\pi$, la serie si scrive $\sum_{k=1}^{\infty}\frac{1}{k}$, che diverge. 
+	
+	Sia $i e^{i\theta}\neq 1$, $\theta \neq \frac{3}{2}\pi$.
+	
+	$$S_n=\sum_{k=1}^{n}(ie^{i\theta})^k=\frac{1-i^{n+1}e^{i(n+1)\theta}}{1-ie^{i\theta}}-1$$
+	
+	$$|S_n|\leq \frac{|1-i^{n+1}e^{i(n+1)\theta}|}{|1-ie^{i\theta}|}+1 \leq \frac{2}{|i -ie^{i\theta}|}+1$$ 
+	
+	$\Rightarrow$ la successione delle ridotte della serie $\sum_{k=1}^{\infty}(i e^{i\theta})^k$ è limitata per $\theta \neq \frac{3}{2}\pi$ $\Rightarrow$ la serie $\sum_{k=1}^{\infty}\frac{1}{k}(ie^{i\theta})^k$ converge per $\theta \neq \frac{3}{2}\pi$ grazie al criterio di Dirichlet.
+	
+	La serie di partenza $\sum_{k=1}^{\infty}\frac{i^k}{k}z^k$ converge semplicemente in 
+	
+	$$\{z \in \mathbb{C} \; \big| \; |z|\leq 1, z \neq -i\}$$
+\end{example}
+\end{exbar}
+
+
+\subsection{Cenno alla funzioni olomorfe}
+Deriviamo $\sum_{k=0}^{\infty}a_kz^k$ ottenendo $\sum_{k=1}^{\infty}ka_kz^{k-1}$.
+
+$$Dz^k \big|_{z=z_0}=\lim_{z \rightarrow z_0} \frac{z^k-z_0^k}{z-z_0}
+\lowercomment{=}{\myarrow[270]}{z^k-z_0^k = (z-z_0)(z^{k-1} + z_0z^{k-2} + z_0^2 z^{k-3} + \ldots + z_0^{k-1})} kz_0^{k-1}$$
+
+Qual è il raggio di convergenza di $\sum_{k=1}^{\infty}ka_k z^{k-1}$?
+
+$$\limsup_{k \rightarrow +\infty} \sqrt[k]{k|a_k|}
+\lowercomment{=}{\myarrow[270]}{\sqrt[k]{k} \to 1}
+\limsup_{k \rightarrow +\infty}\sqrt[k]{|a_k|}=\frac{1}{R}$$
+
+dove $R$ è il raggio di convergenza di $\sum_{k=0}^{\infty}a_kz^k$.
+
+
+
+Prendiamo una serie di potenze in $\mathbb{R}$
+\begin{equation*}
+	f(x)=\sum_{k=0}^{\infty}a_kx^k,\,\,\,\, x \in \mathbb{R}
+\end{equation*}
+
+Sia $R>0$ il suo raggio di convergenza, allora $\sum_{k=0}^{\infty}a_kx^{k-1}$ ha raggio di convergenza $R>0 \Rightarrow$ la serie delle derivate converge totalmente, e quindi uniformemente, in ogni intervallo del tipo $]-\delta,\delta[$, $0<\delta<R$ $\Rightarrow f$ è derivabile in $]-\delta,\delta[$ $\forall\,\, 0<\delta<R$, e quindi in $]-R,R[$ e 
+\begin{equation*}
+	f'(x)=\sum_{k=0}^{\infty}ka_kx^{k-1}.
+\end{equation*}
+
+Deriviamo un'altra volta, e si ottiene che la serie derivata
+\begin{equation*}
+	\sum_{k=0}^{\infty} k(k-1)a_kx^{k-2}
+\end{equation*}
+
+ha raggio di convergenza $R$ e 
+
+$$(f')'(x)=f''(x)=\sum_{k=0}^{\infty} k(k-1)a_kx^{k-2}$$
+
+e quindi $f$ è derivabile due volte. Iterando il procedimento si ottiene che $f$ è di classe $C^\infty$ in $]-R,R[$.
+
+
+\begin{definition}
+	$A \subseteq \mathbb{C}$ aperto, $f:A\rightarrow \mathbb{C}$, $z_0\in A$. $f$ si dice derivabile (in senso complesso) in $z_0$ se $\exists$ finito 
+	\begin{equation*}
+		\lim_{z \rightarrow z_0} \frac{f(z)-f(z_0)}{z-z_0}=f'(z_0).
+	\end{equation*}
+	
+	In particolare, $f$ si dice \textbf{olomorfa} in $A$ se è derivabile in senso complesso in ogni punto di $A$.
+\end{definition}
+
+
+\begin{exbar}
+\begin{example}
+	$f(z)=\overline{z}$, $f(x+iy)=x-iy$
+	
+	$$f'(0)=\lim_{z \rightarrow 0} \frac{\overline{z}-\overline{0}}{z-0}=\lim_{z\rightarrow0}\frac{\overline{z}}{z}$$
+	
+	Se $z$ è puramente immaginario, $z=iy$, 
+	$$\frac{\overline{z}}{z}=\frac{-iy}{iy}=-1\xrightarrow{z \rightarrow 0}-1$$
+	
+	Se $z$ è puramente reale, $z=x$, 
+	
+	$$\frac{\overline{z}}{z}=1\xrightarrow{z \rightarrow 0}1$$
+	
+	$\Rightarrow \lim_{z\rightarrow0}\frac{\overline{z}}{z}$ non esiste, cioè $f$ non è derivabile in senso complesso. Se guardo $f$ come una funzione definita su $\mathbb{R}^2$,
+	
+	$$f(x,y)=(x,-y)=\begin{pmatrix}
+		1 & 0 \\
+		0 & -1 
+	\end{pmatrix} \begin{pmatrix}
+		x\\
+		y
+	\end{pmatrix}$$
+	
+	cioè $f$ è lineare, di classe $C^\infty$ come funzione di $(x,y)$.
+	
+	Si può dimostrare che se $f$ è olomorfa in un aperto $A\subseteq \mathbb{C}$, allora $\forall\,\, z_0 \in A$ $\exists\,\, R>0\mid f$ è somma di una serie di potenze in $B_R(z_0)$ di centro $z_0$, e quindi, come per le serie di potenze in $\mathbb{R}$, è derivabile in senso complesso infinite volte e vale
+	\begin{equation*}
+		f(z)=\sum_{k=0}^{\infty}\frac{f^{(k)}(z_0)}{k!}(z-z_0)^k
+	\end{equation*}
+	
+	$\forall \,\, z \in B_R(z_0)$, cioè in $B_R(z_0)$, $f$ è somma della sua serie di Taylor di centro $z_0$.
+	
+	$f$ derivabile in senso complesso in $A \Rightarrow f$ è somma della sua serie di Taylor di centro $z_0$ in un intorno di $z_0$. 
+\end{example}
+\end{exbar}
+
+
+\begin{attbar}
+	\textbf{Osservazione:}
+	
+	Se $f:\mathbb{R}\rightarrow\mathbb{R}$ è di classe $C^\infty$, non è detto che sia somma della sua serie di Taylor.
+	\begin{equation*}
+		f(x)=\begin{cases}
+			e^{-\frac{1}{x^2}} & \text{se }  x \neq 0 
+			\\
+			0 & \text{se } x =0
+		\end{cases}
+	\end{equation*}
+	
+	$f\in C^\infty(\mathbb{R})$, $f^{(k)}(0)=0$ $\forall\,\, k\in \mathbb{N}$ e quindi $f(x)\neq \sum_{k=0}^{\infty}\frac{\uppercomment{f^{(k)}(0)}{}{=0 }}{k!}x^k$, serie di Taylor di $f$ di centro zero.
+\end{attbar}
+
+
+\begin{exbar}
+\begin{example}
+	$e^z=\sum_{k=0}^{\infty}\frac{z^k}{k!}$, $z \in \mathbb{C}$.
+	
+	\begin{align*} 
+		De^z&=\sum_{k=1}^{\infty}k\frac{z^{k-1}}{k!}=\sum_{k=0}^{\infty} k \frac{z^{k-1}}{k(k-1)!}=
+		\\
+		&=\sum_{k=0}^{\infty} \frac{z^{k-1}}{(k-1)!}\lowercomment{=}{j=k-1}{} \sum_{j=0}^{\infty} \frac{z^{j}}{j!}=e^z
+	\end{align*}
+	
+	$$sin z= \sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!}$$
+	
+	\begin{align*} 
+		D\sin z &= \sum_{k=0}^{\infty}(-1)^k(2k+1)\frac{z^{2k}}{(2k+1)!} = \sum_{k=0}^{\infty}(-1)^k(2k+1)\frac{z^{2k}}{(2k+1)(2k)!}
+		\\
+		&=\sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k)!}=\cos z
+	\end{align*}
+	
+	$D\cos z=-\sin z$
+	
+	$\Ln z = \ln |z|+i \arg z$
+	
+	$\Ln $ è olomorfa in $\mathbb{C}\backslash\{z \in \mathbb{C} \; \big|$ $\Im(z)=0 \text{  e  } \Re(z) \leq 0 \}$, cioè è olomorfa in $\mathbb{C}$ privato della semiretta dei numeri reali non positivi 
+	
+	$$e^{\Ln z}=z \qquad \forall z \in \mathbb{C}\backslash\{z \in \mathbb{Z} \; \big| \; \Im(z)=0 \text{  e  } \Re(z) \leq 0 \}$$
+	
+	$D e^{ \Ln z}=Dz =1$
+	
+	$e^{\Ln z}D\Ln z=zD\Ln z$
+	
+	$$\Rightarrow D \Ln z =\frac{1}{z}$$
+	
+	\color{blue}{ \begin{center} 
+			$\Ln: \mathbb{C}\backslash\{0\}\rightarrow\mathbb{C}$
+		
+			$\Ln z=\ln |z|=\ln |z|+i \arg z$
+			
+			Non è continua in $\{z \in \mathbb{C} \; \big| \Im(z)=0$ e $\Re(z)\leq 0\}$, $\arg(z)\in]-\pi,\pi]$
+		\end{center}
+	}
+	
+	\segnaposto %pag 305
+\end{example}
+\end{exbar}

@@ -1,0 +1,217 @@
+\section{Calcolo differenziale in $\mathbb{R}^n$}
+
+\begin{definition}
+	$A \subseteq \mathbb{R}^n$, $\overline{x_0}\in \mathbb{R}^n$ punto di accumulazione per $A$, $f:A\rightarrow \mathbb{R}$. $ \lim_{\overline{x}\rightarrow\overline{x_0} }f(0)=l \in \mathbb{R}\Leftrightarrow \forall$ intorno $V$ di $l\,\, \exists\,\,$ un intorno $U$ di $\overline{x_0}\mid \overline{x}\in U \cap A$, $\overline{x}\neq \overline{x_0}\Rightarrow f(\overline{x}\in V) \Leftrightarrow \forall \epsilon >0\,\, \exists\,\, \delta >0\mid 0 < \|\overline{x}-\overline{x_0} \| <\delta$, $\overline{x}\in A\Rightarrow |f(\overline{x})-l|< \epsilon \Leftrightarrow |f(\overline{x})-l|\xrightarrow{\overline{x}\rightarrow\overline{x_0}}0$
+\end{definition}
+
+
+\begin{exbar}
+	$\lim_{(x,y)\rightarrow(0,0)}\frac{\sin(xy)}{xy}$, $f(x,y)=\frac{\sin(xy)}{xy}$, $xy\neq 0$
+	$(x,y)\rightarrow (0,0)\Rightarrow xy \rightarrow 0$\\
+	$\sin(xy)=xy+o(xy)$
+	$\lim_{(x,y)\rightarrow(0,0)} \frac{\sin(xy)}{xy}=\lim_{(x,y)\rightarrow(0,0)}\frac{xy+o(xy)}{xy}=\lim_{(x,y)\rightarrow(0,0)}\frac{xy}{xy}=1$.
+\end{exbar}
+
+
+\begin{exbar}
+		Calcoliamo, se esiste
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}x\frac{\sin(xy)}{x^2+y^2}=
+	\end{equation*}
+	$=\lim_{(x,y)\rightarrow(0,0)}x \frac{xy+o(xy)}{x^2+y^2}=\lim_{(x,y)\rightarrow(0,0)}\frac{x^2y+o(x^2y)}{x^2+y^2}=\lim_{(x,y)\rightarrow(0,0)}\frac{x^2y}{x^2+y^2}$.
+	
+	$\lim_{(x,y)\rightarrow(0,0)} \frac{x^2y}{x^2+y^2}=0 $ perchè $0 \leq |\frac{x^2y}{x^2+y^2}| = \frac{x^2}{x^2+y^2}|y|\leq |y| \rightarrow 0$.
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Calcolare, se esiste,
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow (0,0)}\frac{\ln(1+xy)-\sin(xy)}{2x^2+y^2}
+	\end{equation*}
+	$\ln(1+t)=t-\frac{t^2}{2}+o(t^2)$ per $t \rightarrow 0$\\
+	$\sin(t)=t-\frac{t^3}{6}+o(t^4)$ per $t \rightarrow 0$\\
+	$\ln(1+xy)=xy-\frac{x^2y^2}{2}+o(x^2y^2)$ per $(x,y)\rightarrow (0,0)$\\
+	$\sin(xy)=xy-\frac{x^3y^3}{6}+o(x^4y^4)$ per $(x,y)\rightarrow (0,0)$\\
+	$\ln(1+xy)-\sin(xy)=-\frac{x^2y^2}{2}+\frac{x^3y^3}{6}+o(x^2y^2)=-\frac{x^2y^2}{2}+o(x^2y^2)$ per $(x,y)\rightarrow (0,0)$\\
+	$\lim_{(x,y)\rightarrow(0,0)}\frac{\ln(1+xy)-\sin(xy)}{2x^2+y^2}=\lim_{(x,y)\rightarrow(0,0)} -\frac{1}{2}\frac{x^2y^2}{2x^2+y^2}=0$
+	\begin{itemize}
+		\item $|-\frac{1}{2}\frac{x^2y^2}{2x^2+y^2}|\leq \frac{1}{2}\frac{x^2y^2}{2x^2}=\frac{1}{4}y^2\rightarrow 0$.
+		\item $|-\frac{1}{2}\frac{x^2y^2}{2x^2+y^2}|=\frac{1}{2}x^2\frac{y^2}{2x^2+y^2}\leq \frac{1}{2}x^2\rightarrow 0$.
+		\item $|xy|\leq \frac{1}{2}(x^2+y^2)$\\
+		$0 \leq (|x|-|y|)^2=x^2-2|x||y|+y^2$\\
+		$2|xy|\leq x^2+y^2$\\
+		$|\frac{1}{2}\frac{x^2y^2}{2x^2+y^2}|\leq \frac{1}{2}|xy|\frac{|xy|}{x^2+y^2}\leq \frac{1}{4}|xy|\rightarrow 0$.
+	\end{itemize}
+\end{example}	
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}\frac{e^{xy}-\cos(xy)}{x^2-x^4+|y|}
+	\end{equation*}
+	$e^{xy}=1+xy+o(xy)$ per $(x,y)\rightarrow(0,0)$\\
+	$\cos(xy)=1-\frac{x^2y^2}{2}+o(x^2y^2)$ per $(x,y)\rightarrow(0,0)$\\
+	$e^{xy}-\cos(xy)=xy+o(xy)$\\
+	$\lim_{(x,y)\rightarrow(0,0)}\frac{e^{xy}-\cos(xy)}{x^2-x^4-|y|}=\lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2-x^4+|y|}$\\
+	\textcolor{orange}{$x^2-x^4+|y|\geq x^2-x^4>0$ in un intorno di $x=0$\\
+		$|\frac{xy}{x^2-x^4+|y|}|\leq \frac{|xy|}{x^2-x^4}$\\
+		$\lim_{(x,y)\rightarrow(0,0)}\frac{|xy|}{x^2-x^4}=o(x^2)=\lim_{(x,y)\rightarrow(0,0)} \frac{|x|}{x^2}|y|=\lim_{(x,y)\rightarrow(0,0)} |\frac{x}{y}|$???}\\
+	$x^2-x^4 \geq 0$ definitivamente per $(x,y)\rightarrow(0,0)$\\
+	$x^2-x^4+|y|\geq |y|$ definitivamente per $(x,y)\rightarrow(0,0)$\\
+	$|\frac{xy}{x^2-x^4+|y|}|\leq \frac{|xy|}{|y|}=|x|\xrightarrow{(x,y)\rightarrow(0,0)} 0$ e quindi il limite esiste e vale zero.
+\end{example}
+\end{exbar}
+
+
+
+
+\begin{comment}	
+	
+
+
+
+\subsubsection{\textcolor{red}{Limiti all'infinito}}
+Avevamo introdotto il simbolo  $\infty$ in $\R^n$. Gli intorni di infinito sono complementari di palle di centro l'origine.\\
+Dire che $\overline{x} \rightarrow \infty \Leftrightarrow \|\overline{x}\|\rightarrow +\infty$, $f:\dom f\rightarrow\R$, $\infty$ punto di accumulazione per $\dom f \subseteq \R^n$ allora $\lim_{\overline{x}\rightarrow \infty} f(\overline{x})=l\in \R \Leftrightarrow \forall \,\, \epsilon >0 \,\, \exists\,\, M >0 \,\, |\,\, \|\overline{x}\|>M, \overline{x}\in \dom f \Rightarrow |f(\overline{x})-l|<\epsilon$.\\
+\textcolor{orange}{($\forall$ intorno $V$ di $l$ $\exists$ un intorno $U$ di $\infty \mid \overline{x}\in U \cap \dom f\Rightarrow f(\overline{x})\in V$.)}
+
+\paragraph{\textcolor{red}{Esempio}}
+\begin{equation*}
+	\lim_{(x,y)\rightarrow\infty} \arctan(x^2+|y|)=\frac{\pi}{2}
+\end{equation*}
+\begin{equation*}
+	\lim_{(x,y)\rightarrow\infty} \arctan(x^2+y)= \nexists
+\end{equation*}
+IMMAGINE\\
+IMMAGINE\\
+
+
+\paragraph{\textcolor{red}{Esempio}}
+$p(x,y)=x^2+y$, $\lim_{(x,y)\rightarrow\infty}p(x,y) \,\,\nexists$\\
+$p(x,y)|_{y+x^2=0}=0$\\
+$p(x,y)|_{y+x^2=1}=1$\\
+IMMAGINE\\
+
+\subsubsection{\textcolor{red}{Teorema sui limiti lungo restrizioni}}
+\paragraph{\textcolor{red}{Teorema}}
+$f:\dom f\rightarrow\R$, $\dom f \subseteq\R^n$, $\overline{x_0}\in \R^n\cup\{\infty\}$ punto di accumulazione per $\dom f$. Allora $\lim_{\overline{x}\rightarrow\overline{x_0}}f(\overline{x})=l\Leftrightarrow \forall\,A \subseteq \dom f$ tale che $\overline{x_0}$ è punto di accumulazione per $A$ si ha che 
+\begin{equation*}
+	\lim_{\overline{x}\rightarrow\overline{x_0}}f|_A(\overline{x})=l.
+\end{equation*}
+\textcolor{orange}{ove $f|_A:A\rightarrow \R$, $\overline{x}\mapsto f(\overline{x})$ restrizione di $f$ ad $a$.}
+
+\paragraph{\textcolor{red}{Osservazione}}
+Solitamente il teorema viene utilizzato per dimostrare che un limite non esiste, ad esempio trovando due restrizioni con due limiti diversi, come fatto negli esempi precedenti.
+
+\paragraph{\textcolor{red}{Esempio}}
+Calcolare, se esiste,
+\begin{equation*}
+	\lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2+y^2}.
+\end{equation*}
+Consideriamo la restrizione di $f$ lungo una retta uscente dall'origine di equazione $y= mx$, $f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^x}{x^2+m^2x^2}=\frac{m}{1+m^2}\xrightarrow{(x,y)\rightarrow(0,0)}\frac{m}{1+m^2} \Rightarrow f$ non ha limite in $(0,0)$.
+
+\paragraph{\textcolor{red}{Esempio}}
+Provare che 
+\begin{equation*}
+	\lim_{(x,y)\rightarrow(0,0)}\frac{x^2y}{x^4+y^2} \nexists
+\end{equation*}
+\begin{equation*}
+	f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^3}{x^4+m^2x^2}=\frac{mx^3}{x^2(x^2+m^2)}=\frac{mx}{x^2+m^2}\xrightarrow{(x,y)\rightarrow(0,0)}0
+\end{equation*}
+Le restrizioni di $f$ lungo le rette passanti per l'origine hanno limite zero in $(0,0)$.\\
+Non posso dedurre che $f$ ha limite zero in $(0,0)$.\\
+Se prendiamo la restrizione di $f$ lungo la parabola di equazione $y=x^2$ abbiamo
+\begin{equation*}
+	f(x,y)|_{y=x^2}=f(x,x^2)=\frac{x^4}{x^4+x^4}\xrightarrow{(x,y)\rightarrow(0,0)} \frac{1}{2}
+\end{equation*}
+$\Rightarrow f$ non ha limite in $(0,0)$.
+
+\paragraph{\textcolor{red}{Esempio}}
+\begin{equation*}
+	\lim_{(x,y)\rightarrow(0,0)} \frac{xy}{y-x}, y \neq x
+\end{equation*}
+\begin{equation*}
+	f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^2}{x(m-1)}=\frac{mx}{m-1}\xrightarrow{(x,y)\rightarrow(0,0)}0
+\end{equation*}
+\begin{equation*}
+	f(x,y)|_{y=x+x^2}=f(x,x+x^2)= \frac{x(x+x^2)}{x^2}=\frac{x^2+x^3}{x^2}\xrightarrow{(x,y)\rightarrow(0,0)}1
+\end{equation*}
+$\Rightarrow f$ non ha limite in $(0,0)$.
+
+\subsubsection{\textcolor{red}{Utilizzo delle coordinate polari}}
+$(x_0,y_0)\in \R^2$\\
+IMMAGINE\\
+Coordinate polari di centro $(x_0,y_0)$\\
+$\begin{cases}
+	& x=x_0+\rho \cos(\theta)\\
+	& y=y_0+\rho \sin(\theta)
+\end{cases}$\\
+$\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=l\in \R $\\
+$\forall\,\, \epsilon >0 \,\, \exists \,\, \delta >0 \mid 0 < \|(x,y)-(x_0,y_0)\|< \delta$, $(x,y)\in \dom f \Rightarrow |f(x,y)-l|< \epsilon$\\
+$ \forall \,\, \epsilon >0 \,\, \exists \delta >0 \mid 0<\rho < \delta$\\
+$(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))\in \dom f \Rightarrow |f(x_0+\rho \cos(\theta), y_0+\rho \sin(theta))-l|<\epsilon \forall\theta \in [0,2\pi[$\\
+$\sup_{\theta \in [0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(theta))-l|\leq\epsilon$\\
+$\lim_{\rho\rightarrow0}\sup_{\theta \in [0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(theta))-l|=0$.
+
+\paragraph{\textcolor{red}{Teorema}}
+$f:\dom f \rightarrow\R$, $\dom f \subseteq\R^2$, $(x_0,y_0)\in \R^2$ punto di accumulazione per $\dom f$. Supponiamo \textcolor{orange}{(per semplicità)} che esista un intorno $U$ di $(x_0,y_0)\mid U\backslash \{(x_0,y_0)\}\subseteq \dom f$
+\begin{enumerate}
+	\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=l\in\R \Leftrightarrow \lim_{\rho \rightarrow 0 } \sup_{\theta \in [0,2\pi[}|f(x_0+\rho\cos(\theta),y_0+\rho\sin(\theta))-l|=0$ 
+	\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=+\infty \Leftrightarrow \lim_{\rho\rightarrow 0}\inf_{\theta \in[0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))|=+\infty$
+	\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=-\infty\Leftrightarrow \lim_{\rho\rightarrow 0}\sup_{\theta \in[0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))|=-\infty$
+\end{enumerate}
+
+\paragraph{\textcolor{red}{Esempio}}
+\begin{equation*}
+	\lim_{(x,y)\rightarrow(0,0)}\frac{5x^3+xy^2}{x^2+y^2}
+\end{equation*}
+\begin{enumerate}
+	\item Indovino il candidato valore del limite\\
+	$f(\rho\cos(\theta),\rho\sin(\theta)))=\frac{5\rho^3\cos^2\theta+\rho^3\cos\theta\sin^2\theta}{\rho^2}=\rho[5\cos^2\theta+\cos\theta\sin^2\theta]\xrightarrow{\rho\rightarrow0}0\,\, \forall \theta$.\\
+	Il candidato limite è $l=0$
+	\item Dimostro che effettivamente $f$ ha limite $l$ in $(0,0)$.\\
+	Devo far vedere che \\
+	$\sup_{\theta \in [0,2\pi[} |f(\rho\cos(\theta),\rho\sin(\theta))-l|=\sup_{\theta\in[0,2\pi[} |\rho(5\cos^3(\theta)+\cos(\theta)\sin^2(\theta))|\xrightarrow{\rho\rightarrow0}0$\\
+	$|\rho(5\cos^3(\theta)+\cos(\theta)\sin^2(\theta))|\leq \rho(|5\cos^3\theta|+|\cos\theta\sin^2\theta|)\leq 6\rho$\\
+	$\sup_{\theta\in[0,2\pi[}|\rho(5\cos^3\theta+\cos\theta\sin^2\theta)|\leq 6\rho \xrightarrow{\rho\rightarrow0}0$\\
+	$\Rightarrow \lim_{(x,y)\rightarrow(0,0)\frac{5x^3+xy^2}{x^2+y^2}}=0$
+\end{enumerate}
+
+\paragraph{\textcolor{red}{Esempio}}
+Calcolare $\lim_{(x,y)\rightarrow(0,0)}\frac{|x|^\alpha y}{x^2+2y^2}$ al variare di $\alpha >0$.
+\begin{enumerate}
+	\item Indovino il candidato valore limite
+	\begin{align*}
+		f(\rho\cos\theta,\rho\sin\theta)=&\rho^{1+\alpha}\frac{|\cos\theta|^\alpha\sin\theta}{\rho^2(\cos^2\theta+2\sin^2\theta)}\\
+		&=\rho^{\alpha-1}\frac{|\cos\theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}\xrightarrow{\rho\rightarrow0}\begin{cases}
+			0 &\text{  se  } \alpha > 1\\
+			\frac{|\cos\theta|^\alpha \sin \theta}{\cos^2\theta+2\sin^2\theta}&\text{  se  } \alpha=1\\
+			\infty &\text{  se  } \alpha < 1 \text{  e   } \cos\theta \sin\theta \neq 0\\
+			0 &\text{  se  } \alpha < 1  \text{  e   } \cos\theta \sin\theta = 0
+		\end{cases}
+	\end{align*}
+	\textcolor{orange}{Lungo semirette uscenti da $(0,0)$ ho limiti diversi perchè il limite dipende da $\theta \Rightarrow$ non esiste.\\Ho limiti diversi a seconda che tenda a $(0,0)$ muovendomi lungo gli assi cartesiani o fuori da essi $\Rightarrow$ il limite non esiste.}\\
+	Il limite può esistere solo per $\alpha > 1$.
+	\item Proviamo a dimostrare che il limite esiste e fa zero per $\alpha >1$.\\
+	$\sup_{\theta \in [0,2\pi[}|f(\rho\cos\theta,\rho\sin\theta)-l|=\sup_{\theta \in [0,2\pi[}|\rho^{\alpha-1}\frac{|\cos \theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}-0|\xrightarrow{\rho\rightarrow0}0$?\\
+	$ |\rho^{\alpha-1}\frac{|\cos \theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}| \leq \rho^{\alpha-1}\frac{1}{1}=\rho^{\alpha-1}$\\
+	\textcolor{orange}{$\cos^2\theta+2\sin^2\theta=\cos^2\theta+\sin^2\theta+\sin^2\theta=1+\sin^2\theta \geq 1$}\\
+	$\sup_{\theta \in [0,2\pi[}|\rho^{\alpha-1}\frac{|\cos\theta|^\alpha\sin\theta}{\cos^2\theta+2\sin^2\theta}|\leq \rho^{\alpha-1}\xrightarrow{\rho\rightarrow0}0 \Rightarrow \lim_{(x,y)\rightarrow(0,0)}\frac{|x|^\alpha y}{x^2+2y^2}$ esiste $\Leftrightarrow \alpha> 1$ e in tal caso vale zero. 
+\end{enumerate}
+
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+\end{comment}
