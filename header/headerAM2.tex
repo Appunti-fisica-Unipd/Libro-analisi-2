@@ -61,15 +61,12 @@ skipbelow=\baselineskip
 
 \numberwithin{equation}{subsection}
 
-\begin{comment}
-\newcommand\distr
-{
-	\underset{\mbox{\tiny{triangolare}}}{\stackrel{\mbox{\tiny{disugualianza}}}{\leq}}
-}
-\end{comment}
-
 \newcommand\distr{ \overbracket[0pt][0pt]{
 		\leq}^{\mathclap{\color{blue}{\genfrac{}{}{0pt}{}{\text{disuguaglianza}}{\text{triangolare}}}}}
+}
+
+\newcommand\PdS{ \overbracket[0pt][0pt]
+	{=}^{\mathclap{\color{blue}PdS}}
 }
 
 \newcommand{\myarrow}[1][-45]{%
@@ -116,7 +113,10 @@ skipbelow=\baselineskip
 % cool math symbols
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\phi}{\varphi}
-\newcommand\nrightrightarrows{		\cancel{\rightrightarrows}}
+\newcommand\nrightrightarrows{\cancel{\rightrightarrows}}
+
+% main log
+\newcommand\Ln{\mathrm{Ln}}
 
 
 \newcommand\segnaposto{		\begin{center}
