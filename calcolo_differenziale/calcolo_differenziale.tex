@@ -1,26 +1,41 @@
 \section{Calcolo differenziale in $\mathbb{R}^n$}
 
 \begin{definition}
-	$A \subseteq \mathbb{R}^n$, $\overline{x_0}\in \mathbb{R}^n$ punto di accumulazione per $A$, $f:A\rightarrow \mathbb{R}$. $ \lim_{\overline{x}\rightarrow\overline{x_0} }f(0)=l \in \mathbb{R}\Leftrightarrow \forall$ intorno $V$ di $l\,\, \exists\,\,$ un intorno $U$ di $\overline{x_0}\mid \overline{x}\in U \cap A$, $\overline{x}\neq \overline{x_0}\Rightarrow f(\overline{x}\in V) \Leftrightarrow \forall \epsilon >0\,\, \exists\,\, \delta >0\mid 0 < \|\overline{x}-\overline{x_0} \| <\delta$, $\overline{x}\in A\Rightarrow |f(\overline{x})-l|< \epsilon \Leftrightarrow |f(\overline{x})-l|\xrightarrow{\overline{x}\rightarrow\overline{x_0}}0$
+	$A \subseteq \mathbb{R}^n$, $\overline{x_0}\in \mathbb{R}^n$ punto di accumulazione per $A$, $f:A\rightarrow \mathbb{R}$
+	
+	$$ \lim_{\overline{x}\rightarrow\overline{x_0} }f(0)=\ell \in \mathbb{R}$$
+	
+	$\Leftrightarrow \forall$ intorno $V$ di $l\,\, \exists\,\,$ un intorno $U$ di $\overline{x_0}\mid$ $\overline{x}\in U \cap A$, $\overline{x}\neq \overline{x_0}$ $\Rightarrow f(\overline{x}\in V)$ 
+	
+	$\Leftrightarrow \forall \epsilon >0$ $\exists\,\, \delta >0 \mid$ $0 < \|\overline{x}-\overline{x_0} \| <\delta$, $\overline{x}\in A\Rightarrow |f(\overline{x})-l|< \epsilon$
+	
+	$\Leftrightarrow |f(\overline{x})-l|\xrightarrow{\overline{x}\rightarrow\overline{x_0}}0$
 \end{definition}
 
 
 \begin{exbar}
-	$\lim_{(x,y)\rightarrow(0,0)}\frac{\sin(xy)}{xy}$, $f(x,y)=\frac{\sin(xy)}{xy}$, $xy\neq 0$
-	$(x,y)\rightarrow (0,0)\Rightarrow xy \rightarrow 0$\\
-	$\sin(xy)=xy+o(xy)$
-	$\lim_{(x,y)\rightarrow(0,0)} \frac{\sin(xy)}{xy}=\lim_{(x,y)\rightarrow(0,0)}\frac{xy+o(xy)}{xy}=\lim_{(x,y)\rightarrow(0,0)}\frac{xy}{xy}=1$.
+	$$\lim_{(x,y)\rightarrow(0,0)}\frac{\sin(xy)}{xy}, \qquad f(x,y)=\frac{\sin(xy)}{xy}, \qquad xy\neq 0$$
+	
+	$$(x,y)\rightarrow (0,0)\Rightarrow xy \rightarrow 0$$
+	
+	$$\sin(xy)=xy+o(xy)$$
+	
+	$$\lim_{(x,y)\rightarrow(0,0)} \frac{\sin(xy)}{xy}=\lim_{(x,y)\rightarrow(0,0)}\frac{xy+o(xy)}{xy} \PdS \lim_{(x,y)\rightarrow(0,0)}\frac{xy}{xy}=1$$.
 \end{exbar}
 
 
 \begin{exbar}
-		Calcoliamo, se esiste
-	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)}x\frac{\sin(xy)}{x^2+y^2}=
-	\end{equation*}
-	$=\lim_{(x,y)\rightarrow(0,0)}x \frac{xy+o(xy)}{x^2+y^2}=\lim_{(x,y)\rightarrow(0,0)}\frac{x^2y+o(x^2y)}{x^2+y^2}=\lim_{(x,y)\rightarrow(0,0)}\frac{x^2y}{x^2+y^2}$.
+	Calcoliamo, se esiste
+	\begin{align*}
+		\lim_{(x,y)\rightarrow(0,0)}x\frac{\sin(xy)}{x^2+y^2}
+		&=\lim_{(x,y)\rightarrow(0,0)}x \frac{xy+o(xy)}{x^2+y^2}=\lim_{(x,y)\rightarrow(0,0)}\frac{x^2y+o(x^2y)}{x^2+y^2}=
+		\\
+		&\PdS \lim_{(x,y)\rightarrow(0,0)}\frac{x^2y}{x^2+y^2}
+		\\
+		\lim_{(x,y)\rightarrow(0,0)} \frac{x^2y}{x^2+y^2} &=0 
+	\end{align*} 
 	
-	$\lim_{(x,y)\rightarrow(0,0)} \frac{x^2y}{x^2+y^2}=0 $ perchè $0 \leq |\frac{x^2y}{x^2+y^2}| = \frac{x^2}{x^2+y^2}|y|\leq |y| \rightarrow 0$.
+	$$0 \leq \left|\frac{x^2y}{x^2+y^2} \right| = \uppercomment{\frac{x^2}{x^2+y^2}}{}{\leq 1}|y|\leq |y| \rightarrow 0$$.
 \end{exbar}
 
 
@@ -28,21 +43,36 @@
 \begin{example}
 	Calcolare, se esiste,
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow (0,0)}\frac{\ln(1+xy)-\sin(xy)}{2x^2+y^2}
-	\end{equation*}
-	$\ln(1+t)=t-\frac{t^2}{2}+o(t^2)$ per $t \rightarrow 0$\\
-	$\sin(t)=t-\frac{t^3}{6}+o(t^4)$ per $t \rightarrow 0$\\
-	$\ln(1+xy)=xy-\frac{x^2y^2}{2}+o(x^2y^2)$ per $(x,y)\rightarrow (0,0)$\\
-	$\sin(xy)=xy-\frac{x^3y^3}{6}+o(x^4y^4)$ per $(x,y)\rightarrow (0,0)$\\
-	$\ln(1+xy)-\sin(xy)=-\frac{x^2y^2}{2}+\frac{x^3y^3}{6}+o(x^2y^2)=-\frac{x^2y^2}{2}+o(x^2y^2)$ per $(x,y)\rightarrow (0,0)$\\
-	$\lim_{(x,y)\rightarrow(0,0)}\frac{\ln(1+xy)-\sin(xy)}{2x^2+y^2}=\lim_{(x,y)\rightarrow(0,0)} -\frac{1}{2}\frac{x^2y^2}{2x^2+y^2}=0$
+		\lim_{(x,y)\rightarrow (0,0)}\frac{\ln(1+\uppercomment{xy}{0}{\myarrow[90]})-\sin(\uppercomment{xy}{0}{\myarrow[90]})}{2x^2+y^2}
+	\end{equation*} 
+	\begin{align*} 
+		\ln(1+t) &=t-\frac{t^2}{2}+o(t^2) \text{ per } t \rightarrow 0
+		\\
+		\sin(t) &=t-\frac{t^3}{6}+o(t^4) \text{ per } t \rightarrow 0
+		\\
+		\ln(1+xy) &=xy-\frac{x^2y^2}{2}+o(x^2y^2) \text{ per } (x,y)\rightarrow (0,0)
+		\\
+		\sin(xy) &=xy-\frac{x^3y^3}{6}+o(x^4y^4) \text{ per } (x,y)\rightarrow (0,0)
+		\\
+		\ln(1+xy)-\sin(xy) &=-\frac{x^2y^2}{2}+\frac{x^3y^3}{6}+o(x^2y^2)=
+		\\
+		&=-\frac{x^2y^2}{2}+o(x^2y^2) \text{ per } (x,y)\rightarrow (0,0)
+	\end{align*}
+	
+	$$\lim_{(x,y)\rightarrow(0,0)}\frac{\ln(1+xy)-\sin(xy)}{2x^2+y^2} \PdS \lim_{(x,y)\rightarrow(0,0)} -\frac{1}{2}\frac{x^2y^2}{2x^2+y^2}=0$$
+	
 	\begin{itemize}
-		\item $|-\frac{1}{2}\frac{x^2y^2}{2x^2+y^2}|\leq \frac{1}{2}\frac{x^2y^2}{2x^2}=\frac{1}{4}y^2\rightarrow 0$.
-		\item $|-\frac{1}{2}\frac{x^2y^2}{2x^2+y^2}|=\frac{1}{2}x^2\frac{y^2}{2x^2+y^2}\leq \frac{1}{2}x^2\rightarrow 0$.
-		\item $|xy|\leq \frac{1}{2}(x^2+y^2)$\\
-		$0 \leq (|x|-|y|)^2=x^2-2|x||y|+y^2$\\
-		$2|xy|\leq x^2+y^2$\\
-		$|\frac{1}{2}\frac{x^2y^2}{2x^2+y^2}|\leq \frac{1}{2}|xy|\frac{|xy|}{x^2+y^2}\leq \frac{1}{4}|xy|\rightarrow 0$.
+		\item $\bigg| -\frac{1}{2} \frac{x^2y^2}{\lowercomment{2x^2+y^2}{\geq 2x^2}{}} \bigg|\leq \frac{1}{2}\frac{x^2y^2}{2x^2}=\frac{1}{4}y^2\rightarrow 0$
+		
+		\item $\bigg|-\frac{1}{2}\frac{x^2y^2}{2x^2+y^2} \bigg| =\frac{1}{2}x^2 \uppercomment{\frac{y^2}{2x^2+y^2}}{}{\leq1} \leq \frac{1}{2}x^2\rightarrow 0$
+		
+		\item $|xy|\leq \frac{1}{2}(x^2+y^2)$
+		
+		$$0 \leq (|x|-|y|)^2=x^2-2|x||y|+y^2$$
+	
+		$$2|xy|\leq x^2+y^2$$
+		
+		$$ \bigg| \frac{1}{2}\frac{x^2y^2}{\lowercomment{2x^2+y^2}{\geq x^2+y^2}{}} \bigg|\leq \frac{1}{2}|xy| \uppercomment{\frac{|xy|}{x^2+y^2}}{}{\leq \frac{1}{2}}\leq \frac{1}{4}|xy|\rightarrow 0$$
 	\end{itemize}
 \end{example}	
 \end{exbar}
@@ -53,10 +83,16 @@
 	\begin{equation*}
 		\lim_{(x,y)\rightarrow(0,0)}\frac{e^{xy}-\cos(xy)}{x^2-x^4+|y|}
 	\end{equation*}
-	$e^{xy}=1+xy+o(xy)$ per $(x,y)\rightarrow(0,0)$\\
-	$\cos(xy)=1-\frac{x^2y^2}{2}+o(x^2y^2)$ per $(x,y)\rightarrow(0,0)$\\
-	$e^{xy}-\cos(xy)=xy+o(xy)$\\
-	$\lim_{(x,y)\rightarrow(0,0)}\frac{e^{xy}-\cos(xy)}{x^2-x^4-|y|}=\lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2-x^4+|y|}$\\
+	\begin{align*} 
+		e^{xy} &=1+xy+o(xy) \text{ per } (x,y)\rightarrow(0,0)
+		\\
+		\cos(xy) &=1-\frac{x^2y^2}{2}+o(x^2y^2) \text{ per } (x,y)\rightarrow(0,0)
+		\\
+		e^{xy}-\cos(xy) &=xy+o(xy)
+	\end{align*}
+	
+	$$\lim_{(x,y)\rightarrow(0,0)}\frac{e^{xy}-\cos(xy)}{x^2-x^4-|y|}=\lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2-x^4+|y|}$$
+	
 	\textcolor{orange}{$x^2-x^4+|y|\geq x^2-x^4>0$ in un intorno di $x=0$\\
 		$|\frac{xy}{x^2-x^4+|y|}|\leq \frac{|xy|}{x^2-x^4}$\\
 		$\lim_{(x,y)\rightarrow(0,0)}\frac{|xy|}{x^2-x^4}=o(x^2)=\lim_{(x,y)\rightarrow(0,0)} \frac{|x|}{x^2}|y|=\lim_{(x,y)\rightarrow(0,0)} |\frac{x}{y}|$???}\\
@@ -67,84 +103,100 @@
 \end{exbar}
 
 
-
-
-\begin{comment}	
-	
-
-
-
-\subsubsection{\textcolor{red}{Limiti all'infinito}}
+\subsection{Limiti all'infinito}
 Avevamo introdotto il simbolo  $\infty$ in $\R^n$. Gli intorni di infinito sono complementari di palle di centro l'origine.\\
 Dire che $\overline{x} \rightarrow \infty \Leftrightarrow \|\overline{x}\|\rightarrow +\infty$, $f:\dom f\rightarrow\R$, $\infty$ punto di accumulazione per $\dom f \subseteq \R^n$ allora $\lim_{\overline{x}\rightarrow \infty} f(\overline{x})=l\in \R \Leftrightarrow \forall \,\, \epsilon >0 \,\, \exists\,\, M >0 \,\, |\,\, \|\overline{x}\|>M, \overline{x}\in \dom f \Rightarrow |f(\overline{x})-l|<\epsilon$.\\
 \textcolor{orange}{($\forall$ intorno $V$ di $l$ $\exists$ un intorno $U$ di $\infty \mid \overline{x}\in U \cap \dom f\Rightarrow f(\overline{x})\in V$.)}
 
-\paragraph{\textcolor{red}{Esempio}}
-\begin{equation*}
-	\lim_{(x,y)\rightarrow\infty} \arctan(x^2+|y|)=\frac{\pi}{2}
-\end{equation*}
-\begin{equation*}
-	\lim_{(x,y)\rightarrow\infty} \arctan(x^2+y)= \nexists
-\end{equation*}
-IMMAGINE\\
-IMMAGINE\\
+
+\begin{exbar}
+	\paragraph{\textcolor{red}{Esempio}}
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow\infty} \arctan(x^2+|y|)=\frac{\pi}{2}
+	\end{equation*}
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow\infty} \arctan(x^2+y)= \nexists
+	\end{equation*}
+	\segnaposto %pag 312_1
+	\segnaposto % pag 312_2
+\end{exbar}
 
 
-\paragraph{\textcolor{red}{Esempio}}
-$p(x,y)=x^2+y$, $\lim_{(x,y)\rightarrow\infty}p(x,y) \,\,\nexists$\\
-$p(x,y)|_{y+x^2=0}=0$\\
-$p(x,y)|_{y+x^2=1}=1$\\
-IMMAGINE\\
+\begin{exbar}
+	$p(x,y)=x^2+y$, $\lim_{(x,y)\rightarrow\infty}p(x,y) \,\,\nexists$\\
+	$p(x,y)|_{y+x^2=0}=0$\\
+	$p(x,y)|_{y+x^2=1}=1$\\
+	\segnaposto %pag 313 
+\end{exbar}
 
-\subsubsection{\textcolor{red}{Teorema sui limiti lungo restrizioni}}
-\paragraph{\textcolor{red}{Teorema}}
-$f:\dom f\rightarrow\R$, $\dom f \subseteq\R^n$, $\overline{x_0}\in \R^n\cup\{\infty\}$ punto di accumulazione per $\dom f$. Allora $\lim_{\overline{x}\rightarrow\overline{x_0}}f(\overline{x})=l\Leftrightarrow \forall\,A \subseteq \dom f$ tale che $\overline{x_0}$ è punto di accumulazione per $A$ si ha che 
-\begin{equation*}
-	\lim_{\overline{x}\rightarrow\overline{x_0}}f|_A(\overline{x})=l.
-\end{equation*}
-\textcolor{orange}{ove $f|_A:A\rightarrow \R$, $\overline{x}\mapsto f(\overline{x})$ restrizione di $f$ ad $a$.}
 
-\paragraph{\textcolor{red}{Osservazione}}
-Solitamente il teorema viene utilizzato per dimostrare che un limite non esiste, ad esempio trovando due restrizioni con due limiti diversi, come fatto negli esempi precedenti.
+\begin{theorem} \textbf{sui limiti lungo restrizioni}
+	$f:\dom f\rightarrow\R$, $\dom f \subseteq\R^n$, $\overline{x_0}\in \R^n\cup\{\infty\}$ punto di accumulazione per $\dom f$. Allora $\lim_{\overline{x}\rightarrow\overline{x_0}}f(\overline{x})=l\Leftrightarrow \forall\,A \subseteq \dom f$ tale che $\overline{x_0}$ è punto di accumulazione per $A$ si ha che 
+	\begin{equation*}
+		\lim_{\overline{x}\rightarrow\overline{x_0}}f|_A(\overline{x})=l.
+	\end{equation*}
+	\textcolor{orange}{ove $f|_A:A\rightarrow \R$, $\overline{x}\mapsto f(\overline{x})$ restrizione di $f$ ad $a$.}
+\end{theorem}
 
-\paragraph{\textcolor{red}{Esempio}}
-Calcolare, se esiste,
-\begin{equation*}
-	\lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2+y^2}.
-\end{equation*}
-Consideriamo la restrizione di $f$ lungo una retta uscente dall'origine di equazione $y= mx$, $f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^x}{x^2+m^2x^2}=\frac{m}{1+m^2}\xrightarrow{(x,y)\rightarrow(0,0)}\frac{m}{1+m^2} \Rightarrow f$ non ha limite in $(0,0)$.
 
-\paragraph{\textcolor{red}{Esempio}}
-Provare che 
-\begin{equation*}
-	\lim_{(x,y)\rightarrow(0,0)}\frac{x^2y}{x^4+y^2} \nexists
-\end{equation*}
-\begin{equation*}
-	f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^3}{x^4+m^2x^2}=\frac{mx^3}{x^2(x^2+m^2)}=\frac{mx}{x^2+m^2}\xrightarrow{(x,y)\rightarrow(0,0)}0
-\end{equation*}
-Le restrizioni di $f$ lungo le rette passanti per l'origine hanno limite zero in $(0,0)$.\\
-Non posso dedurre che $f$ ha limite zero in $(0,0)$.\\
-Se prendiamo la restrizione di $f$ lungo la parabola di equazione $y=x^2$ abbiamo
-\begin{equation*}
-	f(x,y)|_{y=x^2}=f(x,x^2)=\frac{x^4}{x^4+x^4}\xrightarrow{(x,y)\rightarrow(0,0)} \frac{1}{2}
-\end{equation*}
-$\Rightarrow f$ non ha limite in $(0,0)$.
+\begin{attbar}
+	\textbf{Osservazione:}
+	
+	Solitamente il teorema viene utilizzato per dimostrare che un limite non esiste, ad esempio trovando due restrizioni con due limiti diversi, come fatto negli esempi precedenti.
+\end{attbar}
 
-\paragraph{\textcolor{red}{Esempio}}
-\begin{equation*}
-	\lim_{(x,y)\rightarrow(0,0)} \frac{xy}{y-x}, y \neq x
-\end{equation*}
-\begin{equation*}
-	f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^2}{x(m-1)}=\frac{mx}{m-1}\xrightarrow{(x,y)\rightarrow(0,0)}0
-\end{equation*}
-\begin{equation*}
-	f(x,y)|_{y=x+x^2}=f(x,x+x^2)= \frac{x(x+x^2)}{x^2}=\frac{x^2+x^3}{x^2}\xrightarrow{(x,y)\rightarrow(0,0)}1
-\end{equation*}
-$\Rightarrow f$ non ha limite in $(0,0)$.
 
-\subsubsection{\textcolor{red}{Utilizzo delle coordinate polari}}
+\begin{exbar}
+\begin{example}
+	Calcolare, se esiste,
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2+y^2}.
+	\end{equation*}
+	Consideriamo la restrizione di $f$ lungo una retta uscente dall'origine di equazione $y= mx$, $f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^x}{x^2+m^2x^2}=\frac{m}{1+m^2}\xrightarrow{(x,y)\rightarrow(0,0)}\frac{m}{1+m^2} \Rightarrow f$ non ha limite in $(0,0)$.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Provare che 
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}\frac{x^2y}{x^4+y^2} \nexists
+	\end{equation*}
+	\begin{equation*}
+		f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^3}{x^4+m^2x^2}=\frac{mx^3}{x^2(x^2+m^2)}=\frac{mx}{x^2+m^2}\xrightarrow{(x,y)\rightarrow(0,0)}0
+	\end{equation*}
+	Le restrizioni di $f$ lungo le rette passanti per l'origine hanno limite zero in $(0,0)$.\\
+	Non posso dedurre che $f$ ha limite zero in $(0,0)$.\\
+	Se prendiamo la restrizione di $f$ lungo la parabola di equazione $y=x^2$ abbiamo
+	\begin{equation*}
+		f(x,y)|_{y=x^2}=f(x,x^2)=\frac{x^4}{x^4+x^4}\xrightarrow{(x,y)\rightarrow(0,0)} \frac{1}{2}
+	\end{equation*}
+	$\Rightarrow f$ non ha limite in $(0,0)$.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} \frac{xy}{y-x}, y \neq x
+	\end{equation*}
+	\begin{equation*}
+		f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^2}{x(m-1)}=\frac{mx}{m-1}\xrightarrow{(x,y)\rightarrow(0,0)}0
+	\end{equation*}
+	\begin{equation*}
+		f(x,y)|_{y=x+x^2}=f(x,x+x^2)= \frac{x(x+x^2)}{x^2}=\frac{x^2+x^3}{x^2}\xrightarrow{(x,y)\rightarrow(0,0)}1
+	\end{equation*}
+	$\Rightarrow f$ non ha limite in $(0,0)$.
+\end{example}
+\end{exbar}
+
+
+\subsection{Utilizzo delle coordinate polari}
+
 $(x_0,y_0)\in \R^2$\\
-IMMAGINE\\
+\segnaposto %pag 316
 Coordinate polari di centro $(x_0,y_0)$\\
 $\begin{cases}
 	& x=x_0+\rho \cos(\theta)\\
@@ -157,51 +209,253 @@ $(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))\in \dom f \Rightarrow |f(x_0+\rh
 $\sup_{\theta \in [0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(theta))-l|\leq\epsilon$\\
 $\lim_{\rho\rightarrow0}\sup_{\theta \in [0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(theta))-l|=0$.
 
-\paragraph{\textcolor{red}{Teorema}}
-$f:\dom f \rightarrow\R$, $\dom f \subseteq\R^2$, $(x_0,y_0)\in \R^2$ punto di accumulazione per $\dom f$. Supponiamo \textcolor{orange}{(per semplicità)} che esista un intorno $U$ di $(x_0,y_0)\mid U\backslash \{(x_0,y_0)\}\subseteq \dom f$
+
+\begin{theorem}
+	$f:\dom f \rightarrow\R$, $\dom f \subseteq\R^2$, $(x_0,y_0)\in \R^2$ punto di accumulazione per $\dom f$. Supponiamo \textcolor{orange}{(per semplicità)} che esista un intorno $U$ di $(x_0,y_0)\mid U\backslash \{(x_0,y_0)\}\subseteq \dom f$
+	\begin{enumerate}
+		\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=l\in\R \Leftrightarrow \lim_{\rho \rightarrow 0 } \sup_{\theta \in [0,2\pi[}|f(x_0+\rho\cos(\theta),y_0+\rho\sin(\theta))-l|=0$ 
+		\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=+\infty \Leftrightarrow \lim_{\rho\rightarrow 0}\inf_{\theta \in[0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))|=+\infty$
+		\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=-\infty\Leftrightarrow \lim_{\rho\rightarrow 0}\sup_{\theta \in[0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))|=-\infty$
+	\end{enumerate}
+\end{theorem}
+
+
+\begin{exbar}
+\begin{example}
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}\frac{5x^3+xy^2}{x^2+y^2}
+	\end{equation*}
+	\begin{enumerate}
+		\item Indovino il candidato valore del limite\\
+		$f(\rho\cos(\theta),\rho\sin(\theta)))=\frac{5\rho^3\cos^2\theta+\rho^3\cos\theta\sin^2\theta}{\rho^2}=\rho[5\cos^2\theta+\cos\theta\sin^2\theta]\xrightarrow{\rho\rightarrow0}0\,\, \forall \theta$.\\
+		Il candidato limite è $l=0$
+		\item Dimostro che effettivamente $f$ ha limite $l$ in $(0,0)$.\\
+		Devo far vedere che \\
+		$\sup_{\theta \in [0,2\pi[} |f(\rho\cos(\theta),\rho\sin(\theta))-l|=\sup_{\theta\in[0,2\pi[} |\rho(5\cos^3(\theta)+\cos(\theta)\sin^2(\theta))|\xrightarrow{\rho\rightarrow0}0$\\
+		$|\rho(5\cos^3(\theta)+\cos(\theta)\sin^2(\theta))|\leq \rho(|5\cos^3\theta|+|\cos\theta\sin^2\theta|)\leq 6\rho$\\
+		$\sup_{\theta\in[0,2\pi[}|\rho(5\cos^3\theta+\cos\theta\sin^2\theta)|\leq 6\rho \xrightarrow{\rho\rightarrow0}0$\\
+		$\Rightarrow \lim_{(x,y)\rightarrow(0,0)\frac{5x^3+xy^2}{x^2+y^2}}=0$
+	\end{enumerate}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	
+	Calcolare $\lim_{(x,y)\rightarrow(0,0)}\frac{|x|^\alpha y}{x^2+2y^2}$ al variare di $\alpha >0$.
+	\begin{enumerate}
+		\item Indovino il candidato valore limite
+		\begin{align*}
+			f(\rho\cos\theta,\rho\sin\theta)=&\rho^{1+\alpha}\frac{|\cos\theta|^\alpha\sin\theta}{\rho^2(\cos^2\theta+2\sin^2\theta)}\\
+			&=\rho^{\alpha-1}\frac{|\cos\theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}\xrightarrow{\rho\rightarrow0}\begin{cases}
+				0 &\text{  se  } \alpha > 1\\
+				\frac{|\cos\theta|^\alpha \sin \theta}{\cos^2\theta+2\sin^2\theta}&\text{  se  } \alpha=1\\
+				\infty &\text{  se  } \alpha < 1 \text{  e   } \cos\theta \sin\theta \neq 0\\
+				0 &\text{  se  } \alpha < 1  \text{  e   } \cos\theta \sin\theta = 0
+			\end{cases}
+		\end{align*}
+		\textcolor{orange}{Lungo semirette uscenti da $(0,0)$ ho limiti diversi perchè il limite dipende da $\theta \Rightarrow$ non esiste.\\Ho limiti diversi a seconda che tenda a $(0,0)$ muovendomi lungo gli assi cartesiani o fuori da essi $\Rightarrow$ il limite non esiste.}\\
+		Il limite può esistere solo per $\alpha > 1$.
+		\item Proviamo a dimostrare che il limite esiste e fa zero per $\alpha >1$.\\
+		$\sup_{\theta \in [0,2\pi[}|f(\rho\cos\theta,\rho\sin\theta)-l|=\sup_{\theta \in [0,2\pi[}|\rho^{\alpha-1}\frac{|\cos \theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}-0|\xrightarrow{\rho\rightarrow0}0$?\\
+		$ |\rho^{\alpha-1}\frac{|\cos \theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}| \leq \rho^{\alpha-1}\frac{1}{1}=\rho^{\alpha-1}$\\
+		\textcolor{orange}{$\cos^2\theta+2\sin^2\theta=\cos^2\theta+\sin^2\theta+\sin^2\theta=1+\sin^2\theta \geq 1$}\\
+		$\sup_{\theta \in [0,2\pi[}|\rho^{\alpha-1}\frac{|\cos\theta|^\alpha\sin\theta}{\cos^2\theta+2\sin^2\theta}|\leq \rho^{\alpha-1}\xrightarrow{\rho\rightarrow0}0 \Rightarrow \lim_{(x,y)\rightarrow(0,0)}\frac{|x|^\alpha y}{x^2+2y^2}$ esiste $\Leftrightarrow \alpha> 1$ e in tal caso vale zero. 
+	\end{enumerate}
+\end{example}
+\end{exbar}
+
+%pag 321
+
+\begin{comment}	
+
+
+\paragraph{\textcolor{red}{Esempio}}
+$f:\R^2\rightarrow \R$ definita da 
+\begin{equation*}
+	f(x,y)=\begin{cases}
+		\frac{\pi-2\arccos(1-e^{-(x^2+y^4)})}{(x^2+y^2)^\alpha}&\text{  se  }(x,y)\neq (0,0)\\
+		0&\text{  se  }(x,y)=(0,0) \\
+	\end{cases}\,\,\,\,\,\,\,\alpha \in \R.
+\end{equation*}
+Trovare tutti e soli i valori di $\alpha$ per cui $f$ è continua. In $\R^2 \backslash\{(0,0)\}$ $f$ è continua perchè rapporto di funzioni continue con denominatore non nullo. L'esercizio si riduce a trovare tutti e soli i valori di $\alpha \in \R \mid \lim_{(x,y)\rightarrow(0,0)}f(x,y)=0=f(0,0)$. Calcoliamo
+\begin{equation*}
+	\lim_{(x,y)\rightarrow(0,0)}  \frac{\pi-2\arccos(1-e^{-(x^2+y^4)})}{(x^2+y^2)^\alpha}
+\end{equation*}
+al variare di $\alpha \in \R$.\\
+\begin{equation*}
+	\arccos t=\arccos(0)+\arccos'(0)t+o(t)=\frac{\pi}{2}-t+o(t)
+\end{equation*}
+\begin{equation*}
+	\arccos(1-e^{-(x^2+y^4)})=\frac{\pi}{2}-(1-e^{-(x^2+y^4)})+o(1-e^{-(x^2+y^4)})
+\end{equation*}
+\begin{equation*}
+	e^{-(x^2+y^4)}=1-(x^2+y^4)+o(x^2+y^4)
+\end{equation*}
+\begin{equation*}
+	\arccos(1-e^{-(x^2+y^4)})=\frac{\pi}{2}-(x^2+y^4)+o(x^2+y^4)
+\end{equation*}
+\begin{equation*}
+	\pi-2\arccos(1-e^{-(x^2+y^4)})=2(x^2+y^4)+o(x^2+y^4) 
+\end{equation*}
+\begin{equation*}
+	\lim_{(x,y)\rightarrow(0,0)}f(x,y)=\lim_{(x,y)\rightarrow(0,0)}2\frac{x^2+y^4}{(x^2+y^2)^\alpha}
+\end{equation*}
 \begin{enumerate}
-	\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=l\in\R \Leftrightarrow \lim_{\rho \rightarrow 0 } \sup_{\theta \in [0,2\pi[}|f(x_0+\rho\cos(\theta),y_0+\rho\sin(\theta))-l|=0$ 
-	\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=+\infty \Leftrightarrow \lim_{\rho\rightarrow 0}\inf_{\theta \in[0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))|=+\infty$
-	\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=-\infty\Leftrightarrow \lim_{\rho\rightarrow 0}\sup_{\theta \in[0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))|=-\infty$
+	\item Individuiamo il candidato limite di $\phi$ passando in coordinate polari.\\
+	$\phi(\rho\cos(\theta),\rho\sin(\theta))=2\frac{\rho^2(\cos^2(\theta)+\rho^2\sin^4(\theta))}{\rho^{2\alpha}}=2\rho^{2(1-\alpha)}(\cos^2\theta+\rho^2\sin^4\theta)$
+	\begin{equation*}
+		\lim_{\rho\rightarrow0}\phi(\rho\cos(\theta),\rho\sin(\theta))=\begin{cases}
+			0&\text{  se  }\alpha<1\\
+			2\cos^2\theta&\text{  se  }\alpha=1\\
+			\infty&\text{  se  }\alpha>1\text{  e  }\cos^2(\theta)\neq 0\\
+			0,1\text{  o  }\infty\text{  a seconda dei casi  }&\text{  se  }\cos^2(\theta)=0
+		\end{cases}
+	\end{equation*}
+	$\Rightarrow$ il limite può esistere solo per $\alpha< 1$ e in tal caso vale $0$.
+	\item Cerchiamo di dimostrare che il limite vale zero stimando\\
+	$\sup_{\theta \in[0,2\pi[}|\phi(\rho\cos(\theta),\rho\sin(\theta))-l|=\sup_{\theta \in[0,2\pi[}|2\rho^{2(1-\alpha)}(\cos^2(\theta)+\rho^2\sin^4(\theta))|$\\
+	$|2\rho^{2(1-\alpha)}(\cos^2(\theta)+\rho^2\sin^4(\theta))|\leq 2\rho^{2(1-\alpha)}(1-\rho^2)$ che non dipende da $\theta$\\
+	$\sup_{\theta \in[0,2\pi[}|2\rho^{2(1-\alpha)}(\cos^2(\theta)+\rho^2\sin^4(\theta))|\leq2\rho^{2(1-\alpha)}(1-\rho^2)\xrightarrow{\rho \rightarrow 0} 0 $ se $\alpha <1$.\\
+	$\Rightarrow \lim_{(x,y)\rightarrow(0,0)}f(x,y)=0$, e quindi $f$ è continua in $(0,0)\Leftrightarrow \alpha<1$.
+\end{enumerate}
+
+\paragraph{\textcolor{red}{Esempio}}
+Sia 
+\begin{equation*}
+	\Gamma=\{(x,y,z)\in\R^3\mid x^2+y^2-z^2\leq 1, x+y+2z=0\} 
+\end{equation*}
+e sia $f:\R^3\rightarrow \R $ definita da 
+\begin{equation*}
+	f(x,y,z)=\begin{cases}
+		\frac{1-\cos(xyz)}{x^2y^2z^2}&\text{  se  }xyz\neq 0\\
+		\frac{1}{2}&\text{  se  }xyz= 0
+	\end{cases}
+\end{equation*}
+Provare che $f$ ha massimo e minimo in $\Gamma$.\\
+Se dimostriamo che $f$ è continua e $\Gamma$ è compatto, il teorema di Weierstrass permette di concludere.\\
+Fuori dai piani coordinati $f$ è continua perchè rapporto di funzioni continue con denominatore non nullo.\\
+Sia $(x_0,y_0,z_0)$ un punto di un piano coordinato, cosicchè $x_0y_0z_0=0$, e calcoliamo il\\ $\lim_{(x,y,z)\rightarrow(x_0,y_0,z_0)}f(x,y,z)$. Se $(x,y,z)\rightarrow(x_0,y_0,z_0)$, allora $xyz\rightarrow0$.\\
+$\cos(xyz)=1-\frac{x^2y^2z^2}{2}+o(x^2y^2z^2)$\\
+$\lim_{(x,y,z)\rightarrow(x_0,y_0,z_0)}=\lim_{(x,y,z)\rightarrow(x_0,y_0,z_0)}\frac{\frac{x^2y^2z^2}{2}}{x^2y^2z^2}=\frac{1}{2}=f(x_0,y_0,z_0) \Rightarrow f$ è continua anche in $(x_0,y_0,z_0)$.\\
+Proviamo a dimostrare che $\Gamma$ è compatto, cioè chiuso e limitato. \\
+$\Gamma=\{(x,y,z)\in\R^3\mid x^2+y^2-z^2\leq 1, x+y+2z=0\} $\\
+$\Gamma_1=\{(x,y,z)\in\R^3\mid x^2+y^2-z^2\leq 1\}$\\
+$\Gamma_2=\{(x,y,z)\in\R^3\mid x+y+2z=0\}$\\
+$\Gamma=\Gamma_1\cap\Gamma_2$   \\
+$\phi_1(x,y,z)=x^2+y^2-z^2$, che è continua $\Gamma_1=\{(x,y,z)\in\R^3\mid \phi_1(x,y,z)\leq 1\}=\phi_1^{-1}(]-\infty,1])\Rightarrow \Gamma_1$ è antimmagine di un chiuso tramite una funzione continua $\Rightarrow$ è chiuso.\\
+$\phi_2(x,y,z)=x+y+2z$ è continua, $\Gamma_2=\{(x,y,z)\in\R^3\mid \phi_2(x,y,z)= 0\}=\phi_2^{-1}(\{0\})\Rightarrow\Gamma_2$ è antimmagine di un chiuso tramite una funzione continua $\Rightarrow$ è chiuso $\Rightarrow$ siccome $\Gamma$ è intersezione di chiusi, è chiuso.\\
+Dimostriamo che $\Gamma $ è limitato. Devo far vedere che $\exists C>0\mid |x|,|y|,|z|\leq C \forall (x,y,z)\in \Gamma$ oppure che $\exists C>0\mid \|(x,y,z)\|\leq C\forall(x,y,z)\in\Gamma$.\\
+$x^2+y^2-z^2\leq 1$, $z=-\frac{x+y}{2}$\\
+$x^2+y^2\leq 1+\left(\frac{x+y}{2}\right)^2=1+\frac{1}{4}(x^2+y^2+2xy)$\\
+$\frac{3}{4}(x^2+y^2)\leq 1+\frac{1}{2}xy\leq 1+\frac{1}{4}(x^2+y^2)$\\
+$\frac{1}{2}(x^2+y^2)\leq 1\Rightarrow x^2+y^2\leq 2\Rightarrow |x|,|y|\leq \sqrt{2}$\\
+$z=-\frac{x+y}{2}\Rightarrow |z|=\frac{|x+y|}{2}\leq \frac{|x|+|y|}{2}\leq \sqrt{2}$.\\
+Prese $C=\sqrt{2}$, si ha $|x|,|y|,|z|\leq C\forall(x,y,z)\in \Gamma\Rightarrow\Gamma$ è limitato.
+
+\subsection{\textcolor{red}{Derivate parziali e direzionali}}
+$f:\R\rightarrow\R$, $x_0\in\R$
+\begin{equation*}
+	\lim_{x \rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}=f'(x_0)
+\end{equation*}
+$f(x)=f(x_0)+f'(x_0)(x-x_0)+o(x-x_0)$\\
+$f:\R^2\rightarrow\R$\\
+IMMAGINE\\
+\textcolor{orange}{Studio il comportamento di $f$ lungo questa retta fissata.}
+\begin{itemize}
+	\item $f:\dom f\rightarrow\R$, $domf \subseteq \R^n$
+	\item $\overline{x_0}\in \dom f$, punto interno
+	\item $\overline{v}\in \R^n$ versore
+\end{itemize}
+Considero la restrizione di $f$ lungo la retta passante per $\overline{x_0}$ e parallela a $\overline{v}$, $\phi_{\overline{v}}(t)=f(\overline{x_0}+t\overline{v})$, ben definita in un intorno di $t=0$ perchè $\overline{x_0}$ è interno a $\dom f$.
+
+\paragraph{\textcolor{red}{Definizione}}
+Se $\phi_{\overline{v}}$ è derivabile in $t=0$ allora 
+\begin{equation*}
+	\phi_{\overline{v}}'(0)=\lim_{t\rightarrow0}\frac{\phi_{\overline{v}}(t)-\phi_{\overline{v}}(0)}{t}=\lim_{t\rightarrow 0}\frac{f(\overline{x_0}+t\overline{v})-f(\overline{x_0})}{t}=D_{\overline{v}}f(x_0)
+\end{equation*}
+si dice derivata di $f$ in $\overline{x_0}$ nella direzione $\overline{v}$ e $f$ si dice derivabile in $\overline{x_0}$ nella direzione $\overline{v}$ o lungo $\overline{v}$.
+
+\paragraph{\textcolor{red}{Esempio}}
+$f(x,y)=e^{x+y}+xy$\\
+$\overline{v}=(\cos\alpha,\sin\alpha)$\\
+Calcoliamo, se esiste, $D_{\overline{v}}f(x_0,y_0)$.\\
+$\phi_{\overline{v}}(t)=f((x_0,y_0)+t(\cos\alpha,\sin\alpha))=f(x_0+t\cos\alpha,y_0+t\sin\alpha)=e^{x_0+y_0+t(\cos\alpha+\sin\alpha)}+(x_0+t\cos\alpha)(y_0+t\sin\alpha)$\\
+$\phi_{\overline{v}}'(0)=(\cos\alpha+\sin\alpha)e^{x_0+y_0}+y_0\cos\alpha+x_0\sin\alpha=D_{\overline{v}}f(x_0,y_0)$.
+
+\paragraph{\textcolor{red}{Definizione}}
+Se $\overline{v}=\overline{e_k}$, $k-$esimo vettore della base canonica, $D_{\overline{e_k}}f(\overline{x_0})$ si dice derivata parziale di $f$ in $x_0$ rispetto a $x_k$ \textcolor{orange}{$(\overline{x}=(x_1,x_2,...,x_n))$} ed è indicata con uno dei simboli $\partial_{x_k}f(\overline{x_0})$, $\frac{\partial f}{\partial x_k}(\overline{x_0})$, $D_{x_k}f(\overline{x_0})$, $f_{x_k}(\overline{x_0})$, $D_kf(\overline{x_0})$.\\
+Se esistono tutte $n$ le derivate parziali di $f$ in $\overline{x_0}$, $\partial_{x_1}f(\overline{x_0}),\partial_{x_2}f(\overline{x_0}),...,\partial_{x_n}f(\overline{x_0})$, f si dice derivabile in $\overline{x_0}$ e il vettore $(\partial_{x_1}f(\overline{x_0}),\partial_{x_2}f(\overline{x_0}),...,\partial_{x_n}f(\overline{x_0}))$ si dice gradiente di $f$ in $\overline{x_0}$ e su scrive $\nabla f(\overline{x_0})$ o grad$f(\overline{x_0})$.
+
+\paragraph{\textcolor{red}{Esempio}}
+$f:\R^2\rightarrow\R$, $(x_0,y_0)\in\R^2$\\
+$\partial_xf(x_0,y_0)=\lim_{t\rightarrow0}\frac{f((x_0,y_0)+t\overline{e_1})-f(x_0,y_0)}{t}=\lim_{t\rightarrow0}\frac{f(x_0+t,y_0)-f(x_0,y_0)}{t}$\\
+$\partial_y f(x_0,y_0)=\lim_{t \rightarrow 0}\frac{f(x_0,y_0+t)-f(x_0,y_0)}{t}$\\
+$\nabla f(x_0,y_0)=(\partial_xf(x_0,y_0),\partial_yf(x_0,y_0))$\\
+$f(x,y)=e^{x^2+y}+x^2y^3$\\
+$\partial_xf(x,y)=2xe^{x^2+y}+2xy^3$\\
+$\partial_yf(x,y)=e^{x^2+y}+3x^2y^2$\\
+$\nabla f(x,y)=(2xe^{x^2+y}+2xy^3,e^{x^2+y}+3x^2y^2)$
+
+\paragraph{\textcolor{red}{Osservazione}}
+$f,g:A\rightarrow\R$, $A\subseteq\R^n$ aperto e derivabile
+\begin{equation*}
+	\partial_{x_k}(\alpha f+\beta g)(\overline{x_0})=\alpha\partial_{x_k}f(\overline{x_0})+\beta\partial_{x_k}g(\overline{x_0}) \text{  per  }   \alpha,\beta\in\R
+\end{equation*}
+\begin{equation*}
+	\partial_{x_k}(f\cdot g)(\overline{x_0})=g(\overline{x_0})\partial_{x_k}f(\overline{x_0})+f(\overline{x_0})\partial_{x_k}g(\overline{x_0})
+\end{equation*}
+\begin{equation*}
+	\partial_{x_k}\left(\frac{f}{g}\right)(\overline{x_0})=\frac{g(\overline{x_0})\partial_{x_k}f(\overline{x_0})-f(\overline{x_0})\partial_{x_k}g(\overline{x_0})}{(g(\overline{x_0}))^2} \text{  per  } g(\overline{x_0})\neq 0.
+\end{equation*}
+Regola della catena: $A\subseteq \R^n$ aperto, $g:A\rightarrow \R$, derivabile in $\overline{x_0}\in A$, $f:I\rightarrow\R$, $I$ intervallo, derivabile in $g(\overline{x_0})\in I$, allora $f\circ g$ è derivabile in $\overline{x_0}$ e 
+\begin{align*}
+	\nabla(f \circ g)(\overline{x_0})&=f'(g(\overline{x_0}))\nabla g(\overline{x_0}),\\
+	\partial_{x_k}(f\circ g)(\overline{x_0})&=f'(g(\overline{x_0}))\partial_{x_k}g(\overline{x_0})
+\end{align*}Se $f:\R\rightarrow\R$ è derivabile in $x_0$, allora
+\begin{enumerate}
+	\item $f$ è continua in $x_0$
+	\item posso definire la retta tangente al grafico di $f$ in $x_0$ come la retta di equazione
+	\begin{equation*}
+		y=f(x_0)+f'(x_0)(x-x_0).
+	\end{equation*}
 \end{enumerate}
 
 \paragraph{\textcolor{red}{Esempio}}
 \begin{equation*}
-	\lim_{(x,y)\rightarrow(0,0)}\frac{5x^3+xy^2}{x^2+y^2}
+	f(x,y)=\begin{cases}
+		\sin\frac{1}{xy}&\text{  se  }xy\neq0\\
+		1& \text{  se  }xy=0
+	\end{cases}
 \end{equation*}
-\begin{enumerate}
-	\item Indovino il candidato valore del limite\\
-	$f(\rho\cos(\theta),\rho\sin(\theta)))=\frac{5\rho^3\cos^2\theta+\rho^3\cos\theta\sin^2\theta}{\rho^2}=\rho[5\cos^2\theta+\cos\theta\sin^2\theta]\xrightarrow{\rho\rightarrow0}0\,\, \forall \theta$.\\
-	Il candidato limite è $l=0$
-	\item Dimostro che effettivamente $f$ ha limite $l$ in $(0,0)$.\\
-	Devo far vedere che \\
-	$\sup_{\theta \in [0,2\pi[} |f(\rho\cos(\theta),\rho\sin(\theta))-l|=\sup_{\theta\in[0,2\pi[} |\rho(5\cos^3(\theta)+\cos(\theta)\sin^2(\theta))|\xrightarrow{\rho\rightarrow0}0$\\
-	$|\rho(5\cos^3(\theta)+\cos(\theta)\sin^2(\theta))|\leq \rho(|5\cos^3\theta|+|\cos\theta\sin^2\theta|)\leq 6\rho$\\
-	$\sup_{\theta\in[0,2\pi[}|\rho(5\cos^3\theta+\cos\theta\sin^2\theta)|\leq 6\rho \xrightarrow{\rho\rightarrow0}0$\\
-	$\Rightarrow \lim_{(x,y)\rightarrow(0,0)\frac{5x^3+xy^2}{x^2+y^2}}=0$
-\end{enumerate}
+$\partial_{x}f(0,0)$, Per calcolarla, guardiamo la restrizione di $f$ lungo l'asse delle ascisse\\
+\begin{equation*}
+	\phi(t)=f(t,0)=0\,\,\forall\,\,t\in\R
+\end{equation*}
+\begin{equation*}
+	\partial_xf(0,0)=\phi'(0)=0
+\end{equation*}
+$\partial_yf(0,0)$, guardiamo $\Phi(t)=f(0,t)$, restrizione di $f$ lungo l'asse delle ordinate
+\begin{equation*}
+	\Phi(t)=f(0,t)=0\,\,\forall\,\, t \in \R
+\end{equation*}
+\begin{equation*}
+	\partial_yf(0,0)=\Phi'(0)=0
+\end{equation*}
+$\Rightarrow f$ è derivabile in $(0,0)$ e $\nabla f(0,0)=(0,0)$. Ma $\lim_{(x,y)\rightarrow(0,0)}f(x,y)$ non esiste perchè non esiste $\lim_{(x,y)\rightarrow(0,0)}\sin\frac{1}{xy}\Rightarrow f$ non è continua in $(0,0)$, anche se è derivabile.  
 
 \paragraph{\textcolor{red}{Esempio}}
-Calcolare $\lim_{(x,y)\rightarrow(0,0)}\frac{|x|^\alpha y}{x^2+2y^2}$ al variare di $\alpha >0$.
-\begin{enumerate}
-	\item Indovino il candidato valore limite
-	\begin{align*}
-		f(\rho\cos\theta,\rho\sin\theta)=&\rho^{1+\alpha}\frac{|\cos\theta|^\alpha\sin\theta}{\rho^2(\cos^2\theta+2\sin^2\theta)}\\
-		&=\rho^{\alpha-1}\frac{|\cos\theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}\xrightarrow{\rho\rightarrow0}\begin{cases}
-			0 &\text{  se  } \alpha > 1\\
-			\frac{|\cos\theta|^\alpha \sin \theta}{\cos^2\theta+2\sin^2\theta}&\text{  se  } \alpha=1\\
-			\infty &\text{  se  } \alpha < 1 \text{  e   } \cos\theta \sin\theta \neq 0\\
-			0 &\text{  se  } \alpha < 1  \text{  e   } \cos\theta \sin\theta = 0
-		\end{cases}
-	\end{align*}
-	\textcolor{orange}{Lungo semirette uscenti da $(0,0)$ ho limiti diversi perchè il limite dipende da $\theta \Rightarrow$ non esiste.\\Ho limiti diversi a seconda che tenda a $(0,0)$ muovendomi lungo gli assi cartesiani o fuori da essi $\Rightarrow$ il limite non esiste.}\\
-	Il limite può esistere solo per $\alpha > 1$.
-	\item Proviamo a dimostrare che il limite esiste e fa zero per $\alpha >1$.\\
-	$\sup_{\theta \in [0,2\pi[}|f(\rho\cos\theta,\rho\sin\theta)-l|=\sup_{\theta \in [0,2\pi[}|\rho^{\alpha-1}\frac{|\cos \theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}-0|\xrightarrow{\rho\rightarrow0}0$?\\
-	$ |\rho^{\alpha-1}\frac{|\cos \theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}| \leq \rho^{\alpha-1}\frac{1}{1}=\rho^{\alpha-1}$\\
-	\textcolor{orange}{$\cos^2\theta+2\sin^2\theta=\cos^2\theta+\sin^2\theta+\sin^2\theta=1+\sin^2\theta \geq 1$}\\
-	$\sup_{\theta \in [0,2\pi[}|\rho^{\alpha-1}\frac{|\cos\theta|^\alpha\sin\theta}{\cos^2\theta+2\sin^2\theta}|\leq \rho^{\alpha-1}\xrightarrow{\rho\rightarrow0}0 \Rightarrow \lim_{(x,y)\rightarrow(0,0)}\frac{|x|^\alpha y}{x^2+2y^2}$ esiste $\Leftrightarrow \alpha> 1$ e in tal caso vale zero. 
-\end{enumerate}
+$f:\R^2\rightarrow\R$
+\begin{equation*}
+	f(x,y)=\begin{cases}
+		1&\text{  se  }x^4<y<x^2\\
+		0 &\text{  altrimenti}
+	\end{cases}
+\end{equation*}
+IMMAGINE\\
+$\Rightarrow D_{\overline{v}}f(0,0)=0\,\,\forall$ versore $\overline{v}$ però $f$ non è continua in $(0,0)$.
+
 
 	
 

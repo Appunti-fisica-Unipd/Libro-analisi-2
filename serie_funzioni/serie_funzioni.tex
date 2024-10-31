@@ -469,7 +469,7 @@ Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D$ $\Rightarrow \sup_{x \in 
 	
 	Studiamo $\sum_{k=2}^{\infty} \left(\frac{x}{y}\right)^k$, $x,y>0$, che è una serie geometrica di ragione $\frac{x}{y}$, che converge $\Leftrightarrow |\frac{x}{y}|< 1 \Leftrightarrow x <y$.
 	
-	La serie di partenza converge puntualmente $\Leftrightarrow 0<x<y\leq x+1$\\
+	La serie di partenza converge puntualmente $\Leftrightarrow 0<x<y\leq x+1$
 
 	\segnaposto
 
@@ -498,10 +498,12 @@ Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D$ $\Rightarrow \sup_{x \in 
 		\left| \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k \right|
 		&= \frac{k^y+1}{k^{x+2}(\ln k)^2} +\left(\frac{x}{y}\right)^k \lowercomment{\leq}{y\leq x+1}{0<\frac{x}{y}\leq a}  \frac{k^{x+1}+\uppercomment{1}{}{\leq k^{x+1}}}{k^{x+2}(\ln k)^2}+a^k \leq
 		\\
-		&\leq 2\frac{k^{x+1}}{k^{x+2}(\ln k)^2}+a^k =\frac{2}{k(\ln k)^2}+a^k, \qquad \forall \,\, x,y >0, 0 < x \leq ay\leq a(x+1)
+		&\leq 2\frac{k^{x+1}}{k^{x+2}(\ln k)^2}+a^k =\frac{2}{k(\ln k)^2}+a^k, 
+		\\
+		\forall \,\, x,y >0, & \qquad 0 < x \leq ay\leq a(x+1)
 	\end{align*}
 
-	La serie $\sum_{k=2}^{\infty}\left[\frac{2}{k(\ln k)^2}+a^k\right]$ converge perchè entrambe le serie 
+	La serie $\sum_{k=2}^{\infty}\left[\frac{2}{k(\ln k)^2}+a^k\right]$ converge perché entrambe le serie 
 	
 	$$\sum_{k=1}^{\infty}\frac{2}{k(\ln k)^2} \text{ e } \sum_{k=2}^{\infty}a^k$$
 	
@@ -628,7 +630,8 @@ Si ricorda che, se $\lim_{k\rightarrow+\infty}|\frac{a_k+1}{a_k}|=\ell$, allora 
 		
 		converge.
 		
-		Se $|z|<\delta$ $\Rightarrow |a_kz^k|=|a_k||z|^k<|a_k|\delta^k$ e la serie $\sum_{k=0}^{\infty}|a_k|\delta^k$ converge perché $\lim_{k \rightarrow+\infty} \sqrt[k]{|a_k|\delta^k}=\frac{\delta}{R}<1$. 
+		Se $|z|<\delta$ $\Rightarrow |a_kz^k|=|a_k||z|^k<|a_k|\delta^k$ e la serie $\sum_{k=0}^{\infty}|a_k|\delta^k$ converge perché\\%riq mal
+		$\lim_{k \rightarrow+\infty} \sqrt[k]{|a_k|\delta^k}=\frac{\delta}{R}<1$. 
 		
 		Allora $\sup_{|z|<\delta}|a_kz^k|<|a_k|\delta^k\,\, \forall k$ e quindi deduco la convergenza totale della serie in $B_{\delta}(0)$.
 		
@@ -771,16 +774,17 @@ E' possibile definire la funzione \textbf{logaritmo principale} di un numero com
 	$$\sum_{k=0}^{\infty} \underbrace{\frac{k!+2^k}{(2k)!-(\arctan k)^{k+1}}}_{\color{blue}a_k} y^k, \qquad y \in \mathbb{R}$$
 	
 	Calcoliamo il raggio di convergenza 
-	\begin{align*} 
-		\lim_{k\rightarrow +\infty}|\frac{a_k+1}{a_k}|
-		&=\lim_{k\rightarrow+\infty} 
+	\begin{gather*} 
+		\lim_{k\rightarrow +\infty} \left| \frac{a_k+1}{a_k} \right| =
+		\\
+		=\lim_{k\rightarrow+\infty} 
 		\frac{\uppercomment{(k+1)!+2^{k+1}}{}{\sim (k+1)!}}
 		{\lowercomment{(2k+2)!-(\arctan(k+1))^{k+2}}{\sim (2k+1)!}{}}
 		\frac{\uppercomment{(2k)!-(\arctan k)^{k+1}}{}{\sim (2k)!}}
 		{\lowercomment{k!+2k}{\sim k!}{}}=
 		\\
-		&\PdS \lim_{k \rightarrow+\infty} \frac{(k+1)!}{(2k+2)!}\cdot\frac{(2k)!}{k!} =\lim_{k\rightarrow +\infty}\frac{k+1}{(2k+2)(2k+1)}=0
-	\end{align*}
+		\PdS \lim_{k \rightarrow+\infty} \frac{(k+1)!}{(2k+2)!}\cdot\frac{(2k)!}{k!} =\lim_{k\rightarrow +\infty}\frac{k+1}{(2k+2)(2k+1)}=0
+	\end{gather*}
 	
 	$$ \Rightarrow R =+\infty$$
 	
