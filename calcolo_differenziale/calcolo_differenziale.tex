@@ -1141,44 +1141,88 @@ Quindi $\nabla f(\overline{x_0})$ fornisce la direzione di massima crescita di $
 	$f(\overline{x_1})=f(\overline{y_1})=f(\overline{y_2})=f(\overline{x_2})$.
 \end{dembar}
 
-%===================================================================pag 357
-
 
 \begin{exbar}
 \begin{example}
 	Sia data la funzione $f: \R^2\rightarrow \R$
 	\begin{equation*}
-		f(x,y)=\begin{cases}
-			\frac{\sin(x|y|^\alpha)}{x^4+|y|^7}& \text{  se  }(x,y)\neq (0,0)\\
+		f(x,y)=
+		\begin{cases}
+			\frac{\sin(x|y|^\alpha)}{x^4+|y|^7}& \text{  se  }(x,y)\neq (0,0)
+			\\
 			0& \text{  se  } (x,y)=(0,0) 
 		\end{cases}
 	\end{equation*}
+	
 	Si stabilisca per quali valori del parametro $\alpha >0$
 	\begin{enumerate}
 		\item $f$ è continua in $(0,0)$
 		\item $f$ è derivabile in $(0,0)$
 		\item $f$ è differenziabile in $(0,0)$
 	\end{enumerate}
+	
+	{\centering $\sim \circ \sim$ \par}
+	
 	\begin{enumerate}
-		\item $\sin(x|y|^\alpha)=x|y|^\alpha+o(x|y|^\alpha)$ per $(x,y)\rightarrow (0,0)$ perchè $x|y|^\alpha \rightarrow 0 $ per $(x,y)\rightarrow (0,0)$\\
-		$\lim_{(x,y)\rightarrow(0,0)}f(x,y)=\lim_{(x,y)\rightarrow(0,0)}\frac{x|y|^\alpha}{x^4+|y|^7}$\\
-		Proviamo con ad utilizzare le coordinate polari \\
-		$\phi(\rho\cos\theta,\rho\sin\theta)=\phi^{\alpha+1}\frac{\cos\theta|\sin \theta|^\alpha}{\rho^4(\cos^4\theta+\rho^3|\sin\theta|^7)}=\rho^{\alpha-3}=\frac{\cos\theta|\sin\theta|^\alpha}{\cos^4\theta+\rho^3|\sin\theta|^7} \\
-		\xrightarrow{\rho \rightarrow 0} \begin{cases}
-			0& \text{  se  } \alpha > 3\\ 
-			\infty& \text{  o qualcosa che dipende da }\theta \text{  se  } \alpha \leq 3
-		\end{cases}$\\
-		$\Rightarrow f$ non è continua in $(0,0)$ se $\alpha \leq 3$. Per $\alpha > 3 $ dobbiamo stimare\\
-		$\sup_{\theta \in [0,2\pi[}\rho^{\alpha-3}\frac{|\cos\theta||\sin\theta|^\alpha}{\cos^4\theta+\rho^3|\sin\theta|^7}$ che non ci porta da nessuna parte \textcolor{orange}{poichè $\leq \rho^{\alpha-3}\frac{|\cos\theta||\sin\theta|^\alpha}{\rho^3|\sin\theta|^7}=\rho^{\alpha-6}|\cos\theta||\sin\theta|^{\alpha-7}\leq \rho^{\alpha-6}\Rightarrow f$ (e non $\Leftrightarrow$) è continua se $\alpha>7$.}\\
-		Proviamo a studiare la restrizione di $\phi$ lungo $x^4 =|y|^7$\\
-		$|\phi(x,y)||_{x^4=|y|^7} = \frac{|y|^{\frac{7}{4}} |y|^\alpha}{2|y|^7}=\frac{1}{2}|y|^{\alpha +\frac{7}{4}-7}=\frac{1}{2}|y|^{\alpha-\frac{21}{4}}$\\
-		Se $\alpha \leq \frac{21}{4} \Rightarrow \phi(x,y) \nrightarrow 0$ per $(x,y)\rightarrow(0,0)$.\\
-		Se voglio aver speranza che $\phi(x,y)\rightarrow 0$ per $(x,y)\rightarrow(0,0)$ deve essere $\alpha > \frac{21}{4}$.\\
-		Siano $0 \leq p \leq q$, allora $\exists\,\, C >0 \mid \frac{|\alpha|^{q-p}|\beta|^p}{|\alpha|^q+|\beta|^q}\leq C\,\, \forall (\alpha,\beta)\neq(0,0)$.\\
-		$|\phi(x,y)|=\frac{|x||y|^\alpha}{|x|^4+|y|^7}\cdot\frac{|x||y|^\alpha}{|x|^q+|y|^{\frac{7}{q}\cdot p}}=|x||y|^\alpha=\frac{1}{|x|^q+|y|^{\frac{7}{q}\cdot p}}\leq |x||y|^\alpha \frac{C}{|x|^{4-p}\cdot |y|^{\frac{7}{q}p}}=$, (per $0 \leq p \leq 4$), $= C|x|^{p-3}|y|^{\alpha-\frac{7}{4}p}=C|y|^{\alpha-\frac{21}{4}}$\\
-		$ \exists  C > 0 \mid |\phi(x,y)|\leq C|y|^{\alpha-\frac{21}{4}}\xrightarrow{(x,y)\rightarrow(0,0)} 0$ se $\alpha > \frac{21}{4}$\\
-		$\Rightarrow f$ è continua in $(0,0)\Leftrightarrow \alpha> \frac{21}{4}$.\\
-		\textcolor{orange}{Dimostriamo che $\exists C > 0 \mid \frac{|\alpha|^{q-p}|\beta|^{p}}{|\alpha|^q+|\beta|^q}\leq C\,\, \forall (\alpha,\beta)\neq(0,0)$\\
+		\item $\sin(x|y|^\alpha)=x|y|^\alpha+o(x|y|^\alpha)$ per $(x,y)\rightarrow (0,0)$ perché $x|y|^\alpha \rightarrow 0 $ per $(x,y)\rightarrow (0,0)$
+		
+		$$\lim_{(x,y)\rightarrow(0,0)}f(x,y) \PdS \lim_{(x,y)\rightarrow(0,0)} \lowercomment{\frac{x|y|^\alpha}{x^4+|y|^7}}{\phi(x,y)}{}$$
+		
+		Proviamo con ad utilizzare le coordinate polari 
+		
+		\begin{align*} 
+			\phi(\rho\cos\theta,\rho\sin\theta)
+			&=\phi^{\alpha+1}\frac{\cos\theta|\sin \theta|^\alpha}{\rho^4(\cos^4\theta+\rho^3|\sin\theta|^7)} =\rho^{\alpha-3}=\frac{\cos\theta|\sin\theta|^\alpha}{\cos^4\theta+\rho^3|\sin\theta|^7} \xrightarrow{\rho \rightarrow 0} 
+			\\
+			&\xrightarrow{\rho \rightarrow 0}
+				\begin{cases}
+				0& \text{  se  } \alpha > 3
+				\\ 
+				\infty& \text{  o qualcosa che dipende da }\theta \text{ se } \alpha \leq 3
+				\end{cases}
+		\end{align*}
+		
+		$\Rightarrow f$ non è continua in $(0,0)$ se $\alpha \leq 3$.
+		
+		Per $\alpha > 3 $ dobbiamo stimare
+		
+		\begin{align*} 
+			\sup_{\theta \in [0,2\pi[} \rho^{\alpha-3}\frac{|\cos\theta||\sin\theta|^\alpha}{\cos^4\theta+\rho^3|\sin\theta|^7}
+			&{\color{blue} \leq \rho^{\alpha-3}\frac{|\cos\theta||\sin\theta|^\alpha}{\rho^3|\sin\theta|^7}=
+			\\
+			&=\rho^{\alpha-6}|\cos\theta||\sin\theta|^{\alpha-7}\leq \rho^{\alpha-6}
+		\end{align*}
+		
+		{\centering \color{blue}se $\alpha >7$ $\Rightarrow f$ {\color{red}(e non $\Leftrightarrow$)} è continua, quindi non ci porta da nessuna parte.}
+		
+		Proviamo a studiare la restrizione di $\phi$ lungo $x^4 =|y|^7$
+		
+		$$|\phi(x,y)||_{x^4=|y|^7} = \frac{|y|^{\frac{7}{4}} |y|^\alpha}{2|y|^7}=\frac{1}{2}|y|^{\alpha +\frac{7}{4}-7}=\frac{1}{2}|y|^{\alpha-\frac{21}{4}}$$
+		
+		Se $\alpha \leq \frac{21}{4} \Rightarrow \phi(x,y) \nrightarrow 0$ per $(x,y)\rightarrow(0,0)$.
+		
+		Se voglio aver speranza che $\phi(x,y)\rightarrow 0$ per $(x,y)\rightarrow(0,0)$ deve essere $\alpha > \frac{21}{4}$.
+		
+		Siano $0 \leq p \leq q$, allora $\exists\,\, C >0 \mid$
+		
+		$$ \underbrace{\frac{|\alpha|^{q-p}|\beta|^p}{|\alpha|^q+|\beta|^q}}_{{\color{blue} \frac{1}{|\alpha|^q+|\beta|^q} \leq \frac{C}{|\alpha|^{q-p} |\beta|^p}}} \leq C \qquad \forall (\alpha,\beta)\neq(0,0)$$
+		
+		\begin{align*} 
+			|\phi(x,y)|
+			&=\frac{|x||y|^\alpha}{|x|^4+|y|^7} \lowercomment{=}{q=4}{} \frac{|x||y|^\alpha}{|x|^q+|y|^{\frac{7}{q}\cdot q}}=
+			\\
+			&= |x||y|^\alpha \cdot \lowercomment{\frac{1}{|x|^q+|y|^{\frac{7}{q}\cdot p}}}{\alpha=|x|}{\beta=|y|^{\frac{7}{q}}} \leq |x||y|^\alpha \frac{C}{|x|^{4-p}\cdot |y|^{\frac{7}{q}p}} = & 0 \leq p \leq 4, 
+			\\
+			&= C|x|^{p-3}|y|^{\alpha-\frac{7}{4}p} \uppercomment{=}{}{p=3} C|y|^{\alpha-\frac{21}{4}}
+		\end{align*}
+		{\centering
+		$ \exists  C > 0 \mid |\phi(x,y)|\leq C|y|^{\alpha-\frac{21}{4}}\xrightarrow{(x,y)\rightarrow(0,0)} 0$ se $\alpha > \frac{21}{4}$
+		
+		$\Rightarrow f$ è continua in $(0,0)\Leftrightarrow \alpha> \frac{21}{4}$. \par}
+		
+		%================================================ PAG 361
+		
+		{\color{blue} Dimostriamo che $\exists C > 0 \mid \frac{|\alpha|^{q-p}|\beta|^{p}}{|\alpha|^q+|\beta|^q}\leq C\,\, \forall (\alpha,\beta)\neq(0,0)$\\
 			$\Phi(0,\beta)=0$, $\alpha \neq 0$\\
 			$\frac{|\alpha|^{q-p}|\beta|^p}{|\alpha|^q+|\beta|^q}=\frac{|\alpha|^q}{|\alpha^q}\frac{|\alpha|^{-p}|\beta|^p}{1+|\frac{\beta}{\alpha}|^q}=\frac{|\frac{\beta}{\alpha}|^p}{1-|\frac{\beta}{\alpha}|^q}\leq C$, $|\frac{\beta}{\alpha}|\geq 0$.}
 		\textcolor{orange}{$\xi(t)=\frac{t^p}{1+t^q}$, $t\geq 0$, $\exists C > 0 \mid \xi(t)\leq C \,\, \forall\,\, t \geq 0$ perchè $0 \leq p \leq q$.}
