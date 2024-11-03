@@ -91,28 +91,43 @@
 		e^{xy}-\cos(xy) &=xy+o(xy)
 	\end{align*}
 	
-	$$\lim_{(x,y)\rightarrow(0,0)}\frac{e^{xy}-\cos(xy)}{x^2-x^4-|y|}=\lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2-x^4+|y|}$$
+	$$\lim_{(x,y)\rightarrow(0,0)}\frac{e^{xy}-\cos(xy)}{x^2-x^4-|y|} \PdS \lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2-\lowercomment{x^4}{\color{blue} o(x^2+|y|)}{\color{red}??}+|y|}$$
 	
-	\textcolor{orange}{$x^2-x^4+|y|\geq x^2-x^4>0$ in un intorno di $x=0$\\
-		$|\frac{xy}{x^2-x^4+|y|}|\leq \frac{|xy|}{x^2-x^4}$\\
-		$\lim_{(x,y)\rightarrow(0,0)}\frac{|xy|}{x^2-x^4}=o(x^2)=\lim_{(x,y)\rightarrow(0,0)} \frac{|x|}{x^2}|y|=\lim_{(x,y)\rightarrow(0,0)} |\frac{x}{y}|$???}\\
-	$x^2-x^4 \geq 0$ definitivamente per $(x,y)\rightarrow(0,0)$\\
-	$x^2-x^4+|y|\geq |y|$ definitivamente per $(x,y)\rightarrow(0,0)$\\
-	$|\frac{xy}{x^2-x^4+|y|}|\leq \frac{|xy|}{|y|}=|x|\xrightarrow{(x,y)\rightarrow(0,0)} 0$ e quindi il limite esiste e vale zero.
+	\begin{center} 
+		{\color{blue}
+			$x^2-x^4+|y|\geq x^2-x^4>0$ in un intorno di $x=0$
+			
+			$\left|\frac{xy}{x^2-x^4+|y|}\right|\leq \frac{|xy|}{x^2-x^4}$
+			
+			$\lim_{(x,y)\rightarrow(0,0)}\frac{|xy|}{x^2-x^4}=o(x^2)=\lim_{(x,y)\rightarrow(0,0)} \frac{|x|}{x^2}|y|=\lim_{(x,y)\rightarrow(0,0)} \left|\frac{x}{y}\right|$ } {\color{red}???}
+	\end{center}
+	
+	$x^2-x^4 \geq 0$ definitivamente per $(x,y)\rightarrow(0,0)$
+	
+	$x^2-x^4+|y|\geq |y|$ definitivamente per $(x,y)\rightarrow(0,0)$
+	
+	$$ \left| \frac{xy}{x^2-x^4+|y|} \right|\leq \frac{|xy|}{|y|}=|x|\xrightarrow{(x,y)\rightarrow(0,0)} 0$$
+	
+	e quindi il limite esiste e vale zero.
 \end{example}
 \end{exbar}
 
 
 \subsection{Limiti all'infinito}
-Avevamo introdotto il simbolo  $\infty$ in $\R^n$. Gli intorni di infinito sono complementari di palle di centro l'origine.\\
-Dire che $\overline{x} \rightarrow \infty \Leftrightarrow \|\overline{x}\|\rightarrow +\infty$, $f:\dom f\rightarrow\R$, $\infty$ punto di accumulazione per $\dom f \subseteq \R^n$ allora $\lim_{\overline{x}\rightarrow \infty} f(\overline{x})=l\in \R \Leftrightarrow \forall \,\, \epsilon >0 \,\, \exists\,\, M >0 \,\, |\,\, \|\overline{x}\|>M, \overline{x}\in \dom f \Rightarrow |f(\overline{x})-l|<\epsilon$.\\
-\textcolor{orange}{($\forall$ intorno $V$ di $l$ $\exists$ un intorno $U$ di $\infty \mid \overline{x}\in U \cap \dom f\Rightarrow f(\overline{x})\in V$.)}
+Avevamo introdotto il simbolo  $\infty$ in $\mathbb{R}^n$. Gli intorni di infinito sono complementari di palle di centro l'origine.
+
+Dire che $\overline{x} \rightarrow \infty$ $\Leftrightarrow \|\overline{x}\|\rightarrow +\infty$, $f:\dom f\rightarrow \R$, $\infty$ punto di accumulazione per $\dom f \subseteq \R^n$
+
+$$\lim_{\overline{x}\rightarrow \infty} f(\overline{x})=l\in \R \Leftrightarrow$$
+
+$\forall \,\, \epsilon >0$ $\exists\,\, M >0 \,\, \mid$ $\|\overline{x}\|>M,$ $\overline{x}\in \dom f$ $\Rightarrow |f(\overline{x})-\ell|<\epsilon$.
+
+{\color{blue}($\forall$ intorno $V$ di $l$ $\exists$ un intorno $U$ di $\infty \mid \overline{x}\in U \cap \dom f\Rightarrow f(\overline{x})\in V$.)}
 
 
 \begin{exbar}
-	\paragraph{\textcolor{red}{Esempio}}
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow\infty} \arctan(x^2+|y|)=\frac{\pi}{2}
+		\lim_{(x,y)\rightarrow\infty} \arctan( \uppercomment{x^2+|y|}{}{+\infty})=\frac{\pi}{2}
 	\end{equation*}
 	\begin{equation*}
 		\lim_{(x,y)\rightarrow\infty} \arctan(x^2+y)= \nexists
@@ -123,25 +138,36 @@ Dire che $\overline{x} \rightarrow \infty \Leftrightarrow \|\overline{x}\|\right
 
 
 \begin{exbar}
-	$p(x,y)=x^2+y$, $\lim_{(x,y)\rightarrow\infty}p(x,y) \,\,\nexists$\\
-	$p(x,y)|_{y+x^2=0}=0$\\
-	$p(x,y)|_{y+x^2=1}=1$\\
+	$$p(x,y)=x^2+y$$
+	 
+	$$\lim_{(x,y)\rightarrow\infty}p(x,y) \,\,\nexists$$
+	
+	$p(x,y)\big|_{y+x^2=0}=0$
+	
+	$p(x,y)\big|_{y+x^2=1}=1$
+	
 	\segnaposto %pag 313 
 \end{exbar}
 
 
 \begin{theorem} \textbf{sui limiti lungo restrizioni}
-	$f:\dom f\rightarrow\R$, $\dom f \subseteq\R^n$, $\overline{x_0}\in \R^n\cup\{\infty\}$ punto di accumulazione per $\dom f$. Allora $\lim_{\overline{x}\rightarrow\overline{x_0}}f(\overline{x})=l\Leftrightarrow \forall\,A \subseteq \dom f$ tale che $\overline{x_0}$ è punto di accumulazione per $A$ si ha che 
+	
+	$f:\dom f\rightarrow\R$, $\dom f \subseteq\R^n$, $\overline{x_0}\in \R^n\cup\{\infty\}$ punto di accumulazione per $\dom f$.
+	
+	Allora $\lim_{\overline{x}\rightarrow\overline{x_0}}f(\overline{x})=\ell$ $\Leftrightarrow \forall\,A \subseteq \dom f$ tale che $\overline{x_0}$ è punto di accumulazione per $A$ si ha che 
 	\begin{equation*}
-		\lim_{\overline{x}\rightarrow\overline{x_0}}f|_A(\overline{x})=l.
+		\lim_{\overline{x}\rightarrow\overline{x_0}}f\big|_A(\overline{x})=\ell
 	\end{equation*}
-	\textcolor{orange}{ove $f|_A:A\rightarrow \R$, $\overline{x}\mapsto f(\overline{x})$ restrizione di $f$ ad $a$.}
+	
+	{\color{blue}
+		$f\big|_A:A\rightarrow \R$, $\overline{x}\mapsto f(\overline{x})$ restrizione di $f$ ad $A$
+	
+		$$\lim_{\genfrac{}{}{0pt}{}{\overline{x}\rightarrow\overline{x_0}}{\overline{x}\in A}} f\big|_A(\overline{x})=\ell $$
+	 }
 \end{theorem}
 
 
 \begin{attbar}
-	\textbf{Osservazione:}
-	
 	Solitamente il teorema viene utilizzato per dimostrare che un limite non esiste, ad esempio trovando due restrizioni con due limiti diversi, come fatto negli esempi precedenti.
 \end{attbar}
 
@@ -150,9 +176,19 @@ Dire che $\overline{x} \rightarrow \infty \Leftrightarrow \|\overline{x}\|\right
 \begin{example}
 	Calcolare, se esiste,
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2+y^2}.
+		\lim_{(x,y)\rightarrow(0,0)} \uppercomment{\frac{xy}{x^2+y^2}}{}{f(x,y)}
 	\end{equation*}
-	Consideriamo la restrizione di $f$ lungo una retta uscente dall'origine di equazione $y= mx$, $f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^x}{x^2+m^2x^2}=\frac{m}{1+m^2}\xrightarrow{(x,y)\rightarrow(0,0)}\frac{m}{1+m^2} \Rightarrow f$ non ha limite in $(0,0)$.
+	
+	Consideriamo la restrizione di $f$ lungo una retta uscente dall'origine di equazione $y= mx$
+	
+	\begin{align*} 
+		f(x,y)\big|_{y=mx}
+		&=f(x,mx)=\frac{mx^x}{x^2+m^2x^2}=
+		\\
+		=\frac{m}{1+m^2}\xrightarrow{(x,y)\rightarrow(0,0)}\frac{m}{1+m^2}
+	\end{align*} 
+	
+	{\centering $\Rightarrow f$ non ha limite in $(0,0)$. \par}
 \end{example}
 \end{exbar}
 
@@ -161,61 +197,85 @@ Dire che $\overline{x} \rightarrow \infty \Leftrightarrow \|\overline{x}\|\right
 \begin{example}
 	Provare che 
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)}\frac{x^2y}{x^4+y^2} \nexists
+		\lim_{(x,y)\rightarrow(0,0)} \uppercomment{\frac{x^2y}{x^4+y^2}}{}{f(x,y)} \text{ non esiste}
 	\end{equation*}
-	\begin{equation*}
-		f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^3}{x^4+m^2x^2}=\frac{mx^3}{x^2(x^2+m^2)}=\frac{mx}{x^2+m^2}\xrightarrow{(x,y)\rightarrow(0,0)}0
-	\end{equation*}
-	Le restrizioni di $f$ lungo le rette passanti per l'origine hanno limite zero in $(0,0)$.\\
-	Non posso dedurre che $f$ ha limite zero in $(0,0)$.\\
+	\begin{align*}
+		f(x,y)\big|_{y=mx}
+		&=f(x,mx)=\frac{mx^3}{x^4+m^2x^2}=
+		\\
+		&=\frac{mx^3}{x^2(x^2+m^2)}=\frac{mx}{x^2+m^2}\xrightarrow{(x,y)\rightarrow(0,0)}0
+	\end{align*}
+	
+	Le restrizioni di $f$ lungo le rette passanti per l'origine hanno limite zero in $(0,0)$.
+	
+	\textbf{Non posso dedurre che $f$ ha limite zero in $(0,0)$.}
+	
 	Se prendiamo la restrizione di $f$ lungo la parabola di equazione $y=x^2$ abbiamo
 	\begin{equation*}
-		f(x,y)|_{y=x^2}=f(x,x^2)=\frac{x^4}{x^4+x^4}\xrightarrow{(x,y)\rightarrow(0,0)} \frac{1}{2}
+		f(x,y)\big|_{y=x^2}=f(x,x^2)=\frac{x^4}{x^4+x^4}\xrightarrow{(x,y)\rightarrow(0,0)} \frac{1}{2}
 	\end{equation*}
-	$\Rightarrow f$ non ha limite in $(0,0)$.
+	
+	{\centering $\Rightarrow f$ non ha limite in $(0,0)$. \par}
 \end{example}
 \end{exbar}
 
 
 \begin{exbar}
 \begin{example}
-	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} \frac{xy}{y-x}, y \neq x
-	\end{equation*}
-	\begin{equation*}
-		f(x,y)|_{y=mx}=f(x,mx)=\frac{mx^2}{x(m-1)}=\frac{mx}{m-1}\xrightarrow{(x,y)\rightarrow(0,0)}0
-	\end{equation*}
-	\begin{equation*}
-		f(x,y)|_{y=x+x^2}=f(x,x+x^2)= \frac{x(x+x^2)}{x^2}=\frac{x^2+x^3}{x^2}\xrightarrow{(x,y)\rightarrow(0,0)}1
-	\end{equation*}
-	$\Rightarrow f$ non ha limite in $(0,0)$.
+	\begin{gather*}
+		\lim_{(x,y)\rightarrow(0,0)} \uppercomment{\frac{xy}{y-x}}{}{f(x,y)}, \qquad y \neq x
+		\\
+		f(x,y)\big|_{y=mx}=f(x,mx)=\frac{mx^2}{x(m-1)}=\frac{mx}{m-1}\xrightarrow{(x,y)\rightarrow(0,0)}0
+		\\
+		f(x,y)\big|_{y=x+x^2}=f(x,x+x^2)= \frac{x(x+x^2)}{x^2}=\frac{x^2+x^3}{x^2}\xrightarrow{(x,y)\rightarrow(0,0)}1
+	\end{gather*}
+	
+	{\centering $\Rightarrow f$ non ha limite in $(0,0)$. \par}
 \end{example}
 \end{exbar}
 
 
 \subsection{Utilizzo delle coordinate polari}
 
-$(x_0,y_0)\in \R^2$\\
+$(x_0,y_0)\in \R^2$
+
 \segnaposto %pag 316
-Coordinate polari di centro $(x_0,y_0)$\\
-$\begin{cases}
-	& x=x_0+\rho \cos(\theta)\\
-	& y=y_0+\rho \sin(\theta)
-\end{cases}$\\
-$\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=l\in \R $\\
-$\forall\,\, \epsilon >0 \,\, \exists \,\, \delta >0 \mid 0 < \|(x,y)-(x_0,y_0)\|< \delta$, $(x,y)\in \dom f \Rightarrow |f(x,y)-l|< \epsilon$\\
-$ \forall \,\, \epsilon >0 \,\, \exists \delta >0 \mid 0<\rho < \delta$\\
-$(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))\in \dom f \Rightarrow |f(x_0+\rho \cos(\theta), y_0+\rho \sin(theta))-l|<\epsilon \forall\theta \in [0,2\pi[$\\
-$\sup_{\theta \in [0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(theta))-l|\leq\epsilon$\\
-$\lim_{\rho\rightarrow0}\sup_{\theta \in [0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(theta))-l|=0$.
+
+Coordinate polari di centro $(x_0,y_0)$
+
+\begin{gather*}
+	\begin{cases}
+		x=x_0+\rho \cos(\theta)
+		\\
+		y=y_0+\rho \sin(\theta)
+	\end{cases}
+	\\
+	\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=\ell\in \R 
+	\\
+	\forall\,\, \epsilon >0 \,\, \exists \,\, \delta >0 \; \mid \; 0 < \overbrace{\|(x,y)-(x_0,y_0)\|}^{{\color{blue} =\delta}} \leq \delta,
+	\qquad
+	(x,y)\in \dom f \Rightarrow |f(x,y)-\ell|< \epsilon
+	\\
+	\forall \,\, \epsilon >0 \,\, \exists \delta >0 \mid 0<\rho < \delta
+	\qquad
+	(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))\in \dom f
+	\\
+	\Rightarrow |f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))-\ell|<\epsilon \qquad \forall\theta \in [0,2\pi[
+	\\
+	\sup_{\theta \in [0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))-\ell|\leq\epsilon
+	\\
+	\lim_{\rho\rightarrow0}\sup_{\theta \in [0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))-\ell|=0
+\end{gather*}
 
 
 \begin{theorem}
-	$f:\dom f \rightarrow\R$, $\dom f \subseteq\R^2$, $(x_0,y_0)\in \R^2$ punto di accumulazione per $\dom f$. Supponiamo \textcolor{orange}{(per semplicità)} che esista un intorno $U$ di $(x_0,y_0)\mid U\backslash \{(x_0,y_0)\}\subseteq \dom f$
+	$f:\dom f \rightarrow\R$, $\dom f \subseteq\R^2$, $(x_0,y_0)\in \R^2$ punto di accumulazione per $\dom f$. Supponiamo {\color{blue}(per semplicità)} che esista un intorno $U$ di $(x_0,y_0) \; \mid$ $U\backslash \{(x_0,y_0)\}\subseteq \dom f$
 	\begin{enumerate}
-		\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=l\in\R \Leftrightarrow \lim_{\rho \rightarrow 0 } \sup_{\theta \in [0,2\pi[}|f(x_0+\rho\cos(\theta),y_0+\rho\sin(\theta))-l|=0$ 
-		\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=+\infty \Leftrightarrow \lim_{\rho\rightarrow 0}\inf_{\theta \in[0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))|=+\infty$
-		\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=-\infty\Leftrightarrow \lim_{\rho\rightarrow 0}\sup_{\theta \in[0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))|=-\infty$
+		\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=\ell\in\R \Leftrightarrow$ $\lim_{\rho \rightarrow 0 } \sup_{\theta \in [0,2\pi[}|f(x_0+\rho\cos(\theta),y_0+\rho\sin(\theta))-\ell|=0$ 
+		
+		\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=+\infty \Leftrightarrow$ $\lim_{\rho\rightarrow 0}\inf_{\theta \in[0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))|=+\infty$
+		
+		\item $\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=-\infty\Leftrightarrow$  $\lim_{\rho\rightarrow 0}\sup_{\theta \in[0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+\rho \sin(\theta))|=-\infty$
 	\end{enumerate}
 \end{theorem}
 
@@ -223,18 +283,30 @@ $\lim_{\rho\rightarrow0}\sup_{\theta \in [0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+
 \begin{exbar}
 \begin{example}
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)}\frac{5x^3+xy^2}{x^2+y^2}
+		\lim_{(x,y)\rightarrow(0,0)} \uppercomment{\frac{5x^3+xy^2}{x^2+y^2}}{}{f(x,y)}
 	\end{equation*}
 	\begin{enumerate}
-		\item Indovino il candidato valore del limite\\
-		$f(\rho\cos(\theta),\rho\sin(\theta)))=\frac{5\rho^3\cos^2\theta+\rho^3\cos\theta\sin^2\theta}{\rho^2}=\rho[5\cos^2\theta+\cos\theta\sin^2\theta]\xrightarrow{\rho\rightarrow0}0\,\, \forall \theta$.\\
-		Il candidato limite è $l=0$
-		\item Dimostro che effettivamente $f$ ha limite $l$ in $(0,0)$.\\
-		Devo far vedere che \\
-		$\sup_{\theta \in [0,2\pi[} |f(\rho\cos(\theta),\rho\sin(\theta))-l|=\sup_{\theta\in[0,2\pi[} |\rho(5\cos^3(\theta)+\cos(\theta)\sin^2(\theta))|\xrightarrow{\rho\rightarrow0}0$\\
-		$|\rho(5\cos^3(\theta)+\cos(\theta)\sin^2(\theta))|\leq \rho(|5\cos^3\theta|+|\cos\theta\sin^2\theta|)\leq 6\rho$\\
-		$\sup_{\theta\in[0,2\pi[}|\rho(5\cos^3\theta+\cos\theta\sin^2\theta)|\leq 6\rho \xrightarrow{\rho\rightarrow0}0$\\
-		$\Rightarrow \lim_{(x,y)\rightarrow(0,0)\frac{5x^3+xy^2}{x^2+y^2}}=0$
+		\item Indovino il candidato valore del limite
+		\begin{align*} 
+			f(\rho\cos(\theta),\rho\sin(\theta)))
+			&=\frac{5\rho^3\cos^2\theta+\rho^3\cos\theta\sin^2\theta}{\rho^2}=
+			\\
+			&=\rho[5\cos^2\theta+\cos\theta\sin^2\theta]\xrightarrow{\rho\rightarrow0}0 \qquad \forall \theta
+		\end{align*}
+
+		Il candidato limite è $\ell=0$
+
+		\item Dimostro che effettivamente $f$ ha limite $l$ in $(0,0)$.
+		
+		Devo far vedere che 
+		
+		$$\sup_{\theta \in [0,2\pi[} |f(\rho\cos(\theta),\rho\sin(\theta))-\ell|=\sup_{\theta\in[0,2\pi[} |\rho(5\cos^3(\theta)+\cos(\theta)\sin^2(\theta))|\xrightarrow{\rho\rightarrow0}0$$
+		
+		$$|\rho(5\cos^3(\theta)+\cos(\theta)\sin^2(\theta))|\leq \rho(|5\cos^3\theta|+|\cos\theta\sin^2\theta|)\leq 6\rho$$
+		
+		$$\sup_{\theta\in[0,2\pi[}|\rho(5\cos^3\theta+\cos\theta\sin^2\theta)|\leq 6\rho \xrightarrow{\rho\rightarrow0}0$$
+		
+		$$\Rightarrow \lim_{(x,y)\rightarrow(0,0)\frac{5x^3+xy^2}{x^2+y^2}}=0$$
 	\end{enumerate}
 \end{example}
 \end{exbar}
@@ -242,230 +314,1866 @@ $\lim_{\rho\rightarrow0}\sup_{\theta \in [0,2\pi[}|f(x_0+\rho \cos(\theta), y_0+
 
 \begin{exbar}
 \begin{example}
-	
-	Calcolare $\lim_{(x,y)\rightarrow(0,0)}\frac{|x|^\alpha y}{x^2+2y^2}$ al variare di $\alpha >0$.
+	Calcolare $\lim_{(x,y)\rightarrow(0,0)} \uppercomment{\frac{|x|^\alpha y}{x^2+2y^2}}{}{f(x,y)}$ al variare di $\alpha >0$.
 	\begin{enumerate}
 		\item Indovino il candidato valore limite
+		
 		\begin{align*}
-			f(\rho\cos\theta,\rho\sin\theta)=&\rho^{1+\alpha}\frac{|\cos\theta|^\alpha\sin\theta}{\rho^2(\cos^2\theta+2\sin^2\theta)}\\
-			&=\rho^{\alpha-1}\frac{|\cos\theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}\xrightarrow{\rho\rightarrow0}\begin{cases}
-				0 &\text{  se  } \alpha > 1\\
-				\frac{|\cos\theta|^\alpha \sin \theta}{\cos^2\theta+2\sin^2\theta}&\text{  se  } \alpha=1\\
-				\infty &\text{  se  } \alpha < 1 \text{  e   } \cos\theta \sin\theta \neq 0\\
-				0 &\text{  se  } \alpha < 1  \text{  e   } \cos\theta \sin\theta = 0
+			f(\rho\cos\theta,\rho\sin\theta)
+			&=\rho^{1+\alpha}\frac{|\cos\theta|^\alpha\sin\theta}{\rho^2(\cos^2\theta+2\sin^2\theta)}=\rho^{\alpha-1}\frac{|\cos\theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}\rightarrow
+			\\
+			&\xrightarrow{\rho\rightarrow0}
+			\begin{cases}
+				0 &\text{  se  } \alpha > 1 
+				\\
+				\frac{|\cos\theta|^\alpha \sin \theta}{\cos^2\theta+2\sin^2\theta} &\text{  se  } \alpha=1  {\color{teal}*}
+				\\
+				\infty &\text{  se  } \alpha < 1 \text{  e   } \cos\theta \sin\theta \neq 0  {\color{blue}*}
+				\\
+				0 &\text{  se  } \alpha < 1  \text{  e   } \cos\theta \sin\theta = 0  {\color{blue}*}
 			\end{cases}
 		\end{align*}
-		\textcolor{orange}{Lungo semirette uscenti da $(0,0)$ ho limiti diversi perchè il limite dipende da $\theta \Rightarrow$ non esiste.\\Ho limiti diversi a seconda che tenda a $(0,0)$ muovendomi lungo gli assi cartesiani o fuori da essi $\Rightarrow$ il limite non esiste.}\\
+		
+		{\color{teal} Lungo semirette uscenti da $(0,0)$ ho limiti diversi perché il limite dipende da $\theta \Rightarrow$ non esiste.}
+		
+		{\color{blue} Ho limiti diversi a seconda che tenda a $(0,0)$ muovendomi lungo gli assi cartesiani o fuori da essi $\Rightarrow$ il limite non esiste.}
+		
 		Il limite può esistere solo per $\alpha > 1$.
-		\item Proviamo a dimostrare che il limite esiste e fa zero per $\alpha >1$.\\
-		$\sup_{\theta \in [0,2\pi[}|f(\rho\cos\theta,\rho\sin\theta)-l|=\sup_{\theta \in [0,2\pi[}|\rho^{\alpha-1}\frac{|\cos \theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}-0|\xrightarrow{\rho\rightarrow0}0$?\\
-		$ |\rho^{\alpha-1}\frac{|\cos \theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}| \leq \rho^{\alpha-1}\frac{1}{1}=\rho^{\alpha-1}$\\
-		\textcolor{orange}{$\cos^2\theta+2\sin^2\theta=\cos^2\theta+\sin^2\theta+\sin^2\theta=1+\sin^2\theta \geq 1$}\\
-		$\sup_{\theta \in [0,2\pi[}|\rho^{\alpha-1}\frac{|\cos\theta|^\alpha\sin\theta}{\cos^2\theta+2\sin^2\theta}|\leq \rho^{\alpha-1}\xrightarrow{\rho\rightarrow0}0 \Rightarrow \lim_{(x,y)\rightarrow(0,0)}\frac{|x|^\alpha y}{x^2+2y^2}$ esiste $\Leftrightarrow \alpha> 1$ e in tal caso vale zero. 
+		
+		\item Proviamo a dimostrare che il limite esiste e fa zero per $\alpha >1$.
+		
+		$$\sup_{\theta \in [0,2\pi[} \left| f(\rho\cos\theta,\rho\sin\theta)-\ell \right| = \sup_{\theta \in [0,2\pi[} \left|\rho^{\alpha-1}\frac{|\cos \theta|^\alpha \sin\theta}{\cos^2\theta+2\sin^2\theta}-0 \right| {\color{blue} \xrightarrow[\text{per } \rho \to 0]{?}0}$$
+		
+		$$\bigg| \rho^{\alpha-1}\frac{ \uppercomment{|\cos \theta|^\alpha \sin\theta}{}{\leq 1}}{\cos^2\theta+2\sin^2\theta} \bigg| \lowercomment{\leq}{\cos^2\theta+2\sin^2\theta=\cos^2\theta+\sin^2\theta+\sin^2\theta=}{1+\sin^2\theta \geq 1} \rho^{\alpha-1}\frac{1}{1}=\rho^{\alpha-1}$$
+		
+		$$\sup_{\theta \in [0,2\pi[} \left| \rho^{\alpha-1}\frac{|\cos\theta|^\alpha\sin\theta}{\cos^2\theta+2\sin^2\theta} \right| \leq \rho^{\alpha-1}\xrightarrow{\rho\rightarrow0}0$$
+		
+		$\Rightarrow \lim_{(x,y)\rightarrow(0,0)}\frac{|x|^\alpha y}{x^2+2y^2}$ esiste $\Leftrightarrow \alpha> 1$ e in tal caso vale zero. 
 	\end{enumerate}
 \end{example}
 \end{exbar}
 
-%pag 321
 
-\begin{comment}	
-
-
-\paragraph{\textcolor{red}{Esempio}}
-$f:\R^2\rightarrow \R$ definita da 
-\begin{equation*}
-	f(x,y)=\begin{cases}
-		\frac{\pi-2\arccos(1-e^{-(x^2+y^4)})}{(x^2+y^2)^\alpha}&\text{  se  }(x,y)\neq (0,0)\\
-		0&\text{  se  }(x,y)=(0,0) \\
-	\end{cases}\,\,\,\,\,\,\,\alpha \in \R.
-\end{equation*}
-Trovare tutti e soli i valori di $\alpha$ per cui $f$ è continua. In $\R^2 \backslash\{(0,0)\}$ $f$ è continua perchè rapporto di funzioni continue con denominatore non nullo. L'esercizio si riduce a trovare tutti e soli i valori di $\alpha \in \R \mid \lim_{(x,y)\rightarrow(0,0)}f(x,y)=0=f(0,0)$. Calcoliamo
-\begin{equation*}
-	\lim_{(x,y)\rightarrow(0,0)}  \frac{\pi-2\arccos(1-e^{-(x^2+y^4)})}{(x^2+y^2)^\alpha}
-\end{equation*}
-al variare di $\alpha \in \R$.\\
-\begin{equation*}
-	\arccos t=\arccos(0)+\arccos'(0)t+o(t)=\frac{\pi}{2}-t+o(t)
-\end{equation*}
-\begin{equation*}
-	\arccos(1-e^{-(x^2+y^4)})=\frac{\pi}{2}-(1-e^{-(x^2+y^4)})+o(1-e^{-(x^2+y^4)})
-\end{equation*}
-\begin{equation*}
-	e^{-(x^2+y^4)}=1-(x^2+y^4)+o(x^2+y^4)
-\end{equation*}
-\begin{equation*}
-	\arccos(1-e^{-(x^2+y^4)})=\frac{\pi}{2}-(x^2+y^4)+o(x^2+y^4)
-\end{equation*}
-\begin{equation*}
-	\pi-2\arccos(1-e^{-(x^2+y^4)})=2(x^2+y^4)+o(x^2+y^4) 
-\end{equation*}
-\begin{equation*}
-	\lim_{(x,y)\rightarrow(0,0)}f(x,y)=\lim_{(x,y)\rightarrow(0,0)}2\frac{x^2+y^4}{(x^2+y^2)^\alpha}
-\end{equation*}
-\begin{enumerate}
-	\item Individuiamo il candidato limite di $\phi$ passando in coordinate polari.\\
-	$\phi(\rho\cos(\theta),\rho\sin(\theta))=2\frac{\rho^2(\cos^2(\theta)+\rho^2\sin^4(\theta))}{\rho^{2\alpha}}=2\rho^{2(1-\alpha)}(\cos^2\theta+\rho^2\sin^4\theta)$
+\begin{exbar}
+\begin{example}
+	$f:\R^2\rightarrow \R$ definita da 
 	\begin{equation*}
-		\lim_{\rho\rightarrow0}\phi(\rho\cos(\theta),\rho\sin(\theta))=\begin{cases}
-			0&\text{  se  }\alpha<1\\
-			2\cos^2\theta&\text{  se  }\alpha=1\\
-			\infty&\text{  se  }\alpha>1\text{  e  }\cos^2(\theta)\neq 0\\
-			0,1\text{  o  }\infty\text{  a seconda dei casi  }&\text{  se  }\cos^2(\theta)=0
+		f(x,y)=
+		\begin{cases}
+			\frac{\pi-2\arccos(1-e^{-(x^2+y^4)})}{(x^2+y^2)^\alpha}&\text{  se  }(x,y)\neq (0,0)
+			\\
+			0&\text{  se  }(x,y)=(0,0)
+		\end{cases} \qquad\qquad \alpha \in \R.
+	\end{equation*}
+	
+	Trovare tutti e soli i valori di $\alpha$ per cui $f$ è continua. In $\R^2 \backslash\{(0,0)\}$ $f$ è continua perché rapporto di funzioni continue con denominatore non nullo.
+	
+	L'esercizio si riduce a trovare tutti e soli i valori di $\alpha \in \R \mid$
+	
+	$$\lim_{(x,y)\rightarrow(0,0)}f(x,y)=0=f(0,0)$$
+	
+	Calcoliamo
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}  \frac{\pi-2\arccos(\uppercomment{1-e^{-(x^2+y^4)}}{}{0 \text{ per } (x,y)\to(0,0)} )}{(x^2+y^2)^\alpha}
+	\end{equation*}
+	
+	al variare di $\alpha \in \R$.
+	
+	\begin{align*}
+		\arccos t &=\arccos(0)+\arccos'(0)t+o(t)=\frac{\pi}{2}-t+o(t)
+		\\
+		\arccos(1-e^{-(x^2+y^4)}) &=\frac{\pi}{2}-(1-e^{-(x^2+y^4)})+o(1-e^{-(x^2+y^4)})
+		\\
+		e^{-(x^2+y^4)} &=1-(x^2+y^4)+o(x^2+y^4)
+		\\
+		\arccos(1-e^{-(x^2+y^4)}) &=\frac{\pi}{2}-(x^2+y^4)+o(x^2+y^4)
+		\\
+		\pi-2\arccos(1-e^{-(x^2+y^4)}) &=2(x^2+y^4)+o(x^2+y^4) 
+		\\
+		\lim_{(x,y)\rightarrow(0,0)}f(x,y) &\PdS \lim_{(x,y)\rightarrow(0,0)} \lowercomment{2\frac{x^2+y^4}{(x^2+y^2)^\alpha}}{}{\phi(x,y)}
+	\end{align*}
+	
+	\begin{enumerate}
+		\item Individuiamo il candidato limite di $\phi$ passando in coordinate polari.
+		
+		$$\phi(\rho\cos(\theta),\rho\sin(\theta))=2\frac{\rho^2(\cos^2(\theta)+\rho^2\sin^4(\theta))}{\rho^{2\alpha}}=2\rho^{2(1-\alpha)}(\cos^2\theta+\rho^2\sin^4\theta)$$
+		
+		\begin{equation*}
+			\lim_{\rho\rightarrow0}\phi(\rho\cos(\theta),\rho\sin(\theta))=
+			\begin{cases}
+				0&\text{ se }\alpha<1
+				\\
+				2\cos^2\theta&\text{ se }\alpha=1
+				\\
+				\infty&\text{ se }\alpha>1\text{ e }\cos^2(\theta)\neq 0
+				\\
+				0,1\text{ o }\infty\text{ a seconda dei casi }&\text{ se }\cos^2(\theta)=0
+			\end{cases}
+		\end{equation*}
+		
+		$\Rightarrow$ il limite può esistere solo per $\alpha< 1$ e in tal caso vale $0$.
+		
+		\item Cerchiamo di dimostrare che il limite vale zero stimando
+		
+		$\color{red} \alpha < 1$
+		
+		$$\sup_{\theta \in[0,2\pi[} |\phi(\rho\cos(\theta),\rho\sin(\theta))-\uppercomment{\ell}{}{=0}| = \sup_{\theta \in[0,2\pi[}|2\rho^{2(1-\alpha)}(\cos^2(\theta)+\rho^2\sin^4(\theta))|$$
+		
+		$$|2\rho^{2(1-\alpha)}(\cos^2(\theta)+\rho^2\sin^4(\theta))| \leq \underbrace{2\rho^{2(1-\alpha)}(1-\rho^2)}_{{\color{blue}\text{che non dipende da } \theta}}$$ 
+		
+		{\centering $\sup_{\theta \in[0,2\pi[}|2\rho^{2(1-\alpha)}(\cos^2(\theta)+\rho^2\sin^4(\theta))|\leq2\rho^{2(1-\alpha)}(1-\rho^2)\xrightarrow{\rho \rightarrow 0} 0 $ se $\alpha <1$ \par}
+
+		$\Rightarrow \lim_{(x,y)\rightarrow(0,0)}f(x,y)=0$, e quindi $f$ è continua in $(0,0)$ $\Leftrightarrow \alpha<1$.
+	\end{enumerate}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Sia 
+	\begin{equation*}
+		\Gamma=\{(x,y,z)\in\R^3\mid x^2+y^2-z^2\leq 1, x+y+2z=0\} 
+	\end{equation*}
+	
+	e sia $f:\R^3\rightarrow \R $ definita da 
+	\begin{equation*}
+		f(x,y,z)=
+		\begin{cases}
+			\frac{1-\cos(xyz)}{x^2y^2z^2}&\text{ se }xyz\neq 0\\
+			\frac{1}{2}&\text{ se }xyz= 0
 		\end{cases}
 	\end{equation*}
-	$\Rightarrow$ il limite può esistere solo per $\alpha< 1$ e in tal caso vale $0$.
-	\item Cerchiamo di dimostrare che il limite vale zero stimando\\
-	$\sup_{\theta \in[0,2\pi[}|\phi(\rho\cos(\theta),\rho\sin(\theta))-l|=\sup_{\theta \in[0,2\pi[}|2\rho^{2(1-\alpha)}(\cos^2(\theta)+\rho^2\sin^4(\theta))|$\\
-	$|2\rho^{2(1-\alpha)}(\cos^2(\theta)+\rho^2\sin^4(\theta))|\leq 2\rho^{2(1-\alpha)}(1-\rho^2)$ che non dipende da $\theta$\\
-	$\sup_{\theta \in[0,2\pi[}|2\rho^{2(1-\alpha)}(\cos^2(\theta)+\rho^2\sin^4(\theta))|\leq2\rho^{2(1-\alpha)}(1-\rho^2)\xrightarrow{\rho \rightarrow 0} 0 $ se $\alpha <1$.\\
-	$\Rightarrow \lim_{(x,y)\rightarrow(0,0)}f(x,y)=0$, e quindi $f$ è continua in $(0,0)\Leftrightarrow \alpha<1$.
-\end{enumerate}
+	
+	Provare che $f$ ha massimo e minimo in $\Gamma$.
+	
+	Se dimostriamo che $f$ è continua e $\Gamma$ è compatto, il teorema di Weierstrass permette di concludere.
+	
+	Fuori dai piani coordinati $f$ è continua perché rapporto di funzioni continue con denominatore non nullo.
+	
+	Sia $(x_0,y_0,z_0)$ un punto di un piano coordinato, cosicché $x_0y_0z_0=0$, e calcoliamo il
+	
+	$$\lim_{(x,y,z)\rightarrow(x_0,y_0,z_0)}f(x,y,z)$$
+	
+	Se $(x,y,z)\rightarrow(x_0,y_0,z_0)$, allora $xyz\rightarrow0$
+	
+	$$\cos(xyz)=1-\frac{x^2y^2z^2}{2}+o(x^2y^2z^2)$$
+	
+	$$\lim_{(x,y,z)\rightarrow(x_0,y_0,z_0)} \PdS \lim_{(x,y,z)\rightarrow(x_0,y_0,z_0)} \frac{\frac{x^2y^2z^2}{2}}{x^2y^2z^2}=\frac{1}{2}=f(x_0,y_0,z_0)$$
+	
+	$\Rightarrow f$ è continua anche in $(x_0,y_0,z_0)$.
+	
+	Proviamo a dimostrare che $\Gamma$ è compatto, cioè chiuso e limitato.
+	\begin{align*} 
+		\Gamma &=\{(x,y,z)\in\R^3\mid x^2+y^2-z^2\leq 1, x+y+2z=0\}
+		\\
+		\Gamma_1 &=\{(x,y,z)\in\R^3\mid x^2+y^2-z^2\leq 1\}
+		\\
+		\Gamma_2 &=\{(x,y,z)\in\R^3\mid x+y+2z=0\}
+	\end{align*}
+	\begin{center} 
+		$\Gamma=\Gamma_1\cap\Gamma_2$
+	
+		$\phi_1(x,y,z)=x^2+y^2-z^2$, che è continua 
+		
+		$\Gamma_1=\{(x,y,z)\in\R^3\mid \phi_1(x,y,z)\leq 1\} =\phi_1^{-1}( \underbrace{]-\infty,1]}_{\color{blue} \text{chiuso}})$
+	\end{center}
+	
+	$\Rightarrow \Gamma_1$ è anti-immagine di un chiuso tramite una funzione continua $\Rightarrow$ è chiuso.
+	\begin{center}	
+		$\phi_2(x,y,z)=x+y+2z$ è continua
+	
+		$\Gamma_2=\{(x,y,z)\in\R^3\mid \phi_2(x,y,z)= 0\}=\phi_2^{-1}(\underbrace{\{0\}}_{{\color{blue} \text{chiuso}}})$
+	\end{center}
+	
+	$\Rightarrow\Gamma_2$ è anti-immagine di un chiuso tramite una funzione continua $\Rightarrow$ è chiuso $\Rightarrow$ siccome $\Gamma$ è intersezione di chiusi, è chiuso.
+	
+	Dimostriamo che $\Gamma $ è limitato.
+	
+	Devo far vedere che $\exists C>0 \;\mid$ $|x|,|y|,|z|\leq C$ $\forall (x,y,z)\in \Gamma$ oppure che $\exists C>0 \; \mid$ $\|(x,y,z)\|\leq C$ $\forall(x,y,z)\in\Gamma$.
+	
+	$$x^2+y^2-z^2\leq 1, \qquad z=-\frac{x+y}{2}$$
+	
+	$$x^2+y^2\leq 1+\left(\frac{x+y}{2}\right)^2=1+\frac{1}{4}(x^2+y^2+2xy)$$
+	
+	$$\frac{3}{4}(x^2+y^2)\leq 1+\frac{1}{2}xy\leq 1+\frac{1}{4}(x^2+y^2)$$
+	
+	$$\frac{1}{2}(x^2+y^2)\leq 1\Rightarrow x^2+y^2\leq 2\Rightarrow |x|,|y|\leq \sqrt{2}$$
+	
+	$$z=-\frac{x+y}{2}\Rightarrow |z|=\frac{|x+y|}{2}\leq \frac{|x|+|y|}{2}\leq \sqrt{2}$$
+	
+	Prese $C=\sqrt{2}$, si ha $|x|,|y|,|z|\leq C \; \forall(x,y,z)\in \Gamma$
+	
+	{\centering $\Rightarrow\Gamma$ è limitato. \par}
+\end{example}
+\end{exbar}
 
-\paragraph{\textcolor{red}{Esempio}}
-Sia 
-\begin{equation*}
-	\Gamma=\{(x,y,z)\in\R^3\mid x^2+y^2-z^2\leq 1, x+y+2z=0\} 
-\end{equation*}
-e sia $f:\R^3\rightarrow \R $ definita da 
-\begin{equation*}
-	f(x,y,z)=\begin{cases}
-		\frac{1-\cos(xyz)}{x^2y^2z^2}&\text{  se  }xyz\neq 0\\
-		\frac{1}{2}&\text{  se  }xyz= 0
-	\end{cases}
-\end{equation*}
-Provare che $f$ ha massimo e minimo in $\Gamma$.\\
-Se dimostriamo che $f$ è continua e $\Gamma$ è compatto, il teorema di Weierstrass permette di concludere.\\
-Fuori dai piani coordinati $f$ è continua perchè rapporto di funzioni continue con denominatore non nullo.\\
-Sia $(x_0,y_0,z_0)$ un punto di un piano coordinato, cosicchè $x_0y_0z_0=0$, e calcoliamo il\\ $\lim_{(x,y,z)\rightarrow(x_0,y_0,z_0)}f(x,y,z)$. Se $(x,y,z)\rightarrow(x_0,y_0,z_0)$, allora $xyz\rightarrow0$.\\
-$\cos(xyz)=1-\frac{x^2y^2z^2}{2}+o(x^2y^2z^2)$\\
-$\lim_{(x,y,z)\rightarrow(x_0,y_0,z_0)}=\lim_{(x,y,z)\rightarrow(x_0,y_0,z_0)}\frac{\frac{x^2y^2z^2}{2}}{x^2y^2z^2}=\frac{1}{2}=f(x_0,y_0,z_0) \Rightarrow f$ è continua anche in $(x_0,y_0,z_0)$.\\
-Proviamo a dimostrare che $\Gamma$ è compatto, cioè chiuso e limitato. \\
-$\Gamma=\{(x,y,z)\in\R^3\mid x^2+y^2-z^2\leq 1, x+y+2z=0\} $\\
-$\Gamma_1=\{(x,y,z)\in\R^3\mid x^2+y^2-z^2\leq 1\}$\\
-$\Gamma_2=\{(x,y,z)\in\R^3\mid x+y+2z=0\}$\\
-$\Gamma=\Gamma_1\cap\Gamma_2$   \\
-$\phi_1(x,y,z)=x^2+y^2-z^2$, che è continua $\Gamma_1=\{(x,y,z)\in\R^3\mid \phi_1(x,y,z)\leq 1\}=\phi_1^{-1}(]-\infty,1])\Rightarrow \Gamma_1$ è antimmagine di un chiuso tramite una funzione continua $\Rightarrow$ è chiuso.\\
-$\phi_2(x,y,z)=x+y+2z$ è continua, $\Gamma_2=\{(x,y,z)\in\R^3\mid \phi_2(x,y,z)= 0\}=\phi_2^{-1}(\{0\})\Rightarrow\Gamma_2$ è antimmagine di un chiuso tramite una funzione continua $\Rightarrow$ è chiuso $\Rightarrow$ siccome $\Gamma$ è intersezione di chiusi, è chiuso.\\
-Dimostriamo che $\Gamma $ è limitato. Devo far vedere che $\exists C>0\mid |x|,|y|,|z|\leq C \forall (x,y,z)\in \Gamma$ oppure che $\exists C>0\mid \|(x,y,z)\|\leq C\forall(x,y,z)\in\Gamma$.\\
-$x^2+y^2-z^2\leq 1$, $z=-\frac{x+y}{2}$\\
-$x^2+y^2\leq 1+\left(\frac{x+y}{2}\right)^2=1+\frac{1}{4}(x^2+y^2+2xy)$\\
-$\frac{3}{4}(x^2+y^2)\leq 1+\frac{1}{2}xy\leq 1+\frac{1}{4}(x^2+y^2)$\\
-$\frac{1}{2}(x^2+y^2)\leq 1\Rightarrow x^2+y^2\leq 2\Rightarrow |x|,|y|\leq \sqrt{2}$\\
-$z=-\frac{x+y}{2}\Rightarrow |z|=\frac{|x+y|}{2}\leq \frac{|x|+|y|}{2}\leq \sqrt{2}$.\\
-Prese $C=\sqrt{2}$, si ha $|x|,|y|,|z|\leq C\forall(x,y,z)\in \Gamma\Rightarrow\Gamma$ è limitato.
 
-\subsection{\textcolor{red}{Derivate parziali e direzionali}}
+\subsection{Derivate parziali e direzionali}
 $f:\R\rightarrow\R$, $x_0\in\R$
 \begin{equation*}
 	\lim_{x \rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}=f'(x_0)
 \end{equation*}
-$f(x)=f(x_0)+f'(x_0)(x-x_0)+o(x-x_0)$\\
-$f:\R^2\rightarrow\R$\\
-IMMAGINE\\
-\textcolor{orange}{Studio il comportamento di $f$ lungo questa retta fissata.}
+
+$f(x)=f(x_0)+f'(x_0)(x-x_0)+o(x-x_0)$
+
+$f:\R^2\rightarrow\R$
+
+\segnaposto %pag 329
+
 \begin{itemize}
 	\item $f:\dom f\rightarrow\R$, $domf \subseteq \R^n$
 	\item $\overline{x_0}\in \dom f$, punto interno
 	\item $\overline{v}\in \R^n$ versore
 \end{itemize}
-Considero la restrizione di $f$ lungo la retta passante per $\overline{x_0}$ e parallela a $\overline{v}$, $\phi_{\overline{v}}(t)=f(\overline{x_0}+t\overline{v})$, ben definita in un intorno di $t=0$ perchè $\overline{x_0}$ è interno a $\dom f$.
 
-\paragraph{\textcolor{red}{Definizione}}
-Se $\phi_{\overline{v}}$ è derivabile in $t=0$ allora 
-\begin{equation*}
-	\phi_{\overline{v}}'(0)=\lim_{t\rightarrow0}\frac{\phi_{\overline{v}}(t)-\phi_{\overline{v}}(0)}{t}=\lim_{t\rightarrow 0}\frac{f(\overline{x_0}+t\overline{v})-f(\overline{x_0})}{t}=D_{\overline{v}}f(x_0)
-\end{equation*}
-si dice derivata di $f$ in $\overline{x_0}$ nella direzione $\overline{v}$ e $f$ si dice derivabile in $\overline{x_0}$ nella direzione $\overline{v}$ o lungo $\overline{v}$.
+Considero la restrizione di $f$ lungo la retta passante per $\overline{x_0}$ e parallela a $\overline{v}$
 
-\paragraph{\textcolor{red}{Esempio}}
-$f(x,y)=e^{x+y}+xy$\\
-$\overline{v}=(\cos\alpha,\sin\alpha)$\\
-Calcoliamo, se esiste, $D_{\overline{v}}f(x_0,y_0)$.\\
-$\phi_{\overline{v}}(t)=f((x_0,y_0)+t(\cos\alpha,\sin\alpha))=f(x_0+t\cos\alpha,y_0+t\sin\alpha)=e^{x_0+y_0+t(\cos\alpha+\sin\alpha)}+(x_0+t\cos\alpha)(y_0+t\sin\alpha)$\\
-$\phi_{\overline{v}}'(0)=(\cos\alpha+\sin\alpha)e^{x_0+y_0}+y_0\cos\alpha+x_0\sin\alpha=D_{\overline{v}}f(x_0,y_0)$.
+$$\phi_{\overline{v}}(t)=f(\overline{x_0}+t\overline{v})$$
 
-\paragraph{\textcolor{red}{Definizione}}
-Se $\overline{v}=\overline{e_k}$, $k-$esimo vettore della base canonica, $D_{\overline{e_k}}f(\overline{x_0})$ si dice derivata parziale di $f$ in $x_0$ rispetto a $x_k$ \textcolor{orange}{$(\overline{x}=(x_1,x_2,...,x_n))$} ed è indicata con uno dei simboli $\partial_{x_k}f(\overline{x_0})$, $\frac{\partial f}{\partial x_k}(\overline{x_0})$, $D_{x_k}f(\overline{x_0})$, $f_{x_k}(\overline{x_0})$, $D_kf(\overline{x_0})$.\\
-Se esistono tutte $n$ le derivate parziali di $f$ in $\overline{x_0}$, $\partial_{x_1}f(\overline{x_0}),\partial_{x_2}f(\overline{x_0}),...,\partial_{x_n}f(\overline{x_0})$, f si dice derivabile in $\overline{x_0}$ e il vettore $(\partial_{x_1}f(\overline{x_0}),\partial_{x_2}f(\overline{x_0}),...,\partial_{x_n}f(\overline{x_0}))$ si dice gradiente di $f$ in $\overline{x_0}$ e su scrive $\nabla f(\overline{x_0})$ o grad$f(\overline{x_0})$.
+ben definita in un intorno di $t=0$ perché $\overline{x_0}$ è interno a $\dom f$.
 
-\paragraph{\textcolor{red}{Esempio}}
-$f:\R^2\rightarrow\R$, $(x_0,y_0)\in\R^2$\\
-$\partial_xf(x_0,y_0)=\lim_{t\rightarrow0}\frac{f((x_0,y_0)+t\overline{e_1})-f(x_0,y_0)}{t}=\lim_{t\rightarrow0}\frac{f(x_0+t,y_0)-f(x_0,y_0)}{t}$\\
-$\partial_y f(x_0,y_0)=\lim_{t \rightarrow 0}\frac{f(x_0,y_0+t)-f(x_0,y_0)}{t}$\\
-$\nabla f(x_0,y_0)=(\partial_xf(x_0,y_0),\partial_yf(x_0,y_0))$\\
-$f(x,y)=e^{x^2+y}+x^2y^3$\\
-$\partial_xf(x,y)=2xe^{x^2+y}+2xy^3$\\
-$\partial_yf(x,y)=e^{x^2+y}+3x^2y^2$\\
-$\nabla f(x,y)=(2xe^{x^2+y}+2xy^3,e^{x^2+y}+3x^2y^2)$
 
-\paragraph{\textcolor{red}{Osservazione}}
-$f,g:A\rightarrow\R$, $A\subseteq\R^n$ aperto e derivabile
-\begin{equation*}
-	\partial_{x_k}(\alpha f+\beta g)(\overline{x_0})=\alpha\partial_{x_k}f(\overline{x_0})+\beta\partial_{x_k}g(\overline{x_0}) \text{  per  }   \alpha,\beta\in\R
-\end{equation*}
-\begin{equation*}
-	\partial_{x_k}(f\cdot g)(\overline{x_0})=g(\overline{x_0})\partial_{x_k}f(\overline{x_0})+f(\overline{x_0})\partial_{x_k}g(\overline{x_0})
-\end{equation*}
-\begin{equation*}
-	\partial_{x_k}\left(\frac{f}{g}\right)(\overline{x_0})=\frac{g(\overline{x_0})\partial_{x_k}f(\overline{x_0})-f(\overline{x_0})\partial_{x_k}g(\overline{x_0})}{(g(\overline{x_0}))^2} \text{  per  } g(\overline{x_0})\neq 0.
-\end{equation*}
-Regola della catena: $A\subseteq \R^n$ aperto, $g:A\rightarrow \R$, derivabile in $\overline{x_0}\in A$, $f:I\rightarrow\R$, $I$ intervallo, derivabile in $g(\overline{x_0})\in I$, allora $f\circ g$ è derivabile in $\overline{x_0}$ e 
-\begin{align*}
-	\nabla(f \circ g)(\overline{x_0})&=f'(g(\overline{x_0}))\nabla g(\overline{x_0}),\\
-	\partial_{x_k}(f\circ g)(\overline{x_0})&=f'(g(\overline{x_0}))\partial_{x_k}g(\overline{x_0})
-\end{align*}Se $f:\R\rightarrow\R$ è derivabile in $x_0$, allora
-\begin{enumerate}
-	\item $f$ è continua in $x_0$
-	\item posso definire la retta tangente al grafico di $f$ in $x_0$ come la retta di equazione
+\begin{definition}
+	Se $\phi_{\overline{v}}$ è derivabile in $t=0$ allora 
 	\begin{equation*}
-		y=f(x_0)+f'(x_0)(x-x_0).
+		\phi_{\overline{v}}'(0)=\lim_{t\rightarrow0}\frac{\phi_{\overline{v}}(t)-\phi_{\overline{v}}(0)}{t}=\lim_{t\rightarrow 0}\frac{f(\overline{x_0}+t\overline{v})-f(\overline{x_0})}{t}=D_{\overline{v}}f(x_0)
 	\end{equation*}
+	
+	si dice derivata di $f$ in $\overline{x_0}$ nella direzione $\overline{v}$ e $f$ si dice derivabile in $\overline{x_0}$ nella direzione $\overline{v}$ o lungo $\overline{v}$.
+\end{definition}
+
+
+\begin{exbar}
+	$$f(x,y)=e^{x+y}+xy \qquad \overline{v}=(\cos\alpha,\sin\alpha)$$
+	
+	Calcoliamo, se esiste, $D_{\overline{v}}f(x_0,y_0)$.
+	
+	\begin{align*} 
+		\phi_{\overline{v}}(t) &=f((x_0,y_0)+t(\cos\alpha,\sin\alpha)) =f(x_0+t\cos\alpha,y_0+t\sin\alpha)=
+		\\
+		&=e^{x_0+y_0+t(\cos\alpha+\sin\alpha)}+(x_0+t\cos\alpha)(y_0+t\sin\alpha)
+	\end{align*}
+	
+	$$\phi_{\overline{v}}'(0)=(\cos\alpha+\sin\alpha)e^{x_0+y_0}+y_0\cos\alpha+x_0\sin\alpha=D_{\overline{v}}f(x_0,y_0)$$
+\end{exbar}
+
+
+\begin{definition}
+	Se $\overline{v}=\overline{e_k}$, $k-$esimo vettore della base canonica, $D_{\overline{e_k}}f(\overline{x_0})$ \textbf{si dice derivata parziale di $f$ in $x_0$ rispetto a $x_k$} \textcolor{blue}{$(\overline{x}=(x_1,x_2,...,x_n))$} ed è indicata con uno dei simboli 
+	
+	$\partial_{x_k}f(\overline{x_0})$, $\frac{\partial f}{\partial x_k}(\overline{x_0})$, $D_{x_k}f(\overline{x_0})$, $f_{x_k}(\overline{x_0})$, $D_kf(\overline{x_0})$.
+	
+	Se esistono tutte $n$ le derivate parziali di $f$ in $\overline{x_0}$, $\partial_{x_1}f(\overline{x_0}),\partial_{x_2}f(\overline{x_0}),...,\partial_{x_n}f(\overline{x_0})$, \textbf{f si dice derivabile in $\overline{x_0}$} e il vettore 
+	
+	$$(\partial_{x_1}f(\overline{x_0}),\partial_{x_2}f(\overline{x_0}),...,\partial_{x_n}f(\overline{x_0}))$$
+	
+	si dice \textbf{gradiente di $f$ in $\overline{x_0}$} e si scrive $\nabla f(\overline{x_0})$ o grad$f(\overline{x_0})$.
+\end{definition}
+
+
+\begin{exbar}
+	$$f:\R^2\rightarrow\R, \qquad (x_0,y_0)\in\R^2$$
+	
+	$$\partial_xf(x_0,y_0)=\lim_{t\rightarrow0}\frac{f((x_0,y_0)+t\overline{e_1})-f(x_0,y_0)}{t}=\lim_{t\rightarrow0}\frac{f(x_0+t,y_0)-f(x_0,y_0)}{t}$$
+	
+	\segnaposto %pag 332
+	
+	$$\partial_y f(x_0,y_0)=\lim_{t \rightarrow 0}\frac{f(x_0,y_0+t)-f(x_0,y_0)}{t}$$
+	
+	$$\nabla f(x_0,y_0)=(\partial_xf(x_0,y_0),\partial_yf(x_0,y_0))$$
+	
+	$$f(x,y)=e^{x^2+y}+x^2y^3$$
+	
+	$\partial_xf(x,y)=2xe^{x^2+y}+2xy^3$
+	
+	$\partial_yf(x,y)=e^{x^2+y}+3x^2y^2$
+	
+	$$\nabla f(x,y)=(2xe^{x^2+y}+2xy^3,e^{x^2+y}+3x^2y^2)$$
+\end{exbar}
+
+
+\begin{attbar}
+	$f,g:A\rightarrow\R$, $A\subseteq\R^n$ aperto e derivabile
+	\begin{gather*}
+		\partial_{x_k}(\alpha f+\beta g)(\overline{x_0})=\alpha\partial_{x_k}f(\overline{x_0})+\beta\partial_{x_k}g(\overline{x_0}) \text{  per  }   \alpha,\beta\in\R
+		\\
+		\partial_{x_k}(f\cdot g)(\overline{x_0})=g(\overline{x_0})\partial_{x_k}f(\overline{x_0})+f(\overline{x_0})\partial_{x_k}g(\overline{x_0})
+		\\
+		\partial_{x_k}\left(\frac{f}{g}\right)(\overline{x_0})=\frac{g(\overline{x_0})\partial_{x_k}f(\overline{x_0})-f(\overline{x_0})\partial_{x_k}g(\overline{x_0})}{(g(\overline{x_0}))^2} \text{  per  } g(\overline{x_0})\neq 0
+	\end{gather*}
+\end{attbar}
+
+
+\begin{attbar}
+	\textbf{Regola della catena:}
+	
+	$A\subseteq \R^n$ aperto, $g:A\rightarrow \R$, derivabile in $\overline{x_0}\in A$, $f:I\rightarrow\R$, $I$ intervallo, derivabile in $g(\overline{x_0})\in I$, allora $f\circ g$ è derivabile in $\overline{x_0}$ e 
+	\begin{align*}
+		\nabla(f \circ g)(\overline{x_0})&=f'(g(\overline{x_0}))\nabla g(\overline{x_0}),\\
+		\partial_{x_k}(f\circ g)(\overline{x_0})&=f'(g(\overline{x_0}))\partial_{x_k}g(\overline{x_0})
+	\end{align*}
+	
+	Se $f:\R\rightarrow\R$ è derivabile in $x_0$, allora
+	\begin{enumerate}
+		\item $f$ è continua in $x_0$
+		\item posso definire la retta tangente al grafico di $f$ in $x_0$ come la retta di equazione
+		\begin{equation*}
+			y=f(x_0)+f'(x_0)(x-x_0).
+		\end{equation*}
+	\end{enumerate}
+\end{attbar}
+
+
+\begin{exbar}
+\begin{example}
+	\begin{equation*}
+		f(x,y)=
+		\begin{cases}
+			\sin\frac{1}{xy}&\text{  se  }xy\neq0
+			\\
+			1& \text{  se  }xy=0
+		\end{cases}
+	\end{equation*}
+	
+	\begin{itemize} 
+		\item $\partial_{x}f(0,0)$
+		
+		Per calcolarla, guardiamo la restrizione di $f$ lungo l'asse delle ascisse
+		\begin{gather*}
+			\phi(t)=f(t,0)=0\,\,\forall\,\,t\in\R
+			\\
+			\partial_xf(0,0)=\phi'(0)=0
+		\end{gather*}
+		
+		\item $\partial_yf(0,0)$
+		
+		guardiamo $\psi(t)=f(0,t)$, restrizione di $f$ lungo l'asse delle ordinate
+		\begin{gather*}
+			\psi(t)=f(0,t)=0\,\,\forall\,\, t \in \R
+	 		\\
+			\partial_yf(0,0)=\psi'(0)=0
+		\end{gather*}
+	\end{itemize}
+	
+	$\Rightarrow f$ è derivabile in $(0,0)$ e $\nabla f(0,0)=(0,0)$. 
+	
+	Ma $\lim_{(x,y)\rightarrow(0,0)}f(x,y)$ non esiste perché non esiste $\lim_{(x,y)\rightarrow(0,0)}\sin\frac{1}{xy}$ $\Rightarrow f$ non è continua in $(0,0)$, anche se è derivabile.  
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+	{$f:\R^2\rightarrow\R$
+		\begin{equation*}
+			f(x,y)=
+			\begin{cases}
+				1&\text{  se  }x^4<y<x^2
+				\\
+				0 &\text{  altrimenti}
+			\end{cases}
+		\end{equation*}
+
+		\segnaposto % pag 335
+		
+		$\Rightarrow D_{\overline{v}}f(0,0)=0\,\,\forall$ versore $\overline{v}$ però $f$ non è continua in $(0,0)$.}
+\end{exbar}
+
+
+\subsection{Differenziabilità}
+
+$f:\R\rightarrow\R$ è derivabile in $x_0\in \R \Leftrightarrow \exists \,\, a \in \R \mid f(x)=f(x_0)+a(x-x_0)+o(x-x_0)$ per $x \rightarrow x_0$ e in tal caso $a=f'(x_0)$.
+
+$f:\R^n\rightarrow\R, \overline{x_0}\in\R^n$, $\exists\overline{a}\in\R^n$
+
+$${\color{blue} (*)}f(\overline{x})=\overline{x_0}+ \langle \overline{a},\overline{x}-\overline{x_0} \rangle +o(\overline{x}-\overline{x_0})$$
+
+$$\lim_{\overline{x}\rightarrow\overline{x_0}}\frac{o(\overline{x}-\overline{x_0})}{\|\overline{x}-\overline{x_0}\|}=0$$
+
+Se vale {\color{blue}$(*)$}, $f$ è continua e posso definire l'iperpiano tangente al grafico di $f$ in $(\overline{x_0},f(\overline{x_0}))$ come l'iperpiano $\R^{n+1}$ di equazione
+\begin{equation*}
+	x_{n+1}=f(\overline{x_0})+\langle \overline{a},\overline{x}-\overline{x_0}\rangle
+\end{equation*}
+\begin{equation*}
+	f(\overline{x})-f(\overline{x_0})-\langle \overline{a},\overline{x}-\overline{x_0} \rangle=o(\overline{x}-\overline{x_0})
+\end{equation*}
+
+\textcolor{blue}{$\Gamma_f=\{(\overline{x},f(\overline{x}))\mid \overline{x} \in \R^n\}\subseteq\R^{n+1}$, $(x_1,...,x_n,x_{n+1})$}
+
+
+\begin{definition}
+	$A\subseteq\R^n$ aperto, $f:A\rightarrow \R$, $\overline{x_0}\in A$. $f$ si dice \textbf{differenziabile} in $\overline{x_0}$ se $\exists\,\, \overline{a}\in \R^n$ tale che
+	\begin{equation*}
+		\lim_{\overline{x}\rightarrow\overline{x_0}}\frac{f(\overline{x})-f(\overline{x_0})-\langle \overline{a},\overline{x}-\overline{x_0}\rangle}{\|\overline{x}-\overline{x_0}\|}=0.
+	\end{equation*}
+\end{definition}
+
+
+\begin{theorem}
+	\label{th: pag 337}
+	
+	$A\subseteq\R^n$ aperto, $f:A\rightarrow\R$ differenziabile in $\overline{x_0}\in A$. Allora 
+	\begin{enumerate}
+		\item $f$ è continua e derivabile in $\overline{x_0}$;
+		\item vale 
+		\begin{equation*}
+			\lim_{\overline{x}\rightarrow\overline{x_0}}\frac{f(\overline{x})-f(\overline{x_0})-\langle \nabla f(\overline{x_0}),\overline{x}-\overline{x_0}\rangle}{\|\overline{x}-\overline{x_0}\|}=0;
+		\end{equation*}
+		\item (Formula del gradiente) $\forall$ versore $\overline{v}\in\R^n\exists$ la derivata direzionale di $f$ lungo $\overline{v}$ in $\overline{x_0}$ e vale
+		\begin{equation*}
+			D_{\overline{v}}f(\overline{x_0})=\langle \nabla f(\overline{x_0}), \overline{v} \rangle.
+		\end{equation*}
+	\end{enumerate}
+\end{theorem}
+
+
+\begin{attbar}
+	Se $f$ è funzione di una variabile reale, $f: \dom f\rightarrow\R$, $\dom f \subseteq\R$, $f$ è differenziabile in $x_0\in \dom f \Leftrightarrow$ è derivabile in $x_0$.
+\end{attbar}
+
+
+\textbf{Osservazione:} la tesi 2) del teorema dice che il vettore $\overline{a}$ he compare nella definizione di differenziabilità è $\nabla f(\overline{x_0})$. Quindi, si può riparafrasare la definizione di differenziabilità dicendo che $f$ è differenziabile in $\overline{x_0}$ se è derivabile in $\overline{x_0}$ e vale 
+\begin{equation*}
+	\lim_{\overline{x}\rightarrow\overline{x_0}}\frac{f(\overline{x})-f(\overline{x_0})-\langle \nabla f(\overline{x_0}),\overline{x}-\overline{x_0}\rangle}{\|\overline{x}-\overline{x_0}\|}=0.
+\end{equation*}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 337}}
+	
+	\begin{enumerate}
+		\item $f(\overline{x})=f(\overline{x_0})+\langle \overline{a},\overline{x}-\overline{x_0} \rangle+o(\overline{x}-\overline{x_0})$ $\exists \ \overline{a}\in \R^n$
+		
+		$$\lim_{\overline{x}\rightarrow\overline{x_0}}f(\overline{x})=\lim_{\overline{x}\rightarrow\overline{x_0}}f(\overline{x_0})+ \lowercomment{\langle \overline{a},\overline{x}-\overline{x_0} \rangle}{\myarrow[270]}{0} +\lowercomment{o(\overline{x}-\overline{x_0})=f(\overline{x_0})}{\myarrow[270]}{0}$$
+		
+		$\Rightarrow f$ è continua in $\overline{x_0}$.
+		
+		Calcoliamo $\partial_{x_k}f(\overline{x_0})$
+		\begin{gather*} 
+			\partial_{x_k}f(\overline{x_0})=\lim_{\overline{x}\rightarrow\overline{x_0}}\frac{f(\overline{x_0}+t\overline{e}^k)-f(\overline{x_0})}{t}
+			\\
+			f(\overline{x})=f(\overline{x_0})+\langle\overline{a},\overline{x}-\overline{x_0}\rangle+o(\overline{x}-\overline{x_0})
+			\\
+			{\color{blue} \myarrow[270] \overline{x} = \overline{x}_0 + \overline{e}_k}
+			\\
+			f(\overline{x_0}+t\overline{e_k})=f(\overline{x_0})+\langle\overline{a},t\overline{e_k}\rangle+o(t\overline{e_k})=f(\overline{x_o})+ta_k+o(t)
+		\end{gather*}
+		
+		dove $\overline{a}=(a_1,...,a_n)$, cioè $a_k$ è la $k$-esima componente del vettore $\overline{a}$.
+		
+		$$\partial_{x_k}f(\overline{x_0})=\lim_{\overline{x}\rightarrow\overline{x_0}}\frac{f(\overline{x_0})-ta_k+o(t)-f(\overline{x_0})}{t}=a_k$$
+		
+		$\Rightarrow f$ è derivabile in $\overline{x_0}$ e $\nabla f(x_0)=\overline{a}$.
+		
+		\item \'E conseguenza del fatto che 
+		$$\lim_{\overline{x}\rightarrow\overline{x_0}}\frac{f(\overline{x})-f(\overline{x_0})-\langle\overline{a},\overline{x}-\overline{x_0}\rangle}{\|\overline{x}-\overline{x_0}\|}=0$$ 
+		
+		e che $\overline{a}=\nabla f(\overline{x_0})$.
+		
+		In particolare, 
+		
+		$${\color{blue}(*)} f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}),\overline{x}-\overline{x_0} \rangle +o(\overline{x}-\overline{x_0})$$
+		
+		\item Sia $\overline{v}\in \R^n$ versore. Calcoliamo $D_{\overline{v}}f(\overline{x_0})$
+		
+		$$D_{\overline{v}}f(\overline{x_0})=\lim_{t\rightarrow0}\frac{f(\overline{x_0}+t\overline{v})-f(\overline{x_0})}{t}$$
+		
+		Utilizziamo {\color{blue}$(*)$} con $\overline{x}=\overline{x_0}+t\overline{v}$
+		
+		$$f(\overline{x_0}+t\overline{v})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), t\overline{v} \rangle + o(t\overline{v})=f(\overline{x_0})+t\langle \nabla f(\overline{x_0}),\overline{v} \rangle +o(t)$$
+		
+		$$D_{\overline{v}}f(\overline{x_0})=\lim_{t\rightarrow 0}\frac{ \cancel{f(\overline{x_0})}+t\langle\nabla f(\overline{x_0}),\overline{v}\rangle+o(t)-\cancel{f(\overline{x_0})}}{t}=\langle \nabla f(\overline{x_0}),\overline{v} \rangle. \qquad \square$$
+	\end{enumerate}
+\end{dembar}
+
+
+\begin{attbar}
+	Una funzione può essere continua e derivabile in un punto senza essere differenziabile.
+\end{attbar}
+
+
+\begin{exbar}
+	\begin{equation*}
+		f(x,y)=\begin{cases}
+			\frac{x^2y}{x^2+y^2}&\text{  se  }(x,y)\neq (0,0) \\
+			0&\text{  se  }(x,y)=(0,0)
+		\end{cases}
+	\end{equation*}
+	
+	$$0 \leq |f(x,y)|=\frac{x^2|y|}{x^2+y^2}\leq |y|\xrightarrow{(x,y)\rightarrow(0,0)}0$$
+	
+	$\Rightarrow f$ è continua in $(0,0)$. 
+	
+	$f(x,0)=f(0,y)=0 \,\,\forall \,\,x,y \in \R$, $\partial_{x}f(0,0)=\partial_yf(0,0)=0$
+	
+	$\Rightarrow f$ è derivabile in $(0,0)$ e $\nabla f(0,0)=(0,0)$.
+	
+	$f$ è differenziabile in $(0,0)$?
+	
+	Lo è $\Leftrightarrow$
+	
+	$$\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)-\uppercomment{f(0,0)}{}{=0}-\uppercomment{\langle \nabla f(0,0),(x,y)-(0,0) \rangle}{}{=0}}{\|(x,y)-(0,0)\|}=0$$
+	
+	Dobbiamo calcolare 
+	
+	$$\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)}{\sqrt{x^2+y^2}}=\lim_{(x,y)\rightarrow(0,0)}\uppercomment{\frac{x^2y}{(x^2+y^2)\sqrt{x^2+y^2}}}{}{\phi(x,y)}$$
+	
+	Passiamo in coordinate polari
+	
+	$$\phi(\rho\cos\theta,\rho\sin\theta)=\frac{\rho^3\cos^2\theta\sin\theta}{\rho^2\cdot \rho}=\cos^2\theta\sin\theta$$
+	
+	$\lim_{\rho\rightarrow0}\phi(\rho\cos\theta,\rho\sin\theta)=\cos^2\theta\sin\theta$, che dipende da $\theta$
+	
+	$\Rightarrow \lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)}{\sqrt{x^2+y^2}}$ non esiste $\Rightarrow f$ non è differenziabile in $(0,0)$.
+\end{exbar}
+
+
+\begin{attbar}
+	Somma, prodotto, quoziente (con denominatore non nullo) e composizioni di funzioni differenziabili sono differenziabili.
+\end{attbar}
+
+
+\textbf{Osservazione (direzione di massima crescita):}
+
+$f:\R^2\rightarrow\R$, differenziabile in $(x_0,y_0)$, consideriamo tutte le rette passanti per $(x_0,y_0)$ e le restrizioni di $f$ lungo tali rette.
+
+Qual è la retta lungo cui $f$ cresce più velocemente?
+
+\segnaposto % pag 342
+
+$f:A \rightarrow\R$, $A\subseteq\R^n$ aperto, $\overline{x_0}\in A$, $f$ differenziabile in $\overline{x_0}$. Voglio trovare il versore $\overline{v}$ di $\R^n$ per cui la restrizione di $f$ lungo la retta per $\overline{x_0}$ parallela a $\overline{v}$
+
+$\phi_{\overline{v}}t\mapsto f(\overline{x_0}+\overline{v})$ cresce più velocemente in un intorno di $\overline{x_0}$, $\phi_{\overline{v}}'(0)=D_{\overline{v}}f(\overline{x_0})$.
+
+Cerco $\overline{v}$ in modo che $\phi_{\overline{v}}'(0)=D_{\overline{v}}f(\overline{x_0})$ sia massima
+
+$$D_{\overline{v}}f(\overline{x_0})=\langle \nabla f(x_0),\overline{v} \rangle$$ è massima se $\overline{v}=\frac{\nabla f(\overline{x_0})}{\|\nabla f(\overline{x_0})\|}$ ($\nabla f(\overline{x_0})\neq \overline{0}$).
+
+Quindi $\nabla f(\overline{x_0})$ fornisce la direzione di massima crescita di $f$ in $\overline{x_0}$.
+
+\segnaposto % pag 343
+
+
+\begin{definition}
+	$A\subseteq\R^n$ aperto, $f:A \rightarrow \R$ differenziabile in $\overline{x_0}\in A$. Si definisce \textbf{iperpiano tangente} al grafico di $f$ in $(\overline{x_0},f(\overline{x_0}))$ l'iperpiano di $\R^{n+1}$ di equazione
+	\begin{gather*}
+		x_{n+1}=f(x_0)+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle
+		\\
+		\overline{x}(x_1,...,x_n).
+	\end{gather*}
+	
+	In particolare, se $A \subseteq \R^2$ e $f$ è differenziabile in $(x_0,y_0)$, il piano tangente al grafico di $f$ in $((x_0,y_0),f(x_0,y_0))$ è il piano di equazione
+	\begin{align*}
+		z&=f(x_0,y_0)-\langle \nabla f(x_0,y_0),(x-x_0,y-y_0) \rangle
+		\\
+		\text{cioè }z&=f(x_0,y_0)+\partial_xf(x_0,y_0)(x-x_0)+\partial_yf(x_0,y_0)(y-y_0).
+	\end{align*}
+\end{definition}
+
+
+\begin{exbar}
+\begin{example}
+	$$f(x,y)=e^{x+y-1}+x^4+y^2$$
+	
+	Calcoliamo l'equazione del piano tangente al grafico di $f$ in $((1,0),f(1,0))$.
+	
+	$$z=f(1,0)+\partial_xf(1,0)(x-1)+\partial_yf(1,0)y$$
+	
+	$f(1,0)=1+1=2$
+	
+	$$\partial_xf(x,y)=e^{x+y-1}+4x^3$$
+	
+	$\partial_x f(1,0)=1+4=5$
+	
+	$$\partial_yf(x,y)=e^{x+y-1}+2y$$
+	
+	$\partial_yf(1,0)=1$
+	
+	$$z=2+5(x-1)+y \qquad \Rightarrow \qquad z=5x+y-3$$
+\end{example}
+\end{exbar}
+
+
+\begin{theorem} \textbf{Teorema del differenziale totale}
+	
+	$A \subseteq \R^n$, $f:A\rightarrow \R$ derivabile in un intorno di $\overline{x_0}\in A$. Se le derivate parziali di $f$ sono continue in $\overline{x_0}$, cioè
+	\begin{equation*}
+		\lim_{\overline{x}\rightarrow\overline{x_0}}\partial_{x_k}f(\overline{x})=\partial_{x_k}f(\overline{x_0})\,\,\, \forall \,\,k=1,...,n,
+	\end{equation*}
+	
+	allora $f$ è differenziabile in $\overline{x_0}$.
+\end{theorem}
+
+
+\begin{exbar}
+	$$f(x,y)=e^{x+y-1}+x^4+y^2$$
+	
+	è derivabile in $\R^2$ e 
+	
+	$$\partial_x f(x,y)=e^{x+y-1}+4x^3, \qquad \partial_y f(x,y)=e^{x+y-1}+2y^2$$
+	
+	sono funzioni continue in $\R^2 \Rightarrow f$ è differenziabile in ogni punto di $\R^2$.
+\end{exbar}
+
+
+\begin{definition}
+	Una funzione $f$ definita in un sottoinsieme di $\R^n$ si dice differenziabile in $A \subseteq\R^n$ se è differenziabile in ogni punto di $A$. Si dice di classe $C^1$ in $A$ e si scrive $f \in C^1(A)$ se è derivabile in $A$ e le sue derivate parziali sono continue in $A$.
+\end{definition}
+
+
+\begin{corollary}
+	$A\subseteq\R^n$ aperto, $f\in C^1(A)$. Allora $f$ è differenziabile in $A$.
+\end{corollary}
+
+
+\begin{attbar}
+	Il teorema del differenziale totale fornisce una condizione sufficiente, \textbf{ma non necessaria}, per la differenziabilità, cioè una funzione può essere differenziabile in un punto senza avere le derivate parziali continue in quel punto.
+\end{attbar}
+
+
+\begin{exbar}
+	\begin{equation*}
+		f(x,y)=
+		\begin{cases}
+			x^2\sin\frac{1}{x}&\text{  se  }x\neq0
+			\\
+			0&\text{  se  }x=0
+		\end{cases}
+		\qquad (x,y)\in \R^2
+	\end{equation*}
+	
+	$$f\in C^1\left( \R^2\backslash\{(0,y),y\in\R\} \right)$$
+	
+	Sia $(0,y_0)$ fissato e calcoliamo $\partial_x f(0,y_0)$ e $\partial_y f(0,y_0)$
+	
+	$\phi: f \mapsto f(t,y_0)=t^2\sin\frac{1}{t}$, $t \neq 0$
+	
+	$\partial_x f(0,y_0)=\phi'(0)=0$
+	
+	$\Phi:f\mapsto f(0,y_0+t)=0\,\,\, \forall t$
+	
+	$\partial_y f(0,y_0)=0=\Phi'(0)$
+	
+	$x \neq 0$, $\partial_x f(x,y)=2x\sin\frac{1}{x}-\cos\frac{1}{x}$
+	
+	$\lim_{(x,y)\rightarrow(0,y_0)}\partial_x f(x,y)$ non esiste $\Rightarrow \partial_xf$ non è continua in $(0,y_0)$. 
+	
+	Ciononostante è differenziabile in $(0,y_0)$
+	
+	$\nabla f(0,y_0)=(0,0)$.
+	
+	Devo verificare che 
+	
+	$$\lim_{(x,y)\rightarrow(0,y_0)}\frac{f(x,y)-\uppercomment{f(0,y_0)}{}{=0}-\uppercomment{\langle \nabla f(0,y_0),(x,y-y_0) \rangle}{}{=0}}{\|(x,y)-(0,y_0)\|}=0$$
+	
+	$$\lim_{(x,y)\rightarrow(0,y_0)}\frac{x^2\sin\frac{1}{x}}{\sqrt{x^2+(y-y_0)^2}}$$
+	
+	$$ \bigg| \frac{x^2\sin\frac{1}{x}}{\underbrace{\sqrt{x^2+(y-y_0)^2}}_{{\color{blue} \geq x^2}}} \bigg|\leq \frac{x^2}{|x|} \bigg|\sin\frac{1}{x} \bigg|=|x| \bigg|\sin\frac{1}{x} \bigg|\xrightarrow{(x,y)\rightarrow(0,y_0)}0$$.
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Data la funzione 
+	
+	$$f(x,y)=\ln(2+\sqrt{2x^2+y^2})\sin(x+2y)$$ 
+	
+	se ne determinino dominio, punti di continuità, di derivabilità e di differenziabilità.
+	\begin{enumerate}
+		\item Dominio
+		
+		$2+\sqrt{2x^2+y^2}>0$ vero $\forall(x,y)\in\R^2 \Rightarrow \dom f =\R^2$
+		
+		\item Derivabilità
+		
+		Per $2x^2+y^2\neq 0$, cioè in $\R^2\backslash\{(0,0)\}$, $f$ è prodotto e composizione di funzioni derivabili, e quindi è derivabile.
+		\begin{align*} 
+			\partial_x f(x,y)&=\frac{\sin(x+2y)}{2+\sqrt{2x^2+y^2}}\cdot \frac{1}{2\sqrt{2x^2+y^2}}\cdot4x+\ln(2+\sqrt{2x^2+y^2})\cos(x+2y)
+			\\
+			\partial_yf(x,y)&=\frac{\sin(x+2y)}{2+\sqrt{2x^2+y^2}}\cdot\frac{1}{2\sqrt{2x^2+y^2}}\cdot 2y+2\ln(2+\sqrt{2x^2+y^2})\cos(x+2y)
+		\end{align*}
+		
+		$\Rightarrow \partial_x f$ e $\partial_y f$ sono continue in $\R^2\backslash\{(0,0)\} \Rightarrow f \in C^1(\R^2\backslash\{(0,0)\})$ e quindi è differenziabile in $\R^2\backslash\{(0,0)\}$.
+		
+		Per verificare se $f$ è derivabile in $(0,0)$ utilizzo la definizione di derivata parziale, guardando le restrizioni di $f$ lungo gli assi cartesiani.
+		
+		$\phi: t \mapsto f(t,0)=\ln(2+\sqrt{2t^2})\sin(t)= \ln(2+\sqrt{2}|t|)\sin(t)$.
+		
+		Se esiste, $\partial_x f(0,0)=\phi'(0)$
+		
+		Se $t\neq 0$
+		
+		$$\phi'(t)=\frac{\sin(t)}{2+\sqrt{2}|t|}\sqrt{2}\sgn(t)+\ln(2+\sqrt{2}|t|)\cos(t)$$
+		
+		$\lim_{t \rightarrow0} \phi'(t)=\ln 2 \Rightarrow \phi$ è derivabile in $0$ e $\phi'(0)=\ln 2=\partial_x f(0,0)$
+		
+		$\psi: t \mapsto f(0,t)=\ln(2+\sqrt{t^2})\sin(2t)=\ln(2+|t|)\sin(2t)$.
+		
+		Se esiste, $\partial_y f(0,0)=\psi'(0)$
+		
+		Se $t \neq 0$
+		
+		$$\psi'(t)=\frac{\sin(2t)}{2+|t|}\sgn (t)+2\ln(2+|t|)\cos(2t)$$
+		
+		$\lim_{t\rightarrow0}\psi'(t)=2\ln 2=\Phi'(0)=\partial_y f(0,0)$
+		
+		$\Rightarrow f$ è derivabile in $(0,0)$ e $\nabla f(0,0) =(\ln2,2\ln2)$
+		
+		\item Differenziabilità in $(0,0)$
+		
+		Conviene utilizzare il teorema del differenziale totale e provare a verificare che 
+		{\centering $\lim_{(x,y)\rightarrow(0,0)}\partial_xf(x,y)=\partial_xf(0,0)=\ln2$ e $\lim_{(x,y)\rightarrow(0,0)}\partial_y f(x,y)=\partial_y f(0,0)=2 \ln 2$ \par}
+		
+		Oppure conviene utilizzare la definizione di differenziabilità e calcolare
+		
+		$$\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)-f(0,0)-\langle\nabla f(0,0),(x,y)\rangle}{\sqrt{x^2+y^2}}?$$
+		
+		{\color{red} Conviene utilizzare la definizione.}
+		
+		Calcoliamo 
+		\begin{align*} 
+			&\lim_{(x,y)\rightarrow(0,0)}\frac{\ln(2+\sqrt{2x^2+y^2})\sin(x+2y)-\ln(2x)-2\ln(2y)}{\sqrt{x^2+y^2}}
+			\\
+			=&\lim_{(x,y)\rightarrow(0,0)}\frac{\ln(2+\sqrt{2x^2+y^2})\sin(x+2y)-\ln2(x+2y)}{\sqrt{x^2+y^2}}=
+			\\
+			=&\lim_{(x,y)\rightarrow(0,0)}\frac{1}{\sqrt{x^2+y^2}} \big[ \ln(2+\sqrt{2x^2+y^2})\sin(x+2y)-\ln2\sin(x+2y)+
+			\\
+			& \qquad \qquad +\ln2\sin(x+2y)-\ln2(x+2y) \big]=
+			\\
+			=&\lim_{(x,y)\rightarrow(0,0)} \left[ \frac{\ln(2+\sqrt{2x^2+y^2})-\ln 2}{\sqrt{x^2+y^2}}\sin(x+2y) + \ln 2 \frac{\sin(x+2y)-(x+2y)}{\sqrt{x^2+y^2}}\right]
+		\end{align*}
+		
+		Dimostriamo che 
+		
+		$$\lim_{(x,y)\rightarrow(0,0)} \uppercomment{\frac{\ln(2+\sqrt{2x^2+y^2}-\ln2)}{\sqrt{x^2+y^2}}\sin(x+2y)}{}{\psi(x,y)}=0$$
+		\begin{align*} 
+			\ln(2+\sqrt{2x^2+y^2})-\ln2 
+			&=\ln\left( \frac{2+\sqrt{2x^2+y^2}}{2}\right)=\ln\left(1+\frac{\sqrt{2x^2+y^2}}{2}\right)=
+			\\
+			&=\frac{1}{2}\sqrt{2x^2+y^2}+o(\sqrt{2x^2+y^2})
+		\end{align*}
+			
+		$$\lim_{(x,y)\rightarrow(0,0)} \psi(x,y) \PdS \lim_{(x,y)\rightarrow(0,0)}\frac{1}{2}\frac{\sqrt{2x^2+y^2}}{\sqrt{x^2+y^2}} \uppercomment{\sin(x+2y)}{}{\to 0}=0$$
+		
+		{\color{blue} $\left| \frac{\sqrt{2x^2+y^2}}{x^2+y^2} \right| = \sqrt{\frac{2x^2+y^2}{x^2+y^2}} \leq \sqrt{\frac{2x^2+2y^2}{x^2+y^2}} = \sqrt{2}$
+		}
+		
+		Dimostriamo anche
+		
+		$$\lim_{(x,y)\rightarrow(0,0)}\frac{\sin(x+2y)-(x+2y)}{\sqrt{x^2+y^2}}=0$$
+		
+		$\sin(x+2y)=(x+2y)-\frac{1}{6}(x+2y)^3+o((x+2y)^4)$
+		
+		$$\lim_{(x,y)\rightarrow(0,0)}\frac{\sin(x+2y)-(x+2y)}{\sqrt{x^2+y^2}} \PdS \lim_{(x,y)\rightarrow(0,0)}-\frac{1}{6} \uppercomment{\frac{(x+2y)^3}{\sqrt{x^2+y^2}}}{}{\xi(x,y)}$$
+		
+		Passando in coordinate polari
+		
+		$$\xi(\rho\cos\theta,\rho\sin\theta)=\frac{\rho^3(\cos\theta+2\sin\theta)^3}{\rho}=\rho^2(\cos\theta+2\sin\theta)^3\xrightarrow{\rho\rightarrow 0}0 \forall \theta$$
+		
+		$|\xi(\rho\cos\theta,\rho\sin\theta)|\leq 2\rho^2$
+		
+		$$\sup_{\theta \in [0,2\pi[}|\xi(\rho\cos\theta,\rho\sin\theta)|\leq 27\rho^2\xrightarrow{\rho \rightarrow 0}0$$
+		
+		$\Rightarrow\lim_{(x,y)\rightarrow(0,0)}-\frac{1}{6}\xi(x,y)=0$  e $f$ è differenziabile in $(0,0)$.
+	\end{enumerate}
+\end{example}
+\end{exbar}
+
+
+\begin{attbar}
+	\textbf{Notazione:} $\overline{x_1},\overline{x_2}\in\R^n$
+	\begin{align*} 
+		[\overline{x_1},\overline{x_2}] &=\{\overline{x_1}+\lambda(\overline{x_2}-\overline{x_1})\mid\lambda\in[0,1]\}
+		\\
+		]\overline{x_1},\overline{x_2}[ &=\{\overline{x_1}+\lambda(\overline{x_2}-\overline{x_1})\mid\lambda\in]0,1[\}
+		\\
+		[\overline{x_1},\overline{x_2}[ &=\{\overline{x_1}+\lambda(\overline{x_2}-\overline{x_1})\mid\lambda\in[0,1[\}
+		\\
+		]\overline{x_1},\overline{x_2}] &=\{\overline{x_1}+\lambda(\overline{x_2}-\overline{x_1})\mid\lambda\in]0,1]\}
+	\end{align*}
+	
+	segmenti di estremi $\overline{x_1}$ e $\overline{x_2}$.
+\end{attbar}
+
+
+\begin{theorem} \textbf{Teorema del valore medio}
+	
+	\label{th: pag 355}
+	$A \subseteq \R^n$ connesso per archi, $f:A\rightarrow \R$, $\overline{x_1},\overline{x_2}\in A$ tali che $[\overline{x_1},\overline{x_2}]\subseteq A$. Se $f$ è continua in $[\overline{x_1},\overline{x_2}]$ e differenziabile in $]\overline{x_1},\overline{x_2}[$, allora $\exists\,\, \overline{\xi} \in]\overline{x_1},\overline{x_2}[$ tale che $f(\overline{x_2})-f(\overline{x_1})=\langle \nabla f(\overline{\xi}),\overline{x_2}-\overline{x_1} \rangle$.
+\end{theorem}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 355}}
+		
+	Sia $\overline{v}=\frac{\overline{x_2}-\overline{x_1}}{\|\overline{x_2}-\overline{x_1}\|}$ versore.
+	
+	$$\phi_{\overline{v}}:[0,\|\overline{x_2}-\overline{x_1}\|]\rightarrow\R \qquad \phi_{\overline{v}}(t)=f(\overline{x_1}+t\overline{v})$$
+	
+	$\phi_{\overline{v}}$ è continua nel suo dominio e derivabile in $]0,\| \overline{x_2}-\overline{x_1} \|[$ per la formula del gradiente e $\phi_{\overline{v}}'(t)=\langle\nabla f(\overline{x_1}+t\overline{v}),\overline{v}\rangle$.
+	
+	Per il teorema di Lagrange $\exists\,\, \overline{t}\in]0,\|\overline{x_2}-\overline{x_1}\|[\,\, \mid $
+	\begin{gather*} 
+		\lowercomment{\phi_{\overline{v}}(\|\overline{x_2}-\overline{x_1}\|)}{=f(\overline{x}_2)}{}- \lowercomment{\phi(0)}{}{=f(\overline{x}_1) }=\phi'(\overline{t})(\|\overline{x_2}-\overline{x_1}\|-0)
+		\\
+		{
+			\color{blue} \phi' (\overline{t} = \langle \nabla f (\underbrace{\overline{x}_1 + \overline{t} \overline{v}}_{{\color{teal} = \overline{\xi}}}), \frac{\overline{x}_2 - \overline{x}_1} {\| \overline{x}_2 - \overline{x}_1 \| } \rangle
+		}
+		\\
+		\Rightarrow f(\overline{x}_2) - f(\overline{x}_1) = \langle \nabla f(\overline{\xi}), \overline{x}_2 - \overline{x}_1 \rangle \qquad \square
+	\end{gather*}
+\end{dembar}
+
+
+\begin{corollary}
+	\label{cor: pag 357}
+	Sia $A \subseteq \R^n$ aperto connesso per archi, $f:A \rightarrow \R$ derivabile con $\nabla f(\overline{x})=\overline{0}$ $\forall \,\, \overline{x} \in A$. Allora $f$ è costante. 
+\end{corollary}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Corollario \ref{cor: pag 357}}
+	
+	$f \in C^1(A)$ e quindi è differenziabile in $A$. Supponendo per semplicità $A$ convesso. $\overline{x_1},\overline{x_2}\in A\Rightarrow [\overline{x_1},\overline{x_2}]\subseteq A \,\,\exists \,\, \overline{\xi}\in ]\overline{x_1},\overline{x_2}[\,\,\mid\,\, f(\overline{x_2})-f(\overline{x_1})=\langle\nabla f(\overline{\xi}),\overline{x_2}-\overline{x_1}\rangle =0 \Rightarrow f$ è costante.
+	
+	\segnaposto % pag 357
+	
+	$f(\overline{x_1})=f(\overline{y_1})=f(\overline{y_2})=f(\overline{x_2})$.
+\end{dembar}
+
+
+\begin{exbar}
+\begin{example}
+	Sia data la funzione $f: \R^2\rightarrow \R$
+	\begin{equation*}
+		f(x,y)=
+		\begin{cases}
+			\frac{\sin(x|y|^\alpha)}{x^4+|y|^7}& \text{  se  }(x,y)\neq (0,0)
+			\\
+			0& \text{  se  } (x,y)=(0,0) 
+		\end{cases}
+	\end{equation*}
+	
+	Si stabilisca per quali valori del parametro $\alpha >0$
+	\begin{enumerate}
+		\item $f$ è continua in $(0,0)$
+		\item $f$ è derivabile in $(0,0)$
+		\item $f$ è differenziabile in $(0,0)$
+	\end{enumerate}
+	
+	{\centering $\sim \circ \sim$ \par}
+	
+	\begin{enumerate}
+		\item $\sin(x|y|^\alpha)=x|y|^\alpha+o(x|y|^\alpha)$ per $(x,y)\rightarrow (0,0)$ perché $x|y|^\alpha \rightarrow 0 $ per $(x,y)\rightarrow (0,0)$
+		
+		$$\lim_{(x,y)\rightarrow(0,0)}f(x,y) \PdS \lim_{(x,y)\rightarrow(0,0)} \lowercomment{\frac{x|y|^\alpha}{x^4+|y|^7}}{\phi(x,y)}{}$$
+		
+		Proviamo con ad utilizzare le coordinate polari 
+		
+		\begin{align*} 
+			\phi(\rho\cos\theta,\rho\sin\theta)
+			&=\phi^{\alpha+1}\frac{\cos\theta|\sin \theta|^\alpha}{\rho^4(\cos^4\theta+\rho^3|\sin\theta|^7)} =\rho^{\alpha-3}=\frac{\cos\theta|\sin\theta|^\alpha}{\cos^4\theta+\rho^3|\sin\theta|^7} \xrightarrow{\rho \rightarrow 0} 
+			\\
+			&\xrightarrow{\rho \rightarrow 0}
+				\begin{cases}
+				0& \text{  se  } \alpha > 3
+				\\ 
+				\infty& \text{  o qualcosa che dipende da }\theta \text{ se } \alpha \leq 3
+				\end{cases}
+		\end{align*}
+		
+		$\Rightarrow f$ non è continua in $(0,0)$ se $\alpha \leq 3$.
+		
+		Per $\alpha > 3 $ dobbiamo stimare
+		
+		\begin{align*} 
+			\sup_{\theta \in [0,2\pi[} \rho^{\alpha-3}\frac{|\cos\theta||\sin\theta|^\alpha}{\cos^4\theta+\rho^3|\sin\theta|^7}
+			&{\color{blue} \leq \rho^{\alpha-3}\frac{|\cos\theta||\sin\theta|^\alpha}{\rho^3|\sin\theta|^7}}=
+			\\
+			&=\rho^{\alpha-6}|\cos\theta||\sin\theta|^{\alpha-7}\leq \rho^{\alpha-6}
+		\end{align*}
+		
+		{\centering \color{blue}se $\alpha >7$ $\Rightarrow f$ {\color{red}(e non $\Leftrightarrow$)} è continua, quindi non ci porta da nessuna parte. \par}
+		
+		Proviamo a studiare la restrizione di $\phi$ lungo $x^4 =|y|^7$
+		
+		$$|\phi(x,y)||_{x^4=|y|^7} = \frac{|y|^{\frac{7}{4}} |y|^\alpha}{2|y|^7}=\frac{1}{2}|y|^{\alpha +\frac{7}{4}-7}=\frac{1}{2}|y|^{\alpha-\frac{21}{4}}$$
+		
+		Se $\alpha \leq \frac{21}{4} \Rightarrow \phi(x,y) \nrightarrow 0$ per $(x,y)\rightarrow(0,0)$.
+		
+		Se voglio aver speranza che $\phi(x,y)\rightarrow 0$ per $(x,y)\rightarrow(0,0)$ deve essere $\alpha > \frac{21}{4}$.
+		
+		Siano $0 \leq p \leq q$, allora $\exists\,\, C >0 \mid$
+		
+		$$ \underbrace{\frac{|\alpha|^{q-p}|\beta|^p}{|\alpha|^q+|\beta|^q}}_{{\color{blue} \frac{1}{|\alpha|^q+|\beta|^q} \leq \frac{C}{|\alpha|^{q-p} |\beta|^p}}} \leq C \qquad \forall (\alpha,\beta)\neq(0,0)$$
+		
+		\begin{align*} 
+			|\phi(x,y)|
+			&=\frac{|x||y|^\alpha}{|x|^4+|y|^7} \lowercomment{=}{q=4}{} \frac{|x||y|^\alpha}{|x|^q+|y|^{\frac{7}{q}\cdot q}}=
+			\\
+			&= |x||y|^\alpha \cdot \lowercomment{\frac{1}{|x|^q+|y|^{\frac{7}{q}\cdot p}}}{\alpha=|x|}{\beta=|y|^{\frac{7}{q}}} \leq |x||y|^\alpha \frac{C}{|x|^{4-p}\cdot |y|^{\frac{7}{q}p}} = & 0 \leq p \leq 4, 
+			\\
+			&= C|x|^{p-3}|y|^{\alpha-\frac{7}{4}p} \uppercomment{=}{}{p=3} C|y|^{\alpha-\frac{21}{4}}
+		\end{align*}
+		{\centering
+		$ \exists  C > 0 \mid |\phi(x,y)|\leq C|y|^{\alpha-\frac{21}{4}}\xrightarrow{(x,y)\rightarrow(0,0)} 0$ se $\alpha > \frac{21}{4}$
+		
+		$\Rightarrow f$ è continua in $(0,0)\Leftrightarrow \alpha> \frac{21}{4}$. \par}
+		
+		
+		{\color{blue} Dimostriamo che $\exists C > 0 \mid $
+			$$ \lowercomment{\frac{|\alpha|^{q-p}|\beta|^{p}}{|\alpha|^q+|\beta|^q}}{{\color{teal} \psi(x,y)}}{} \leq C \qquad \forall (\alpha,\beta)\neq(0,0)$$
+			
+			$\Phi(0,\beta)=0$, $\alpha \neq 0$
+			
+			\begin{align*} 
+				\frac{|\alpha|^{q-p}|\beta|^p}{|\alpha|^q+|\beta|^q}
+				&=\frac{|\alpha|^q}{|\alpha^q}\frac{|\alpha|^{-p}|\beta|^p}{1+|\frac{\beta}{\alpha}|^q}=
+				\\
+				&=\frac{|\frac{\beta}{\alpha}|^p}{1-|\frac{\beta}{\alpha}|^q}\leq C & |\frac{\beta}{\alpha}|\geq 0
+			\end{align*}
+		}
+		
+		\color{orange}{\centering 
+			$\xi(t)=\frac{t^p}{1+t^q}$, $t\geq 0$, 
+			
+			$\exists C > 0 \mid \xi(t)\leq C \,\, \forall\,\, t \geq 0$ perché $0 \leq p \leq q$. \par}		
+		
+		\item Derivabilità in $(0,0)$.
+		
+		Guardo le restrizioni di $f$ lungo gli assi cartesiani $f(x,0)=0\,\, \forall x$, $f(0,y)=0\,\, \forall y$
+		
+		{\centering $\partial_xf(0,0)=0$ e $\partial_yf(0,0)=0$ \par}
+		
+		perché $f$ è costante lungo gli assi cartesiani $\Rightarrow f$ è derivabile in $(0,0) \forall \,\, \alpha >0$ e $\nabla f(0,0)=(0,0)$.
+		
+		\item Calcoliamo 
+		\begin{align*} 
+			\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)-\uppercomment{f(0,0)}{}{=0}-\langle \uppercomment{\nabla f(0,0)}{}{=\overline{0}},(x,y) \rangle}{\sqrt{x^2+y^2}}
+			&=\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)}{\sqrt{x^2+y^2}}=
+			\\
+			&=\lim_{(x,y)\rightarrow(0,0)} \frac{\uppercomment{\sin(x|y|^\alpha)}{}{= x|y|^\alpha + o(x|y|^\alpha)}}{(x^4+|y|^7)\sqrt{x^2+y^2}} 
+			\\
+			&\PdS \lim_{(x,y)\rightarrow(0,0)}\frac{x|y|^\alpha}{(x^4+|y|^7)\sqrt{x^2+y^2}}
+		\end{align*}
+		
+		$$|\frac{x|y|^\alpha}{x^4+|y|^7}|\leq C|y|^{\alpha-\frac{21}{4}}$$
+		
+		$$\bigg|\frac{x|y|^\alpha}{(x^4+y^7)\sqrt{x^2+y^2}}\bigg| \leq \frac{C|y|^{\alpha-\frac{21}{4}}}{\underbrace{\sqrt{x^2+y^2}}_{{\color{blue} \geq y^2}}}\leq C \frac{|y|^{\alpha-\frac{21}{4}}}{|y|}=C |y|^{\alpha -\frac{25}{4}}\xrightarrow{(x,y)\rightarrow(0,0)}0 $$
+		
+		Se $\alpha > \frac{25}{4}$, $f$ è differenziabile in $(0,0)$.
+		
+		\begin{align*} 
+			\bigg| \frac{x|y|^\alpha}{(x^4+|y|^7)\sqrt{x^2+y^2}} \bigg| \mid_{x^4=|y|^7}
+			&=|y|^{\alpha -\frac{21}{4}}\frac{1}{\sqrt{x^2+y^2}}|_{x^4=|y|^7}=|y|^{\alpha-\frac{21}{4}}\frac{1}{\sqrt{|y|^{\frac{7}{2}}+y^2}}=
+			\\
+			&=\frac{|y|^{\alpha-\frac{21}{4}}}{|y|}\frac{1}{\sqrt{1+|y|^{\frac{3}{2}}}}=|y|^{\alpha-\frac{25}{4}}\frac{1}{\sqrt{1+|y|^{\frac{3}{2}}}}\nrightarrow 0
+			\\
+			&\text{ per } y \rightarrow 0 \text{ se } \alpha \leq \frac{25}{4}
+		\end{align*}
+		
+		$\Rightarrow f$ non è differenziabile in $(0,0)$ se $\alpha \leq \frac{25}{4}$. $f$ è differenziabile in $(0,0)\Leftrightarrow \alpha > \frac{25}{4}$. 
+	\end{enumerate}
+\end{example}
+\end{exbar}
+
+
+\subsection{Ricerca di punti di estremo}
+
+$f:]a,b[\rightarrow \R$, derivabile.
+\begin{enumerate}
+	\item Teorema di Fermat: i punti di massimo e minimo di $f$ sono punti stazionari, cioè soddisfano $f'(x)=0$.
+	$f: A \rightarrow \R$, $A \subseteq \R^n$ aperto $\overline{x_0}\in A$ punto di estremo per $f \Rightarrow \nabla f(\overline{x_0})=\overline{0}$
+	
+	\item Se $x_0 \in ]a,b[$ è punto stazionario, come faccio a capire se è di massimo, di minimo o di flesso orizzontale?
+	\begin{itemize} 
+		\item $f''(x_0)<0 \Rightarrow x_0$ punto di massimo
+		\item $f''(x_0)>0 \Rightarrow x_0$ punto di minimo
+		\item $f''(x_0)=0 \Rightarrow x_0$ è candidato punto di flesso.
+	\end{itemize}
 \end{enumerate}
 
-\paragraph{\textcolor{red}{Esempio}}
-\begin{equation*}
-	f(x,y)=\begin{cases}
-		\sin\frac{1}{xy}&\text{  se  }xy\neq0\\
-		1& \text{  se  }xy=0
-	\end{cases}
-\end{equation*}
-$\partial_{x}f(0,0)$, Per calcolarla, guardiamo la restrizione di $f$ lungo l'asse delle ascisse\\
-\begin{equation*}
-	\phi(t)=f(t,0)=0\,\,\forall\,\,t\in\R
-\end{equation*}
-\begin{equation*}
-	\partial_xf(0,0)=\phi'(0)=0
-\end{equation*}
-$\partial_yf(0,0)$, guardiamo $\Phi(t)=f(0,t)$, restrizione di $f$ lungo l'asse delle ordinate
-\begin{equation*}
-	\Phi(t)=f(0,t)=0\,\,\forall\,\, t \in \R
-\end{equation*}
-\begin{equation*}
-	\partial_yf(0,0)=\Phi'(0)=0
-\end{equation*}
-$\Rightarrow f$ è derivabile in $(0,0)$ e $\nabla f(0,0)=(0,0)$. Ma $\lim_{(x,y)\rightarrow(0,0)}f(x,y)$ non esiste perchè non esiste $\lim_{(x,y)\rightarrow(0,0)}\sin\frac{1}{xy}\Rightarrow f$ non è continua in $(0,0)$, anche se è derivabile.  
 
-\paragraph{\textcolor{red}{Esempio}}
-$f:\R^2\rightarrow\R$
-\begin{equation*}
-	f(x,y)=\begin{cases}
-		1&\text{  se  }x^4<y<x^2\\
-		0 &\text{  altrimenti}
-	\end{cases}
-\end{equation*}
-IMMAGINE\\
-$\Rightarrow D_{\overline{v}}f(0,0)=0\,\,\forall$ versore $\overline{v}$ però $f$ non è continua in $(0,0)$.
+\begin{definition}
+	$f:\dom f \rightarrow \R$, $\dom f \subseteq \R^n$. $\overline{x_0}\in \dom f$ si dice punto di massimo relativo per $f$ se $\exists r >0 \mid$
+	
+	$$ f(\overline{x_0})\geq f(\overline{x})\forall\overline{x}\in B_r(\overline{x_0})\cap \dom f$$
+	
+	$\overline{x_0}\in \dom f$ si dice punto di minimo relativo se $\exists r >0 \mid$
+	 
+	$$ f(\overline{x_0})\leq f(\overline{x})\forall \overline{x} \in B_r(\overline{x_0})\cap \dom f$$
+	 
+	$\overline{x_0} \in \dom f$ di massimo o minimo relativo si dice anche punto di estremo relativo.
+	
+	$\overline{x_0}\in \dom f$ si dice di massimo (assoluto o globale) se 
+	
+	$$f(\overline{x_0})\geq f(\overline{x})\forall \overline{x} \in \dom f$$
+	
+	Definizione analoga si dà per un punto di minimo (assoluto o globale).
+\end{definition}
 
 
+\subsubsection{Teorema di Fermat}
+\begin{theorem} \textbf{di Fermat}
 	
+	\label{th: pag 366}
+	$A \in \R^n$ aperto, $f: A \rightarrow \R$ derivabile in $\overline{x_0} \in A$, punto di estremo relativo per $f$. Allora $\nabla f(\overline{x_0})=\overline{0}$, cioè $\partial_{x_k}f(\overline{x_0})=0 \forall k =1,...,n$.
+\end{theorem}
 
 
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 366}}
 	
+	$\exists \delta >0 \mid B_\delta (\overline{x_0})\subseteq A$ perché $A$ è aperto. Fissato $k=1,...,n$ sia 
 	
+	$$\phi(t)=f(\overline{x_0}+t\overline{e_k}), \qquad t \in ]-\delta,\delta[$$
 	
+	restrizione di $f$ lungo un segmento parallelo  a $\overline{e_k}$ passante per $\overline{x_0}$ e di lunghezza $2\delta$.
+
+	\segnaposto % pag 366
+
+	Per fissare le idee assumiamo che $\overline{x_0}$ sia di massimo relativo. Prendendo $\delta$ abbastanza piccolo, possiamo assumere che 
 	
+	$$f(\overline{x_0})\geq f(\overline{x})\forall \overline{x} \in B_\delta (\overline{x_0})$$
 	
+	$$\phi(0)=f(\overline{x_0})\geq f(\overline{x_0}+t\overline{e_k})=\phi(t)\forall \,\, t \in ]-\delta,\delta[$$ 
 	
+	perché $\overline{x_0}+t \overline{e_k} \in B_\delta (\overline{x_0})\forall t \in ]-\delta,\delta[$ $\Rightarrow t=0$ è punto di massimo per \\%riq mal
+	$\phi \Rightarrow \phi'(0)\lowercomment{=}{}{\text{per definizione}}\partial_{x_k}f(\overline{x_0})=0$ per il teorema di Fermat in una variabile. $\qquad\square$
+\end{dembar}
+
+
+\begin{definition}
+	$f:\dom f \rightarrow \R$, $\overline{x_0}\in \dom f \subseteq \R^n$. $f$ derivabile in $\overline{x_0}$. Se $\nabla f(\overline{x_0})=\overline{0}$, allora $\overline{x_0}$ si dice \textbf{punto stazionario o critico} per $f$.
+\end{definition}
+
+
+\begin{definition}
+	$f: \dom f \rightarrow \R$, $ \overline{x_0}\in \dom f \subseteq \R^n$ punto stazionario. Se $\overline{x_0}$ non è punto di estremo relativo, allora si dice \textbf{punto di sella} per $f$.
+\end{definition}
+
+
+\begin{exbar}
+	{\centering $f(x,y)=x^2-y^2$
+		
+	$\nabla f(x,y)=(2x,-2y)$
 	
+	$\nabla f(0,0)=(0,0)$
 	
-\end{comment}
+	$f(x,0)=x^2\geq 0=f(0,0) \forall x \in \R$
+	
+	$f(0,y)=-y^2 < 0 =f(0,0)\forall y \neq 0$ \par}
+	
+	$\Rightarrow (0,0)$ non è punto di estremo relativo per $f$ perché in ogni intorno di $(0,0)$ $f$ assume valori sia maggiori che minori di $0=f(0,0)$.
+\end{exbar}
+
+
+\subsubsection{Derivate di ordine superiore e polinomio di Taylor}
+
+$f: \R \rightarrow \R$, $x_0\in\R \mid f'(x_0)=0$. Guardo $f''(x_0)$.
+
+$f''(x_0)<0$ 
+
+\segnaposto % pag 369_1
+
+$f''(x_0)>0$ 
+
+\segnaposto % pag 369_2
+
+\begin{align*} 
+	f(x)
+	&=f(x_0)+\uppercomment{f'(x_0)(x-x_0)}{}{=0}+\frac{1}{2}f''(x_0)(x-x_0)^2+o((x-x_0)^2)
+	\\
+	&=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+{\color{blue}\xcancel{o((x-x_0)^2)}}
+\end{align*}
+
+$$y=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2$$
+\begin{align*} 
+	f(x)
+	&=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+o((x-x_0)^2)=
+	\\
+	&=\lowercomment{ 
+		f(x_0)+(x-x_0)^2 \bigg[ \underbrace{\frac{1}{2} f''(x_0)+o(1)}_{{\color{teal} \genfrac{}{}{0pt}{}{>0 \textbf{ o } < 0 \text{ vicino a}}{x_0 \text{ se } f''(x_0) > 0 \text{ o } f''(x_0)<0} }} \bigg]}
+		{>f(x_0) \text{ o } < f(x_0) \text{ vicino a }x_0}{\text{se } f''(x_0)<0 \text{ o } f''(x_0)>0}
+\end{align*} 
+
+Il criterio della derivata seconda per studiare la natura di un punto critico discende dalla possibilità di scrivere una formula di Taylor al secondo ordine.
+
+
+\begin{definition}
+	$A \subseteq \R^n$ aperto, $f: A \rightarrow \R$ derivabile rispetto a $x_i$ in un intorno $U$ di $\overline{x_0}$. Se 
+	\begin{align*} 
+		\partial_{x_i}f: &U\rightarrow \R
+		\\
+		&\overline{x} \mapsto \partial_{x_i}f(\overline{x})
+	\end{align*}
+	
+	è derivabile rispetto a $x_j$ in $\overline{x_0}$, allora si dice che $f$ ha derivata parziale seconda in $\overline{x_0}$
+	
+	$$\partial_{x_j}(\partial_{x_i}f)(\overline{x_0})$$
+	
+	ed è indicata con 
+	
+	$$\partial_{x_jx_i}^2f(\overline{x_0}), \qquad \frac{\partial^2 f}{\partial_{x_j}\partial_{x_i}}(\overline{x_0}), \qquad D_{x_jx_i}^2f(\overline{x_0})$$
+	
+	\begin{itemize}
+		\item $f$ si dice derivabile due volte in $\overline{x_0} $ se in $\overline{x_0}$ ha tutte le $n^2$ derivate parziali seconde.
+		
+		\item $f$ si dice differenziabile due volte in $\overline{x_0}$ se è differenziabile in un intorno di $\overline{x_0}$ e le sue derivate parziali prime sono differenziabili in $\overline{x_0}$.
+		
+		\item $f$ si dice di classe $C^2$ in $A$ e si scrive $f \in C^2(A)$ se è derivabile due volte in $A$ e le sue derivate parziali seconde sono continue in $A$. In tal caso $f$ è differenziabile due volte in $A$ per il teorema differenziale totale. 
+	\end{itemize}
+\end{definition}
+
+
+\begin{definition}
+	In generale, se $A \subseteq \R^n$ è aperto e $f:A\rightarrow\R$, $f$ si dice di classe $C^k$ in $A$ e si scrive $f \in C^k(A)$, $k \geq 1$, se $f$ è derivabile $k$ volte in $A$ e le sue derivate parziali di ordine $k$ sono continue. $f$ si dice di classe $C^\infty$ in $A$ e si scrive $f \in C^\infty(A)$ se $f\in C^k(A) \,\, \forall \,\, k \geq 1$.
+\end{definition}
+
+\newpage %riq mal
+\begin{exbar}
+	$$f(x,y)=\sin(x^3y+y^3), \qquad f \in C^\infty(\R^2)$$
+	
+	$\partial_xf(x,y)=3x^2y \cos(x^3y+y^3)$
+	
+	$\partial_y f(x,y)=(x^3+3y^2)\cos(x^3y+y^3)$
+	
+	$\partial_y(\partial_xf)(x,y)=\partial_{yx}^2f(x,y)=3x^2 \cos(x^3y+y^3)-3x^2y(x^3+3y^2)\cos(x^3y+y^3)$
+	
+	$\partial_x(\partial_x f)(x,y)= \partial_{xx}^2f(x,y)=6xy\cos(x^3y+y^3)-3x^2y(3x^2y)\sin(x^3y+y^3)$
+	
+	$\partial_y(\partial_y f)(x,y)=\partial_{yy}^2f(x,y)=6y\cos(x^3y+y^3)-(x^3+3y)^2\sin(x^3y+y^3)$
+	
+	$\partial_x(\partial_y f)(x,y)=\partial_{xy}^2f(x,y)=3x^2\cos(x^3y+y^3)-3x^2y(x^3y+y^3)\sin(x^3y+y^3)$
+	
+	Noto che vale
+	\begin{equation*}
+		\partial_{yx}^2f(x,y)=\partial_{xy}^2f(x,y).
+	\end{equation*}
+	
+	E' sempre vero? NO!
+\end{exbar}
+
+
+\subsubsection{Teorema di Schwarz e matrice Hessiana}
+\begin{theorem} \textbf{(di Schwarz)}
+	
+	$A \subseteq\R^n$ aperto, $f:A\rightarrow\R$ tale che $\partial_{x_ix_j}^2f$ e $\partial_{x_jx_i}^2f$ ($i$ e $j$ fissati) esistono in un intorno $U$ di $\overline{x_0}\in A$ e sono continue in $\overline{x_0}$. Allora
+	\begin{equation*}
+		\partial_{x_jx_i}^2f(\overline{x_0})=\partial_{x_ix_j}^2f(\overline{x_0}).
+	\end{equation*}
+	
+	In particolare, se $f \in C^2(A)$, allora 
+	\begin{equation*}
+		\partial_{x_jx_i}^2f(\overline{x})=\partial_{x_ix_j}^2f(\overline{x})\,\,\, \forall\,\, \overline{x} \in A\,\, \forall \,\,i,j=1,...,n 
+	\end{equation*}  
+\end{theorem}
+
+
+\begin{exbar}
+\begin{example}
+	(funzione per cui le derivate seconde miste non sono uguali)
+	
+	$$f:\R^2\rightarrow\R$$
+	
+	\begin{equation*}
+		f(x,y)=
+		\begin{cases}
+			xy\frac{x^2-y^2}{x^2+y^2}&\text{  se  }(x,y)\neq (0,0)
+			\\
+			0&\text{  se  }(x,y)=(0,0)
+		\end{cases}
+	\end{equation*}
+	
+	Calcoliamo $\partial_{yx}^2f(0,0)$ e $\partial_{xy}^2f(0,0)$
+	
+	$f(x,0)=f(0,y)\,\, \forall\,\, x,y \Rightarrow \nabla f(0,0)=(0,0)$
+	
+	$(x,y)\neq (0,0)$
+	
+	$\partial_x f(x,y)=y \frac{x^2-y^2}{x^2+y^2}+xy\frac{2x(x^2+y^2)-2x(x^2-y^2)}{(x^2+y^2)^2}= y \frac{x^2-y^2}{x^2+y^2}+4xy\frac{xy^2}{(x^2+y^2)^2}$
+	
+	$\partial_yf(x,y)=x\frac{x^2-y^2}{x^2+y^2}+xy\frac{-2y(x^2+y^2)-2y(x^2-y^2)}{(x^2+y^2)^2}=x\frac{x^2-y^2}{x^2+y^2}-4xy\frac{x^2y}{(x^2+y^2)^2}$
+	
+	$\partial_{yx}^2f(0,0)=\partial_y (\partial_x f)(0,0)=[\partial_y(\partial_xf(0,y))]|_{y=0}=[\partial_y(-y)]|_{y=0}=-1$
+	
+	$\partial_{xy}^2f(0,0)=\partial_x(\partial_yf)(0,0)= [\partial_x(\partial_yf(x,0))]|_{x=0}=[\partial_x(x)]|_{x=0}=1$
+	
+	Le due derivate parziali seconde miste in questo caso sono diverse.
+\end{example}
+\end{exbar}
+
+
+\begin{definition}
+	$A \subseteq \R^n$ aperto, $f: A \rightarrow \R$ derivabile due volte in $\overline{x}\in A$. Si dice \textbf{matrice hessiana} di $f$ in $\overline{x}$ la matrice
+	\begin{equation*}
+		D^2f(\overline{x})=
+		\begin{pmatrix}
+			\partial_{x_1x_1}^2f(\overline{x})& \partial_{x_1x_2}^2f(\overline{x})  & \cdots & \partial_{x_1x_n}^2f(\overline{x})
+			\\
+			\partial_{x_2x_1}^2f(\overline{x})& \partial_{x_2x_2}^2f(\overline{x}) & \cdots & \partial_{x_2x_n}^2f(\overline{x})
+			\\
+			\vdots&\vdots & \ddots &\vdots 
+			\\
+			\partial_{x_nx_1}^2f(\overline{x})& \partial_{x_nx_2}^2f(\overline{x})& \cdots & \partial_{x_nx_n}^2f(\overline{x}) 
+		\end{pmatrix}
+	\end{equation*}
+\end{definition}
+
+
+\begin{attbar}
+	Se $f \in  C^2(A)$, $D^2f(\overline{x})$ è matrice simmetrica per il teorema di Schwarz.
+\end{attbar}
+
+
+\begin{exbar}
+	$$f(x,y)=x^2y+y^3$$
+	
+	$$\partial_x f(x,y)=2xy, \qquad \partial_y f(x,y)=x^2+3y^2$$
+	
+	{\centering $\partial_{yx}^2f(x,y)=2x=\partial_{xy}^2f(x,y)$ per il teorema di Schwarz. \par}
+	
+	$$\partial_{xx}^2f(x,y)=2y, \qquad \partial_{yy}^2f(x,y)=6y$$
+	
+	$D^2f(1,1)=
+	\begin{pmatrix}
+		\partial_{xx}^2f(1,1) & \partial_{xy}^2f(1,1)
+		\\
+		\partial_{yx}^2f(1,1)& \partial_{yy}^2f(1,1)
+	\end{pmatrix} =
+	\begin{pmatrix}
+		2 & 2 \\
+		2 & 6
+	\end{pmatrix}$
+\end{exbar}
+
+
+\subsubsection{Formula di Taylor}
+
+$f: \R \rightarrow \R$ derivabile due volte in $x_0 \in \R$
+
+$\Rightarrow f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+o(|x-x_0|^2)$
+
+$f: \R^n \rightarrow \R$, differenziabile due volte in $\overline{x_0} \in \R^n $
+
+\begin{align*} 
+	\Rightarrow f(\overline{x})
+	&=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + \frac{1}{2} \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}), \overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0}\|^2) =
+	\\
+	&=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + \frac{1}{2} (\overline{x}-\overline{x_0})^TD^2 f(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|^2)
+\end{align*}
+\begin{attbar}
+	\begin{equation*}
+		T(\overline{x})=f(\overline{x_0}) +\langle\nabla 	f(\overline{x_0}),\overline{x}-\overline{x_0} \rangle +\frac{1}{2} \langle D^2f(\overline{x_0})(\overline{x} -\overline{x_0}),\overline{x}-\overline{x_0} \rangle
+	\end{equation*}
+\end{attbar}
+
+polinomio di Taylor di ordine o grado $2$ di $f$ di centro $\overline{x_0}$.
+
+
+\begin{theorem}
+	
+	\label{th: pag 377}
+	$A \subseteq \R^n$ aperto, $f: A \rightarrow \R$
+	\begin{enumerate}
+		\item Se $f$ è differenziabile $2$ volte in $\overline{x_0} \in A$, allora
+		
+		\begin{equation}
+			\label{eq: pag 377}
+			f(\overline{x})=T(\overline{x})+o(\|\overline{x}-\overline{x_0}\|^2) \text{ per } \overline{x}\rightarrow \overline{x_0}
+		\end{equation}
+		
+		e $T$ è l'unico polinomio di grado al più $2$ che soddisfa la formula di Taylor di ordine $2$ di $f$ di centro $\overline{x_0}$.
+		
+		\item Se $f$ è differenziabile due volte in $A$ e $[\overline{x_0},\overline{x}]\subseteq A$, $\overline{x_0},\overline{x}\in A$ allora $ \exists\,\, \overline{\xi}\in ]\overline{x_0},\overline{x}[$ tale che
+		
+		$$f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}),\overline{x} -\overline{x_0}\rangle +\frac{1}{2}\langle D^2 f(\overline{\xi})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle$$
+	\end{enumerate} 
+\end{theorem}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} dell'\textbf{Equazione \ref{eq: pag 377}}
+	
+	$\overline{x_0}, \overline{x}\in A$, $\overline{x}\neq \overline{x_0}$, $\phi:[0, \|\overline{x}-\overline{x_0}\|]\rightarrow \R$, $\overline{v}=\frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}$
+	
+	$\phi(t)=f(\overline{x_0}+t\overline{v})$, restrizione di $f$ lungo il segmento $[\overline{x_0},\overline{x}]$.
+	
+	$\phi$ è derivabile due volte in $t=0$ perché $f$ lo è in $\overline{x_0}$.
+	
+	$$\phi(t)=\phi(0)+ {\color{teal} \phi'(0)} {\color{red}t} +\frac{1}{2} {\color{blue}\phi''(0)}t^2+o(t^2) \text{ per } t \rightarrow 0$$.
+	
+	{\color{red} $t=\| \overline{x}-\overline{x}_0 \|$}
+	
+	{ \color{teal}
+		$\phi'(t)=\langle\nabla f(\overline{x_0}+t\overline{v}),\overline{v}\rangle$
+		
+		$\phi'(0)=\langle \nabla f(\overline{x_0}), \frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}\rangle$
+	}
+	
+	{\color{blue}
+		$\phi''(t)=\langle D^2f(\overline{x_0}+t\overline{v})\overline{v},\overline{v} \rangle$
+		
+		$\phi''(0)=\langle D^2 f(\overline{x_0})\frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}, \frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}\rangle$
+	}
+	
+	$$\lowercomment{\phi(\|\overline{x}-\overline{x_0}\|)}{f(\overline{x})}{}
+	=\lowercomment{\phi(0)}{f(\overline{x}_0)}{} + \phi'(0) \|\overline{x}-\overline{x_0}\|+\frac{1}{2}\phi''(0)\| \overline{x}-\overline{x_0}\|^2+o(\|\overline{x}-\overline{x_0}\|^2)$$
+	\begin{align*} 
+		f(\overline{x})
+		&=f(\overline{x_0})+
+		\langle \nabla f(\overline{x_0}), \frac{\overline{x}-\overline{x_0}}{\cancel{\|\overline{x}-\overline{x_0}\|}} \rangle \cancel{\|\overline{x} -\overline{x_0}\|} +
+		\\
+		&\qquad + \frac{1}{2}\langle D^2 f(\overline{x_0})\frac{\overline{x}-\overline{x_0}}{\cancel{\|\overline{x}-\overline{x_0}\|}},\frac{\overline{x}-\overline{x_0}}{\cancel{\|\overline{x}-\overline{x_0}\|}}  \rangle \cancel{\|\overline{x}-\overline{x_0}\|^2}
+		+o(\|\overline{x}-\overline{x_0}\|)
+	\end{align*}
+\end{dembar}
+
+
+\begin{exbar}
+\begin{example}
+	$$f(x,y)=e^y\ln(1+x)$$
+	
+	Calcoliamo il polinomio di Taylor di $f$ di ordine $2$ e centro $(0,0)$.
+	
+	$$\partial_xf(x,y)=\frac{e^y}{1+x} \qquad \partial_y f(x,y) =e^y \ln(1+x)$$
+	
+	$$\partial_xf(0,0)=1 \qquad \partial_y f(0,0)=0$$
+	
+	$$\partial_{xx}^2f(x,y)=\frac{-e^y}{(1+x)^2} \qquad \partial_{yy}^2f(x,y)=e^y\ln(1+x)$$
+	
+	{\centering $\partial_{yx}^2 f(x,y)=\frac{e^y}{1+x}=\partial_{xy}^2f(x,y)$ per il teorema di Schwarz \par}
+	
+	$$\partial_{xx}^2f(0,0)=-1 \qquad \partial_{yy}^2f(0,0)=0 \qquad \partial_{yx}^2f(0,0)=1=\partial_{xy}^2f(0,0)$$
+	
+	$$\nabla f(0,0)=(1,0)$$
+	
+	$$D^2f(0,0)=
+	\begin{pmatrix}
+		-1&1
+		\\
+		1&0
+	\end{pmatrix}$$
+	\begin{align*} 
+		T(\overline{x})&=f(0,0)+\langle\nabla f(0,0),(x,y) \rangle + \frac{1}{2}\langle D^2f(0,0)(x,y),(x,y) \rangle=
+		\\
+		&=0+\langle (1,0),(x,y) \rangle + \frac{1}{2}
+		\begin{pmatrix}
+			x&y
+		\end{pmatrix}\begin{pmatrix}
+			-1& 1\\
+			1 &0
+		\end{pmatrix} \begin{pmatrix}
+			x\\
+			y
+		\end{pmatrix}=
+		\\
+		&=x+\frac{1}{2}
+		\begin{pmatrix}
+			-x+y & x
+		\end{pmatrix}\begin{pmatrix}
+			x\\
+			y
+		\end{pmatrix}=
+		\\
+		&=x-\frac{1}{2}x^2+\frac{1}{2}xy+\frac{1}{2}xy=
+		\\
+		&=x-\frac{1}{2}x^2+xy
+	\end{align*}
+	
+	$$f(x,y)=e^y\ln(1+x)$$
+	
+	$e^y=1+y+\frac{1}{2}y^2+o(y^2)$ per $y \rightarrow0$
+	
+	$\ln(1+x)=x-\frac{x^2}{2}+o(x^2)$ per $x \rightarrow 0$
+	
+	%===============================================PAG 381
+	
+	\begin{align*} 
+		f(x,y)
+		&=(1+y+\frac{1}{2}y^2+o(y^2))(x-\frac{x^2}{2}+o(x^2))=
+		\\
+		&=x-\frac{x^2}{2}+o(x^2)+xy-\cancel{\frac{x^2}{2}y}+o(x^2y)+\cancel{\frac{1}{2}x^2y}-\frac{1}{4}x^4y^4+o(x^2y^2)+o(y^2)=
+		\\
+		&=x-\frac{x^2}{2}+xy+\bigg[ \lowercomment{-\frac{1}{4}x^4y^4}{o(x^2)}{}+o(x^2)+o(y^2) \bigg]
+	\end{align*}
+	
+		$$o(x^2)=o(x^2+y^2) \qquad o(y^2)=o(x^2+y^2)$$
+		
+		{\color{teal}
+			$\lim_{(x,y)\rightarrow(0,0)}\frac{o(x^2)}{x^2+y^2}=0$, è vero? 
+			
+			Sì: $o(x^2)=x^2\cdot \uppercomment{o(1)}{\to 0}{\text{per }x\to0}$
+			
+			$\lim_{(x,y)\rightarrow(0,0)} \frac{o(x^2)}{x^2+y^2}=\lim_{(x,y)\rightarrow(0,0)} \uppercomment{\frac{x^2}{x^2+y^2}}{}{\leq1}\cdot o(1)=0$
+		}
+			
+		\begin{equation} 
+			\label{eq: pag 381}
+			f(x,y)=x-\frac{x^2}{2}+xy+o(x^2+y^2)=x-\frac{x^2}{2}+xy+o(\|x,y\|^2)
+		\end{equation}
+		
+		Il polinomio di Taylor di $f$ di ordine $2$ e centro $(0,0)$ è l'unico polinomio di grado al più $2$ che soddisfa l'equazione \ref{eq: pag 381} 
+		
+		$$\Rightarrow T(\overline{x})=x-\frac{x^2}{2}+xy$$
+\end{example}
+\end{exbar}
+
+
+\subsubsection{Studio della natura dei punti critici}
+
+Sia $Q: \R^n$ forma quadratica. $Q(\overline{x})=\overline{x}^T A \overline{x}$, con $A$ matrice simmetrica $n\times n$.
+
+\begin{definition}
+	\begin{enumerate}
+		\item $Q$ si dice \textbf{definita positiva} se $Q(\overline{x}) >0\,\, \forall\,\, \overline{x} \neq \overline{0}$.
+		
+		\item $Q$ si dice \textbf{definita negativa} se $Q(\overline{x})<0 \,\, \forall \,\, \overline{x} \neq \overline{0}$.
+		
+		\item $Q$ si dice \textbf{semidefinita positiva} se $Q(\overline{x})\geq 0 \,\, \forall \,\, \overline{x} \in \R^n$.
+		
+		\item $Q$ si dice \textbf{semidefinita negativa} se $Q(\overline{x})\leq 0 \,\, \forall \,\, \overline{x} \in \R^n$.
+		
+		\item $Q$ si dice \textbf{indefinita} se $\exists \,\,\overline{x_1},\overline{x_2}\in \R^{n}$ tali che $Q(\overline{x_1})>0$ e $Q(\overline{x_2})<0$.
+	\end{enumerate}
+\end{definition}
+
+
+\begin{proposition}
+	$Q$ forma quadratica su $\R^n$. Sia $A$ la matrice simmetrica $n \times n$ associata a $Q$ e siano $\lambda_1,...,\lambda_n$ gli autovalori di $A$ contati con la loro molteplicità.
+	\begin{enumerate}
+		\item $Q$ è definita positiva $\Leftrightarrow \lambda_i >0 \,\, \forall i =1,...,n$ e in tal caso $\exists \,\, c >0 \mid Q(\overline{x})\geq c\|\overline{x}\|^2\,\, \forall \overline{x} \in \R^n$.
+		\item $Q$ è semidefinita positiva $\Leftrightarrow \lambda_i \geq 0 \,\, \forall i=1,...,n$.
+		\item $Q$ è definita negativa $\Leftrightarrow \lambda_i <0 \,\, \forall i =1,...,n$ e in tal caso $\exists \,\, c >0 \mid Q(\overline{x})\leq -c\|\overline{x}\|^2\,\, \forall \overline{x} \in \R^n$.
+		\item $Q$ è semidefinita negativa $\Leftrightarrow \lambda_i \leq 0 \,\, \forall i=1,...,n$.
+		\item $Q$ è indefinita $\Leftrightarrow \exists\,\, i,j \in \{1,...,n\} \mid \lambda_i <0$ e $\lambda_j>0$.
+	\end{enumerate}
+\end{proposition}
+
+
+\begin{attbar}
+	Se $Q$ è la forma quadratica nulla, è contemporaneamente semidefinita positiva e semidefinita negativa.
+\end{attbar}
+
+Sia $A$ matrice $n \times n$ nella forma
+\begin{equation*}
+	A= 
+	\begin{pmatrix}
+		a_{11}&a_{12} &\cdots &a_{1n} \\
+		a_{21}&a_{22} &\cdots &a_{2n} \\
+		\vdots&\vdots &\ddots &\vdots \\
+		a_{n1}&a_{n2} &\cdots &a_{nn} \\
+	\end{pmatrix}
+\end{equation*}
+
+I minori principali di $A$ sono i determinanti delle sottomatrici lungo la diagonale principale cioè $\alpha_1=a_{11}$, $\alpha_2=\det\begin{pmatrix}
+	a_{11}&a_{12} \\
+	a_{21}&a_{22}
+\end{pmatrix}$, $\alpha_3=\det\begin{pmatrix}
+	a_{11}&a_{21}&a_{31} \\
+	a_{21}&a_{22}&a_{32} \\
+	a_{31}&a_{23}&a_{33} 
+\end{pmatrix}$
+etc.
+
+$$
+A_{ij} = \begin{pmatrix}
+	a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
+	a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\
+	a_{31} & a_{32} & a_{33} & \cdots & a_{3n} \\
+	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn} \\
+\end{pmatrix}
+$$ 
+
+%================================================ PAG384 MATRICEEEE
+
+
+\begin{proposition}
+	Sia $Q$ forma quadratica, sia $A$ la matrice simmetrica ad essa associata e sia $\alpha_1,...,\alpha_n$ i suoi minori principali.
+	\begin{enumerate}
+		\item $Q$ è definita positiva $\Leftrightarrow \alpha_i >0\,\, \forall \,\, i =1,...,n$
+		\item $Q$ è definita negativa $\Leftrightarrow \alpha_i <0 $ per i dispari e $\alpha_1>0$ per i pari. 
+	\end{enumerate}
+	
+	In particolare, se $A$ è matrice $2 \times 2$, allora
+	\begin{enumerate}
+		\item se $\det A <0 \Rightarrow Q$ è indefinita,
+		\item se $\det A=0 \Rightarrow 0$ è semidefinita.
+	\end{enumerate}
+\end{proposition}
+
+
+\begin{attbar}
+	\textbf{Notazione.} Con abuso di notazione si usa dire:
+	\begin{enumerate}
+		\item $Q$ definita positiva: $A >0$; 
+		\item $Q$ definita negativa: $A<0$;
+		\item $Q$ semidefinita positiva: $A \geq 0$;
+		\item $Q$ semidefinita negativa: $A \leq 0$.
+	\end{enumerate}
+\end{attbar}
+
+%======================================================================
+
+\begin{theorem}
+	
+	\label{th: pag 385}
+	$A \subseteq \R^n$ aperto, $f:A \rightarrow  \R$ differenziabile due volte in $\overline{x_o}\in A$, punto stazionario per $f$.
+	\begin{enumerate}
+		\item Se $D^2f(\overline{x_0})>0 ${\color{blue} (definita positiva)}, allora $\overline{x_0}$ è punto di minimo relativo per $f$.
+		\item Se $D^2f(\overline{x_0})<0${\color{blue} (definita negativa)}, allora $\overline{x_0}$ è punto di massimo relativo per $f$. 
+		\item Se $D^2f(\overline{x_0})$ è indefinita, allora $\overline{x_0}$ è punto di sella per $f$.
+		\item Se $\overline{x_0}$ è punto di minimo relativo, allora $D^2f(\overline{x_0})\geq0$ {\color{blue}(semidefinita positiva)}.
+		\item Se $\overline{x_0}$ è punto di massimo relativo per $f$, allora $D^2f(\overline{x_0})\leq0$ {\color{blue}(semidefinita negativa)}.
+	\end{enumerate}
+\end{theorem}
+
+
+\begin{attbar}
+	I punti 4. e 5. sono conseguenza di 1., 2. e 3.
+\end{attbar}
+
+
+\begin{exbar}
+	$$f(x,y)=x^4+y^4$$
+	
+	$f(x,y)\geq 0 = f(0,0)$ $\forall (x,y)\in \R^2 \Rightarrow (0,0)$ è punto di minimo assoluto.
+	
+	$$\partial_xf(x,y)=4x^3 \qquad \partial_yf(x,y)=4y^3$$
+	
+	$$\partial_{xx}^2f(x,y)=12x^2 \quad \partial_{yy}^2f(x,y)=12y^2 \quad \partial_{xy}^2f(x,y)=\partial_{yx}^2f(x,y)=0$$
+	
+	{\centering $D^2f(0,0)=\begin{pmatrix}
+		0&0\\
+		0&0
+	\end{pmatrix}$
+	che è semidefinita. \par}
+\end{exbar}
+
+%==================================== PAG 387
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 385}}
+	
+	\begin{enumerate}
+		\item $f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),(\overline{x}-\overline{x_0}) \rangle+o(\| \overline{x}-\overline{x_0} \|^2)=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),(\overline{x}-\overline{x_0})\rangle+o(\|\overline{x}-\overline{x_0}\|^2)$\\
+		$D^2f(\overline{x_0})>0 \Rightarrow \exists \,\, c >0 \mid \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle \geq \|\overline{x}-\overline{x_0} \|^2\Rightarrow f(\overline{x})\geq f(\overline{x_0})+\frac{c}{2}\|\overline{x}-\overline{x_0}\|^2+o(\|\overline{x}-\overline{x_0}\|^2)=-f(\overline{x_0})+\|\overline{x}-\overline{x_0} \|^2(\frac{c}{2}+o(1))\Rightarrow \exists\,\, r>0 \mid \frac{c}{2}+o(1)\geq \frac{c}{4}$in $B_r(\overline{x_0})$ per il teorema della permanenza del segno\\
+		$\Rightarrow \forall\,\, \overline{x}\in B_r(\overline{x_0})$ si ha
+		$f(\overline{x})\geq f(\overline{x_0})+\frac{c}{4}\|\overline{x}-\overline{x_0}\|^2 \geq f(\overline{x_0}) \Rightarrow \overline{x_0}$ è punto di minimo relativo.
+		
+		\item Analoga al punto 1. Si sfrutta il fatto che $\exists \,\, c>0 \mid \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle \leq -c\|\overline{x}-\overline{x_0}\|^2$.
+		\item $D^2f(\overline{x_0})$ è indefinita, quindi ha due autovalori $\lambda_1$ e $\lambda_2$ tali che $\lambda_1<0$ e $\lambda_2>0$.\\
+		Siano $\overline{r_1}$ e $\overline{r_2}$ i rispettivi autovettori tali che $D^2f(\overline{x_0})\overline{r_1}=\lambda_1\overline{r_1}$, $D^2f(\overline{x_0})=\lambda_2\overline{r_2}$, che supponiamo avere norma uno, $\|\overline{r_1} \|=\|\overline{r_2}\|=1$.\\
+		$f(\overline{x})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0}\|^2)$\\
+		$\overline{x}=\overline{x_0}+t\overline{r_1}$, $t \in \R$, sufficientemente piccolo in modo che $\overline{x_0}+t\overline{r_1}\in A$.\\
+		$f(\overline{x_0}+t\overline{r_1})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})t\overline{r_1},t\overline{r_1} \rangle + o(t^2)=f(\overline{x_0})+\frac{1}{2}\langle \lambda_1 +\overline{r_1},t\overline{r_1}\rangle + o(t^2)=f(\overline{x_0})+\frac{1}{2}\lambda_1 t^2 + o(t^2)=f(\overline{x_0})+t^2(\frac{1}{2}\lambda_1+o(1)) \Rightarrow \frac{1}{2}\lambda_1+o(1) < \frac{1}{4}\lambda_1$ in un intorno di $t=0$\\
+		$f(\overline{x_0}+t\overline{r_1})<f(\overline{x_0})+\frac{1}{4}\lambda_1 t^2< f(\overline{x_0})$ in un intorno di $t=0$, $t\neq 0$..\\
+		Analogamente $f(\overline{x_0}+t\overline{r_2})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})t\overline{r_2},t\overline{r_1} \rangle +o(t^2)=f(\overline{x_0})+\frac{1}{2}\lambda_2t^2+o(t^2)>f(\overline{x_0})$ in un intorno di $t=0$, $t \neq 0$\\
+		$\Rightarrow \overline{x_0}$ non è punto di estremo per $f \Rightarrow \overline{x_0}$ è punto di sella per $f$. 
+	\end{enumerate}
+\end{dembar}
+
+
+\begin{exbar}
+\begin{example}
+	Cercare i punti di estremo relativo della funzione $f(x,y)=4xe^x\cos y$, $(x,y)\in\R^2$.\\
+	$f \in C^\infty(\R^2)$.\\
+	Cerchiamo i punti critici di $f$ \\
+	$\partial_xf(x,y)=4e^x(x+1)\cos y$\\
+	$\partial_yf(x,y)=-4xe^x\sin y$\\
+	Deve essere $\nabla f(x,y)=(0,0)\Leftrightarrow \begin{cases}
+		\partial_x f(x,y)=0\\
+		\partial_y f(x,y)=0
+	\end{cases}= \begin{cases}
+		e^x(x+1)\cos y=0\\
+		xe^x\sin y=0
+	\end{cases}$\\
+	$\Leftrightarrow \begin{cases}
+		x=-1 &\text{  o  }\cos y =0\\
+		x=0 &\text{  o  }\sin y=0
+	\end{cases} \Leftrightarrow \begin{cases}
+		x=-1\\
+		\sin y =0
+	\end{cases}$ oppure $\begin{cases}
+		\cos y=0\\
+		x=0
+	\end{cases}$\\
+	$(-1,k\pi)$, $(0,\frac{\pi}{2}+k\pi)$, $k \in \Z$.\\
+	Studiamo la natura dei punti critici.\\
+	$\partial_xf(x,y)=4e^x(x+1)\cos y$\\
+	$\partial_yf(x,y)=-4xe^x\sin y$\\
+	$\partial_{xx}^2f(x,y)=4e^x(x+2)\cos y$\\
+	$\partial_{yy}^2f(x,y)=-4xe^x \cos y$\\
+	$\partial_{yx}f(x,y)=-4e^x(x+1)\sin y= \partial_{xy}^2f(x,y)$\\
+	$D^2f(x,y)=4 \begin{pmatrix}
+		e^x(x+2)\cos y & -e^x(x+1)\sin y\\
+		-e^x(x+1)\sin y & -x e^x \cos y
+	\end{pmatrix}$\\
+	$D^2f(-1, k\pi)=4 \begin{pmatrix}
+		e^{-1}\cos(k \pi)&0\\
+		0&e^{-1}\cos(k\pi)
+	\end{pmatrix}=\begin{pmatrix}
+		e^{-1}(-1)^k&0\\
+		0&e^{-1}(-1)^k
+	\end{pmatrix}$\\
+	$k$ pari $D^2f(-1,k\pi) >0 \Rightarrow (-1,k\pi)$ sono punti di minimo relativo.\\
+	$k$ dispari $D^2f(-1,k\pi)< 0 \Rightarrow (-1,k\pi)$ sono punti di massimo relativo.\\
+	$D^2f(0,\frac{\pi}{2}+k \pi)=4 \begin{pmatrix}
+		0 & -\sin(\frac{\pi}{2}+k\pi)\\
+		-\sin(\frac{\pi}{2}+k\pi)& 0
+	\end{pmatrix}=4 \begin{pmatrix}
+		0&(-1)^{k+1}\\
+		(-1)^{k+1}&0
+	\end{pmatrix}$\\
+	che è matrice indefinita $\Rightarrow$ i punti $(0,\frac{\pi}{2}+k \pi)$ sono punti di sella.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	
+	Calcolare i punti critici della funzione $f(x,y)=(y-x^2)(y-2x^2)$, $(x,y) \in \R^2$ e studiare la loro natura.\\
+	$f\in C^\infty (\R^2)$\\
+	$\partial_xf(x,y)=-2x(y-2x^2)-4x(y-x^2)=8x^3-6xy$\\
+	$\partial_yf(x,y)=y-2x^2+y-x^2=2y-3x^2$\\
+	$\begin{cases}
+		\partial_xf(x,y)=0\\
+		\partial_yf(x,y)=0
+	\end{cases} \Leftrightarrow \begin{cases}
+		8x^3-6xy=0\\
+		2y-3x^2=0
+	\end{cases} \Leftrightarrow \begin{cases}
+		x=0 \text{   o   } 4x^2-3y=0\\
+		y=\frac{3}{2}x^2
+	\end{cases}\Leftrightarrow \begin{cases}
+		x=0\\
+		y=0
+	\end{cases}$\\
+	$\Rightarrow(0,0)$ è l'unico punto critico per $t$\\
+	Calcoliamo $D^2f(0,0)$.\\
+	$\partial_{xx}^2f(x,y)=24x^2-6y$\\
+	$\partial_{yy}^2f(x,y)=2$\\
+	$\partial_{yx}^2f(x,y)=\partial_{xy}^2f(x,y)-6x$\\
+	$D^2f(0,0)=\begin{pmatrix}
+		0&0\\
+		0&2
+	\end{pmatrix} \Rightarrow$ è semidefinita positiva e non è la matrice nulla $\Rightarrow (0,0)$ è punto di minimo o è punto di sella.\\
+	$f(x,y)=(y-x^2)(y-2x^2)$\\
+	$f(0,0)=0$, $f(x,y) |_{y=x^2}=0$\\
+	$f(x,y)|_{y=2x^2}=0$\\
+	IMMAGINE\\
+	Se $y < x^2 \Rightarrow y-x^2 < 0$ e $y-2x^2< 0 \Rightarrow f(x,y)>0$. Se $y > 2x^2 \Rightarrow y-x^2 >0$ e $y-2x^2 >0 \Rightarrow f(x,y)> 0$.\\
+	$x^2< y< 2x^2$\\
+	$y- x^2>0$, $y-2x^2< 0 \Rightarrow f(x,y)<0 \Rightarrow (0,0)$ è punto di sella.
+	
+	\paragraph{\textcolor{red}{Esempio}}
+	Studiare la natura dei punti critici della funzione $f: \R^3 \rightarrow \R$ definita da $f(x,y,z)=x\sin z + y^2$.\\
+	$\partial_x f(x,y,z)=\sin z$\\
+	$\partial_y f(x,y,z)=2y$\\
+	$\partial_z f(x,y,z)=x \cos z$\\
+	$\begin{cases}
+		\partial_x f(x,y,z)=0\\
+		\partial_y f(x,y,z)=0\\
+		\partial_z f(x,y,z)=0
+	\end{cases}\Leftrightarrow\begin{cases}
+		\sin z=0\\
+		2y=0\\
+		x\cos z=0
+	\end{cases}\Leftrightarrow\begin{cases}
+		z=k\pi\\
+		y=0\\
+		x=0 \text{  o  } z=\frac{\pi}{2}+k\pi
+	\end{cases}$\\
+	$(0,0,k\pi)$, $k \in \Z$.\\
+	Per studiarne la natura calcoliamo le derivate seconde.\\
+	$\partial_x f(x,y,z)=\sin z$\\
+	$\partial_y f(x,y,z)=2y$\\
+	$\partial_z f(x,y,z)=x \cos z$\\
+	$\partial_{xx}^2f(x,y,z)=0$\\
+	$\partial_{yx}^2f(x,y,z)=0=\partial_{xy}^2f(x,y,z)$\\
+	$\partial_{zx}^2f(x,y,z)=\cos z$\\
+	$\partial_{yy}^2f(x,y,z)=2$\\
+	$\partial_{zy}^2f(x,y,z)=0=\partial_{yz}^2f(x,y,z)$\\
+	$\partial_{zz}^2f(x,y,z)=-x \sin z$\\
+	$D^2f(x,y,z)=\begin{pmatrix}
+		0&0&\cos z\\
+		0&2&0\\
+		\cos z&0&-x \sin z
+	\end{pmatrix}$\\
+	$D^2f(0,0,k\pi)=\begin{pmatrix}
+		0&0&(-1)^k\\
+		0&2&0\\
+		(-1)^k&0&0
+	\end{pmatrix}$\\
+	Calcoliamo gli autovalori della matrice hessiana.\\
+	$0=\det(D^2 f(0,0,k\pi)-\lambda I)= \det\begin{pmatrix}
+		-\lambda&0&(-1)^k\\
+		0&-2\lambda&0\\
+		(-1)^k&0&-\lambda
+	\end{pmatrix}=(2-\lambda)(\lambda^2-1)$.\\
+	Autovalori: $\lambda=2$ e $\lambda= \pm 1$. Avendo due autovalori di segno opposto, la matrice hessisiana è indefinita e quindi tutti i punti critici sono punti di sella
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	
+	Studiare i punti critici della funzione definita da $f(x,y,z)=2x^3-2y^2+z^2+3(x^2+y)z$, $(x,y,z)\in \R^3$. $f\in C^\infty(\R^3)$.\\
+	$\partial_xf(x,y,z)=6x^2+6xz$\\
+	$\partial_yf(x,y,z)=-4y+3z$\\
+	$\partial_zf(x,y,z)=2z+3(x^2+y)$\\
+	$\nabla f(x,y,z)=(0,0,0)$\\
+	$\begin{cases}
+		6x(x+z)=0\\
+		-4y+3z=0\\
+		2z+3(x^2+y)=0
+	\end{cases}\Leftrightarrow\begin{cases}
+		x=0\text{  o  }x=-z\\
+		-4y+3z=0\\
+		2z+3(x^2+y)=0
+	\end{cases}\Leftrightarrow\begin{cases}
+		x=0\\
+		-4y+3z=0\\
+		3y+2z=0
+	\end{cases}$\\
+	$\det\begin{pmatrix}
+		-4&3\\
+		3&2
+	\end{pmatrix}=-17\neq 0 \Leftrightarrow (x,y,z)=(0,0,0)$.\\
+	$\begin{cases}
+		x=-z\\
+		-4y+3z=0\\
+		2z+3z^2+3y=0
+	\end{cases}\Leftrightarrow\begin{cases}
+		x=-z\\
+		y=\frac{3}{4}z\\
+		2z+3z^2+\frac{9}{4}z=0
+	\end{cases}\Leftrightarrow (x,y,z)=(0,0,0)$ oppure $(x,y,z)=(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$.\\
+	I punti critici sono $(0,0,0)$ e $(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$. Studiamone la natura.\\
+	$\partial_xf(x,y,z)=6x^2+6xz$\\
+	$\partial_yf(x,y,z)=-4y+3z$\\
+	$\partial_zf(x,y,z)=2z+3(x^2+y)$\\
+	$\partial_{xx}^2f(x,y,z)=12x+6z$\\
+	$\partial_{yx}^2f(x,y,z)=0=\partial_{xy}^2f(x,y,z)$\\
+	$\partial_{zx}^2f(x,y,z)=6x=\partial_{xz}^2f(x,y,z)$\\
+	$\partial_{yy}^2f(x,y,z)=-4$\\
+	$\partial_{zy}^2f(x,y,z)=3=\partial_{yz}^2f(x,y,z)$\\
+	$\partial_{zz}^2f(x,y,z)=2$\\
+	$D^2f(x,y,z)=\begin{pmatrix}
+		12x+6z&0&6x\\
+		0&-4&3\\
+		6x&3&2
+	\end{pmatrix}$\\
+	$D^2f(0,0,0)=\begin{pmatrix}
+		0&0&0\\
+		0&-4&3\\
+		0&3&2
+	\end{pmatrix}$\\
+	$0=\det(D^2f(0,0,0)-\lambda I)= \det \begin{pmatrix}
+		-\lambda&0&0\\
+		0&-4-\lambda&3\\
+		0&3&2-\lambda
+	\end{pmatrix}=-\lambda[(\lambda-2)(4+\lambda)-9]=-\lambda[\lambda^2+2\lambda-17] \Rightarrow$ ha autovalore positivo ad uno negativo $\Rightarrow$ la metrica è indefinita $\Rightarrow (0,0,0)$ è punto di sella.\\
+	$D^2f(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})=\begin{pmatrix}
+		\frac{17}{2}&0&\frac{17}{2}\\
+		0&-4&3\\
+		\frac{17}{2}&3&2
+	\end{pmatrix}$\\
+	$\det D^2f(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})\neq 0$ e i primi due minori principali $\alpha_1$ e $\alpha_2$ soddisfano $\alpha_1= \frac{17}{2} >0$ e $\alpha_2 =-34 <0 \Rightarrow$ la matrice è indefinita $\Rightarrow (\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$ è punto di sella.
+\end{example}
+\end{exbar}
+
+
+\subsubsection{Matrice Jacobiana}
+
+$A \subseteq \R^n$ aperto, $\overline{f}: A \rightarrow \R^p$, $p \geq 1$, $\overline{f}(\overline{x})=(f_1(\overline{x}),f_2(\overline{x}),...,f_p(\overline{x}))$, $f_i:A \rightarrow \R$, $ i =1,...,p$.
+
+
+\begin{definition}
+	$\overline{f}$ si dice derivabile in $\overline{x_0}$ nella direzione $\overline{v}\in \R^n$, $\overline{v}$ versore, se tali sono $f_1,...,f_p$ e in tal caso si pone
+	\begin{equation*}
+		D_{\overline{v}}f(\overline{x_0})=\begin{pmatrix}
+			D_{\overline{v}}f_1(\overline{x_0})\\
+			D_{\overline{v}}f_2(\overline{x_0})\\
+			\vdots\\
+			D_{\overline{v}}f_p(\overline{x_0})
+		\end{pmatrix}
+	\end{equation*}
+	In particolare, $\overline{f}$ è derivabile in $\overline{x_0}$ se ciascuna componente $f_1,...,f_p$ lo è e in tal caso si pone 
+	\begin{equation*}
+		\partial_{x_k}\overline{f}(\overline{x_0})=\begin{pmatrix}
+			\partial_{x_k}f_1(\overline{x_0})\\
+			\partial_{x_k}f_2(\overline{x_0})\\
+			\vdots\\
+			\partial_{x_k}f_p(\overline{x_0})
+		\end{pmatrix}
+	\end{equation*}
+\end{definition}
+
+
+\begin{definition}
+	$\overline{f}$ è differenziabile in $\overline{x_0}\in A  \Leftrightarrow$ lo sono tutte le sue componenti. Se $\overline{f}$ è derivabile in $\overline{x_0}$, poniamo 
+	\begin{equation*}
+		D\overline{f}(\overline{x_0})=\overline{d_f}(\overline{x_0})=\begin{pmatrix}
+			\nabla f_1(\overline{x_0})\\
+			\nabla f_2(\overline{x_0})\\
+			\vdots\\
+			\nabla f_p(\overline{x_0})
+		\end{pmatrix}=\begin{pmatrix}
+			\partial_{x_1}f_1(\overline{x_0})&\partial_{x_2}f_1(\overline{x_0})&\cdots&\partial_{x_n}f_1(\overline{x_0})\\
+			\partial_{x_1}f_2(\overline{x_0})&\partial_{x_2}f_2(\overline{x_0})&\cdots&\partial_{x_n}f_2(\overline{x_0})\\
+			\vdots&\vdots&\ddots&\vdots \\
+			\partial_{x_1}f_p(\overline{x_0})&\partial_{x_2}f_p(\overline{x_0})&\cdots&\partial_{x_n}f_p(\overline{x_0})
+		\end{pmatrix}
+	\end{equation*}
+	che viene detta \underline{matrice jacobiana} di $\overline{f}$ in $\overline{x_0}$.
+\end{definition}
+
+
+\begin{theorem}
+	Se $\overline{f}$ è differenziabile in $\overline{x_0}$, allora $\overline{f}(\overline{x})=\overline{f}(\overline{x_0})+Df(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|)$.\\
+	\textcolor{orange}{$f: \R \rightarrow \R$, differenziabile in $x_0$, $f(x)=f(x_0)+f'(x_0)(x-x_0)+o(x-x_0)$.\\
+		$f:\R^n \rightarrow \R$ differenziabile in $\overline{x_0}$, $f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0} \|)$.\\
+		$\overline{f}: \R^n \rightarrow \R^p$ differenziabile in $\overline{x_0}$\\
+		$\overline{f}(\overline{x})=\overline{f}(\overline{x_0})+Df(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|)$}.
+\end{theorem}
+
+
+\begin{exbar}
+	$\overline{f}:\R^n \rightarrow \R^p$ lineare, $\overline{f}(\overline{x})=M \overline{x}$, $M$ matrice $p \times n$, allora $D \overline{f}(\overline{x})=M$.
+\end{exbar}
+
+
+\begin{exbar}
+	$\overline{f}:\R^2 \rightarrow \R^3$\\
+	$\overline{f}(x,y)=\begin{pmatrix}
+		\sin(xy)\\
+		x^2+y^2\\
+		e^{x^2y^3}
+	\end{pmatrix}$\\
+	$Df(x,y)=\begin{pmatrix}
+		\nabla \sin(xy)\\
+		\nabla (x^2+y^2)\\
+		\nabla (e^{x^2y^3})
+	\end{pmatrix}=\begin{pmatrix}
+		y \cos(xy) & x \cos (xy)\\
+		2x & 2y\\
+		2xy^3e^{x^2y^3}&3x^2y^2e^{x^2y^3}
+	\end{pmatrix}$.
+\end{exbar}
+
+
+\begin{theorem} \textbf{Regola della catena}
+	
+	$A \subseteq \R^n$ e $B \subseteq \R^p$ aperti, $\overline{f}: B \rightarrow \R^k$ e $\overline{g}:A \rightarrow B$
+	\textcolor{orange}{($\overline{f}\circ \overline{g}: A \rightarrow \R^k$)}.\\
+	Se $\overline{g}$ è differenziabile in $\overline{x_0}\in A$ e $\overline{f}$ è differenziabile in $\overline{g}(\overline{x_0})\in B$, allora $\overline{f}\circ \overline{g}$ è differenziabile in $\overline{x_0}$ e in tal caso
+	\begin{equation*}
+		D(\overline{f}\circ \overline{g})(\overline{x_0})=D\overline{f}(\overline{g}(\overline{x_0}))D\overline{g}(\overline{x_0}).
+	\end{equation*}	
+\end{theorem}
+
+% PAG 405
