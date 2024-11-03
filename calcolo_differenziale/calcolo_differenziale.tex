@@ -1127,7 +1127,7 @@ Quindi $\nabla f(\overline{x_0})$ fornisce la direzione di massima crescita di $
 
 \begin{corollary}
 	\label{cor: pag 357}
-	Sia $A \subseteq \R^n$ aperto connesso per archi, $f:A \rightarrow \R$ derivabile con $\nabla f(\overline{x})=\overline{0}\,\, \forall \,\, \overline{x} \in A$. Allora $f$ è costante. 
+	Sia $A \subseteq \R^n$ aperto connesso per archi, $f:A \rightarrow \R$ derivabile con $\nabla f(\overline{x})=\overline{0}$ $\forall \,\, \overline{x} \in A$. Allora $f$ è costante. 
 \end{corollary}
 
 
@@ -1188,12 +1188,12 @@ Quindi $\nabla f(\overline{x_0})$ fornisce la direzione di massima crescita di $
 		
 		\begin{align*} 
 			\sup_{\theta \in [0,2\pi[} \rho^{\alpha-3}\frac{|\cos\theta||\sin\theta|^\alpha}{\cos^4\theta+\rho^3|\sin\theta|^7}
-			&{\color{blue} \leq \rho^{\alpha-3}\frac{|\cos\theta||\sin\theta|^\alpha}{\rho^3|\sin\theta|^7}=
+			&{\color{blue} \leq \rho^{\alpha-3}\frac{|\cos\theta||\sin\theta|^\alpha}{\rho^3|\sin\theta|^7}}=
 			\\
 			&=\rho^{\alpha-6}|\cos\theta||\sin\theta|^{\alpha-7}\leq \rho^{\alpha-6}
 		\end{align*}
 		
-		{\centering \color{blue}se $\alpha >7$ $\Rightarrow f$ {\color{red}(e non $\Leftrightarrow$)} è continua, quindi non ci porta da nessuna parte.}
+		{\centering \color{blue}se $\alpha >7$ $\Rightarrow f$ {\color{red}(e non $\Leftrightarrow$)} è continua, quindi non ci porta da nessuna parte. \par}
 		
 		Proviamo a studiare la restrizione di $\phi$ lungo $x^4 =|y|^7$
 		
@@ -1220,24 +1220,59 @@ Quindi $\nabla f(\overline{x_0})$ fornisce la direzione di massima crescita di $
 		
 		$\Rightarrow f$ è continua in $(0,0)\Leftrightarrow \alpha> \frac{21}{4}$. \par}
 		
-		%================================================ PAG 361
 		
-		{\color{blue} Dimostriamo che $\exists C > 0 \mid \frac{|\alpha|^{q-p}|\beta|^{p}}{|\alpha|^q+|\beta|^q}\leq C\,\, \forall (\alpha,\beta)\neq(0,0)$\\
-			$\Phi(0,\beta)=0$, $\alpha \neq 0$\\
-			$\frac{|\alpha|^{q-p}|\beta|^p}{|\alpha|^q+|\beta|^q}=\frac{|\alpha|^q}{|\alpha^q}\frac{|\alpha|^{-p}|\beta|^p}{1+|\frac{\beta}{\alpha}|^q}=\frac{|\frac{\beta}{\alpha}|^p}{1-|\frac{\beta}{\alpha}|^q}\leq C$, $|\frac{\beta}{\alpha}|\geq 0$.}
-		\textcolor{orange}{$\xi(t)=\frac{t^p}{1+t^q}$, $t\geq 0$, $\exists C > 0 \mid \xi(t)\leq C \,\, \forall\,\, t \geq 0$ perchè $0 \leq p \leq q$.}
+		{\color{blue} Dimostriamo che $\exists C > 0 \mid $
+			$$ \lowercomment{\frac{|\alpha|^{q-p}|\beta|^{p}}{|\alpha|^q+|\beta|^q}}{{\color{teal} \psi(x,y)}}{} \leq C \qquad \forall (\alpha,\beta)\neq(0,0)$$
+			
+			$\Phi(0,\beta)=0$, $\alpha \neq 0$
+			
+			\begin{align*} 
+				\frac{|\alpha|^{q-p}|\beta|^p}{|\alpha|^q+|\beta|^q}
+				&=\frac{|\alpha|^q}{|\alpha^q}\frac{|\alpha|^{-p}|\beta|^p}{1+|\frac{\beta}{\alpha}|^q}=
+				\\
+				&=\frac{|\frac{\beta}{\alpha}|^p}{1-|\frac{\beta}{\alpha}|^q}\leq C & |\frac{\beta}{\alpha}|\geq 0
+			\end{align*}
+		}
 		
+		\color{orange}{\centering 
+			$\xi(t)=\frac{t^p}{1+t^q}$, $t\geq 0$, 
+			
+			$\exists C > 0 \mid \xi(t)\leq C \,\, \forall\,\, t \geq 0$ perché $0 \leq p \leq q$. \par}		
 		
-		\item Derivabilità in $(0,0)$.\\
-		Guardo le restrizioni di $f$ lungo gli assi cartesiani $f(x,0)=0\,\, \forall x$, $f(0,y)=0\,\, \forall y$\\
-		$\partial_xf(0,0)=0$ e $\partial_yf(0,0)=0$ perchè $f$ è costante lungo gli assi cartesiani $\Rightarrow f$ è derivabile in $(0,0) \forall \,\, \alpha >0$ e $\nabla f(0,0)=(0,0)$.
+		\item Derivabilità in $(0,0)$.
 		
-		\item Calcoliamo $\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)-f(0,0)-\langle \nabla f(0,0),(x,y) \rangle}{\sqrt{x^2+y^2}}=\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)}{\sqrt{x^2+y^2}}=$\\$=\lim_{(x,y)\rightarrow(0,0)}\frac{\sin(x|y|^\alpha)}{(x^4+|y|^7)\sqrt{x^2+y^2}}=\lim_{(x,y)\rightarrow(0,0)}\frac{x|y|^\alpha}{(x^4+|y|^7)\sqrt{x^2+y^2}}$\\
-		$|\frac{x|y|^\alpha}{x^4+|y|^7}|\leq C|y|^{\alpha-\frac{21}{4}}$\\
-		$|\frac{x|y|^\alpha}{(x^4+y^7)\sqrt{x^2+y^2}}|\leq \frac{C|y|^{\alpha-\frac{21}{4}}}{\sqrt{x^2+y^2}}\leq C \frac{|y|^{\alpha-\frac{21}{4}}}{|y|}=C |y|^{\alpha -\frac{25}{4}}\xrightarrow{(x,y)\rightarrow(0,0)}0 $.\\
-		Se $\alpha > \frac{25}{4}$, $f$ è differenziabile in $(0,0)$.\\
-		$|\frac{x|y|^\alpha}{(x^4+|y|^7)\sqrt{x^2+y^2}}||_{x^4=|y|^7}=|y|^{\alpha -\frac{21}{4}}\frac{1}{\sqrt{x^2+y^2}}|_{x^4=|y|^7}=|y|^{\alpha-\frac{21}{4}}\frac{1}{\sqrt{|y|^{\frac{7}{2}}+y^2}}=\frac{|y|^{\alpha-\frac{21}{4}}}{|y|}\frac{1}{\sqrt{1+|y|^{\frac{3}{2}}}}=$\\
-		$=|y|^{\alpha-\frac{25}{4}}\frac{1}{\sqrt{1+|y|^{\frac{3}{2}}}}\nrightarrow 0$ per $y \rightarrow 0$ se $\alpha \leq \frac{25}{4} \Rightarrow f$ non è differenziabile in $(0,0)$ se $\alpha \leq \frac{25}{4}$. $f$ è differenziabile in $(0,0)\Leftrightarrow \alpha > \frac{25}{4}$. 
+		Guardo le restrizioni di $f$ lungo gli assi cartesiani $f(x,0)=0\,\, \forall x$, $f(0,y)=0\,\, \forall y$
+		
+		{\centering $\partial_xf(0,0)=0$ e $\partial_yf(0,0)=0$ \par}
+		
+		perché $f$ è costante lungo gli assi cartesiani $\Rightarrow f$ è derivabile in $(0,0) \forall \,\, \alpha >0$ e $\nabla f(0,0)=(0,0)$.
+		
+		\item Calcoliamo 
+		\begin{align*} 
+			\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)-\uppercomment{f(0,0)}{}{=0}-\langle \uppercomment{\nabla f(0,0)}{}{=\overline{0}},(x,y) \rangle}{\sqrt{x^2+y^2}}
+			&=\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)}{\sqrt{x^2+y^2}}=
+			\\
+			&=\lim_{(x,y)\rightarrow(0,0)} \frac{\uppercomment{\sin(x|y|^\alpha)}{}{= x|y|^\alpha + o(x|y|^\alpha)}}{(x^4+|y|^7)\sqrt{x^2+y^2}} 
+			\\
+			&\PdS \lim_{(x,y)\rightarrow(0,0)}\frac{x|y|^\alpha}{(x^4+|y|^7)\sqrt{x^2+y^2}}
+		\end{align*}
+		
+		$$|\frac{x|y|^\alpha}{x^4+|y|^7}|\leq C|y|^{\alpha-\frac{21}{4}}$$
+		
+		$$\bigg|\frac{x|y|^\alpha}{(x^4+y^7)\sqrt{x^2+y^2}}\bigg| \leq \frac{C|y|^{\alpha-\frac{21}{4}}}{\underbrace{\sqrt{x^2+y^2}}_{{\color{blue} \geq y^2}}}\leq C \frac{|y|^{\alpha-\frac{21}{4}}}{|y|}=C |y|^{\alpha -\frac{25}{4}}\xrightarrow{(x,y)\rightarrow(0,0)}0 $$
+		
+		Se $\alpha > \frac{25}{4}$, $f$ è differenziabile in $(0,0)$.
+		
+		\begin{align*} 
+			\bigg| \frac{x|y|^\alpha}{(x^4+|y|^7)\sqrt{x^2+y^2}} \bigg| \mid_{x^4=|y|^7}
+			&=|y|^{\alpha -\frac{21}{4}}\frac{1}{\sqrt{x^2+y^2}}|_{x^4=|y|^7}=|y|^{\alpha-\frac{21}{4}}\frac{1}{\sqrt{|y|^{\frac{7}{2}}+y^2}}=
+			\\
+			&=\frac{|y|^{\alpha-\frac{21}{4}}}{|y|}\frac{1}{\sqrt{1+|y|^{\frac{3}{2}}}}=|y|^{\alpha-\frac{25}{4}}\frac{1}{\sqrt{1+|y|^{\frac{3}{2}}}}\nrightarrow 0
+			\\
+			&\text{ per } y \rightarrow 0 \text{ se } \alpha \leq \frac{25}{4}
+		\end{align*}
+		
+		$\Rightarrow f$ non è differenziabile in $(0,0)$ se $\alpha \leq \frac{25}{4}$. $f$ è differenziabile in $(0,0)\Leftrightarrow \alpha > \frac{25}{4}$. 
 	\end{enumerate}
 \end{example}
 \end{exbar}
@@ -1249,16 +1284,32 @@ $f:]a,b[\rightarrow \R$, derivabile.
 \begin{enumerate}
 	\item Teorema di Fermat: i punti di massimo e minimo di $f$ sono punti stazionari, cioè soddisfano $f'(x)=0$.
 	$f: A \rightarrow \R$, $A \subseteq \R^n$ aperto $\overline{x_0}\in A$ punto di estremo per $f \Rightarrow \nabla f(\overline{x_0})=\overline{0}$
-	\item Se $x_0 \in ]a,b[$ è punto stazionario, come faccio a capire se è di massimo, di minimo o di flesso orizzontale?\\
-	$f''(x_0)<0 \Rightarrow x_0$ punto di massimo\\
-	$f''(x_0)>0 \Rightarrow x_0$ punto di minimo\\
-	$f''(x_0)=0 \Rightarrow x_0$ è candidato punto di flesso.
+	
+	\item Se $x_0 \in ]a,b[$ è punto stazionario, come faccio a capire se è di massimo, di minimo o di flesso orizzontale?
+	\begin{itemize} 
+		\item $f''(x_0)<0 \Rightarrow x_0$ punto di massimo
+		\item $f''(x_0)>0 \Rightarrow x_0$ punto di minimo
+		\item $f''(x_0)=0 \Rightarrow x_0$ è candidato punto di flesso.
+	\end{itemize}
 \end{enumerate}
 
 
 \begin{definition}
-	$f:\dom f \rightarrow \R$, $\dom f \subseteq \R^n$. $\overline{x_0}\in \dom f$ si dice punto di massimo relativo per $f$ se $\exists r >0 \mid f(\overline{x_0})\geq f(\overline{x})\forall\overline{x}\in B_r(\overline{x_0})\cap \dom f$, $\overline{x_0}\in \dom f$ si dice punto di minimo relativo se $\exists r >0 \mid f(\overline{x_0})\leq f(\overline{x})\forall \overline{x} \in B_r(\overline{x_0})\cap \dom f$. $\overline{x_0} \in \dom f$ di massimo o minimo relativo si dice anche punto di estremo relativo.\\
-	$\overline{x_0}\in \dom f$ si dice di massimo (assoluto o globale) se $f(\overline{x_0})\geq f(\overline{x})\forall \overline{x} \in \dom f$. Definizione analoga si dà per un punto di minimo (assoluto o globale).
+	$f:\dom f \rightarrow \R$, $\dom f \subseteq \R^n$. $\overline{x_0}\in \dom f$ si dice punto di massimo relativo per $f$ se $\exists r >0 \mid$
+	
+	$$ f(\overline{x_0})\geq f(\overline{x})\forall\overline{x}\in B_r(\overline{x_0})\cap \dom f$$
+	
+	$\overline{x_0}\in \dom f$ si dice punto di minimo relativo se $\exists r >0 \mid$
+	 
+	$$ f(\overline{x_0})\leq f(\overline{x})\forall \overline{x} \in B_r(\overline{x_0})\cap \dom f$$
+	 
+	$\overline{x_0} \in \dom f$ di massimo o minimo relativo si dice anche punto di estremo relativo.
+	
+	$\overline{x_0}\in \dom f$ si dice di massimo (assoluto o globale) se 
+	
+	$$f(\overline{x_0})\geq f(\overline{x})\forall \overline{x} \in \dom f$$
+	
+	Definizione analoga si dà per un punto di minimo (assoluto o globale).
 \end{definition}
 
 
@@ -1273,38 +1324,54 @@ $f:]a,b[\rightarrow \R$, derivabile.
 \begin{dembar}
 	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 366}}
 	
-	\paragraph{\textcolor{red}{Dimostrazione}}
-	$\exists \delta >0 \mid B_\delta (\overline{x_0})\subseteq A$ perchè $A$ è aperto. Fissato $k=1,...,n$ sia $\phi(t)=f(\overline{x_0}+t\overline{e_k})$, $ t \in ]-\delta,\delta[$ restrizione di $f$ lungo un segmento parallelo  a $\overline{e_k}$ passante per $\overline{x_0}$ e di lunghezza $2\delta$.\\
+	$\exists \delta >0 \mid B_\delta (\overline{x_0})\subseteq A$ perché $A$ è aperto. Fissato $k=1,...,n$ sia 
+	
+	$$\phi(t)=f(\overline{x_0}+t\overline{e_k}), \qquad t \in ]-\delta,\delta[$$
+	
+	restrizione di $f$ lungo un segmento parallelo  a $\overline{e_k}$ passante per $\overline{x_0}$ e di lunghezza $2\delta$.
 
 	\segnaposto % pag 366
 
-	Per fissare le idee assumiamo che $\overline{x_0}$ sia di massimo relativo. Prendendo $\delta$ abbastanza piccolo, possiamo assumere che $f(\overline{x_0})\geq f(\overline{x})\forall \overline{x} \in B_\delta (\overline{x_0})$.\\
-	$\phi(0)=f(\overline{x_0})\geq f(\overline{x_0}+t\overline{e_k})=\phi(t)\forall \,\, t \in ]-\delta,\delta[$ perchè $\overline{x_0}+t \overline{e_k} \in B_\delta (\overline{x_0})\forall t \in ]-\delta,\delta[ \Rightarrow t=0$ è punto di massimo per $\phi \Rightarrow \phi'(0)=\partial_{x_k}f(\overline{x_0})=0$ per il teorema di Fermat in una variabile.
+	Per fissare le idee assumiamo che $\overline{x_0}$ sia di massimo relativo. Prendendo $\delta$ abbastanza piccolo, possiamo assumere che 
+	
+	$$f(\overline{x_0})\geq f(\overline{x})\forall \overline{x} \in B_\delta (\overline{x_0})$$
+	
+	$$\phi(0)=f(\overline{x_0})\geq f(\overline{x_0}+t\overline{e_k})=\phi(t)\forall \,\, t \in ]-\delta,\delta[$$ 
+	
+	perché $\overline{x_0}+t \overline{e_k} \in B_\delta (\overline{x_0})\forall t \in ]-\delta,\delta[$ $\Rightarrow t=0$ è punto di massimo per \\%riq mal
+	$\phi \Rightarrow \phi'(0)\lowercomment{=}{}{\text{per definizione}}\partial_{x_k}f(\overline{x_0})=0$ per il teorema di Fermat in una variabile. $\qquad\square$
 \end{dembar}
 
 
 \begin{definition}
-	$f:\dom f \rightarrow \R$, $\overline{x_0}\in \dom f \subseteq \R^n$. $f$ derivabile in $\overline{x_0}$. Se $\nabla f(\overline{x_0})=\overline{0}$, allora $\overline{x_0}$ si dice \underline{punto stazionario o critico} per $f$.
+	$f:\dom f \rightarrow \R$, $\overline{x_0}\in \dom f \subseteq \R^n$. $f$ derivabile in $\overline{x_0}$. Se $\nabla f(\overline{x_0})=\overline{0}$, allora $\overline{x_0}$ si dice \textbf{punto stazionario o critico} per $f$.
 \end{definition}
 
 
 \begin{definition}
-	$f: \dom f \rightarrow \R$, $ \overline{x_0}\in \dom f \subseteq \R^n$ punto stazionario. Se $\overline{x_0}$ non è punto di estremo relativo, allora si dice \underline{punto di sella} per $f$.
+	$f: \dom f \rightarrow \R$, $ \overline{x_0}\in \dom f \subseteq \R^n$ punto stazionario. Se $\overline{x_0}$ non è punto di estremo relativo, allora si dice \textbf{punto di sella} per $f$.
 \end{definition}
 
 
 \begin{exbar}
-	$f(x,y)=x^2-y^2$\\
-	$\nabla f(x,y)=(2x,-2y)$\\
-	$\nabla f(0,0)=(0,0)$\\
-	$f(x,0)=x^2\geq 0=f(0,0) \forall x \in \R$\\
-	$f(0,y)=-y^2 < 0 =f(0,0)\forall y \neq 0 \Rightarrow (0,0)$ non è punto di estremo relativo per $f$ perchè in ogni intorno di $(0,0)$ $f$ assume valori sia maggiori che minori di $0=f(0,0)$.
+	{\centering $f(x,y)=x^2-y^2$
+		
+	$\nabla f(x,y)=(2x,-2y)$
+	
+	$\nabla f(0,0)=(0,0)$
+	
+	$f(x,0)=x^2\geq 0=f(0,0) \forall x \in \R$
+	
+	$f(0,y)=-y^2 < 0 =f(0,0)\forall y \neq 0$ \par}
+	
+	$\Rightarrow (0,0)$ non è punto di estremo relativo per $f$ perché in ogni intorno di $(0,0)$ $f$ assume valori sia maggiori che minori di $0=f(0,0)$.
 \end{exbar}
 
 
 \subsubsection{Derivate di ordine superiore e polinomio di Taylor}
 
-$f: \R \rightarrow \R$, $x_0\in\R \mid f'(x_0)=0$. Guardo $f''(x_0)$.\\ 
+$f: \R \rightarrow \R$, $x_0\in\R \mid f'(x_0)=0$. Guardo $f''(x_0)$.
+
 $f''(x_0)<0$ 
 
 \segnaposto % pag 369_1
@@ -1313,17 +1380,47 @@ $f''(x_0)>0$
 
 \segnaposto % pag 369_2
 
-$f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+o((x-x_0)^2)=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+o((x-x_0)^2)$\\
-$y=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2$\\
-$f(x)=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+o((x-x_0)^2)=f(x_0)+(x-x_0)^2\left[ \frac{1}{2} f''(x_0)+o(1) \right]$ che è $> f(x_0)$ o $< f(x_0)$ vicino a $x_0$ se $f''(x_0)< 0$ o $f''(x_0)>0$.\\
+\begin{align*} 
+	f(x)
+	&=f(x_0)+\uppercomment{f'(x_0)(x-x_0)}{}{=0}+\frac{1}{2}f''(x_0)(x-x_0)^2+o((x-x_0)^2)
+	\\
+	&=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+{\color{blue}\xcancel{o((x-x_0)^2)}}
+\end{align*}
+
+$$y=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2$$
+\begin{align*} 
+	f(x)
+	&=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+o((x-x_0)^2)=
+	\\
+	&=\lowercomment{ 
+		f(x_0)+(x-x_0)^2 \bigg[ \underbrace{\frac{1}{2} f''(x_0)+o(1)}_{{\color{teal} \genfrac{}{}{0pt}{}{>0 \textbf{ o } < 0 \text{ vicino a}}{x_0 \text{ se } f''(x_0) > 0 \text{ o } f''(x_0)<0} }} \bigg]}
+		{>f(x_0) \text{ o } < f(x_0) \text{ vicino a }x_0}{\text{se } f''(x_0)<0 \text{ o } f''(x_0)>0}
+\end{align*} 
+
 Il criterio della derivata seconda per studiare la natura di un punto critico discende dalla possibilità di scrivere una formula di Taylor al secondo ordine.
 
 
 \begin{definition}
-	$A \subseteq \R^n$ aperto, $f: A \rightarrow \R$ derivabile rispetto a $x_i$ in un intorno $U$ di $\overline{x_0}$. Se $\partial_{x_i}f:U\rightarrow \R$, $\overline{x} \mapsto \partial_{x_i}f(\overline{x})$ è derivabile rispetto a $x_j$ in $\overline{x_0}$, allora si dice che $f$ ha derivata parziale seconda in $\overline{x_0}$, $\partial_{x_j}(\partial_{x_i}f)(\overline{x_0})$ ed è indicata con $\partial_{x_jx_i}^2f(\overline{x_0})$, $ \frac{\partial^2 f}{\partial_{x_j}\partial_{x_i}}(\overline{x_0})$, $D_{x_jx_i}^2f(\overline{x_0})$.
+	$A \subseteq \R^n$ aperto, $f: A \rightarrow \R$ derivabile rispetto a $x_i$ in un intorno $U$ di $\overline{x_0}$. Se 
+	\begin{align*} 
+		\partial_{x_i}f: &U\rightarrow \R
+		\\
+		&\overline{x} \mapsto \partial_{x_i}f(\overline{x})
+	\end{align*}
+	
+	è derivabile rispetto a $x_j$ in $\overline{x_0}$, allora si dice che $f$ ha derivata parziale seconda in $\overline{x_0}$
+	
+	$$\partial_{x_j}(\partial_{x_i}f)(\overline{x_0})$$
+	
+	ed è indicata con 
+	
+	$$\partial_{x_jx_i}^2f(\overline{x_0}), \qquad \frac{\partial^2 f}{\partial_{x_j}\partial_{x_i}}(\overline{x_0}), \qquad D_{x_jx_i}^2f(\overline{x_0})$$
+	
 	\begin{itemize}
 		\item $f$ si dice derivabile due volte in $\overline{x_0} $ se in $\overline{x_0}$ ha tutte le $n^2$ derivate parziali seconde.
+		
 		\item $f$ si dice differenziabile due volte in $\overline{x_0}$ se è differenziabile in un intorno di $\overline{x_0}$ e le sue derivate parziali prime sono differenziabili in $\overline{x_0}$.
+		
 		\item $f$ si dice di classe $C^2$ in $A$ e si scrive $f \in C^2(A)$ se è derivabile due volte in $A$ e le sue derivate parziali seconde sono continue in $A$. In tal caso $f$ è differenziabile due volte in $A$ per il teorema differenziale totale. 
 	\end{itemize}
 \end{definition}
@@ -1333,20 +1430,27 @@ Il criterio della derivata seconda per studiare la natura di un punto critico di
 	In generale, se $A \subseteq \R^n$ è aperto e $f:A\rightarrow\R$, $f$ si dice di classe $C^k$ in $A$ e si scrive $f \in C^k(A)$, $k \geq 1$, se $f$ è derivabile $k$ volte in $A$ e le sue derivate parziali di ordine $k$ sono continue. $f$ si dice di classe $C^\infty$ in $A$ e si scrive $f \in C^\infty(A)$ se $f\in C^k(A) \,\, \forall \,\, k \geq 1$.
 \end{definition}
 
-
+\newpage %riq mal
 \begin{exbar}
+	$$f(x,y)=\sin(x^3y+y^3), \qquad f \in C^\infty(\R^2)$$
 	
-	$f(x,y)=\sin(x^3y+y^3)$, $f \in C^\infty(\R^2)$\\
-	$\partial_xf(x,y)=3x^2y \cos(x^3y+y^3)$\\
-	$\partial_y f(x,y)=(x^3+3y^2)\cos(x^3y+y^3)$\\
-	$\partial_y(\partial_xf)(x,y)=\partial_{yx}^2f(x,y)=3x^2 \cos(x^3y+y^3)-3x^2y(x^3+3y^2)\cos(x^3y+y^3)$\\
-	$\partial_x(\partial_x f)(x,y)= \partial_{xx}^2f(x,y)=6xy\cos(x^3y+y^3)-3x^2y(3x^2y)\sin(x^3y+y^3)$\\
-	$\partial_y(\partial_y f)(x,y)=\partial_{yy}^2f(x,y)=6y\cos(x^3y+y^3)-(x^3+3y)^2\sin(x^3y+y^3)$\\
-	$\partial_x(\partial_y f)(x,y)=\partial_{xy}^2f(x,y)=3x^2\cos(x^3y+y^3)-3x^2y(x^3y+y^3)\sin(x^3y+y^3)$\\
+	$\partial_xf(x,y)=3x^2y \cos(x^3y+y^3)$
+	
+	$\partial_y f(x,y)=(x^3+3y^2)\cos(x^3y+y^3)$
+	
+	$\partial_y(\partial_xf)(x,y)=\partial_{yx}^2f(x,y)=3x^2 \cos(x^3y+y^3)-3x^2y(x^3+3y^2)\cos(x^3y+y^3)$
+	
+	$\partial_x(\partial_x f)(x,y)= \partial_{xx}^2f(x,y)=6xy\cos(x^3y+y^3)-3x^2y(3x^2y)\sin(x^3y+y^3)$
+	
+	$\partial_y(\partial_y f)(x,y)=\partial_{yy}^2f(x,y)=6y\cos(x^3y+y^3)-(x^3+3y)^2\sin(x^3y+y^3)$
+	
+	$\partial_x(\partial_y f)(x,y)=\partial_{xy}^2f(x,y)=3x^2\cos(x^3y+y^3)-3x^2y(x^3y+y^3)\sin(x^3y+y^3)$
+	
 	Noto che vale
 	\begin{equation*}
 		\partial_{yx}^2f(x,y)=\partial_{xy}^2f(x,y).
 	\end{equation*}
+	
 	E' sempre vero? NO!
 \end{exbar}
 
@@ -1358,6 +1462,7 @@ Il criterio della derivata seconda per studiare la natura di un punto critico di
 	\begin{equation*}
 		\partial_{x_jx_i}^2f(\overline{x_0})=\partial_{x_ix_j}^2f(\overline{x_0}).
 	\end{equation*}
+	
 	In particolare, se $f \in C^2(A)$, allora 
 	\begin{equation*}
 		\partial_{x_jx_i}^2f(\overline{x})=\partial_{x_ix_j}^2f(\overline{x})\,\,\, \forall\,\, \overline{x} \in A\,\, \forall \,\,i,j=1,...,n 
@@ -1367,34 +1472,50 @@ Il criterio della derivata seconda per studiare la natura di un punto critico di
 
 \begin{exbar}
 \begin{example}
-	(funzione per cui le derivate seconde miste non sono uguali)\\
-	$f:\R^2\rightarrow\R$\\
+	(funzione per cui le derivate seconde miste non sono uguali)
+	
+	$$f:\R^2\rightarrow\R$$
+	
 	\begin{equation*}
-		f(x,y)=\begin{cases}
-			xy\frac{x^2-y^2}{x^2+y^2}&\text{  se  }(x,y)\neq (0,0)\\
+		f(x,y)=
+		\begin{cases}
+			xy\frac{x^2-y^2}{x^2+y^2}&\text{  se  }(x,y)\neq (0,0)
+			\\
 			0&\text{  se  }(x,y)=(0,0)
 		\end{cases}
 	\end{equation*}
-	Calcoliamo $\partial_{yx}^2f(0,0)$ e $\partial_{xy}^2f(0,0)$\\
-	$f(x,0)=f(0,y)\,\, \forall\,\, x,y \Rightarrow \nabla f(0,0)=(0,0)$\\
-	$(x,y)\neq (0,0)$\\
-	$\partial_x f(x,y)=y \frac{x^2-y^2}{x^2+y^2}+xy\frac{2x(x^2+y^2)-2x(x^2-y^2)}{(x^2+y^2)^2}= y \frac{x^2-y^2}{x^2+y^2}+4xy\frac{xy^2}{(x^2+y^2)^2}$\\
-	$\partial_yf(x,y)=x\frac{x^2-y^2}{x^2+y^2}+xy\frac{-2y(x^2+y^2)-2y(x^2-y^2)}{(x^2+y^2)^2}=x\frac{x^2-y^2}{x^2+y^2}-4xy\frac{x^2y}{(x^2+y^2)^2}$\\
-	$\partial_{yx}^2f(0,0)=\partial_y (\partial_x f)(0,0)=[\partial_y(\partial_xf(0,y))]|_{y=0}=[\partial_y(-y)]|_{y=0}=-1$\\
-	$\partial_{xy}^2f(0,0)=\partial_x(\partial_yf)(0,0)= [\partial_x(\partial_yf(x,0))]|_{x=0}=[\partial_x(x)]|_{x=0}=1$\\
+	
+	Calcoliamo $\partial_{yx}^2f(0,0)$ e $\partial_{xy}^2f(0,0)$
+	
+	$f(x,0)=f(0,y)\,\, \forall\,\, x,y \Rightarrow \nabla f(0,0)=(0,0)$
+	
+	$(x,y)\neq (0,0)$
+	
+	$\partial_x f(x,y)=y \frac{x^2-y^2}{x^2+y^2}+xy\frac{2x(x^2+y^2)-2x(x^2-y^2)}{(x^2+y^2)^2}= y \frac{x^2-y^2}{x^2+y^2}+4xy\frac{xy^2}{(x^2+y^2)^2}$
+	
+	$\partial_yf(x,y)=x\frac{x^2-y^2}{x^2+y^2}+xy\frac{-2y(x^2+y^2)-2y(x^2-y^2)}{(x^2+y^2)^2}=x\frac{x^2-y^2}{x^2+y^2}-4xy\frac{x^2y}{(x^2+y^2)^2}$
+	
+	$\partial_{yx}^2f(0,0)=\partial_y (\partial_x f)(0,0)=[\partial_y(\partial_xf(0,y))]|_{y=0}=[\partial_y(-y)]|_{y=0}=-1$
+	
+	$\partial_{xy}^2f(0,0)=\partial_x(\partial_yf)(0,0)= [\partial_x(\partial_yf(x,0))]|_{x=0}=[\partial_x(x)]|_{x=0}=1$
+	
 	Le due derivate parziali seconde miste in questo caso sono diverse.
 \end{example}
 \end{exbar}
 
 
 \begin{definition}
-	$A \subseteq \R^n$ aperto, $f: A \rightarrow \R$ derivabile due volte in $\overline{x}\in A$. Si dice \underline{matrice hessiana} di $f$ in $\overline{x}$ la matrice
+	$A \subseteq \R^n$ aperto, $f: A \rightarrow \R$ derivabile due volte in $\overline{x}\in A$. Si dice \textbf{matrice hessiana} di $f$ in $\overline{x}$ la matrice
 	\begin{equation*}
-		D^2f(\overline{x})=\begin{pmatrix}
-			\partial_{x_1x_1}^2f(\overline{x})& \partial_{x_1x_2}^2f(\overline{x})  & \cdots & \partial_{x_1x_n}^2f(\overline{x})\\
-			\partial_{x_2x_1}^2f(\overline{x})& \partial_{x_2x_2}^2f(\overline{x}) & \cdots & \partial_{x_2x_n}^2f(\overline{x})\\
-			\vdots&\vdots & \ddots &\vdots \\
-			\partial_{x_nx_1}^2f(\overline{x})& \partial_{x_nx_2}^2f(\overline{x})& \cdots & \partial_{x_nx_n}^2f(\overline{x}) \\
+		D^2f(\overline{x})=
+		\begin{pmatrix}
+			\partial_{x_1x_1}^2f(\overline{x})& \partial_{x_1x_2}^2f(\overline{x})  & \cdots & \partial_{x_1x_n}^2f(\overline{x})
+			\\
+			\partial_{x_2x_1}^2f(\overline{x})& \partial_{x_2x_2}^2f(\overline{x}) & \cdots & \partial_{x_2x_n}^2f(\overline{x})
+			\\
+			\vdots&\vdots & \ddots &\vdots 
+			\\
+			\partial_{x_nx_1}^2f(\overline{x})& \partial_{x_nx_2}^2f(\overline{x})& \cdots & \partial_{x_nx_n}^2f(\overline{x}) 
 		\end{pmatrix}
 	\end{equation*}
 \end{definition}
@@ -1406,14 +1527,21 @@ Il criterio della derivata seconda per studiare la natura di un punto critico di
 
 
 \begin{exbar}
-	$f(x,y)=x^2y+y^3$\\
-	$\partial_x f(x,y)=2xy$, $\partial_y f(x,y)=x^2+3y^2$\\
-	$\partial_{yx}^2f(x,y)=2x=\partial_{xy}^2f(x,y)$ per il teorema di Schwarz.\\
-	$\partial_{xx}^2f(x,y)=2y$, $\partial_{yy}^2f(x,y)=6y$\\
-	$D^2f(1,1)=\begin{pmatrix}
-		\partial_{xx}^2f(1,1) & \partial_{xy}^2f(1,1)\\
+	$$f(x,y)=x^2y+y^3$$
+	
+	$$\partial_x f(x,y)=2xy, \qquad \partial_y f(x,y)=x^2+3y^2$$
+	
+	{\centering $\partial_{yx}^2f(x,y)=2x=\partial_{xy}^2f(x,y)$ per il teorema di Schwarz. \par}
+	
+	$$\partial_{xx}^2f(x,y)=2y, \qquad \partial_{yy}^2f(x,y)=6y$$
+	
+	$D^2f(1,1)=
+	\begin{pmatrix}
+		\partial_{xx}^2f(1,1) & \partial_{xy}^2f(1,1)
+		\\
 		\partial_{yx}^2f(1,1)& \partial_{yy}^2f(1,1)
-	\end{pmatrix}= \begin{pmatrix}
+	\end{pmatrix} =
+	\begin{pmatrix}
 		2 & 2 \\
 		2 & 6
 	\end{pmatrix}$
@@ -1422,14 +1550,24 @@ Il criterio della derivata seconda per studiare la natura di un punto critico di
 
 \subsubsection{Formula di Taylor}
 
-$f: \R \rightarrow \R$ derivabile due volte in $x_0 \in \R$\\
-$\Rightarrow f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+o(|x-x_0|^2)$\\
-$f: \R^n \rightarrow \R$, differenziabile due volte in $\overline{x_0} \in \R^n $\\
-$\Rightarrow f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + \frac{1}{2} \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}), \overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0}\|^2)=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + \frac{1}{2} (\overline{x}-\overline{x_0})^TD^2 f(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|^2)$\\
+$f: \R \rightarrow \R$ derivabile due volte in $x_0 \in \R$
 
-\begin{equation*}
-	T(\overline{x})=f(\overline{x_0}) +\langle\nabla f(\overline{x_0}),\overline{x}-\overline{x_0} \rangle +\frac{1}{2} \langle D^2f(\overline{x_0})(\overline{x} -\overline{x_0}),\overline{x}-\overline{x_0} \rangle
-\end{equation*}
+$\Rightarrow f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+o(|x-x_0|^2)$
+
+$f: \R^n \rightarrow \R$, differenziabile due volte in $\overline{x_0} \in \R^n $
+
+\begin{align*} 
+	\Rightarrow f(\overline{x})
+	&=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + \frac{1}{2} \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}), \overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0}\|^2) =
+	\\
+	&=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + \frac{1}{2} (\overline{x}-\overline{x_0})^TD^2 f(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|^2)
+\end{align*}
+\begin{attbar}
+	\begin{equation*}
+		T(\overline{x})=f(\overline{x_0}) +\langle\nabla 	f(\overline{x_0}),\overline{x}-\overline{x_0} \rangle +\frac{1}{2} \langle D^2f(\overline{x_0})(\overline{x} -\overline{x_0}),\overline{x}-\overline{x_0} \rangle
+	\end{equation*}
+\end{attbar}
+
 polinomio di Taylor di ordine o grado $2$ di $f$ di centro $\overline{x_0}$.
 
 
@@ -1438,72 +1576,146 @@ polinomio di Taylor di ordine o grado $2$ di $f$ di centro $\overline{x_0}$.
 	\label{th: pag 377}
 	$A \subseteq \R^n$ aperto, $f: A \rightarrow \R$
 	\begin{enumerate}
-		\item Se $f$ è differenziabile $2$ volte in $\overline{x_0} \in A$, allora $f(\overline{x})=T(\overline{x})+o(\|\overline{x}-\overline{x_0}\|^2)$ per $\overline{x}\rightarrow \overline{x_0}$ e $T$ è l'unico polinomio di grado al più $2$ che sodddisfa  la formula di Taylor di ordine $2$ di $f$ di centro $\overline{x_0}$.
-		\item Se $f$ è differenziabile due volte in $A$ e $[\overline{x_0},\overline{x}]\subseteq A$, $\overline{x_0},\overline{x}\in A$ allora $ \exists\,\, \overline{\xi}\in ]\overline{x_0},\overline{x}[$ tale che $f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}),\overline{x} -\overline{x_0}\rangle +\frac{1}{2}\langle D^2 f(\overline{\xi})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle$.
+		\item Se $f$ è differenziabile $2$ volte in $\overline{x_0} \in A$, allora
+		
+		\begin{equation}
+			\label{eq: pag 377}
+			f(\overline{x})=T(\overline{x})+o(\|\overline{x}-\overline{x_0}\|^2) \text{ per } \overline{x}\rightarrow \overline{x_0}
+		\end{equation}
+		
+		e $T$ è l'unico polinomio di grado al più $2$ che soddisfa la formula di Taylor di ordine $2$ di $f$ di centro $\overline{x_0}$.
+		
+		\item Se $f$ è differenziabile due volte in $A$ e $[\overline{x_0},\overline{x}]\subseteq A$, $\overline{x_0},\overline{x}\in A$ allora $ \exists\,\, \overline{\xi}\in ]\overline{x_0},\overline{x}[$ tale che
+		
+		$$f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}),\overline{x} -\overline{x_0}\rangle +\frac{1}{2}\langle D^2 f(\overline{\xi})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle$$
 	\end{enumerate} 
 \end{theorem}
 
 
 \begin{dembar}
-	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 377}}
+	\textbf{Dimostrazione} dell'\textbf{Equazione \ref{eq: pag 377}}
 	
-	$\overline{x_0}, \overline{x}\in A$, $\overline{x}\neq \overline{x_0}$, $\phi:[0, \|\overline{x}-\overline{x_0}\|]\rightarrow \R$, $\overline{v}=\frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}$\\
-	$\phi(t)=f(\overline{x_0}+t\overline{v})$, restrizione di $f$ lungo il segmento $[\overline{x_0},\overline{x}]$.\\
-	$\phi$ è derivabile due volte in $t=0$ perchè $f$ lo è in $\overline{x_0}$.\\
-	$\phi(t)=\phi(0)+\phi'(0)t+\frac{1}{2}\phi''(0)t^2+o(t^2)$ per $t \rightarrow 0$.\\
-	$\phi'(t)=\langle\nabla f(\overline{x_0}+t\overline{v}),\overline{v}\rangle$\\
-	$\phi'(0)=\langle \nabla f(\overline{x_0}), \frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}\rangle$\\
-	$\phi''(t)=\langle D^2f(\overline{x_0}+t\overline{v})\overline{v},\overline{v} \rangle$\\
-	$\phi''(0)=\langle D^2 f(\overline{x_0})\frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}, \frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}\rangle$.\\
-	$\phi(\|\overline{x}-\overline{x_0}\|)=\phi(0)+\phi'(0) \|\overline{x}-\overline{x_0}\|+\frac{1}{2}\phi''(0)\| \overline{x}-\overline{x_0}\|^2+o(\|\overline{x}-\overline{x_0}\|^2)$\\
-	$f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|} \rangle \|\overline{x} -\overline{x_0}\|+ \frac{1}{2}\langle D^2 f(\overline{x_0})\frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|},\frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}  \rangle \|\overline{x}-\overline{x_0}\|+o(\|\overline{x}-\overline{x_0}\|)$
+	$\overline{x_0}, \overline{x}\in A$, $\overline{x}\neq \overline{x_0}$, $\phi:[0, \|\overline{x}-\overline{x_0}\|]\rightarrow \R$, $\overline{v}=\frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}$
+	
+	$\phi(t)=f(\overline{x_0}+t\overline{v})$, restrizione di $f$ lungo il segmento $[\overline{x_0},\overline{x}]$.
+	
+	$\phi$ è derivabile due volte in $t=0$ perché $f$ lo è in $\overline{x_0}$.
+	
+	$$\phi(t)=\phi(0)+ {\color{teal} \phi'(0)} {\color{red}t} +\frac{1}{2} {\color{blue}\phi''(0)}t^2+o(t^2) \text{ per } t \rightarrow 0$$.
+	
+	{\color{red} $t=\| \overline{x}-\overline{x}_0 \|$}
+	
+	{ \color{teal}
+		$\phi'(t)=\langle\nabla f(\overline{x_0}+t\overline{v}),\overline{v}\rangle$
+		
+		$\phi'(0)=\langle \nabla f(\overline{x_0}), \frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}\rangle$
+	}
+	
+	{\color{blue}
+		$\phi''(t)=\langle D^2f(\overline{x_0}+t\overline{v})\overline{v},\overline{v} \rangle$
+		
+		$\phi''(0)=\langle D^2 f(\overline{x_0})\frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}, \frac{\overline{x}-\overline{x_0}}{\|\overline{x}-\overline{x_0}\|}\rangle$
+	}
+	
+	$$\lowercomment{\phi(\|\overline{x}-\overline{x_0}\|)}{f(\overline{x})}{}
+	=\lowercomment{\phi(0)}{f(\overline{x}_0)}{} + \phi'(0) \|\overline{x}-\overline{x_0}\|+\frac{1}{2}\phi''(0)\| \overline{x}-\overline{x_0}\|^2+o(\|\overline{x}-\overline{x_0}\|^2)$$
+	\begin{align*} 
+		f(\overline{x})
+		&=f(\overline{x_0})+
+		\langle \nabla f(\overline{x_0}), \frac{\overline{x}-\overline{x_0}}{\cancel{\|\overline{x}-\overline{x_0}\|}} \rangle \cancel{\|\overline{x} -\overline{x_0}\|} +
+		\\
+		&\qquad + \frac{1}{2}\langle D^2 f(\overline{x_0})\frac{\overline{x}-\overline{x_0}}{\cancel{\|\overline{x}-\overline{x_0}\|}},\frac{\overline{x}-\overline{x_0}}{\cancel{\|\overline{x}-\overline{x_0}\|}}  \rangle \cancel{\|\overline{x}-\overline{x_0}\|^2}
+		+o(\|\overline{x}-\overline{x_0}\|)
+	\end{align*}
 \end{dembar}
 
 
 \begin{exbar}
 \begin{example}
+	$$f(x,y)=e^y\ln(1+x)$$
 	
-	$f(x,y)=e^y\ln(1+x)$\\
-	Calcoliamo il polinomio di Taylor di $f$ di ordine $2$ e centro $(0,0)$.\\
-	$\partial_xf(x,y)=\frac{e^y}{1+x}$\\
-	$\partial_y f(x,y) =e^y \ln(1+x)$\\
-	$\partial_xf(0,0)=1$\\
-	$\partial_y f(0,0)=0$\\
-	$\partial_{xx}^2f(x,y)=\frac{-e^y}{(1+x)^2}$\\
-	$\partial_{yy}^2f(x,y)=e^y\ln(1+x)$
-	$\partial_{yx}^2 f(x,y)=\frac{e^y}{1+x}=\partial_{xy}^2f(x,y)$ per il teorema di Schwarz.\\
-	$\partial_{xx}^2f(0,0)=-1$\\
-	$\partial_{yy}^2f(0,0)=0$\\
-	$\partial_{yx}^2f(0,0)=1=\partial_{xy}^2f(0,0)$\\
-	$\nabla f(0,0)=(1,0)$\\
-	$D^2f(0,0)=\begin{pmatrix}
-		-1&1\\
+	Calcoliamo il polinomio di Taylor di $f$ di ordine $2$ e centro $(0,0)$.
+	
+	$$\partial_xf(x,y)=\frac{e^y}{1+x} \qquad \partial_y f(x,y) =e^y \ln(1+x)$$
+	
+	$$\partial_xf(0,0)=1 \qquad \partial_y f(0,0)=0$$
+	
+	$$\partial_{xx}^2f(x,y)=\frac{-e^y}{(1+x)^2} \qquad \partial_{yy}^2f(x,y)=e^y\ln(1+x)$$
+	
+	{\centering $\partial_{yx}^2 f(x,y)=\frac{e^y}{1+x}=\partial_{xy}^2f(x,y)$ per il teorema di Schwarz \par}
+	
+	$$\partial_{xx}^2f(0,0)=-1 \qquad \partial_{yy}^2f(0,0)=0 \qquad \partial_{yx}^2f(0,0)=1=\partial_{xy}^2f(0,0)$$
+	
+	$$\nabla f(0,0)=(1,0)$$
+	
+	$$D^2f(0,0)=
+	\begin{pmatrix}
+		-1&1
+		\\
 		1&0
-	\end{pmatrix}$\\
-	$T(\overline{x})=f(0,0)+\langle\nabla f(0,0),(x,y) \rangle + \frac{1}{2}\langle D^2f(0,0)(x,y),(x,y) \rangle=$\\$=0+\langle (1,0),(x,y) \rangle + \frac{1}{2}\begin{pmatrix}
-		x&y
-	\end{pmatrix}\begin{pmatrix}
-		-1& 1\\
-		1 &0
-	\end{pmatrix} \begin{pmatrix}
-		x\\
-		y
-	\end{pmatrix}=x+\frac{1}{2}\begin{pmatrix}
-		-x+y & x
-	\end{pmatrix}\begin{pmatrix}
-		x\\
-		y
-	\end{pmatrix}=x-\frac{1}{2}x^2+\frac{1}{2}xy+\frac{1}{2}xy=x-\frac{1}{2}x^2+xy$\\
-	$f(x,y)=e^y\ln(1+x)$\\
-	$e^y=1+y+\frac{1}{2}y^2+o(y^2)$ per $y \rightarrow0$\\
-	$\ln(1+x)=x-\frac{x^2}{2}+o(x^2)$ per $x \rightarrow 0$\\
-	$f(x,y)=(1+y+\frac{1}{2}y^2+o(y^2))(x-\frac{x^2}{2}+o(x^2))=x-\frac{x^2}{2}+o(x^2)+xy-\frac{x^2}{2}y+o(x^2y)+\frac{1}{2}x^2y-\frac{1}{4}x^4y^4+o(x^2y^2)+o(y^2)=x-\frac{x^2}{2}+xy+\left[ -\frac{1}{4}x^4y^4+o(x^2)+o(y^2) \right]$
-	$o(x^2)=o(x^2+y^2)$\\
-	$o(y^2)=o(x^2+y^2)$\\
-	\textcolor{orange}{$\lim_{(x,y)\rightarrow(0,0)}\frac{o(x^2)}{x^2+y^2}=0$, è vero? Sì: $o(x^2)=x^2\cdot o(1)\xrightarrow{x \rightarrow 0}0$\\
-		$\lim_{(x,y)\rightarrow(0,0)}\frac{o(x^2)}{x^2+y^2}=\lim_{(x,y)\rightarrow(0,0)}\frac{x^2}{x^2+y^2}\cdot o(1)=0$}\\
-	$f(x,y)=x-\frac{x^2}{2}+xy+o(x^2+y^2)=x-\frac{x^2}{2}+xy+o(\|x,y\|^2)$\\
-	Il polinomio di Taylor di $f$ di ordine $2$ e centro $(0,0)$ è l'unico polinomio di grado al più $2$ che soddisfa la suscritta formula $\Rightarrow T(\overline{x})=x-\frac{x^2}{2}+xy$.
+	\end{pmatrix}$$
+	\begin{align*} 
+		T(\overline{x})&=f(0,0)+\langle\nabla f(0,0),(x,y) \rangle + \frac{1}{2}\langle D^2f(0,0)(x,y),(x,y) \rangle=
+		\\
+		&=0+\langle (1,0),(x,y) \rangle + \frac{1}{2}
+		\begin{pmatrix}
+			x&y
+		\end{pmatrix}\begin{pmatrix}
+			-1& 1\\
+			1 &0
+		\end{pmatrix} \begin{pmatrix}
+			x\\
+			y
+		\end{pmatrix}=
+		\\
+		&=x+\frac{1}{2}
+		\begin{pmatrix}
+			-x+y & x
+		\end{pmatrix}\begin{pmatrix}
+			x\\
+			y
+		\end{pmatrix}=
+		\\
+		&=x-\frac{1}{2}x^2+\frac{1}{2}xy+\frac{1}{2}xy=
+		\\
+		&=x-\frac{1}{2}x^2+xy
+	\end{align*}
+	
+	$$f(x,y)=e^y\ln(1+x)$$
+	
+	$e^y=1+y+\frac{1}{2}y^2+o(y^2)$ per $y \rightarrow0$
+	
+	$\ln(1+x)=x-\frac{x^2}{2}+o(x^2)$ per $x \rightarrow 0$
+	
+	%===============================================PAG 381
+	
+	\begin{align*} 
+		f(x,y)
+		&=(1+y+\frac{1}{2}y^2+o(y^2))(x-\frac{x^2}{2}+o(x^2))=
+		\\
+		&=x-\frac{x^2}{2}+o(x^2)+xy-\cancel{\frac{x^2}{2}y}+o(x^2y)+\cancel{\frac{1}{2}x^2y}-\frac{1}{4}x^4y^4+o(x^2y^2)+o(y^2)=
+		\\
+		&=x-\frac{x^2}{2}+xy+\bigg[ \lowercomment{-\frac{1}{4}x^4y^4}{o(x^2)}{}+o(x^2)+o(y^2) \bigg]
+	\end{align*}
+	
+		$$o(x^2)=o(x^2+y^2) \qquad o(y^2)=o(x^2+y^2)$$
+		
+		{\color{teal}
+			$\lim_{(x,y)\rightarrow(0,0)}\frac{o(x^2)}{x^2+y^2}=0$, è vero? 
+			
+			Sì: $o(x^2)=x^2\cdot \uppercomment{o(1)}{\to 0}{\text{per }x\to0}$
+			
+			$\lim_{(x,y)\rightarrow(0,0)} \frac{o(x^2)}{x^2+y^2}=\lim_{(x,y)\rightarrow(0,0)} \uppercomment{\frac{x^2}{x^2+y^2}}{}{\leq1}\cdot o(1)=0$
+		}
+			
+		\begin{equation} 
+			\label{eq: pag 381}
+			f(x,y)=x-\frac{x^2}{2}+xy+o(x^2+y^2)=x-\frac{x^2}{2}+xy+o(\|x,y\|^2)
+		\end{equation}
+		
+		Il polinomio di Taylor di $f$ di ordine $2$ e centro $(0,0)$ è l'unico polinomio di grado al più $2$ che soddisfa l'equazione \ref{eq: pag 381} 
+		
+		$$\Rightarrow T(\overline{x})=x-\frac{x^2}{2}+xy$$
 \end{example}
 \end{exbar}
 
@@ -1514,11 +1726,15 @@ Sia $Q: \R^n$ forma quadratica. $Q(\overline{x})=\overline{x}^T A \overline{x}$,
 
 \begin{definition}
 	\begin{enumerate}
-		\item $Q$ si dice \underline{definita positiva} se $Q(\overline{x}) >0\,\, \forall\,\, \overline{x} \neq \overline{0}$.
-		\item $Q$ si dice \underline{definita negativa} se $Q(\overline{x})<0 \,\, \forall \,\, \overline{x} \neq \overline{0}$.
-		\item $Q$ si dice \underline{semidefinita positiva} se $Q(\overline{x})\geq 0 \,\, \forall \,\, \overline{x} \in \R^n$.
-		\item $Q$ si dice \underline{semidefinita negativa} se $Q(\overline{x})\leq 0 \,\, \forall \,\, \overline{x} \in \R^n$.
-		\item $Q$ si dice \underline{indefinita} se $\exists \,\,\overline{x_1},\overline{x_2}\in \R^{n}$ tali che $Q(\overline{x_1})>0$ e $Q(\overline{x_2})<0$.
+		\item $Q$ si dice \textbf{definita positiva} se $Q(\overline{x}) >0\,\, \forall\,\, \overline{x} \neq \overline{0}$.
+		
+		\item $Q$ si dice \textbf{definita negativa} se $Q(\overline{x})<0 \,\, \forall \,\, \overline{x} \neq \overline{0}$.
+		
+		\item $Q$ si dice \textbf{semidefinita positiva} se $Q(\overline{x})\geq 0 \,\, \forall \,\, \overline{x} \in \R^n$.
+		
+		\item $Q$ si dice \textbf{semidefinita negativa} se $Q(\overline{x})\leq 0 \,\, \forall \,\, \overline{x} \in \R^n$.
+		
+		\item $Q$ si dice \textbf{indefinita} se $\exists \,\,\overline{x_1},\overline{x_2}\in \R^{n}$ tali che $Q(\overline{x_1})>0$ e $Q(\overline{x_2})<0$.
 	\end{enumerate}
 \end{definition}
 
@@ -1541,13 +1757,15 @@ Sia $Q: \R^n$ forma quadratica. $Q(\overline{x})=\overline{x}^T A \overline{x}$,
 
 Sia $A$ matrice $n \times n$ nella forma
 \begin{equation*}
-	A= \begin{pmatrix}
+	A= 
+	\begin{pmatrix}
 		a_{11}&a_{12} &\cdots &a_{1n} \\
 		a_{21}&a_{22} &\cdots &a_{2n} \\
 		\vdots&\vdots &\ddots &\vdots \\
 		a_{n1}&a_{n2} &\cdots &a_{nn} \\
 	\end{pmatrix}
 \end{equation*}
+
 I minori principali di $A$ sono i determinanti delle sottomatrici lungo la diagonale principale cioè $\alpha_1=a_{11}$, $\alpha_2=\det\begin{pmatrix}
 	a_{11}&a_{12} \\
 	a_{21}&a_{22}
@@ -1556,8 +1774,19 @@ I minori principali di $A$ sono i determinanti delle sottomatrici lungo la diago
 	a_{21}&a_{22}&a_{32} \\
 	a_{31}&a_{23}&a_{33} 
 \end{pmatrix}$
-etc.\\
-Data $A$
+etc.
+
+$$
+A_{ij} = \begin{pmatrix}
+	a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
+	a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\
+	a_{31} & a_{32} & a_{33} & \cdots & a_{3n} \\
+	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn} \\
+\end{pmatrix}
+$$ 
+
+%================================================ PAG384 MATRICEEEE
 
 
 \begin{proposition}
@@ -1566,6 +1795,7 @@ Data $A$
 		\item $Q$ è definita positiva $\Leftrightarrow \alpha_i >0\,\, \forall \,\, i =1,...,n$
 		\item $Q$ è definita negativa $\Leftrightarrow \alpha_i <0 $ per i dispari e $\alpha_1>0$ per i pari. 
 	\end{enumerate}
+	
 	In particolare, se $A$ è matrice $2 \times 2$, allora
 	\begin{enumerate}
 		\item se $\det A <0 \Rightarrow Q$ è indefinita,
@@ -1584,335 +1814,366 @@ Data $A$
 	\end{enumerate}
 \end{attbar}
 
-% pag 385
+%======================================================================
+
+\begin{theorem}
+	
+	\label{th: pag 385}
+	$A \subseteq \R^n$ aperto, $f:A \rightarrow  \R$ differenziabile due volte in $\overline{x_o}\in A$, punto stazionario per $f$.
+	\begin{enumerate}
+		\item Se $D^2f(\overline{x_0})>0 ${\color{blue} (definita positiva)}, allora $\overline{x_0}$ è punto di minimo relativo per $f$.
+		\item Se $D^2f(\overline{x_0})<0${\color{blue} (definita negativa)}, allora $\overline{x_0}$ è punto di massimo relativo per $f$. 
+		\item Se $D^2f(\overline{x_0})$ è indefinita, allora $\overline{x_0}$ è punto di sella per $f$.
+		\item Se $\overline{x_0}$ è punto di minimo relativo, allora $D^2f(\overline{x_0})\geq0$ {\color{blue}(semidefinita positiva)}.
+		\item Se $\overline{x_0}$ è punto di massimo relativo per $f$, allora $D^2f(\overline{x_0})\leq0$ {\color{blue}(semidefinita negativa)}.
+	\end{enumerate}
+\end{theorem}
 
 
-\begin{comment}	
-
-\paragraph{\textcolor{red}{Teorema}}
-$A \subseteq \R^n$ aperto, $f:A \rightarrow  \R$ differenziabile due volte in $\overline{x_o}\in A$, punto stazionario per $f$.
-\begin{enumerate}
-	\item Se $D^2f(\overline{x_0})>0 $ allora $\overline{x_0}$ è punto di minimo relativo per $f$.
-	\item Se $D^2f(\overline{x_0})<0$ allora $\overline{x_0}$ è punto di massimo relativo per $f$. 
-	\item Se $D^2f(\overline{x_0})$ è indefinita, allora $\overline{x_0}$ è punto di sella per $f$.
-	\item Se $\overline{x_0}$ è punto di minimo relativo, allora $D^2f(\overline{x_0})\geq0$.
-	\item Se $\overline{x_0}$ è punto di massimo relativo per $f$, allora $D^2f(\overline{x_0})\leq0$.
-\end{enumerate}
-
-\paragraph{\textcolor{red}{Osservazione}}
-I punti 4. e 5. sono conseguenza di 1., 2. e 3.
-
-\paragraph{\textcolor{red}{Esempio}}
-$f(x,y)=x^4+y^4$, $f(x,y)\geq 0 = f(0,0)$ $\forall (x,y)\in \R^2 \Rightarrow (0,0)$ è punto di minimo assoluto.\\
-$\partial_xf(x,y)=4x^3$\\
-$\partial_yf(x,y)=4y^3$\\
-$\partial_{xx}^2f(x,y)=12x^2$\\
-$\partial_{yy}^2f(x,y)=12y^2$\\
-$\partial_{xy}^2f(x,y)=\partial_{yx}^2f(x,y)=0$\\
-$D^2f(0,0)=\begin{pmatrix}
-	0&0\\
-	0&0
-\end{pmatrix}$
-che è semidefinita.
-
-\paragraph{\textcolor{red}{Dimostrazione del Teorema}}
-\begin{enumerate}
-	\item $f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),(\overline{x}-\overline{x_0}) \rangle+o(\| \overline{x}-\overline{x_0} \|^2)=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),(\overline{x}-\overline{x_0})\rangle+o(\|\overline{x}-\overline{x_0}\|^2)$\\
-	$D^2f(\overline{x_0})>0 \Rightarrow \exists \,\, c >0 \mid \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle \geq \|\overline{x}-\overline{x_0} \|^2\Rightarrow f(\overline{x})\geq f(\overline{x_0})+\frac{c}{2}\|\overline{x}-\overline{x_0}\|^2+o(\|\overline{x}-\overline{x_0}\|^2)=-f(\overline{x_0})+\|\overline{x}-\overline{x_0} \|^2(\frac{c}{2}+o(1))\Rightarrow \exists\,\, r>0 \mid \frac{c}{2}+o(1)\geq \frac{c}{4}$in $B_r(\overline{x_0})$ per il teorema della permanenza del segno\\
-	$\Rightarrow \forall\,\, \overline{x}\in B_r(\overline{x_0})$ si ha
-	$f(\overline{x})\geq f(\overline{x_0})+\frac{c}{4}\|\overline{x}-\overline{x_0}\|^2 \geq f(\overline{x_0}) \Rightarrow \overline{x_0}$ è punto di minimo relativo.
-	\item Analoga al punto 1. Si sfrutta il fatto che $\exists \,\, c>0 \mid \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle \leq -c\|\overline{x}-\overline{x_0}\|^2$.
-	\item $D^2f(\overline{x_0})$ è indefinita, quindi ha due autovalori $\lambda_1$ e $\lambda_2$ tali che $\lambda_1<0$ e $\lambda_2>0$.\\
-	Siano $\overline{r_1}$ e $\overline{r_2}$ i rispettivi autovettori tali che $D^2f(\overline{x_0})\overline{r_1}=\lambda_1\overline{r_1}$, $D^2f(\overline{x_0})=\lambda_2\overline{r_2}$, che supponiamo avere norma uno, $\|\overline{r_1} \|=\|\overline{r_2}\|=1$.\\
-	$f(\overline{x})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0}\|^2)$\\
-	$\overline{x}=\overline{x_0}+t\overline{r_1}$, $t \in \R$, sufficientemente piccolo in modo che $\overline{x_0}+t\overline{r_1}\in A$.\\
-	$f(\overline{x_0}+t\overline{r_1})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})t\overline{r_1},t\overline{r_1} \rangle + o(t^2)=f(\overline{x_0})+\frac{1}{2}\langle \lambda_1 +\overline{r_1},t\overline{r_1}\rangle + o(t^2)=f(\overline{x_0})+\frac{1}{2}\lambda_1 t^2 + o(t^2)=f(\overline{x_0})+t^2(\frac{1}{2}\lambda_1+o(1)) \Rightarrow \frac{1}{2}\lambda_1+o(1) < \frac{1}{4}\lambda_1$ in un intorno di $t=0$\\
-	$f(\overline{x_0}+t\overline{r_1})<f(\overline{x_0})+\frac{1}{4}\lambda_1 t^2< f(\overline{x_0})$ in un intorno di $t=0$, $t\neq 0$..\\
-	Analogamente $f(\overline{x_0}+t\overline{r_2})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})t\overline{r_2},t\overline{r_1} \rangle +o(t^2)=f(\overline{x_0})+\frac{1}{2}\lambda_2t^2+o(t^2)>f(\overline{x_0})$ in un intorno di $t=0$, $t \neq 0$\\
-	$\Rightarrow \overline{x_0}$ non è punto di estremo per $f \Rightarrow \overline{x_0}$ è punto di sella per $f$. 
-\end{enumerate}
-\begin{flushright}
-	\Lightning
-\end{flushright}
-
-\paragraph{\textcolor{red}{Esempio}}
-Cercare i punti di estremo relativo della funzione $f(x,y)=4xe^x\cos y$, $(x,y)\in\R^2$.\\
-$f \in C^\infty(\R^2)$.\\
-Cerchiamo i punti critici di $f$ \\
-$\partial_xf(x,y)=4e^x(x+1)\cos y$\\
-$\partial_yf(x,y)=-4xe^x\sin y$\\
-Deve essere $\nabla f(x,y)=(0,0)\Leftrightarrow \begin{cases}
-	\partial_x f(x,y)=0\\
-	\partial_y f(x,y)=0
-\end{cases}= \begin{cases}
-	e^x(x+1)\cos y=0\\
-	xe^x\sin y=0
-\end{cases}$\\
-$\Leftrightarrow \begin{cases}
-	x=-1 &\text{  o  }\cos y =0\\
-	x=0 &\text{  o  }\sin y=0
-\end{cases} \Leftrightarrow \begin{cases}
-	x=-1\\
-	\sin y =0
-\end{cases}$ oppure $\begin{cases}
-	\cos y=0\\
-	x=0
-\end{cases}$\\
-$(-1,k\pi)$, $(0,\frac{\pi}{2}+k\pi)$, $k \in \Z$.\\
-Studiamo la natura dei punti critici.\\
-$\partial_xf(x,y)=4e^x(x+1)\cos y$\\
-$\partial_yf(x,y)=-4xe^x\sin y$\\
-$\partial_{xx}^2f(x,y)=4e^x(x+2)\cos y$\\
-$\partial_{yy}^2f(x,y)=-4xe^x \cos y$\\
-$\partial_{yx}f(x,y)=-4e^x(x+1)\sin y= \partial_{xy}^2f(x,y)$\\
-$D^2f(x,y)=4 \begin{pmatrix}
-	e^x(x+2)\cos y & -e^x(x+1)\sin y\\
-	-e^x(x+1)\sin y & -x e^x \cos y
-\end{pmatrix}$\\
-$D^2f(-1, k\pi)=4 \begin{pmatrix}
-	e^{-1}\cos(k \pi)&0\\
-	0&e^{-1}\cos(k\pi)
-\end{pmatrix}=\begin{pmatrix}
-	e^{-1}(-1)^k&0\\
-	0&e^{-1}(-1)^k
-\end{pmatrix}$\\
-$k$ pari $D^2f(-1,k\pi) >0 \Rightarrow (-1,k\pi)$ sono punti di minimo relativo.\\
-$k$ dispari $D^2f(-1,k\pi)< 0 \Rightarrow (-1,k\pi)$ sono punti di massimo relativo.\\
-$D^2f(0,\frac{\pi}{2}+k \pi)=4 \begin{pmatrix}
-	0 & -\sin(\frac{\pi}{2}+k\pi)\\
-	-\sin(\frac{\pi}{2}+k\pi)& 0
-\end{pmatrix}=4 \begin{pmatrix}
-	0&(-1)^{k+1}\\
-	(-1)^{k+1}&0
-\end{pmatrix}$\\
-che è matrice indefinita $\Rightarrow$ i punti $(0,\frac{\pi}{2}+k \pi)$ sono punti di sella.
-
-\paragraph{\textcolor{red}{Esempio}}
-Calcolare i punti critici della funzione $f(x,y)=(y-x^2)(y-2x^2)$, $(x,y) \in \R^2$ e studiare la loro natura.\\
-$f\in C^\infty (\R^2)$\\
-$\partial_xf(x,y)=-2x(y-2x^2)-4x(y-x^2)=8x^3-6xy$\\
-$\partial_yf(x,y)=y-2x^2+y-x^2=2y-3x^2$\\
-$\begin{cases}
-	\partial_xf(x,y)=0\\
-	\partial_yf(x,y)=0
-\end{cases} \Leftrightarrow \begin{cases}
-	8x^3-6xy=0\\
-	2y-3x^2=0
-\end{cases} \Leftrightarrow \begin{cases}
-	x=0 \text{   o   } 4x^2-3y=0\\
-	y=\frac{3}{2}x^2
-\end{cases}\Leftrightarrow \begin{cases}
-	x=0\\
-	y=0
-\end{cases}$\\
-$\Rightarrow(0,0)$ è l'unico punto critico per $t$\\
-Calcoliamo $D^2f(0,0)$.\\
-$\partial_{xx}^2f(x,y)=24x^2-6y$\\
-$\partial_{yy}^2f(x,y)=2$\\
-$\partial_{yx}^2f(x,y)=\partial_{xy}^2f(x,y)-6x$\\
-$D^2f(0,0)=\begin{pmatrix}
-	0&0\\
-	0&2
-\end{pmatrix} \Rightarrow$ è semidefinita positiva e non è la matrice nulla $\Rightarrow (0,0)$ è punto di minimo o è punto di sella.\\
-$f(x,y)=(y-x^2)(y-2x^2)$\\
-$f(0,0)=0$, $f(x,y) |_{y=x^2}=0$\\
-$f(x,y)|_{y=2x^2}=0$\\
-IMMAGINE\\
-Se $y < x^2 \Rightarrow y-x^2 < 0$ e $y-2x^2< 0 \Rightarrow f(x,y)>0$. Se $y > 2x^2 \Rightarrow y-x^2 >0$ e $y-2x^2 >0 \Rightarrow f(x,y)> 0$.\\
-$x^2< y< 2x^2$\\
-$y- x^2>0$, $y-2x^2< 0 \Rightarrow f(x,y)<0 \Rightarrow (0,0)$ è punto di sella.
-
-\paragraph{\textcolor{red}{Esempio}}
-Studiare la natura dei punti critici della funzione $f: \R^3 \rightarrow \R$ definita da $f(x,y,z)=x\sin z + y^2$.\\
-$\partial_x f(x,y,z)=\sin z$\\
-$\partial_y f(x,y,z)=2y$\\
-$\partial_z f(x,y,z)=x \cos z$\\
-$\begin{cases}
-	\partial_x f(x,y,z)=0\\
-	\partial_y f(x,y,z)=0\\
-	\partial_z f(x,y,z)=0
-\end{cases}\Leftrightarrow\begin{cases}
-	\sin z=0\\
-	2y=0\\
-	x\cos z=0
-\end{cases}\Leftrightarrow\begin{cases}
-	z=k\pi\\
-	y=0\\
-	x=0 \text{  o  } z=\frac{\pi}{2}+k\pi
-\end{cases}$\\
-$(0,0,k\pi)$, $k \in \Z$.\\
-Per studiarne la natura calcoliamo le derivate seconde.\\
-$\partial_x f(x,y,z)=\sin z$\\
-$\partial_y f(x,y,z)=2y$\\
-$\partial_z f(x,y,z)=x \cos z$\\
-$\partial_{xx}^2f(x,y,z)=0$\\
-$\partial_{yx}^2f(x,y,z)=0=\partial_{xy}^2f(x,y,z)$\\
-$\partial_{zx}^2f(x,y,z)=\cos z$\\
-$\partial_{yy}^2f(x,y,z)=2$\\
-$\partial_{zy}^2f(x,y,z)=0=\partial_{yz}^2f(x,y,z)$\\
-$\partial_{zz}^2f(x,y,z)=-x \sin z$\\
-$D^2f(x,y,z)=\begin{pmatrix}
-	0&0&\cos z\\
-	0&2&0\\
-	\cos z&0&-x \sin z
-\end{pmatrix}$\\
-$D^2f(0,0,k\pi)=\begin{pmatrix}
-	0&0&(-1)^k\\
-	0&2&0\\
-	(-1)^k&0&0
-\end{pmatrix}$\\
-Calcoliamo gli autovalori della matrice hessiana.\\
-$0=\det(D^2 f(0,0,k\pi)-\lambda I)= \det\begin{pmatrix}
-	-\lambda&0&(-1)^k\\
-	0&-2\lambda&0\\
-	(-1)^k&0&-\lambda
-\end{pmatrix}=(2-\lambda)(\lambda^2-1)$.\\
-Autovalori: $\lambda=2$ e $\lambda= \pm 1$. Avendo due autovalori di segno opposto, la matrice hessisiana è indefinita e quindi tutti i punti critici sono punti di sella
+\begin{attbar}
+	I punti 4. e 5. sono conseguenza di 1., 2. e 3.
+\end{attbar}
 
 
-\paragraph{\textcolor{red}{Esempio}}
-Studiare i punti critici della funzione definita da $f(x,y,z)=2x^3-2y^2+z^2+3(x^2+y)z$, $(x,y,z)\in \R^3$. $f\in C^\infty(\R^3)$.\\
-$\partial_xf(x,y,z)=6x^2+6xz$\\
-$\partial_yf(x,y,z)=-4y+3z$\\
-$\partial_zf(x,y,z)=2z+3(x^2+y)$\\
-$\nabla f(x,y,z)=(0,0,0)$\\
-$\begin{cases}
-	6x(x+z)=0\\
-	-4y+3z=0\\
-	2z+3(x^2+y)=0
-\end{cases}\Leftrightarrow\begin{cases}
-	x=0\text{  o  }x=-z\\
-	-4y+3z=0\\
-	2z+3(x^2+y)=0
-\end{cases}\Leftrightarrow\begin{cases}
-	x=0\\
-	-4y+3z=0\\
-	3y+2z=0
-\end{cases}$\\
-$\det\begin{pmatrix}
-	-4&3\\
-	3&2
-\end{pmatrix}=-17\neq 0 \Leftrightarrow (x,y,z)=(0,0,0)$.\\
-$\begin{cases}
-	x=-z\\
-	-4y+3z=0\\
-	2z+3z^2+3y=0
-\end{cases}\Leftrightarrow\begin{cases}
-	x=-z\\
-	y=\frac{3}{4}z\\
-	2z+3z^2+\frac{9}{4}z=0
-\end{cases}\Leftrightarrow (x,y,z)=(0,0,0)$ oppure $(x,y,z)=(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$.\\
-I punti critici sono $(0,0,0)$ e $(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$. Studiamone la natura.\\
-$\partial_xf(x,y,z)=6x^2+6xz$\\
-$\partial_yf(x,y,z)=-4y+3z$\\
-$\partial_zf(x,y,z)=2z+3(x^2+y)$\\
-$\partial_{xx}^2f(x,y,z)=12x+6z$\\
-$\partial_{yx}^2f(x,y,z)=0=\partial_{xy}^2f(x,y,z)$\\
-$\partial_{zx}^2f(x,y,z)=6x=\partial_{xz}^2f(x,y,z)$\\
-$\partial_{yy}^2f(x,y,z)=-4$\\
-$\partial_{zy}^2f(x,y,z)=3=\partial_{yz}^2f(x,y,z)$\\
-$\partial_{zz}^2f(x,y,z)=2$\\
-$D^2f(x,y,z)=\begin{pmatrix}
-	12x+6z&0&6x\\
-	0&-4&3\\
-	6x&3&2
-\end{pmatrix}$\\
-$D^2f(0,0,0)=\begin{pmatrix}
-	0&0&0\\
-	0&-4&3\\
-	0&3&2
-\end{pmatrix}$\\
-$0=\det(D^2f(0,0,0)-\lambda I)= \det \begin{pmatrix}
-	-\lambda&0&0\\
-	0&-4-\lambda&3\\
-	0&3&2-\lambda
-\end{pmatrix}=-\lambda[(\lambda-2)(4+\lambda)-9]=-\lambda[\lambda^2+2\lambda-17] \Rightarrow$ ha autovalore positivo ad uno negativo $\Rightarrow$ la metrica è indefinita $\Rightarrow (0,0,0)$ è punto di sella.\\
-$D^2f(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})=\begin{pmatrix}
-	\frac{17}{2}&0&\frac{17}{2}\\
-	0&-4&3\\
-	\frac{17}{2}&3&2
-\end{pmatrix}$\\
-$\det D^2f(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})\neq 0$ e i primi due minori principali $\alpha_1$ e $\alpha_2$ soddisfano $\alpha_1= \frac{17}{2} >0$ e $\alpha_2 =-34 <0 \Rightarrow$ la matrice è indefinita $\Rightarrow (\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$ è punto di sella.
+\begin{exbar}
+	$$f(x,y)=x^4+y^4$$
+	
+	$f(x,y)\geq 0 = f(0,0)$ $\forall (x,y)\in \R^2 \Rightarrow (0,0)$ è punto di minimo assoluto.
+	
+	$$\partial_xf(x,y)=4x^3 \qquad \partial_yf(x,y)=4y^3$$
+	
+	$$\partial_{xx}^2f(x,y)=12x^2 \quad \partial_{yy}^2f(x,y)=12y^2 \quad \partial_{xy}^2f(x,y)=\partial_{yx}^2f(x,y)=0$$
+	
+	{\centering $D^2f(0,0)=\begin{pmatrix}
+		0&0\\
+		0&0
+	\end{pmatrix}$
+	che è semidefinita. \par}
+\end{exbar}
 
-\subsubsection{\textcolor{red}{Matrice Jacobiana}}
+%==================================== PAG 387
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 385}}
+	
+	\begin{enumerate}
+		\item $f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),(\overline{x}-\overline{x_0}) \rangle+o(\| \overline{x}-\overline{x_0} \|^2)=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),(\overline{x}-\overline{x_0})\rangle+o(\|\overline{x}-\overline{x_0}\|^2)$\\
+		$D^2f(\overline{x_0})>0 \Rightarrow \exists \,\, c >0 \mid \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle \geq \|\overline{x}-\overline{x_0} \|^2\Rightarrow f(\overline{x})\geq f(\overline{x_0})+\frac{c}{2}\|\overline{x}-\overline{x_0}\|^2+o(\|\overline{x}-\overline{x_0}\|^2)=-f(\overline{x_0})+\|\overline{x}-\overline{x_0} \|^2(\frac{c}{2}+o(1))\Rightarrow \exists\,\, r>0 \mid \frac{c}{2}+o(1)\geq \frac{c}{4}$in $B_r(\overline{x_0})$ per il teorema della permanenza del segno\\
+		$\Rightarrow \forall\,\, \overline{x}\in B_r(\overline{x_0})$ si ha
+		$f(\overline{x})\geq f(\overline{x_0})+\frac{c}{4}\|\overline{x}-\overline{x_0}\|^2 \geq f(\overline{x_0}) \Rightarrow \overline{x_0}$ è punto di minimo relativo.
+		
+		\item Analoga al punto 1. Si sfrutta il fatto che $\exists \,\, c>0 \mid \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle \leq -c\|\overline{x}-\overline{x_0}\|^2$.
+		\item $D^2f(\overline{x_0})$ è indefinita, quindi ha due autovalori $\lambda_1$ e $\lambda_2$ tali che $\lambda_1<0$ e $\lambda_2>0$.\\
+		Siano $\overline{r_1}$ e $\overline{r_2}$ i rispettivi autovettori tali che $D^2f(\overline{x_0})\overline{r_1}=\lambda_1\overline{r_1}$, $D^2f(\overline{x_0})=\lambda_2\overline{r_2}$, che supponiamo avere norma uno, $\|\overline{r_1} \|=\|\overline{r_2}\|=1$.\\
+		$f(\overline{x})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0}\|^2)$\\
+		$\overline{x}=\overline{x_0}+t\overline{r_1}$, $t \in \R$, sufficientemente piccolo in modo che $\overline{x_0}+t\overline{r_1}\in A$.\\
+		$f(\overline{x_0}+t\overline{r_1})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})t\overline{r_1},t\overline{r_1} \rangle + o(t^2)=f(\overline{x_0})+\frac{1}{2}\langle \lambda_1 +\overline{r_1},t\overline{r_1}\rangle + o(t^2)=f(\overline{x_0})+\frac{1}{2}\lambda_1 t^2 + o(t^2)=f(\overline{x_0})+t^2(\frac{1}{2}\lambda_1+o(1)) \Rightarrow \frac{1}{2}\lambda_1+o(1) < \frac{1}{4}\lambda_1$ in un intorno di $t=0$\\
+		$f(\overline{x_0}+t\overline{r_1})<f(\overline{x_0})+\frac{1}{4}\lambda_1 t^2< f(\overline{x_0})$ in un intorno di $t=0$, $t\neq 0$..\\
+		Analogamente $f(\overline{x_0}+t\overline{r_2})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})t\overline{r_2},t\overline{r_1} \rangle +o(t^2)=f(\overline{x_0})+\frac{1}{2}\lambda_2t^2+o(t^2)>f(\overline{x_0})$ in un intorno di $t=0$, $t \neq 0$\\
+		$\Rightarrow \overline{x_0}$ non è punto di estremo per $f \Rightarrow \overline{x_0}$ è punto di sella per $f$. 
+	\end{enumerate}
+\end{dembar}
+
+
+\begin{exbar}
+\begin{example}
+	Cercare i punti di estremo relativo della funzione $f(x,y)=4xe^x\cos y$, $(x,y)\in\R^2$.\\
+	$f \in C^\infty(\R^2)$.\\
+	Cerchiamo i punti critici di $f$ \\
+	$\partial_xf(x,y)=4e^x(x+1)\cos y$\\
+	$\partial_yf(x,y)=-4xe^x\sin y$\\
+	Deve essere $\nabla f(x,y)=(0,0)\Leftrightarrow \begin{cases}
+		\partial_x f(x,y)=0\\
+		\partial_y f(x,y)=0
+	\end{cases}= \begin{cases}
+		e^x(x+1)\cos y=0\\
+		xe^x\sin y=0
+	\end{cases}$\\
+	$\Leftrightarrow \begin{cases}
+		x=-1 &\text{  o  }\cos y =0\\
+		x=0 &\text{  o  }\sin y=0
+	\end{cases} \Leftrightarrow \begin{cases}
+		x=-1\\
+		\sin y =0
+	\end{cases}$ oppure $\begin{cases}
+		\cos y=0\\
+		x=0
+	\end{cases}$\\
+	$(-1,k\pi)$, $(0,\frac{\pi}{2}+k\pi)$, $k \in \Z$.\\
+	Studiamo la natura dei punti critici.\\
+	$\partial_xf(x,y)=4e^x(x+1)\cos y$\\
+	$\partial_yf(x,y)=-4xe^x\sin y$\\
+	$\partial_{xx}^2f(x,y)=4e^x(x+2)\cos y$\\
+	$\partial_{yy}^2f(x,y)=-4xe^x \cos y$\\
+	$\partial_{yx}f(x,y)=-4e^x(x+1)\sin y= \partial_{xy}^2f(x,y)$\\
+	$D^2f(x,y)=4 \begin{pmatrix}
+		e^x(x+2)\cos y & -e^x(x+1)\sin y\\
+		-e^x(x+1)\sin y & -x e^x \cos y
+	\end{pmatrix}$\\
+	$D^2f(-1, k\pi)=4 \begin{pmatrix}
+		e^{-1}\cos(k \pi)&0\\
+		0&e^{-1}\cos(k\pi)
+	\end{pmatrix}=\begin{pmatrix}
+		e^{-1}(-1)^k&0\\
+		0&e^{-1}(-1)^k
+	\end{pmatrix}$\\
+	$k$ pari $D^2f(-1,k\pi) >0 \Rightarrow (-1,k\pi)$ sono punti di minimo relativo.\\
+	$k$ dispari $D^2f(-1,k\pi)< 0 \Rightarrow (-1,k\pi)$ sono punti di massimo relativo.\\
+	$D^2f(0,\frac{\pi}{2}+k \pi)=4 \begin{pmatrix}
+		0 & -\sin(\frac{\pi}{2}+k\pi)\\
+		-\sin(\frac{\pi}{2}+k\pi)& 0
+	\end{pmatrix}=4 \begin{pmatrix}
+		0&(-1)^{k+1}\\
+		(-1)^{k+1}&0
+	\end{pmatrix}$\\
+	che è matrice indefinita $\Rightarrow$ i punti $(0,\frac{\pi}{2}+k \pi)$ sono punti di sella.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	
+	Calcolare i punti critici della funzione $f(x,y)=(y-x^2)(y-2x^2)$, $(x,y) \in \R^2$ e studiare la loro natura.\\
+	$f\in C^\infty (\R^2)$\\
+	$\partial_xf(x,y)=-2x(y-2x^2)-4x(y-x^2)=8x^3-6xy$\\
+	$\partial_yf(x,y)=y-2x^2+y-x^2=2y-3x^2$\\
+	$\begin{cases}
+		\partial_xf(x,y)=0\\
+		\partial_yf(x,y)=0
+	\end{cases} \Leftrightarrow \begin{cases}
+		8x^3-6xy=0\\
+		2y-3x^2=0
+	\end{cases} \Leftrightarrow \begin{cases}
+		x=0 \text{   o   } 4x^2-3y=0\\
+		y=\frac{3}{2}x^2
+	\end{cases}\Leftrightarrow \begin{cases}
+		x=0\\
+		y=0
+	\end{cases}$\\
+	$\Rightarrow(0,0)$ è l'unico punto critico per $t$\\
+	Calcoliamo $D^2f(0,0)$.\\
+	$\partial_{xx}^2f(x,y)=24x^2-6y$\\
+	$\partial_{yy}^2f(x,y)=2$\\
+	$\partial_{yx}^2f(x,y)=\partial_{xy}^2f(x,y)-6x$\\
+	$D^2f(0,0)=\begin{pmatrix}
+		0&0\\
+		0&2
+	\end{pmatrix} \Rightarrow$ è semidefinita positiva e non è la matrice nulla $\Rightarrow (0,0)$ è punto di minimo o è punto di sella.\\
+	$f(x,y)=(y-x^2)(y-2x^2)$\\
+	$f(0,0)=0$, $f(x,y) |_{y=x^2}=0$\\
+	$f(x,y)|_{y=2x^2}=0$\\
+	IMMAGINE\\
+	Se $y < x^2 \Rightarrow y-x^2 < 0$ e $y-2x^2< 0 \Rightarrow f(x,y)>0$. Se $y > 2x^2 \Rightarrow y-x^2 >0$ e $y-2x^2 >0 \Rightarrow f(x,y)> 0$.\\
+	$x^2< y< 2x^2$\\
+	$y- x^2>0$, $y-2x^2< 0 \Rightarrow f(x,y)<0 \Rightarrow (0,0)$ è punto di sella.
+	
+	\paragraph{\textcolor{red}{Esempio}}
+	Studiare la natura dei punti critici della funzione $f: \R^3 \rightarrow \R$ definita da $f(x,y,z)=x\sin z + y^2$.\\
+	$\partial_x f(x,y,z)=\sin z$\\
+	$\partial_y f(x,y,z)=2y$\\
+	$\partial_z f(x,y,z)=x \cos z$\\
+	$\begin{cases}
+		\partial_x f(x,y,z)=0\\
+		\partial_y f(x,y,z)=0\\
+		\partial_z f(x,y,z)=0
+	\end{cases}\Leftrightarrow\begin{cases}
+		\sin z=0\\
+		2y=0\\
+		x\cos z=0
+	\end{cases}\Leftrightarrow\begin{cases}
+		z=k\pi\\
+		y=0\\
+		x=0 \text{  o  } z=\frac{\pi}{2}+k\pi
+	\end{cases}$\\
+	$(0,0,k\pi)$, $k \in \Z$.\\
+	Per studiarne la natura calcoliamo le derivate seconde.\\
+	$\partial_x f(x,y,z)=\sin z$\\
+	$\partial_y f(x,y,z)=2y$\\
+	$\partial_z f(x,y,z)=x \cos z$\\
+	$\partial_{xx}^2f(x,y,z)=0$\\
+	$\partial_{yx}^2f(x,y,z)=0=\partial_{xy}^2f(x,y,z)$\\
+	$\partial_{zx}^2f(x,y,z)=\cos z$\\
+	$\partial_{yy}^2f(x,y,z)=2$\\
+	$\partial_{zy}^2f(x,y,z)=0=\partial_{yz}^2f(x,y,z)$\\
+	$\partial_{zz}^2f(x,y,z)=-x \sin z$\\
+	$D^2f(x,y,z)=\begin{pmatrix}
+		0&0&\cos z\\
+		0&2&0\\
+		\cos z&0&-x \sin z
+	\end{pmatrix}$\\
+	$D^2f(0,0,k\pi)=\begin{pmatrix}
+		0&0&(-1)^k\\
+		0&2&0\\
+		(-1)^k&0&0
+	\end{pmatrix}$\\
+	Calcoliamo gli autovalori della matrice hessiana.\\
+	$0=\det(D^2 f(0,0,k\pi)-\lambda I)= \det\begin{pmatrix}
+		-\lambda&0&(-1)^k\\
+		0&-2\lambda&0\\
+		(-1)^k&0&-\lambda
+	\end{pmatrix}=(2-\lambda)(\lambda^2-1)$.\\
+	Autovalori: $\lambda=2$ e $\lambda= \pm 1$. Avendo due autovalori di segno opposto, la matrice hessisiana è indefinita e quindi tutti i punti critici sono punti di sella
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	
+	Studiare i punti critici della funzione definita da $f(x,y,z)=2x^3-2y^2+z^2+3(x^2+y)z$, $(x,y,z)\in \R^3$. $f\in C^\infty(\R^3)$.\\
+	$\partial_xf(x,y,z)=6x^2+6xz$\\
+	$\partial_yf(x,y,z)=-4y+3z$\\
+	$\partial_zf(x,y,z)=2z+3(x^2+y)$\\
+	$\nabla f(x,y,z)=(0,0,0)$\\
+	$\begin{cases}
+		6x(x+z)=0\\
+		-4y+3z=0\\
+		2z+3(x^2+y)=0
+	\end{cases}\Leftrightarrow\begin{cases}
+		x=0\text{  o  }x=-z\\
+		-4y+3z=0\\
+		2z+3(x^2+y)=0
+	\end{cases}\Leftrightarrow\begin{cases}
+		x=0\\
+		-4y+3z=0\\
+		3y+2z=0
+	\end{cases}$\\
+	$\det\begin{pmatrix}
+		-4&3\\
+		3&2
+	\end{pmatrix}=-17\neq 0 \Leftrightarrow (x,y,z)=(0,0,0)$.\\
+	$\begin{cases}
+		x=-z\\
+		-4y+3z=0\\
+		2z+3z^2+3y=0
+	\end{cases}\Leftrightarrow\begin{cases}
+		x=-z\\
+		y=\frac{3}{4}z\\
+		2z+3z^2+\frac{9}{4}z=0
+	\end{cases}\Leftrightarrow (x,y,z)=(0,0,0)$ oppure $(x,y,z)=(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$.\\
+	I punti critici sono $(0,0,0)$ e $(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$. Studiamone la natura.\\
+	$\partial_xf(x,y,z)=6x^2+6xz$\\
+	$\partial_yf(x,y,z)=-4y+3z$\\
+	$\partial_zf(x,y,z)=2z+3(x^2+y)$\\
+	$\partial_{xx}^2f(x,y,z)=12x+6z$\\
+	$\partial_{yx}^2f(x,y,z)=0=\partial_{xy}^2f(x,y,z)$\\
+	$\partial_{zx}^2f(x,y,z)=6x=\partial_{xz}^2f(x,y,z)$\\
+	$\partial_{yy}^2f(x,y,z)=-4$\\
+	$\partial_{zy}^2f(x,y,z)=3=\partial_{yz}^2f(x,y,z)$\\
+	$\partial_{zz}^2f(x,y,z)=2$\\
+	$D^2f(x,y,z)=\begin{pmatrix}
+		12x+6z&0&6x\\
+		0&-4&3\\
+		6x&3&2
+	\end{pmatrix}$\\
+	$D^2f(0,0,0)=\begin{pmatrix}
+		0&0&0\\
+		0&-4&3\\
+		0&3&2
+	\end{pmatrix}$\\
+	$0=\det(D^2f(0,0,0)-\lambda I)= \det \begin{pmatrix}
+		-\lambda&0&0\\
+		0&-4-\lambda&3\\
+		0&3&2-\lambda
+	\end{pmatrix}=-\lambda[(\lambda-2)(4+\lambda)-9]=-\lambda[\lambda^2+2\lambda-17] \Rightarrow$ ha autovalore positivo ad uno negativo $\Rightarrow$ la metrica è indefinita $\Rightarrow (0,0,0)$ è punto di sella.\\
+	$D^2f(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})=\begin{pmatrix}
+		\frac{17}{2}&0&\frac{17}{2}\\
+		0&-4&3\\
+		\frac{17}{2}&3&2
+	\end{pmatrix}$\\
+	$\det D^2f(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})\neq 0$ e i primi due minori principali $\alpha_1$ e $\alpha_2$ soddisfano $\alpha_1= \frac{17}{2} >0$ e $\alpha_2 =-34 <0 \Rightarrow$ la matrice è indefinita $\Rightarrow (\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$ è punto di sella.
+\end{example}
+\end{exbar}
+
+
+\subsubsection{Matrice Jacobiana}
+
 $A \subseteq \R^n$ aperto, $\overline{f}: A \rightarrow \R^p$, $p \geq 1$, $\overline{f}(\overline{x})=(f_1(\overline{x}),f_2(\overline{x}),...,f_p(\overline{x}))$, $f_i:A \rightarrow \R$, $ i =1,...,p$.
 
-\paragraph{\textcolor{red}{Definizione}}
-$\overline{f}$ si dice derivabile in $\overline{x_0}$ nella direzione $\overline{v}\in \R^n$, $\overline{v}$ versore, se tali sono $f_1,...,f_p$ e in tal caso si pone
-\begin{equation*}
-	D_{\overline{v}}f(\overline{x_0})=\begin{pmatrix}
-		D_{\overline{v}}f_1(\overline{x_0})\\
-		D_{\overline{v}}f_2(\overline{x_0})\\
-		\vdots\\
-		D_{\overline{v}}f_p(\overline{x_0})
-	\end{pmatrix}
-\end{equation*}
-In particolare, $\overline{f}$ è derivabile in $\overline{x_0}$ se ciascuna componente $f_1,...,f_p$ lo è e in tal caso si pone 
-\begin{equation*}
-	\partial_{x_k}\overline{f}(\overline{x_0})=\begin{pmatrix}
-		\partial_{x_k}f_1(\overline{x_0})\\
-		\partial_{x_k}f_2(\overline{x_0})\\
-		\vdots\\
-		\partial_{x_k}f_p(\overline{x_0})
-	\end{pmatrix}
-\end{equation*}
 
-\paragraph{\textcolor{red}{Definizione}}
-$\overline{f}$ è differenziabile in $\overline{x_0}\in A  \Leftrightarrow$ lo sono tutte le sue componenti. Se $\overline{f}$ è derivabile in $\overline{x_0}$, poniamo 
-\begin{equation*}
-	D\overline{f}(\overline{x_0})=\overline{d_f}(\overline{x_0})=\begin{pmatrix}
-		\nabla f_1(\overline{x_0})\\
-		\nabla f_2(\overline{x_0})\\
-		\vdots\\
-		\nabla f_p(\overline{x_0})
+\begin{definition}
+	$\overline{f}$ si dice derivabile in $\overline{x_0}$ nella direzione $\overline{v}\in \R^n$, $\overline{v}$ versore, se tali sono $f_1,...,f_p$ e in tal caso si pone
+	\begin{equation*}
+		D_{\overline{v}}f(\overline{x_0})=\begin{pmatrix}
+			D_{\overline{v}}f_1(\overline{x_0})\\
+			D_{\overline{v}}f_2(\overline{x_0})\\
+			\vdots\\
+			D_{\overline{v}}f_p(\overline{x_0})
+		\end{pmatrix}
+	\end{equation*}
+	In particolare, $\overline{f}$ è derivabile in $\overline{x_0}$ se ciascuna componente $f_1,...,f_p$ lo è e in tal caso si pone 
+	\begin{equation*}
+		\partial_{x_k}\overline{f}(\overline{x_0})=\begin{pmatrix}
+			\partial_{x_k}f_1(\overline{x_0})\\
+			\partial_{x_k}f_2(\overline{x_0})\\
+			\vdots\\
+			\partial_{x_k}f_p(\overline{x_0})
+		\end{pmatrix}
+	\end{equation*}
+\end{definition}
+
+
+\begin{definition}
+	$\overline{f}$ è differenziabile in $\overline{x_0}\in A  \Leftrightarrow$ lo sono tutte le sue componenti. Se $\overline{f}$ è derivabile in $\overline{x_0}$, poniamo 
+	\begin{equation*}
+		D\overline{f}(\overline{x_0})=\overline{d_f}(\overline{x_0})=\begin{pmatrix}
+			\nabla f_1(\overline{x_0})\\
+			\nabla f_2(\overline{x_0})\\
+			\vdots\\
+			\nabla f_p(\overline{x_0})
+		\end{pmatrix}=\begin{pmatrix}
+			\partial_{x_1}f_1(\overline{x_0})&\partial_{x_2}f_1(\overline{x_0})&\cdots&\partial_{x_n}f_1(\overline{x_0})\\
+			\partial_{x_1}f_2(\overline{x_0})&\partial_{x_2}f_2(\overline{x_0})&\cdots&\partial_{x_n}f_2(\overline{x_0})\\
+			\vdots&\vdots&\ddots&\vdots \\
+			\partial_{x_1}f_p(\overline{x_0})&\partial_{x_2}f_p(\overline{x_0})&\cdots&\partial_{x_n}f_p(\overline{x_0})
+		\end{pmatrix}
+	\end{equation*}
+	che viene detta \underline{matrice jacobiana} di $\overline{f}$ in $\overline{x_0}$.
+\end{definition}
+
+
+\begin{theorem}
+	Se $\overline{f}$ è differenziabile in $\overline{x_0}$, allora $\overline{f}(\overline{x})=\overline{f}(\overline{x_0})+Df(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|)$.\\
+	\textcolor{orange}{$f: \R \rightarrow \R$, differenziabile in $x_0$, $f(x)=f(x_0)+f'(x_0)(x-x_0)+o(x-x_0)$.\\
+		$f:\R^n \rightarrow \R$ differenziabile in $\overline{x_0}$, $f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0} \|)$.\\
+		$\overline{f}: \R^n \rightarrow \R^p$ differenziabile in $\overline{x_0}$\\
+		$\overline{f}(\overline{x})=\overline{f}(\overline{x_0})+Df(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|)$}.
+\end{theorem}
+
+
+\begin{exbar}
+	$\overline{f}:\R^n \rightarrow \R^p$ lineare, $\overline{f}(\overline{x})=M \overline{x}$, $M$ matrice $p \times n$, allora $D \overline{f}(\overline{x})=M$.
+\end{exbar}
+
+
+\begin{exbar}
+	$\overline{f}:\R^2 \rightarrow \R^3$\\
+	$\overline{f}(x,y)=\begin{pmatrix}
+		\sin(xy)\\
+		x^2+y^2\\
+		e^{x^2y^3}
+	\end{pmatrix}$\\
+	$Df(x,y)=\begin{pmatrix}
+		\nabla \sin(xy)\\
+		\nabla (x^2+y^2)\\
+		\nabla (e^{x^2y^3})
 	\end{pmatrix}=\begin{pmatrix}
-		\partial_{x_1}f_1(\overline{x_0})&\partial_{x_2}f_1(\overline{x_0})&\cdots&\partial_{x_n}f_1(\overline{x_0})\\
-		\partial_{x_1}f_2(\overline{x_0})&\partial_{x_2}f_2(\overline{x_0})&\cdots&\partial_{x_n}f_2(\overline{x_0})\\
-		\vdots&\vdots&\ddots&\vdots \\
-		\partial_{x_1}f_p(\overline{x_0})&\partial_{x_2}f_p(\overline{x_0})&\cdots&\partial_{x_n}f_p(\overline{x_0})
-	\end{pmatrix}
-\end{equation*}
-che viene detta \underline{matrice jacobiana} di $\overline{f}$ in $\overline{x_0}$.
+		y \cos(xy) & x \cos (xy)\\
+		2x & 2y\\
+		2xy^3e^{x^2y^3}&3x^2y^2e^{x^2y^3}
+	\end{pmatrix}$.
+\end{exbar}
 
 
-\paragraph{\textcolor{red}{Teorema}}
-Se $\overline{f}$ è differenziabile in $\overline{x_0}$, allora $\overline{f}(\overline{x})=\overline{f}(\overline{x_0})+Df(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|)$.\\
-\textcolor{orange}{$f: \R \rightarrow \R$, differenziabile in $x_0$, $f(x)=f(x_0)+f'(x_0)(x-x_0)+o(x-x_0)$.\\
-	$f:\R^n \rightarrow \R$ differenziabile in $\overline{x_0}$, $f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0} \|)$.\\
-	$\overline{f}: \R^n \rightarrow \R^p$ differenziabile in $\overline{x_0}$\\
-	$\overline{f}(\overline{x})=\overline{f}(\overline{x_0})+Df(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|)$}.
-
-\paragraph{\textcolor{red}{Esempio}}
-$\overline{f}:\R^n \rightarrow \R^p$ lineare, $\overline{f}(\overline{x})=M \overline{x}$, $M$ matrice $p \times n$, allora $D \overline{f}(\overline{x})=M$.
-
-
-\paragraph{\textcolor{red}{Esempio}}
-$\overline{f}:\R^2 \rightarrow \R^3$\\
-$\overline{f}(x,y)=\begin{pmatrix}
-	\sin(xy)\\
-	x^2+y^2\\
-	e^{x^2y^3}
-\end{pmatrix}$\\
-$Df(x,y)=\begin{pmatrix}
-	\nabla \sin(xy)\\
-	\nabla (x^2+y^2)\\
-	\nabla (e^{x^2y^3})
-\end{pmatrix}=\begin{pmatrix}
-	y \cos(xy) & x \cos (xy)\\
-	2x & 2y\\
-	2xy^3e^{x^2y^3}&3x^2y^2e^{x^2y^3}
-\end{pmatrix}$.
-
-\subsubsection{\textcolor{red}{Regola della catena}}
-\paragraph{\textcolor{red}{Teorema}}
-$A \subseteq \R^n$ e $B \subseteq \R^p$ aperti, $\overline{f}: B \rightarrow \R^k$ e $\overline{g}:A \rightarrow B$
-\textcolor{orange}{($\overline{f}\circ \overline{g}: A \rightarrow \R^k$)}.\\
-Se $\overline{g}$ è differenziabile in $\overline{x_0}\in A$ e $\overline{f}$ è differenziabile in $\overline{g}(\overline{x_0})\in B$, allora $\overline{f}\circ \overline{g}$ è differenziabile in $\overline{x_0}$ e in tal caso
-\begin{equation*}
-	D(\overline{f}\circ \overline{g})(\overline{x_0})=D\overline{f}(\overline{g}(\overline{x_0}))D\overline{g}(\overline{x_0}).
-\end{equation*}
-
-
-
+\begin{theorem} \textbf{Regola della catena}
 	
-\end{comment}
+	$A \subseteq \R^n$ e $B \subseteq \R^p$ aperti, $\overline{f}: B \rightarrow \R^k$ e $\overline{g}:A \rightarrow B$
+	\textcolor{orange}{($\overline{f}\circ \overline{g}: A \rightarrow \R^k$)}.\\
+	Se $\overline{g}$ è differenziabile in $\overline{x_0}\in A$ e $\overline{f}$ è differenziabile in $\overline{g}(\overline{x_0})\in B$, allora $\overline{f}\circ \overline{g}$ è differenziabile in $\overline{x_0}$ e in tal caso
+	\begin{equation*}
+		D(\overline{f}\circ \overline{g})(\overline{x_0})=D\overline{f}(\overline{g}(\overline{x_0}))D\overline{g}(\overline{x_0}).
+	\end{equation*}	
+\end{theorem}
+
+% PAG 405
