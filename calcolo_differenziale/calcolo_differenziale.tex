@@ -1857,75 +1857,143 @@ $$
 	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 385}}
 	
 	\begin{enumerate}
-		\item $f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),(\overline{x}-\overline{x_0}) \rangle+o(\| \overline{x}-\overline{x_0} \|^2)=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),(\overline{x}-\overline{x_0})\rangle+o(\|\overline{x}-\overline{x_0}\|^2)$\\
-		$D^2f(\overline{x_0})>0 \Rightarrow \exists \,\, c >0 \mid \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle \geq \|\overline{x}-\overline{x_0} \|^2\Rightarrow f(\overline{x})\geq f(\overline{x_0})+\frac{c}{2}\|\overline{x}-\overline{x_0}\|^2+o(\|\overline{x}-\overline{x_0}\|^2)=-f(\overline{x_0})+\|\overline{x}-\overline{x_0} \|^2(\frac{c}{2}+o(1))\Rightarrow \exists\,\, r>0 \mid \frac{c}{2}+o(1)\geq \frac{c}{4}$in $B_r(\overline{x_0})$ per il teorema della permanenza del segno\\
-		$\Rightarrow \forall\,\, \overline{x}\in B_r(\overline{x_0})$ si ha
-		$f(\overline{x})\geq f(\overline{x_0})+\frac{c}{4}\|\overline{x}-\overline{x_0}\|^2 \geq f(\overline{x_0}) \Rightarrow \overline{x_0}$ è punto di minimo relativo.
+		\item 
+		\begin{align*} 
+			f(\overline{x})&=f(\overline{x_0})+ \overbrace{\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle}^{{\color{blue} =0 \text{ perché } \nabla f(\overline{x}_0=\overline{0})}} +\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),(\overline{x}-\overline{x_0}) \rangle+o(\| \overline{x}-\overline{x_0} \|^2)=
+			\\
+			&=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),(\overline{x}-\overline{x_0})\rangle+o(\|\overline{x}-\overline{x_0}\|^2)
+		\end{align*}
 		
-		\item Analoga al punto 1. Si sfrutta il fatto che $\exists \,\, c>0 \mid \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle \leq -c\|\overline{x}-\overline{x_0}\|^2$.
-		\item $D^2f(\overline{x_0})$ è indefinita, quindi ha due autovalori $\lambda_1$ e $\lambda_2$ tali che $\lambda_1<0$ e $\lambda_2>0$.\\
-		Siano $\overline{r_1}$ e $\overline{r_2}$ i rispettivi autovettori tali che $D^2f(\overline{x_0})\overline{r_1}=\lambda_1\overline{r_1}$, $D^2f(\overline{x_0})=\lambda_2\overline{r_2}$, che supponiamo avere norma uno, $\|\overline{r_1} \|=\|\overline{r_2}\|=1$.\\
-		$f(\overline{x})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0}\|^2)$\\
-		$\overline{x}=\overline{x_0}+t\overline{r_1}$, $t \in \R$, sufficientemente piccolo in modo che $\overline{x_0}+t\overline{r_1}\in A$.\\
-		$f(\overline{x_0}+t\overline{r_1})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})t\overline{r_1},t\overline{r_1} \rangle + o(t^2)=f(\overline{x_0})+\frac{1}{2}\langle \lambda_1 +\overline{r_1},t\overline{r_1}\rangle + o(t^2)=f(\overline{x_0})+\frac{1}{2}\lambda_1 t^2 + o(t^2)=f(\overline{x_0})+t^2(\frac{1}{2}\lambda_1+o(1)) \Rightarrow \frac{1}{2}\lambda_1+o(1) < \frac{1}{4}\lambda_1$ in un intorno di $t=0$\\
-		$f(\overline{x_0}+t\overline{r_1})<f(\overline{x_0})+\frac{1}{4}\lambda_1 t^2< f(\overline{x_0})$ in un intorno di $t=0$, $t\neq 0$..\\
-		Analogamente $f(\overline{x_0}+t\overline{r_2})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})t\overline{r_2},t\overline{r_1} \rangle +o(t^2)=f(\overline{x_0})+\frac{1}{2}\lambda_2t^2+o(t^2)>f(\overline{x_0})$ in un intorno di $t=0$, $t \neq 0$\\
-		$\Rightarrow \overline{x_0}$ non è punto di estremo per $f \Rightarrow \overline{x_0}$ è punto di sella per $f$. 
+		$D^2f(\overline{x_0})>0 \Rightarrow \exists \,\, c >0 \mid$
+		
+		$$\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle \geq \|\overline{x}-\overline{x_0} \|^2$$
+		
+		$$\Rightarrow f(\overline{x})\geq f(\overline{x_0})+\frac{c}{2}\|\overline{x}-\overline{x_0}\|^2+o(\|\overline{x}-\overline{x_0}\|^2)=-f(\overline{x_0})+\|\overline{x}-\overline{x_0} \|^2(\frac{c}{2}+\uppercomment{o(1)}{=0}{\text{per } \overline{x} - \overline{x}_0})$$
+		
+		$\Rightarrow \exists\,\, r>0 \mid \frac{c}{2}+o(1)\geq \frac{c}{4}$in $B_r(\overline{x_0})$ per il teorema della permanenza del segno
+		
+		$\Rightarrow \forall\,\, \overline{x}\in B_r(\overline{x_0})$ si ha
+		
+		$$f(\overline{x})\geq f(\overline{x_0})+\frac{c}{4}\|\overline{x}-\overline{x_0}\|^2 \geq f(\overline{x_0}) \Rightarrow \overline{x_0}$$
+		
+		è punto di minimo relativo.
+		
+		\item Analogo al punto 1. Si sfrutta il fatto che $\exists \,\, c>0 \mid$
+		
+		$$ \langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle \leq -c\|\overline{x}-\overline{x_0}\|^2$$
+		
+		\item $D^2f(\overline{x_0})$ è indefinita, quindi ha due autovalori $\lambda_1$ e $\lambda_2$ tali che $\lambda_1<0$ e $\lambda_2>0$.
+		
+		Siano $\overline{r_1}$ e $\overline{r_2}$ i rispettivi autovettori tali che 
+		
+		$$D^2f(\overline{x_0})\overline{r_1}=\lambda_1\overline{r_1}, \qquad D^2f(\overline{x_0})=\lambda_2\overline{r_2}$$
+		
+		 che supponiamo avere norma uno, $\|\overline{r_1} \|=\|\overline{r_2}\|=1$.
+		
+		$$f(\overline{x})=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})(\overline{x}-\overline{x_0}),\overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0}\|^2)$$
+		
+		$\overline{x}=\overline{x_0}+t\overline{r_1}$, $t \in \R$, sufficientemente piccolo in modo che $\overline{x_0}+t\overline{r_1}\in A$.
+		\begin{align*} 
+			f(\overline{x_0}+t\overline{r_1})
+			&=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})t\overline{r_1},t\overline{r_1} \rangle + o(t^2)=
+			\\
+			&=f(\overline{x_0})+\frac{1}{2}\langle \lambda_1 +\overline{r_1},t\overline{r_1}\rangle + o(t^2)=
+			\\
+			&=f(\overline{x_0})+\frac{1}{2}\lambda_1 t^2 + o(t^2)=f(\overline{x_0})+t^2(\frac{1}{2} \lowercomment{\lambda_1}{<0}{}+\uppercomment{o(1)}{0 \text{ per } t\to0 \text{ cioè}}{\text{per } \overline{x}_0 + t\overline{r}_1\to\overline{x}_0}) 
+		\end{align*}
+		
+		{\centering $\Rightarrow \frac{1}{2}\lambda_1+o(1) < \frac{1}{4}\lambda_1$ in un intorno di $t=0$ \par}
+			
+		$f(\overline{x_0}+t\overline{r_1})<f(\overline{x_0})+\frac{1}{4}\lambda_1 t^2< f(\overline{x_0})$ in un intorno di $t=0$, $t\neq 0$.
+		
+		Analogamente
+		\begin{align*} 
+			f(\overline{x_0}+t\overline{r_2})
+			&=f(\overline{x_0})+\frac{1}{2}\langle D^2f(\overline{x_0})t\overline{r_2},t\overline{r_1} \rangle +o(t^2)=
+			\\
+			=f(\overline{x_0})+\frac{1}{2}\lambda_2t^2+o(t^2)>f(\overline{x_0})
+		\end{align*}
+		
+		in un intorno di $t=0$, $t \neq 0$
+		
+		$\Rightarrow \overline{x_0}$ non è punto di estremo per $f \Rightarrow \overline{x_0}$ è punto di sella per $f. \qquad \square$
 	\end{enumerate}
 \end{dembar}
 
 
 \begin{exbar}
 \begin{example}
-	Cercare i punti di estremo relativo della funzione $f(x,y)=4xe^x\cos y$, $(x,y)\in\R^2$.\\
-	$f \in C^\infty(\R^2)$.\\
-	Cerchiamo i punti critici di $f$ \\
-	$\partial_xf(x,y)=4e^x(x+1)\cos y$\\
-	$\partial_yf(x,y)=-4xe^x\sin y$\\
-	Deve essere $\nabla f(x,y)=(0,0)\Leftrightarrow \begin{cases}
-		\partial_x f(x,y)=0\\
-		\partial_y f(x,y)=0
-	\end{cases}= \begin{cases}
-		e^x(x+1)\cos y=0\\
-		xe^x\sin y=0
-	\end{cases}$\\
-	$\Leftrightarrow \begin{cases}
-		x=-1 &\text{  o  }\cos y =0\\
-		x=0 &\text{  o  }\sin y=0
-	\end{cases} \Leftrightarrow \begin{cases}
-		x=-1\\
-		\sin y =0
-	\end{cases}$ oppure $\begin{cases}
-		\cos y=0\\
-		x=0
-	\end{cases}$\\
-	$(-1,k\pi)$, $(0,\frac{\pi}{2}+k\pi)$, $k \in \Z$.\\
-	Studiamo la natura dei punti critici.\\
-	$\partial_xf(x,y)=4e^x(x+1)\cos y$\\
-	$\partial_yf(x,y)=-4xe^x\sin y$\\
-	$\partial_{xx}^2f(x,y)=4e^x(x+2)\cos y$\\
-	$\partial_{yy}^2f(x,y)=-4xe^x \cos y$\\
-	$\partial_{yx}f(x,y)=-4e^x(x+1)\sin y= \partial_{xy}^2f(x,y)$\\
-	$D^2f(x,y)=4 \begin{pmatrix}
+	Cercare i punti di estremo relativo della funzione 
+	$$f(x,y)=4xe^x\cos y, \quad (x,y)\in\R^2, \quad f \in C^\infty(\R^2)$$
+	
+	Cerchiamo i punti critici di $f$ 
+	
+	$$\partial_xf(x,y)=4e^x(x+1)\cos y \qquad \partial_yf(x,y)=-4xe^x\sin y$$
+	
+	Deve essere 
+	\begin{gather*} 
+		\nabla f(x,y)=(0,0) \Leftrightarrow 
+		\begin{cases}
+			\partial_x f(x,y)=0\\
+			\partial_y f(x,y)=0
+		\end{cases} = 
+		\begin{cases}
+			e^x(x+1)\cos y=0\\
+			xe^x\sin y=0
+		\end{cases}
+		\\
+		\Leftrightarrow 
+		\begin{cases}
+			x=-1 &\text{  o  }\cos y =0\\
+			x=0 &\text{  o  }\sin y=0
+		\end{cases} \Leftrightarrow 
+		\begin{cases}
+			x=-1\\
+			\sin y =0
+		\end{cases} \text{ oppure } 
+		\begin{cases}
+			\cos y=0\\
+			x=0
+		\end{cases}
+		\\
+		(-1,k\pi), \quad (0,\frac{\pi}{2}+k\pi), \quad k \in \mathbb{Z}
+	\end{gather*}
+	
+	Studiamo la natura dei punti critici.
+	
+	$$\partial_xf(x,y)=4e^x(x+1)\cos y \qquad \partial_yf(x,y)=-4xe^x\sin y$$
+	
+	$$\quad \partial_{xx}^2f(x,y)=4e^x(x+2)\cos y \quad \partial_{yy}^2f(x,y)=-4xe^x \cos y \quad \partial_{yx}f(x,y)=-4e^x(x+1)\sin y= \partial_{xy}^2f(x,y)$$
+	
+	$$D^2f(x,y)=
+	4 \begin{pmatrix}
 		e^x(x+2)\cos y & -e^x(x+1)\sin y\\
 		-e^x(x+1)\sin y & -x e^x \cos y
-	\end{pmatrix}$\\
-	$D^2f(-1, k\pi)=4 \begin{pmatrix}
+	\end{pmatrix}$$
+	
+	$$D^2f(-1, k\pi)=
+	4 \begin{pmatrix}
 		e^{-1}\cos(k \pi)&0\\
 		0&e^{-1}\cos(k\pi)
 	\end{pmatrix}=\begin{pmatrix}
 		e^{-1}(-1)^k&0\\
 		0&e^{-1}(-1)^k
-	\end{pmatrix}$\\
-	$k$ pari $D^2f(-1,k\pi) >0 \Rightarrow (-1,k\pi)$ sono punti di minimo relativo.\\
-	$k$ dispari $D^2f(-1,k\pi)< 0 \Rightarrow (-1,k\pi)$ sono punti di massimo relativo.\\
-	$D^2f(0,\frac{\pi}{2}+k \pi)=4 \begin{pmatrix}
+	\end{pmatrix}$$
+	
+	$k$ pari $D^2f(-1,k\pi) >0 \Rightarrow (-1,k\pi)$ sono punti di minimo relativo.
+	
+	$k$ dispari $D^2f(-1,k\pi)< 0 \Rightarrow (-1,k\pi)$ sono punti di massimo relativo.
+	
+	$$D^2f(0,\frac{\pi}{2}+k \pi)=4 
+	\begin{pmatrix}
 		0 & -\sin(\frac{\pi}{2}+k\pi)\\
 		-\sin(\frac{\pi}{2}+k\pi)& 0
-	\end{pmatrix}=4 \begin{pmatrix}
+	\end{pmatrix}=
+	4 \begin{pmatrix}
 		0&(-1)^{k+1}\\
 		(-1)^{k+1}&0
-	\end{pmatrix}$\\
+	\end{pmatrix}$$
+	
 	che è matrice indefinita $\Rightarrow$ i punti $(0,\frac{\pi}{2}+k \pi)$ sono punti di sella.
 \end{example}
 \end{exbar}
@@ -1933,178 +2001,234 @@ $$
 
 \begin{exbar}
 \begin{example}
+	Calcolare i punti critici della funzione 
 	
-	Calcolare i punti critici della funzione $f(x,y)=(y-x^2)(y-2x^2)$, $(x,y) \in \R^2$ e studiare la loro natura.\\
-	$f\in C^\infty (\R^2)$\\
-	$\partial_xf(x,y)=-2x(y-2x^2)-4x(y-x^2)=8x^3-6xy$\\
-	$\partial_yf(x,y)=y-2x^2+y-x^2=2y-3x^2$\\
-	$\begin{cases}
+	$$f(x,y)=(y-x^2)(y-2x^2)$, $(x,y) \in \R^2$$
+	
+	e studiare la loro natura. $f\in C^\infty (\R^2)$.
+	
+	$\partial_xf(x,y)=-2x(y-2x^2)-4x(y-x^2)=8x^3-6xy$
+	
+	$\partial_yf(x,y)=y-2x^2+y-x^2=2y-3x^2$
+	
+	$$\begin{cases}
 		\partial_xf(x,y)=0\\
 		\partial_yf(x,y)=0
-	\end{cases} \Leftrightarrow \begin{cases}
+	\end{cases} \Leftrightarrow 
+	\begin{cases}
 		8x^3-6xy=0\\
 		2y-3x^2=0
-	\end{cases} \Leftrightarrow \begin{cases}
+	\end{cases} \Leftrightarrow 
+	\begin{cases}
 		x=0 \text{   o   } 4x^2-3y=0\\
 		y=\frac{3}{2}x^2
-	\end{cases}\Leftrightarrow \begin{cases}
+	\end{cases}\Leftrightarrow 
+	\begin{cases}
 		x=0\\
 		y=0
-	\end{cases}$\\
-	$\Rightarrow(0,0)$ è l'unico punto critico per $t$\\
-	Calcoliamo $D^2f(0,0)$.\\
-	$\partial_{xx}^2f(x,y)=24x^2-6y$\\
-	$\partial_{yy}^2f(x,y)=2$\\
-	$\partial_{yx}^2f(x,y)=\partial_{xy}^2f(x,y)-6x$\\
-	$D^2f(0,0)=\begin{pmatrix}
+	\end{cases}$$
+	
+	$\Rightarrow(0,0)$ è l'unico punto critico per $t$
+	
+	Calcoliamo $D^2f(0,0)$.
+	
+	$$\partial_x f(x,y) = 8x^3-6xy \qquad \partial_y f(x,y) = 2y-3x^2$$
+	
+	$$\partial_{xx}^2f(x,y)=24x^2-6y \quad \partial_{yy}^2f(x,y)=2 \quad \partial_{yx}^2f(x,y)=\partial_{xy}^2f(x,y)-6x$$
+	
+	$$D^2f(0,0)=\begin{pmatrix}
 		0&0\\
 		0&2
-	\end{pmatrix} \Rightarrow$ è semidefinita positiva e non è la matrice nulla $\Rightarrow (0,0)$ è punto di minimo o è punto di sella.\\
-	$f(x,y)=(y-x^2)(y-2x^2)$\\
-	$f(0,0)=0$, $f(x,y) |_{y=x^2}=0$\\
-	$f(x,y)|_{y=2x^2}=0$\\
-	IMMAGINE\\
-	Se $y < x^2 \Rightarrow y-x^2 < 0$ e $y-2x^2< 0 \Rightarrow f(x,y)>0$. Se $y > 2x^2 \Rightarrow y-x^2 >0$ e $y-2x^2 >0 \Rightarrow f(x,y)> 0$.\\
-	$x^2< y< 2x^2$\\
-	$y- x^2>0$, $y-2x^2< 0 \Rightarrow f(x,y)<0 \Rightarrow (0,0)$ è punto di sella.
+	\end{pmatrix} \Rightarrow$$
 	
-	\paragraph{\textcolor{red}{Esempio}}
-	Studiare la natura dei punti critici della funzione $f: \R^3 \rightarrow \R$ definita da $f(x,y,z)=x\sin z + y^2$.\\
-	$\partial_x f(x,y,z)=\sin z$\\
-	$\partial_y f(x,y,z)=2y$\\
-	$\partial_z f(x,y,z)=x \cos z$\\
-	$\begin{cases}
-		\partial_x f(x,y,z)=0\\
-		\partial_y f(x,y,z)=0\\
-		\partial_z f(x,y,z)=0
-	\end{cases}\Leftrightarrow\begin{cases}
-		\sin z=0\\
-		2y=0\\
-		x\cos z=0
-	\end{cases}\Leftrightarrow\begin{cases}
-		z=k\pi\\
-		y=0\\
-		x=0 \text{  o  } z=\frac{\pi}{2}+k\pi
-	\end{cases}$\\
-	$(0,0,k\pi)$, $k \in \Z$.\\
-	Per studiarne la natura calcoliamo le derivate seconde.\\
-	$\partial_x f(x,y,z)=\sin z$\\
-	$\partial_y f(x,y,z)=2y$\\
-	$\partial_z f(x,y,z)=x \cos z$\\
-	$\partial_{xx}^2f(x,y,z)=0$\\
-	$\partial_{yx}^2f(x,y,z)=0=\partial_{xy}^2f(x,y,z)$\\
-	$\partial_{zx}^2f(x,y,z)=\cos z$\\
-	$\partial_{yy}^2f(x,y,z)=2$\\
-	$\partial_{zy}^2f(x,y,z)=0=\partial_{yz}^2f(x,y,z)$\\
-	$\partial_{zz}^2f(x,y,z)=-x \sin z$\\
-	$D^2f(x,y,z)=\begin{pmatrix}
-		0&0&\cos z\\
-		0&2&0\\
-		\cos z&0&-x \sin z
-	\end{pmatrix}$\\
-	$D^2f(0,0,k\pi)=\begin{pmatrix}
-		0&0&(-1)^k\\
-		0&2&0\\
-		(-1)^k&0&0
-	\end{pmatrix}$\\
-	Calcoliamo gli autovalori della matrice hessiana.\\
-	$0=\det(D^2 f(0,0,k\pi)-\lambda I)= \det\begin{pmatrix}
-		-\lambda&0&(-1)^k\\
-		0&-2\lambda&0\\
-		(-1)^k&0&-\lambda
-	\end{pmatrix}=(2-\lambda)(\lambda^2-1)$.\\
-	Autovalori: $\lambda=2$ e $\lambda= \pm 1$. Avendo due autovalori di segno opposto, la matrice hessisiana è indefinita e quindi tutti i punti critici sono punti di sella
+	è semidefinita positiva e non è la matrice nulla $\Rightarrow (0,0)$ è punto di minimo o è punto di sella.
+	
+	$$f(x,y)=(y-x^2)(y-2x^2)$$
+	
+	$$f(0,0)=0, \quad f(x,y) \big|_{y=x^2}=0 \quad f(x,y)\big|_{y=2x^2}=0$$
+	
+	\segnaposto % pag 394
+
+	Se $y < x^2 \Rightarrow y-x^2 < 0$ e $y-2x^2< 0 \Rightarrow f(x,y)>0$. 
+	
+	Se $y > 2x^2 \Rightarrow y-x^2 >0$ e $y-2x^2 >0 \Rightarrow f(x,y)> 0$.
+	
+	$$x^2< y< 2x^2$$
+	
+	$y- x^2>0$, $y-2x^2< 0 \Rightarrow f(x,y)<0 \Rightarrow (0,0)$ è punto di sella.
 \end{example}
 \end{exbar}
 
 
 \begin{exbar}
 \begin{example}
+	Studiare la natura dei punti critici della funzione $f: \R^3 \rightarrow \R$ definita da 
 	
-	Studiare i punti critici della funzione definita da $f(x,y,z)=2x^3-2y^2+z^2+3(x^2+y)z$, $(x,y,z)\in \R^3$. $f\in C^\infty(\R^3)$.\\
-	$\partial_xf(x,y,z)=6x^2+6xz$\\
-	$\partial_yf(x,y,z)=-4y+3z$\\
-	$\partial_zf(x,y,z)=2z+3(x^2+y)$\\
-	$\nabla f(x,y,z)=(0,0,0)$\\
-	$\begin{cases}
+	$$f(x,y,z)=x\sin z + y^2$$
+	
+	$$\partial_x f(x,y,z)=\sin z \quad \partial_y f(x,y,z)=2y \quad \partial_z f(x,y,z)=x \cos z$$
+	
+	$$\begin{cases}
+		\partial_x f(x,y,z)=0\\
+		\partial_y f(x,y,z)=0\\
+		\partial_z f(x,y,z)=0
+	\end{cases}\Leftrightarrow
+	\begin{cases}
+		\sin z=0\\
+		2y=0\\
+		x\cos z=0
+	\end{cases}\Leftrightarrow
+	\begin{cases}
+		z=k\pi\\
+		y=0\\
+		x=0 \text{  o  } z=\frac{\pi}{2}+k\pi
+	\end{cases}$$
+	
+	$$(0,0,k\pi), \qquad k \in \mathbb{Z}$$
+	
+	Per studiarne la natura calcoliamo le derivate seconde.
+	
+	$$\partial_x f(x,y,z)=\sin z \quad \partial_y f(x,y,z)=2y \quad \partial_z f(x,y,z)=x \cos z$$
+	
+	$$\partial_{xx}^2f(x,y,z)=0 \quad \partial_{yx}^2f(x,y,z)=0=\partial_{xy}^2f(x,y,z) \quad \partial_{zx}^2f(x,y,z)=\cos z$$
+	
+	$$\partial_{yy}^2f(x,y,z)=2 \quad \partial_{zy}^2f(x,y,z)=0=\partial_{yz}^2f(x,y,z) \quad \partial_{zz}^2f(x,y,z)=-x \sin z$$
+	
+	$$D^2f(x,y,z)=\begin{pmatrix}
+		0&0&\cos z\\
+		0&2&0\\
+		\cos z&0&-x \sin z
+	\end{pmatrix}$$
+	
+	$$D^2f(0,0,k\pi)=\begin{pmatrix}
+		0&0&(-1)^k\\
+		0&2&0\\
+		(-1)^k&0&0
+	\end{pmatrix}$$
+	
+	Calcoliamo gli autovalori della matrice hessiana.
+	
+	$0=\det(D^2 f(0,0,k\pi)-\lambda I)= 
+	\det\begin{pmatrix}
+		-\lambda&0&(-1)^k\\
+		0&-2\lambda&0\\
+		(-1)^k&0&-\lambda
+	\end{pmatrix}=(2-\lambda)(\lambda^2-1)$
+	
+	Autovalori: $\lambda=2$ e $\lambda= \pm 1$. Avendo due autovalori di segno opposto, la matrice hessisiana è indefinita e quindi tutti i punti critici sono punti di sella.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Studiare i punti critici della funzione definita da 
+	
+	$$f(x,y,z)=2x^3-2y^2+z^2+3(x^2+y)z, \quad (x,y,z)\in \R^3 \quad f\in C^\infty(\R^3)$$.\\
+	
+	$$\partial_xf(x,y,z)=6x^2+6xz \quad \partial_yf(x,y,z)=-4y+3z \quad \partial_zf(x,y,z)=2z+3(x^2+y)$$
+	
+	$\nabla f(x,y,z)=(0,0,0)$
+	
+	$$\begin{cases}
 		6x(x+z)=0\\
 		-4y+3z=0\\
 		2z+3(x^2+y)=0
-	\end{cases}\Leftrightarrow\begin{cases}
+	\end{cases}\Leftrightarrow
+	\begin{cases}
 		x=0\text{  o  }x=-z\\
 		-4y+3z=0\\
 		2z+3(x^2+y)=0
-	\end{cases}\Leftrightarrow\begin{cases}
+	\end{cases}\Leftrightarrow
+	\begin{cases}
 		x=0\\
 		-4y+3z=0\\
 		3y+2z=0
-	\end{cases}$\\
-	$\det\begin{pmatrix}
+	\end{cases}$$
+	
+	$$\det\begin{pmatrix}
 		-4&3\\
 		3&2
-	\end{pmatrix}=-17\neq 0 \Leftrightarrow (x,y,z)=(0,0,0)$.\\
-	$\begin{cases}
+	\end{pmatrix}=-17\neq 0 \Leftrightarrow (x,y,z)=(0,0,0)$$
+	
+	$$\begin{cases}
 		x=-z\\
 		-4y+3z=0\\
 		2z+3z^2+3y=0
-	\end{cases}\Leftrightarrow\begin{cases}
+	\end{cases}\Leftrightarrow
+	\begin{cases}
 		x=-z\\
 		y=\frac{3}{4}z\\
 		2z+3z^2+\frac{9}{4}z=0
-	\end{cases}\Leftrightarrow (x,y,z)=(0,0,0)$ oppure $(x,y,z)=(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$.\\
-	I punti critici sono $(0,0,0)$ e $(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$. Studiamone la natura.\\
-	$\partial_xf(x,y,z)=6x^2+6xz$\\
-	$\partial_yf(x,y,z)=-4y+3z$\\
-	$\partial_zf(x,y,z)=2z+3(x^2+y)$\\
-	$\partial_{xx}^2f(x,y,z)=12x+6z$\\
-	$\partial_{yx}^2f(x,y,z)=0=\partial_{xy}^2f(x,y,z)$\\
-	$\partial_{zx}^2f(x,y,z)=6x=\partial_{xz}^2f(x,y,z)$\\
-	$\partial_{yy}^2f(x,y,z)=-4$\\
-	$\partial_{zy}^2f(x,y,z)=3=\partial_{yz}^2f(x,y,z)$\\
-	$\partial_{zz}^2f(x,y,z)=2$\\
-	$D^2f(x,y,z)=\begin{pmatrix}
+	\end{cases}$$
+	$\Leftrightarrow (x,y,z)=(0,0,0)$ oppure $(x,y,z)=(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$.
+	
+	I punti critici sono $(0,0,0)$ e $(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$. Studiamone la natura.
+	
+	$$\partial_xf(x,y,z)=6x^2+6xz \quad \partial_yf(x,y,z)=-4y+3z \quad \partial_zf(x,y,z)=2z+3(x^2+y)$$
+	
+	$$\partial_{xx}^2f(x,y,z)=12x+6z \quad \partial_{yx}^2f(x,y,z)=0=\partial_{xy}^2f(x,y,z) \quad \partial_{zx}^2f(x,y,z)=6x=\partial_{xz}^2f(x,y,z)$$
+	
+	$$\partial_{yy}^2f(x,y,z)=-4 \quad \partial_{zy}^2f(x,y,z)=3=\partial_{yz}^2f(x,y,z) \quad \partial_{zz}^2f(x,y,z)=2$$
+	
+	$$D^2f(x,y,z)=\begin{pmatrix}
 		12x+6z&0&6x\\
 		0&-4&3\\
 		6x&3&2
-	\end{pmatrix}$\\
-	$D^2f(0,0,0)=\begin{pmatrix}
+	\end{pmatrix}$$
+	
+	$$D^2f(0,0,0)=\begin{pmatrix}
 		0&0&0\\
 		0&-4&3\\
 		0&3&2
-	\end{pmatrix}$\\
-	$0=\det(D^2f(0,0,0)-\lambda I)= \det \begin{pmatrix}
+	\end{pmatrix}$$
+	
+	$$0=\det(D^2f(0,0,0)-\lambda I)= \det \begin{pmatrix}
 		-\lambda&0&0\\
 		0&-4-\lambda&3\\
 		0&3&2-\lambda
-	\end{pmatrix}=-\lambda[(\lambda-2)(4+\lambda)-9]=-\lambda[\lambda^2+2\lambda-17] \Rightarrow$ ha autovalore positivo ad uno negativo $\Rightarrow$ la metrica è indefinita $\Rightarrow (0,0,0)$ è punto di sella.\\
-	$D^2f(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})=\begin{pmatrix}
+	\end{pmatrix}=-\lambda[(\lambda-2)(4+\lambda)-9]=-\lambda[\lambda^2+2\lambda-17]$$
+	
+	$ \Rightarrow$ ha autovalore positivo ad uno negativo $\Rightarrow$ la metrica è indefinita $\Rightarrow (0,0,0)$ è punto di sella.
+	
+	$$D^2f(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})=\begin{pmatrix}
 		\frac{17}{2}&0&\frac{17}{2}\\
 		0&-4&3\\
 		\frac{17}{2}&3&2
-	\end{pmatrix}$\\
-	$\det D^2f(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})\neq 0$ e i primi due minori principali $\alpha_1$ e $\alpha_2$ soddisfano $\alpha_1= \frac{17}{2} >0$ e $\alpha_2 =-34 <0 \Rightarrow$ la matrice è indefinita $\Rightarrow (\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$ è punto di sella.
+	\end{pmatrix}$$
+	
+	$\det D^2f(\frac{17}{12},-\frac{17}{16},-\frac{17}{12})\neq 0$ e i primi due minori principali $\alpha_1$ e $\alpha_2$ soddisfano $\alpha_1= \frac{17}{2} >0$ e $\alpha_2 =-34 <0$
+	
+	$\Rightarrow$ la matrice è indefinita $\Rightarrow (\frac{17}{12},-\frac{17}{16},-\frac{17}{12})$ è punto di sella.
 \end{example}
 \end{exbar}
 
 
 \subsubsection{Matrice Jacobiana}
 
-$A \subseteq \R^n$ aperto, $\overline{f}: A \rightarrow \R^p$, $p \geq 1$, $\overline{f}(\overline{x})=(f_1(\overline{x}),f_2(\overline{x}),...,f_p(\overline{x}))$, $f_i:A \rightarrow \R$, $ i =1,...,p$.
+$A \subseteq \R^n$ aperto, $\overline{f}: A \rightarrow \R^p$, $p \geq 1$, 
+
+$$\overline{f}(\overline{x})=(f_1(\overline{x}),f_2(\overline{x}),...,f_p(\overline{x}))$$
+
+$f_i:A \rightarrow \R$, $ i =1,...,p$.
 
 
 \begin{definition}
 	$\overline{f}$ si dice derivabile in $\overline{x_0}$ nella direzione $\overline{v}\in \R^n$, $\overline{v}$ versore, se tali sono $f_1,...,f_p$ e in tal caso si pone
 	\begin{equation*}
-		D_{\overline{v}}f(\overline{x_0})=\begin{pmatrix}
+		D_{\overline{v}}f(\overline{x_0})=
+		\begin{pmatrix}
 			D_{\overline{v}}f_1(\overline{x_0})\\
 			D_{\overline{v}}f_2(\overline{x_0})\\
 			\vdots\\
 			D_{\overline{v}}f_p(\overline{x_0})
 		\end{pmatrix}
 	\end{equation*}
+	
 	In particolare, $\overline{f}$ è derivabile in $\overline{x_0}$ se ciascuna componente $f_1,...,f_p$ lo è e in tal caso si pone 
 	\begin{equation*}
-		\partial_{x_k}\overline{f}(\overline{x_0})=\begin{pmatrix}
+		\partial_{x_k}\overline{f}(\overline{x_0})=
+		\begin{pmatrix}
 			\partial_{x_k}f_1(\overline{x_0})\\
 			\partial_{x_k}f_2(\overline{x_0})\\
 			\vdots\\
@@ -2117,28 +2241,41 @@ $A \subseteq \R^n$ aperto, $\overline{f}: A \rightarrow \R^p$, $p \geq 1$, $\ove
 \begin{definition}
 	$\overline{f}$ è differenziabile in $\overline{x_0}\in A  \Leftrightarrow$ lo sono tutte le sue componenti. Se $\overline{f}$ è derivabile in $\overline{x_0}$, poniamo 
 	\begin{equation*}
-		D\overline{f}(\overline{x_0})=\overline{d_f}(\overline{x_0})=\begin{pmatrix}
+		D\overline{f}(\overline{x_0})=\overline{d_f}(\overline{x_0})=
+		\begin{pmatrix}
 			\nabla f_1(\overline{x_0})\\
 			\nabla f_2(\overline{x_0})\\
 			\vdots\\
 			\nabla f_p(\overline{x_0})
-		\end{pmatrix}=\begin{pmatrix}
+		\end{pmatrix}=
+		\begin{pmatrix}
 			\partial_{x_1}f_1(\overline{x_0})&\partial_{x_2}f_1(\overline{x_0})&\cdots&\partial_{x_n}f_1(\overline{x_0})\\
 			\partial_{x_1}f_2(\overline{x_0})&\partial_{x_2}f_2(\overline{x_0})&\cdots&\partial_{x_n}f_2(\overline{x_0})\\
 			\vdots&\vdots&\ddots&\vdots \\
 			\partial_{x_1}f_p(\overline{x_0})&\partial_{x_2}f_p(\overline{x_0})&\cdots&\partial_{x_n}f_p(\overline{x_0})
 		\end{pmatrix}
 	\end{equation*}
-	che viene detta \underline{matrice jacobiana} di $\overline{f}$ in $\overline{x_0}$.
+	
+	che viene detta \textbf{matrice jacobiana} di $\overline{f}$ in $\overline{x_0}$.
 \end{definition}
 
 
 \begin{theorem}
-	Se $\overline{f}$ è differenziabile in $\overline{x_0}$, allora $\overline{f}(\overline{x})=\overline{f}(\overline{x_0})+Df(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|)$.\\
-	\textcolor{orange}{$f: \R \rightarrow \R$, differenziabile in $x_0$, $f(x)=f(x_0)+f'(x_0)(x-x_0)+o(x-x_0)$.\\
-		$f:\R^n \rightarrow \R$ differenziabile in $\overline{x_0}$, $f(\overline{x})=f(\overline{x_0})+\langle \nabla f(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0} \|)$.\\
-		$\overline{f}: \R^n \rightarrow \R^p$ differenziabile in $\overline{x_0}$\\
-		$\overline{f}(\overline{x})=\overline{f}(\overline{x_0})+Df(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|)$}.
+	Se $\overline{f}$ è differenziabile in $\overline{x_0}$, allora $\overline{f}(\overline{x})=\overline{f}(\overline{x_0})+Df(\overline{x_0})(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|)$.
+	
+	{\color{teal}
+		$f: \R \rightarrow \R$, differenziabile in $x_0$, 
+		
+		$$f(x)=f(x_0)+\lowercomment{f'(x_0)}{\in\R}{}(x-x_0)+o(x-x_0)$$
+		
+		$f:\R^n \rightarrow \R$ differenziabile in $\overline{x_0}$,
+		
+		$$f(\overline{x})=f(\overline{x_0})+\langle \lowercomment{\nabla f}{\in\R^n}{}(\overline{x_0}), \overline{x}-\overline{x_0} \rangle + o(\|\overline{x}-\overline{x_0} \|)$$
+		
+		$\overline{f}: \R^n \rightarrow \R^p$ differenziabile in $\overline{x_0}$
+		
+		$$\overline{f}(\overline{x})=\overline{f}(\overline{x_0})+ \lowercomment{Df(\overline{x_0})}{\text{matrice } p\times n}{}(\overline{x}-\overline{x_0})+o(\|\overline{x}-\overline{x_0}\|)$$
+		}
 \end{theorem}
 
 
@@ -2148,28 +2285,36 @@ $A \subseteq \R^n$ aperto, $\overline{f}: A \rightarrow \R^p$, $p \geq 1$, $\ove
 
 
 \begin{exbar}
-	$\overline{f}:\R^2 \rightarrow \R^3$\\
-	$\overline{f}(x,y)=\begin{pmatrix}
+	$\overline{f}:\R^2 \rightarrow \R^3$
+	
+	$$\overline{f}(x,y)=
+	\begin{pmatrix}
 		\sin(xy)\\
 		x^2+y^2\\
 		e^{x^2y^3}
-	\end{pmatrix}$\\
-	$Df(x,y)=\begin{pmatrix}
-		\nabla \sin(xy)\\
-		\nabla (x^2+y^2)\\
-		\nabla (e^{x^2y^3})
-	\end{pmatrix}=\begin{pmatrix}
+	\end{pmatrix}$$
+	
+	$$Df(x,y)=
+	{\color{blue} 
+		\begin{pmatrix}
+			\nabla \sin(xy)\\
+			\nabla (x^2+y^2)\\
+			\nabla (e^{x^2y^3})
+		\end{pmatrix}=
+	}
+	\begin{pmatrix}
 		y \cos(xy) & x \cos (xy)\\
 		2x & 2y\\
 		2xy^3e^{x^2y^3}&3x^2y^2e^{x^2y^3}
-	\end{pmatrix}$.
+	\end{pmatrix}$$
 \end{exbar}
 
 
 \begin{theorem} \textbf{Regola della catena}
 	
 	$A \subseteq \R^n$ e $B \subseteq \R^p$ aperti, $\overline{f}: B \rightarrow \R^k$ e $\overline{g}:A \rightarrow B$
-	\textcolor{orange}{($\overline{f}\circ \overline{g}: A \rightarrow \R^k$)}.\\
+	{\color{blue}($\overline{f}\circ \overline{g}: A \rightarrow \R^k$)}.
+	
 	Se $\overline{g}$ è differenziabile in $\overline{x_0}\in A$ e $\overline{f}$ è differenziabile in $\overline{g}(\overline{x_0})\in B$, allora $\overline{f}\circ \overline{g}$ è differenziabile in $\overline{x_0}$ e in tal caso
 	\begin{equation*}
 		D(\overline{f}\circ \overline{g})(\overline{x_0})=D\overline{f}(\overline{g}(\overline{x_0}))D\overline{g}(\overline{x_0}).
