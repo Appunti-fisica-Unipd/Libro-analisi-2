@@ -1687,7 +1687,6 @@ polinomio di Taylor di ordine o grado $2$ di $f$ di centro $\overline{x_0}$.
 	
 	$\ln(1+x)=x-\frac{x^2}{2}+o(x^2)$ per $x \rightarrow 0$
 	
-	%===============================================PAG 381
 	
 	\begin{align*} 
 		f(x,y)
@@ -1963,7 +1962,9 @@ $$
 	
 	$$\partial_xf(x,y)=4e^x(x+1)\cos y \qquad \partial_yf(x,y)=-4xe^x\sin y$$
 	
-	$$\quad \partial_{xx}^2f(x,y)=4e^x(x+2)\cos y \quad \partial_{yy}^2f(x,y)=-4xe^x \cos y \quad \partial_{yx}f(x,y)=-4e^x(x+1)\sin y= \partial_{xy}^2f(x,y)$$
+	$$\quad \partial_{xx}^2f(x,y)=4e^x(x+2)\cos y \quad \partial_{yy}^2f(x,y)=-4xe^x \cos y$$
+	
+	$$ \partial_{yx}f(x,y)=-4e^x(x+1)\sin y= \partial_{xy}^2f(x,y)$$
 	
 	$$D^2f(x,y)=
 	4 \begin{pmatrix}
@@ -2003,7 +2004,7 @@ $$
 \begin{example}
 	Calcolare i punti critici della funzione 
 	
-	$$f(x,y)=(y-x^2)(y-2x^2)$, $(x,y) \in \R^2$$
+	$$f(x,y)=(y-x^2)(y-2x^2), \qquad (x,y) \in \R^2$$
 	
 	e studiare la loro natura. $f\in C^\infty (\R^2)$.
 	
@@ -2124,7 +2125,7 @@ $$
 \begin{example}
 	Studiare i punti critici della funzione definita da 
 	
-	$$f(x,y,z)=2x^3-2y^2+z^2+3(x^2+y)z, \quad (x,y,z)\in \R^3 \quad f\in C^\infty(\R^3)$$.\\
+	$$f(x,y,z)=2x^3-2y^2+z^2+3(x^2+y)z, \quad (x,y,z)\in \R^3 \quad f\in C^\infty(\R^3)$$.
 	
 	$$\partial_xf(x,y,z)=6x^2+6xz \quad \partial_yf(x,y,z)=-4y+3z \quad \partial_zf(x,y,z)=2z+3(x^2+y)$$
 	
@@ -2183,11 +2184,17 @@ $$
 		0&3&2
 	\end{pmatrix}$$
 	
-	$$0=\det(D^2f(0,0,0)-\lambda I)= \det \begin{pmatrix}
-		-\lambda&0&0\\
-		0&-4-\lambda&3\\
-		0&3&2-\lambda
-	\end{pmatrix}=-\lambda[(\lambda-2)(4+\lambda)-9]=-\lambda[\lambda^2+2\lambda-17]$$
+	\begin{align*} 
+		0
+		&=\det(D^2f(0,0,0)-\lambda I)
+		= \det \begin{pmatrix}
+			-\lambda&0&0\\
+			0&-4-\lambda&3\\
+			0&3&2-\lambda
+		\end{pmatrix}=
+		\\
+		&=-\lambda[(\lambda-2)(4+\lambda)-9]=-\lambda[\lambda^2+2\lambda-17]
+	\end{align*}
 	
 	$ \Rightarrow$ ha autovalore positivo ad uno negativo $\Rightarrow$ la metrica è indefinita $\Rightarrow (0,0,0)$ è punto di sella.
 	
