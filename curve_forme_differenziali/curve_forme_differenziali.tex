@@ -1,14 +1,19 @@
 \section{Curve e Forme Differenziali}
 
 \begin{definition}
-		$(X,d)$ spazio metrico. Una \underline{curva} in $X$ è una funzione continua $\overline{\gamma}:I \rightarrow X$, con $I \subseteq \R$ intervallo. L'immagine di $\overline{\gamma}$, $\overline{\gamma}(\overline{t})=\{\overline{\gamma}(t)\mid t \in I \}\subseteq X$ si dice \underline{sostegno della curva}.\\
-	La funzione $\overline{\gamma}$ è anche detta \underline{parametrizzazione della curva}.\\
+	$(X,d)$ spazio metrico. Una \textbf{curva} in $X$ è una funzione continua $\overline{\gamma}:I \rightarrow X$, con $I \subseteq \R$ intervallo. L'immagine di $\overline{\gamma}$, $\overline{\gamma}(\overline{t})=\{\overline{\gamma}(t)\mid t \in I \}\subseteq X$ si dice \textbf{sostegno della curva}.
+		
+	La funzione $\overline{\gamma}$ è anche detta \textbf{parametrizzazione della curva}.
+	
 	Una curva in $X$ è una coppia $(\overline{\gamma},\Gamma)$ tale che
 	\begin{itemize}
 		\item $\overline{\gamma}:\overline{t}\rightarrow X$, $I \subseteq \R$ funzione continua, detta parametrizzazione della curva
 		\item $\Gamma=\overline{\gamma}(\overline{t})$ è detta sostegno della curva.
 	\end{itemize}
-	\textcolor{orange}{$\rightarrow \overline{\gamma}$ è la legge oraria di una particella\\
+	
+	{\color{blue} 
+		$\rightarrow \overline{\gamma}$ è la legge oraria di una particella
+		
 		$\rightarrow \Gamma$ è il percorso della particella.}
 \end{definition}
 
@@ -16,8 +21,10 @@
 \begin{exbar}
 	\segnaposto %pag 407
 	
-	$\overline{\gamma_1}(\overline{t})=(R\cos t , R\sin t)$, $t \in [0,\pi]$, $(\overline{\gamma_1},\Gamma)$\\
-	$\overline{\gamma_2}(\overline{t})=(R\cos 2t, R\sin 2t)$, $t \in [0,\frac{\pi}{2}]$, $(\overline{\gamma_2},\Gamma)$\\
+	$\overline{\gamma_1}(\overline{t})=(R\cos t , R\sin t)$, $t \in [0,\pi]$, $(\overline{\gamma_1},\Gamma)$
+	
+	$\overline{\gamma_2}(\overline{t})=(R\cos 2t, R\sin 2t)$, $t \in [0,\frac{\pi}{2}]$, $(\overline{\gamma_2},\Gamma)$
+	
 	$\overline{\gamma_3}(\overline{t})=(t, \sqrt{R^2-t^2})$, $t \in [-R,R]$, $(\overline{\gamma_3},\Gamma)$
 \end{exbar}
 
@@ -27,86 +34,85 @@
 
 Una curva si dice
 \begin{itemize}
-	\item \underline{chiusa} se $I = [a,b]$ e $\overline{\gamma}(a)=\overline{\gamma}(b)$ \textcolor{orange}{(Parte e arriva nello stesso punto)}
-	\item \underline{semplice} se $\overline{\gamma}(t_1)\neq \overline{\gamma}(t_2)$ per $t_1 \neq t_2$, con l'unica eccezione $I =[a,b]$ e $\overline{\gamma}(a)=\overline{\gamma}(b)$ \textcolor{orange}{($\overline{\gamma}$ non passa per due volte per lo stesso punto, tranne al più arrivo e partenza)}\\
-	IMMAGINE
-	\item \underline{circuito} se è semplice e chiusa \textcolor{orange}{(giro lanciato in Formula 1)}
-	\item \underline{piena} $X =\R^2$ \textcolor{orange}{(per alcuni autori se il sostegno di $\overline{\gamma}$ è contenuto in un piano)}
-\end{itemize}
-\begin{itemize}
-	\item Le \underline{equazioni parametriche} di una curva in $\R^n$ sono le equazioni $\overline{x}=\overline{\gamma}(t)$, $\overline{x}=(x_1,...,x_n)$, $\overline{\gamma}(t)=(\gamma_1(t),...,\gamma_n(t))$\\
-	$n=3$, $\overline{\gamma}(t)=(\gamma_1(t),\gamma_2(t),\gamma_3 (t))$, $\overline{x}=(x,y,z)$\\
-	Equazioni parametriche\\
-	$\begin{cases}
-		x=\gamma_1(t)\\
-		y=\gamma_2(t)\\
-		z=\gamma_3(t)
-	\end{cases}$
-	\item \underline{Curva cartesiana} è una curva in $\R^2$ parametrizzata da $\overline{\gamma}(t)=(t,f(t))$, $f:I \rightarrow \R$ continua, $I \subseteq \R$ intervallo. Una curva cartesiana è semplice\\
-	$t_1 \neq t_2 \Rightarrow \overline{\gamma}(t_1)=(t_1,f(t_1))\neq (t_2,f(t_1))=\overline{\gamma}(t_2)$\\
-	Il sostegno di $\overline{\gamma}$ è il grafico di $f$.
+	\item \textbf{chiusa} se $I = [a,b]$ e $\overline{\gamma}(a)=\overline{\gamma}(b)$
+	
+	\textcolor{blue}{(Parte e arriva nello stesso punto)}
+	
+	\item \textbf{semplice} se $\overline{\gamma}(t_1)\neq \overline{\gamma}(t_2)$ per $t_1 \neq t_2$, con l'unica eccezione $I =[a,b]$ e $\overline{\gamma}(a)=\overline{\gamma}(b)$ 
+	
+	\textcolor{blue}{($\overline{\gamma}$ non passa per due volte per lo stesso punto, tranne al più arrivo e partenza)}
+	
+	\segnaposto % pag 408
+	
+	\item \textbf{circuito} se è semplice e chiusa 
+	
+	\textcolor{blue}{(giro lanciato in Formula 1)}
+	
+	\item \textbf{piena} $X =\R^2$ 
+	
+	\textcolor{blue}{(per alcuni autori se il sostegno di $\overline{\gamma}$ è contenuto in un piano)}
 \end{itemize}
 
+
+Le \textbf{equazioni parametriche} di una curva in $\R^n$ sono le equazioni $\overline{x}=\overline{\gamma}(t)$, $\overline{x}=(x_1,...,x_n)$, $\overline{\gamma}(t)=(\gamma_1(t),...,\gamma_n(t))$
+
+$n=3$, $\overline{\gamma}(t)=(\gamma_1(t),\gamma_2(t),\gamma_3 (t))$, $\overline{x}=(x,y,z)$
+
+Equazioni parametriche
+
+$$\begin{cases}
+	x=\gamma_1(t)\\
+	y=\gamma_2(t)\\
+	z=\gamma_3(t)
+\end{cases}$$
 
 \begin{exbar}
-		$\begin{cases}
+	$$\begin{cases}
 		x=2t\\
 		y=1+t\\
 		z=4-3t
-	\end{cases}$
-	equazioni parametriche della retta passante per $(0,1,n)$ e parallela a $(2,1,-5)$\\
-	$\overline{\gamma}_1(t)=(R\cos t, R \sin t)$, $t \in [0,\pi]$ equazioni parametriche $\begin{cases}
+	\end{cases}$$
+	
+	equazioni parametriche della retta passante per $(0,1,n)$ e parallela a $(2,1,-5)$
+	
+	$\overline{\gamma}_1(t)=(R\cos t, R \sin t)$, $t \in [0,\pi]$ 
+	
+	equazioni parametriche 
+	
+	$$\begin{cases}
 		x=R \cos t\\
 		y=R \sin t
-	\end{cases}$
+	\end{cases}$$
 \end{exbar}
+
+
+Una \textbf{Curva cartesiana} è una curva in $\R^2$ parametrizzata da $\overline{\gamma}(t)=(t,f(t))$, $f:I \rightarrow \R$ continua, $I \subseteq \R$ intervallo. Una curva cartesiana è semplice
+
+$t_1 \neq t_2 \Rightarrow \overline{\gamma}(t_1)=(t_1,f(t_1))\neq (t_2,f(t_1))=\overline{\gamma}(t_2)$
+	
+Il sostegno di $\overline{\gamma}$ è il grafico di $f$.
 
 
 \begin{exbar}
 	\begin{itemize}
-		\item $\begin{cases}
-			x=a \cos t\,\,\,\,\, t \in [0,2\pi]\\
-			y= b \sin t\,\,\,\,\, a,b >0
-		\end{cases}$\\
+		\item 
+		$$\begin{cases}
+			x=a \cos t & t \in [0,2\pi]\\
+			y= b \sin t & a,b >0
+		\end{cases}$$
+		
 		Il sostegno è un'ellisse di equazione $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$
-		\item $\begin{cases}
-			x=a \cosh t\,\,\,\,\,\, t \in \R, a,b>0\\
-			y=a \sinh t
-		\end{cases}$\\
+		
+		\item 
+		$$\begin{cases}
+			x=a \cosh t & t \in \R
+			\\
+			y=a \sinh t &  a,b>0
+		\end{cases}$$
+		
 		Ramo di iperbole di equazione $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$\\
-		IMMAGINE
-		\item Folium di Cartesio\\
-		$\begin{cases}
-			x= a t(t-1)\\
-			x=a t(t-1)(2t-1)
-		\end{cases}$
-		\item Spirale logaritmica\\
-		$ \overline{\gamma}= (\beta e^{\alpha t}\cos t, \beta e^{\alpha t} \sin t)$
-		\item Cardioide\\
-		$\overline{\gamma}(t)=(a \cos t (1+\cos t), a \sin t (1+\sin t))$, $t \in [0, 2\pi]$
-		\item Lemmiscata di Bernoulli\\
-		$\begin{cases}
-			x=a \frac{\sin t}{1+\cos^2 t}\\
-			y=a \frac{\sin t \cos t}{1+\cos^2 t}
-		\end{cases}$, $a >0$, $ t \in [0, 2 \pi]$
-		\item Elica cilindrica\\
-		$\begin{cases}
-			x=a\cos t\\
-			y=a \sin t \\
-			z= \frac{ht}{2\pi}
-		\end{cases}$ ove $h $ è detto passo dell'elica $f \in \R$.
-		\item Cucitura di una pallina da Tennis\\
-		$\begin{cases}
-			x=a \cos t+ b \cos (3t)\\
-			y=a \sin t - b \sin (3t)\\
-			z=c \sin (2t)
-		\end{cases}$, $t\in [0,4 \pi]$, $a,b,c>0$, $a=2$, $b=1$, $c=2\sqrt{2}$.
-		\item Contorno della finestra di Viviani (intersezione tra la sfera di equazione $x^2+y^2+x^2=4$ e il cilindro di equazione $(x-1)^2+y^2=1$)\\
-		$\begin{cases}
-			x=1+\cos(t)\\
-			y=\sin t\\
-			x=2 \sin\left(\frac{t}{2}\right)
-		\end{cases}$, $t \in [0, 4 \pi]$.
+		
+		\segnaposto %pag 410
 	\end{itemize}
 \end{exbar}
 
@@ -114,8 +120,9 @@ Una curva si dice
 \subsection{Curve Regolari}
 
 $\overline{\gamma}; I \rightarrow \R^n$,
-$\overline{\gamma}(t)=(\gamma_1(t),...,\gamma_n(t))$\\
-$\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ è differenziabile (derivabile) in $t_0 \in I \,\, \forall\,\, i =1,...,n \Leftrightarrow \overline{\gamma}$ è derivabile in $t_0 \in I$ e in tal caso
+$\overline{\gamma}(t)=(\gamma_1(t),...,\gamma_n(t))$
+
+$\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$ è differenziabile (derivabile) in $t_0 \in I \,\, \forall\,\, i =1,...,n \Leftrightarrow \overline{\gamma}$ è derivabile in $t_0 \in I$ e in tal caso
 \begin{equation*}
 	\overline{\gamma}'(t_0)=\left( \gamma_1'(t_0),...,\gamma_n'(t_0) \right).
 \end{equation*}
@@ -126,7 +133,8 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 	\begin{equation*}
 		\overline{x}=\overline{\gamma}(t_0)+\overline{\gamma}'(t_0)(t-t_0)
 	\end{equation*}
-	\textcolor{orange}{
+	
+	\textcolor{blue}{
 		\begin{equation*}
 			\begin{cases}
 				x_1=&\gamma_1(t_0)+\gamma_1'(t_0)(t-t_0)\\
@@ -136,7 +144,8 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 			\end{cases}
 		\end{equation*}
 	}
-	è detta \underline{retta tangente} alla curva in $\overline{\gamma}(t_0)$.
+	
+	è detta \textbf{retta tangente} alla curva in $\overline{\gamma}(t_0)$.
 \end{definition}
 
 
@@ -144,32 +153,41 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 \begin{example}
 	Consideriamo il folium di Cartesio parametrizzato da 
 	\begin{equation*}
-		\overline{\gamma}(t)=\left(t(t-1),t(t-1)(2t-1)\right)
+		\overline{\gamma}(t)=\bigg( \underbrace{t(t-1)}_{{\color{blue} \gamma_1(t)}},\underbrace{t(t-1)(2t-1)}_{{\color{blue} \gamma_2(t)}} \bigg)
 	\end{equation*}
-	$\overline{\gamma}\in C^\infty(\R)$\\
+	
+	$\overline{\gamma}\in C^\infty(\R)$
+	
 	\begin{equation*}
 		\overline{\gamma}' (t)=(2t-1,6t^2-4t+1)
 	\end{equation*}
-	$\overline{\gamma}' (t) \neq (0,0)\,\, \forall\,\, t$ perchè $\begin{cases}
+	
+	$\overline{\gamma}' (t) \neq (0,0)\,\, \forall\,\, t$ perché 
+	$\begin{cases}
 		2t-1=0\\
 		6t^2-4t+1=0
-	\end{cases}$ non ha soluzioni.\\
+	\end{cases}$ non ha soluzioni.
+	
 	La retta tangente a $\overline{\gamma}$ in $\overline{\gamma}(2)=(2,6)$ ha equazioni parametriche
-	\begin{equation*}
+	\begin{gather*}
 		\begin{cases}
 			x=\gamma_1(2)+\gamma_1'(2)(t-2)\\
 			y=\gamma_2(2)+\gamma_2'(2)(t-2)
 		\end{cases}
-		\Leftrightarrow \begin{cases}
+		\Leftrightarrow 
+		\begin{cases}
 			x=2+3(t-2)\\
 			y=6+17(t-2)
-		\end{cases} \Leftrightarrow\begin{cases}
+		\end{cases} \Leftrightarrow
+		\begin{cases}
 			t-2=\frac{x-2}{3}\\
 			t-2=\frac{y-6}{17}
 		\end{cases}
-		\Rightarrow \frac{x-2}{3}=\frac{y-6}{17}
-	\end{equation*}
-	$y=\frac{17}{3}x-\frac{16}{3}$ è l'equazione cartesiana della retta tangente.
+		\\
+		\Rightarrow \frac{x-2}{3}=\frac{y-6}{17} \Rightarrow y=\frac{17}{3}x-\frac{16}{3}
+	\end{gather*}
+	
+	è l'equazione cartesiana della retta tangente.
 \end{example}
 \end{exbar}
 
@@ -191,7 +209,7 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 		\begin{cases}
 			x=\cos t(t+\cos t)\\
 			y=\sin t(1+\cos t)
-		\end{cases}\,\,\,\, t \in [0,2\pi].
+		\end{cases} \qquad t \in [0,2\pi].
 	\end{equation*}
 	
 	\segnaposto %pag 413
@@ -199,10 +217,14 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 	\begin{equation*}
 		\overline{\gamma}(t)=(\cos t(1+\cos t),\sin t(1+\cos t))
 	\end{equation*}
-	$\overline{\gamma}(\pi)=(0,0)$\\
-	$\overline{\gamma}'(t)=(-\sin t (1+\cos t)-\sin t\cos t, \cos t (1+\cos t)-\sin ^2t )=(-\sin t- \sin (2t),\cos t + \cos (2t))$\\
-	$\overline{\gamma}'(t)=(0,0)$\\
-	\begin{equation*}
+	
+	$\overline{\gamma}(\pi)=(0,0)$
+	
+	$$\overline{\gamma}'(t)=(-\sin t (1+\cos t)-\sin t\cos t, \cos t (1+\cos t)-\sin ^2t )=(-\sin t- \sin (2t),\cos t + \cos (2t))$$
+	
+	$\overline{\gamma}'(t)=(0,0)$
+	
+	\begin{gather*}
 		\begin{cases}
 			\sin t (1+2 \cos t)=0\\
 			\cos t + \cos (2t)=0
@@ -214,24 +236,34 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 		\begin{cases}
 			\sin t =0\\
 			\cos t + \cos (2t)=0
-		\end{cases}
-	\end{equation*}
-	\begin{equation*}
-		\,\,\, t=\pi\, \Leftrightarrow\\
+		\end{cases} \qquad  t=\pi\
+		\\
+		\Leftrightarrow
 		\begin{cases}
 			1+2\cos t =0\\
 			\cos t +2 \cos^2 t-1=0
 		\end{cases}
-		\,\,\,\,\,\,\, \text{Non ha soluzioni.}
-	\end{equation*}
-	$\overline{\gamma}'(t)=(0,0) \Leftrightarrow t=\pi$.\\
-	Proviamo a calcolare i limiti destro e sinistro in $t=\pi$ del versore tangente.\\
-	$\|\overline{\gamma}'(t)\|^2=(\sin t + \sin (2t))^2+(\cos t +\cos (2t))^2=2+2\sin t \sin (2t)+2\cos t \cos (2t)$\\
-	$\lim_{t \rightarrow \pi^+}\frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|}$ e $\lim_{t \rightarrow \pi^-}\frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|}$.\\
-	$\lim_{t \rightarrow \pi^+} \frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|}=\left( \lim_{t\rightarrow \pi^+} \frac{\gamma_1'(t)}{\| \overline{\gamma}'(t)\|},\lim_{t\rightarrow \pi^+} \frac{\gamma_2'(t)}{\| \overline{\gamma}'(t) \|} \right)=$\\$=\left( \lim_{t \rightarrow \pi^+} -\frac{\sin t +\sin(2t)}{\sqrt{2+2\sin t \sin(2t)+2\cos t \cos(2t)}}, \lim_{t \rightarrow \pi^+} \frac{\cos t + \cos (2t)}{\sqrt{2+2\sin t \sin(2t)+2\cos t \cos(2t)}}\right)$\\
-	e cosa analoga per il limite da sinistra.\\
-	$\lim_{t \rightarrow \pi^+}\frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|}=(-1,0)$\\
-	$\lim_{t \rightarrow \pi^-}\frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|}=(1,0)$\\
+		\qquad \text{Non ha soluzioni.}
+	\end{gather*}
+	
+	$$\overline{\gamma}'(t)=(0,0) \Leftrightarrow t=\pi$$
+	
+	Proviamo a calcolare i limiti destro e sinistro in $t=\pi$ del versore tangente.
+	
+	$$\|\overline{\gamma}'(t)\|^2=(\sin t + \sin (2t))^2+(\cos t +\cos (2t))^2=2+2\sin t \sin (2t)+2\cos t \cos (2t)$$
+	
+	$$\lim_{t \rightarrow \pi^+}\frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|} \text{ e } \lim_{t \rightarrow \pi^-}\frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|}$$
+	
+	\begin{align*} 
+		\lim_{t \rightarrow \pi^+} \frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|}
+		&=\left( \lim_{t\rightarrow \pi^+} \frac{\gamma_1'(t)}{\| \overline{\gamma}'(t)\|},\lim_{t\rightarrow \pi^+} \frac{\gamma_2'(t)}{\| \overline{\gamma}'(t) \|} \right)=
+		\\
+		&=\left( \lim_{t \rightarrow \pi^+} -\frac{\sin t +\sin(2t)}{\sqrt{2+2\sin t \sin(2t)+2\cos t \cos(2t)}}, \lim_{t \rightarrow \pi^+} \frac{\cos t + \cos (2t)}{\sqrt{2+2\sin t \sin(2t)+2\cos t \cos(2t)}}\right)
+	\end{align*}
+	
+	e cosa analoga per il limite da sinistra.
+	
+	$$\lim_{t \rightarrow \pi^+}\frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|}=(-1,0) \qquad \lim_{t \rightarrow \pi^-}\frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|}=(1,0)$$
 \end{example}
 \end{exbar}
 
@@ -239,7 +271,7 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 \begin{attbar}
 	\textbf{Nomenclatura:}
 	
-		Una curva $\overline{\gamma}: I \rightarrow \R^n$, $I \subseteq \R$ intervallo, si dice
+	Una curva $\overline{\gamma}: I \rightarrow \R^n$, $I \subseteq \R$ intervallo, si dice
 	\begin{itemize}
 		\item $C^1$ se $\overline{\gamma} \in C^1(I)$
 		\item regolare se $\overline{\gamma} \in C^1(I)$ e $\overline{\gamma}'(t)\neq \overline{0} \,\, \forall \,\, t \in I$
@@ -258,19 +290,32 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 
 \begin{theorem}
 	$\overline{\gamma}: I \rightarrow \R^n$ curva derivabile in $t_0 \in I$, $A \subseteq \R^n$ aperto, $\overline{f}: A \rightarrow \R^p$ differenziabile in $\overline{\gamma}(t_0)\in A$. Allora 
-	$\overline{f}\circ \overline{\gamma}: I \rightarrow \R^p$, $t \mapsto \overline{f}(\overline{\gamma}(t))$ è differenziabile (derivabile) in $t_0$ e $(\overline{f}\circ \overline{\gamma})'(t_0)=D\overline{f}(\overline{\gamma}(t))\overline{\gamma}'(t_0)$
+	
+	\begin{align*} 
+		\overline{f}\circ \overline{\gamma}: &I \rightarrow \R^p \qquad {\color{blue} \text{(curva)}}
+		\\
+		&t \mapsto \overline{f}(\overline{\gamma}(t))
+	\end{align*}
+	
+	è differenziabile (derivabile) in $t_0$ e 
+	
+	$$(\overline{f}\circ \overline{\gamma})'(t_0)=D\overline{f}(\overline{\gamma}(t))\overline{\gamma}'(t_0)$$
 \end{theorem}
 
 
 \begin{exbar}
-\begin{example}
-	$f: \R^2 \rightarrow \R$, $f(x,y)=x^2+y^2$\\
-	$\overline{\gamma} (t)=(e^{3t},t)$, $t \in \R$\\
-	$t \mapsto f \circ \overline{\gamma}(t)=f(e^{3t},t)=e^{6t}+t^2=\phi(t)$\\
-	$\phi' (t)=(f \circ \overline{\gamma})'(t)=6e^{6t}+2t$\\
-	$(f \circ \overline{\gamma})'(t)=\langle\nabla f(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle= \langle (2e^{3t},2t),(3e^{3t},1)\rangle=6e^{6t}+2t$.
-\end{example}
+	$f: \R^2 \rightarrow \R$, $f(x,y)=x^2+y^2$
+	
+	$\overline{\gamma} (t)=(e^{3t},t)$, $t \in \R$
+	
+	$t \mapsto f \circ \overline{\gamma}(t)=f(e^{3t},t)=e^{6t}+t^2=\phi(t)$
+	
+	$\phi' (t)=(f \circ \overline{\gamma})'(t)=6e^{6t}+2t$
+	
+	$$(f \circ \overline{\gamma})'(t)=\langle\nabla f(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle \uppercomment{=}{\nabla f(x,y)=}{=2x,2y} \langle (2e^{3t},2t),(3e^{3t},1)\rangle=6e^{6t}+2t$$
 \end{exbar}
+
+%======================================= pag 417
 
 
 \subsection{Cambio di parametrizzazione}
@@ -292,76 +337,98 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 \end{definition}
 
 
-
-\begin{comment}
-	
-	
-	\paragraph{\textcolor{red}{Esempio}}
+\begin{exbar}
+\begin{example}
 	$\overline{\gamma}(t)=(\cos t, \sin t)$, $t\in [0,2\pi]$, il sostegno è la circonferenza di centro $(0,0)$ e raggio $1$ ed è percorsa una volta  in senso antiorario. $\phi(u)=2u$, $u\in [o,\pi]$, $\phi(u)\in[0,2\pi]$; $\overline{\zeta}(u)=\overline{\gamma}(\phi(u))=(\cos (2u),\sin (2u))$, $u \in [0,\pi]$ è curva equivalente \textcolor{orange}{(percorre la stessa circonferenza a velocità doppia)}.\\
 	$\psi(u)=2u$, $u \in [0, 2\pi]$, $\overline{\mu}(u)=\overline{\gamma}(\psi(u))=(\cos(2u), \sin (2u))$, $u \in [0,2\pi]$ non è equivalente a $\overline{\gamma}$ \textcolor{orange}{(percorre la circonferenza due volte)}. Infatti $\psi$ non è invertibile\textcolor{orange}{, cioè iniettiva e suriettiva,} come funzione da $[0,2\pi]$ in $[0,2\pi]$. Nel nostro caso si ha infatti $\psi ([0,2\pi])=[0,4\pi]$, $\mu (u)=2\pi-u$, $u \in [0,2\pi]$.\\
 	$\overline{\nu}(u)=\overline{\gamma}(\mu(u))=(\cos(2\pi-u),\sin(2\pi-u))$ \textcolor{orange}{ la circonferenza è percorsa una volta in senso orario} $\overline{\gamma}$ e $\overline{\nu}$ sono curve equivalenti di verso opposto ($\mu$ è decrescente).
-	
-	\subsection{\textcolor{red}{Equazione polare di una curva}}
-	Considero nel piano cartesiano le coordinate polari e individuo il sostegno di una curva tramite un'equazione del tipo $\rho=f(\theta)$, $\theta \in I$. Il sostegno sarà dato da tutti e soli i punti le cui coordinate polari soddisfano l'equazione data. $f(\theta) \geq 0\,\, \forall\,\, \theta \in I$.\\
-	Come trovo una parametrizzazione di una curva il cui sostegno è assegnato tramite un'equazione polare?\\
-	$\begin{cases}
-		x=\rho \cos \theta\\
-		y=\rho \sin \theta
-	\end{cases}$\\
-	$\overline{\gamma}(\theta)=(f(\theta)\cos \theta, f(\theta)\sin \theta)$, $\theta \in I$ è una parametrizzazione. Se $f\in C^1(I)\Rightarrow \overline{\gamma} \in C^1(I)$. Calcoliamo $\overline{\gamma}'(\theta)$.\\
-	$\overline{\gamma}'(\theta)=(f'(\theta)\cos \theta - f(\theta)\sin \theta, f'(\theta)\sin \theta + f(\theta)\cos \theta)$.\\
-	Studiamo la regolarità: $\overline{\gamma}'(\theta)=(0,0)\Leftrightarrow \|\overline{\gamma}(\theta)\|^2=0$, $\|\overline{\gamma}'(\theta)\|^2=(f'(\theta))^2\cos^2\theta+(f(\theta))^2\sin^2\theta- 2f'(\theta)f(\theta)\cos\theta\sin\theta+(f'(\theta))\sin^2\theta+(f(\theta))\cos^2\theta+2f'(\theta)f(\theta)\cos \theta\sin\theta=(f'(\theta))^2+(f(\theta))^2$\\
-	$\|\overline{\gamma}(\theta)\|^2=0 \Leftrightarrow f(\theta)=f'(\theta)=0$.\\
-	In particolare, se $f \in C^1(I)$ e $(f(\theta), f'(\theta))\neq (0,0)\,\, \forall \theta \in I$, $\overline{\gamma}$ è regolare.
-	
-	\subsection{\textcolor{red}{Integrazione di funzioni a valori vettoriali}}
-	\paragraph{\textcolor{red}{Definizioni}}
+\end{example}
+\end{exbar}
+
+
+\subsection{Equazione polare di una curva}
+
+Considero nel piano cartesiano le coordinate polari e individuo il sostegno di una curva tramite un'equazione del tipo $\rho=f(\theta)$, $\theta \in I$. Il sostegno sarà dato da tutti e soli i punti le cui coordinate polari soddisfano l'equazione data. $f(\theta) \geq 0\,\, \forall\,\, \theta \in I$.\\
+Come trovo una parametrizzazione di una curva il cui sostegno è assegnato tramite un'equazione polare?\\
+$\begin{cases}
+	x=\rho \cos \theta\\
+	y=\rho \sin \theta
+\end{cases}$\\
+$\overline{\gamma}(\theta)=(f(\theta)\cos \theta, f(\theta)\sin \theta)$, $\theta \in I$ è una parametrizzazione. Se $f\in C^1(I)\Rightarrow \overline{\gamma} \in C^1(I)$. Calcoliamo $\overline{\gamma}'(\theta)$.\\
+$\overline{\gamma}'(\theta)=(f'(\theta)\cos \theta - f(\theta)\sin \theta, f'(\theta)\sin \theta + f(\theta)\cos \theta)$.\\
+Studiamo la regolarità: $\overline{\gamma}'(\theta)=(0,0)\Leftrightarrow \|\overline{\gamma}(\theta)\|^2=0$, $\|\overline{\gamma}'(\theta)\|^2=(f'(\theta))^2\cos^2\theta+(f(\theta))^2\sin^2\theta- 2f'(\theta)f(\theta)\cos\theta\sin\theta+(f'(\theta))\sin^2\theta+(f(\theta))\cos^2\theta+2f'(\theta)f(\theta)\cos \theta\sin\theta=(f'(\theta))^2+(f(\theta))^2$\\
+$\|\overline{\gamma}(\theta)\|^2=0 \Leftrightarrow f(\theta)=f'(\theta)=0$.\\
+In particolare, se $f \in C^1(I)$ e $(f(\theta), f'(\theta))\neq (0,0)\,\, \forall \theta \in I$, $\overline{\gamma}$ è regolare.
+
+
+\subsection{Integrazione di funzioni a valori vettoriali}
+
+\begin{definition}
 	Data $\overline{\gamma}:[a,b]\rightarrow \R^n$, $a,b\in \R$, $\overline{\gamma}(t)=(\gamma_1(t),...,\gamma_n(t))$, essa si dice integrabile in $[a,b]$ se tali sono $\gamma_1,...,\gamma_n$ e in tal caso si pone
 	\begin{equation*}
 		\int_{a}^{b}\overline{\gamma}(t)dt=\left(\int_{a}^{b}\gamma_1(t)dt,\int_{a}^{b}\gamma_2(t)dt,...,\int_{a}^{b}\gamma_n(t)dt\right).
 	\end{equation*}
-	
-	\paragraph{\textcolor{red}{Esempio}}
+\end{definition}
+
+
+\begin{exbar}
 	$\overline{\gamma}(t)=(\cos t , e^t)$, $t \in [0,\pi]$\\
 	$\int_{0}^\pi \overline{\gamma}(t)dt=\left( \int_0^\pi \cos t dt, \int_0^\pi e^t dt \right)=(0,e^\pi-1)$.
+\end{exbar}
+
+
+\begin{theorem} \textbf{fondamentale del calcolo}
 	
-	\subsection{\textcolor{red}{Teorema fondamentale del calcolo}}
-	\paragraph{\textcolor{red}{Teorema}}
+	\label{th: pag 423}
 	Data $\overline{\gamma}:[a,b]\rightarrow \R^n$ curva $C^1$ si ha
 	\begin{equation*}
 		\int_1^b\overline{\gamma}'(dt)=\overline{\gamma}(b)-\overline{\gamma}(a).
-	\end{equation*}
+	\end{equation*}	
+\end{theorem}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 423}}
 	
-	\paragraph{\textcolor{red}{Dimostrazione}}
 	$\overline{\gamma}(t)=(\gamma_1(t),...,\gamma_n(t))$\\
 	\begin{align*}
 		\int_a^b\overline{\gamma}'(t)dt&=\left( \int_a^b \gamma_1'(t)dt,...,\int_a^b \gamma_n'(t)dt \right)\\
 		&=\left( \gamma_1(b)-\gamma_1(a),\gamma_2(b)-\gamma_2(a),...,\gamma_n(b)-\gamma_n(a)\right)\\
 		&=\overline{\gamma}(b)-\overline{\gamma}(a).
 	\end{align*}
-	\begin{flushright}
-		\Lightning
-	\end{flushright}
-	
-	\paragraph{\textcolor{red}{Teorema}}
+\end{dembar}
+
+
+\begin{theorem}
 	Data $\overline{\gamma}: [a,b]\rightarrow \R^n$ integrabile, allora $t \mapsto \|\overline{\gamma}(t)\|$, $t\in[a,b]$, è integrabile e 
 	\begin{equation*}
 		\|\int_a^b\overline{\gamma}(t)dt\|\leq \int_a^b\|\overline{\gamma}(t)\|dt.
 	\end{equation*}
-	
-	\subsection{\textcolor{red}{Curve rettificabili}}
-	$\overline{\gamma}:[a,b]\rightarrow\R^n$ curva. $D=\{a=t_0,t_1,t_2,...,t_n=b\mid t_0<t_1<...<t_n\}$ suddivisione di $[a,b]$. Poniamo $L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamma}(t_{i-1}) \|$\\
-	IMMAGINE
-	
-	\paragraph{\textcolor{red}{Definizione}}
+\end{theorem}
+
+
+\subsection{Curve rettificabili}
+
+$\overline{\gamma}:[a,b]\rightarrow\R^n$ curva. $D=\{a=t_0,t_1,t_2,...,t_n=b\mid t_0<t_1<...<t_n\}$ suddivisione di $[a,b]$. Poniamo $L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamma}(t_{i-1}) \|$
+
+\segnaposto % pag 424
+
+
+\begin{definition}
 	La curva $\overline{\gamma}$ si dice \underline{rettificabile} se $\sup_D L(\overline{\gamma},D)<+\infty$. In tal caso il valore di $\sup_D L(\overline{\gamma},D)$ si dice lunghezza della curva $L(\overline{\gamma})$.
+\end{definition}
+
+
+\begin{proposition}
 	
-	\newpage
-	\section{\textcolor{red}{Lezione 35 \space\space 01/06/'23}}
-	\paragraph{\textcolor{red}{Proposizione}}
+	\label{pr: pag 425}
 	Siano $\overline{\gamma}$ e $\overline{\xi}$ due curve equivalenti. Allora $\overline{\gamma}$ è rettificabile $\Leftrightarrow $ lo è $\overline{\xi}$ e in tal caso $L(\overline{\gamma})=L(\overline{\xi})$.
+\end{proposition}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} della \textbf{Proposizione \ref{pr: pag 425}}
 	
-	\paragraph{\textcolor{red}{Dimostrazione}}
 	\begin{align*}
 		&\overline{\gamma}:[a,b]\rightarrow \R^n\\
 		&\overline{\xi}:[c,d]\rightarrow \R^n
@@ -373,14 +440,15 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 	$L(P_1,\overline{\xi})=\sum_{i=1}^P|\overline{\xi}(u_i)-\overline{\xi}(u_{i-1})|=\sum_{i=1}^P|\overline{\gamma}(\phi(u_i))-\overline{\gamma}(\phi(u_{i-1}))|=L(D_2,\overline{\gamma})$.\\
 	Se $\overline{\gamma}$ è rettificabile, $L(D_2,\overline{\gamma})< +\infty \Rightarrow \overline{\xi}$ è rettificabile e $L(\overline{\xi})\leq L(\overline{\gamma})$.\\
 	Ripetendo lo stesso argomento con $\phi^{-1}:[a,b]\rightarrow [c,d]$, cosicchè $\overline{\gamma}(t)=\overline{\xi}(\phi^{-1}(t))$, si ottiene che, se $\overline{\xi}$ è rettificabile, anche $\overline{\gamma}$ lo è e $L(\overline{\gamma})\leq L(\overline{\xi})$.
-	\begin{flushright}
-		\Lightning
-	\end{flushright}
-	
-	\paragraph{\textcolor{red}{Osservazione}}
+\end{dembar}
+
+
+\begin{attbar}
 	Se $\overline{\gamma}$ è semplice e rettificabile, $L(\overline{\gamma})$ rappresenta la lunghezza del sostegno di $\Gamma$.
-	
-	\paragraph{\textcolor{red}{Teorema}}
+\end{attbar}
+
+
+\begin{theorem}
 	Sia $\overline{\gamma}:[a,b]\rightarrow \R^n$, $[a,b] \subseteq \R$ intervallo, curva $C^1$ e tratti. Allora $\overline{\gamma}$ è rettificabile e 
 	\begin{equation*}
 		L(\overline{\gamma})=\int_{a}^{b}|\overline{\gamma}'(t)|dt.
@@ -393,95 +461,134 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 	$\Rightarrow L(\overline{\gamma})=\int_a^b\sqrt{1+[f'(t)]^2}dt$.\\
 	Lunghezza di un arco di parabola $\overline{\gamma}(x)=(x,x^2)$, $x \in [0,1]$.\\
 	$L(\overline{\gamma})=\int_0^1\sqrt{1+4x^2}dx= \int_0^{sett \sinh z} \sqrt{1+(\sinh t)^2}\cosh t dt= \frac{1}{2}\int_0^{sett \sinh z}(\cosh t)^2dt$.
-	
-	\paragraph{\textcolor{red}{Esempio}}
+\end{theorem}
+
+
+\begin{exbar}
+\begin{example}
 	Curva non rettificabile $\overline{\gamma}(t)= \begin{cases}
 		(t,t \sin \left(\frac{1}{t}\right)) &\text{  se  } t \in ]0,\frac{2}{\pi}]\\
 		(0,0)&\text{  se  } t=0.
 	\end{cases}$\\
 	Il sostegno di $\overline{\gamma}$ è il grafico della funzione $f(t)=t \sin \frac{1}{t}$, $t \in ]0,\frac{2}{\pi}]$.\\
-	IMMAGINE\\
+
+	\segnaposto % pag 429
+
 	$k=0,...,n,\{\frac{1}{\frac{\pi}{2}+k\pi}, k=0,...,n\}\cup \{(0,0)\}=D$.\\
 	Calcoliamo $L(D,\overline{\gamma})$\\
 	$|\overline{\gamma}(t_{k+1})-\overline{\gamma}(t_k)|^2=|\left(t_{k+1},t_{k+1}\sin \frac{1}{t_{k+1}}\right)-\left(t_k,t_k\sin\frac{1}{tk}\right)|=|\left(\frac{1}{\frac{\pi}{2}+(k+1)\pi},\frac{1}{\frac{\pi}{2}+(k+1)\pi} (-1)^{k+1}\right)|-|\left(\frac{1}{\frac{\pi}{2}+k\pi},\frac{1}{\frac{\pi}{2}+k\pi}(-1)^k\right)|^2=|\frac{1}{\frac{\pi}{2}+(k+1)\pi}-\frac{1}{\frac{\pi}{2}+k\pi}|+|\frac{1}{\frac{\pi}{2}+(k+1)\pi}+\frac{1}{\frac{\pi}{2}+k\pi}|^2=\frac{\pi^2}{\left(\frac{\pi}{2}+(k+1)\pi\right)^2\left(\frac{\pi}{2}+k\pi\right)^2}+\frac{(2\pi +2k\pi)^2}{\left(\frac{\pi}{2}+(k+1)\pi\right)^2\left(\frac{\pi}{2}+k\pi\right)^2}$.\\
 	$L(D,\overline{\gamma})\geq\sum_{k=0}^{n-1}|\overline{\gamma}(t_{k+1})-\overline{\gamma}(t_k)|=\sum_{k=0}^{n-1}\left[ \frac{\pi^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi\right)^2} + \frac{(2\pi +2k\pi)^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi \right)^2} \right]^{\frac{1}{2}} \geq \sum_{k=0}^{n-1}\left[ \frac{(2\pi+2k\pi)^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi \right)^2} \right]^{\frac{1}{2}}=\sum_{k=0}^{n-1}\frac{2\pi+2k\pi}{\left( \frac{\pi}{2}(k+1)\pi \right)\left( \frac{\pi}{2}+k\pi \right)} \xrightarrow{n \rightarrow \infty} +\infty$ perchè ridotta $n-$esima di una serie divergente $\Rightarrow \sup_D L(D,\overline{\gamma})=+\infty$.
-	
-	\paragraph{\textcolor{red}{Esempio}}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
 	Lunghezza di una spirale logaritmica $\rho=\beta e^{\alpha\theta}$, $\theta \geq 0$, $\beta >0$ equazione polare.\\
-	IMMAGINE\\
+
+	\segnaposto % pag 431_1
+
 	Se $\alpha >0$ allora $\rho$ è crescente come funzione di $\theta$.\\
-	IMMAGINE\\
+
+	\segnaposto % pag 431_2
+
 	Se $\alpha<0$ allora $\rho$ è decrescente come funzione di $\theta$.\\
 	$\overline{\gamma}(\theta)=(\beta e^{\alpha\theta}\cos \theta, \beta e^{\alpha\theta}\sin\theta)$, $\theta \geq 0$\\
 	$L(\overline{\gamma})=\int_{0}^{+\infty} |\overline{\gamma}'(\theta)|d\theta=\lim_{c \rightarrow +\infty}\int_0^c |\overline{\gamma}'(\theta)|d\theta= \lim_{c \rightarrow + \infty}\int_{0}^c \sqrt{(f(\theta))^2+(f'(\theta))^2}d\theta=\lim_{x \rightarrow +\infty} \int_0^c \sqrt{\beta^2e^{2\alpha \theta}+\beta^2\alpha^2e^{2\alpha \theta}}d\theta= \lim_{c \rightarrow +\infty} \int_{0}^{c}\beta \sqrt{1+\alpha^2}e^{\alpha\theta}= -\frac{\beta}{\alpha}\sqrt{1+\alpha^2}=\beta \sqrt{\frac{1+\alpha^2}{\alpha^2}}< + \infty$\\
 	$\overline{\gamma}$ è rettificabile.\\
-	
-	\newpage
-	\section{\textcolor{red}{Lezione 36 \space\space 05/06/'23}}
-	\subsection{\textcolor{red}{Integrali di Prima Specie}}
-	\paragraph{\textcolor{red}{Definizione}}
+\end{example}
+\end{exbar}
+
+
+\subsection{Integrali di Prima Specie}
+
+\begin{definition}
 	$f:\dom f \rightarrow \R$, $\dom f \subseteq \R^n$ funzione, $\overline{\gamma}:[a,b]\rightarrow \R^n$ curva regolare con $\overline{\gamma}([a,b])\subseteq \dom f$. Si dice \underline{integrale di linea di prima specie di $f$ lungo $\overline{\gamma}$} la quantità
 	\begin{equation*}
 		\int_{\overline{\gamma}}f ds = \int_a^bf(\overline{\gamma}'(t))|\overline{\gamma}'(t)|dt
 	\end{equation*}
 	nel senso che il primo integrale esiste $\Leftrightarrow$ esiste il secondo e in tal caso sono uguali.
+\end{definition}
+
+\textbf{Osservazione:}
+
+$\phi(t)=f(\overline{\gamma}(t))|\overline{\gamma}'(t)|$, $t\in[a,b]$\\
+$\phi: [a,b]\rightarrow \R$\\
+$\int_a^b \phi(t)dt=\int_{\overline{\gamma}}f ds$\\
+
+\segnaposto % pag 433
+
+\textcolor{orange}{Guardo la restrizione di $f$ lungo il sostegno di $\overline{\gamma}$.}
 	
-	\paragraph{\textcolor{red}{Osservazione}}
-	$\phi(t)=f(\overline{\gamma}(t))|\overline{\gamma}'(t)|$, $t\in[a,b]$\\
-	$\phi: [a,b]\rightarrow \R$\\
-	$\int_a^b \phi(t)dt=\int_{\overline{\gamma}}f ds$\\
-	IMMAGINE\\
-	\textcolor{orange}{Guardo la restrizione di $f$ lungo il sostegno di $\overline{\gamma}$.}
 	
-	\paragraph{\textcolor{red}{Esempio}}
+\begin{exbar}
+\begin{example}
 	$f(x,y)=\left( \frac{x}{2} \right)^2+\frac{y^2}{2}-\left( \frac{x}{2} \right)^2\frac{y}{2}$\\
 	$(x,y)\in \R^2$\\
 	$\overline{\gamma}:[0,\pi]\rightarrow \R^2$\\
 	$\overline{\gamma}(t)=(4\cos t, 4 \sin t)$\\
 	$\overline{\gamma}([0,\pi])$ è la semicirconferenza di centro $(0,0)$ e raggio $4$ contenuta nel semipiano $y \geq 0$ e percorsa una volta in senso antiorario.\\
-	IMMAGINE\\
+
+	\segnaposto % pag 434
+
 	Calcoliamo $\int_{\overline{\gamma}}f ds$, $\overline{\gamma}'(t)=(-4\sin t, 4 \cos t)$, $|\overline{\gamma}'(t)|=4$\\
 	$\int_{\overline{\gamma}}fds =\int_0^\pi f(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt=\int_0^\pi f(4\cos t , 4 \sin t)4 dt=4\int_0^\pi ((2\cos t)^2+8\sin^2 t-(2\cos t)^2 2\sin t)dt= 4 \int_0^\pi (4+4\sin^2 t -8 \cos^2 t \sin t) dt =...$
+\end{example}
+\end{exbar}	
 	
-	\paragraph{\textcolor{red}{Proposizione}}
+
+\begin{proposition}
+	
+	\label{pr: pag 435}
 	Sia $f: \dom f \rightarrow \R$ funzione $\dom f \subseteq \R^n$, e siano $\overline{\gamma}$ e $\overline{\zeta}$ curve equivalenti regolari con sostegno contenuto in $\dom f$. Allora
 	\begin{equation*}
 		\int_{\overline{\gamma}}f ds = \int_{\overline{\zeta}}f ds
 	\end{equation*}
+\end{proposition}
+
+
+\begin{dembar}
+	\textbf{Dimostrazione} della \textbf{Proposizione \ref{pr: pag 435}}
 	
-	\paragraph{\textcolor{red}{Dimostrazione}}
 	$\overline{\gamma}:[a,b]\rightarrow \dom f$, $\overline{\zeta}:[c,d]\rightarrow \dom f$\\
 	$\phi: [c,d]\rightarrow [a,b]$ è un cambio di parametro, $\overline{\zeta}(u)=\overline{\gamma}(\phi(u))$, $u\in [c,d]$\\
 	$\int_{\overline{\zeta}}f ds = \int_c^d f(\overline{\zeta}(u))|\overline{\zeta}'(u)|du= \int_c^d f(\overline{\gamma}(\phi(u)))|\overline{\gamma}'(\phi(u))\phi'(u)|du=\int_a^b f(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt=\int_{\overline{\gamma}} f ds$.
+\end{dembar}
 	
-	\paragraph{\textcolor{red}{Applicazioni}}
-	\subparagraph{\textcolor{red}{\textbf{Baricentro  di una curva}}}
-	$\overline{\gamma}:[a,b]\rightarrow \R^3$ curva regolare di densità $\rho(\overline{x})$ nel punto $\overline{x}=\overline{\gamma}(t)$. Siano allora $(x_B,y_B,z_B)$ coordinate del baricentro. Avremo
-	\begin{align*}
-		x_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}x\rho ds=\frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_1(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt\\
-		y_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}y \rho ds= \frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_2(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt\\
-		z_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}z \rho ds= \frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_3(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt
-	\end{align*}
-	Ove $\frac{1}{\int_{\overline{\gamma}}\rho ds}$ è la massa della curva e $\overline{\gamma}(t)=(\gamma_1(t),\gamma_2(t),\gamma_3(t))$.
 	
-	\subparagraph{\textcolor{red}{\textbf{Momento d'inerzia di una curva}}}
-	$\overline{\gamma}:[a,b]\rightarrow \R^3$ curva regolare di densità $\rho(\overline{x}) $ nel punto $\overline{x}=\overline{\gamma}(x)$, $\overline{x}=(x,y,z)$. Voglio calcolare il momento di inerzia di $\overline{\gamma}$ rispetto ad un asse di rotazione $a$. Sia $d(\overline{x})$ la distanza dal punto $\overline{x}=(x,y,z)$ dall'asse $a$. Allora
-	\begin{equation*}
-		I= \int_{\overline{\gamma}}(d(\overline{x}))^2 \rho(\overline{x})ds= \int_a^b (d(\overline{\gamma}(t)))^2 \rho (\overline{\gamma}(t))|\overline{\gamma}'(t)|dt.
-	\end{equation*}
-	Se la curva è omogenera, cioè a densità constante $\overline{\rho}(\overline{x})=\rho$, allora 
-	\begin{align*}
-		x_B&= \frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}x \rho ds = \frac{1}{\int_a^b\rho|\overline{\gamma}'(t)|dt}\int_a^b \gamma_1 (t) \rho |\overline{\gamma}'(t)|dt= \frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}x ds\\
-		y_B&=\frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}y ds\\
-		z_B&= \frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}z ds
-	\end{align*}
-	Momento d'inerzia
-	\begin{align*}
-		I=& \int_{\overline{\gamma}}(d(\overline{x}))^2\rho(\overline{x})ds\\
-		=& \int_a^b (d(\overline{\gamma}(t)))^2 \rho|\overline{\gamma}'(t)|dt\\
-		=& \frac{m}{L(\overline{\gamma})}\int_{\overline{\gamma}}(d(\overline{x}))^2 ds
-	\end{align*}
-	\paragraph{\textcolor{red}{Esempi}}
+\subsubsection{Baricentro  di una curva}
+	
+$\overline{\gamma}:[a,b]\rightarrow \R^3$ curva regolare di densità $\rho(\overline{x})$ nel punto $\overline{x}=\overline{\gamma}(t)$. Siano allora $(x_B,y_B,z_B)$ coordinate del baricentro. Avremo
+\begin{align*}
+	x_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}x\rho ds=\frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_1(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt\\
+	y_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}y \rho ds= \frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_2(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt\\
+	z_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}z \rho ds= \frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_3(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt
+\end{align*}
+Ove $\frac{1}{\int_{\overline{\gamma}}\rho ds}$ è la massa della curva e $\overline{\gamma}(t)=(\gamma_1(t),\gamma_2(t),\gamma_3(t))$.
+
+
+\subsubsection{Momento d'inerzia di una curva}
+	
+$\overline{\gamma}:[a,b]\rightarrow \R^3$ curva regolare di densità $\rho(\overline{x}) $ nel punto $\overline{x}=\overline{\gamma}(x)$, $\overline{x}=(x,y,z)$. Voglio calcolare il momento di inerzia di $\overline{\gamma}$ rispetto ad un asse di rotazione $a$. Sia $d(\overline{x})$ la distanza dal punto $\overline{x}=(x,y,z)$ dall'asse $a$. Allora
+\begin{equation*}
+	I= \int_{\overline{\gamma}}(d(\overline{x}))^2 \rho(\overline{x})ds= \int_a^b (d(\overline{\gamma}(t)))^2 \rho (\overline{\gamma}(t))|\overline{\gamma}'(t)|dt.
+\end{equation*}
+Se la curva è omogenera, cioè a densità constante $\overline{\rho}(\overline{x})=\rho$, allora 
+\begin{align*}
+	x_B&= \frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}x \rho ds = \frac{1}{\int_a^b\rho|\overline{\gamma}'(t)|dt}\int_a^b \gamma_1 (t) \rho |\overline{\gamma}'(t)|dt= \frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}x ds\\
+	y_B&=\frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}y ds\\
+	z_B&= \frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}z ds
+\end{align*}
+Momento d'inerzia
+\begin{align*}
+	I=& \int_{\overline{\gamma}}(d(\overline{x}))^2\rho(\overline{x})ds\\
+	=& \int_a^b (d(\overline{\gamma}(t)))^2 \rho|\overline{\gamma}'(t)|dt\\
+	=& \frac{m}{L(\overline{\gamma})}\int_{\overline{\gamma}}(d(\overline{x}))^2 ds
+\end{align*}
+
+
+\begin{exbar}
+\begin{example}
 	Calcolare l'integrale di prima specie lungo l'elica cilindirca 
 	\begin{equation*}
 		\overline{\gamma}(t)=(R \cos t , R \sin t , h t)\,\,\,\,\,\,\,\,t \in [0,2\pi]
@@ -494,7 +601,12 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 	$L(\overline{\gamma})=\int_0^{2\pi}|\overline{\gamma}'(t)|dt=2\pi \sqrt{R^2+h^2}$\\
 	$\int_{\overline{\gamma}} f ds = \int_0^{2\pi} f(R \cos t , R \sin t , h t)\sqrt{R^2 +h^2} dt= \sqrt{R^2 + h^2} \int_0^{2\pi} R^2h t \cos t \sin t dt = \frac{ R^2 h}{2}\sqrt{R^2+h^2}\int_0^{2\pi}t \sin (2t)dt=...
 	$
-	\paragraph{\textcolor{red}{Esempio}}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
 	Calcolare il baricentro di un ramo di elica cilindrica omogenea \textcolor{orange}{(a densità costante)} parametrizzato da 
 	\begin{equation*}
 		\gamma (t)=(\cos t , \sin t , t)\,\,\,\,\, t \in [0, 2 \pi].
@@ -518,14 +630,20 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 		&= \int_0^{2\pi} \rho(\cos t , \sin t , t)\sqrt{\cos^2 t +\sin ^2 t}|\overline{\gamma}'(t)|dt\\
 		&= \int_0^{2\pi}t(2\pi -t )1 \sqrt{2}dt = \sqrt{2}\int_0^{2\pi} t(2\pi -t)dt=...
 	\end{align*}
-	
-	\paragraph{\textcolor{red}{Esempio}}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
 	Calcolare il baricentro della curva piana omogenea di equazione polare \textcolor{orange}{(Arco di spirale logaritmica)}
 	\begin{equation*}
 		\rho=e^{k\theta}, \,\,\,\, \, 0 \leq \theta \leq \pi\,\,\,\, k \neq 0
 	\end{equation*}
 	Calcolare poi il suo momento d'inerzia rispetto alla retta di equazione $x=y=z$, supponendo la densità costante e pari a $1$.\\
-	IMMAGINE\\
+	
+	\segnaposto % pag 442
+	
 	$\overline{\gamma}(\theta)=(e^{k\theta}\cos \theta, e^{k\theta}\sin \theta)$, $\theta \in [0,\pi]$\\
 	$|\overline{\gamma}'(\theta)|\sqrt{(e^{k\theta})^2+(ke^{k\theta})^2}=e^{k\theta}\sqrt{1+k^2}$\\
 	$L(\overline{\gamma})=\int_0^{\pi} \sqrt{1+k^2}e^{k\theta}=\frac{\sqrt{1+k^2}}{k}(e^{k\pi}-1)$
@@ -540,10 +658,13 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 	\end{equation*}
 	\textcolor{orange}{($z_B=0$) per ovvie ragioni}.\\
 	Per quanto riguarda il momento d'inerzia avremo un asse rispetto a cui possiamo calcolarlo che è la retta di equzione $x=y=z$. Mi devo procurare la distanza di un generico punto $(x_0,y_0,z_0)$ da questa retta.\\
-	IMMAGINE\\
+
+	\segnaposto % pag 443
+
 	Prendo un piano passante per $(x_0,y_0,z_0)$ e ortogonale alla retta data. \\
 	\textcolor{orange}{$ax+by+cz+d=0 \Rightarrow (a,b,c)$ è ortogonale al piano.}\\
 	$(1,1,1)$ è vettore direttore della retta data $\Rightarrow x+y+z+d=0$ è un piano ortogonale alla retta. Siccome deve passare per $(x_0,y_0,z_0) \Rightarrow d= -x_0-y_0-z_0 \Rightarrow x+y+z-x_0-y_0-z_0=0$ è l'equazione del piano cercato. Il sotegno della curva giace sul piano $xy \Rightarrow z_0=0$. Quindi $x+y+z-x_0-y_0=0$ è piano ortogonale alla retta passante per $(x_0,y_0,z_0)$. Troviamone l'intersezione con la retta data. \\
+	
 	\begin{equation*}
 		\begin{cases}
 			&x+y+z-x_0-y_0=0\\
@@ -563,8 +684,12 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 		&\sqrt{1+k^2}\int_0^\pi e^{3k\theta} \left( \frac{2}{3}-\frac{2}{3}\cos\theta \sin \theta \right) d \theta\\
 		&\frac{2}{3}\sqrt{1+k^2}\int_0^\pi e^{3k\theta} (1-\cos \theta \sin \theta) d\theta=...
 	\end{align*}
-	
-	\paragraph{\textcolor{red}{Esempio}}
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
 	Si consideri l'intersezione tra la semisfera di equazione $x^2+y^2+z^2=4$ contenuta nel semispazio $z \geq 0$ ed il cilindro di equazione $(x-1)^2+y^2=1$ \textcolor{orange}{(Contorno della finestra si Viviani)}. Tale intersezione è il sostegno di una curva.
 	\begin{enumerate}
 		\item Trovare una parametrizzazione $\overline{\gamma}$ della curva in modo che sia un circuito regolare a tratti .
@@ -609,162 +734,168 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I \Leftrightarrow \gamma_i$ �
 		$\int_{\overline{\gamma}} \frac{z}{\sqrt{2+x}}ds=\int_{-\pi}^\pi \sqrt{\frac{2(1-\cos t)}{\sqrt{2+1+\cos t}}}\sqrt{\frac{3+\cos t}{2}}dt= \int_{-\pi}^\pi \sqrt{1-\cos t}dt=$\\
 		$=2 \int_0^\pi \sqrt{1-\cos t}dt= 2 \sqrt{2}\int_0^\pi|\sin \frac{t}{2}|dt=...$
 	\end{enumerate}
+\end{example}
+\end{exbar}
+
+
+
 	
-	\newpage
-	\section{\textcolor{red}{Lezione 37 \space\space 06/06/'23}}
-	\subsection{\textcolor{red}{Forme differenziali (Campi vettoriali)}}
-	$A \subseteq \R^n$ aperto, $f:A \rightarrow \R$ differenziabile in $A$. Si definisce il differenziale di $f$ in $x_0 \in A$ come la funzione lineare 
-	\begin{align*}
-		df(\overline{x}_0)=&\R^n\rightarrow\R\\
-		&\overline{y}\mapsto \langle \nabla f(\overline{x}_0),\overline{y} \rangle
-	\end{align*}
-	$f(\overline{x})=f(\overline{x_0})+\langle \nabla f (\overline{x_0}),\overline{x}-\overline{x_0} \rangle + o(|\overline{x}-\overline{x_0}|)=f(\overline{x_0})+df(\overline{x_0})(\overline{x}-\overline{x_0})+o(|\overline{x}-\overline{x_0}|)$\\
-	$df(\overline{x_0})(\overline{y})=\langle \nabla f (\overline{x_0}),\overline{y}\rangle =\sum_{j=1}^n\frac{\partial f}{\partial x_j}(\overline{x_0})y_j$, $\overline{y}=(y_1,...y_n)$\\
-	$\pi_j: \R^n \rightarrow \R$, $\overline{y}\mapsto y_j$, $y_j=\pi_j(\overline{y})$ $j-$esima proiezione\\
-	$\overline{x}=(x_1,...x_n)$, $x_j=\pi_j(\overline{x})$\\
-	$\pi_j$ è lineare\\
-	$d \pi_j (\overline{x_0})(\overline{x})=\pi_j(x)=x_j$\\
-	$\nabla \pi_j (\overline{x_0})=\overline{e_j}$\\
-	$d \pi _j (\overline{x_0})=dx_j= \R^n \rightarrow \R$, $\overline{x} \mapsto x_j=\pi_j(\overline{x})$\\
-	$df(\overline{x_0})(\overline{x})=\sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})x_j=\sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})dx_j(\overline{x})$\\
-	$df(\overline{x_0})=\sum_{j=1}^n \frac{\partial f}{\partial x_j} (\overline{x_0})dx_j$\\
-	Se $f$ è differenziabile in $A$, posso definire
-	\begin{align*}
-		df: &A \rightarrow \mathcal{L}(\R^n,\R)\\
-		&\overline{x_0} \mapsto df(\overline{x_0})
-	\end{align*}
-	\begin{equation*}
-		df: \overline{x_0} \mapsto df(\overline{x_0})=\sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})dx_j
-	\end{equation*}
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	Una forma differenziale su $A \subseteq \R^n$ aperto è una scrittura del tipo 
-	$\omega (\overline{x})=F_1(\overline{x})dx_1 +F_2(\overline{x})dx_2 +...+ F_n(\overline{x})dx_n$ dove $\overline{F}: A \rightarrow \R^n$, $\overline{x} \mapsto (F_1(\overline{x}),...,F_n(\overline{x}))$ è un campo vettoriale, intendendo con questo che la funzione $\overline{x}\mapsto \omega (\overline{x})$ associa ad ogni punto $\overline{x} \in A$ la funzione lineare
-	\begin{equation*}
-		\omega(\overline{x})(\overline{y}) =\langle \overline{F}(\overline{x}),\overline{y}\rangle =\sum_{j=1}^n F_j (\overline{x}) y_j.
-	\end{equation*}
-	$\overline{F}$ si dice campo vettoriale associato ad $\omega$ e determina univocamente la forma differenziale.\\
-	Una forma differenziale si dice di classe $C^k$, $k \geq 0$, se tale è il campo vettoriale ad essa associato.
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	$\omega(x,y) =\frac{x}{x^2+y^2}dx+\frac{y}{x^2+y^2}dy$, $(x,y)\in \R^2\backslash \{(0,0)\}$\\
-	$\overline{F}(x,y)=(F_1(x,y),F_2(x,y))$\\
-	$F_1(x,y)=\frac{x}{x^2+y^2}$, $F_2(x,y)=\frac{y}{x^2+y^2}$\\
-	$\omega(1,2)=\frac{1}{5}dx+\frac{2}{5}dy$\\
-	intendendo con questo la funzione lineare
-	$ \omega (1,2)(a,b)=\frac{1}{5}dx (a,b) + \frac{2}{5}dy (a,b) =\frac{1}{5}a + \frac{2}{5} b$\\
-	$\omega(2,3)=\frac{2}{13}dx+\frac{3}{13}dy$\\
-	$\omega(2,3)(a,b)=\frac{2}{13}a+\frac{3}{13}b$\\
-	$\omega(x,y)(a,b)=\frac{x}{x^2+y^2}a+ \frac{y}{x^2+y^2}b= \langle \overline{F}(a,y),(a,b) \rangle$
-	
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	Sia $\omega$ forma differenziale su $A \subseteq \R^n$ aperto e sia $\overline{F}=(F_1,...,F_n)$ il campo vettoriale ad essa associato. Data una curva $C^1$ a tratti $\overline{\gamma} :[a,b]\rightarrow \R^n$ con sostegno contenuto in $A$ si dice integrale (curvilineo) di seconda specie di $\omega$ o $\overline{F}$ lungo $\overline{\gamma}$ la quantità
-	\begin{equation*}
-		\int_{\overline{\gamma}}\omega = \int_{\overline{\gamma}}\langle \overline{F},d\overline{\gamma} \rangle = \int_a^b \langle \overline{F}(\overline{\gamma}(t)),\overline{\gamma}'(t) \rangle dt=\int_a^b (F_1 (\overline{\gamma}(t))\gamma_1'(t)+...+F_n(\overline{\gamma}(t))\gamma_n'(t))dt
-	\end{equation*}
-	dove $\overline{\gamma}=(\gamma_1,...,\gamma_n)$, nel senso che i primi due inegrali esistono $\Leftrightarrow $ esiste l'ultimo.\\
-	Se $\overline{\gamma} $ è un circuito, si utilizzano anche le notazioni
-	\begin{equation*}
-		\oint_{\overline{\gamma}} \omega= \oint_{\overline{\gamma}} \overline{F} d\overline{\gamma} = \oint_{\overline{\gamma}}\langle \overline{F},d\overline{\gamma} \rangle
-	\end{equation*}
-	Se $\overline{\gamma}$ è una curva di Jordan (circuito piano) allora utiliziamo le notazioni
-	\begin{align*}
-		&\ointctrclockwise_{\overline{\gamma}} \omega=\ointctrclockwise_{\overline{\gamma}}\overline{F}d\overline{\gamma}\,\,\,\,\, \text{se} \,\, \overline{\gamma}\,\, \text{è percorsa in senso antiorario} \\
-		&\ointclockwise_{\overline{\gamma}}\omega=\ointclockwise_{\overline{\gamma}}\overline{F}d\overline{\gamma} \,\,\,\,\, \text{se} \,\, \overline{\gamma}\,\, \text{è percorsa in senso orario}
-	\end{align*}
-	
-	\paragraph{\textcolor{red}{Teorema}}
-	Sia $\overline{\gamma}$ e $\overline{\zeta}$, $C^1$ a tratti, due curve equivalenti  con sostegno contenuto in un aperto $A \subseteq \R^n$ e sia $\omega$ una forma differenziale contua su $A$. Allora
-	\begin{align*}
-		\int_{\overline{\gamma}} \omega= \int_{\overline{\zeta}} \omega
-		\,\,\,\,\,\text{se}\,\, \overline{\gamma}\,\, \text{e}\,\,\overline{\zeta}\,\,\, \text{hanno lo stesso verso,}\\
-		\int_{\overline{\gamma}}\omega= -\int_{\overline{\zeta}} \omega 
-		\,\,\,\,\,\text{se} \,\,\overline{\gamma} \,\, \text{e}\,\,\overline{\zeta} \,\,\,\text{hanno verso opposto.}
-	\end{align*}
-	
-	\paragraph{\textcolor{red}{Dimostrazione}}
-	\begin{align*}
-		\overline{\gamma}:& [a,b]\rightarrow A\\
-		\overline{\zeta}:&[a,b]\rightarrow A
-	\end{align*}
-	$\overline{\zeta}=\overline{\gamma}(\phi(u))$, $\phi:[c,d]\rightarrow[a,b]$
-	invertibile, di classe $C^1$ con $\phi'(u)\neq 0 \,\,\, \forall \, n \in [c,d]$.\\
-	Sia $\overline{F} : A \rightarrow \R^n$ il campo vettoriale associato ad $\omega$.
-	\begin{align*}
-		\int_{\overline{\zeta}} \omega& = \int_c^d \langle  \overline{F}(\overline{\zeta}(u)),\overline{\zeta}'(u) \rangle du \\
-		& =\int_c^d \langle \overline{F}(\overline{\gamma}(\phi(u))), \overline{\gamma}' (\phi(u)) \rangle du\\
-		&= \int_c^d \langle \overline{F}(\overline{\gamma}(\phi(u))),\overline{\gamma}'(\phi(u))\rangle \phi' (u)du\\
-		&=\int_{\phi^{-1}(c)}^{\phi^{-1}(d)}\langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t)\rangle dt\\
-		&=\begin{cases}
-			& \int_a^b \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt\,\,\, \text{se}\,\,\, \phi \,\,\, \text{crescente}  \\
-			& \int_b^a \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt\,\,\, \text{se}\,\,\, \phi \,\,\, \text{decrescente}
-		\end{cases}\\
-		&=\begin{cases}
-			&\int_{\overline{\gamma}}\omega \text{  se  } \overline{\gamma} \text{  e  }\overline{\zeta} \text{  hanno lo stesso verso}\\
-			&-\int_{\overline{\gamma}}\omega \text{  se  } \overline{\gamma} \text{  e  } \overline{\zeta} \text{  hanno verso opposto}
-		\end{cases}
-	\end{align*}
-	\begin{flushright}
-		\Lightning
-	\end{flushright}
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	Calcolare $\int_{\overline{\gamma}}\frac{x^2}{y}dx \frac{y}{x^2+y^2}dy$ dove $\overline{\gamma}(t)=(\cos t , \sin t)$, $\frac{\pi}{4}\leq t \leq \frac{\pi}{2}$.\\
-	$\overline{F}(x,y)=\left( \frac{x^2}{y}, \frac{y}{x^2+y^2} \right)$, $y\neq 0$
-	\begin{align*}
-		\int_{\overline{\gamma}}\frac{x^2}{y}dx + \frac{ y}{x^2+y^2 dy} &= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \overline{F}(\overline{\gamma}(t)),\overline{\gamma}'(t) \rangle dt\\
-		&=\int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \overline{F}(\cos t , \sin t), \overline{\gamma}'(t) \rangle dt\\
-		&= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \left( \frac{\cos^2 t}{\sin t}, \sin t \right), \left( -\sin t, \cos t \right) \rangle dt\\
-		&=\int_{\frac{\pi}{4}}^{\frac{\pi}{2}}(-\cos^2 t+\sin t \cos t)dt=...
-	\end{align*}
-	
-	\paragraph{\textcolor{red}{Esempio}}
-	Calcolare $\int_{\overline{\gamma}}y dx$ dove $\overline{\gamma}$ è il circuito il cui sostegno è il quadrato contenuto nel piano di vertici $(1,1),(1,-1),(-1,-1),(-1,1)$ percorso in verso antiorario. \\
-	$\omega(x,y)= y dx$\\
-	$\overline{F}(x,y)=(y,0)$\\
-	IMMAGINE
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	Date due curve $\overline{\zeta}_1:[0,L]\rightarrow \R^n$ e $\overline{\zeta}_2:[0,M]\rightarrow \R^n$ tali che $\overline{\zeta}_1(L)=\overline{\zeta}_2(0)$ si definisce \underline{concatenazione} di $\overline{\zeta}_1$ e $\overline{\zeta}_2$ la curva 
-	\begin{equation*}
-		(\overline{\zeta}_1+\overline{\zeta}_2)(t)=\begin{cases}
-			\overline{\zeta}_1 (t)\,\,\,\, &\text{  se  } t\in[0,L]\\
-			\overline{\zeta}_2 (t-L) \,\,\,\, &\text{  se  } t \in ]L,L+M]
-		\end{cases}\,\,\,\,\, t \in [0,L+M]
-	\end{equation*}
-	IMMAGINE
-	
-	\paragraph{\textcolor{red}{Proposizione}} Sia $\omega$ forma differenziale continua in $A$ e $\overline{\zeta}_1$ e $\overline{\zeta}_2$ due curve $C^1$ a tratti con sostegno contenuto in $A$ e concatenabili. Allora
-	\begin{equation*}
-		\int_{\overline{\zeta}_1+\overline{\zeta}_2}\omega= \int_{\overline{\zeta}_1}\omega + \int_{\overline{\zeta}_2}\omega.
-	\end{equation*}
-	
-	\paragraph{\textcolor{red}{Continuazione esempio}}
-	Tornando all'esempio di prima.
-	\begin{equation*}
-		\int_{\overline{\gamma}}\omega=\int_{\overline{\gamma}_1}\omega+\int_{\overline{\gamma}_2}\omega + \int_{\overline{\gamma}_3}\omega + \int_{\overline{\gamma}_4} \omega
-	\end{equation*}
-	$\overline{\gamma}_1(t)=(1,t)$, $t \in [-1,1]$\\
-	$\int_{\overline{\gamma}_1}\omega =\int_{-1}^1 \langle \overline{F}(1,t), (0,1)\rangle dt = \int_{-1}^1 \langle (t,0), (0,1)\rangle dt=0$.\\
-	$\overline{\gamma}_2^-(t)=(t,1)$, che è curva equivalente a $\overline{\gamma}_2$ percorsa in verso opporto, $t\in[-1,1]$\\
-	$\int_{\overline{\gamma}_1}\omega= -\int_{\overline{\gamma}_2^-}\omega =-\int_{-1}^1 \langle 
-	\overline{F}(\overline{\gamma}_2^- (t)),\overline{\gamma}_2^-'(t)\rangle dt=-\int_{-1}^1 \langle 
-	\overline{F} (t,1),(1,0)\rangle dt = -\int_{-1}^1 \langle (1,0),(1,0) \rangle dt=-2$\\
-	$\gamma_2^-(t)=(-1,t)$, $t \in [-1,1]$,\\
-	curva equivalente a $\overline{\gamma}_3$ percorsa in verso opporto.\\
-	$\int_{\overline{\gamma}_3}\omega= -\int_{\overline{\gamma}_3^-}\omega =-\int_{-1}^1 \langle \overline{F}(\overline{\gamma_3}^-(t)), \overline{\gamma}_3^- ' (t) \rangle dt = -\int_{-1}^1 \langle \overline{F}(-1,t),(0,1) \rangle dt=-\int_{-1}^1 \langle (t,0),(0,1) \rangle dt =0$\\
-	$\overline{\gamma}_4(t)=(t,-1)$, $ t \in [-1,1]$\\
-	$\int_{\overline{\gamma}_4}\omega = \int_{-1}^1 \langle \overline{F}(\overline{\gamma}_4(t)),\overline{\gamma}_4'(t) \rangle dt= \int_{-1}^1 \langle (-1,0),(1,0) \rangle dt=-2$\\
-	$\Rightarrow \int_{\overline{\gamma}}\omega =0-2+0-2=-4$
-	
-	\paragraph{\textcolor{red}{Definizione}}
-	$A \subseteq \R^n$ aperto, $\omega$ forma differenziale continua su $A$ con $\overline{F}=(F_1,...,F_n)$ campo vettoriale associato. $\omega$ si dice \underline{esatta} ed $\overline{F}$ si dice \underline{conservativo} se $\exists \,\,U \in  C^1(A)$ tale che $\omega(\overline{x})=dU(\overline{x})\,\, \forall\,\, \overline{x} \in A$, cioè $\overline{F}(\overline{x})=\nabla U(\overline{x})\,\, \forall\,\, \overline{x}\in A$. $U $ è detta (funzione) potenziale. 
-	\textcolor{orange}{$\overline{F} = \nabla U(\overline{x})$\\
-		$\nabla U(\overline{x})=(\partial_{x_1},..., \partial_{x_n}U(\overline{x}))$\\
-		$\overline{F}(\overline{x})=(F_1(\overline{x}),...,F_n(\overline{x}))$\\
-		$F_1(\overline{x}) =\partial_{x_1}U(\overline{x}),..., F_n(\overline{x})=\partial_{x_n} U(\overline{x})\,\,\, \forall \overline{x}\in A$\\
-		$F_j(\overline{x})=\partial_{x_j}U(\overline{x})\,\,\, \forall \overline{x}\in A\,\, j=1,...,n$.}
+\begin{comment}
+
+\section{\textcolor{red}{Lezione 37 \space\space 06/06/'23}}
+\subsection{\textcolor{red}{Forme differenziali (Campi vettoriali)}}
+$A \subseteq \R^n$ aperto, $f:A \rightarrow \R$ differenziabile in $A$. Si definisce il differenziale di $f$ in $x_0 \in A$ come la funzione lineare 
+\begin{align*}
+	df(\overline{x}_0)=&\R^n\rightarrow\R\\
+	&\overline{y}\mapsto \langle \nabla f(\overline{x}_0),\overline{y} \rangle
+\end{align*}
+$f(\overline{x})=f(\overline{x_0})+\langle \nabla f (\overline{x_0}),\overline{x}-\overline{x_0} \rangle + o(|\overline{x}-\overline{x_0}|)=f(\overline{x_0})+df(\overline{x_0})(\overline{x}-\overline{x_0})+o(|\overline{x}-\overline{x_0}|)$\\
+$df(\overline{x_0})(\overline{y})=\langle \nabla f (\overline{x_0}),\overline{y}\rangle =\sum_{j=1}^n\frac{\partial f}{\partial x_j}(\overline{x_0})y_j$, $\overline{y}=(y_1,...y_n)$\\
+$\pi_j: \R^n \rightarrow \R$, $\overline{y}\mapsto y_j$, $y_j=\pi_j(\overline{y})$ $j-$esima proiezione\\
+$\overline{x}=(x_1,...x_n)$, $x_j=\pi_j(\overline{x})$\\
+$\pi_j$ è lineare\\
+$d \pi_j (\overline{x_0})(\overline{x})=\pi_j(x)=x_j$\\
+$\nabla \pi_j (\overline{x_0})=\overline{e_j}$\\
+$d \pi _j (\overline{x_0})=dx_j= \R^n \rightarrow \R$, $\overline{x} \mapsto x_j=\pi_j(\overline{x})$\\
+$df(\overline{x_0})(\overline{x})=\sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})x_j=\sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})dx_j(\overline{x})$\\
+$df(\overline{x_0})=\sum_{j=1}^n \frac{\partial f}{\partial x_j} (\overline{x_0})dx_j$\\
+Se $f$ è differenziabile in $A$, posso definire
+\begin{align*}
+	df: &A \rightarrow \mathcal{L}(\R^n,\R)\\
+	&\overline{x_0} \mapsto df(\overline{x_0})
+\end{align*}
+\begin{equation*}
+	df: \overline{x_0} \mapsto df(\overline{x_0})=\sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})dx_j
+\end{equation*}
+
+\paragraph{\textcolor{red}{Definizione}}
+Una forma differenziale su $A \subseteq \R^n$ aperto è una scrittura del tipo 
+$\omega (\overline{x})=F_1(\overline{x})dx_1 +F_2(\overline{x})dx_2 +...+ F_n(\overline{x})dx_n$ dove $\overline{F}: A \rightarrow \R^n$, $\overline{x} \mapsto (F_1(\overline{x}),...,F_n(\overline{x}))$ è un campo vettoriale, intendendo con questo che la funzione $\overline{x}\mapsto \omega (\overline{x})$ associa ad ogni punto $\overline{x} \in A$ la funzione lineare
+\begin{equation*}
+	\omega(\overline{x})(\overline{y}) =\langle \overline{F}(\overline{x}),\overline{y}\rangle =\sum_{j=1}^n F_j (\overline{x}) y_j.
+\end{equation*}
+$\overline{F}$ si dice campo vettoriale associato ad $\omega$ e determina univocamente la forma differenziale.\\
+Una forma differenziale si dice di classe $C^k$, $k \geq 0$, se tale è il campo vettoriale ad essa associato.
+
+\paragraph{\textcolor{red}{Esempio}}
+$\omega(x,y) =\frac{x}{x^2+y^2}dx+\frac{y}{x^2+y^2}dy$, $(x,y)\in \R^2\backslash \{(0,0)\}$\\
+$\overline{F}(x,y)=(F_1(x,y),F_2(x,y))$\\
+$F_1(x,y)=\frac{x}{x^2+y^2}$, $F_2(x,y)=\frac{y}{x^2+y^2}$\\
+$\omega(1,2)=\frac{1}{5}dx+\frac{2}{5}dy$\\
+intendendo con questo la funzione lineare
+$ \omega (1,2)(a,b)=\frac{1}{5}dx (a,b) + \frac{2}{5}dy (a,b) =\frac{1}{5}a + \frac{2}{5} b$\\
+$\omega(2,3)=\frac{2}{13}dx+\frac{3}{13}dy$\\
+$\omega(2,3)(a,b)=\frac{2}{13}a+\frac{3}{13}b$\\
+$\omega(x,y)(a,b)=\frac{x}{x^2+y^2}a+ \frac{y}{x^2+y^2}b= \langle \overline{F}(a,y),(a,b) \rangle$
+
+
+\paragraph{\textcolor{red}{Definizione}}
+Sia $\omega$ forma differenziale su $A \subseteq \R^n$ aperto e sia $\overline{F}=(F_1,...,F_n)$ il campo vettoriale ad essa associato. Data una curva $C^1$ a tratti $\overline{\gamma} :[a,b]\rightarrow \R^n$ con sostegno contenuto in $A$ si dice integrale (curvilineo) di seconda specie di $\omega$ o $\overline{F}$ lungo $\overline{\gamma}$ la quantità
+\begin{equation*}
+	\int_{\overline{\gamma}}\omega = \int_{\overline{\gamma}}\langle \overline{F},d\overline{\gamma} \rangle = \int_a^b \langle \overline{F}(\overline{\gamma}(t)),\overline{\gamma}'(t) \rangle dt=\int_a^b (F_1 (\overline{\gamma}(t))\gamma_1'(t)+...+F_n(\overline{\gamma}(t))\gamma_n'(t))dt
+\end{equation*}
+dove $\overline{\gamma}=(\gamma_1,...,\gamma_n)$, nel senso che i primi due inegrali esistono $\Leftrightarrow $ esiste l'ultimo.\\
+Se $\overline{\gamma} $ è un circuito, si utilizzano anche le notazioni
+\begin{equation*}
+	\oint_{\overline{\gamma}} \omega= \oint_{\overline{\gamma}} \overline{F} d\overline{\gamma} = \oint_{\overline{\gamma}}\langle \overline{F},d\overline{\gamma} \rangle
+\end{equation*}
+Se $\overline{\gamma}$ è una curva di Jordan (circuito piano) allora utiliziamo le notazioni
+\begin{align*}
+	&\ointctrclockwise_{\overline{\gamma}} \omega=\ointctrclockwise_{\overline{\gamma}}\overline{F}d\overline{\gamma}\,\,\,\,\, \text{se} \,\, \overline{\gamma}\,\, \text{è percorsa in senso antiorario} \\
+	&\ointclockwise_{\overline{\gamma}}\omega=\ointclockwise_{\overline{\gamma}}\overline{F}d\overline{\gamma} \,\,\,\,\, \text{se} \,\, \overline{\gamma}\,\, \text{è percorsa in senso orario}
+\end{align*}
+
+\paragraph{\textcolor{red}{Teorema}}
+Sia $\overline{\gamma}$ e $\overline{\zeta}$, $C^1$ a tratti, due curve equivalenti  con sostegno contenuto in un aperto $A \subseteq \R^n$ e sia $\omega$ una forma differenziale contua su $A$. Allora
+\begin{align*}
+	\int_{\overline{\gamma}} \omega= \int_{\overline{\zeta}} \omega
+	\,\,\,\,\,\text{se}\,\, \overline{\gamma}\,\, \text{e}\,\,\overline{\zeta}\,\,\, \text{hanno lo stesso verso,}\\
+	\int_{\overline{\gamma}}\omega= -\int_{\overline{\zeta}} \omega 
+	\,\,\,\,\,\text{se} \,\,\overline{\gamma} \,\, \text{e}\,\,\overline{\zeta} \,\,\,\text{hanno verso opposto.}
+\end{align*}
+
+\paragraph{\textcolor{red}{Dimostrazione}}
+\begin{align*}
+	\overline{\gamma}:& [a,b]\rightarrow A\\
+	\overline{\zeta}:&[a,b]\rightarrow A
+\end{align*}
+$\overline{\zeta}=\overline{\gamma}(\phi(u))$, $\phi:[c,d]\rightarrow[a,b]$
+invertibile, di classe $C^1$ con $\phi'(u)\neq 0 \,\,\, \forall \, n \in [c,d]$.\\
+Sia $\overline{F} : A \rightarrow \R^n$ il campo vettoriale associato ad $\omega$.
+\begin{align*}
+	\int_{\overline{\zeta}} \omega& = \int_c^d \langle  \overline{F}(\overline{\zeta}(u)),\overline{\zeta}'(u) \rangle du \\
+	& =\int_c^d \langle \overline{F}(\overline{\gamma}(\phi(u))), \overline{\gamma}' (\phi(u)) \rangle du\\
+	&= \int_c^d \langle \overline{F}(\overline{\gamma}(\phi(u))),\overline{\gamma}'(\phi(u))\rangle \phi' (u)du\\
+	&=\int_{\phi^{-1}(c)}^{\phi^{-1}(d)}\langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t)\rangle dt\\
+	&=\begin{cases}
+		& \int_a^b \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt\,\,\, \text{se}\,\,\, \phi \,\,\, \text{crescente}  \\
+		& \int_b^a \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt\,\,\, \text{se}\,\,\, \phi \,\,\, \text{decrescente}
+	\end{cases}\\
+	&=\begin{cases}
+		&\int_{\overline{\gamma}}\omega \text{  se  } \overline{\gamma} \text{  e  }\overline{\zeta} \text{  hanno lo stesso verso}\\
+		&-\int_{\overline{\gamma}}\omega \text{  se  } \overline{\gamma} \text{  e  } \overline{\zeta} \text{  hanno verso opposto}
+	\end{cases}
+\end{align*}
+\begin{flushright}
+	\Lightning
+\end{flushright}
+
+\paragraph{\textcolor{red}{Esempio}}
+Calcolare $\int_{\overline{\gamma}}\frac{x^2}{y}dx \frac{y}{x^2+y^2}dy$ dove $\overline{\gamma}(t)=(\cos t , \sin t)$, $\frac{\pi}{4}\leq t \leq \frac{\pi}{2}$.\\
+$\overline{F}(x,y)=\left( \frac{x^2}{y}, \frac{y}{x^2+y^2} \right)$, $y\neq 0$
+\begin{align*}
+	\int_{\overline{\gamma}}\frac{x^2}{y}dx + \frac{ y}{x^2+y^2 dy} &= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \overline{F}(\overline{\gamma}(t)),\overline{\gamma}'(t) \rangle dt\\
+	&=\int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \overline{F}(\cos t , \sin t), \overline{\gamma}'(t) \rangle dt\\
+	&= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \left( \frac{\cos^2 t}{\sin t}, \sin t \right), \left( -\sin t, \cos t \right) \rangle dt\\
+	&=\int_{\frac{\pi}{4}}^{\frac{\pi}{2}}(-\cos^2 t+\sin t \cos t)dt=...
+\end{align*}
+
+\paragraph{\textcolor{red}{Esempio}}
+Calcolare $\int_{\overline{\gamma}}y dx$ dove $\overline{\gamma}$ è il circuito il cui sostegno è il quadrato contenuto nel piano di vertici $(1,1),(1,-1),(-1,-1),(-1,1)$ percorso in verso antiorario. \\
+$\omega(x,y)= y dx$\\
+$\overline{F}(x,y)=(y,0)$\\
+IMMAGINE
+
+\paragraph{\textcolor{red}{Definizione}}
+Date due curve $\overline{\zeta}_1:[0,L]\rightarrow \R^n$ e $\overline{\zeta}_2:[0,M]\rightarrow \R^n$ tali che $\overline{\zeta}_1(L)=\overline{\zeta}_2(0)$ si definisce \underline{concatenazione} di $\overline{\zeta}_1$ e $\overline{\zeta}_2$ la curva 
+\begin{equation*}
+	(\overline{\zeta}_1+\overline{\zeta}_2)(t)=\begin{cases}
+		\overline{\zeta}_1 (t)\,\,\,\, &\text{  se  } t\in[0,L]\\
+		\overline{\zeta}_2 (t-L) \,\,\,\, &\text{  se  } t \in ]L,L+M]
+	\end{cases}\,\,\,\,\, t \in [0,L+M]
+\end{equation*}
+IMMAGINE
+
+\paragraph{\textcolor{red}{Proposizione}} Sia $\omega$ forma differenziale continua in $A$ e $\overline{\zeta}_1$ e $\overline{\zeta}_2$ due curve $C^1$ a tratti con sostegno contenuto in $A$ e concatenabili. Allora
+\begin{equation*}
+	\int_{\overline{\zeta}_1+\overline{\zeta}_2}\omega= \int_{\overline{\zeta}_1}\omega + \int_{\overline{\zeta}_2}\omega.
+\end{equation*}
+
+\paragraph{\textcolor{red}{Continuazione esempio}}
+Tornando all'esempio di prima.
+\begin{equation*}
+	\int_{\overline{\gamma}}\omega=\int_{\overline{\gamma}_1}\omega+\int_{\overline{\gamma}_2}\omega + \int_{\overline{\gamma}_3}\omega + \int_{\overline{\gamma}_4} \omega
+\end{equation*}
+$\overline{\gamma}_1(t)=(1,t)$, $t \in [-1,1]$\\
+$\int_{\overline{\gamma}_1}\omega =\int_{-1}^1 \langle \overline{F}(1,t), (0,1)\rangle dt = \int_{-1}^1 \langle (t,0), (0,1)\rangle dt=0$.\\
+$\overline{\gamma}_2^-(t)=(t,1)$, che è curva equivalente a $\overline{\gamma}_2$ percorsa in verso opporto, $t\in[-1,1]$\\
+$\int_{\overline{\gamma}_1}\omega= -\int_{\overline{\gamma}_2^-}\omega =-\int_{-1}^1 \langle 
+\overline{F}(\overline{\gamma}_2^- (t)),\overline{\gamma}_2^-'(t)\rangle dt=-\int_{-1}^1 \langle 
+\overline{F} (t,1),(1,0)\rangle dt = -\int_{-1}^1 \langle (1,0),(1,0) \rangle dt=-2$\\
+$\gamma_2^-(t)=(-1,t)$, $t \in [-1,1]$,\\
+curva equivalente a $\overline{\gamma}_3$ percorsa in verso opporto.\\
+$\int_{\overline{\gamma}_3}\omega= -\int_{\overline{\gamma}_3^-}\omega =-\int_{-1}^1 \langle \overline{F}(\overline{\gamma_3}^-(t)), \overline{\gamma}_3^- ' (t) \rangle dt = -\int_{-1}^1 \langle \overline{F}(-1,t),(0,1) \rangle dt=-\int_{-1}^1 \langle (t,0),(0,1) \rangle dt =0$\\
+$\overline{\gamma}_4(t)=(t,-1)$, $ t \in [-1,1]$\\
+$\int_{\overline{\gamma}_4}\omega = \int_{-1}^1 \langle \overline{F}(\overline{\gamma}_4(t)),\overline{\gamma}_4'(t) \rangle dt= \int_{-1}^1 \langle (-1,0),(1,0) \rangle dt=-2$\\
+$\Rightarrow \int_{\overline{\gamma}}\omega =0-2+0-2=-4$
+
+\paragraph{\textcolor{red}{Definizione}}
+$A \subseteq \R^n$ aperto, $\omega$ forma differenziale continua su $A$ con $\overline{F}=(F_1,...,F_n)$ campo vettoriale associato. $\omega$ si dice \underline{esatta} ed $\overline{F}$ si dice \underline{conservativo} se $\exists \,\,U \in  C^1(A)$ tale che $\omega(\overline{x})=dU(\overline{x})\,\, \forall\,\, \overline{x} \in A$, cioè $\overline{F}(\overline{x})=\nabla U(\overline{x})\,\, \forall\,\, \overline{x}\in A$. $U $ è detta (funzione) potenziale. 
+\textcolor{orange}{$\overline{F} = \nabla U(\overline{x})$\\
+	$\nabla U(\overline{x})=(\partial_{x_1},..., \partial_{x_n}U(\overline{x}))$\\
+	$\overline{F}(\overline{x})=(F_1(\overline{x}),...,F_n(\overline{x}))$\\
+	$F_1(\overline{x}) =\partial_{x_1}U(\overline{x}),..., F_n(\overline{x})=\partial_{x_n} U(\overline{x})\,\,\, \forall \overline{x}\in A$\\
+	$F_j(\overline{x})=\partial_{x_j}U(\overline{x})\,\,\, \forall \overline{x}\in A\,\, j=1,...,n$.}
 	
 	\paragraph{\textcolor{red}{Osservazione}}
 	Se $U$ è potenziale di $\overline{F}$ allora anche $U+c$ con $c$ costante reale lo è perchè $\nabla (U+c)=\nabla U+\nabla c= \nabla U = \overline{F}$.
