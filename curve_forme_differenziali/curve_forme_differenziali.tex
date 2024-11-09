@@ -315,13 +315,15 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 	$$(f \circ \overline{\gamma})'(t)=\langle\nabla f(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle \uppercomment{=}{\nabla f(x,y)=}{=2x,2y} \langle (2e^{3t},2t),(3e^{3t},1)\rangle=6e^{6t}+2t$$
 \end{exbar}
 
-%======================================= pag 417
-
 
 \subsection{Cambio di parametrizzazione}
 
 \begin{definition}
-	$\overline{\gamma}:[a,b]\rightarrow \R^p$ curva e $\phi: [c,d]\rightarrow [a,b]$ invertibile\textcolor{orange}{, cioè iniettiva e suriettiva,} di classe $C^1$ con $\phi'(u)\neq 0 \,\, \forall \,\, u \in [c,d]$ \textcolor{orange}{(e quindi $\phi$ è monotona con inversa derivabile)}. Sia $\overline{\zeta}(u)=\overline{\gamma}$ o $\phi(u)=\overline{\gamma}(\phi(u))$, $n \in [c,d]$. Allora $\overline{\zeta}$ si dice ottenuta da $\overline{\gamma}$ per cambiamento di parametro e che è una riparametrizzazione di $\overline{\gamma}$. Le due curve $\overline{\zeta}$ e $\overline{\gamma}$ si dicono equivalenti.
+	$\overline{\gamma}:[a,b]\rightarrow \R^p$ curva e $\phi: [c,d]\rightarrow [a,b]$ invertibile {\color{blue}cioè iniettiva e suriettiva $\phi([c,d])=[a,b]$} di classe $C^1$ con $\phi'(u)\neq 0$ $\forall \,\, u \in [c,d]$ \textcolor{blue}{(e quindi $\phi$ è monotona con inversa derivabile)}. Sia 
+	
+	{\centering $\overline{\zeta}(u)=\overline{\gamma}$ o $\phi(u)=\overline{\gamma}(\phi(u))$, $n \in [c,d]$ \par}
+	
+	Allora $\overline{\zeta}$ si dice ottenuta da $\overline{\gamma}$ per \textbf{cambiamento di parametro} e che è una riparametrizzazione di $\overline{\gamma}$. Le due curve $\overline{\zeta}$ e $\overline{\gamma}$ si dicono \textbf{equivalenti}.
 \end{definition}
 
 
@@ -331,7 +333,7 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 
 
 \begin{definition}
-	Con le notazioni di prima, se $\phi$ è crescente \textcolor{orange}{($\phi'(u)>0 \forall u$)} si dice che $\overline{\gamma}$ e $\overline{\zeta}$ hanno lo stesso verso; se $\phi$ è decrescente \textcolor{orange}{($\phi'(u)<0 \forall u $)} si dice che $\overline{\gamma}$ e $\overline{\zeta}$ hanno verso opposto.\\
+	Con le notazioni di prima, se $\phi$ è crescente {\color{blue}($\phi'(u)>0 \forall u$)} si dice che $\overline{\gamma}$ e $\overline{\zeta}$ hanno lo stesso verso; se $\phi$ è decrescente {\color{blue}{($\phi'(u)<0 \forall u $)} si dice che $\overline{\gamma}$ e $\overline{\zeta}$ hanno verso opposto.
 
 	\segnaposto % pag 418
 \end{definition}
@@ -339,25 +341,72 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 
 \begin{exbar}
 \begin{example}
-	$\overline{\gamma}(t)=(\cos t, \sin t)$, $t\in [0,2\pi]$, il sostegno è la circonferenza di centro $(0,0)$ e raggio $1$ ed è percorsa una volta  in senso antiorario. $\phi(u)=2u$, $u\in [o,\pi]$, $\phi(u)\in[0,2\pi]$; $\overline{\zeta}(u)=\overline{\gamma}(\phi(u))=(\cos (2u),\sin (2u))$, $u \in [0,\pi]$ è curva equivalente \textcolor{orange}{(percorre la stessa circonferenza a velocità doppia)}.\\
-	$\psi(u)=2u$, $u \in [0, 2\pi]$, $\overline{\mu}(u)=\overline{\gamma}(\psi(u))=(\cos(2u), \sin (2u))$, $u \in [0,2\pi]$ non è equivalente a $\overline{\gamma}$ \textcolor{orange}{(percorre la circonferenza due volte)}. Infatti $\psi$ non è invertibile\textcolor{orange}{, cioè iniettiva e suriettiva,} come funzione da $[0,2\pi]$ in $[0,2\pi]$. Nel nostro caso si ha infatti $\psi ([0,2\pi])=[0,4\pi]$, $\mu (u)=2\pi-u$, $u \in [0,2\pi]$.\\
-	$\overline{\nu}(u)=\overline{\gamma}(\mu(u))=(\cos(2\pi-u),\sin(2\pi-u))$ \textcolor{orange}{ la circonferenza è percorsa una volta in senso orario} $\overline{\gamma}$ e $\overline{\nu}$ sono curve equivalenti di verso opposto ($\mu$ è decrescente).
+	$$\overline{\gamma}(t)=(\cos t, \sin t)$, $t\in [0,2\pi]$$
+	
+	il sostegno è la circonferenza di centro $(0,0)$ e raggio $1$ ed è percorsa una volta  in senso antiorario. 
+	
+	{\centering $\phi(u)=2u$, $u\in [o,\pi]$, $\phi(u)\in[0,2\pi]$
+		
+		$\overline{\zeta}(u)=\overline{\gamma}(\phi(u))=(\cos (2u),\sin (2u))$, $u \in [0,\pi]$
+	\par}
+	
+	è curva equivalente {\color{blue}(percorre la stessa circonferenza a velocità doppia)}.
+	
+	{\centering $\psi(u)=2u$, $u \in [0, 2\pi]$, $\overline{\mu}(u)=\overline{\gamma}(\psi(u))=(\cos(2u), \sin (2u))$, $u \in [0,2\pi]$ \par}
+	
+	non è equivalente a $\overline{\gamma}$ {\color{blue}(percorre la circonferenza due volte)}. 
+	
+	Infatti $\psi$ non è invertibile {\color{blue}cioè iniettiva e suriettiva,} come funzione da $[0,2\pi]$ in $[0,2\pi]$. 
+	
+	Nel nostro caso si ha infatti 
+	
+	$$\psi ([0,2\pi])=[0,4\pi]$, $\mu (u)=2\pi-u$, $u \in [0,2\pi]$$
+	
+	$$\overline{\nu}(u)=\overline{\gamma}(\mu(u))=(\cos(2\pi-u),\sin(2\pi-u))$$ {\color{blue}la circonferenza è percorsa una volta in senso orario} 
+	
+	$\overline{\gamma}$ e $\overline{\nu}$ sono curve equivalenti di verso opposto ($\mu$ è decrescente).
 \end{example}
 \end{exbar}
 
 
 \subsection{Equazione polare di una curva}
 
-Considero nel piano cartesiano le coordinate polari e individuo il sostegno di una curva tramite un'equazione del tipo $\rho=f(\theta)$, $\theta \in I$. Il sostegno sarà dato da tutti e soli i punti le cui coordinate polari soddisfano l'equazione data. $f(\theta) \geq 0\,\, \forall\,\, \theta \in I$.\\
-Come trovo una parametrizzazione di una curva il cui sostegno è assegnato tramite un'equazione polare?\\
-$\begin{cases}
-	x=\rho \cos \theta\\
-	y=\rho \sin \theta
-\end{cases}$\\
-$\overline{\gamma}(\theta)=(f(\theta)\cos \theta, f(\theta)\sin \theta)$, $\theta \in I$ è una parametrizzazione. Se $f\in C^1(I)\Rightarrow \overline{\gamma} \in C^1(I)$. Calcoliamo $\overline{\gamma}'(\theta)$.\\
-$\overline{\gamma}'(\theta)=(f'(\theta)\cos \theta - f(\theta)\sin \theta, f'(\theta)\sin \theta + f(\theta)\cos \theta)$.\\
-Studiamo la regolarità: $\overline{\gamma}'(\theta)=(0,0)\Leftrightarrow \|\overline{\gamma}(\theta)\|^2=0$, $\|\overline{\gamma}'(\theta)\|^2=(f'(\theta))^2\cos^2\theta+(f(\theta))^2\sin^2\theta- 2f'(\theta)f(\theta)\cos\theta\sin\theta+(f'(\theta))\sin^2\theta+(f(\theta))\cos^2\theta+2f'(\theta)f(\theta)\cos \theta\sin\theta=(f'(\theta))^2+(f(\theta))^2$\\
-$\|\overline{\gamma}(\theta)\|^2=0 \Leftrightarrow f(\theta)=f'(\theta)=0$.\\
+Considero nel piano cartesiano le coordinate polari e individuo il sostegno di una curva tramite un'equazione del tipo 
+
+{\centering $\rho=f(\theta)$, $\theta \in I$ \par}
+
+Il sostegno sarà dato da tutti e soli i punti le cui coordinate polari soddisfano l'equazione data. 
+
+$$f(\theta) \geq 0\,\, \forall\,\, \theta \in I$$
+
+Come trovo una parametrizzazione di una curva il cui sostegno è assegnato tramite un'equazione polare?
+
+$$\begin{cases}
+	x=\uppercomment{\rho}{}{=f(\theta)} \cos \theta\\
+	y=\lowercomment{\rho}{=f(\theta)}{} \sin \theta
+\end{cases}$$
+
+{\centering $\overline{\gamma}(\theta)=(f(\theta)\cos \theta, f(\theta)\sin \theta)$, $\theta \in I$ \par}
+
+è una parametrizzazione. Se $f\in C^1(I)\Rightarrow \overline{\gamma} \in C^1(I)$. 
+
+Calcoliamo $\overline{\gamma}'(\theta)$.
+
+$$\overline{\gamma}'(\theta)=(f'(\theta)\cos \theta - f(\theta)\sin \theta, f'(\theta)\sin \theta + f(\theta)\cos \theta)$$
+
+Studiamo la regolarità: 
+
+$$\overline{\gamma}'(\theta)=(0,0)\Leftrightarrow \|\overline{\gamma}(\theta)\|^2=0$$
+
+\begin{align*} 
+	\|\overline{\gamma}'(\theta)\|^2
+	&=(f'(\theta))^2\cos^2\theta+(f(\theta))^2\sin^2\theta- \cancel{2f'(\theta)f(\theta)\cos\theta\sin\theta}+(f'(\theta))\sin^2\theta+(f(\theta))\cos^2\theta+\cancel{2f'(\theta)f(\theta)\cos \theta\sin\theta}=
+	\\
+	&=(f'(\theta))^2+(f(\theta))^2
+\end{align*}
+
+$$\|\overline{\gamma}(\theta)\|^2=0 \Leftrightarrow f(\theta)=f'(\theta)=0$$
+
 In particolare, se $f \in C^1(I)$ e $(f(\theta), f'(\theta))\neq (0,0)\,\, \forall \theta \in I$, $\overline{\gamma}$ è regolare.
 
 
@@ -372,15 +421,17 @@ In particolare, se $f \in C^1(I)$ e $(f(\theta), f'(\theta))\neq (0,0)\,\, \fora
 
 
 \begin{exbar}
-	$\overline{\gamma}(t)=(\cos t , e^t)$, $t \in [0,\pi]$\\
-	$\int_{0}^\pi \overline{\gamma}(t)dt=\left( \int_0^\pi \cos t dt, \int_0^\pi e^t dt \right)=(0,e^\pi-1)$.
+	{\centering $\overline{\gamma}(t)=(\cos t , e^t)$, $t \in [0,\pi]$
+		
+	$\int_{0}^\pi \overline{\gamma}(t)dt=\left( \int_0^\pi \cos t dt, \int_0^\pi e^t dt \right)=(0,e^\pi-1)$
+	\par}
 \end{exbar}
 
 
 \begin{theorem} \textbf{fondamentale del calcolo}
 	
 	\label{th: pag 423}
-	Data $\overline{\gamma}:[a,b]\rightarrow \R^n$ curva $C^1$ si ha
+	Data $\overline{\gamma}:[a,b]\rightarrow \R^n$ curva $C^1$, si ha
 	\begin{equation*}
 		\int_1^b\overline{\gamma}'(dt)=\overline{\gamma}(b)-\overline{\gamma}(a).
 	\end{equation*}	
@@ -390,11 +441,13 @@ In particolare, se $f \in C^1(I)$ e $(f(\theta), f'(\theta))\neq (0,0)\,\, \fora
 \begin{dembar}
 	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 423}}
 	
-	$\overline{\gamma}(t)=(\gamma_1(t),...,\gamma_n(t))$\\
+	$\overline{\gamma}(t)=(\gamma_1(t),...,\gamma_n(t))$
 	\begin{align*}
-		\int_a^b\overline{\gamma}'(t)dt&=\left( \int_a^b \gamma_1'(t)dt,...,\int_a^b \gamma_n'(t)dt \right)\\
-		&=\left( \gamma_1(b)-\gamma_1(a),\gamma_2(b)-\gamma_2(a),...,\gamma_n(b)-\gamma_n(a)\right)\\
-		&=\overline{\gamma}(b)-\overline{\gamma}(a).
+		\int_a^b\overline{\gamma}'(t)dt&=\left( \int_a^b \gamma_1'(t)dt,...,\int_a^b \gamma_n'(t)dt \right)=
+		\\
+		&=\left( \gamma_1(b)-\gamma_1(a),\gamma_2(b)-\gamma_2(a),...,\gamma_n(b)-\gamma_n(a)\right)=
+		\\
+		&=\overline{\gamma}(b)-\overline{\gamma}(a). \qquad \square
 	\end{align*}
 \end{dembar}
 
@@ -409,13 +462,23 @@ In particolare, se $f \in C^1(I)$ e $(f(\theta), f'(\theta))\neq (0,0)\,\, \fora
 
 \subsection{Curve rettificabili}
 
-$\overline{\gamma}:[a,b]\rightarrow\R^n$ curva. $D=\{a=t_0,t_1,t_2,...,t_n=b\mid t_0<t_1<...<t_n\}$ suddivisione di $[a,b]$. Poniamo $L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamma}(t_{i-1}) \|$
+$\overline{\gamma}:[a,b]\rightarrow\R^n$ curva. 
+
+$$D=\{a=t_0,t_1,t_2,...,t_n=b\mid t_0<t_1<...<t_n\}$$
+
+suddivisione di $[a,b]$. Poniamo 
+
+$$L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamma}(t_{i-1}) \|$$
 
 \segnaposto % pag 424
 
 
 \begin{definition}
-	La curva $\overline{\gamma}$ si dice \underline{rettificabile} se $\sup_D L(\overline{\gamma},D)<+\infty$. In tal caso il valore di $\sup_D L(\overline{\gamma},D)$ si dice lunghezza della curva $L(\overline{\gamma})$.
+	La curva $\overline{\gamma}$ si dice \textbf{rettificabile} se 
+	
+	$$\sup_D L(\overline{\gamma},D)<+\infty$$
+	
+	In tal caso il valore di $\sup_D L(\overline{\gamma},D)$ si dice lunghezza della curva $L(\overline{\gamma})$.
 \end{definition}
 
 
@@ -433,13 +496,24 @@ $\overline{\gamma}:[a,b]\rightarrow\R^n$ curva. $D=\{a=t_0,t_1,t_2,...,t_n=b\mid
 		&\overline{\gamma}:[a,b]\rightarrow \R^n\\
 		&\overline{\xi}:[c,d]\rightarrow \R^n
 	\end{align*}
-	$\exists \,\,\phi: [c,d]\rightarrow [a,b]$ invertibile e derivabile tale che $\overline{\xi}(u)=\overline{\gamma}(\phi(u))$, $u \in [c,d]$. Per fissare le idee assumiamo $\phi$ strettamente crescente.\\
-	$D_1=\{ u_0,u_1,...,u_p \mid c=u_0<u_n<...<u_p=d \}$ suddivisione di $[c,d]$\\
-	$D_2=\{\phi(u_0),\phi(u_1),...,\phi(u_p)\}$ è suddivisione di $[a,b]$ che soddisfa $a = \phi (u_0)<\phi(u_1)<...<\phi(u_p)=b$\\
-	$|\overline{\xi} (u_i)-\overline{\xi}(u_{i-1})|=|\overline{\gamma}(\phi(u_i))-\overline{\gamma}(\phi(u_{i-1}))|\,\,\, i=1,...p$\\
-	$L(P_1,\overline{\xi})=\sum_{i=1}^P|\overline{\xi}(u_i)-\overline{\xi}(u_{i-1})|=\sum_{i=1}^P|\overline{\gamma}(\phi(u_i))-\overline{\gamma}(\phi(u_{i-1}))|=L(D_2,\overline{\gamma})$.\\
-	Se $\overline{\gamma}$ è rettificabile, $L(D_2,\overline{\gamma})< +\infty \Rightarrow \overline{\xi}$ è rettificabile e $L(\overline{\xi})\leq L(\overline{\gamma})$.\\
-	Ripetendo lo stesso argomento con $\phi^{-1}:[a,b]\rightarrow [c,d]$, cosicchè $\overline{\gamma}(t)=\overline{\xi}(\phi^{-1}(t))$, si ottiene che, se $\overline{\xi}$ è rettificabile, anche $\overline{\gamma}$ lo è e $L(\overline{\gamma})\leq L(\overline{\xi})$.
+	
+	$\exists \,\,\phi: [c,d]\rightarrow [a,b]$ invertibile e derivabile tale che $\overline{\xi}(u)=\overline{\gamma}(\phi(u))$, $u \in [c,d]$. Per fissare le idee assumiamo $\phi$ strettamente crescente.
+	
+	$D_1=\{ u_0,u_1,...,u_p \mid c=u_0<u_n<...<u_p=d \}$ suddivisione di $[c,d]$
+	
+	$D_2=\{\phi(u_0),\phi(u_1),...,\phi(u_p)\}$ è suddivisione di $[a,b]$ che soddisfa $a = \phi (u_0)<\phi(u_1)<...<\phi(u_p)=b$
+	
+	$$|\overline{\xi} (u_i)-\overline{\xi}(u_{i-1})|=|\overline{\gamma}(\phi(u_i))-\overline{\gamma}(\phi(u_{i-1}))|\,\,\, i=1,...p$$
+	
+	$$L(P_1,\overline{\xi})=\sum_{i=1}^P|\overline{\xi}(u_i)-\overline{\xi}(u_{i-1})|=\sum_{i=1}^P|\overline{\gamma}(\phi(u_i))-\overline{\gamma}(\phi(u_{i-1}))|=L(D_2,\overline{\gamma}) {\color{blue} \leq L(\overline{\gamma}) \qquad D_1}$$
+	
+	Se $\overline{\gamma}$ è rettificabile, $L(D_2,\overline{\gamma})\leq L(\overline{\gamma}) < +\infty$ $\overline{\xi}$ 
+	
+	$${\color{blue} L(\overline{\xi})=} \sup_D L(D, \overline{\xi}) \leq L(\overline{\gamma}) < + \infty$
+	
+	$\Rightarrow \overline{\xi}$ è rettificabile e $L(\overline{\xi})\leq L(\overline{\gamma})$.
+	
+	Ripetendo lo stesso argomento con $\phi^{-1}:[a,b]\rightarrow [c,d]$, cosicché $\overline{\gamma}(t)=\overline{\xi}(\phi^{-1}(t))$, si ottiene che, se $\overline{\xi}$ è rettificabile, anche $\overline{\gamma}$ lo è e $L(\overline{\gamma})\leq L(\overline{\xi})$. $\qquad \square$
 \end{dembar}
 
 
@@ -453,49 +527,102 @@ $\overline{\gamma}:[a,b]\rightarrow\R^n$ curva. $D=\{a=t_0,t_1,t_2,...,t_n=b\mid
 	\begin{equation*}
 		L(\overline{\gamma})=\int_{a}^{b}|\overline{\gamma}'(t)|dt.
 	\end{equation*}
-	\paragraph{\textcolor{red}{Esempio}}
-	Lunghezza di una curva cartesiana $\overline{\gamma}:[a,b]\rightarrow \R^2$, $t \mapsto (t,f(t))$. $f:[a,b]\rightarrow \R$, $C^1$ a tratti $\Rightarrow \overline{\gamma}$ è $C^1$ a tratti.\\
-	$L(\overline{\gamma})=\int_a^b|\overline{\gamma}'(t)|dt$\\
-	$\overline{\gamma}'(t)=(1,f'(t))$\\
-	$|\overline{\gamma}'(t)|=\sqrt{1+[f'(t)]^2}$
-	$\Rightarrow L(\overline{\gamma})=\int_a^b\sqrt{1+[f'(t)]^2}dt$.\\
-	Lunghezza di un arco di parabola $\overline{\gamma}(x)=(x,x^2)$, $x \in [0,1]$.\\
-	$L(\overline{\gamma})=\int_0^1\sqrt{1+4x^2}dx= \int_0^{sett \sinh z} \sqrt{1+(\sinh t)^2}\cosh t dt= \frac{1}{2}\int_0^{sett \sinh z}(\cosh t)^2dt$.
 \end{theorem}
 
 
 \begin{exbar}
 \begin{example}
-	Curva non rettificabile $\overline{\gamma}(t)= \begin{cases}
-		(t,t \sin \left(\frac{1}{t}\right)) &\text{  se  } t \in ]0,\frac{2}{\pi}]\\
-		(0,0)&\text{  se  } t=0.
-	\end{cases}$\\
-	Il sostegno di $\overline{\gamma}$ è il grafico della funzione $f(t)=t \sin \frac{1}{t}$, $t \in ]0,\frac{2}{\pi}]$.\\
-
-	\segnaposto % pag 429
-
-	$k=0,...,n,\{\frac{1}{\frac{\pi}{2}+k\pi}, k=0,...,n\}\cup \{(0,0)\}=D$.\\
-	Calcoliamo $L(D,\overline{\gamma})$\\
-	$|\overline{\gamma}(t_{k+1})-\overline{\gamma}(t_k)|^2=|\left(t_{k+1},t_{k+1}\sin \frac{1}{t_{k+1}}\right)-\left(t_k,t_k\sin\frac{1}{tk}\right)|=|\left(\frac{1}{\frac{\pi}{2}+(k+1)\pi},\frac{1}{\frac{\pi}{2}+(k+1)\pi} (-1)^{k+1}\right)|-|\left(\frac{1}{\frac{\pi}{2}+k\pi},\frac{1}{\frac{\pi}{2}+k\pi}(-1)^k\right)|^2=|\frac{1}{\frac{\pi}{2}+(k+1)\pi}-\frac{1}{\frac{\pi}{2}+k\pi}|+|\frac{1}{\frac{\pi}{2}+(k+1)\pi}+\frac{1}{\frac{\pi}{2}+k\pi}|^2=\frac{\pi^2}{\left(\frac{\pi}{2}+(k+1)\pi\right)^2\left(\frac{\pi}{2}+k\pi\right)^2}+\frac{(2\pi +2k\pi)^2}{\left(\frac{\pi}{2}+(k+1)\pi\right)^2\left(\frac{\pi}{2}+k\pi\right)^2}$.\\
-	$L(D,\overline{\gamma})\geq\sum_{k=0}^{n-1}|\overline{\gamma}(t_{k+1})-\overline{\gamma}(t_k)|=\sum_{k=0}^{n-1}\left[ \frac{\pi^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi\right)^2} + \frac{(2\pi +2k\pi)^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi \right)^2} \right]^{\frac{1}{2}} \geq \sum_{k=0}^{n-1}\left[ \frac{(2\pi+2k\pi)^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi \right)^2} \right]^{\frac{1}{2}}=\sum_{k=0}^{n-1}\frac{2\pi+2k\pi}{\left( \frac{\pi}{2}(k+1)\pi \right)\left( \frac{\pi}{2}+k\pi \right)} \xrightarrow{n \rightarrow \infty} +\infty$ perchè ridotta $n-$esima di una serie divergente $\Rightarrow \sup_D L(D,\overline{\gamma})=+\infty$.
+	Lunghezza di una curva cartesiana 
+	\begin{align*} 
+		\overline{\gamma}&:[a,b]\rightarrow \R^2
+		\\
+		&t \mapsto (t,f(t))
+	\end{align*}
+	
+	$f:[a,b]\rightarrow \R$, $C^1$ a tratti $\Rightarrow \overline{\gamma}$ è $C^1$ a tratti.
+	
+	$$L(\overline{\gamma})=\int_a^b|\overline{\gamma}'(t)|dt$$
+	
+	$$\overline{\gamma}'(t)=(1,f'(t)) \qquad |\overline{\gamma}'(t)|=\sqrt{1+[f'(t)]^2}$$
+	
+	$\Rightarrow L(\overline{\gamma})=\int_a^b\sqrt{1+[f'(t)]^2}dt$.
+	
+	Lunghezza di un arco di parabola $\overline{\gamma}(x)=(x,x^2)$, $x \in [0,1]$.
+	
+	$$L(\overline{\gamma})=\int_0^1\sqrt{1+4x^2}dx \lowercomment{=}{2x=\sinh t}{} \int_0^{sett \sinh z} \sqrt{\underbrace{1+(\sinh t)^2}_{{\color{blue} (\cosh t)^2}}}\cosh t dt= \frac{1}{2}\int_0^{sett \sinh z}(\cosh t)^2dt$$
 \end{example}
 \end{exbar}
 
 
 \begin{exbar}
 \begin{example}
-	Lunghezza di una spirale logaritmica $\rho=\beta e^{\alpha\theta}$, $\theta \geq 0$, $\beta >0$ equazione polare.\\
+	Curva non rettificabile 
+	$$\overline{\gamma}(t)= 
+	\begin{cases}
+		(t,t \sin \left(\frac{1}{t}\right)) &\text{  se  } t \in ]0,\frac{2}{\pi}]\\
+		(0,0)&\text{  se  } t=0.
+	\end{cases}$$
+	
+	Il sostegno di $\overline{\gamma}$ è il grafico della funzione $f(t)=t \sin \frac{1}{t}$, $t \in ]0,\frac{2}{\pi}]$.
+
+	\segnaposto % pag 429
+
+	$$k=0,...,n, \qquad \{\frac{1}{\frac{\pi}{2}+k\pi}, k=0,...,n\}\cup \{(0,0)\}=D$$
+	
+	Calcoliamo $L(D,\overline{\gamma})$
+	\begin{align*} 
+		|\overline{\gamma}(t_{k+1})-\overline{\gamma}(t_k)|^2
+		&=\left| \left(t_{k+1},t_{k+1}\sin \frac{1}{t_{k+1}}\right)-\left(t_k,t_k\sin\frac{1}{tk}\right) \right|=
+		\\
+		&=\left| \left(\frac{1}{\frac{\pi}{2}+(k+1)\pi},\frac{1}{\frac{\pi}{2}+(k+1)\pi} (-1)^{k+1}\right) \right|- \left| \left(\frac{1}{\frac{\pi}{2}+k\pi},\frac{1}{\frac{\pi}{2}+k\pi}(-1)^k\right) \right|^2=
+		\\
+		&=\left| \frac{1}{\frac{\pi}{2}+(k+1)\pi}-\frac{1}{\frac{\pi}{2}+k\pi} \right|+ \left| \frac{1}{\frac{\pi}{2}+(k+1)\pi}+\frac{1}{\frac{\pi}{2}+k\pi} \right|^2=
+		\\
+		&=\frac{\pi^2}{\left(\frac{\pi}{2}+(k+1)\pi\right)^2\left(\frac{\pi}{2}+k\pi\right)^2}+\frac{(2\pi +2k\pi)^2}{\left(\frac{\pi}{2}+(k+1)\pi\right)^2\left(\frac{\pi}{2}+k\pi\right)^2}
+	\end{align*}
+	\begin{align*} 
+		L(D,\overline{\gamma})\geq\sum_{k=0}^{n-1}|\overline{\gamma}(t_{k+1})-\overline{\gamma}(t_k)|
+		&=\sum_{k=0}^{n-1} \bigg[ \underbrace{\frac{\pi^2}{ \bigg( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi\right)^2}}_{{\color{blue}\sim \frac{1}{k^4}}} + \underbrace{\frac{(2\pi +2k\pi)^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi \right)^2}}_{{\color{blue} \sim \frac{1}{k^2}}} \bigg]^{\frac{1}{2}} \geq 
+		\\
+		&\geq \sum_{k=0}^{n-1}\left[ \frac{(2\pi+2k\pi)^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi \right)^2} \right]^{\frac{1}{2}}=
+		\\
+		&=\sum_{k=0}^{n-1} \uppercomment{\frac{2\pi+2k\pi}{\left( \frac{\pi}{2}(k+1)\pi \right)\left( \frac{\pi}{2}+k\pi \right)}}{}{\sim \frac{1}{k}} \xrightarrow{n \rightarrow \infty} +\infty
+	\end{align*}
+	
+	perché ridotta n-esima di una serie divergente $\Rightarrow \sup_D L(D,\overline{\gamma})=+\infty$.
+\end{example}
+\end{exbar}
+
+
+\begin{exbar}
+\begin{example}
+	Lunghezza di una spirale logaritmica 
+	
+	$$\rho=\lowercomment{\beta e^{\alpha\theta}}{}{f(\theta)}, \quad \theta \geq 0 \quad \beta >0$$ 
+	
+	equazione polare.
 
 	\segnaposto % pag 431_1
 
-	Se $\alpha >0$ allora $\rho$ è crescente come funzione di $\theta$.\\
+	Se $\alpha >0$ allora $\rho$ è crescente come funzione di $\theta$, quindi diverge.
 
 	\segnaposto % pag 431_2
 
-	Se $\alpha<0$ allora $\rho$ è decrescente come funzione di $\theta$.\\
-	$\overline{\gamma}(\theta)=(\beta e^{\alpha\theta}\cos \theta, \beta e^{\alpha\theta}\sin\theta)$, $\theta \geq 0$\\
-	$L(\overline{\gamma})=\int_{0}^{+\infty} |\overline{\gamma}'(\theta)|d\theta=\lim_{c \rightarrow +\infty}\int_0^c |\overline{\gamma}'(\theta)|d\theta= \lim_{c \rightarrow + \infty}\int_{0}^c \sqrt{(f(\theta))^2+(f'(\theta))^2}d\theta=\lim_{x \rightarrow +\infty} \int_0^c \sqrt{\beta^2e^{2\alpha \theta}+\beta^2\alpha^2e^{2\alpha \theta}}d\theta= \lim_{c \rightarrow +\infty} \int_{0}^{c}\beta \sqrt{1+\alpha^2}e^{\alpha\theta}= -\frac{\beta}{\alpha}\sqrt{1+\alpha^2}=\beta \sqrt{\frac{1+\alpha^2}{\alpha^2}}< + \infty$\\
-	$\overline{\gamma}$ è rettificabile.\\
+	Se $\alpha<0$ allora $\rho$ è decrescente come funzione di $\theta$.
+	
+	$$\overline{\gamma}(\theta)=(\beta e^{\alpha\theta}\cos \theta, \beta e^{\alpha\theta}\sin\theta), \quad \theta \geq 0, \quad \alpha < 0$$
+	\begin{align*} 
+		L(\overline{\gamma})
+		&=\int_{0}^{+\infty} |\overline{\gamma}'(\theta)|d\theta=\lim_{c \rightarrow +\infty}\int_0^c |\overline{\gamma}'(\theta)|d\theta=
+		\\
+		&= \lim_{c \rightarrow + \infty}\int_{0}^c \sqrt{(f(\theta))^2+(f'(\theta))^2}d\theta=\lim_{x \rightarrow +\infty} \int_0^c \sqrt{\beta^2e^{2\alpha \theta}+\beta^2\alpha^2e^{2\alpha \theta}}d\theta=
+		\\
+		&= \lim_{c \rightarrow +\infty} \int_{0}^{c}\beta \sqrt{1+\alpha^2}e^{\alpha\theta}= -\frac{\beta}{\alpha}\sqrt{1+\alpha^2}=
+		\\
+		&=\beta \sqrt{\frac{1+\alpha^2}{\alpha^2}}< + \infty
+	\end{align*}
+	
+	$\overline{\gamma}$ è rettificabile.
 \end{example}
 \end{exbar}
 
@@ -503,7 +630,7 @@ $\overline{\gamma}:[a,b]\rightarrow\R^n$ curva. $D=\{a=t_0,t_1,t_2,...,t_n=b\mid
 \subsection{Integrali di Prima Specie}
 
 \begin{definition}
-	$f:\dom f \rightarrow \R$, $\dom f \subseteq \R^n$ funzione, $\overline{\gamma}:[a,b]\rightarrow \R^n$ curva regolare con $\overline{\gamma}([a,b])\subseteq \dom f$. Si dice \underline{integrale di linea di prima specie di $f$ lungo $\overline{\gamma}$} la quantità
+	$f:\dom f \rightarrow \R$, $\dom f \subseteq \R^n$ funzione, $\overline{\gamma}:[a,b]\rightarrow \R^n$ curva regolare con $\overline{\gamma}([a,b])\subseteq \dom f$. Si dice \textbf{integrale di linea di prima specie di $f$ lungo $\overline{\gamma}$} la quantità
 	\begin{equation*}
 		\int_{\overline{\gamma}}f ds = \int_a^bf(\overline{\gamma}'(t))|\overline{\gamma}'(t)|dt
 	\end{equation*}
@@ -511,28 +638,36 @@ $\overline{\gamma}:[a,b]\rightarrow\R^n$ curva. $D=\{a=t_0,t_1,t_2,...,t_n=b\mid
 \end{definition}
 
 \textbf{Osservazione:}
-
-$\phi(t)=f(\overline{\gamma}(t))|\overline{\gamma}'(t)|$, $t\in[a,b]$\\
-$\phi: [a,b]\rightarrow \R$\\
-$\int_a^b \phi(t)dt=\int_{\overline{\gamma}}f ds$\\
-
-\segnaposto % pag 433
-
-\textcolor{orange}{Guardo la restrizione di $f$ lungo il sostegno di $\overline{\gamma}$.}
+\begin{center}	
+	$\phi(t)=f(\overline{\gamma}(t))|\overline{\gamma}'(t)|$, $t\in[a,b]$
+	
+	$\phi: [a,b]\rightarrow \R$
+	
+	$\int_a^b \phi(t)dt=\int_{\overline{\gamma}}f ds$
+	
+	\segnaposto % pag 433
+	
+	{\color{blue}Guardo la restrizione di $f$ lungo il sostegno {\color{red} $\overline{\gamma}([a,b])$} di $\overline{\gamma}$}
+\end{center}
 	
 	
 \begin{exbar}
 \begin{example}
-	$f(x,y)=\left( \frac{x}{2} \right)^2+\frac{y^2}{2}-\left( \frac{x}{2} \right)^2\frac{y}{2}$\\
-	$(x,y)\in \R^2$\\
-	$\overline{\gamma}:[0,\pi]\rightarrow \R^2$\\
-	$\overline{\gamma}(t)=(4\cos t, 4 \sin t)$\\
-	$\overline{\gamma}([0,\pi])$ è la semicirconferenza di centro $(0,0)$ e raggio $4$ contenuta nel semipiano $y \geq 0$ e percorsa una volta in senso antiorario.\\
+	$$f(x,y)=\left( \frac{x}{2} \right)^2+\frac{y^2}{2}-\left( \frac{x}{2} \right)^2\frac{y}{2} \qquad (x,y)\in \R^2$$
+	
+	$$\overline{\gamma}:[0,\pi]\rightarrow \R^2 \qquad \overline{\gamma}(t)=(4\cos t, 4 \sin t)$$
+
+	$\overline{\gamma}([0,\pi])$ è la semicirconferenza di centro $(0,0)$ e raggio $4$ contenuta nel semipiano $y \geq 0$ e percorsa una volta in senso antiorario.
 
 	\segnaposto % pag 434
 
-	Calcoliamo $\int_{\overline{\gamma}}f ds$, $\overline{\gamma}'(t)=(-4\sin t, 4 \cos t)$, $|\overline{\gamma}'(t)|=4$\\
-	$\int_{\overline{\gamma}}fds =\int_0^\pi f(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt=\int_0^\pi f(4\cos t , 4 \sin t)4 dt=4\int_0^\pi ((2\cos t)^2+8\sin^2 t-(2\cos t)^2 2\sin t)dt= 4 \int_0^\pi (4+4\sin^2 t -8 \cos^2 t \sin t) dt =...$
+	Calcoliamo $\int_{\overline{\gamma}}f ds$, $\overline{\gamma}'(t)=(-4\sin t, 4 \cos t)$, $|\overline{\gamma}'(t)|=4$
+	\begin{align*} 
+		\int_{\overline{\gamma}}fds 
+		&=\int_0^\pi f(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt=\int_0^\pi f(\uppercomment{4\cos t}{x}{\myarrow[270]} , \uppercomment{4 \sin t}{y}{\myarrow[270]})4 dt \uppercomment{=}{f(x,y)=\left(\frac{x}{2}\right)^2 + \frac{y^2}{2}+}{-\left(\frac{x}{2}\right)^2\frac{y}{2}}
+		\\
+		&=4\int_0^\pi ((2\cos t)^2+8\sin^2 t-(2\cos t)^2 2\sin t)dt= 4 \int_0^\pi (4+4\sin^2 t -8 \cos^2 t \sin t) dt =...
+	\end{align*}
 \end{example}
 \end{exbar}	
 	
@@ -546,6 +681,7 @@ $\int_a^b \phi(t)dt=\int_{\overline{\gamma}}f ds$\\
 	\end{equation*}
 \end{proposition}
 
+%========================================== PAG 435
 
 \begin{dembar}
 	\textbf{Dimostrazione} della \textbf{Proposizione \ref{pr: pag 435}}
