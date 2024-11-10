@@ -110,7 +110,7 @@ Il sostegno di $\overline{\gamma}$ è il grafico di $f$.
 			y=a \sinh t &  a,b>0
 		\end{cases}$$
 		
-		Ramo di iperbole di equazione $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$\\
+		Ramo di iperbole di equazione $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$
 		
 		\segnaposto %pag 410
 	\end{itemize}
@@ -219,8 +219,12 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 	\end{equation*}
 	
 	$\overline{\gamma}(\pi)=(0,0)$
-	
-	$$\overline{\gamma}'(t)=(-\sin t (1+\cos t)-\sin t\cos t, \cos t (1+\cos t)-\sin ^2t )=(-\sin t- \sin (2t),\cos t + \cos (2t))$$
+	\begin{align*} 
+		\overline{\gamma}'(t)
+		&=(-\sin t (1+\cos t)-\sin t\cos t, \cos t (1+\cos t)-\sin ^2t )=
+		\\
+		&=(-\sin t- \sin (2t),\cos t + \cos (2t))
+	\end{align*}
 	
 	$\overline{\gamma}'(t)=(0,0)$
 	
@@ -233,17 +237,17 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 			\sin t =0\,\,\, \text{  o  }1+2\cos t =0\\
 			\cos t + \cos (2t)=0
 		\end{cases}\Leftrightarrow
+		\\
 		\begin{cases}
 			\sin t =0\\
 			\cos t + \cos (2t)=0
-		\end{cases} \qquad  t=\pi\
-		\\
+		\end{cases} \ t=\pi\
 		\Leftrightarrow
 		\begin{cases}
 			1+2\cos t =0\\
 			\cos t +2 \cos^2 t-1=0
 		\end{cases}
-		\qquad \text{Non ha soluzioni.}
+		\ \text{Non ha soluzioni.}
 	\end{gather*}
 	
 	$$\overline{\gamma}'(t)=(0,0) \Leftrightarrow t=\pi$$
@@ -256,9 +260,11 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 	
 	\begin{align*} 
 		\lim_{t \rightarrow \pi^+} \frac{\overline{\gamma}'(t)}{\|\overline{\gamma}'(t)\|}
-		&=\left( \lim_{t\rightarrow \pi^+} \frac{\gamma_1'(t)}{\| \overline{\gamma}'(t)\|},\lim_{t\rightarrow \pi^+} \frac{\gamma_2'(t)}{\| \overline{\gamma}'(t) \|} \right)=
+		&=\bigg( \lim_{t\rightarrow \pi^+} \frac{\gamma_1'(t)}{\| \overline{\gamma}'(t)\|}, \lim_{t\rightarrow \pi^+} \frac{\gamma_2'(t)}{\| \overline{\gamma}'(t) \|} \bigg)=
 		\\
-		&=\left( \lim_{t \rightarrow \pi^+} -\frac{\sin t +\sin(2t)}{\sqrt{2+2\sin t \sin(2t)+2\cos t \cos(2t)}}, \lim_{t \rightarrow \pi^+} \frac{\cos t + \cos (2t)}{\sqrt{2+2\sin t \sin(2t)+2\cos t \cos(2t)}}\right)
+		&=\bigg( \lim_{t \rightarrow \pi^+} -\frac{\sin t +\sin(2t)}{\sqrt{2+2\sin t \sin(2t)+2\cos t \cos(2t)}}, 
+		\\
+		& \qquad \lim_{t \rightarrow \pi^+} \frac{\cos t + \cos (2t)}{\sqrt{2+2\sin t \sin(2t)+2\cos t \cos(2t)}} \bigg)
 	\end{align*}
 	
 	e cosa analoga per il limite da sinistra.
@@ -333,7 +339,7 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 
 
 \begin{definition}
-	Con le notazioni di prima, se $\phi$ è crescente {\color{blue}($\phi'(u)>0 \forall u$)} si dice che $\overline{\gamma}$ e $\overline{\zeta}$ hanno lo stesso verso; se $\phi$ è decrescente {\color{blue}{($\phi'(u)<0 \forall u $)} si dice che $\overline{\gamma}$ e $\overline{\zeta}$ hanno verso opposto.
+	Con le notazioni di prima, se $\phi$ è crescente {\color{blue}($\phi'(u)>0 \forall u$)} si dice che $\overline{\gamma}$ e $\overline{\zeta}$ hanno lo stesso verso; se $\phi$ è decrescente {\color{blue}($\phi'(u)<0 \forall u $)} si dice che $\overline{\gamma}$ e $\overline{\zeta}$ hanno verso opposto.
 
 	\segnaposto % pag 418
 \end{definition}
@@ -341,7 +347,7 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 
 \begin{exbar}
 \begin{example}
-	$$\overline{\gamma}(t)=(\cos t, \sin t)$, $t\in [0,2\pi]$$
+	$$\overline{\gamma}(t)=(\cos t, \sin t), \qquad t\in [0,2\pi]$$
 	
 	il sostegno è la circonferenza di centro $(0,0)$ e raggio $1$ ed è percorsa una volta  in senso antiorario. 
 	
@@ -360,7 +366,7 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 	
 	Nel nostro caso si ha infatti 
 	
-	$$\psi ([0,2\pi])=[0,4\pi]$, $\mu (u)=2\pi-u$, $u \in [0,2\pi]$$
+	$$\psi ([0,2\pi])=[0,4\pi], \qquad \mu (u)=2\pi-u, \qquad u \in [0,2\pi]$$
 	
 	$$\overline{\nu}(u)=\overline{\gamma}(\mu(u))=(\cos(2\pi-u),\sin(2\pi-u))$$ {\color{blue}la circonferenza è percorsa una volta in senso orario} 
 	
@@ -400,7 +406,9 @@ $$\overline{\gamma}'(\theta)=(0,0)\Leftrightarrow \|\overline{\gamma}(\theta)\|^
 
 \begin{align*} 
 	\|\overline{\gamma}'(\theta)\|^2
-	&=(f'(\theta))^2\cos^2\theta+(f(\theta))^2\sin^2\theta- \cancel{2f'(\theta)f(\theta)\cos\theta\sin\theta}+(f'(\theta))\sin^2\theta+(f(\theta))\cos^2\theta+\cancel{2f'(\theta)f(\theta)\cos \theta\sin\theta}=
+	&=(f'(\theta))^2\cos^2\theta+(f(\theta))^2\sin^2\theta- \cancel{2f'(\theta)f(\theta)\cos\theta\sin\theta}+
+	\\
+	& \qquad (f'(\theta))\sin^2\theta+ (f(\theta))\cos^2\theta+ \cancel{2f'(\theta)f(\theta)\cos \theta\sin\theta}=
 	\\
 	&=(f'(\theta))^2+(f(\theta))^2
 \end{align*}
@@ -501,7 +509,8 @@ $$L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamm
 	
 	$D_1=\{ u_0,u_1,...,u_p \mid c=u_0<u_n<...<u_p=d \}$ suddivisione di $[c,d]$
 	
-	$D_2=\{\phi(u_0),\phi(u_1),...,\phi(u_p)\}$ è suddivisione di $[a,b]$ che soddisfa $a = \phi (u_0)<\phi(u_1)<...<\phi(u_p)=b$
+	$D_2=\{\phi(u_0),\phi(u_1),...,\phi(u_p)\}$ è suddivisione di $[a,b]$ che soddisfa \\%riq mal 
+	$a = \phi (u_0)<\phi(u_1)<...<\phi(u_p)=b$
 	
 	$$|\overline{\xi} (u_i)-\overline{\xi}(u_{i-1})|=|\overline{\gamma}(\phi(u_i))-\overline{\gamma}(\phi(u_{i-1}))|\,\,\, i=1,...p$$
 	
@@ -509,7 +518,7 @@ $$L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamm
 	
 	Se $\overline{\gamma}$ è rettificabile, $L(D_2,\overline{\gamma})\leq L(\overline{\gamma}) < +\infty$ $\overline{\xi}$ 
 	
-	$${\color{blue} L(\overline{\xi})=} \sup_D L(D, \overline{\xi}) \leq L(\overline{\gamma}) < + \infty$
+	$${\color{blue} L(\overline{\xi})=} \sup_D L(D, \overline{\xi}) \leq L(\overline{\gamma}) < + \infty$$
 	
 	$\Rightarrow \overline{\xi}$ è rettificabile e $L(\overline{\xi})\leq L(\overline{\gamma})$.
 	
@@ -574,15 +583,19 @@ $$L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamm
 		|\overline{\gamma}(t_{k+1})-\overline{\gamma}(t_k)|^2
 		&=\left| \left(t_{k+1},t_{k+1}\sin \frac{1}{t_{k+1}}\right)-\left(t_k,t_k\sin\frac{1}{tk}\right) \right|=
 		\\
-		&=\left| \left(\frac{1}{\frac{\pi}{2}+(k+1)\pi},\frac{1}{\frac{\pi}{2}+(k+1)\pi} (-1)^{k+1}\right) \right|- \left| \left(\frac{1}{\frac{\pi}{2}+k\pi},\frac{1}{\frac{\pi}{2}+k\pi}(-1)^k\right) \right|^2=
+		&=\left| \left(\frac{1}{\frac{\pi}{2}+(k+1)\pi},\frac{1}{\frac{\pi}{2}+(k+1)\pi} (-1)^{k+1}\right) \right| + 
+		\\
+		& \qquad - \left| \left(\frac{1}{\frac{\pi}{2}+k\pi},\frac{1}{\frac{\pi}{2}+k\pi}(-1)^k\right) \right|^2=
 		\\
 		&=\left| \frac{1}{\frac{\pi}{2}+(k+1)\pi}-\frac{1}{\frac{\pi}{2}+k\pi} \right|+ \left| \frac{1}{\frac{\pi}{2}+(k+1)\pi}+\frac{1}{\frac{\pi}{2}+k\pi} \right|^2=
 		\\
 		&=\frac{\pi^2}{\left(\frac{\pi}{2}+(k+1)\pi\right)^2\left(\frac{\pi}{2}+k\pi\right)^2}+\frac{(2\pi +2k\pi)^2}{\left(\frac{\pi}{2}+(k+1)\pi\right)^2\left(\frac{\pi}{2}+k\pi\right)^2}
 	\end{align*}
 	\begin{align*} 
-		L(D,\overline{\gamma})\geq\sum_{k=0}^{n-1}|\overline{\gamma}(t_{k+1})-\overline{\gamma}(t_k)|
-		&=\sum_{k=0}^{n-1} \bigg[ \underbrace{\frac{\pi^2}{ \bigg( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi\right)^2}}_{{\color{blue}\sim \frac{1}{k^4}}} + \underbrace{\frac{(2\pi +2k\pi)^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi \right)^2}}_{{\color{blue} \sim \frac{1}{k^2}}} \bigg]^{\frac{1}{2}} \geq 
+		L(D,\overline{\gamma})
+		&\geq \sum_{k=0}^{n-1}|\overline{\gamma}(t_{k+1})-\overline{\gamma}(t_k)| =
+		\\
+		&=\sum_{k=0}^{n-1} \bigg[ \underbrace{\frac{\pi^2}{ \left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi\right)^2}}_{{\color{blue}\sim \frac{1}{k^4}}} + \underbrace{\frac{(2\pi +2k\pi)^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi \right)^2}}_{{\color{blue} \sim \frac{1}{k^2}}} \bigg]^{\frac{1}{2}} \geq 
 		\\
 		&\geq \sum_{k=0}^{n-1}\left[ \frac{(2\pi+2k\pi)^2}{\left( \frac{\pi}{2}+(k+1)\pi \right)^2\left( \frac{\pi}{2}+k\pi \right)^2} \right]^{\frac{1}{2}}=
 		\\
@@ -666,7 +679,9 @@ $$L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamm
 		\int_{\overline{\gamma}}fds 
 		&=\int_0^\pi f(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt=\int_0^\pi f(\uppercomment{4\cos t}{x}{\myarrow[270]} , \uppercomment{4 \sin t}{y}{\myarrow[270]})4 dt \uppercomment{=}{f(x,y)=\left(\frac{x}{2}\right)^2 + \frac{y^2}{2}+}{-\left(\frac{x}{2}\right)^2\frac{y}{2}}
 		\\
-		&=4\int_0^\pi ((2\cos t)^2+8\sin^2 t-(2\cos t)^2 2\sin t)dt= 4 \int_0^\pi (4+4\sin^2 t -8 \cos^2 t \sin t) dt =...
+		&=4\int_0^\pi ((2\cos t)^2+8\sin^2 t-(2\cos t)^2 2\sin t)dt=
+		\\
+		&= 4 \int_0^\pi (4+4\sin^2 t -8 \cos^2 t \sin t) dt =...
 	\end{align*}
 \end{example}
 \end{exbar}	
@@ -681,14 +696,27 @@ $$L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamm
 	\end{equation*}
 \end{proposition}
 
-%========================================== PAG 435
 
 \begin{dembar}
 	\textbf{Dimostrazione} della \textbf{Proposizione \ref{pr: pag 435}}
 	
-	$\overline{\gamma}:[a,b]\rightarrow \dom f$, $\overline{\zeta}:[c,d]\rightarrow \dom f$\\
-	$\phi: [c,d]\rightarrow [a,b]$ è un cambio di parametro, $\overline{\zeta}(u)=\overline{\gamma}(\phi(u))$, $u\in [c,d]$\\
-	$\int_{\overline{\zeta}}f ds = \int_c^d f(\overline{\zeta}(u))|\overline{\zeta}'(u)|du= \int_c^d f(\overline{\gamma}(\phi(u)))|\overline{\gamma}'(\phi(u))\phi'(u)|du=\int_a^b f(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt=\int_{\overline{\gamma}} f ds$.
+	\begin{align*} 
+		\overline{\gamma}&:[a,b]\rightarrow \dom f
+		\\
+		\overline{\zeta}&:[c,d]\rightarrow \dom f
+	\end{align*}
+		
+	$\phi: [c,d]\rightarrow [a,b]$ è un cambio di parametro, $\overline{\zeta}(u)=\overline{\gamma}(\phi(u))$, $u\in [c,d]$
+	\begin{align*} 
+		\int_{\overline{\zeta}}f ds 
+		&= \int_c^d f(\overline{\zeta}(u))|\overline{\zeta}'(u)|du=
+		\\
+		&{\color{blue} \overline{\zeta}'(u)= \overline{\gamma}'(\phi(u))\phi'(u)}
+		\\
+		&=\int_c^d f(\overline{\gamma}(\phi(u)))|\overline{\gamma}'(\phi(u))\phi'(u)|du=
+		\\
+		&\lowercomment{=}{t=\phi(u)}{\text{(teorema di cambio di variabili)}} \int_a^b f(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt=\int_{\overline{\gamma}} f ds
+	\end{align*}
 \end{dembar}
 	
 	
@@ -696,74 +724,103 @@ $$L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamm
 	
 $\overline{\gamma}:[a,b]\rightarrow \R^3$ curva regolare di densità $\rho(\overline{x})$ nel punto $\overline{x}=\overline{\gamma}(t)$. Siano allora $(x_B,y_B,z_B)$ coordinate del baricentro. Avremo
 \begin{align*}
-	x_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}x\rho ds=\frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_1(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt\\
-	y_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}y \rho ds= \frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_2(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt\\
-	z_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}z \rho ds= \frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_3(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt
+	x_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}x\rho ds=
+	\\
+	&=\frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_1(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt
+	\\
+	y_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}y \rho ds=
+	\\
+	&=\frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_2(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt
+	\\
+	z_B&=\frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}z \rho ds=
+	\\
+	&=\frac{1}{\int_a^b \rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt}\int_a^b \gamma_3(t)\rho(\overline{\gamma}(t))|\overline{\gamma}'(t)|dt
 \end{align*}
+
 Ove $\frac{1}{\int_{\overline{\gamma}}\rho ds}$ è la massa della curva e $\overline{\gamma}(t)=(\gamma_1(t),\gamma_2(t),\gamma_3(t))$.
 
 
 \subsubsection{Momento d'inerzia di una curva}
 	
-$\overline{\gamma}:[a,b]\rightarrow \R^3$ curva regolare di densità $\rho(\overline{x}) $ nel punto $\overline{x}=\overline{\gamma}(x)$, $\overline{x}=(x,y,z)$. Voglio calcolare il momento di inerzia di $\overline{\gamma}$ rispetto ad un asse di rotazione $a$. Sia $d(\overline{x})$ la distanza dal punto $\overline{x}=(x,y,z)$ dall'asse $a$. Allora
+$\overline{\gamma}:[a,b]\rightarrow \R^3$ curva regolare di densità $\rho(\overline{x}) $ nel punto $\overline{x}=\overline{\gamma}(x)$, $\overline{x}=(x,y,z)$.
+
+Voglio calcolare il momento di inerzia di $\overline{\gamma}$ rispetto ad un asse di rotazione $a$. Sia $d(\overline{x})$ la distanza dal punto $\overline{x}=(x,y,z)$ dall'asse $a$. Allora
 \begin{equation*}
 	I= \int_{\overline{\gamma}}(d(\overline{x}))^2 \rho(\overline{x})ds= \int_a^b (d(\overline{\gamma}(t)))^2 \rho (\overline{\gamma}(t))|\overline{\gamma}'(t)|dt.
 \end{equation*}
-Se la curva è omogenera, cioè a densità constante $\overline{\rho}(\overline{x})=\rho$, allora 
+
+Se la curva è omogenea, cioè a densità constante $\overline{\rho}(\overline{x})=\rho$, allora 
 \begin{align*}
-	x_B&= \frac{1}{\int_{\overline{\gamma}}\rho ds}\int_{\overline{\gamma}}x \rho ds = \frac{1}{\int_a^b\rho|\overline{\gamma}'(t)|dt}\int_a^b \gamma_1 (t) \rho |\overline{\gamma}'(t)|dt= \frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}x ds\\
-	y_B&=\frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}y ds\\
+	x_B&= \frac{1}{\int_{\overline{\gamma}} \cancel{\rho} ds}\int_{\overline{\gamma}}x \cancel{\rho} ds = \frac{1}{\int_a^b\rho|\overline{\gamma}'(t)|dt}\int_a^b \gamma_1 (t) \rho |\overline{\gamma}'(t)|dt= \frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}x ds
+	\\
+	y_B&=\frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}y ds
+	\\
 	z_B&= \frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}z ds
 \end{align*}
+
 Momento d'inerzia
 \begin{align*}
-	I=& \int_{\overline{\gamma}}(d(\overline{x}))^2\rho(\overline{x})ds\\
-	=& \int_a^b (d(\overline{\gamma}(t)))^2 \rho|\overline{\gamma}'(t)|dt\\
+	I=& \int_{\overline{\gamma}}(d(\overline{x}))^2 \uppercomment{\rho(\overline{x})}{=\rho}{} ds
+	\\
+	=& \int_a^b (d(\overline{\gamma}(t)))^2 \uppercomment{\rho}{=\frac{m}{L(\gamma)}}{m \text{ massa di } \overline{\gamma}} |\overline{\gamma}'(t)|dt
+	\\
 	=& \frac{m}{L(\overline{\gamma})}\int_{\overline{\gamma}}(d(\overline{x}))^2 ds
 \end{align*}
 
 
 \begin{exbar}
 \begin{example}
-	Calcolare l'integrale di prima specie lungo l'elica cilindirca 
+	Calcolare l'integrale di prima specie lungo l'elica cilindrica 
 	\begin{equation*}
 		\overline{\gamma}(t)=(R \cos t , R \sin t , h t)\,\,\,\,\,\,\,\,t \in [0,2\pi]
 	\end{equation*}
-	di raggio $R$ e passo $h$ della funzione $f(x,y,z)=xyz$.\\
-	Calcolare poi la lunghezza di $\overline{\gamma}$\\
-	$\int_{\overline{\gamma}} f ds$\\
-	$\overline{\gamma}'(t)=(-R\sin t , R \cos t , h)$\\
-	$|\overline{\gamma}'(t)|=\sqrt{R^2+h^2}$\\
-	$L(\overline{\gamma})=\int_0^{2\pi}|\overline{\gamma}'(t)|dt=2\pi \sqrt{R^2+h^2}$\\
-	$\int_{\overline{\gamma}} f ds = \int_0^{2\pi} f(R \cos t , R \sin t , h t)\sqrt{R^2 +h^2} dt= \sqrt{R^2 + h^2} \int_0^{2\pi} R^2h t \cos t \sin t dt = \frac{ R^2 h}{2}\sqrt{R^2+h^2}\int_0^{2\pi}t \sin (2t)dt=...
-	$
+	di raggio $R$ e passo $h$ della funzione $f(x,y,z)=xyz$.
+	
+	Calcolare poi la lunghezza di $\overline{\gamma}$
+	
+	$$\int_{\overline{\gamma}} f ds \qquad \overline{\gamma}'(t)=(-R\sin t , R \cos t , h)$$
+	\begin{align*} 
+		|\overline{\gamma}'(t)| &=\sqrt{R^2+h^2}
+		\\
+		L(\overline{\gamma}) &=\int_0^{2\pi}|\overline{\gamma}'(t)|dt=2\pi \sqrt{R^2+h^2}
+		\\
+		\int_{\overline{\gamma}} f ds &= \int_0^{2\pi} f(R \cos t , R \sin t , h t)\sqrt{R^2 +h^2} dt= \sqrt{R^2 + h^2} \int_0^{2\pi} R^2h t \cos t \sin t dt =
+		\\
+		&= \frac{ R^2 h}{2}\sqrt{R^2+h^2}\int_0^{2\pi}t \sin (2t)dt=...
+	\end{align*}
 \end{example}
 \end{exbar}
 
 
 \begin{exbar}
 \begin{example}
-	Calcolare il baricentro di un ramo di elica cilindrica omogenea \textcolor{orange}{(a densità costante)} parametrizzato da 
+	Calcolare il baricentro di un ramo di elica cilindrica omogenea {\color{blue}(a densità costante)} parametrizzato da 
 	\begin{equation*}
 		\gamma (t)=(\cos t , \sin t , t)\,\,\,\,\, t \in [0, 2 \pi].
 	\end{equation*}
+	
 	Calcolare poi il suo momento d'inerzia rispetto all'asse $z$ supponendo la densità $\rho $ pari a $\rho(\overline{\gamma}(t))=t(2\pi-t)$, $t\in [0,2\pi]$.
 	\begin{align*}
 		x_B=& \frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}x ds\\
 		y_B=& \frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}y ds\\
 		z_B=& \frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}}z ds
 	\end{align*}
-	$L(\overline{\gamma})=2\pi \sqrt{2}$ \textcolor{orange}{(curva dell'esempio precedente con $R=h=1$)}.
+	
+	$L(\overline{\gamma})=2\pi \sqrt{2}$ {\color{blue}(curva dell'esempio precedente con $R=h=1$)}.
 	\begin{align*}
-		x_B&=\frac{1}{2\pi \sqrt{2}}\int_0^{2\pi}\cos t \sqrt{2} dt =0\\
+		x_B&=\frac{1}{2\pi \sqrt{2}} \int_0^{2\pi}\cos t \uppercomment{\sqrt{2}}{}{=|\gamma'(t)|} dt = 0\\
 		y_B&=\frac{1}{2\pi \sqrt{2}}\int_0^{2\pi}\sin t \sqrt{2} dt =0 \\
 		z_B&= \frac{1}{2\pi \sqrt{2}}\int_0^{2\pi}t \sqrt{2}dt=\pi
 	\end{align*}
-	Potevo indovinare che $x_B=y_B$ per ragioni di simmetria. Il baricentro ha coordinate $(0,0,\pi)$.\\
+	
+	Potevo indovinare che $x_B=y_B$ per ragioni di simmetria. Il baricentro ha coordinate $(0,0,\pi)$.
+	
 	Per determinare il momento d'inerzia rispetto all'asse $z$ mi serve la distanza di un generico punto $(x,y,z)$ dall'asse $z$, $d(x,y,z)=\sqrt{x^2+y^2}$.
 	\begin{align*}
-		I&=\int_{\overline{\gamma}}\rho(x,y,z)(d(x,y,z))^2 ds\\
-		&= \int_0^{2\pi} \rho(\cos t , \sin t , t)\sqrt{\cos^2 t +\sin ^2 t}|\overline{\gamma}'(t)|dt\\
+		I&=\int_{\overline{\gamma}}\rho(x,y,z)(d(x,y,z))^2 ds
+		\\
+		&= \int_0^{2\pi} \rho(\cos t , \sin t , t)\sqrt{\cos^2 t +\sin ^2 t}|\overline{\gamma}'(t)|dt
+		\\
 		&= \int_0^{2\pi}t(2\pi -t )1 \sqrt{2}dt = \sqrt{2}\int_0^{2\pi} t(2\pi -t)dt=...
 	\end{align*}
 \end{example}
@@ -772,105 +829,148 @@ Momento d'inerzia
 
 \begin{exbar}
 \begin{example}
-	Calcolare il baricentro della curva piana omogenea di equazione polare \textcolor{orange}{(Arco di spirale logaritmica)}
+	Calcolare il baricentro della curva piana omogenea di equazione polare {\color{blue}(Arco di spirale logaritmica)}
 	\begin{equation*}
 		\rho=e^{k\theta}, \,\,\,\, \, 0 \leq \theta \leq \pi\,\,\,\, k \neq 0
 	\end{equation*}
-	Calcolare poi il suo momento d'inerzia rispetto alla retta di equazione $x=y=z$, supponendo la densità costante e pari a $1$.\\
+	
+	Calcolare poi il suo momento d'inerzia rispetto alla retta di equazione $x=y=z$, supponendo la densità costante e pari a $1$.
 	
 	\segnaposto % pag 442
 	
-	$\overline{\gamma}(\theta)=(e^{k\theta}\cos \theta, e^{k\theta}\sin \theta)$, $\theta \in [0,\pi]$\\
-	$|\overline{\gamma}'(\theta)|\sqrt{(e^{k\theta})^2+(ke^{k\theta})^2}=e^{k\theta}\sqrt{1+k^2}$\\
-	$L(\overline{\gamma})=\int_0^{\pi} \sqrt{1+k^2}e^{k\theta}=\frac{\sqrt{1+k^2}}{k}(e^{k\pi}-1)$
+	$$\overline{\gamma}(\theta)=(e^{k\theta}\cos \theta, e^{k\theta}\sin \theta), \qquad \theta \in [0,\pi]$$
+	
+	$$|\overline{\gamma}'(\theta)|\sqrt{(e^{k\theta})^2+(ke^{k\theta})^2}=e^{k\theta}\sqrt{1+k^2}$$
+	
+	$$L(\overline{\gamma})=\int_0^{\pi} \sqrt{1+k^2}e^{k\theta}=\frac{\sqrt{1+k^2}}{k}(e^{k\pi}-1)$$
 	\begin{align*}
 		x_B&=\frac{1}{L(\overline{\gamma})}\int_{\overline{\gamma}} x ds\\
-		&= \frac{k}{\sqrt{1+k^2}(e^{k\pi}-1)}\int_0^\pi e^{k\theta} \cos \theta e^{k\theta}\sqrt{1+k^2}d\theta\\
+		&= \frac{k}{\sqrt{1+k^2}(e^{k\pi}-1)}\int_0^\pi e^{k\theta} \cos \theta \overbrace{e^{k\theta}\sqrt{1+k^2}}^{{\color{blue} \|\overline{\gamma}'(\theta)\|}} d\theta\\
 		&=\frac{k}{(e^{k\pi}-1)}\int_0^\pi e^{2k\theta} \cos \theta d \theta=...
 	\end{align*}
+	
 	Analogamente
 	\begin{equation*}
 		y_B= \frac{k}{e^{k\pi}-1}\int_0^\pi e^{2k \theta} \sin \theta d \theta
 	\end{equation*}
-	\textcolor{orange}{($z_B=0$) per ovvie ragioni}.\\
-	Per quanto riguarda il momento d'inerzia avremo un asse rispetto a cui possiamo calcolarlo che è la retta di equzione $x=y=z$. Mi devo procurare la distanza di un generico punto $(x_0,y_0,z_0)$ da questa retta.\\
+	
+	{\color{blue}($z_B=0$ per ovvie ragioni)}
+	
+	Per quanto riguarda il momento d'inerzia avremo un asse rispetto a cui possiamo calcolarlo che è la retta di equazione $x=y=z$. Mi devo procurare la distanza di un generico punto $(x_0,y_0,z_0)$ da questa retta.
 
 	\segnaposto % pag 443
 
-	Prendo un piano passante per $(x_0,y_0,z_0)$ e ortogonale alla retta data. \\
-	\textcolor{orange}{$ax+by+cz+d=0 \Rightarrow (a,b,c)$ è ortogonale al piano.}\\
-	$(1,1,1)$ è vettore direttore della retta data $\Rightarrow x+y+z+d=0$ è un piano ortogonale alla retta. Siccome deve passare per $(x_0,y_0,z_0) \Rightarrow d= -x_0-y_0-z_0 \Rightarrow x+y+z-x_0-y_0-z_0=0$ è l'equazione del piano cercato. Il sotegno della curva giace sul piano $xy \Rightarrow z_0=0$. Quindi $x+y+z-x_0-y_0=0$ è piano ortogonale alla retta passante per $(x_0,y_0,z_0)$. Troviamone l'intersezione con la retta data. \\
+	{\color{red}Prendo un piano passante per $(x_0,y_0,z_0)$ e ortogonale alla retta data.}
 	
+	{\color{teal}$ax+by+cz+d=0 \Rightarrow (a,b,c)$ è ortogonale al piano.}
+	
+	$(1,1,1)$ è vettore direttore della retta data $\Rightarrow x+y+z+d=0$ è un piano ortogonale alla retta. Siccome deve passare per $(x_0,y_0,z_0) \Rightarrow d= -x_0-y_0-z_0$ $\Rightarrow x+y+z-x_0-y_0-z_0=0$ è l'equazione del piano cercato. Il sostegno della curva giace sul piano $xy \Rightarrow z_0=0$. Quindi $x+y+z-x_0-y_0=0$ è piano ortogonale alla retta passante per $(x_0,y_0,z_0)$. Troviamone l'intersezione con la retta data.
 	\begin{equation*}
 		\begin{cases}
-			&x+y+z-x_0-y_0=0\\
+			&x+y+z-x_0-y_0=0
+			\\
 			& x=y=z
-		\end{cases}\rightarrow \begin{cases}
+		\end{cases}\Rightarrow 
+		\begin{cases}
 			&3x = x_0+y_0\\
 			&x=y=z
-		\end{cases}\rightarrow \left( \frac{x_0+y_0}{3},\frac{x_0+y_0}{2}, \frac{x_0+y_0}{3} \right)
+		\end{cases}\Rightarrow \left( \frac{x_0+y_0}{3},\frac{x_0+y_0}{2}, \frac{x_0+y_0}{3} \right)
 	\end{equation*}
-	\begin{equation*}
-		d(x_0,y_0,0)=\sqrt{\left( \frac{x_0+y_0}{3}-x_0 \right)^2+\left( \frac{x_0+y_0}{3}-y_0 \right)^2 + \left( \frac{x_0+y_0}{3} \right)^2}=\sqrt{x_0^2+y_0^2-\frac{1}{3}(x_0+y_0)^2}
-	\end{equation*}
+	\begin{align*}
+		d(x_0,y_0,0)
+		&=\sqrt{\left( \frac{x_0+y_0}{3}-x_0 \right)^2+\left( \frac{x_0+y_0}{3}-y_0 \right)^2 + \left( \frac{x_0+y_0}{3} \right)^2}=
+		\\
+		&=\sqrt{x_0^2+y_0^2-\frac{1}{3}(x_0+y_0)^2}
+	\end{align*}
 	\begin{align*}
 		I&=\int_{\overline{\gamma}}(d(x,y,z))^2 1 ds\\
 		&= \int_0^{\pi} (d(e^{k\theta}\cos \theta, e^{k\theta}\sin \theta,0))^2\cdot e^{k\theta}\sqrt{1+k^2}d\theta\\
-		&=\int_0^\pi \left( e^{2k\theta} \cos^2 \theta + e^{2k\theta}\sin^2 \theta - \frac{1}{3}\left( e^{k\theta}\cos \theta + e^{k\theta}\sin \theta \right)^2 \right)e^{k\theta} \sqrt{1+k^2}d\theta\\
-		&\sqrt{1+k^2}\int_0^\pi e^{3k\theta} \left( \frac{2}{3}-\frac{2}{3}\cos\theta \sin \theta \right) d \theta\\
-		&\frac{2}{3}\sqrt{1+k^2}\int_0^\pi e^{3k\theta} (1-\cos \theta \sin \theta) d\theta=...
+		&=\int_0^\pi \left( e^{2k\theta} \cos^2 \theta + e^{2k\theta}\sin^2 \theta - \frac{1}{3}\left( e^{k\theta}\cos \theta + e^{k\theta}\sin \theta \right)^2 \right)e^{k\theta} \sqrt{1+k^2}d\theta=\\
+		&=\sqrt{1+k^2}\int_0^\pi e^{3k\theta} \left( \frac{2}{3}-\frac{2}{3}\cos\theta \sin \theta \right) d \theta=\\
+		&=\frac{2}{3}\sqrt{1+k^2}\int_0^\pi e^{3k\theta} (1-\cos \theta \sin \theta) d\theta=...
 	\end{align*}
 \end{example}
 \end{exbar}
 
-% ============================================== PAG 448
-
 
 \begin{exbar}
 \begin{example}
-	Si consideri l'intersezione tra la semisfera di equazione $x^2+y^2+z^2=4$ contenuta nel semispazio $z \geq 0$ ed il cilindro di equazione $(x-1)^2+y^2=1$ \textcolor{orange}{(Contorno della finestra si Viviani)}. Tale intersezione è il sostegno di una curva.
+	Si consideri l'intersezione tra la semisfera di equazione $x^2+y^2+z^2=4$ contenuta nel semispazio $z \geq 0$ ed il cilindro di equazione $(x-1)^2+y^2=1$  {\color{blue}(Contorno della finestra si Viviani)}. Tale intersezione è il sostegno di una curva.
 	\begin{enumerate}
 		\item Trovare una parametrizzazione $\overline{\gamma}$ della curva in modo che sia un circuito regolare a tratti .
 		\item Calcolare le equazioni della retta tangente a $\overline{\gamma}$ nel punto $(1,1,\sqrt{2})$.
 		\item Calcolare $\int_{\overline{\gamma}}\frac{z}{\sqrt{2+x}}ds$.
 	\end{enumerate}
+	
+	{\centering $\sim \circ \sim$ \par}
+	
 	\begin{enumerate}
-		\item $\overline{\gamma}(t) =(\gamma_1(t), \gamma_2(t), \gamma_3(t))$\\
-		$\begin{cases}
+		\item $\overline{\gamma}(t) =(\gamma_1(t), \gamma_2(t), \gamma_3(t))$
+		
+		$$\begin{cases}
 			&(\gamma_1(t))^2+(\gamma_2(t))^2+(\gamma_3 (t))^2=4\\
-			&(\gamma_1(t))^2+(\gamma_2(t))^2=1,\,\,\,\, \gamma_3(t)\geq 0
-		\end{cases}$\\
-		\textcolor{orange}{$(\gamma_1 (t),\gamma2(t))$ appartiene ad una circonferenza di centro $(1,0)$ e raggio $1$ nel piano $xy$.}\\
-		$(\gamma_1(t),\gamma_2(t))=(1+\cos t , \sin t)$, $t \in [-\pi, \pi]$.\\
-		Dalla prima equazione, sapendo che $\gamma_3(t)\geq 0$ ricaviamo \\
-		$\gamma_3 (t)=\sqrt{4-(\gamma_1(t))^2-(\gamma_2(t))^2}=\sqrt{2(1-\cos t)}$, $ t \in [-\pi,\pi]$\\
-		$\overline{\gamma}(t)= (1+\cos t, \sin t, \sqrt{2(1-\cos t)})$, $\overline{\gamma} (-\pi) = \overline{\gamma}(\pi)$
-		\item Troviamo $t$ per cui $(1,1,\sqrt{2})=\overline{\gamma}(t) \Rightarrow t = \frac{\pi}{2}$\\
-		$\begin{cases}
-			& x= 1+\gamma_1' (\frac{\pi}{2})(\rho -\frac{\pi}{2})\\
-			& y= 1+\gamma_2' (\frac{\pi}{2})(\rho -\frac{\pi}{2})\\
-			& z= \sqrt{2} + \gamma_3' (\frac{\pi}{2})(\rho - \frac{\pi}{2})
-		\end{cases}$\\
-		$\gamma_1'(t)=-\sin t$, $\gamma_2'(t)=\cos t$, $\gamma_3(t)=\sqrt{2} \frac{1}{2\sqrt{1-\cos t}}\sin t$\\
-		$\gamma_1'\left(\frac{\pi}{2}\right)=-1$, $\gamma_2\left( \frac{\pi}{2}\right)=0$, $\gamma_3'\left( \frac{\pi}{2}\right)=\frac{\sqrt{2}}{2}$\\
-		$\begin{cases}
-			& x= 1-\left(\rho-\frac{\pi}{2}\right)\\
-			& y= 1\\
-			& z= \sqrt{2} +\frac{\sqrt{2}}{2}\left(\rho -\frac{\pi}{2}\right)
-		\end{cases}$\\
-		$\rho-\frac{\pi}{2}=1-x$\\
-		$\begin{cases}
-			& y=1\\
-			& z= \sqrt{2} +\frac{\sqrt{2}}{2}(1-x)
-		\end{cases}$
-		equazioni carteziane della retta cercata
-		\item Calcolare $\int_{\overline{\gamma}} \frac{z}{\sqrt{2+x}}ds$\\
-		$\overline{\gamma}(t)=\left( 1+\cos t, \sin t, \sqrt{2(1-\cos t)} \right)$, $t \in [-\pi,\pi]$\\
-		$\overline{\gamma}'(t)=\left( -\sin t , \cos t , \frac{\sqrt{2}}{2}\frac{\sin t }{\sqrt{1-\cos t}}\right)$, $t \in [-\pi,\pi]$\\
-		$|\overline{\gamma}'(t)|=\sqrt{\sin^2t+\cos^2t+\frac{1}{2}\frac{\sin^2 t}{1-\cos t}}=\sqrt{\frac{2-2\cos t + \sin^2 t}{2(1-\cos t)}}=\sqrt{\frac{2(1-\cos t)+1-\cos^2t}{2(1-\cos t)}}=$\\$=\sqrt{\frac{2(1-\cos t)+ (1-\cos t)(1+\cos t)}{2(1-\cos t)}}=\sqrt{\frac{3+\cos t}{2}}$, $ t \in [-\pi,\pi]$\\
-		$\overline{\gamma}(t)=\left(1+\cos t, \sin t , \sqrt{2(1-\cos t)}\right)$, $t \in [-\pi,\pi]$\\
-		$\int_{\overline{\gamma}} \frac{z}{\sqrt{2+x}}ds=\int_{-\pi}^\pi \sqrt{\frac{2(1-\cos t)}{\sqrt{2+1+\cos t}}}\sqrt{\frac{3+\cos t}{2}}dt= \int_{-\pi}^\pi \sqrt{1-\cos t}dt=$\\
-		$=2 \int_0^\pi \sqrt{1-\cos t}dt= 2 \sqrt{2}\int_0^\pi|\sin \frac{t}{2}|dt=...$
+			&\lowercomment{(\gamma_1(t))^2+(\gamma_2(t))^2=1}{(\gamma_1 (t),\gamma2(t)) \text{ appartiene ad una circonferenza di}}{\text{centro } (1,0) \text{ e raggio 1 nel piano } xy} \qquad \gamma_3(t)\geq 0
+		\end{cases}$$
+
+		$$(\gamma_1(t),\gamma_2(t))=(1+\cos t , \sin t), \qquad t \in [-\pi, \pi]$$
+		
+		Dalla prima equazione, sapendo che $\gamma_3(t)\geq 0$ ricaviamo
+		
+		$$\gamma_3 (t)=\sqrt{4-(\gamma_1(t))^2-(\gamma_2(t))^2}=\sqrt{2(1-\cos t)}, \qquad t \in [-\pi,\pi]$$
+		
+		$$\overline{\gamma}(t)= (1+\cos t, \sin t, \sqrt{2(1-\cos t)})$$
+		
+		$$\overline{\gamma} (-\pi) = \overline{\gamma}(\pi)$$
+		
+		\item Troviamo $t$ per cui $(1,1,\sqrt{2})=\overline{\gamma}(t) \Rightarrow t = \frac{\pi}{2}$
+		
+		$$\begin{cases}
+			x= 1+\gamma_1' (\frac{\pi}{2})(\rho -\frac{\pi}{2}) & \text{equazioni}\\
+			y= 1+\gamma_2' (\frac{\pi}{2})(\rho -\frac{\pi}{2}) & \textbf{parametriche della}\\
+			z= \sqrt{2} + \gamma_3' (\frac{\pi}{2})(\rho - \frac{\pi}{2}) & \text{retta cercata}
+		\end{cases} $$
+		
+		{\centering $\gamma_1'(t)=-\sin t$, $\gamma_2'(t)=\cos t$, $\gamma_3(t)=\sqrt{2} \frac{1}{2\sqrt{1-\cos t}}\sin t$ \par}
+		
+		{\centering $\gamma_1'\left(\frac{\pi}{2}\right)=-1$, $\gamma_2\left( \frac{\pi}{2}\right)=0$, $\gamma_3'\left( \frac{\pi}{2}\right)=\frac{\sqrt{2}}{2}$ \par}
+		
+		$$\begin{cases}
+			x= 1-\left(\rho-\frac{\pi}{2}\right)\\
+			y= 1 & \rho-\frac{\pi}{2}=1-x\\
+			z= \sqrt{2} +\frac{\sqrt{2}}{2}\left(\rho -\frac{\pi}{2}\right)
+		\end{cases}$$
+		
+		$$\begin{cases}
+			y=1 & \text{equazioni cartesiane}\\
+			z= \sqrt{2} +\frac{\sqrt{2}}{2}(1-x) & \text{della retta cercata}
+		\end{cases}$$
+
+		\item Calcolare $\int_{\overline{\gamma}} \frac{z}{\sqrt{2+x}}ds$
+		
+		$$\overline{\gamma}(t)=\left( 1+\cos t, \sin t, \sqrt{2(1-\cos t)} \right), \qquad t \in [-\pi,\pi]$$
+		
+		$$\overline{\gamma}'(t)=\left( -\sin t , \cos t , \frac{\sqrt{2}}{2}\frac{\sin t }{\sqrt{1-\cos t}}\right), \qquad t \in [-\pi,\pi]$$
+		
+		\begin{align*} 
+			|\overline{\gamma}'(t)|
+			&=\sqrt{\underbrace{\sin^2t+\cos^2t}_{{\color{blue} =1}} +\frac{1}{2}\frac{\sin^2 t}{1-\cos t}}=\sqrt{\frac{2-2\cos t + \sin^2 t}{2(1-\cos t)}}=
+			\\
+			&=\sqrt{\frac{2(1-\cos t)+1-\cos^2t}{2(1-\cos t)}}=\sqrt{\frac{2 \cancel{(1-\cos t)}+ \cancel{(1-\cos t)(1+\cos t)}}{2\cancel{(1-\cos t)}}}=
+			\\
+			&=\sqrt{\frac{3+\cos t}{2}}, \qquad t \in [-\pi,\pi]
+		\end{align*}
+		
+		$$\overline{\gamma}(t)=\left( {\color{blue}1+\cos t}, \sin t , {\color{teal}\sqrt{2(1-\cos t)}} \right), \qquad t \in [-\pi,\pi]$$
+		\begin{align*} 
+			\int_{\overline{\gamma}} \frac{\color{teal}z}{\color{blue}\sqrt{2+x}}ds
+			&=\int_{-\pi}^\pi 
+			\sqrt{\frac{\cancel{2}(1-\cos t)}
+				{\cancel{\sqrt{\underbrace{2+1+\cos t}_{{\color{blue} 3+\cos t}} }}}}
+			\lowercomment{\sqrt{\frac{\cancel{3+\cos t}}{\cancel{2}}}}{=\|\overline{\gamma}'(t)\|}{}dt =
+			\int_{-\pi}^\pi \sqrt{1-\cos t}dt=
+			\\
+			&=2 \int_0^\pi \lowercomment{\sqrt{1-\cos t}}{\sqrt{2}(\sin \frac{t}{2})}{} dt= 2 \sqrt{2}\int_0^\pi|\sin \frac{t}{2}|dt=...
+		\end{align*}
 	\end{enumerate}
 \end{example}
 \end{exbar}
@@ -880,39 +980,71 @@ Momento d'inerzia
 	
 $A \subseteq \R^n$ aperto, $f:A \rightarrow \R$ differenziabile in $A$. Si definisce il differenziale di $f$ in $x_0 \in A$ come la funzione lineare 
 \begin{align*}
-	df(\overline{x}_0)=&\R^n\rightarrow\R\\
+	df(\overline{x}_0):
+	&\R^n\rightarrow\R\\
 	&\overline{y}\mapsto \langle \nabla f(\overline{x}_0),\overline{y} \rangle
 \end{align*}
-$f(\overline{x})=f(\overline{x_0})+\langle \nabla f (\overline{x_0}),\overline{x}-\overline{x_0} \rangle + o(|\overline{x}-\overline{x_0}|)=f(\overline{x_0})+df(\overline{x_0})(\overline{x}-\overline{x_0})+o(|\overline{x}-\overline{x_0}|)$\\
-$df(\overline{x_0})(\overline{y})=\langle \nabla f (\overline{x_0}),\overline{y}\rangle =\sum_{j=1}^n\frac{\partial f}{\partial x_j}(\overline{x_0})y_j$, $\overline{y}=(y_1,...y_n)$\\
-$\pi_j: \R^n \rightarrow \R$, $\overline{y}\mapsto y_j$, $y_j=\pi_j(\overline{y})$ $j-$esima proiezione\\
-$\overline{x}=(x_1,...x_n)$, $x_j=\pi_j(\overline{x})$\\
-$\pi_j$ è lineare\\
-$d \pi_j (\overline{x_0})(\overline{x})=\pi_j(x)=x_j$\\
-$\nabla \pi_j (\overline{x_0})=\overline{e_j}$\\
-$d \pi _j (\overline{x_0})=dx_j= \R^n \rightarrow \R$, $\overline{x} \mapsto x_j=\pi_j(\overline{x})$\\
-$df(\overline{x_0})(\overline{x})=\sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})x_j=\sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})dx_j(\overline{x})$\\
-$df(\overline{x_0})=\sum_{j=1}^n \frac{\partial f}{\partial x_j} (\overline{x_0})dx_j$\\
+
+$$f(\overline{x})=f(\overline{x_0})+\langle \nabla f (\overline{x_0}),\overline{x}-\overline{x_0} \rangle + o(|\overline{x}-\overline{x_0}|)=f(\overline{x_0})+df(\overline{x_0})(\overline{x}-\overline{x_0})+o(|\overline{x}-\overline{x_0}|)$$
+
+$df(\overline{x_0})(\overline{y})=\langle \nabla f (\overline{x_0}),\overline{y}\rangle =\sum_{j=1}^n\frac{\partial f}{\partial x_j}(\overline{x_0})y_j$, $\overline{y}=(y_1,...y_n)$
+\begin{align*} 
+	\pi_j &: \R^n \rightarrow \R
+	\\
+	&\overline{y}\mapsto y_j & y_j=\pi_j(\overline{y})
+\end{align*}
+
+$j-$esima proiezione
+
+$\overline{x}=(x_1,...x_n)$, $x_j=\pi_j(\overline{x})$
+
+$\pi_j$ è lineare
+
+$$d \pi_j (\overline{x_0})(\overline{x})=\pi_j(x)=x_j$$
+
+$\nabla \pi_j (\overline{x_0})=\overline{e_j}$
+
+$d \pi _j (\overline{x_0})=dx_j= \R^n \rightarrow \R$, $\overline{x} \mapsto x_j=\pi_j(\overline{x})$
+
+$df(\overline{x_0})(\overline{x})= \sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})x_j=\sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})dx_j(\overline{x})$
+
+$df(\overline{x_0})=\sum_{j=1}^n \frac{\partial f}{\partial x_j} (\overline{x_0}) \lowercomment{dx_j}{\pi_j}{}$
+
 Se $f$ è differenziabile in $A$, posso definire
 \begin{align*}
-	df: &A \rightarrow \mathcal{L}(\R^n,\R)\\
+	df: &A \rightarrow \uppercomment{\mathcal{L}(\R^n,\R)}{\text{insieme delle funzioni}}{\text{lineari da } \R^n \text{ in } \R}
+	\\
 	&\overline{x_0} \mapsto df(\overline{x_0})
 \end{align*}
 \begin{equation*}
-	df: \overline{x_0} \mapsto df(\overline{x_0})=\sum_{j=1}^n \frac{\partial f}{\partial x_j}(\overline{x_0})dx_j
+	df: \overline{x_0} \mapsto df(\overline{x_0})=\sum_{j=1}^n \lowercomment{\frac{\partial f}{\partial x_j}(\overline{x_0})}{f_j(\overline{x}_0)}{} dx_j
 \end{equation*}
+
+{\color{blue} $\overline{F}:A\to \R^n$ campo vettoriale: $\overline{F}(x_0)=(F_1(x_0), \ldots, F_n(x_0))$}
 
 
 \begin{definition}
 	Una forma differenziale su $A \subseteq \R^n$ aperto è una scrittura del tipo 
-	$\omega (\overline{x})=F_1(\overline{x})dx_1 +F_2(\overline{x})dx_2 +...+ F_n(\overline{x})dx_n$ dove $\overline{F}: A \rightarrow \R^n$, $\overline{x} \mapsto (F_1(\overline{x}),...,F_n(\overline{x}))$ è un campo vettoriale, intendendo con questo che la funzione $\overline{x}\mapsto \omega (\overline{x})$ associa ad ogni punto $\overline{x} \in A$ la funzione lineare
+	
+	$$\omega (\overline{x})=F_1(\overline{x})dx_1 +F_2(\overline{x})dx_2 +...+ F_n(\overline{x})dx_n$$ 
+	
+	\begin{align*}
+		\text{dove } \overline{F}: &A \rightarrow \R^n
+		\\
+		&\overline{x} \mapsto (F_1(\overline{x}),...,F_n(\overline{x}))
+	\end{align*}
+	
+	è un campo vettoriale, intendendo con questo che la funzione $\overline{x}\mapsto \omega (\overline{x})$ associa ad ogni punto $\overline{x} \in A$ la funzione lineare
 	\begin{equation*}
 		\omega(\overline{x})(\overline{y}) =\langle \overline{F}(\overline{x}),\overline{y}\rangle =\sum_{j=1}^n F_j (\overline{x}) y_j.
 	\end{equation*}
-	$\overline{F}$ si dice campo vettoriale associato ad $\omega$ e determina univocamente la forma differenziale.\\
+	
+	$\overline{F}$ si dice campo vettoriale associato ad $\omega$ e determina univocamente la forma differenziale.
+	
 	Una forma differenziale si dice di classe $C^k$, $k \geq 0$, se tale è il campo vettoriale ad essa associato.
 \end{definition}
 
+%========================================= pag 453
 
 \begin{exbar}
 \begin{example}
