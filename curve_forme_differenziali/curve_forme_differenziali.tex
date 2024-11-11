@@ -1044,34 +1044,43 @@ Se $f$ è differenziabile in $A$, posso definire
 	Una forma differenziale si dice di classe $C^k$, $k \geq 0$, se tale è il campo vettoriale ad essa associato.
 \end{definition}
 
-%========================================= pag 453
 
 \begin{exbar}
 \begin{example}
-	$\omega(x,y) =\frac{x}{x^2+y^2}dx+\frac{y}{x^2+y^2}dy$, $(x,y)\in \R^2\backslash \{(0,0)\}$\\
-	$\overline{F}(x,y)=(F_1(x,y),F_2(x,y))$\\
-	$F_1(x,y)=\frac{x}{x^2+y^2}$, $F_2(x,y)=\frac{y}{x^2+y^2}$\\
-	$\omega(1,2)=\frac{1}{5}dx+\frac{2}{5}dy$\\
-	intendendo con questo la funzione lineare
-	$ \omega (1,2)(a,b)=\frac{1}{5}dx (a,b) + \frac{2}{5}dy (a,b) =\frac{1}{5}a + \frac{2}{5} b$\\
-	$\omega(2,3)=\frac{2}{13}dx+\frac{3}{13}dy$\\
-	$\omega(2,3)(a,b)=\frac{2}{13}a+\frac{3}{13}b$\\
-	$\omega(x,y)(a,b)=\frac{x}{x^2+y^2}a+ \frac{y}{x^2+y^2}b= \langle \overline{F}(a,y),(a,b) \rangle$
+	$$\omega(x,y) =\frac{x}{x^2+y^2}dx+\frac{y}{x^2+y^2}dy, \qquad (x,y)\in \R^2\backslash \{(0,0)\}$$
+	
+	$$\overline{F}(x,y)=(F_1(x,y),F_2(x,y)), \quad F_1(x,y)=\frac{x}{x^2+y^2}, \quad F_2(x,y)=\frac{y}{x^2+y^2}$$
+	
+	$\omega(1,2)=\frac{1}{5}dx+\frac{2}{5}dy$ intendendo con questo la funzione lineare
+	
+	$ \omega (1,2)(a,b)=\frac{1}{5}dx (a,b) + \frac{2}{5}dy (a,b) =\frac{1}{5}a + \frac{2}{5} b$
+	
+	$\omega(2,3)=\frac{2}{13}dx+\frac{3}{13}dy \qquad \omega(2,3)(a,b)=\frac{2}{13}a+\frac{3}{13}b$
+	
+	$$\omega(x,y)(a,b)=\frac{x}{x^2+y^2}a+ \frac{y}{x^2+y^2}b= \langle \overline{F}(a,y),(a,b) \rangle$$
 \end{example}
 \end{exbar}
 
 
 \begin{definition}
 	Sia $\omega$ forma differenziale su $A \subseteq \R^n$ aperto e sia $\overline{F}=(F_1,...,F_n)$ il campo vettoriale ad essa associato. Data una curva $C^1$ a tratti $\overline{\gamma} :[a,b]\rightarrow \R^n$ con sostegno contenuto in $A$ si dice integrale (curvilineo) di seconda specie di $\omega$ o $\overline{F}$ lungo $\overline{\gamma}$ la quantità
-	\begin{equation*}
-		\int_{\overline{\gamma}}\omega = \int_{\overline{\gamma}}\langle \overline{F},d\overline{\gamma} \rangle = \int_a^b \langle \overline{F}(\overline{\gamma}(t)),\overline{\gamma}'(t) \rangle dt=\int_a^b (F_1 (\overline{\gamma}(t))\gamma_1'(t)+...+F_n(\overline{\gamma}(t))\gamma_n'(t))dt
-	\end{equation*}
-	dove $\overline{\gamma}=(\gamma_1,...,\gamma_n)$, nel senso che i primi due inegrali esistono $\Leftrightarrow $ esiste l'ultimo.\\
+	\begin{align*}
+		\int_{\overline{\gamma}}\omega 
+		&= \int_{\overline{\gamma}}\langle \overline{F},d\overline{\gamma} \rangle = \int_{\overline{\gamma}} \overline{F} \cdot d\overline{\gamma} =
+		\\
+		& = \uppercomment{\int_a^b \langle \overline{F}(\overline{\gamma}(t)),\overline{\gamma}'(t) \rangle dt}{\text{lavoro di } \overline{F}}{\text{lungo } \overline{\gamma}}=
+		\\
+		&=\int_a^b (F_1 (\overline{\gamma}(t))\gamma_1'(t)+...+F_n(\overline{\gamma}(t))\gamma_n'(t))dt
+	\end{align*}
+	
+	dove $\overline{\gamma}=(\gamma_1,...,\gamma_n)$, nel senso che i primi due integrali esistono $\Leftrightarrow $ esiste l'ultimo.
+	
 	Se $\overline{\gamma} $ è un circuito, si utilizzano anche le notazioni
 	\begin{equation*}
 		\oint_{\overline{\gamma}} \omega= \oint_{\overline{\gamma}} \overline{F} d\overline{\gamma} = \oint_{\overline{\gamma}}\langle \overline{F},d\overline{\gamma} \rangle
 	\end{equation*}
-	Se $\overline{\gamma}$ è una curva di Jordan (circuito piano) allora utiliziamo le notazioni
+	
+	Se $\overline{\gamma}$ è una curva di Jordan (circuito piano) allora utilizziamo le notazioni
 	\begin{align*}
 		&\ointctrclockwise_{\overline{\gamma}} \omega=\ointctrclockwise_{\overline{\gamma}}\overline{F}d\overline{\gamma}\,\,\,\,\, \text{se} \,\, \overline{\gamma}\,\, \text{è percorsa in senso antiorario} \\
 		&\ointclockwise_{\overline{\gamma}}\omega=\ointclockwise_{\overline{\gamma}}\overline{F}d\overline{\gamma} \,\,\,\,\, \text{se} \,\, \overline{\gamma}\,\, \text{è percorsa in senso orario}
@@ -1082,12 +1091,12 @@ Se $f$ è differenziabile in $A$, posso definire
 \begin{theorem}
 	
 	\label{th: pag 455}
-	Sia $\overline{\gamma}$ e $\overline{\zeta}$, $C^1$ a tratti, due curve equivalenti  con sostegno contenuto in un aperto $A \subseteq \R^n$ e sia $\omega$ una forma differenziale contua su $A$. Allora
+	Sia $\overline{\gamma}$ e $\overline{\zeta}$ due curve equivalenti $C^1$ a tratti con sostegno contenuto in un aperto $A \subseteq \R^n$ e sia $\omega$ una forma differenziale continua su $A$. Allora
 	\begin{align*}
-		\int_{\overline{\gamma}} \omega= \int_{\overline{\zeta}} \omega
-		\,\,\,\,\,\text{se}\,\, \overline{\gamma}\,\, \text{e}\,\,\overline{\zeta}\,\,\, \text{hanno lo stesso verso,}\\
-		\int_{\overline{\gamma}}\omega= -\int_{\overline{\zeta}} \omega 
-		\,\,\,\,\,\text{se} \,\,\overline{\gamma} \,\, \text{e}\,\,\overline{\zeta} \,\,\,\text{hanno verso opposto.}
+		\int_{\overline{\gamma}} \omega &= \int_{\overline{\zeta}} \omega
+		\qquad \text{se}\,\, \overline{\gamma}\,\, \text{e}\,\,\overline{\zeta}\,\,\, \text{hanno lo stesso verso,}\\
+		\int_{\overline{\gamma}}\omega &= -\int_{\overline{\zeta}} \omega 
+		\qquad \text{se} \,\,\overline{\gamma} \,\, \text{e}\,\,\overline{\zeta} \,\,\,\text{hanno verso opposto.}
 	\end{align*}
 \end{theorem}
 
@@ -1097,36 +1106,52 @@ Se $f$ è differenziabile in $A$, posso definire
 	
 	\begin{align*}
 		\overline{\gamma}:& [a,b]\rightarrow A\\
-		\overline{\zeta}:&[a,b]\rightarrow A
+		\overline{\zeta}:&[c,d]\rightarrow A
 	\end{align*}
+	
 	$\overline{\zeta}=\overline{\gamma}(\phi(u))$, $\phi:[c,d]\rightarrow[a,b]$
-	invertibile, di classe $C^1$ con $\phi'(u)\neq 0 \,\,\, \forall \, n \in [c,d]$.\\
+	invertibile, di classe $C^1$ con $\phi'(u)\neq 0 \,\,\, \forall \, n \in [c,d]$.
+	
 	Sia $\overline{F} : A \rightarrow \R^n$ il campo vettoriale associato ad $\omega$.
 	\begin{align*}
-		\int_{\overline{\zeta}} \omega& = \int_c^d \langle  \overline{F}(\overline{\zeta}(u)),\overline{\zeta}'(u) \rangle du \\
-		& =\int_c^d \langle \overline{F}(\overline{\gamma}(\phi(u))), \overline{\gamma}' (\phi(u)) \rangle du\\
-		&= \int_c^d \langle \overline{F}(\overline{\gamma}(\phi(u))),\overline{\gamma}'(\phi(u))\rangle \phi' (u)du\\
-		&=\int_{\phi^{-1}(c)}^{\phi^{-1}(d)}\langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t)\rangle dt\\
+		\int_{\overline{\zeta}} \omega& = \int_c^d \langle  \overline{F}(\overline{\zeta}(u)),\overline{\zeta}'(u) \rangle du=
+		\\
+		& =\int_c^d \langle \overline{F}(\overline{\gamma}(\phi(u))), \overline{\gamma}' (\phi(u)) \rangle du=
+		\\
+		&= \int_c^d \langle \overline{F}(\overline{\gamma}(\phi(u))),\overline{\gamma}'(\phi(u))\rangle \phi' (u)du=
+		\\
+		&\uppercomment{=}{}{t=\phi(u)} \int_{\phi^{-1}(c)}^{\phi^{-1}(d)}\langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t)\rangle dt=
+		\\
 		&=\begin{cases}
-			& \int_a^b \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt\,\,\, \text{se}\,\,\, \phi \,\,\, \text{crescente}  \\
-			& \int_b^a \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt\,\,\, \text{se}\,\,\, \phi \,\,\, \text{decrescente}
+			& \int_a^b \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt\,\,\, \text{se}\,\,\, \phi \,\,\, \text{crescente}  
+			\\
+			& \lowercomment{\int_b^a \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt}{=-\int_{a}^{b} \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt}{} \,\,\, \text{se}\,\,\, \phi \,\,\, \text{decrescente}
 		\end{cases}\\
 		&=\begin{cases}
-			&\int_{\overline{\gamma}}\omega \text{  se  } \overline{\gamma} \text{  e  }\overline{\zeta} \text{  hanno lo stesso verso}\\
+			&\int_{\overline{\gamma}}\omega \text{  se  } \overline{\gamma} \text{  e  }\overline{\zeta} \text{  hanno lo stesso verso}
+			\\
 			&-\int_{\overline{\gamma}}\omega \text{  se  } \overline{\gamma} \text{  e  } \overline{\zeta} \text{  hanno verso opposto}
-		\end{cases}
+		\end{cases} & \square
 	\end{align*}
 \end{dembar}
 
 	
 \begin{exbar}
 \begin{example}
-	Calcolare $\int_{\overline{\gamma}}\frac{x^2}{y}dx \frac{y}{x^2+y^2}dy$ dove $\overline{\gamma}(t)=(\cos t , \sin t)$, $\frac{\pi}{4}\leq t \leq \frac{\pi}{2}$.\\
+	Calcolare 
+	$$\int_{\overline{\gamma}} \uppercomment{\frac{x^2}{y}dx + \frac{y}{x^2+y^2}dy}{\omega(x,y)}{}$$
+	
+	dove $\overline{\gamma}(t)=(\cos t , \sin t)$, $\frac{\pi}{4}\leq t \leq \frac{\pi}{2}$.
+	
 	$\overline{F}(x,y)=\left( \frac{x^2}{y}, \frac{y}{x^2+y^2} \right)$, $y\neq 0$
 	\begin{align*}
-		\int_{\overline{\gamma}}\frac{x^2}{y}dx + \frac{ y}{x^2+y^2 dy} &= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \overline{F}(\overline{\gamma}(t)),\overline{\gamma}'(t) \rangle dt\\
-		&=\int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \overline{F}(\cos t , \sin t), \overline{\gamma}'(t) \rangle dt\\
-		&= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \left( \frac{\cos^2 t}{\sin t}, \sin t \right), \left( -\sin t, \cos t \right) \rangle dt\\
+		\int_{\overline{\gamma}}\frac{x^2}{y}dx + \frac{ y}{x^2+y^2} dy 
+		&= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \overline{F}(\overline{\gamma}(t)),\overline{\gamma}'(t) \rangle dt=
+		\\
+		&=\int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \bigg\langle \overline{F}(\cos t , \sin t), \overline{\gamma}'(t) \bigg\rangle dt=
+		\\
+		&= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\langle \left( \frac{\cos^2 t}{\sin t}, \sin t \right), \left( -\sin t, \cos t \right) \rangle dt=
+		\\
 		&=\int_{\frac{\pi}{4}}^{\frac{\pi}{2}}(-\cos^2 t+\sin t \cos t)dt=...
 	\end{align*}
 \end{example}
@@ -1136,9 +1161,9 @@ Se $f$ è differenziabile in $A$, posso definire
 \begin{exbar}
 \begin{example}
 	\label{ex: pag 458}	
-	Calcolare $\int_{\overline{\gamma}}y dx$ dove $\overline{\gamma}$ è il circuito il cui sostegno è il quadrato contenuto nel piano di vertici $(1,1),(1,-1),(-1,-1),(-1,1)$ percorso in verso antiorario. \\
-	$\omega(x,y)= y dx$\\
-	$\overline{F}(x,y)=(y,0)$\\
+	Calcolare $\int_{\overline{\gamma}}y dx$ dove $\overline{\gamma}$ è il circuito il cui sostegno è il quadrato contenuto nel piano di vertici $(1,1),(1,-1),(-1,-1),(-1,1)$ percorso in verso antiorario. 
+	
+	$$\omega(x,y)= y dx \qquad \overline{F}(x,y)=(y,0)$$
 	
 	\segnaposto % pag 459_1
 \end{example}
@@ -1146,7 +1171,7 @@ Se $f$ è differenziabile in $A$, posso definire
 
 
 \begin{definition}
-	Date due curve $\overline{\zeta}_1:[0,L]\rightarrow \R^n$ e $\overline{\zeta}_2:[0,M]\rightarrow \R^n$ tali che $\overline{\zeta}_1(L)=\overline{\zeta}_2(0)$ si definisce \underline{concatenazione} di $\overline{\zeta}_1$ e $\overline{\zeta}_2$ la curva 
+	Date due curve $\overline{\zeta}_1:[0,L]\rightarrow \R^n$ e $\overline{\zeta}_2:[0,M]\rightarrow \R^n$ tali che $\overline{\zeta}_1(L)=\overline{\zeta}_2(0)$ si definisce \textbf{concatenazione} di $\overline{\zeta}_1$ e $\overline{\zeta}_2$ la curva 
 	\begin{equation*}
 		(\overline{\zeta}_1+\overline{\zeta}_2)(t)=\begin{cases}
 			\overline{\zeta}_1 (t)\,\,\,\, &\text{  se  } t\in[0,L]\\
@@ -1172,33 +1197,68 @@ Se $f$ è differenziabile in $A$, posso definire
 	\begin{equation*}
 		\int_{\overline{\gamma}}\omega=\int_{\overline{\gamma}_1}\omega+\int_{\overline{\gamma}_2}\omega + \int_{\overline{\gamma}_3}\omega + \int_{\overline{\gamma}_4} \omega
 	\end{equation*}
-	$\overline{\gamma}_1(t)=(1,t)$, $t \in [-1,1]$\\
-	$\int_{\overline{\gamma}_1}\omega =\int_{-1}^1 \langle \overline{F}(1,t), (0,1)\rangle dt = \int_{-1}^1 \langle (t,0), (0,1)\rangle dt=0$.\\
-	$\overline{\gamma}_2^-(t)=(t,1)$, che è curva equivalente a $\overline{\gamma}_2$ percorsa in verso opporto, $t\in[-1,1]$\\
-	$\int_{\overline{\gamma}_1}\omega= -\int_{\overline{\gamma}_2^-}\omega =-\int_{-1}^1 \langle 
-	\overline{F}(\overline{\gamma}_2^- (t)),\overline{\gamma}_2^-'(t)\rangle dt=-\int_{-1}^1 \langle 
-	\overline{F} (t,1),(1,0)\rangle dt = -\int_{-1}^1 \langle (1,0),(1,0) \rangle dt=-2$\\
-	$\gamma_2^-(t)=(-1,t)$, $t \in [-1,1]$,\\
-	curva equivalente a $\overline{\gamma}_3$ percorsa in verso opporto.\\
-	$\int_{\overline{\gamma}_3}\omega= -\int_{\overline{\gamma}_3^-}\omega =-\int_{-1}^1 \langle \overline{F}(\overline{\gamma_3}^-(t)), \overline{\gamma}_3^- ' (t) \rangle dt = -\int_{-1}^1 \langle \overline{F}(-1,t),(0,1) \rangle dt=-\int_{-1}^1 \langle (t,0),(0,1) \rangle dt =0$\\
-	$\overline{\gamma}_4(t)=(t,-1)$, $ t \in [-1,1]$\\
-	$\int_{\overline{\gamma}_4}\omega = \int_{-1}^1 \langle \overline{F}(\overline{\gamma}_4(t)),\overline{\gamma}_4'(t) \rangle dt= \int_{-1}^1 \langle (-1,0),(1,0) \rangle dt=-2$\\
-	$\Rightarrow \int_{\overline{\gamma}}\omega =0-2+0-2=-4$
+	\begin{itemize} 
+		\item $\overline{\gamma}_1(t)=(1,t)$, $t \in [-1,1]$
+	
+		$$\int_{\overline{\gamma}_1}\omega =\int_{-1}^1 \langle \overline{F}(1,t), (0,1)\rangle dt \uppercomment{=}{f(x,y)=}{=(y,0)} \int_{-1}^1 \langle (t,0), (0,1)\rangle dt=0$$
+		
+		\item $\overline{\gamma}_2^-(t)=(t,1)$, che è curva equivalente a $\overline{\gamma}_2$ percorsa in verso opposto, $t\in[-1,1]$
+		\begin{align*} 
+			\int_{\overline{\gamma}_1}\omega = -\int_{\overline{\gamma}_2^-} \omega 
+			&=-\int_{-1}^1 \langle 
+			\overline{F}(\overline{\gamma}_2^- (t)),\overline{\gamma}_2^{-\prime} (t)\rangle dt=
+			\\
+			&=-\int_{-1}^1 \langle \overline{F} (t,1),(1,0)\rangle dt =
+			\\
+			&=-\int_{-1}^1 \langle (1,0),(1,0) \rangle dt=-2
+		\end{align*}
+		
+		\item $\gamma_3^-(t)=(-1,t)$, $t \in [-1,1]$, curva equivalente a $\overline{\gamma}_3$ percorsa in verso opposto.
+		\begin{align*} 
+			\int_{\overline{\gamma}_3}\omega= -\int_{\overline{\gamma}_3^-}\omega 
+			&=-\int_{-1}^1 \langle \overline{F}(\overline{\gamma}_3^-(t)), \overline{\gamma}_3^{-\prime} (t) \rangle dt =
+			\\
+			&=-\int_{-1}^1 \langle \overline{F}(-1,t),(0,1) \rangle dt=
+			\\
+			&=-\int_{-1}^1 \langle (t,0),(0,1) \rangle dt =0
+		\end{align*}
+		
+		\item $\overline{\gamma}_4(t)=(t,-1)$, $ t \in [-1,1]$
+		\begin{align*} 
+			\int_{\overline{\gamma}_4}\omega 
+			&=\int_{-1}^1 \langle \overline{F}(\overline{\gamma}_4(t)),\overline{\gamma}_4'(t) \rangle dt=
+			\\
+			&= \int_{-1}^1 \langle (-1,0),(1,0) \rangle dt=-2
+		\end{align*}
+	\end{itemize}
+	
+	$$\Rightarrow \int_{\overline{\gamma}}\omega =0-2+0-2=-4$$
 \end{exbar}
 
 
 \begin{definition}
-	$A \subseteq \R^n$ aperto, $\omega$ forma differenziale continua su $A$ con $\overline{F}=(F_1,...,F_n)$ campo vettoriale associato. $\omega$ si dice \underline{esatta} ed $\overline{F}$ si dice \underline{conservativo} se $\exists \,\,U \in  C^1(A)$ tale che $\omega(\overline{x})=dU(\overline{x})\,\, \forall\,\, \overline{x} \in A$, cioè $\overline{F}(\overline{x})=\nabla U(\overline{x})\,\, \forall\,\, \overline{x}\in A$. $U $ è detta (funzione) potenziale. 
-	\textcolor{orange}{$\overline{F} = \nabla U(\overline{x})$\\
-	$\nabla U(\overline{x})=(\partial_{x_1},..., \partial_{x_n}U(\overline{x}))$\\
-	$\overline{F}(\overline{x})=(F_1(\overline{x}),...,F_n(\overline{x}))$\\
-	$F_1(\overline{x}) =\partial_{x_1}U(\overline{x}),..., F_n(\overline{x})=\partial_{x_n} U(\overline{x})\,\,\, \forall \overline{x}\in A$\\
-	$F_j(\overline{x})=\partial_{x_j}U(\overline{x})\,\,\, \forall \overline{x}\in A\,\, j=1,...,n$.}
+	$A \subseteq \R^n$ aperto, $\omega$ forma differenziale continua su $A$ con $\overline{F}=(F_1,...,F_n)$ campo vettoriale associato. $\omega$ si dice \textbf{esatta} ed $\overline{F}$ si dice \textbf{conservativo} se $\exists \,\,U \in  C^1(A)$ tale che $\omega(\overline{x})=dU(\overline{x})\,\, \forall\,\, \overline{x} \in A$, cioè $\overline{F}(\overline{x})=\nabla U(\overline{x})\,\, \forall\,\, \overline{x}\in A$. $U $ è detta (funzione) potenziale.
+	 
+	{\color{teal}
+		$$\overline{F} = \nabla U(\overline{x})$$
+		
+		$$\nabla U(\overline{x})=(\partial_{x_1},..., \partial_{x_n}U(\overline{x}))$$
+		
+		$$\overline{F}(\overline{x})=(F_1(\overline{x}),...,F_n(\overline{x}))$$
+	}
+	
+	{\color{blue}
+		$\overline{F}$ in componenti è $F_1(\overline{x}) =\partial_{x_1}U(\overline{x}),..., F_n(\overline{x})=\partial_{x_n} U(\overline{x})\,\,\, \forall \overline{x}\in A$
+	}
+	
+	{\color{red}
+	Quindi in generale vale $F_j(\overline{x})=\partial_{x_j}U(\overline{x})\,\,\, \forall \overline{x}\in A\,\, j=1,...,n$.}
 \end{definition}
 	
 
 \begin{attbar}
-	Se $U$ è potenziale di $\overline{F}$ allora anche $U+c$ con $c$ costante reale lo è perchè $\nabla (U+c)=\nabla U+\nabla c= \nabla U = \overline{F}$.
+	Se $U$ è potenziale di $\overline{F}$ allora anche $U+c$ con $c$ costante reale lo è perché
+	$$\nabla (U+c)=\nabla U+ \lowercomment{\nabla c}{=0}{}= \nabla U = \overline{F}$$
 \end{attbar}
 
 
@@ -1208,13 +1268,23 @@ Se $f$ è differenziabile in $A$, posso definire
 
 
 \begin{exbar}
-	$\overline{F} (\overline{x})=\nabla U_1 (\overline{x})=\nabla U_2(\overline{x})\,\, \forall \overline{x}\in A $\\
-	$\nabla U_1(\overline{x})-\nabla U_2(\overline{x})=0\,\,\forall \overline{x}\in A \Rightarrow \nabla(U_1-U_2)(\overline{x})=0 \,\, forall \overline{x}\in A$\\
-	$\exists c \in \R \,\, U_1(\overline{x}) - U(\overline{x}) = c \,\,\, \forall \overline{x}\in A$
+	\begin{center} 
+		$\overline{F} (\overline{x})=\nabla U_1 (\overline{x})=\nabla U_2(\overline{x})\,\, \forall \overline{x}\in A $
+		
+		$\nabla U_1(\overline{x})-\nabla U_2(\overline{x})=0\,\,\forall \overline{x}\in A \Rightarrow \nabla(U_1-U_2)(\overline{x})=0 \,\, forall \overline{x}\in A$\\
+
+		$\exists c \in \R \,\, U_1(\overline{x}) - U(\overline{x}) = c \,\,\, \forall \overline{x}\in A$
+	\end{center}
 \end{exbar}
 	
 	
-$F:\R\rightarrow \R$ campo vettoriale continuo su $\R$, con forma differenziale associata $\omega(x)=F(x)dx$. $F$ è conservativo $\Leftrightarrow \exists \,\, U : \R \rightarrow \R$ di classe $C^1$ tale che $U'(x)=F(x)\,\, \forall \, x \in \R$, ovvero che $U(x)=\int_0^xF(t)dt$
+$F:\R\rightarrow \R$ campo vettoriale continuo su $\R$, con forma differenziale associata $\omega(x)=F(x)dx$. $F$ è conservativo $\Leftrightarrow \exists \,\, U : \R \rightarrow \R$ di classe $C^1$ tale che 
+
+\begin{gather*} 
+	U'(x)=F(x)\,\, \forall \, x \in \R
+	\\
+	U(x)=\int_0^xF(t)dt
+\end{gather*}
 
 \begin{attbar}
 	$ \Rightarrow$ ogni campo vettoriale continuo su $\R$ o su un suo aperto è conservativo per il teorema fondamentale del calcolo.
@@ -1224,14 +1294,24 @@ $F:\R\rightarrow \R$ campo vettoriale continuo su $\R$, con forma differenziale 
 \begin{exbar}
 \begin{example}
 	\label{ex: pag 464}
-	$\overline{F}:\R^2\rightarrow \R^2$, $\overline{F}(x,y)=(y,-x)$, $\omega (x,y)=ydx-xdy$, $\overline{F}$ è di classe $C^\infty$. E' conservativo? Esiste cioè $U:\R^2 \rightarrow \R$ tale che $\nabla U(x,y)=\overline{F}(x,y)\,\forall (x,y)\in \R^2$?\\
-	$(\partial_xU(x,y),\partial_yU(x,y))=(y,-x)$\\
+	$\overline{F}:\R^2\rightarrow \R^2$, $\overline{F}(x,y)=(y,-x)$, $\omega (x,y)=ydx-xdy$, $\overline{F}$ è di classe $C^\infty$. 
+	
+	È conservativo? Esiste cioè $U:\R^2 \rightarrow \R$ tale che $\nabla U(x,y)=\overline{F}(x,y)\,\forall (x,y)\in \R^2$?
+	
+	$(\partial_xU(x,y),\partial_yU(x,y))=(y,-x)$
+	
 	$\begin{cases}
 		&\partial_xU(x,y)=y\\
 		&\partial_yU(x,y)=-x
-	\end{cases}$\\
-	\textcolor{orange}{se queste uguaglianze sono vere allora $\partial_xU$ e $\partial_yU$ sono $C^1 \Rightarrow U$ è $C^2$.}\\
-	Per il teorema di Schwarz abbiamo che $\partial_{yx}^2U(x,y)=1=\partial_{y,x}U(x,y)=-1 \Rightarrow \overline{F}$ non è conservativo.
+	\end{cases}$
+	
+	{\textcolor{blue}se queste uguaglianze sono vere allora $\partial_xU$ e $\partial_yU$ sono $C^1 \Rightarrow U$ è $C^2$.}
+	
+	Per il teorema di Schwarz abbiamo che 
+	
+	$$\partial_{yx}^2U(x,y)=1, \qquad \partial_{y,x}U(x,y)=-1$$
+	
+	$\Rightarrow \overline{F}$ non è conservativo.
 \end{example}
 \end{exbar}
 
@@ -1239,7 +1319,7 @@ $F:\R\rightarrow \R$ campo vettoriale continuo su $\R$, con forma differenziale 
 \begin{theorem}
 	
 	\label{th: pag 465}
-	$\omega$ forma differenziale di classe $C^1$ su un aperto $A$ di $\R^n$ con $\overline{F}:A \rightarrow \R^n$,  $\overline{F}=(F_1,...,F_2)$, campo vettoriale associato. Se $\omega$ è esatta, allora è \underline{chiusa}, cioè vale
+	$\omega$ forma differenziale di classe $C^1$ su un aperto $A$ di $\R^n$ con $\overline{F}:A \rightarrow \R^n$,  $\overline{F}=(F_1,...,F_2)$, campo vettoriale associato. Se $\omega$ è esatta, allora è \textbf{chiusa}, cioè vale
 	\begin{equation*}
 		\partial_{x_i}F_j(\overline{x})=\partial_{x_j}F_i(\overline{x})\,\,\,\,\,\,\,\forall \, i,j=1,...,n\,\,\, \forall \overline{x}\in A.
 	\end{equation*}
@@ -1249,38 +1329,62 @@ $F:\R\rightarrow \R$ campo vettoriale continuo su $\R$, con forma differenziale 
 \begin{exbar}
 	\textbf{Continuazione esempio \ref{ex: pag 464}}
 	
-	$\overline{F}(x,y)=(y,-x)$, $F_1(x,y)=y$, $F_2(x,y)=-x$. $\omega$ è chiusa se $\partial_yF_1(x,y)=\partial_xF_2(x,y)\Rightarrow \omega$ non è chiusa $\Rightarrow$ non è esatta.
+	$$\overline{F}(x,y)=(y,-x)$$
+	
+	$$F_1(x,y)=y, \qquad F_2(x,y)=-x$$
+	
+	$\omega$ è chiusa se $\lowercomment{\partial_yF_1(x,y)}{=1}{} = \lowercomment{\partial_xF_2(x,y)}{=-1}{} \Rightarrow \omega$ non è chiusa $\Rightarrow$ non è esatta.
 \end{exbar}
 	
 	
 \begin{dembar}
 	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 465}}
 	
-	Se $\omega$ è esatta $\exists \, U : A\rightarrow \R$ tale che $\overline{F}(\overline{x})=\nabla U(\overline{x})\,\, \forall\, \overline{x}\in A$, $\overline{F}\in C^1(A)\Rightarrow \nabla U \in C^1(A) \Rightarrow U \in C^2(A)\Rightarrow $ vale il teorema di Schwarz. \\
-	$\partial_{x_ix_j}^2U(\overline{x})=\partial_{x_jx_i}^2U(\overline{x})$\\
-	$F_k(\overline{x})=\partial_{x_k}U(\overline{x})\,\, \forall \, k =1,...,n$\\
-	$\partial_{x_i}F_j(\overline{x})=\partial_{x_i}(\partial_{x_j}U(\overline{x}))=\partial_{x_ix_j}^2U(\overline{x})=\partial_{x_jx_i}^2U(\overline{x})=\partial_{x_j}(\partial_x_iU(\overline{x}))=\partial_{x_j}F_i(\overline{x})$.
+	Se $\omega$ è esatta $\exists \, U : A\rightarrow \R$ tale che 
+	
+	$$\overline{F}(\overline{x})=\nabla U(\overline{x})\,\, \forall\, \overline{x}\in A$$
+	
+	$\overline{F}\in C^1(A)\Rightarrow \nabla U \in C^1(A) \Rightarrow U \in C^2(A)\Rightarrow $ vale il teorema di Schwarz. 
+	
+	$$\partial_{x_i x_j}^2U(\overline{x})= \partial_{x_j x_i}^2U(\overline{x})$$
+	
+	$$F_k(\overline{x})=\partial_{x_k}U(\overline{x})\,\, \forall \, k =1,...,n$$
+	\begin{align*} 
+		{\partial_{x_i}} F_j(\overline{x})
+		& \lowercomment{=}{k=j}{} {\partial_{x_i}} ({\partial_{x_j}} U(\overline{x}))=
+		\\
+		&={\partial_{x_i x_j}}^2U(\overline{x})={\partial_{x_j x_i}}^2U(\overline{x})=
+		\\
+		&={\partial_{x_j}} ({\partial_{x_i}} U(\overline{x})) \lowercomment{=}{k=i}{} {\partial_{x_j}} F_i(\overline{x})
+	\end{align*}
 \end{dembar}
 	
 
 \textbf{Osservazione:}
 
-$A \subseteq \R^3$ aperto, $\overline{F}: A \rightarrow \R^3$ campo vettoriale $\overline{F}= (F_1,F_2,F_3)$, $\overline{x}=(x,y,z)$. Sia $\omega$ forma differenziale associata ad $\overline{F}$. E' chiusa $\Leftrightarrow$\\
-$\begin{cases}
-	&\partial_yF_1=\partial_xF_2\\
-	&\partial_zF_1=\partial_x F_3\\
-	&\partial_yF_3= \partial_z F_2
-\end{cases}$\\
-$\text{rot}\overline{F}=\det \begin{pmatrix}
-	\overline{e}_1 & \overline{e}_2 & \overline{e}_3\\
-	\partial_x &\partial_y &\partial_z\\
-	F_1 &F_2 &F_3
-\end{pmatrix}= (\partial_yF_3-\partial_zF_2)\overline{e}_1-(\partial_xF_3-\partial_zF_1)\overline{e}_2+(\partial_xF_2-\partial_yF_1)\overline{e}_3$\\
+$A \subseteq \R^3$ aperto, $\overline{F}: A \rightarrow \R^3$ campo vettoriale $\overline{F}= (F_1,F_2,F_3)$, $\overline{x}=(x,y,z)$. Sia $\omega$ forma differenziale associata ad $\overline{F}$. E' chiusa $\Leftrightarrow$
+
+$$\begin{cases}
+	\partial_yF_1=\partial_xF_2\\
+	\partial_zF_1=\partial_x F_3\\
+	\partial_yF_3= \partial_z F_2
+\end{cases}$$
+\begin{align*} 
+	\text{rot}\overline{F}
+	&=\det \begin{pmatrix}
+		\overline{e}_1 & \overline{e}_2 & \overline{e}_3\\
+		\partial_x &\partial_y &\partial_z\\
+		F_1 &F_2 &F_3
+	\end{pmatrix}=
+	\\
+	&=(\partial_yF_3-\partial_zF_2)\overline{e}_1-(\partial_xF_3-\partial_zF_1)\overline{e}_2+(\partial_xF_2-\partial_yF_1)\overline{e}_3
+\end{align*}
 
 \begin{attbar}
-	$\omega $ è chiusa $\Leftrightarrow \text{rot}\overline{F}=\overline{0}\,\, \forall \, (x,y,z)\in A$ e in tal caso $\overline{F}$ si dice \underline{irrotazionale}.
+	$\omega $ è chiusa $\Leftrightarrow \text{rot}\overline{F}=\overline{0}\,\, \forall \, (x,y,z)\in A$ e in tal caso $\overline{F}$ si dice \textbf{irrotazionale}.
 \end{attbar}
 
+% ============================================= pag 468
 
 \begin{exbar}
 \begin{example}
@@ -1534,7 +1638,7 @@ Fissato $\lambda \in[0,1]$, $t \mapsto \phi(t,\lambda)$, $t \in [a,b]$ è la par
 	
 	Sia $\overline{\gamma}$ circuito in $A$. Allora $\overline{\gamma}$ è omotopo in $A$ ad una curva costante $\overline{\zeta}:[a,b]\rightarrow A$, $t \mapsto \overline{x}$, $\overline{x}\in A$ fissato.
 	\begin{equation*}
-		\oint_{\overline{\gamma}} \omega = \oint_{\overline{\zeta}} \omega= \int_a^b \langle \overline{F}(\overline{\zeta}(t)), \overline{\zeta}'(t)\rangledt
+		\oint_{\overline{\gamma}} \omega = \oint_{\overline{\zeta}} \omega= \int_a^b \langle \overline{F}(\overline{\zeta}(t)), \overline{\zeta}'(t)\rangle dt
 	\end{equation*}
 	\textcolor{orange}{$\omega$ è chiusa e $\overline{\gamma}$ e $\overline{\zeta}$ sono omotopi}
 	$\Rightarrow \omega$ è esatta perchè il suo integrale di seconda specie lungo ogni circuito in $A$ è nullo.
