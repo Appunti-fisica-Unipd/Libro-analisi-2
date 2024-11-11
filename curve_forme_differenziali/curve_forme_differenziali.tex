@@ -292,9 +292,7 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 \end{exbar}
 
 
-\subsection{Regola della Catena}
-
-\begin{theorem}
+\begin{theorem} \textbf{Regola della Catena}
 	$\overline{\gamma}: I \rightarrow \R^n$ curva derivabile in $t_0 \in I$, $A \subseteq \R^n$ aperto, $\overline{f}: A \rightarrow \R^p$ differenziabile in $\overline{\gamma}(t_0)\in A$. Allora 
 	
 	\begin{align*} 
@@ -976,7 +974,7 @@ Momento d'inerzia
 \end{exbar}
 
 
-\subsection{Forme differenziali (Campi vettoriali)}
+\subsection{Integrali di seconda specie}
 	
 $A \subseteq \R^n$ aperto, $f:A \rightarrow \R$ differenziabile in $A$. Si definisce il differenziale di $f$ in $x_0 \in A$ come la funzione lineare 
 \begin{align*}
@@ -1236,6 +1234,7 @@ Se $f$ è differenziabile in $A$, posso definire
 \end{exbar}
 
 
+\subsubsection{Forma differenziale esatta}
 \begin{definition}
 	$A \subseteq \R^n$ aperto, $\omega$ forma differenziale continua su $A$ con $\overline{F}=(F_1,...,F_n)$ campo vettoriale associato. $\omega$ si dice \textbf{esatta} ed $\overline{F}$ si dice \textbf{conservativo} se $\exists \,\,U \in  C^1(A)$ tale che $\omega(\overline{x})=dU(\overline{x})\,\, \forall\,\, \overline{x} \in A$, cioè $\overline{F}(\overline{x})=\nabla U(\overline{x})\,\, \forall\,\, \overline{x}\in A$. $U $ è detta (funzione) potenziale.
 	 
@@ -1524,6 +1523,7 @@ $$\begin{cases}
 \end{exbar}
 
 
+\subsubsection{Funzione potenziale}
 \begin{theorem}
 	
 	\label{th: pag 475}
@@ -1603,7 +1603,7 @@ $$U(x,y)=U(x_0,y_0)+\int_{\overline{\gamma}_1}\omega + \int_{\overline{\gamma}_2
 		\int_{\overline{\gamma}_1}\omega
 		&=U(\overline{\gamma}_1(b))-U(\overline{\gamma}_1(a))=
 		\\
-		& {\color{blue} \qquad = \qquad\qquad =}
+		& {\color{blue} \qquad \rotatebox{90}{=} \qquad\qquad \rotatebox{90}{=}}
 		\\
 		&= U(\overline{\gamma}_2(d))-U(\overline{\gamma}_2(c))= \int_{\overline{\gamma}_2}\omega
 	\end{align*}
@@ -1662,7 +1662,7 @@ $$U(x,y)=U(x_0,y_0)+\int_{\overline{\gamma}_1}\omega + \int_{\overline{\gamma}_2
 		\oint_{\overline{\gamma}}\omega 
 		&=\int_0^{2\pi}\langle (-\sin t, \cos t),(-\sin t , \cos t) \rangle dt = \int_0^{2\pi} 1dt=2\pi\neq 0
 		\\
-		&{\color{blue} \myarrow[315] \overline{F} \left( -\frac{y}{x^2+y^2}, \frac{x}{x^2+y^2} \right), \qquad \overline{\gamma}^\prime (t) = (-\sin t, \cos t)}
+		&{\color{blue} \overline{F} = \left( -\frac{y}{x^2+y^2}, \frac{x}{x^2+y^2} \right), \qquad \overline{\gamma}^\prime (t) = (-\sin t, \cos t)}
 	\end{align*}
 	
 	$\Rightarrow \omega$ non è esatta in  $\R^2 \backslash \{(0,0)\}$
@@ -1690,6 +1690,7 @@ $$U(x,y)=U(x_0,y_0)+\int_{\overline{\gamma}_1}\omega + \int_{\overline{\gamma}_2
 \end{theorem}
 
 
+\subsubsection{Omotopia}
 \begin{definition}
 	$A \subseteq \R^n$ aperto, $\overline{\gamma}_0$ e $\overline{\gamma}_1$ circuito con sostegno contenuto in $A$ parametrizzati sullo stesso intervallo $[a,b]$. Allora $\overline{\gamma}_0$ e $\overline{\gamma}_1$ si dicono \textbf{omotopi in $A$} se esiste una \textbf{funzione continua}
 	\begin{equation*}
@@ -1772,7 +1773,7 @@ Fissato $\lambda \in[0,1]$, $t \mapsto \phi(t,\lambda)$, $t \in [a,b]$ è la par
 		&t \mapsto \overline{x}, \qquad \overline{x}\in A \text{ fissato.}
 	\end{align*}
 	\begin{equation*}
-		\oint_{\overline{\gamma}} \omega \lowercomment{=}{\omega \text{è chiusa e}}{\overline{\gamma} \text{ e } \overline{\zeta} \text{ sono omotopi}} 
+		\oint_{\overline{\gamma}} \omega \quad \lowercomment{=}{\omega \text{è chiusa e}}{\overline{\gamma} \text{ e } \overline{\zeta} \text{ sono omotopi}} \quad
 		\oint_{\overline{\zeta}} \omega= \int_a^b \langle \overline{F}(\overline{\zeta}(t)), \uppercomment{\overline{\zeta}'(t)}{}{=\overline{0}}\rangle dt
 	\end{equation*}
 
@@ -1952,15 +1953,44 @@ Fissato $\lambda \in[0,1]$, $t \mapsto \phi(t,\lambda)$, $t \in [a,b]$ è la par
 		
 		%========================================== pag 497
 		
-		$\overline{\gamma}'(\theta)(-3\cos^2 \theta, -2 \cos \theta \sin \theta + \cos^2\theta)$\\
-		$\parallel \overline{\gamma}' (\theta)\parallel \left[ 9\cos^4\theta \sin^2 \theta+4\cos^2\theta \sin^4 \theta - 4 \cos^4 \theta \sin^2 \theta+\cos ^6 \theta \right]^{\frac{1}{2}}=\sqrt{
-			(\cos\theta)^4 + 4 (\cos \theta )^2(\sin \theta)^2}$\\
-		Il versore tangente si scrive\\
-		$\frac{\overline{\gamma}'(\theta)}{\parallel \overline{\gamma}'(\theta) \parallel} =\left( -\frac{3 (\cos \theta)\sin \theta}{\sqrt{\cos^2 \theta + 4 \sin^2 \theta}}, \frac{\cos^3 \theta - 2\cos \theta \sin^2 \theta}{|\cos \theta|\sqrt{\cos^2 \theta + 6\sin^2 \theta}} \right)$.
-		\item $\int_{\overline{\gamma}}(\overline{F}+\overline{G})d\overline{\gamma}$\\
-		$\oint_{\overline{\gamma}}(\overline{F}+\overline{G})d\overline{\gamma} =\oint_{\overline{\gamma}}\overline{F}d\overline{\gamma}+\oint_{\overline{\gamma}}\overline{G}d\overline{\gamma}$\\
-		Osserviamo che $\partial_x\left( -\frac{2y}{1+(\sin x - y^2)^2} \right)= +2y \frac{1}{(1+(\sin x - y)^2)^2}\cdot 2 (\sin x - y^2) \cos x = \partial_y \left( \frac{\cos x}{1+(\sin x-y^2)^2} \right)$, cioè la forma differenziale associata ad $\overline{F}$ è chiusa e quindi, essendo $\R^2$ semplicemente connesso, $\overline{F}$ è conservativo $\Rightarrow \oint_{\overline{\gamma}}\overline{F}d\overline{\gamma}=0$\\
-		$\oint_{\overline{\gamma}}(\overline{F}+\overline{G})d\overline{\gamma}= \int_{\overline{\gamma}}\overline{G } d\overline{\gamma}=\int_{-\pi}^{\pi}\langle \overline{G}(\overline{\gamma}(\theta))\overline{\gamma}'(\theta) \rangle d\theta=\int_{-\pi}^\pi \langle (-\cos^2 \theta \sin \theta, \cos^3 \theta),(-3 \cos^2 \theta \sin \theta, -2\cos \theta \sin^2 \theta + \cos^3 \theta) \rangle d \theta =\int_{-\pi}^\pi (3\cos^4 \theta \sin^2 \theta - 2 \cos^4 \theta \sin^2 \theta + \cos^6 \theta)d \theta=...$
+		$$\overline{\gamma}'(\theta)(-3\cos^2 \theta, -2 \cos \theta \sin \theta + \cos^2\theta)$$
+		
+		\begin{align*} 
+			\parallel \overline{\gamma}' (\theta)\parallel 
+			&= \left[ 9\cos^4\theta \sin^2 \theta+4\cos^2\theta \sin^4 \theta - 4 \cos^4 \theta \sin^2 \theta+\cos ^6 \theta \right]^{\frac{1}{2}}=
+			\\
+			&=\sqrt{
+			(\cos\theta)^4 + 4 (\cos \theta )^2(\sin \theta)^2}
+		\end{align*}
+		
+		Il versore tangente si scrive
+		
+		$$\frac{\overline{\gamma}'(\theta)}{\parallel \overline{\gamma}'(\theta) \parallel} =\left( -\frac{3 (\cos \theta)\sin \theta}{\sqrt{\cos^2 \theta + 4 \sin^2 \theta}}, \frac{\cos^3 \theta - 2\cos \theta \sin^2 \theta}{|\cos \theta|\sqrt{\cos^2 \theta + 6\sin^2 \theta}} \right)$$
+		
+		\item $\int_{\overline{\gamma}}(\overline{F}+\overline{G})d\overline{\gamma}$
+		
+		$$\oint_{\lowercomment{\overline{\gamma}}{\overline{\gamma} \text{ è chiusa}}{}}(\overline{F}+\overline{G})d\overline{\gamma} =\oint_{\overline{\gamma}}\overline{F}d\overline{\gamma}+\oint_{\overline{\gamma}}\overline{G}d\overline{\gamma}$$
+		
+		Osserviamo che 
+		\begin{align*} 
+			\partial_x\left( -\frac{2y}{1+(\sin x - y^2)^2} \right)
+			&= +2y \frac{1}{(1+(\sin x - y)^2)^2}\cdot 2 (\sin x - y^2) \cos x =
+			\\
+			&= \partial_y \left( \frac{\cos x}{1+(\sin x-y^2)^2} \right)
+		\end{align*}
+		
+		cioè la forma differenziale associata ad $\overline{F}$ è chiusa e quindi, essendo $\R^2$ semplicemente connesso, $\overline{F}$ è conservativo $\Rightarrow \oint_{\overline{\gamma}}\overline{F}d\overline{\gamma}=0$
+		\begin{align*} 
+			\oint_{\overline{\gamma}}(\overline{F}+\overline{G})d\overline{\gamma}
+			&= \int_{\overline{\gamma}}\overline{G } d\overline{\gamma}
+			\quad \uppercomment{=}{\overline{G} \text{ non è}}{\text{conservativo}} \quad \int_{-\pi}^{\pi}\langle \overline{G}(\overline{\gamma}(\theta))\overline{\gamma}'(\theta) \rangle d\theta=
+			\\
+			&=\int_{-\pi}^\pi \langle (-\cos^2 \theta \sin \theta, \cos^3 \theta), 
+			\\
+			& \qquad (-3 \cos^2 \theta \sin \theta, -2\cos \theta \sin^2 \theta + \cos^3 \theta) \rangle d \theta =
+			\\
+			&=\int_{-\pi}^\pi (3\cos^4 \theta \sin^2 \theta - 2 \cos^4 \theta \sin^2 \theta + \cos^6 \theta)d \theta=...
+		\end{align*}
 	\end{enumerate}
 \end{example}
 \end{exbar}
@@ -1972,22 +2002,40 @@ Fissato $\lambda \in[0,1]$, $t \mapsto \phi(t,\lambda)$, $t \in [a,b]$ è la par
 	\begin{equation*}
 		\omega (x,y)=\left(\frac{2x}{x^2+y^2}+2xy^\alpha e^{x^2y} \right) dx + \left( \frac{2y}{x^2+y^2}+x^2e^{x^2y} \right) dy
 	\end{equation*}
-	definita sull'aperto $A= \{ (x,y)\in \R^2 \mid y >0\}$. \\
-	Stabilire per quali valori del parametro $\alpha$ $\omega$ è esatta.\\
-	$A$ è un semipiano e quindi è semplicemente connesso $\Rightarrow \omega$ è esatta in $A \Leftrightarrow $ è chiusa $\Rightarrow$ bisogna trovare tutti e soli i valori del parametro $\alpha \in \R$ per cui vale $\partial_y\left( \frac{2x}{x^2+y^2}+2xy^\alpha e^{x^2y} \right) = \partial_x\left( \frac{2y}{x^2+y^2}+x^2e^{x^2y} \right)\,\,\,\, \forall (x,y)\in A$\\
-	$\partial_y\left( \frac{2x}{x^2+y^2} + 2xy^\alpha e^{x^2y} \right)=-\frac{4xy}{(x^2+y^2)^2}+2x\alpha y^{\alpha-1} e^{x^2y}+ 2x^3 y^\alpha e^{x^2y}$\\
-	$\partial_x\left( \frac{2y}{x^2+y^2}+xe^{x^2y} \right)=-\frac{4xy}{(x^2+y^2)^2}+2x^2 y e^{x^2 y}+e^{x^2y}$ \\
-	$\omega $ è chiusa $\Leftrightarrow -\frac{4xy}{(x^2+y^2)^2}+2\alpha + y^{\alpha-1}e^{x^2y}+2x^3y^\alpha e^{x^2y}= -\frac{4xy}{(x^2+y^2)^2} +2x^3 y e^{x^2y } + 2x e^{x^2y}$\\
-	$\Leftrightarrow 2x^3y^\alpha+ 2\alpha + y^{\alpha-1} = ex^3 y+ 2x$\,\,\, $\forall (x,y)\in A \Leftrightarrow \alpha=1$.\\
-	Calcoliamo un potenziale\\
-	$\omega(x,y)= \left(\frac{2x}{x^2+y^2} +2xy e^{x^2y}\right)dx+ \left( \frac{2y}{x^2+y^2}+x^2e^{x^2y} \right)dy$\\
-	$\begin{cases}
+	
+	definita sull'aperto $A= \{ (x,y)\in \R^2 \mid y >0\}$.
+	
+	Stabilire per quali valori del parametro $\alpha$ $\omega$ è esatta.
+	
+	$A$ è un semipiano e quindi è semplicemente connesso $\Rightarrow \omega$ è esatta in $A \Leftrightarrow $ è chiusa $\Rightarrow$ bisogna trovare tutti e soli i valori del parametro $\alpha \in \R$ per cui vale 
+	
+	$$\partial_y\left( \frac{2x}{x^2+y^2}+2xy^\alpha e^{x^2y} \right) = \partial_x\left( \frac{2y}{x^2+y^2}+x^2e^{x^2y} \right)\,\,\,\, \forall (x,y)\in A$$
+	
+	$$\partial_y\left( \frac{2x}{x^2+y^2} + 2xy^\alpha e^{x^2y} \right)=-\frac{4xy}{(x^2+y^2)^2}+2x\alpha y^{\alpha-1} e^{x^2y}+ 2x^3 y^\alpha e^{x^2y}$$
+	
+	$$\partial_x\left( \frac{2y}{x^2+y^2}+xe^{x^2y} \right)=-\frac{4xy}{(x^2+y^2)^2}+2x^2 y e^{x^2 y}+e^{x^2y}$$
+	
+	$\omega $ è chiusa $\Leftrightarrow $
+	
+	$$\cancel{-\frac{4xy}{(x^2+y^2)^2}} +2\alpha + y^{\alpha-1} \cancel{e^{x^2y}} +2x^3y^\alpha \cancel{e^{x^2y}} = \cancel{-\frac{4xy}{(x^2+y^2)^2}} +2x^3 y \cancel{e^{x^2y }} + 2x \cancel{e^{x^2y}}$$
+	
+	$$\Leftrightarrow 2x^3y^\alpha+ 2\alpha + y^{\alpha-1} = ex^3 y+ 2x \quad \forall (x,y)\in A \Leftrightarrow \alpha=1$$
+	
+	Calcoliamo un potenziale $U$
+	
+	$$\omega(x,y)= \left(\frac{2x}{x^2+y^2} +2xy e^{x^2y}\right)dx+ \left( \frac{2y}{x^2+y^2}+x^2e^{x^2y} \right)dy$$
+	
+	$$\begin{cases}
 		\partial_xU(x,y)&=\frac{2x}{x^2+y^2}+2xy e^{x^2y} \\
 		\partial_yU(x,y)&=\frac{2y}{x^2+y^2}+x^2e^{x^2y}
-	\end{cases}$\\
-	$U(x,y)=\int \left( \frac{2y}{x^2+y^2}+x^2e^{x^2y} \right)dy =\ln(x^2+y^2)+e^{x^2y}+C(x)$\\
-	$\frac{2x}{x^2+Y^2}+2xy e^{x^2y}=\partial_x\left( \ln(x^2+y^2) +e^{x^2y}+C(x)\right)=\frac{2x}{x^2+y^2}+2xy + C'(x)$\\
-	$\Rightarrow C^1 (x)=0 \Rightarrow  C$ costante\\
-	$U(x,y)=\ln (x^2+y^2) + e^{x^2y}$ è un potenziale.
+	\end{cases}$$
+	
+	$$U(x,y)=\int \left( \frac{2y}{x^2+y^2}+x^2e^{x^2y} \right)dy =\ln(x^2+y^2)+e^{x^2y}+C(x)$$
+	
+	$$\frac{2x}{x^2+Y^2}+2xy e^{x^2y}=\partial_x\left( \ln(x^2+y^2) +e^{x^2y}+C(x)\right)=\frac{2x}{x^2+y^2}+2xy + C'(x)$$
+	
+	$\Rightarrow C^1 (x)=0 \Rightarrow  C$ costante
+	
+	{\centering$U(x,y)=\ln (x^2+y^2) + e^{x^2y}$ è un potenziale. \par}
 \end{example}
 \end{exbar}
