@@ -1384,77 +1384,134 @@ $$\begin{cases}
 	$\omega $ è chiusa $\Leftrightarrow \text{rot}\overline{F}=\overline{0}\,\, \forall \, (x,y,z)\in A$ e in tal caso $\overline{F}$ si dice \textbf{irrotazionale}.
 \end{attbar}
 
-% ============================================= pag 468
 
 \begin{exbar}
 \begin{example}
-	$\overline{F}(xy,)=(x^2+y^2)\overline{e}_1+(2yx-\sin y)\overline{e}_2$\\
-	La forma differenziale associata è chiusa perchè $\partial_y(x^2+y^2)=2y=\partial_x(2yx-\sin y)$.\\
-	Proviamo a calcolare un potenziale $U\mid(\partial_xU,\partial_yU)=(F_1,F_2)$.\\
-	$\begin{cases}
+	$$\overline{F}(xy,)=\uppercomment{(x^2+y^2)}{}{=F_1(x,y)} \overline{e}_1+ \uppercomment{(2yx-\sin y)}{}{=F_2(x,y)} \overline{e}_2$$
+	
+	La forma differenziale associata è chiusa perché $\partial_y(x^2+y^2)=2y=\partial_x(2yx-\sin y)$.
+	
+	Proviamo a calcolare un potenziale $U\mid(\partial_xU,\partial_yU)=(F_1,F_2)$.
+	
+	$$\begin{cases}
 		&\partial_x U(x,y)=x^2+y^2\\
 		&\partial_y U(x,y)=2yx-\sin y
-	\end{cases}$\\
-	$\partial_xU(x,y)=x^2+y^2$\\
-	$U(x,y)= \int (x^2+y^2)dx= \frac{1}{3}x^3+xy^2+C(y)$\\
-	\textcolor{orange}{$\partial_x\left(\frac{1}{3} x^3+xy^2+C(y)\right)=x^2+y^2$ perchè $\partial_xC(y)=0$.}\\
-	$\partial_yU(x,y)=2xy-\sin y$\\
-	$\partial_y \left( \frac{1}{3}x^3+xy^2+C(y) \right)=2xy-\sin y$\\
-	$2xy+C'(y)=2xy-\sin y \Rightarrow C'(y)=-\sin y \Rightarrow C(y)=\cos y + 2\,\,c \in \R \Rightarrow U(x,y)=\frac{1}{3}x^3+xy^2+\cos y$ è un potenziale \textcolor{orange}{prendendo $c=0$}.\\
-	Se dovessi calcolare il potenziale $U_1$ tale che $U_1(0,0)=0$ avrei $U_1(x,y)=\frac{1}{3}x^3+xy^2+\cos y +c$, $c \in \R$ perchè $\R^2$ è connesso.\\
-	Cerco $C$ affinchè $U_1(0,0)=0$.\\
-	$U_1(0,0)=1+c=0\Rightarrow c=-1\Rightarrow U_1(0,0)=\frac{1}{3}x^3+xy^2+\cos y -1$
+	\end{cases}$$
+	
+	$\partial_x U(x,y)=x^2+y^2$
+	
+	$$U(x,y)= \int (x^2+y^2)dx= {\color{blue} \frac{1}{3}x^3+xy^2+C(y)}$$
+	
+	{\color{teal}
+		$\partial_x\left(\frac{1}{3} x^3+xy^2+C(y)\right)=x^2+y^2$ perché $\partial_xC(y)=0$.}
+		
+	$\partial_y {\color{blue} U(x,y)}=2xy-\sin y$
+	
+	$\partial_y \left( \frac{1}{3}x^3+xy^2+C(y) \right)=2xy-\sin y$
+	
+	$$2xy+C'(y)=2xy-\sin y \Rightarrow C'(y)=-\sin y \Rightarrow C(y)=\cos y + 2\,\,c \in \R \Rightarrow U(x,y)=\frac{1}{3}x^3+xy^2+\cos y$$ 
+	
+	è un potenziale {\color{blue}prendendo $c=0$}.
+	
+	Se dovessi calcolare il potenziale $U_1$ tale che $U_1(0,0)=0$ avrei $U_1(x,y)=\frac{1}{3}x^3+xy^2+\cos y +c$, $c \in \R$ perché $\R^2$ è connesso.
+	
+	Cerco $C$ affinché $U_1(0,0)=0$.
+	
+	$$U_1(0,0)=1+c=0\Rightarrow c=-1\Rightarrow U_1(0,0)=\frac{1}{3}x^3+xy^2+\cos y -1$$
 \end{example}
 \end{exbar}
 
 
 \begin{exbar}
 \begin{example}
-	Data la forma differenziale $\omega(x,y,z)=(xy-\sin z)dx +\left(\frac{1}{2}x^2-\frac{e^y}{z} \right)dy+\left( \frac{e^y}{z^2}-x\cos z \right)dx$, $z \neq 0$, calcolare, se possibile, una funzione potenziale.\\
-	Campo vettoriale associato ad $\omega$\\
-	$\overline{F}(x,y,z)=(x,y-\sin z)\overline{e}_1+\left( \frac{1}{2}x^2-\frac{e^y}{z} \right) \overline{e}_z+\left( \frac{e^y}{z^2}-x\cos z \right)dz$.\\
-	$\overline{F}$ è irrotazionale?\\
-	$\partial_yF_1=\partial_y(xy-\sin z)=x=\partial_x\left( \frac{1}{2}x^2-\frac{e^y}{z} \right)= \partial_xF_2$\\
-	$\partial_z F_1 =\partial_x (xy-\sin z)= -\cos z = \partial_x\left( \frac{e^y}{z^2}-x\cos x \right)=\partial_x F_3$\\
-	$\partial_yF_3=\partial_y\left( \frac{e^y}{z^2}-x\cos z \right)= \frac{e^y}{z^2}=\partial_z\left( \frac{1}{2}x^2-\frac{e^y}{z} \right)=\partial_zF_2$\\
-	$\Rightarrow \omega$ è chiusa.\\
-	Proviamo a calcolare un potenziale di $\overline{F}$, cioè una funzione $U:\R^3\backslash \{(x,y,z)\mid z=0\}\rightarrow \R$ tale che $\nabla U(\partial_xU,\partial_yU,\partial_zU)=\overline{F}=(F_1,F_2,F_3)$.\\
-	$\begin{cases}
-		&\partial_xU(x,y,z)=xy-\sin z\\
-		&\partial_y U(x,y,z)=\frac{1}{2}x^2-\frac{e^y}{z}\\
-		&\partial_z U(x,y,z)=\frac{e^y}{z^2}-x\cos z
-	\end{cases}$\\
-	$U(x,y,z)=\int \frac{1}{2} x^2 -\frac{e^y}{z}dy=\frac{1}{2}x^2y-\frac{e^y}{z}+C(x,z)$ perchè $\partial_y C(x,z)=0$.\\
-	$\partial_xU(x,y,z)=xy-\sin z$\\
-	$\partial_x\left( \frac{1}{2}x^2y-\frac{e^y}{z}+C(x,z) \right)=xy-\sin z$\\$xy+\partial_xC(x,z)=xy-\sin z \Rightarrow \partial_xC(x,z)=-\sin z$\\
-	$C(x,z)=-x\sin z + D(z)$\\
-	\textcolor{orange}{$C(x,z)=\int (-\sin z)dx=-x\sin z+D(z)$}\\
-	$U(x,y,z)=\frac{1}{2}x^2y-\frac{e^y}{z}-x\sin z+D(z)$\\
-	$\partial_z U(x,y,z)=\frac{e^y}{z^2}-x\cos z$\\
-	$\partial_z\left( \frac{1}{2}x^2y-\frac{e^y}{z}-x\sin z + D(z) \right)=\frac{e^y}{z^2}-x\cos z$\\
-	$\frac{e^y}{z^2}-x\cos z+ D'(z)=\frac{e^y}{z^2}-x\cos z\Rightarrow D'(z)=0\Rightarrow D(z)0c \in \R$ costante.\\
-	Un potenziale è $U(x,y,z)=\frac{1}{2}x^2y-\frac{e^y}{z}-x\sin z +3$.
+	Data la forma differenziale 
+	
+	$$\omega(x,y,z)=(xy-\sin z)dx +\left(\frac{1}{2}x^2-\frac{e^y}{z} \right)dy+\left( \frac{e^y}{z^2}-x\cos z \right)dx, \quad z \neq 0$$
+	
+	calcolare, se possibile, una funzione potenziale.
+	
+	Campo vettoriale associato ad $\omega$
+	
+	$$\overline{F}(x,y,z)=(x,y-\sin z)\overline{e}_1+\left( \frac{1}{2}x^2-\frac{e^y}{z} \right) \overline{e}_z+\left( \frac{e^y}{z^2}-x\cos z \right)dz$$
+	
+	$\overline{F}$ è irrotazionale?
+	
+	$\partial_yF_1=\partial_y(xy-\sin z)=x=\partial_x\left( \frac{1}{2}x^2-\frac{e^y}{z} \right)= \partial_xF_2$
+	
+	$\partial_z F_1 =\partial_x (xy-\sin z)= -\cos z = \partial_x\left( \frac{e^y}{z^2}-x\cos x \right)=\partial_x F_3$
+	
+	$\partial_yF_3=\partial_y\left( \frac{e^y}{z^2}-x\cos z \right)= \frac{e^y}{z^2}=\partial_z\left( \frac{1}{2}x^2-\frac{e^y}{z} \right)=\partial_zF_2$
+	
+	{\centering$\Rightarrow \omega$ è chiusa. \par}
+	
+	Proviamo a calcolare un potenziale di $\overline{F}$, cioè una funzione $U:\R^3\backslash \{(x,y,z)\mid z=0\}\rightarrow \R$ tale che $\nabla U(\partial_xU,\partial_yU,\partial_zU)=\overline{F}=(F_1,F_2,F_3)$.
+	
+	$$\begin{cases}
+		\partial_xU(x,y,z)=xy-\sin z\\
+		\partial_y U(x,y,z)=\frac{1}{2}x^2-\frac{e^y}{z}\\
+		\partial_z U(x,y,z)=\frac{e^y}{z^2}-x\cos z
+	\end{cases}$$
+	
+	$$U(x,y,z)=\int \frac{1}{2} x^2 -\frac{e^y}{z}dy=\frac{1}{2}x^2y-\frac{e^y}{z}+C(x,z)$$
+	
+	perché $\partial_y C(x,z)=0$.
+	
+	$\partial_xU(x,y,z)=xy-\sin z$
+	
+	$$\partial_x\left( \frac{1}{2}x^2y-\frac{e^y}{z}+C(x,z) \right) =xy-\sin z$\\$xy+\partial_xC(x,z)=xy-\sin z $$ 
+	
+	$$\Rightarrow \partial_xC(x,z)=-\sin z \Rightarrow C(x,z)=-x\sin z + D(z)$$
+	
+	{\color{blue}$C(x,z)=\int (-\sin z)dx=-x\sin z+D(z)$}
+	
+	$$U(x,y,z)=\frac{1}{2}x^2y-\frac{e^y}{z}-x\sin z+D(z)$$
+	
+	$\partial_z U(x,y,z)=\frac{e^y}{z^2}-x\cos z$
+	
+	$\partial_z\left( \frac{1}{2}x^2y-\frac{e^y}{z}-x\sin z + D(z) \right)=\frac{e^y}{z^2}-x\cos z$
+	
+	$\frac{e^y}{z^2}-x\cos z+ D'(z)=\frac{e^y}{z^2}-x\cos z$
+	
+	$$\Rightarrow D'(z)=0\Rightarrow D(z)0c \in \R \text{ costante.}$$
+	
+	Un potenziale è 
+	
+	$$U(x,y,z)=\frac{1}{2}x^2y-\frac{e^y}{z}-x\sin z +3$$
 \end{example}
 \end{exbar}
 
 
 \begin{exbar}
 \begin{example}
-	$\omega = - \frac{y}{x^2+y^2}dx+\frac{x}{x^2+y^2}dy$, $(x,y)\neq(0,0)$, $(x,y)\in \R^2\backslash\{(0,0)\}$.\\
-	$\partial_y\left( -\frac{y}{x^2+y^2} \right)=-\frac{x^2+y^2-2y^2}{(x^2+y^2)^2}=-\frac{x^2-y^2}{(x^2+y^2)^2}=\partial_x\left( \frac{x}{x^2+y^2} \right)$\\
-	$\Rightarrow \omega$ è chiusa.\\
-	Proviamo a calcolare una funzione potenziale $U:\R^2\{(0,0)\}\rightarrow\R$.\\
-	$\begin{cases}
-		&\partial_xU(x,y)=-\frac{y}{x^2+y^2}\\
-		&\partial_yU(x,y)=\frac{x}{x^2y^2}
-	\end{cases}$\\
-	Integrando prima in $x$\\
-	$U(x,y)=-\int\frac{1}{y^2\left(1+ \left(\frac{x}{y}\right)^2 \right)}dx=-\arctan \frac{x}{y} + C(y)$\\
-	$\partial_y(-\arctan \frac{x}{y})0\frac{x}{x^2+y^2}$\\
-	$U(x,y)=-\arctan \frac{x}{y}+c$, $y \neq 0$\\
-	$U$ non è definito in $\R^2 \backslash\{(0,0)\}$, ma in $\R^2\backslash \{(x,0)\mid x \in\R\}$.\\
-	Integrando prima in $y$ si ottiene un potenziale $V(x,y)=\arctan \frac{y}{x}-c$, $x\neq 0$.\\
-	$V$ non è definito in $\R^2\backslash\{(0,0)\}$, ma in $\R^2\backslash\{(0,y)\mid y \in \R\}$.\\
+	$$\omega = - \frac{y}{x^2+y^2}dx+\frac{x}{x^2+y^2}dy, \qquad (x,y)\neq(0,0)$, $(x,y)\in \R^2\backslash\{(0,0)\}$$
+	
+	$$\partial_y\left( -\frac{y}{x^2+y^2} \right)=-\frac{x^2+y^2-2y^2}{(x^2+y^2)^2}=-\frac{x^2-y^2}{(x^2+y^2)^2}=\partial_x\left( \frac{x}{x^2+y^2} \right)$$
+	
+	$\Rightarrow \omega$ è chiusa.
+	
+	Proviamo a calcolare una funzione potenziale $U:\R^2\{(0,0)\}\rightarrow\R$.
+	
+	$$\begin{cases}
+		\partial_xU(x,y)=-\frac{y}{x^2+y^2}\\
+		\partial_yU(x,y)=\frac{x}{x^2y^2}
+	\end{cases}$$
+	
+	Integrando prima in $x$
+	
+	$$U(x,y)=-\int\frac{1}{y^2\left(1+ \left(\frac{x}{y}\right)^2 \right)}dx=-\arctan \frac{x}{y} + C(y)$$
+	
+	$$\partial_y(-\arctan \frac{x}{y})0\frac{x}{x^2+y^2}$$
+	
+	$$U(x,y)=-\arctan \frac{x}{y}+c$, $y \neq 0$$
+	
+	$U$ non è definito in $\R^2 \backslash\{(0,0)\}$, ma in $\R^2\backslash \{(x,0)\mid x \in\R\}$.
+	
+	Integrando prima in $y$ si ottiene un potenziale 
+	
+	$$V(x,y)=\arctan \frac{y}{x}-c, \qquad x\neq 0$$
+	
+	$V$ non è definito in $\R^2\backslash\{(0,0)\}$, ma in $\R^2\backslash\{(0,y)\mid y \in \R\}$.
+	
 	$\omega$ non è esatta in $\R^2\backslash\{(0,0)\}$, ma solo in certi suoi sottoinsiemi.
 \end{example}
 \end{exbar}
@@ -1463,37 +1520,53 @@ $$\begin{cases}
 \begin{theorem}
 	
 	\label{th: pag 475}
-	Siano $A \subseteq \R^n$ aperto, $\omega$ forma differenziale continua e esatta in $A$, $\overline{\gamma}:[a,b]\rightarrow A$ curva $C^1$ a tratti in $A$. Se $U$ è funzione potenziale di $\omega$ allora
+	Siano $A \subseteq \R^n$ aperto, $\omega$ forma differenziale continua e \textbf{esatta} in $A$, $\overline{\gamma}:[a,b]\rightarrow A$ curva $C^1$ a tratti in $A$. Se \textbf{$U$ è funzione potenziale} di $\omega$ allora
 	\begin{equation*}
 		\int_{\overline{\gamma}}\omega =U(\overline{\gamma (b)})-U(\overline{\gamma}(a)).
 	\end{equation*}
+	
 	In particolare, se $\overline{\gamma}$ è un circuito,
 	\begin{equation*}
 		\oint_{\overline{\gamma}}\omega = \left( \oint_{\overline{\gamma}}\overline{F} d\overline{\gamma} \right)=0.
 	\end{equation*}
-	\textcolor{orange}{Ove $\overline{F}$ è campo vettoriale associato ad $\omega$.}
+	
+	{\color{blue}$\overline{F}$ è campo vettoriale associato ad $\omega$.}
 \end{theorem}
 
 
 \begin{dembar}
 	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 475}}
 	
-	Per semplicità assumiamo $\overline{\gamma}\in C^1([a,b])$\\
-	$\int_{\overline{\gamma}}=\int_a^b \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt = \int_a^b \langle \nabla U(\overline{\gamma}(t)),\overline{\gamma}'(t) \rangle dt = \int_a^b \frac{d}{dt}U(\overline{\gamma}(t))dt=U(\overline{\gamma}(b))-U(\overline{\gamma}(a))$.
+	Per semplicità assumiamo $\overline{\gamma}\in C^1([a,b])$
+	
+	\begin{align*} 
+		\int_{\overline{\gamma}}
+		&=\int_a^b \langle \overline{F}(\overline{\gamma}(t)), \overline{\gamma}'(t) \rangle dt =
+		\\
+		&= \int_a^b \langle \nabla U(\overline{\gamma}(t)),\overline{\gamma}'(t) \rangle dt \lowercomment{=}{\text{regola della}}{\text{catena}} \\
+		&= \int_a^b \frac{d}{dt}U(\overline{\gamma}(t))dt \lowercomment{=}{\text{teorema fondamentale}}{\text{del calcolo}} \\
+		&=U(\overline{\gamma}(b))-U(\overline{\gamma}(a))
+	\end{align*}
 \end{dembar}
 	
 
 \textbf{Osservazione:}
 
-Il toerema fornisce un metodo per calcolare un potenziale.\\
-$A \subseteq \R^2$ aperto $\omega$ forma differenziale su $A$, $A$ connesso.\\
+Il teorema fornisce un metodo per calcolare un potenziale.
+
+$A \subseteq \R^2$ aperto $\omega$ forma differenziale su $A$, $A$ connesso.
 
 \segnaposto % pag 477
 
-$U(x,y)=U(x_0,y_0)+\int_{\overline{\gamma}}\omega$\\
-$\overline{\gamma}_1(t)=(t,y_0)$, $t \in [x_0,x]$\\
-$\overline{\gamma}_2(t)=(x,t)$, $t \in [y_0,y]$\\
-$U(x,y)=U(x_0,y_0)+\int_{\overline{\gamma}_1}\omega + \int_{\overline{\gamma}_2}\omega= U(x_0,y_0)+\int_{x_0}^x\langle \overline{F}(t,y_0),(1,0) \rangle dt + \int_{y_0}^y \langle \overline{F}(x,t),(0,1)\rangle dt$.
+$$U(x,y)=\lowercomment{U(x_0,y_0)}{\text{costante}}{\text{arbitraria}}+ \lowercomment{\int_{\color{red} \overline{\gamma}}\omega}{\text{dipende solo da}}{(x_0,y_0) \text{ e } (x,y)}$$
+
+{\color{red} $\overline{\gamma}$ è una qualsiasi curva congiungente $(x_0,y_0)$ e $(x,y)$}
+
+$\overline{\gamma}_1(t)=(t,y_0)$, $t \in [x_0,x]$
+
+$\overline{\gamma}_2(t)=(x,t)$, $t \in [y_0,y]$
+
+$$U(x,y)=U(x_0,y_0)+\int_{\overline{\gamma}_1}\omega + \int_{\overline{\gamma}_2}\omega= U(x_0,y_0)+\int_{x_0}^x\langle \overline{F}(t,y_0),(1,0) \rangle dt + \int_{y_0}^y \langle \overline{F}(x,t),(0,1)\rangle dt$$
 
 
 \begin{theorem}
@@ -1513,11 +1586,13 @@ $U(x,y)=U(x_0,y_0)+\int_{\overline{\gamma}_1}\omega + \int_{\overline{\gamma}_2}
 	\end{enumerate}
 \end{theorem}
 
+% ================================= pag 479
 
 \begin{dembar}
 	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 478}}
 	
-	\textbf{1.$\Rightarrow $2.} e \textbf{1.$\Rightarrow $3.} discendono dal teorema precedente. Se $U$ è potenziale allora\\
+	\textbf{1.$\Rightarrow $2.} e \textbf{1.$\Rightarrow $3.} discendono dal teorema precedente. Se $U$ è potenziale allora
+	
 	$\int_{\overline{\gamma}_1}\omega=U(\overline{\gamma}_1(b))-U(\overline{\gamma}_1(a))=U(\overline{\gamma}_2(d))-U(\overline{\gamma}_2(c))=\int_{\overline{\gamma}_2}\omega$.\\
 	Per \textbf{3.$\Rightarrow$2.} abbiamo che\\
 	$\oint_{\overline{\gamma}}\omega =0$ per ogni circuito.\\
