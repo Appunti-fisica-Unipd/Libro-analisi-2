@@ -1714,7 +1714,8 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 			&= \{ f \in C^0 ([0,1]) \; \big| \; -\phi(x) \leq f(x) \leq \phi(x) \qquad \forall x \in [0,1] \}
 		\end{align*}
 
-		\segnaposto %194
+		\image{spazi_metrici_e_normati/pag194} %194
+
 		\begin{equation*}
 			f_0 \in \partial C \Leftrightarrow \forall \epsilon > 0, B_\epsilon(f_0) \cap C \neq \emptyset \text{ e } B_\epsilon (f_0)\cap C^c \neq \emptyset
 		\end{equation*}
@@ -1735,7 +1736,7 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		\end{equation*}
 		
 		E' vero o falso che $\inf_{x \in [0,1]}( \phi(x) -|f(x)| )>0$?	
-		\segnaposto %195
+		\image{spazi_metrici_e_normati/pag195} %195
 		
 		$[0,1]$ è compatto quindi $\phi - |f|$ è continua 
 		\begin{align*}
@@ -1776,7 +1777,8 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 			f(x_0) = |f(x_0)|= \phi(x_0)
 		\end{equation*}
 
-		\segnaposto %196
+		\image{spazi_metrici_e_normati/pag196} %196
+		
 		\begin{gather*}
 			\epsilon >0, \qquad f + \frac{\epsilon}{2} = \rho, \qquad  |g(x_0)| = f(x_0) + \frac{\epsilon}{2} > \phi(x_0)
 			\\
@@ -1871,7 +1873,9 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		f_k' (x) > 0 \qquad \forall x \in ]0,1] \text{ e } f_k' (x) < 0 \text{ definitivamente per } x \rightarrow +\infty
 	\end{gather*} 
 	
-	\segnaposto %200
+	
+	\image{spazi_metrici_e_normati/pag200.png} %200
+	
 	Devo provare a vedere più in dettaglio il segno di $f_k' $, cioè di $\underbrace{1+x(1-2k \ln x)}_{\phi(x)}$, per $x \geq 1$
 	\begin{gather*}
 		\phi(1) = 2 > 0
@@ -1880,10 +1884,12 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		\\
 		\exists! \ \alpha_k > 1 \; \big| \; \phi(\alpha_k) = 0
 	\end{gather*}
-	\segnaposto %201_1
-	$\exists! \ \alpha_k >1 \; \big| \; f_k' (\alpha_k)=0$
 	
-	\segnaposto %201_2
+	\image{spazi_metrici_e_normati/pag201_1.png} %201_1
+	
+	{ \centering $\exists! \ \alpha_k >1 \; \big| \; f_k' (\alpha_k)=0$ \par}
+	
+	\image{spazi_metrici_e_normati/pag201_2.png} %201_2
 	\begin{align*}
 		\sup_{x \geq a}|f_k (x)| 
 		&= \max\{|f_k(a)|,|f_k(\alpha_k)|\}\leq
@@ -1933,7 +1939,8 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		\\
 		\Rightarrow f_k \text{ è crescente in } ]-\infty,-2[ 
 	\end{gather*}
-	\segnaposto %204
+	
+	\image{spazi_metrici_e_normati/pag204.png} %204
 	
 	Fissato $b < -2$
 	\begin{gather*}
@@ -1994,6 +2001,7 @@ Sia $x \in \overline{D} \Rightarrow \exists \{ x_j\}_{j\geq 1} \subseteq D |x_j\
 	\end{cases}
 \end{gather*}
 
+% spazi_metrici_e_normati/pag204.png
 \segnaposto %207
 
 \begin{gather*} 
@@ -2569,7 +2577,7 @@ Se $T:X \rightarrow X$ è una contrazione, allora è una funzione continua, perc
 	$(X,d)$ spazio metrico completo. $T:X \rightarrow X$ contrazione. Allora $\exists! \,\, x \in X \,\, | \,\, T(x) = x$, cioè $T$ ha un unico punto fisso.
 \end{theorem}
 
-
+\newpage %riq mal
 \begin{exbar}
 	Stabilire se esistono soluzioni $(x,y)\in[0,1]\times[0,1]$ del sistema di equazioni
 	\begin{gather*}
