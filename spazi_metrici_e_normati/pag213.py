@@ -73,18 +73,21 @@ def x_label_color(ax1, color):
 def y_label_color(ax1, color):
     ax1.tick_params(axis='y', colors=color)
 
+def fun(x):
+    return np.sqrt(x**2 + 1)
+
 def plot_curves(ax1): 
-    pass
+    x = np.arange(-5, 5, .01)
+
+    ax1.plot(x, fun(x), color="b")
+    ax1.plot(x, abs(x), color="r")
 
 def plot_segments(ax1):
-    ax1.plot([0, 1/4], [0, 4], color="r")
-    ax1.plot([1/4, 1/2], [4, 0], color="r")
-    ax1.plot([1/2, 1], [0, 0], color="r")
-    ax1.plot([0, 1/4], [4, 4], color="r", linestyle="--")
-
-def plot_points(ax1):
     pass
 
+def plot_points(ax1):
+    plt.scatter([0], [1], color="b", marker="o")
+    pass
 
 def text(ax1, coor, text, c):
     #Add text
@@ -97,30 +100,23 @@ def save_file():
 
 
 if __name__ == "__main__":
+    # k = 1
     START = time.time()
     plt_parameters()
-    FIG, [AX, AX2] = plt.subplots(ncols=2, sharex=False, sharey=False)
-    #XMIN, XMAX, YMIN, YMAX = -0.5, 1.5, -.1, 1
-    #axis_limits(AX, XMIN, XMAX, YMIN, YMAX)
+    FIG, AX = plt.subplots()
+    AX.set(aspect=1)
     set_position(AX)
-    set_position(AX2)
     remove_axes(AX, "n", "e")
-    remove_axes(AX2, "n", "e", "w")
     axis_arrows(AX, "k", ["n", "e"])
-    axis_arrows(AX2, "b", "e")
     axis_label(AX, 
-               xtic=[1/4, 1/2, 1], xlab=[r"$\frac{1}{k}$", r"$\frac{2}{k}$", r"$1$"],
-               ytic=[4], ylab=[r"$k$"])
-    axis_label(AX2, xtic=[0, 1/2, 2/3, 1], xlab=[r"$0$", r"$\frac{2}{k}$", r"$x$", r"$1$"],
-                ytic=[], ylab=[])
-    x_label_color(AX, "g")
-    y_label_color(AX, "r")
-    x_label_color(AX2, "b")
-    plot_segments(AX)
+               xtic=[], xlab=[],
+               ytic=[1], ylab=[r"$\frac{1}{\sqrt{k}}$"])
+    y_label_color(AX, "b")
+    #plot_segments(AX)
+    plot_curves(AX)
     plot_points(AX)
-    text(AX, coor=[1/4 + .2, 4], text=r"$y=f_k(x)$", c="r")
-    text(AX2, coor=[0, -.05], text=r"""$$\frac{2}{k}<x \qquad k>\frac{2}{x}$$
-                                       $$\quad f_k(x)=0$$""", c="r")
+    text(AX, coor=[-4 + .2, fun(-4)], text=r"$y=f_k(x)$", c="b")
+    text(AX, coor=[4 - .2, fun(3)], text=r"$|x|$", c="r")
     plt.tight_layout()
     save_file()
     Dtime(START)

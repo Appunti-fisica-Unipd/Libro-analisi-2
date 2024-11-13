@@ -73,18 +73,21 @@ def x_label_color(ax1, color):
 def y_label_color(ax1, color):
     ax1.tick_params(axis='y', colors=color)
 
+def fun(x):
+    return 1 / x
+
 def plot_curves(ax1): 
-    pass
+    x = np.arange(1, 6, .01)
+    x1 = np.arange(1, 7, .01)
+
+    ax1.plot(x, fun(x), color="r", linewidth=2)
+    ax1.plot(x1, fun(x1), color="b", linestyle="--")
 
 def plot_segments(ax1):
-    ax1.plot([0, 1/4], [0, 4], color="r")
-    ax1.plot([1/4, 1/2], [4, 0], color="r")
-    ax1.plot([1/2, 1], [0, 0], color="r")
-    ax1.plot([0, 1/4], [4, 4], color="r", linestyle="--")
+    ax1.plot([6, 7], [0, 0], color="r", linewidth=2)
 
 def plot_points(ax1):
     pass
-
 
 def text(ax1, coor, text, c):
     #Add text
@@ -99,28 +102,21 @@ def save_file():
 if __name__ == "__main__":
     START = time.time()
     plt_parameters()
-    FIG, [AX, AX2] = plt.subplots(ncols=2, sharex=False, sharey=False)
+    FIG, AX = plt.subplots()
     #XMIN, XMAX, YMIN, YMAX = -0.5, 1.5, -.1, 1
     #axis_limits(AX, XMIN, XMAX, YMIN, YMAX)
     set_position(AX)
-    set_position(AX2)
     remove_axes(AX, "n", "e")
-    remove_axes(AX2, "n", "e", "w")
     axis_arrows(AX, "k", ["n", "e"])
-    axis_arrows(AX2, "b", "e")
     axis_label(AX, 
-               xtic=[1/4, 1/2, 1], xlab=[r"$\frac{1}{k}$", r"$\frac{2}{k}$", r"$1$"],
-               ytic=[4], ylab=[r"$k$"])
-    axis_label(AX2, xtic=[0, 1/2, 2/3, 1], xlab=[r"$0$", r"$\frac{2}{k}$", r"$x$", r"$1$"],
-                ytic=[], ylab=[])
-    x_label_color(AX, "g")
-    y_label_color(AX, "r")
-    x_label_color(AX2, "b")
+               xtic=[1, 6], xlab=[r"$1$", r"$k$"],
+               ytic=[], ylab=[])
+    x_label_color(AX, "b")
     plot_segments(AX)
+    plot_curves(AX)
     plot_points(AX)
-    text(AX, coor=[1/4 + .2, 4], text=r"$y=f_k(x)$", c="r")
-    text(AX2, coor=[0, -.05], text=r"""$$\frac{2}{k}<x \qquad k>\frac{2}{x}$$
-                                       $$\quad f_k(x)=0$$""", c="r")
+    text(AX, coor=[2 + .2, fun(2)], text=r"$y=f_k(x)$", c="r")
+    text(AX, coor=[6 + .2, fun(4)], text=r"$\frac{1}{x}$", c="b")
     plt.tight_layout()
     save_file()
     Dtime(START)
