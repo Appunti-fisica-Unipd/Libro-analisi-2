@@ -81,12 +81,18 @@ def plot_curves(ax1):
     ax1.plot(x, fun(x), color="r")
 
 def plot_segments(ax1):
-    ax1.plot([2, 2], [0, 1/np.e], color="teal", linestyle="--")
+    ax1.plot([0, 1/2], [1, 1], color="r", linewidth=2)
+    ax1.plot([1/2, 1/2 + 1/6], [1, 0], color="r", linewidth=2)
+    ax1.plot([1/2 + 1/6, 1], [0, 0], color="r", linewidth=2)
+    ax1.plot([1/2, 1/2], [0, 1], color="teal", linestyle="--")
     pass
 
 def plot_points(ax1):
     plt.scatter([3], [fun(3)], color="r", marker="o")
     pass
+
+def fill(ax1):
+    ax1.fill_between(x=[1/2, 1/2+1/6], y1=[1, 0], color="b", alpha=.2)
 
 def text(ax1, coor, text, c):
     #Add text
@@ -100,22 +106,24 @@ def save_file():
 
 if __name__ == "__main__":
     # k = 3
+    k = 3
     START = time.time()
     plt_parameters()
     FIG, AX = plt.subplots()
     AX.set(aspect=1)
-    axis_limits(AX, -.2, 4, -.1, 2)
     set_position(AX)
     remove_axes(AX, "n", "e")
     axis_arrows(AX, "k", ["n", "e"])
     axis_label(AX, 
-               xtic=[2, 3], xlab=[r"$\alpha$", r"$k$"],
-               ytic=[], ylab=[])
+               xtic=[1/2, 1/2 + 1/(2*k), 1], xlab=[r"$\frac{1}{2}$", r"$\frac{1}{2}+\frac{1}{2k}$", r"$1$"],
+               ytic=[1], ylab=[r"$1$"])
     x_label_color(AX, "teal")
+    y_label_color(AX, "r")
     plot_segments(AX)
-    plot_curves(AX)
-    plot_points(AX)
-    text(AX, coor=[2, fun(3) + .3], text=r"$y=f_k(x)=\frac{1}{e}$", c="r")
+    fill(AX)
+    #plot_curves(AX)
+    #plot_points(AX)
+    text(AX, coor=[1/2+1/6, 1], text=r"$y=f_k(x)=\frac{1}{e}$", c="r")
     plt.tight_layout()
     save_file()
     Dtime(START)

@@ -1,4 +1,4 @@
-from matplotlib import pyplot
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np 
 import time
@@ -16,7 +16,7 @@ def plt_parameters():
     \everymath{\displaystyle}
     """}
     #font size
-    pyplot.rcParams.update(params)
+    plt.rcParams.update(params)
 
 def axis_limits(ax1, xmin, xmax, ymin, ymax):
     # Set identical scales for both axes
@@ -73,19 +73,14 @@ def x_label_color(ax1, color):
 def y_label_color(ax1, color):
     ax1.tick_params(axis='y', colors=color)
 
-def fun(x):
-    return np.e ** (- x / 1.5) * x ** 2 * np.e / 9
-
-def plot_curves(ax1): 
-    x = np.arange(0, 4, .01)
-    ax1.plot(x, fun(x), color="r")
-
 def plot_segments(ax1):
-    ax1.plot([2, 2], [0, 1/np.e], color="teal", linestyle="--")
     pass
 
-def plot_points(ax1):
-    plt.scatter([3], [fun(3)], color="r", marker="o")
+def plot_points(ax1, x, y, c="r", m="o"):
+    ax1.scatter([x], [y], color=c, marker=m)
+    pass
+
+def fill(ax1):
     pass
 
 def text(ax1, coor, text, c):
@@ -100,22 +95,22 @@ def save_file():
 
 if __name__ == "__main__":
     # k = 3
+    k = 3
     START = time.time()
     plt_parameters()
     FIG, AX = plt.subplots()
+    axis_limits(AX, 0, 6, -.1, .1)
     AX.set(aspect=1)
-    axis_limits(AX, -.2, 4, -.1, 2)
+    AX.spines['bottom'].set_color('teal')
     set_position(AX)
-    remove_axes(AX, "n", "e")
-    axis_arrows(AX, "k", ["n", "e"])
+    remove_axes(AX, "n", "e", "w")
+    axis_arrows(AX, "teal", ["e"])
     axis_label(AX, 
-               xtic=[2, 3], xlab=[r"$\alpha$", r"$k$"],
-               ytic=[], ylab=[])
-    x_label_color(AX, "teal")
-    plot_segments(AX)
-    plot_curves(AX)
-    plot_points(AX)
-    text(AX, coor=[2, fun(3) + .3], text=r"$y=f_k(x)=\frac{1}{e}$", c="r")
+               xtic=[], xlab=[], ytic=[], ylab=[])
+    with mpl.rc_context({"path.sketch":(5, 30, 1)}):
+        AX.plot([1, 5], [0, 0], color = (0, 0, 1, 1))
+    plot_points(AX, 1, 0)
+    plot_points(AX, 5, 0)
     plt.tight_layout()
     save_file()
     Dtime(START)
