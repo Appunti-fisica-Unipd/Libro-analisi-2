@@ -1,4 +1,4 @@
-\section{Serie di funzioni}
+\subsection{Serie di funzioni}
 
 
 \begin{definition}
@@ -467,15 +467,15 @@ Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D$ $\Rightarrow \sup_{x \in 
 	
 	che è il termine generale di una serie convergente $\Leftrightarrow x-y+2 \geq 1 \Leftrightarrow x-y \geq -1$
 	
-	Studiamo $\sum_{k=2}^{\infty} \left(\frac{x}{y}\right)^k$, $x,y>0$, che è una serie geometrica di ragione $\frac{x}{y}$, che converge $\Leftrightarrow |\frac{x}{y}|< 1 \Leftrightarrow x <y$.
+	Studiamo $\sum_{k=2}^{\infty} \left(\frac{x}{y}\right)^k$, $x,y>0$, che è una serie geometrica di ragione $\frac{x}{y}$, che converge $\Leftrightarrow \bigg|\frac{x}{y}\bigg|< 1 \Leftrightarrow x <y$.
 	
 	La serie di partenza converge puntualmente $\Leftrightarrow 0<x<y\leq x+1$
 
-	\segnaposto
+	\image{serie_funzioni/pag281.png} % pag 281
 
 	Studiamo la convergenza uniforme nell'insieme di convergenza puntuale. Osserviamo che 
 	
-	$$\sup_{0<x< y\leq x+1}|\frac{k^y+1}{k^{x+2}(\ln k)^2}+\left( \frac{x}{y}\right)^k|\geq  \sup_{0<x< y\leq x+1} \left( \frac{x}{y}\right)^k=1\,\, \forall k$$ 
+	$$\sup_{0<x< y\leq x+1} \bigg|\frac{k^y+1}{k^{x+2}(\ln k)^2}+\left( \frac{x}{y}\right)^k \bigg|\geq  \sup_{0<x< y\leq x+1} \left( \frac{x}{y}\right)^k=1 \qquad \forall k$$ 
 	
 	perché il rapporto $\frac{x}{y}$ può essere preso vicino a $1$ quanto vogliamo.
 	
@@ -488,7 +488,7 @@ Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D$ $\Rightarrow \sup_{x \in 
 	
 	$$\underbrace{0 <x \leq a y \leq a(x+1)}_{\color{blue} \left| \frac{x}{y} \right| \leq a < 1}$$
 	
-	\segnaposto
+	\image{serie_funzioni/pag282.png} %pag 282
 
 	Dobbiamo stimare 
 	
@@ -516,7 +516,7 @@ Infatti, se $|f_k(x)|\leq a_k \,\,\forall \,\,x \in D$ $\Rightarrow \sup_{x \in 
 \end{exbar}
 
 
-\subsection{Serie di potenze}
+\subsubsection{Serie di potenze}
 
 \begin{definition}
 	Una serie di potenze centrata nel punto $z_0 \in \mathbb{C}$ è una serie di funzioni del tipo 

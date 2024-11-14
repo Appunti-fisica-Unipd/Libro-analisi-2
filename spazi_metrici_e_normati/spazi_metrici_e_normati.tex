@@ -275,7 +275,7 @@ No, esistono metriche dentro lo spazio vettoriale che non derivano da una norma.
 
 \subsection{Topologia}
 
-$(x,d)$ spazio metrico.
+$(X,d)$ spazio metrico.
 
 \begin{definition}
 	
@@ -1714,7 +1714,8 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 			&= \{ f \in C^0 ([0,1]) \; \big| \; -\phi(x) \leq f(x) \leq \phi(x) \qquad \forall x \in [0,1] \}
 		\end{align*}
 
-		\segnaposto %194
+		\image{spazi_metrici_e_normati/pag194} %194
+
 		\begin{equation*}
 			f_0 \in \partial C \Leftrightarrow \forall \epsilon > 0, B_\epsilon(f_0) \cap C \neq \emptyset \text{ e } B_\epsilon (f_0)\cap C^c \neq \emptyset
 		\end{equation*}
@@ -1735,7 +1736,7 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		\end{equation*}
 		
 		E' vero o falso che $\inf_{x \in [0,1]}( \phi(x) -|f(x)| )>0$?	
-		\segnaposto %195
+		\image{spazi_metrici_e_normati/pag195} %195
 		
 		$[0,1]$ è compatto quindi $\phi - |f|$ è continua 
 		\begin{align*}
@@ -1776,7 +1777,8 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 			f(x_0) = |f(x_0)|= \phi(x_0)
 		\end{equation*}
 
-		\segnaposto %196
+		\image{spazi_metrici_e_normati/pag196} %196
+		
 		\begin{gather*}
 			\epsilon >0, \qquad f + \frac{\epsilon}{2} = \rho, \qquad  |g(x_0)| = f(x_0) + \frac{\epsilon}{2} > \phi(x_0)
 			\\
@@ -1871,7 +1873,9 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		f_k' (x) > 0 \qquad \forall x \in ]0,1] \text{ e } f_k' (x) < 0 \text{ definitivamente per } x \rightarrow +\infty
 	\end{gather*} 
 	
-	\segnaposto %200
+	
+	\image{spazi_metrici_e_normati/pag200.png} %200
+	
 	Devo provare a vedere più in dettaglio il segno di $f_k' $, cioè di $\underbrace{1+x(1-2k \ln x)}_{\phi(x)}$, per $x \geq 1$
 	\begin{gather*}
 		\phi(1) = 2 > 0
@@ -1880,10 +1884,12 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		\\
 		\exists! \ \alpha_k > 1 \; \big| \; \phi(\alpha_k) = 0
 	\end{gather*}
-	\segnaposto %201_1
-	$\exists! \ \alpha_k >1 \; \big| \; f_k' (\alpha_k)=0$
 	
-	\segnaposto %201_2
+	\image{spazi_metrici_e_normati/pag201_1.png} %201_1
+	
+	{ \centering $\exists! \ \alpha_k >1 \; \big| \; f_k' (\alpha_k)=0$ \par}
+	
+	\image{spazi_metrici_e_normati/pag201_2.png} %201_2
 	\begin{align*}
 		\sup_{x \geq a}|f_k (x)| 
 		&= \max\{|f_k(a)|,|f_k(\alpha_k)|\}\leq
@@ -1933,7 +1939,8 @@ Una successione $\{\overline{x_k}\}_{k \geq 1} \subseteq \mathbb{R}^n$ si dice d
 		\\
 		\Rightarrow f_k \text{ è crescente in } ]-\infty,-2[ 
 	\end{gather*}
-	\segnaposto %204
+	
+	\image{spazi_metrici_e_normati/pag204.png} %204
 	
 	Fissato $b < -2$
 	\begin{gather*}
@@ -1994,7 +2001,7 @@ Sia $x \in \overline{D} \Rightarrow \exists \{ x_j\}_{j\geq 1} \subseteq D |x_j\
 	\end{cases}
 \end{gather*}
 
-\segnaposto %207
+\image{spazi_metrici_e_normati/pag207.png} %207
 
 \begin{gather*} 
 	f_k(x) \rightarrow 0 \quad \forall x \in [0,1] \text{ puntualmente.}
@@ -2036,7 +2043,8 @@ Sia $x \in \overline{D} \Rightarrow \exists \{ x_j\}_{j\geq 1} \subseteq D |x_j\
 		0 & \text{se } x > k
 	\end{cases}
 \end{equation*}
-\segnaposto %209
+
+\image{spazi_metrici_e_normati/pag209.png} %209
 
 $\int_{1}^{+\infty}f_k(x)dx=\ln k$ e $f_k \rightrightarrows \frac{1}{x}$ in $[1,+\infty[$ perchè $\sup_{x \geq 1}|f_k(x) -\frac{1}{x}|=\sup_{x \geq k}\frac{1}{x}=\frac{1}{k} \xrightarrow{k \rightarrow +\infty} 0$.\\
 Ma $x \mapsto \frac{1}{x}$ non è integrabile in senso proprio in $[1,+\infty[$.
@@ -2139,7 +2147,7 @@ No!
 
 $$f_k(x)= \sqrt{x^2+\frac{1}{k}}, \qquad x \in \mathbb{R}$$
 
-\segnaposto %pag 213
+\image{spazi_metrici_e_normati/pag213.png} %pag 213
 
 $\lim_{k} f_k(x)=|x|$, $f_k \rightrightarrows |x|$ in $\mathbb{R}$ perché $\sup_{x\in \mathbb{R}}|f_k(x)-(x)|= \frac{1}{\sqrt{k}}\xrightarrow{k \rightarrow +\infty}0$. $f_k \in C^1(\mathbb{R})$, mentre $f$ non è derivabile in $x =0$, 
 
@@ -2178,7 +2186,7 @@ $f_k' \rightrightarrows f'$ in $]-\infty,-\epsilon]\cup[\epsilon,+\infty[\,\, \f
 	
 	Fissato $\alpha >0$, studiamo la convergenza uniforme in $[0, \alpha]$.
 	
-	\segnaposto
+	\image{spazi_metrici_e_normati/pag215.png} % pag 215
 	
 	$\sup_{x \in [0,\alpha]}f_k(x)=f_k(\alpha)$ cioè $\sup_{x \in [0, \alpha]} f_k(x) = \left( \frac{\alpha}{k} \right)^2 e^{-\left(\frac{\alpha}{k}\right)^2}\rightarrow 0$ per $k \rightarrow +\infty \,\, \forall \alpha >0$ fissato 
 	
@@ -2297,8 +2305,8 @@ In uno spazio normato di dimensione infinita un insieme può essere chiuso e lim
 	\\
 	\overline{B_1(0)} \text{ non è compatta}
 \end{gather*}
-
-\segnaposto %pag 221
+ 
+\image{spazi_metrici_e_normati/pag221.png} %pag 221
 
 \begin{gather*} 
 	f_k(x)=
@@ -2367,7 +2375,7 @@ Poiché la convergenza uniforme implica quella puntuale, si avrebbe che $f$ sare
 \end{dembar}
 	
 	
-\subsection{Spazi metrici completi}
+\subsubsection{Spazi metrici completi}
 \begin{definition}
 	$(X,d)$ spazio metrico, $\{x_k\}_{k \in \mathbb{N}}\subseteq X$ successione si dice di Cauchy se $\forall \epsilon >0$ $\exists N >0 \,\, \big|$ $k >N$ e $\forall p\geq 1$
 	
@@ -2482,7 +2490,7 @@ Poiché la convergenza uniforme implica quella puntuale, si avrebbe che $f$ sare
 		0 & \text{ se } \frac{1}{2}+ \frac{1}{2k} \leq x \leq 1
 	\end{cases}$$
 	
-	\segnaposto
+	\image{spazi_metrici_e_normati/pag230.png} % pag 230
 	
 	\begin{gather*} 
 		f(x) = \chi_{[0, \frac{1}{2}]} = 
@@ -2569,7 +2577,7 @@ Se $T:X \rightarrow X$ è una contrazione, allora è una funzione continua, perc
 	$(X,d)$ spazio metrico completo. $T:X \rightarrow X$ contrazione. Allora $\exists! \,\, x \in X \,\, | \,\, T(x) = x$, cioè $T$ ha un unico punto fisso.
 \end{theorem}
 
-
+\newpage %riq mal
 \begin{exbar}
 	Stabilire se esistono soluzioni $(x,y)\in[0,1]\times[0,1]$ del sistema di equazioni
 	\begin{gather*}
@@ -2859,9 +2867,9 @@ Se $T:X \rightarrow X$ è una contrazione, allora è una funzione continua, perc
 \end{exbar}
 
 
-\subsection{Insiemi connessi}
+\subsubsection{Insiemi connessi}
 
-\segnaposto %pag 248
+\image{spazi_metrici_e_normati/pag248.png} %pag 248
 	
 \begin{definition}
 	Dato uno spazio metrico $(X,d)$ una \textbf{curva} in $X$ è una funzione continua $\gamma:I\rightarrow X$, con $I \subseteq \mathbb{R}$ intervallo. L'immagine di $\gamma$, 
@@ -2875,7 +2883,7 @@ Se $T:X \rightarrow X$ è una contrazione, allora è una funzione continua, perc
 \begin{definition}
 	$(X,d)$ spazio metrico. $C \subseteq X$ si dice \textbf{connesso (per archi)} se $\forall x_0,x_1 \in C$ $\exists \ \gamma:[a,b]\rightarrow X$ curva tale che $\gamma (a)=x_0,$ $\gamma (b) =x_1$ e $\gamma (t)\in C\,\, \forall\,\, t \in [a,b].$
 	
-	\segnaposto
+	\image{spazi_metrici_e_normati/pag249.png}
 	
 	\textcolor{blue}{(Il sostegno della curva è intervamente contenuto in $C$.)}
 \end{definition}
@@ -2894,7 +2902,7 @@ $$\Tilde{\gamma}(t)=\gamma(a+t(b-a))$$
 
 \textbf{Osservazione:}
 
-Se $(X, \|\cdot\|)$ è spazio normato \textcolor{blue}{($X$ è spazio vettoriale)} e $C \subseteq X$ è convesso, allora $C$ è connesso per archi. 
+Se $(X, \|\cdot\|)$ è spazio normato {\color{blue}($X$ è spazio vettoriale)} e $C \subseteq X$ è convesso, allora $C$ è connesso per archi. 
 
 $C$ convesso $\Leftrightarrow \forall x_0,x_1\in C$, 
 
@@ -2913,7 +2921,7 @@ $\Rightarrow \gamma$ è lipschitziana di costante di Lipschitz $\|x_1-x_0\|$}
 	\label{pr: pag 251}
 	$C \subseteq \mathbb{R}$. $C$ è connesso per archi $\Leftrightarrow C$ è un intervallo.
 	
-	\segnaposto %pag 251
+ 	\image{spazi_metrici_e_normati/pag251.png} %pag 251
 \end{proposition}
 
 
@@ -2936,11 +2944,11 @@ $\Rightarrow \gamma$ è lipschitziana di costante di Lipschitz $\|x_1-x_0\|$}
 		
 		$\mathbb{R}^2\backslash \{(x_0,y_0)\}$ è ancora connesso.
 		
-		\segnaposto
+		\image{spazi_metrici_e_normati/pag252_1.png} %pag 252_1
 		
 		Se prendo $r$ retta in $\mathbb{R}^2$, $\mathbb{R}^2\backslash r$ non è connesso.
 		
-		\segnaposto
+		\image{spazi_metrici_e_normati/pag252_2.png} %pag 252_2
 		
 		\item Per sconnettere in $\mathbb{R}^3$ devo togliere un piano e, in generale, per sconnettere $\mathbb{R}^n$ devo togliere un sottospazio affine di dimensione $n-1$.
 	\end{itemize}
@@ -2995,14 +3003,14 @@ $\Rightarrow \gamma$ è lipschitziana di costante di Lipschitz $\|x_1-x_0\|$}
 		\Rightarrow f(C) \text{ è connesso per archi.} \qquad \square
 	\end{gather*}
 	
-	\segnaposto
+	\image[0.8]{spazi_metrici_e_normati/pag254.png} % pag 254
 \end{dembar}
 	
 	
 \begin{exbar}
 	$f:\mathbb{R}^2\rightarrow \mathbb{R}$ continua tale che $f(-1,0)=-3$, $f(1,0)=4$. Quanti zeri ha $f$, cioè quante sono le soluzioni di $f(x,y)=0$?
 	
-	\segnaposto
+	\image[0.6]{spazi_metrici_e_normati/pag255.png} % pag 255
 	
 	{\color{blue}$\phi : f \mapsto f(\gamma(t))$ è continua, $\phi(0)=-3 <0$, $\phi(1)=4 >0$
 	
