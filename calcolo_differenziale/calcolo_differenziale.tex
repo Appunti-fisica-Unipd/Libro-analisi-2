@@ -1241,10 +1241,11 @@ Quindi $\nabla f(\overline{x_0})$ fornisce la direzione di massima crescita di $
 			\end{align*}
 		}
 		
-		\color{orange}{\centering 
+		{\color{orange}{\centering 
 			$\xi(t)=\frac{t^p}{1+t^q}$, $t\geq 0$, 
 			
 			$\exists C > 0 \mid \xi(t)\leq C \,\, \forall\,\, t \geq 0$ perché $0 \leq p \leq q$. \par}		
+		}
 		
 		\item Derivabilità in $(0,0)$.
 		
@@ -1336,7 +1337,7 @@ $f:]a,b[\rightarrow \R$, derivabile.
 	
 	restrizione di $f$ lungo un segmento parallelo  a $\overline{e_k}$ passante per $\overline{x_0}$ e di lunghezza $2\delta$.
 
-	\segnaposto % pag 366
+	\image{calcolo_differenziale/pag366.png} % pag 366
 
 	Per fissare le idee assumiamo che $\overline{x_0}$ sia di massimo relativo. Prendendo $\delta$ abbastanza piccolo, possiamo assumere che 
 	
@@ -1378,21 +1379,13 @@ $f:]a,b[\rightarrow \R$, derivabile.
 
 $f: \R \rightarrow \R$, $x_0\in\R \mid f'(x_0)=0$. Guardo $f''(x_0)$.
 
-$f''(x_0)<0$ 
-
-\segnaposto % pag 369_1
-
-$f''(x_0)>0$ 
-
-\segnaposto % pag 369_2
-
+\image[0.7]{calcolo_differenziale/pag369.png} % pag 369
 \begin{align*} 
 	f(x)
 	&=f(x_0)+\uppercomment{f'(x_0)(x-x_0)}{}{=0}+\frac{1}{2}f''(x_0)(x-x_0)^2+o((x-x_0)^2)
 	\\
 	&=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2+{\color{blue}\xcancel{o((x-x_0)^2)}}
 \end{align*}
-
 $$y=f(x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2$$
 \begin{align*} 
 	f(x)
@@ -1781,18 +1774,7 @@ I minori principali di $A$ sono i determinanti delle sottomatrici lungo la diago
 \end{pmatrix}$
 etc.
 
-$$
-A_{ij} = \begin{pmatrix}
-	a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
-	a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\
-	a_{31} & a_{32} & a_{33} & \cdots & a_{3n} \\
-	\vdots & \vdots & \vdots & \ddots & \vdots \\
-	a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn} \\
-\end{pmatrix}
-$$ 
-
-%================================================ PAG384 MATRICEEEE
-
+\image{calcolo_differenziale/pag384.png}
 
 \begin{proposition}
 	Sia $Q$ forma quadratica, sia $A$ la matrice simmetrica ad essa associata e sia $\alpha_1,...,\alpha_n$ i suoi minori principali.
@@ -1856,7 +1838,6 @@ $$
 	che è semidefinita. \par}
 \end{exbar}
 
-%==================================== PAG 387
 
 \begin{dembar}
 	\textbf{Dimostrazione} del \textbf{Teorema \ref{th: pag 385}}
@@ -2054,7 +2035,7 @@ $$
 	
 	$$f(0,0)=0, \quad f(x,y) \big|_{y=x^2}=0 \quad f(x,y)\big|_{y=2x^2}=0$$
 	
-	\segnaposto % pag 394
+	\image{calcolo_differenziale/pag394.png} % pag 394
 
 	Se $y < x^2 \Rightarrow y-x^2 < 0$ e $y-2x^2< 0 \Rightarrow f(x,y)>0$. 
 	
