@@ -240,13 +240,9 @@ $\forall \,\, \epsilon >0$ $\exists\,\, M >0 \,\, \mid$ $\|\overline{x}\|>M,$ $\
 
 
 \subsection{Utilizzo delle coordinate polari}
+	\image{calcolo_differenziale/pag316.png} %pag 316 
 
-$(x_0,y_0)\in \R^2$
-
-\segnaposto %pag 316
-
-Coordinate polari di centro $(x_0,y_0)$
-
+$(x_0,y_0)\in \R^2$. Coordinate polari di centro $(x_0,y_0)$ 
 \begin{gather*}
 	\begin{cases}
 		x=x_0+\rho \cos(\theta)
@@ -255,7 +251,8 @@ Coordinate polari di centro $(x_0,y_0)$
 	\end{cases}
 	\\
 	\lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=\ell\in \R 
-	\\
+\end{gather*}
+\begin{gather*}
 	\forall\,\, \epsilon >0 \,\, \exists \,\, \delta >0 \; \mid \; 0 < \overbrace{\|(x,y)-(x_0,y_0)\|}^{{\color{blue} =\delta}} \leq \delta,
 	\qquad
 	(x,y)\in \dom f \Rightarrow |f(x,y)-\ell|< \epsilon
@@ -523,7 +520,7 @@ $f(x)=f(x_0)+f'(x_0)(x-x_0)+o(x-x_0)$
 
 $f:\R^2\rightarrow\R$
 
-\segnaposto %pag 329
+\image{calcolo_differenziale/pag329.png} %pag 329
 
 \begin{itemize}
 	\item $f:\dom f\rightarrow\R$, $domf \subseteq \R^n$
@@ -564,7 +561,7 @@ ben definita in un intorno di $t=0$ perché $\overline{x_0}$ è interno a $\dom 
 
 
 \begin{definition}
-	Se $\overline{v}=\overline{e_k}$, $k-$esimo vettore della base canonica, $D_{\overline{e_k}}f(\overline{x_0})$ \textbf{si dice derivata parziale di $f$ in $x_0$ rispetto a $x_k$} \textcolor{blue}{$(\overline{x}=(x_1,x_2,...,x_n))$} ed è indicata con uno dei simboli 
+	Se $\overline{v}=\overline{e_k}$, $k-$esimo vettore della base canonica, $D_{\overline{e_k}}f(\overline{x_0})$ \textbf{si dice derivata parziale di $f$ in $x_0$ rispetto a $x_k$} {\color{teal}$(\overline{x}=(x_1,x_2,...,x_n))$} ed è indicata con uno dei simboli 
 	
 	$\partial_{x_k}f(\overline{x_0})$, $\frac{\partial f}{\partial x_k}(\overline{x_0})$, $D_{x_k}f(\overline{x_0})$, $f_{x_k}(\overline{x_0})$, $D_kf(\overline{x_0})$.
 	
@@ -579,13 +576,18 @@ ben definita in un intorno di $t=0$ perché $\overline{x_0}$ è interno a $\dom 
 \begin{exbar}
 	$$f:\R^2\rightarrow\R, \qquad (x_0,y_0)\in\R^2$$
 	
-	$$\partial_xf(x_0,y_0)=\lim_{t\rightarrow0}\frac{f((x_0,y_0)+t\overline{e_1})-f(x_0,y_0)}{t}=\lim_{t\rightarrow0}\frac{f(x_0+t,y_0)-f(x_0,y_0)}{t}$$
+	{\color{blue}
+		$$\partial_xf(x_0,y_0)=\lim_{t\rightarrow0}\frac{f((x_0,y_0)+t\overline{e_1})-f(x_0,y_0)}{t}=\lim_{t\rightarrow0}\frac{f(x_0+t,y_0)-f(x_0,y_0)}{t}$$
+	}
 	
-	\segnaposto %pag 332
+	\image{calcolo_differenziale/pag332.png} %pag 332
 	
-	$$\partial_y f(x_0,y_0)=\lim_{t \rightarrow 0}\frac{f(x_0,y_0+t)-f(x_0,y_0)}{t}$$
-	
+	{\color{teal}
+		$$\partial_y f(x_0,y_0)=\lim_{t \rightarrow 0}\frac{f(x_0,y_0+t)-f(x_0,y_0)}{t}$$
+	}
+
 	$$\nabla f(x_0,y_0)=(\partial_xf(x_0,y_0),\partial_yf(x_0,y_0))$$
+	
 	
 	$$f(x,y)=e^{x^2+y}+x^2y^3$$
 	
@@ -677,8 +679,9 @@ ben definita in un intorno di $t=0$ perché $\overline{x_0}$ è interno a $\dom 
 				0 &\text{  altrimenti}
 			\end{cases}
 		\end{equation*}
-
-		\segnaposto % pag 335
+		
+		\image[0.7]{calcolo_differenziale/pag335.png} % pag 335
+		$${\color{Goldenrod} \lim_{t\to0} \frac{f\left( (0,0) + t\bar{v} \right) - f(0,0)}{t} = *}$$
 		
 		$\Rightarrow D_{\overline{v}}f(0,0)=0\,\,\forall$ versore $\overline{v}$ però $f$ non è continua in $(0,0)$.}
 \end{exbar}
@@ -843,7 +846,7 @@ $f:\R^2\rightarrow\R$, differenziabile in $(x_0,y_0)$, consideriamo tutte le ret
 
 Qual è la retta lungo cui $f$ cresce più velocemente?
 
-\segnaposto % pag 342
+\image{calcolo_differenziale/pag342.png} % pag 342
 
 $f:A \rightarrow\R$, $A\subseteq\R^n$ aperto, $\overline{x_0}\in A$, $f$ differenziabile in $\overline{x_0}$. Voglio trovare il versore $\overline{v}$ di $\R^n$ per cui la restrizione di $f$ lungo la retta per $\overline{x_0}$ parallela a $\overline{v}$
 
@@ -855,7 +858,7 @@ $$D_{\overline{v}}f(\overline{x_0})=\langle \nabla f(x_0),\overline{v} \rangle$$
 
 Quindi $\nabla f(\overline{x_0})$ fornisce la direzione di massima crescita di $f$ in $\overline{x_0}$.
 
-\segnaposto % pag 343
+\image{calcolo_differenziale/pag343.png} % pag 343
 
 
 \begin{definition}
@@ -1140,7 +1143,7 @@ Quindi $\nabla f(\overline{x_0})$ fornisce la direzione di massima crescita di $
 	
 	$f \in C^1(A)$ e quindi è differenziabile in $A$. Supponendo per semplicità $A$ convesso. $\overline{x_1},\overline{x_2}\in A\Rightarrow [\overline{x_1},\overline{x_2}]\subseteq A \,\,\exists \,\, \overline{\xi}\in ]\overline{x_1},\overline{x_2}[\,\,\mid\,\, f(\overline{x_2})-f(\overline{x_1})=\langle\nabla f(\overline{\xi}),\overline{x_2}-\overline{x_1}\rangle =0 \Rightarrow f$ è costante.
 	
-	\segnaposto % pag 357
+	\image{calcolo_differenziale/pag357.png} % pag 357
 	
 	$f(\overline{x_1})=f(\overline{y_1})=f(\overline{y_2})=f(\overline{x_2})$.
 \end{dembar}
