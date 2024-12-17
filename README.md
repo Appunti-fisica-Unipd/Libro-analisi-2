@@ -6,7 +6,7 @@
 
 ## Immagini
 Per le immagini sono stati usati due diversi metodi:
-1) Scipt in python usando la libreria matplotlib e l'estensione di $\LaTeX$della stessa;
+1) Scipt in python usando la libreria matplotlib e l'estensione di $\LaTeX$ della stessa;
 2) Immagini vettoriali con Inkscape.
 
 Questo perché Inkscape ha difficoltà a fare il rendering di funzioni complesse e che hanno talvolta comportamenti non banali, come divergenze e discontinuità; mentre python riesce a gestire senza problemi queste occorrenze.
