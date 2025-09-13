@@ -1,4 +1,4 @@
-# Libro analisi 2 BETA
+# Libro analisi 2
 ## Convenzioni di layout adottate:
 1) barra rossa laterale per brevi riassunti molto importanti
 2) barra nera per le dimostrazioni
