@@ -1,5 +1,5 @@
-\section{Serie numeriche} 
-\subsection{Introduzione}
+\chapter{Serie numeriche} 
+\section{Introduzione}
 
 \begin{gather*}
 	\sin x = \sum_{k=0}^{\infty} (-1)^{k} \frac{x^{2k+1}}{(2k+1)!}
@@ -138,7 +138,7 @@ Quanto tempo impiega Achille a raggiungere la tartaruga?
 	&\zenone t_0 \frac{1}{1-\frac{v_T}{v_A}} = \frac{\frac{L_0}{v_A}}{1-\frac{v_T}{v_A}}
 \end{align*}
 
-\subsubsection{Serie geometrica} di ragione r, con $r\in\mathbb{C}$
+\subsection{Serie geometrica} di ragione r, con $r\in\mathbb{C}$
 
 \begin{equation*}
 	\sum_{k=0}^\infty r^k = r^0 + r^1 + r^2 + \ldots
@@ -196,7 +196,7 @@ Quanto tempo impiega Achille a raggiungere la tartaruga?
 	\end{example}
 \end{exbar}
 
-\subsubsection{Serie telescopiche}
+\subsection{Serie telescopiche}
 \begin{equation*}
 	\sum_{k=0}^\infty [f(k+1) - f(k)] \qquad f:\mathbb{N}\rightarrow\mathbb{C}
 \end{equation*}
@@ -230,7 +230,7 @@ Studiamo il carattere. Procuriamoci, se possibile, l'espressione di una ridotta 
 	\end{example}
 \end{exbar}
 
-\subsubsection{Formula di Eulero} 
+\subsection{Formula di Eulero} 
 
 \begin{gather*}
 	e^{i\theta} = \cos(\theta) + i \sin(\theta) 
@@ -270,7 +270,7 @@ Separiamo parte reale e immaginaria e raccogliamo:
 \end{gather*}	
 	
 	
-\subsection{Studio del carattere di una serie}
+\section{Studio del carattere di una serie}
 \begin{theorem}
 	\label{th:termine generale}
 	$\{a_k \}_{k\in\mathbb{N}} \subseteq \mathbb{C}$ $($oppure $\mathbb{R})$. Se $\sum_{k=0}^\infty a_k$ converge, allora $\lim_{k\rightarrow+\infty} a_k = 0$.
@@ -437,8 +437,8 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	$\sum_{k=1}^\infty \frac{(-1)^k}{k}$ converge, ma $\sum_{k=1}^\infty \bigg| \frac{(-1)^k}{k} \bigg| = \sum_{k=1}^\infty \frac{1}{k}$ è divergente.
 \end{exbar}
 
-\subsection{Criteri di convergenza di serie a termini non negativi}
-\subsubsection{Criterio del confronto}
+\section{Criteri di convergenza di serie a termini non negativi}
+\subsection{Criterio del confronto}
 \begin{theorem} (criterio del confronto) 
 	\label{th:criterio del confronto}
 	
@@ -728,7 +728,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{example}
 \end{exbar}
 
-\subsubsection{Criterio del rapporto}
+\subsection{Criterio del rapporto}
 \begin{theorem} (criterio del rapporto) \label{th:criterio del rapporto}
 	
 	$\{a_k\}_{k\in\mathbb{N}}$ successione a termini (definitivamente) positivi.
@@ -860,7 +860,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 	\end{example}
 \end{exbar}
 
-\subsubsection{Criterio della radice}
+\subsection{Criterio della radice}
 \begin{theorem} (criterio della radice) 
 	\label{th:criterio della radice}
 	
@@ -1036,8 +1036,8 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 \end{exbar}
 
 
-\subsection{Criteri di convergenza di serie a termini di segno qualsiasi}
-\subsubsection{Criterio di Dirichelet}
+\section{Criteri di convergenza di serie a termini di segno qualsiasi}
+\subsection{Criterio di Dirichelet}
 \begin{theorem} (criterio di Dirichelet)
 	
 	Sia $\{a_k\}_{k \in \mathbb{N}}$ successione a termini non negativi, decrescente, infinitesima (basta definitivamente: $\lim_{k \rightarrow +\infty} a_k=0$ e $0\leq a_{k+1} \leq a_k$ definitivamente per $k \rightarrow +\infty$) e sia $\{b_k\}_{k \in \mathbb{N}} \subseteq \mathbb{C}$ un'altra successione tale che $\exists \ C>0$ per cui vale
@@ -1084,7 +1084,7 @@ Riprendendo l'esempio del paragrafo precedente vediamo che i termini generale di
 \end{exbar}
 
 
-\subsubsection{Criterio di Leibinitz}
+\subsection{Criterio di Leibinitz}
 \begin{theorem} (criterio di Leibinitz)
 	\label{th:criterio di Leibinitz}
 	

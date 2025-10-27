@@ -1,4 +1,4 @@
-\section{Calcolo differenziale in $\mathbb{R}^n$}
+\chapter{Calcolo differenziale in $\mathbb{R}^n$}
 
 \begin{definition}
 	$A \subseteq \mathbb{R}^n$, $\overline{x_0}\in \mathbb{R}^n$ punto di accumulazione per $A$, $f:A\rightarrow \mathbb{R}$
@@ -113,7 +113,7 @@
 \end{exbar}
 
 
-\subsection{Limiti all'infinito}
+\section{Limiti all'infinito}
 Avevamo introdotto il simbolo  $\infty$ in $\mathbb{R}^n$. Gli intorni di infinito sono complementari di palle di centro l'origine.
 
 Dire che $\overline{x} \rightarrow \infty$ $\Leftrightarrow \|\overline{x}\|\rightarrow +\infty$, $f:\dom f\rightarrow \R$, $\infty$ punto di accumulazione per $\dom f \subseteq \R^n$
@@ -239,7 +239,7 @@ $\forall \,\, \epsilon >0$ $\exists\,\, M >0 \,\, \mid$ $\|\overline{x}\|>M,$ $\
 \end{exbar}
 
 
-\subsection{Utilizzo delle coordinate polari}
+\section{Utilizzo delle coordinate polari}
 	\image{calcolo_differenziale/pag316.png} %pag 316 
 
 $(x_0,y_0)\in \R^2$. Coordinate polari di centro $(x_0,y_0)$ 
@@ -510,7 +510,7 @@ $(x_0,y_0)\in \R^2$. Coordinate polari di centro $(x_0,y_0)$
 \end{exbar}
 
 
-\subsection{Derivate parziali e direzionali}
+\section{Derivate parziali e direzionali}
 $f:\R\rightarrow\R$, $x_0\in\R$
 \begin{equation*}
 	\lim_{x \rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}=f'(x_0)
@@ -687,7 +687,7 @@ ben definita in un intorno di $t=0$ perché $\overline{x_0}$ è interno a $\dom 
 \end{exbar}
 
 
-\subsection{Differenziabilità}
+\section{Differenziabilità}
 
 $f:\R\rightarrow\R$ è derivabile in $x_0\in \R \Leftrightarrow \exists \,\, a \in \R \mid f(x)=f(x_0)+a(x-x_0)+o(x-x_0)$ per $x \rightarrow x_0$ e in tal caso $a=f'(x_0)$.
 
@@ -1286,7 +1286,7 @@ Quindi $\nabla f(\overline{x_0})$ fornisce la direzione di massima crescita di $
 \end{exbar}
 
 
-\subsection{Ricerca di punti di estremo}
+\section{Ricerca di punti di estremo}
 
 $f:]a,b[\rightarrow \R$, derivabile.
 \begin{enumerate}
@@ -1375,7 +1375,7 @@ $f:]a,b[\rightarrow \R$, derivabile.
 \end{exbar}
 
 
-\subsection{Derivate di ordine superiore}
+\section{Derivate di ordine superiore}
 
 $f: \R \rightarrow \R$, $x_0\in\R \mid f'(x_0)=0$. Guardo $f''(x_0)$.
 
@@ -1454,7 +1454,7 @@ Il criterio della derivata seconda per studiare la natura di un punto critico di
 \end{exbar}
 
 
-\subsubsection{Matrice Hessiana}
+\subsection{Matrice Hessiana}
 \begin{theorem} \textbf{(di Schwarz)}
 	
 	$A \subseteq\R^n$ aperto, $f:A\rightarrow\R$ tale che $\partial_{x_ix_j}^2f$ e $\partial_{x_jx_i}^2f$ ($i$ e $j$ fissati) esistono in un intorno $U$ di $\overline{x_0}\in A$ e sono continue in $\overline{x_0}$. Allora
@@ -1547,7 +1547,7 @@ Il criterio della derivata seconda per studiare la natura di un punto critico di
 \end{exbar}
 
 
-\subsubsection{Formula di Taylor}
+\subsection{Formula di Taylor}
 
 $f: \R \rightarrow \R$ derivabile due volte in $x_0 \in \R$
 
@@ -1718,7 +1718,7 @@ polinomio di Taylor di ordine o grado $2$ di $f$ di centro $\overline{x_0}$.
 \end{exbar}
 
 
-\subsubsection{Studio della natura dei punti critici}
+\subsection{Studio della natura dei punti critici}
 
 Sia $Q: \R^n$ forma quadratica. $Q(\overline{x})=\overline{x}^T A \overline{x}$, con $A$ matrice simmetrica $n\times n$.
 
@@ -2198,7 +2198,7 @@ etc.
 \end{exbar}
 
 
-\subsection{Matrice Jacobiana}
+\section{Matrice Jacobiana}
 
 $A \subseteq \R^n$ aperto, $\overline{f}: A \rightarrow \R^p$, $p \geq 1$, 
 

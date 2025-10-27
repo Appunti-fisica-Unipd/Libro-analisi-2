@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}	
+\documentclass[a4paper]{book}	
 \usepackage{graphicx} % Required for inserting images
 \usepackage{amsmath}
 \usepackage[]{geometry}
@@ -23,6 +23,7 @@
 \usepackage{circledsteps}
 \usepackage{pstricks}
 \usepackage{comment}
+\usepackage{fancyhdr}
 
 \usepackage{mdframed} %pacchetto per leftbar non sfalzate fra di loro
 
@@ -34,16 +35,26 @@
 
 \usetikzlibrary{shapes}
 
-
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\nouppercase{\leftmark}} % Titolo del capitolo a sinistra nelle pagine pari
+\fancyhead[RO]{\nouppercase{\rightmark}} % Titolo della sezione a destra nelle pagine dispari
+\fancyfoot[LE,RO]{\thepage}
 
 \begin{document}	
 \include{header/headerAM2.tex}
+
+\begin{titlepage}
+	\vspace*{20mm}
+	\begin{center}
+	\Huge Analisi Matematica 2
 	
-	\title{\Huge Analisi Matematica 2}
-	\author{{\Large Emanuele Urso} \\
-	{\small{\href{mailto:emanuele.urso@proton.me}{\color{black}{emanuele.urso@proton.me} }}}}
-	\date{2024/2025}
-	\maketitle
+	{\Large Emanuele Urso}
+	
+	\small{\href{mailto:emanuele.urso@proton.me}{\color{black}{emanuele.urso@proton.me} }}
+	
+	2024/2025
+	\end{center}
 	
 	\image[.55]{spazi_metrici_e_normati/pag248.pdf} %pag 248
 	
@@ -66,11 +77,14 @@
 	\begin{center}
 		\rule{.9\textwidth}{0.4pt}%
 	\end{center}
+\end{titlepage}
 	
 	\hypersetup{linkcolor=black}
 	\tableofcontents   
 	
 \newpage
+
+\setlength\parskip{\baselineskip}
 
 \input{serie_numeriche/serie_numeriche.tex}
 
