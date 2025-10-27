@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}	
+\documentclass[a4paper]{book}	
 \usepackage{graphicx} % Required for inserting images
 \usepackage{amsmath}
 \usepackage[]{geometry}
@@ -23,6 +23,7 @@
 \usepackage{circledsteps}
 \usepackage{pstricks}
 \usepackage{comment}
+\usepackage{fancyhdr}
 
 \usepackage{mdframed} %pacchetto per leftbar non sfalzate fra di loro
 
@@ -34,21 +35,28 @@
 
 \usetikzlibrary{shapes}
 
-
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\nouppercase{\leftmark}} % Titolo del capitolo a sinistra nelle pagine pari
+\fancyhead[RO]{\nouppercase{\rightmark}} % Titolo della sezione a destra nelle pagine dispari
+\fancyfoot[LE,RO]{\thepage}
 
 \begin{document}	
 \include{header/headerAM2.tex}
+
+\begin{titlepage}
+	\vspace*{20mm}
+	\begin{center}
+	\Huge Analisi Matematica 2
 	
-	\title{\Huge Analisi Matematica 2}
-	\author{{\Large Emanuele Urso} \\
-	{\small{\href{mailto:emanuele.urso@studenti.unipd.it}{\color{black}{emanuele.urso@studenti.unipd.it} }}}}
-	\date{2024/2025}
-	\maketitle
+	{\Large Emanuele Urso}
 	
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.5\linewidth]{header/UniPdlogo.png}
-	\end{figure}
+	\small{\href{mailto:emanuele.urso@proton.me}{\color{black}{emanuele.urso@proton.me} }}
+	
+	2024/2025
+	\end{center}
+	
+	\image[.55]{spazi_metrici_e_normati/pag248.pdf} %pag 248
 	
 	\vfill
 	
@@ -56,12 +64,12 @@
 	
 	{\centering \large \textbf{Giacomo Veglio} \par}
 	
-	per aver contribuito al progetto fornendomi gli appunti già scritti in \LaTeX da lui, che hanno di gran lunga velocizzato il lavoro di stesura, durato comunque tanto. Potete trovare i suoi appunti, insieme anche a questo libro sul GitHub: 
+	per aver fornito una base al progetto con gli appunti già scritti in \LaTeX da lui. Potete trovare i suoi appunti, insieme anche a questo libro sul GitHub: 
 	
 	{\centering \color{blue}
-	\url{https://github.com/Appunti-fisica-Unipd/ALPHA-Libro-analisi-2} \par} 
+	\url{https://github.com/Appunti-fisica-Unipd/Libro-analisi-2} \par} 
 	
-	Questo libro non è stato revisionato da alcun professore e può contenere dei refusi, che vi prego di segnalarmi alla mia mail. I grafici delle funzioni qui presenti potrebbero differire in alcuni casi da quelli del professore, perché creati con appositi software di grafica.
+	Questo libro non è stato revisionato da alcun professore e può contenere dei refusi, che vi prego di segnalare alla mia mail.
 		
 	\vspace{3em}
 	
@@ -69,11 +77,14 @@
 	\begin{center}
 		\rule{.9\textwidth}{0.4pt}%
 	\end{center}
+\end{titlepage}
 	
 	\hypersetup{linkcolor=black}
 	\tableofcontents   
 	
 \newpage
+
+\setlength\parskip{\baselineskip}
 
 \input{serie_numeriche/serie_numeriche.tex}
 

@@ -1,4 +1,4 @@
-\section{Curve e Forme Differenziali}
+\chapter{Curve e Forme Differenziali}
 
 \begin{definition}
 	$(X,d)$ spazio metrico. Una \textbf{curva} in $X$ è una funzione continua $\overline{\gamma}:I \rightarrow X$, con $I \subseteq \R$ intervallo. L'immagine di $\overline{\gamma}$, $\overline{\gamma}(\overline{t})=\{\overline{\gamma}(t)\mid t \in I \}\subseteq X$ si dice \textbf{sostegno della curva}.
@@ -117,7 +117,7 @@ Il sostegno di $\overline{\gamma}$ è il grafico di $f$.
 \end{exbar}
 
 
-\subsection{Curve Regolari}
+\section{Curve Regolari}
 
 $\overline{\gamma}; I \rightarrow \R^n$,
 $\overline{\gamma}(t)=(\gamma_1(t),...,\gamma_n(t))$
@@ -321,7 +321,7 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 \end{exbar}
 
 
-\subsection{Cambio di parametrizzazione}
+\section{Cambio di parametrizzazione}
 
 \begin{definition}
 	$\overline{\gamma}:[a,b]\rightarrow \R^p$ curva e $\phi: [c,d]\rightarrow [a,b]$ invertibile {\color{blue}cioè iniettiva e suriettiva $\phi([c,d])=[a,b]$} di classe $C^1$ con $\phi'(u)\neq 0$ $\forall \,\, u \in [c,d]$ \textcolor{blue}{(e quindi $\phi$ è monotona con inversa derivabile)}. Sia 
@@ -374,7 +374,7 @@ $\overline{\gamma}$ è differenziabile in $t_0 \in I$ $\Leftrightarrow \gamma_i$
 \end{exbar}
 
 
-\subsection{Equazione polare di una curva}
+\section{Equazione polare di una curva}
 
 Considero nel piano cartesiano le coordinate polari e individuo il sostegno di una curva tramite un'equazione del tipo 
 
@@ -417,7 +417,7 @@ $$\|\overline{\gamma}(\theta)\|^2=0 \Leftrightarrow f(\theta)=f'(\theta)=0$$
 In particolare, se $f \in C^1(I)$ e $(f(\theta), f'(\theta))\neq (0,0)\,\, \forall \theta \in I$, $\overline{\gamma}$ è regolare.
 
 
-\subsection{Integrazione di funzioni a valori vettoriali}
+\section{Integrazione di funzioni a valori vettoriali}
 
 \begin{definition}
 	Data $\overline{\gamma}:[a,b]\rightarrow \R^n$, $a,b\in \R$, $\overline{\gamma}(t)=(\gamma_1(t),...,\gamma_n(t))$, essa si dice integrabile in $[a,b]$ se tali sono $\gamma_1,...,\gamma_n$ e in tal caso si pone
@@ -467,7 +467,7 @@ In particolare, se $f \in C^1(I)$ e $(f(\theta), f'(\theta))\neq (0,0)\,\, \fora
 \end{theorem}
 
 
-\subsection{Curve rettificabili}
+\section{Curve rettificabili}
 
 $\overline{\gamma}:[a,b]\rightarrow\R^n$ curva. 
 
@@ -638,7 +638,7 @@ $$L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamm
 \end{exbar}
 
 
-\subsection{Integrali di Prima Specie}
+\section{Integrali di Prima Specie}
 
 \begin{definition}
 	$f:\dom f \rightarrow \R$, $\dom f \subseteq \R^n$ funzione, $\overline{\gamma}:[a,b]\rightarrow \R^n$ curva regolare con $\overline{\gamma}([a,b])\subseteq \dom f$. Si dice \textbf{integrale di linea di prima specie di $f$ lungo $\overline{\gamma}$} la quantità
@@ -718,7 +718,7 @@ $$L(\overline{\gamma},D)=\sum_{i=1}^{n}\| \overline{\gamma}(t_i)-\overline{\gamm
 \end{dembar}
 	
 	
-\subsubsection{Baricentro  di una curva}
+\subsection{Baricentro  di una curva}
 	
 $\overline{\gamma}:[a,b]\rightarrow \R^3$ curva regolare di densità $\rho(\overline{x})$ nel punto $\overline{x}=\overline{\gamma}(t)$. Siano allora $(x_B,y_B,z_B)$ coordinate del baricentro. Avremo
 \begin{align*}
@@ -738,7 +738,7 @@ $\overline{\gamma}:[a,b]\rightarrow \R^3$ curva regolare di densità $\rho(\over
 Ove $\frac{1}{\int_{\overline{\gamma}}\rho ds}$ è la massa della curva e $\overline{\gamma}(t)=(\gamma_1(t),\gamma_2(t),\gamma_3(t))$.
 
 
-\subsubsection{Momento d'inerzia di una curva}
+\subsection{Momento d'inerzia di una curva}
 	
 $\overline{\gamma}:[a,b]\rightarrow \R^3$ curva regolare di densità $\rho(\overline{x}) $ nel punto $\overline{x}=\overline{\gamma}(x)$, $\overline{x}=(x,y,z)$.
 
@@ -974,7 +974,7 @@ Momento d'inerzia
 \end{exbar}
 
 
-\subsection{Integrali di seconda specie}
+\section{Integrali di seconda specie}
 	
 $A \subseteq \R^n$ aperto, $f:A \rightarrow \R$ differenziabile in $A$. Si definisce il differenziale di $f$ in $x_0 \in A$ come la funzione lineare 
 \begin{align*}
@@ -1234,7 +1234,7 @@ Se $f$ è differenziabile in $A$, posso definire
 \end{exbar}
 
 
-\subsubsection{Forma differenziale esatta}
+\subsection{Forma differenziale esatta}
 \begin{definition}
 	$A \subseteq \R^n$ aperto, $\omega$ forma differenziale continua su $A$ con $\overline{F}=(F_1,...,F_n)$ campo vettoriale associato. $\omega$ si dice \textbf{esatta} ed $\overline{F}$ si dice \textbf{conservativo} se $\exists \,\,U \in  C^1(A)$ tale che $\omega(\overline{x})=dU(\overline{x})\,\, \forall\,\, \overline{x} \in A$, cioè $\overline{F}(\overline{x})=\nabla U(\overline{x})\,\, \forall\,\, \overline{x}\in A$. $U $ è detta (funzione) potenziale.
 	 
@@ -1523,7 +1523,7 @@ $$\begin{cases}
 \end{exbar}
 
 
-\subsubsection{Funzione potenziale}
+\subsection{Funzione potenziale}
 \begin{theorem}
 	
 	\label{th: pag 475}
@@ -1690,7 +1690,7 @@ $$U(x,y)=U(x_0,y_0)+\int_{\overline{\gamma}_1}\omega + \int_{\overline{\gamma}_2
 \end{theorem}
 
 
-\subsubsection{Omotopia}
+\subsection{Omotopia}
 \begin{definition}
 	$A \subseteq \R^n$ aperto, $\overline{\gamma}_0$ e $\overline{\gamma}_1$ circuito con sostegno contenuto in $A$ parametrizzati sullo stesso intervallo $[a,b]$. Allora $\overline{\gamma}_0$ e $\overline{\gamma}_1$ si dicono \textbf{omotopi in $A$} se esiste una \textbf{funzione continua}
 	\begin{equation*}

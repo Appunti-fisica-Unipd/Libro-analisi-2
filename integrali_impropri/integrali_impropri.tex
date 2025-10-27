@@ -1,7 +1,7 @@
-\section{Integrali impropri}
-\subsection{Integrazione secondo Riemann}
+\chapter{Integrali impropri}
+\section{Integrazione secondo Riemann}
 
-Data $f:[a,b] \rightarrow \mathbb{R}$ limitata, con $a=x_0 < x_1 < \ldots < x_n =b$ e $[a,b]$ intevallo limitato:
+Data $f:[a,b] \rightarrow \mathbb{R}$ limitata, con $a=x_0 < x_1 < \ldots < x_n =b$ e $[a,b]$ intervallo limitato:
 \begin{gather*}
 	S(f) =\sum_{i=1}^{n} \left( \sup_{[x_{i-1},x_i]} f(x) \right) \cdot (x_i-x_{i-1}) \qquad \text{somma superiore}
 	\\
@@ -13,7 +13,7 @@ Se $\inf_{a=x_0 < x_1 < ... < x_n =b} S(f) = \sup_{a=x_0 < x_1 < ... < x_n =b} s
 \end{equation*}
 
 
-\subsection{Integrali impropri}
+\section{Integrali impropri}
 \begin{exbar}
 \begin{example}
 	\begin{equation*}
@@ -325,7 +325,7 @@ In generale, data $f:]a,b[ \ \rightarrow \mathbb{R}$ integrabile in senso improp
 	\int_{a}^{b} f(x) \ \mathrm{d}x= \sum_{i=1}^{n} \int_{x_{i-1}}^{x_i} f(x) \ \mathrm{d}x.
 \end{equation*}
 
-\subsection{Criteri di integrabilità}
+\section{Criteri di integrabilità}
 \begin{proposition}
 	\label{pr: integrabilità definita}
 	Sia $f:[a,b[ \ \rightarrow \mathbb{R}, \ b \in \mathbb{R} \cup \{+\infty\}$ tale che $f(x) \geq 0$ definitivamente per $x \rightarrow b^-$ e tale che sia Riemann integrabile in $[a,b] \ \forall c \in [a,b[$. Allora esiste
@@ -359,7 +359,7 @@ In generale, data $f:]a,b[ \ \rightarrow \mathbb{R}$ integrabile in senso improp
 
 Come per le serie ci concentriamo su criteri di integrabilità per funzioni di segno definito.
 
-\subsubsection{Criterio del confronto}
+\subsection{Criterio del confronto}
 \begin{theorem} (criterio del confronto)
 	
 \end{theorem}
@@ -397,7 +397,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 \end{dembar}
 
 
-\subsubsection{Criterio di assoluta integrabilità}
+\subsection{Criterio di assoluta integrabilità}
 \begin{theorem}
 	\label{th:criterio assoluta integrabilità}
 	$f:[a,b[ \ \rightarrow \mathbb{R}, \ b \in \mathbb{R} \cup \{+\infty\}$ Riemann integrabile in $[a,c] \ \forall \ c \in [a,b[$ e tale che $|f|$ è integrabile in senso improprio in $[a,b[$ (si dice che l'integrale improprio di $f$ è assolutamente convergente o che converge assolutamente). Allora $\int_{a}^{b} f(x) \ \mathrm{d}x$ converge.
@@ -485,7 +485,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 \end{exbar}
 
 
-\subsubsection{Criterio asintotico del confronto}
+\subsection{Criterio asintotico del confronto}
 \begin{theorem}
 	\label{th:criterio asintotico confronto integrale}
 	$f,g: [a,b[\rightarrow \mathbb{R}, \ b \in \mathbb{R} \cup \{+\infty\}$, Riemann integrabili in $[a,c] \ \forall c \in [a,b[$ tali che $f(x),g(x)\geq 0$ definitivamente per $x \rightarrow b^-$ e $\lim_{x \rightarrow b^-} \frac{f(x)}{g(x)}= \ell \in [0,+\infty[$
@@ -1003,7 +1003,7 @@ Come per le serie ci concentriamo su criteri di integrabilità per funzioni di s
 \end{exbar}
 
 
-\subsubsection{Integrali oscillanti}
+\subsection{Integrali oscillanti}
 \begin{theorem} (criterio di Abel)
 \label{th: criterio di Abel}
 
